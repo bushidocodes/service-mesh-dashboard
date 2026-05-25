@@ -1,6 +1,6 @@
 import React from "react";
 import { renderWithIntl } from "utils/i18nTesting";
-import { MemoryRouter, Route } from "react-router";
+import { MemoryRouter, Route } from "react-router-dom";
 
 import state from "json/mockReduxState";
 import ServiceHeaderContent from "./ServiceHeaderContent";

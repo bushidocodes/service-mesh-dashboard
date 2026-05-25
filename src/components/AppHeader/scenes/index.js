@@ -1,29 +1,27 @@
 import React from "react";
-import { Switch, Route, withRouter } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import FabricAppHeaderContent from "./FabricHeaderContent";
 import InstanceHeaderContent from "./InstanceHeaderContent";
 import ServiceHeaderContent from "./ServiceHeaderContent";
 
+// v4 used the regex syntax /:path(|stable|down|warning) which is not supported
+// in v6. The four paths are listed explicitly instead.
 function AppHeaderContent() {
   return (
-    <Switch>
-      {/* Match on root and stable, down, or warning */}
+    <Routes>
+      <Route path="/" element={<FabricAppHeaderContent />} />
+      <Route path="/stable" element={<FabricAppHeaderContent />} />
+      <Route path="/down" element={<FabricAppHeaderContent />} />
+      <Route path="/warning" element={<FabricAppHeaderContent />} />
+      <Route path="/:selectedServiceSlug" element={<ServiceHeaderContent />} />
       <Route
-        path="/:path(|stable|down|warning)"
-        component={FabricAppHeaderContent}
+        path="/:selectedServiceSlug/:selectedInstanceID/*"
+        element={<InstanceHeaderContent />}
       />
-      <Route
-        exact
-        path="/:selectedServiceSlug"
-        component={ServiceHeaderContent}
-      />
-      <Route
-        path="/:selectedServiceSlug/:selectedInstanceID"
-        component={InstanceHeaderContent}
-      />
-    </Switch>
+    </Routes>
   );
 }
 
-export default withRouter(AppHeaderContent);
+// v6 Routes re-renders automatically on location changes — withRouter no longer needed
+export default AppHeaderContent;

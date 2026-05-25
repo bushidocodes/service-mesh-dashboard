@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "enzyme";
-import { MemoryRouter, Route } from "react-router";
+import { MemoryRouter, Route } from "react-router-dom";
 
 import state from "json/mockReduxState";
 import DefaultHeaderContent from "./DefaultHeaderContent";
