@@ -3,11 +3,12 @@ import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { Responsive, WidthProvider } from "react-grid-layout";
 import { connect } from "react-redux";
-import { injectGlobal } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 import { injectIntl, intlShape } from "react-intl";
 
 import GMBasicMetrics from "./components/GMBasicMetrics";
 import GMLineChart from "../GMLineChart";
+import withRouter from "utils/withRouter";
 import GMTable from "./components/GMTable";
 
 import ErrorBoundary from "components/ErrorBoundary";
@@ -23,7 +24,7 @@ import NotFoundError from "components/Main/components/NotFoundError";
 import { ReactGridLayout, ReactResizable } from "./style";
 
 // Inject react-grid-layout.css and react-resizable.css into the global stylesheet
-injectGlobal`
+const GMGridGlobalStyles = createGlobalStyle`
 ${ReactGridLayout};
 ${ReactResizable};
 `;
@@ -206,7 +207,12 @@ export class GMGrid extends Component {
     if (!dashboard) {
       return <NotFoundError errorMsg={`Dashboard does not exist`} />;
     } else {
-      return this.renderDashboard(dashboard);
+      return (
+        <>
+          <GMGridGlobalStyles />
+          {this.renderDashboard(dashboard)}
+        </>
+      );
     }
   }
 }
@@ -218,4 +224,7 @@ function mapStateToProps({ dashboards, instance: { metrics } }, ownProps) {
   };
 }
 // default export for the connected component
-export default connect(mapStateToProps)(injectIntl(GMGrid));
+// withRouter injects match.params from useParams() so mapStateToProps can
+// read ownProps.match.params.dashboardName (react-router-dom v6 no longer
+// passes route props automatically).
+export default withRouter(connect(mapStateToProps)(injectIntl(GMGrid)));

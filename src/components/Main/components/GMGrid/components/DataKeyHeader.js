@@ -1,6 +1,8 @@
+import styled from "styled-components";
+
 import DataKey from "./DataKey";
 
-const DataKeyHeader = DataKey.extend`
+const DataKeyHeader = styled(DataKey)`
   &:first-child {
     margin-left: 33%;
   }

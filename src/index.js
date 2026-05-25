@@ -1,10 +1,11 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import { HashRouter } from "react-router-dom";
 import { addLocaleData } from "react-intl";
 
 import AppContainer from "./components/AppContainer";
+import { AppGlobalStyles } from "./style/styleVariables";
 import AppHeader from "./components/AppHeader";
 import AppFooter from "./components/Footer";
 import Notification from "./components/Notification";
@@ -20,10 +21,11 @@ import es from "react-intl/locale-data/es";
 // Add locale data for our supported locales
 addLocaleData([...de, ...en, ...es]);
 
-ReactDOM.render(
+createRoot(document.getElementById("root")).render(
   <Provider store={store}>
     <ConnectedIntlProvider>
       <HashRouter>
+        <AppGlobalStyles />
         <AppContainer>
           <Notification />
           <AppHeader />
@@ -32,6 +34,5 @@ ReactDOM.render(
         </AppContainer>
       </HashRouter>
     </ConnectedIntlProvider>
-  </Provider>,
-  document.getElementById("root")
+  </Provider>
 );
