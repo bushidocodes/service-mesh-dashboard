@@ -3,7 +3,7 @@ import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { Responsive, WidthProvider } from "react-grid-layout";
 import { connect } from "react-redux";
-import { injectGlobal } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 import { injectIntl, intlShape } from "react-intl";
 
 import GMBasicMetrics from "./components/GMBasicMetrics";
@@ -23,7 +23,7 @@ import NotFoundError from "components/Main/components/NotFoundError";
 import { ReactGridLayout, ReactResizable } from "./style";
 
 // Inject react-grid-layout.css and react-resizable.css into the global stylesheet
-injectGlobal`
+const GMGridGlobalStyles = createGlobalStyle`
 ${ReactGridLayout};
 ${ReactResizable};
 `;
@@ -206,7 +206,12 @@ export class GMGrid extends Component {
     if (!dashboard) {
       return <NotFoundError errorMsg={`Dashboard does not exist`} />;
     } else {
-      return this.renderDashboard(dashboard);
+      return (
+        <>
+          <GMGridGlobalStyles />
+          {this.renderDashboard(dashboard)}
+        </>
+      );
     }
   }
 }

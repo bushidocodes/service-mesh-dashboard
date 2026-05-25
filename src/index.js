@@ -5,6 +5,7 @@ import { HashRouter } from "react-router-dom";
 import { addLocaleData } from "react-intl";
 
 import AppContainer from "./components/AppContainer";
+import { AppGlobalStyles } from "./style/styleVariables";
 import AppHeader from "./components/AppHeader";
 import AppFooter from "./components/Footer";
 import Notification from "./components/Notification";
@@ -24,6 +25,7 @@ createRoot(document.getElementById("root")).render(
   <Provider store={store}>
     <ConnectedIntlProvider>
       <HashRouter>
+        <AppGlobalStyles />
         <AppContainer>
           <Notification />
           <AppHeader />

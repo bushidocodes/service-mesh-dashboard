@@ -37,7 +37,7 @@
     "redux": "~3.7.2",
     "redux-logger": "~3.0.6",
     "reselect": "~3.0.1",
-    "styled-components": "^2.4.0"
+    "styled-components": "^5.3.11"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.0.0",
@@ -82,7 +82,7 @@
     "jest": "^22.0.6",
     "jest-cli": "^22.0.6",
     "jest-junit": "^3.4.1",
-    "jest-styled-components": "^4.9.0",
+    "jest-styled-components": "^7.2.0",
     "junit-merge": "^1.2.3",
     "license-checker": "^16.0.0",
     "lint-staged": "^6.0.0",
