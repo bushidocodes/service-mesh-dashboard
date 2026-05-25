@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import { HashRouter } from "react-router-dom";
 import { addLocaleData } from "react-intl";
@@ -20,7 +20,7 @@ import es from "react-intl/locale-data/es";
 // Add locale data for our supported locales
 addLocaleData([...de, ...en, ...es]);
 
-ReactDOM.render(
+createRoot(document.getElementById("root")).render(
   <Provider store={store}>
     <ConnectedIntlProvider>
       <HashRouter>
@@ -32,6 +32,5 @@ ReactDOM.render(
         </AppContainer>
       </HashRouter>
     </ConnectedIntlProvider>
-  </Provider>,
-  document.getElementById("root")
+  </Provider>
 );
