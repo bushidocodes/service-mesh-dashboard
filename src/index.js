@@ -1,10 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import { Router } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { addLocaleData } from "react-intl";
 
-import history from "./AppHistory";
 import AppContainer from "./components/AppContainer";
 import AppHeader from "./components/AppHeader";
 import AppFooter from "./components/Footer";
@@ -24,14 +23,14 @@ addLocaleData([...de, ...en, ...es]);
 ReactDOM.render(
   <Provider store={store}>
     <ConnectedIntlProvider>
-      <Router history={history}>
+      <HashRouter>
         <AppContainer>
           <Notification />
           <AppHeader />
           <Main />
           <AppFooter />
         </AppContainer>
-      </Router>
+      </HashRouter>
     </ConnectedIntlProvider>
   </Provider>,
   document.getElementById("root")

@@ -1,24 +1,48 @@
-import { withUrlState as rawWithUrlState } from "with-url-state";
-import history from "AppHistory";
+import React from "react";
+import { useSearchParams } from "react-router-dom";
 
 /**
- * withUrlState is a HOC based on with-url-state that more closely matches
- * the way that React-Redux works. It uses a closure over the AppHistory
- * component to prevent users from having to import the history throughout
- * the app. If the mapOwnPropsToUrlState function is passed in, it maps it
- * through to the with-url-state API, but this is optional to allow this to
- * be used as a simple zero-arg HOC wrapper function.
+ * withUrlState is a HOC that syncs component state to the URL query string.
  *
- * @export
- * @param {func} mapOwnPropsToUrlState - an optional function that allows the
- * actual props passed to the object to be composed together with the url state
- * similar to how one uses ownProps with mapStateToProps
- * @returns func - A function that can wrap a React component to create an HOC
+ * This is a React Router v6 replacement for the deprecated `with-url-state`
+ * package. It mirrors the same two-argument HOC API:
+ *
+ *   withUrlState()(Component)
+ *   withUrlState(mapOwnPropsToInitialState)(Component)
+ *
+ * The wrapped component receives two extra props:
+ *   urlState   – current query-string params parsed as a plain object
+ *   setUrlState(patch) – shallowly merges `patch` into the current params
+ *
+ * @param {function} [mapOwnPropsToInitialState] - optional function that
+ *   receives own props and returns an initial state object. Used to seed the
+ *   URL with defaults when the component first mounts with no params.
+ * @returns {function} HOC factory – call with Component to get the wrapped version
  */
-export default function withUrlState(mapOwnPropsToUrlState) {
-  if (mapOwnPropsToUrlState) {
-    return rawWithUrlState(history, mapOwnPropsToUrlState);
-  } else {
-    return rawWithUrlState(history);
-  }
+export default function withUrlState(mapOwnPropsToInitialState) {
+  return function (Component) {
+    function WithUrlState(props) {
+      const [searchParams, setSearchParams] = useSearchParams();
+
+      // Parse current query string into a plain object
+      const urlState = Object.fromEntries(searchParams.entries());
+
+      // Shallow-merge helper – preserves existing params not in the patch
+      const setUrlState = (patch) =>
+        setSearchParams((prev) => ({
+          ...Object.fromEntries(prev.entries()),
+          ...patch
+        }));
+
+      return (
+        <Component {...props} urlState={urlState} setUrlState={setUrlState} />
+      );
+    }
+
+    WithUrlState.displayName = `withUrlState(${
+      Component.displayName || Component.name || "Component"
+    })`;
+
+    return WithUrlState;
+  };
 }

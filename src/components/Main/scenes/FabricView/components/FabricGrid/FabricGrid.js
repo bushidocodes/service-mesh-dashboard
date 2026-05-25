@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import { injectIntl, intlShape } from "react-intl";
 
 import withUrlState from "components/withUrlState";
+import { withRouter } from "utils/withRouter";
 import { reportError } from "services/notification";
 import {
   routerHistoryShape,
@@ -194,4 +195,4 @@ class FabricGrid extends Component {
   }
 }
 
-export default withUrlState()(injectIntl(FabricGrid));
+export default withRouter(withUrlState()(injectIntl(FabricGrid)));
