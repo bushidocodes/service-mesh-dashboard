@@ -120,7 +120,7 @@ export default class DygraphWrapper extends React.Component {
   render() {
     return (
       <DygraphContainer
-        innerRef={(elem) => {
+        ref={(elem) => {
           this.div = elem;
         }}
       />
