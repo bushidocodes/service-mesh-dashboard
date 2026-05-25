@@ -211,6 +211,7 @@ const groupingByHeadingListViewMockData = [
     status: "Warning"
   }
 ];
-const singleGroupingByHeadingListViewMockData = groupingByHeadingListViewMockData.filter(
-  elem => elem.headerTitle === "MEME Services"
-);
+const singleGroupingByHeadingListViewMockData =
+  groupingByHeadingListViewMockData.filter(
+    (elem) => elem.headerTitle === "MEME Services"
+  );

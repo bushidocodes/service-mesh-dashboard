@@ -8,7 +8,7 @@ import { FormattedMessage } from "react-intl";
  * @param {object} items
  * @returns {React.element}
  */
-export const getTableHeaders = type => {
+export const getTableHeaders = (type) => {
   let headerNames = [];
   if (type === "Instance") {
     headerNames = [

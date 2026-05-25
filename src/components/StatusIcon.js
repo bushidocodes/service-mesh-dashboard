@@ -40,15 +40,9 @@ export default function StatusIcon({
     );
   } else if (status.toLowerCase() === "warning") {
     const warningBackgroundColor =
-      backgroundColor ||
-      COLOR_WARNING.darken(0.1)
-        .saturate(0.1)
-        .string();
+      backgroundColor || COLOR_WARNING.darken(0.1).saturate(0.1).string();
     const warningGlyphColor =
-      backgroundColor ||
-      COLOR_WARNING.darken(0.2)
-        .saturate(1)
-        .string();
+      backgroundColor || COLOR_WARNING.darken(0.2).saturate(1).string();
     return (
       <Icon
         backgroundColor={warningBackgroundColor}

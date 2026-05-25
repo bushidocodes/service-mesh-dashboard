@@ -34,9 +34,9 @@ function generateButtonTypeColor(type) {
   }
 }
 
-const camelCaseConverter = stringInput => {
+const camelCaseConverter = (stringInput) => {
   if (stringInput) {
-    return stringInput.replace(/-([a-z])/g, function(g) {
+    return stringInput.replace(/-([a-z])/g, function (g) {
       return g[1].toUpperCase();
     });
   }
@@ -72,7 +72,7 @@ const ButtonWrap = styled.button`
     flex: 0 1 auto;
   }
 
-  ${props => `
+  ${(props) => `
     ${
       props.type
         ? generateButtonStyle({

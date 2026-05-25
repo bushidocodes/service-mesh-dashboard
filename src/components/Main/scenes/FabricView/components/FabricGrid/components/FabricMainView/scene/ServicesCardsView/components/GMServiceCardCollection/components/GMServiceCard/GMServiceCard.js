@@ -87,9 +87,7 @@ export default function GMServiceCard({
       cardBorderColor = "rgba(0,0,0,.05)";
       cardHighlightColor = baseColor;
       cardFontWeight = "400";
-      cardFontColor = Color(baseColor)
-        .darken(0.2)
-        .string();
+      cardFontColor = Color(baseColor).darken(0.2).string();
   }
 
   return (
@@ -106,7 +104,7 @@ export default function GMServiceCard({
     >
       <ServiceLink
         disabled={isAccessible ? null : true}
-        onClick={isAccessible ? null : e => e.preventDefault()}
+        onClick={isAccessible ? null : (e) => e.preventDefault()}
         title={titleNameAttribute}
         to={slug}
       >
@@ -125,14 +123,13 @@ export default function GMServiceCard({
         )}
         {runtime && <Runtime>{runtime}</Runtime>}
         {version && <span>{version}</span>}
-        {version &&
-          docsLink && (
-            <DocsLink href={docsLink} target="_blank">
-              <Icon title="API Documentation">
-                <Docs />
-              </Icon>
-            </DocsLink>
-          )}
+        {version && docsLink && (
+          <DocsLink href={docsLink} target="_blank">
+            <Icon title="API Documentation">
+              <Docs />
+            </Icon>
+          </DocsLink>
+        )}
       </CardFooter>
       <BackgroundIcon status={status} alt={status} />
     </CardContainer>

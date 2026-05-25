@@ -70,32 +70,30 @@ class Explorer extends Component {
    * @memberof Explorer
    */
   hideKeys = (rawKeys, metrics) => {
-    let {
-      hideZeroMetric = "false",
-      hideStaticMetric = "false"
-    } = this.props.urlState;
+    let { hideZeroMetric = "false", hideStaticMetric = "false" } =
+      this.props.urlState;
     // the following booleans are passed down from urlState as strings, so we need to parse them
     hideZeroMetric = JSON.parse(hideZeroMetric);
     hideStaticMetric = JSON.parse(hideStaticMetric);
 
     // Filter out the timestamps key, which does not point to valid timeseries
     // data but instead provides information about the range of time expressed
-    const keys = rawKeys.filter(key => key !== "timestamps");
+    const keys = rawKeys.filter((key) => key !== "timestamps");
 
     // return original keys if hide features are turned off
     if (!hideZeroMetric && !hideStaticMetric) {
       return keys;
     } else if (hideStaticMetric) {
       // static filter is more inclusive than zero filter
-      return keys.filter(key => {
+      return keys.filter((key) => {
         // Get the values associated with a key and only return if
         // there is more than one unique value
         const valuesOfKey = _.values(metrics[key]);
         return _.uniq(valuesOfKey).length > 1;
       });
     } else if (hideZeroMetric) {
-      return keys.filter(key => {
-        return !_.values(metrics[key]).every(val => val === 0);
+      return keys.filter((key) => {
+        return !_.values(metrics[key]).every((val) => val === 0);
       });
     } else return null;
   };
@@ -124,13 +122,13 @@ class Explorer extends Component {
               data={filteredKeys}
               hideZeroMetric={JSON.parse(hideZeroMetric)}
               hideStaticMetric={JSON.parse(hideStaticMetric)}
-              onClick={selectedMetric => setUrlState({ selectedMetric })}
+              onClick={(selectedMetric) => setUrlState({ selectedMetric })}
               onChange={(checked, name) =>
                 setUrlState({
                   [name]: checked
                 })
               }
-              onSearch={filterString => setUrlState({ filterString })}
+              onSearch={(filterString) => setUrlState({ filterString })}
               searchQuery={filterString}
               selectedMetric={selectedMetric}
               tabIndex={0}

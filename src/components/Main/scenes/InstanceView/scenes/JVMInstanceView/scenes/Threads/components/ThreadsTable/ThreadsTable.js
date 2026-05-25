@@ -33,7 +33,7 @@ export default function ThreadsTable({ filteredThreadData, groupByAttribute }) {
   if (groupByAttribute === "state") {
     // Add a header property to each thread object
     // based on its state so that they can be grouped
-    const mappedThreads = filteredThreadData.map(thread => {
+    const mappedThreads = filteredThreadData.map((thread) => {
       return {
         ...thread,
         header: getHeader(thread, groupByAttribute)
@@ -44,13 +44,13 @@ export default function ThreadsTable({ filteredThreadData, groupByAttribute }) {
     // and values being an array of corresponding thread objects
     const dataGroupedByHeader = _.groupBy(
       mappedThreads,
-      thread => thread.header
+      (thread) => thread.header
     );
 
     // Loop through thread states to preserve the order stopped, idle, active
     // only include headers that have corresponding threads
     let headers = threadStates.filter(
-      header => !_.isEmpty(dataGroupedByHeader[header])
+      (header) => !_.isEmpty(dataGroupedByHeader[header])
     );
 
     return (

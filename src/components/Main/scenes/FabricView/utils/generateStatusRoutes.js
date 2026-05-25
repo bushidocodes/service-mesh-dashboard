@@ -14,18 +14,18 @@ import { computeStatus } from "utils/selectors";
  **/
 
 function generateStatusRoutes(services) {
-  return microserviceStatuses.map(route => {
+  return microserviceStatuses.map((route) => {
     route = route.toLowerCase();
     return (
       <Route
         exact
         key={`/${route}`}
         path={`/${route}`}
-        render={props => {
+        render={(props) => {
           return (
             <FabricGrid
               {...props}
-              services={_.values(services).filter(service => {
+              services={_.values(services).filter((service) => {
                 let status = computeStatus(
                   service.instances.length,
                   service.minimum,

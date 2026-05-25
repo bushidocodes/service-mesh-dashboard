@@ -24,9 +24,7 @@ const DygraphContainer = styled.div`
   .dygraph-legend {
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: ${BORDER_RADIUS_BASE};
-    color: ${COLOR_CONTENT.opaquer(0.2)
-      .hsl()
-      .string()};
+    color: ${COLOR_CONTENT.opaquer(0.2).hsl().string()};
     display: inline-block;
     left: auto !important;
     min-width: 18em;
@@ -35,7 +33,9 @@ const DygraphContainer = styled.div`
     position: absolute;
     right: 0 !important;
     text-align: right;
-    transition: all 0.2s ease, color 0.2s ease;
+    transition:
+      all 0.2s ease,
+      color 0.2s ease;
     z-index: 10000;
 
     /* TODO: Fix this selector */
@@ -45,11 +45,11 @@ const DygraphContainer = styled.div`
   }
 
   &:hover .dygraph-legend {
-    color: ${COLOR_CONTENT.opaquer(0.2)
-      .hsl()
-      .string()};
+    color: ${COLOR_CONTENT.opaquer(0.2).hsl().string()};
     opacity: 1;
-    transition: all 0.2s ease, color 1s ease;
+    transition:
+      all 0.2s ease,
+      color 1s ease;
   }
 
   .dygraph-label {

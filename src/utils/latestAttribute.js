@@ -56,7 +56,7 @@ export function getLatestAttribute(
 export function parseJSONString(line, metrics, formatMessage) {
   if (Array.isArray(line)) {
     return line
-      .map(element => {
+      .map((element) => {
         if (element.type === "string") {
           return formatMessage
             ? formatMessage(element.value)

@@ -8,13 +8,13 @@ const CARD_SPACING = PADDING_BASE;
 const CARD_INTERACTION_SCALE = 1.05;
 
 export const CardContainer = styled.div`
-  color: ${props => props.cardFontColor};
-  background-color: ${props => Color(props.cardBackgroundColor).string()};
-  border: 1px solid ${props => props.cardBorderColor};
-  border-top: 2px solid ${props => props.cardBorderAltColor};
+  color: ${(props) => props.cardFontColor};
+  background-color: ${(props) => Color(props.cardBackgroundColor).string()};
+  border: 1px solid ${(props) => props.cardBorderColor};
+  border-top: 2px solid ${(props) => props.cardBorderAltColor};
   width: 100%;
   border-radius: 1px;
-  height: ${props => props.height};
+  height: ${(props) => props.height};
   margin: ${parseInt(CARD_SPACING, 10) / 2}px;
   padding: ${parseInt(PADDING_BASE, 10) * 1.5}px
     ${parseInt(PADDING_BASE, 10) * 1.5}px ${parseInt(PADDING_BASE, 10)}px;
@@ -47,7 +47,7 @@ export const CardContainer = styled.div`
     color: inherit;
   }
 
-  ${props =>
+  ${(props) =>
     props.isAccessible &&
     `
     background-image: none;
@@ -94,7 +94,7 @@ CardContainer.propTypes = {
 export const CardFooter = styled.footer`
   display: flex;
   align-items: center;
-  font-weight: ${parseInt(props => props.cardFontWeight, 10)};
+  font-weight: ${parseInt((props) => props.cardFontWeight, 10)};
   justify-content: space-between;
   z-index: 10;
   position: relative;

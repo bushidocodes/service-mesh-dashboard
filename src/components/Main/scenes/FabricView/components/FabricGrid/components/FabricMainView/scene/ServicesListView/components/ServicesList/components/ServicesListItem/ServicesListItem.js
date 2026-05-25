@@ -71,7 +71,7 @@ export default class ServicesListItem extends Component {
           <GMLink
             disabled={!isAccessible}
             tabIndex="0"
-            onClick={isAccessible ? null : e => this.manageFocus(e.target, e)}
+            onClick={isAccessible ? null : (e) => this.manageFocus(e.target, e)}
             title={title}
             to={slug}
           >

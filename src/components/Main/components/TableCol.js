@@ -4,7 +4,7 @@ import { PropTypes } from "prop-types";
 import { errorColor } from "style/styleFunctions";
 
 const TableCol = styled.div`
-  ${props =>
+  ${(props) =>
     props.errorPercent ? `color: ${errorColor(props.errorPercent)}` : ""};
   flex: 1 1 12%;
   text-align: left;

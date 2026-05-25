@@ -8,15 +8,15 @@ import { calculateErrorPercent, formatAsDecimalString } from "utils";
 import PropTypes from "prop-types";
 
 // JVM - Specific Redux state
-const getCurrentThreads = state => state.threadsTable;
-const getThreadsFilter = state => state.settings.threadsFilter;
+const getCurrentThreads = (state) => state.threadsTable;
+const getThreadsFilter = (state) => state.settings.threadsFilter;
 
 /**
  * A selector that takes metrics and returns percent error without % symbol
  * toLocaleString() forces three decimal points and
  * returns language sensitive representation of number (commas and periods)
  */
-export const getErrorPercent = createSelector(getMetrics, metrics => {
+export const getErrorPercent = createSelector(getMetrics, (metrics) => {
   if (Object.keys(metrics).length === 0) return formatAsDecimalString(0);
   const totalRequests =
     Number(getLatestAttribute(metrics, "http/requests") || 0) +
@@ -40,9 +40,9 @@ export const getRoutesTable = createSelector(
     // Now build the table
     const routesTable = [];
     const routesPaths = Object.keys(routesTree);
-    routesPaths.forEach(routePath => {
+    routesPaths.forEach((routePath) => {
       let baseObj = { route: routePath };
-      routesTree[routePath].forEach(routeVerb => {
+      routesTree[routePath].forEach((routeVerb) => {
         const requestsKey =
           routePath === "/"
             ? `route/${routeVerb}/requests`
@@ -93,17 +93,17 @@ export const getVisibleThreads = createSelector(
     switch (threadsFilter) {
       case "active":
         return threadsTable.filter(
-          threadItem => threadItem.state === "RUNNABLE"
+          (threadItem) => threadItem.state === "RUNNABLE"
         );
       case "idle":
         return threadsTable.filter(
-          threadItem =>
+          (threadItem) =>
             threadItem.state === "WAITING" ||
             threadItem.state === "TIMED_WAITING"
         );
       case "stopped":
         return threadsTable.filter(
-          threadItem =>
+          (threadItem) =>
             threadItem.state === "TERMINATED" ||
             threadItem.state === "BLOCKED" ||
             threadItem.state === "NEW"
@@ -131,19 +131,19 @@ export const getThreadCounts = createSelector(
   (threadsTable = []) => {
     return {
       active: threadsTable
-        ? threadsTable.filter(threadItem => threadItem.state === "RUNNABLE")
+        ? threadsTable.filter((threadItem) => threadItem.state === "RUNNABLE")
             .length
         : 0,
       idle: threadsTable
         ? threadsTable.filter(
-            threadItem =>
+            (threadItem) =>
               threadItem.state === "WAITING" ||
               threadItem.state === "TIMED_WAITING"
           ).length
         : 0,
       stopped: threadsTable
         ? threadsTable.filter(
-            threadItem =>
+            (threadItem) =>
               threadItem.state === "TERMINATED" ||
               threadItem.state === "BLOCKED" ||
               threadItem.state === "NEW"

@@ -21,8 +21,8 @@ function fetchAndStoreInstanceMetricsEffect(
     console.log("Fetching metrics failed because metrics endpoint was missing");
   } else {
     fetchInstanceMetrics(endpoint)
-      .then(json => Actions.fetchMetricsSuccess(json))
-      .catch(err => Actions.fetchMetricsFailure(err));
+      .then((json) => Actions.fetchMetricsSuccess(json))
+      .catch((err) => Actions.fetchMetricsFailure(err));
   }
 }
 Effect("fetchAndStoreInstanceMetrics", fetchAndStoreInstanceMetricsEffect);

@@ -1,8 +1,7 @@
 import state from "../../json/mockReduxState";
 
-const { getVisibleThreads, getThreadCounts } = require.requireActual(
-  "./selectors"
-);
+const { getVisibleThreads, getThreadCounts } =
+  require.requireActual("./selectors");
 
 describe("Reselect selector getVisibleThreads", () =>
   test("returns an array of thread objects matching state.settings.threadsFilter ", () => {

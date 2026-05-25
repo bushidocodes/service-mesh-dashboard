@@ -7,7 +7,7 @@ import ThreadCounts from "./ThreadCounts";
 
 const mockStore = configureStore()(mockState);
 
-const HelloWorld = props => <h1>Hello World!</h1>;
+const HelloWorld = (props) => <h1>Hello World!</h1>;
 
 let ThreadCountsWrap;
 

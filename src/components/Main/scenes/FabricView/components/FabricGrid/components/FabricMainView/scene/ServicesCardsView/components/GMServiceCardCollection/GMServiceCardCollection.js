@@ -21,7 +21,7 @@ const ContentItems = styled.div`
 export default function GMServiceCardCollection({ items }) {
   return (
     <ContentItems>
-      {items.map(item => (
+      {items.map((item) => (
         <GMServiceCard
           authorized={item.authorized}
           key={item.slug}

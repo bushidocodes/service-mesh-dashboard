@@ -10,7 +10,7 @@ const SectionContent = styled.div`
   max-width: ${CONTENT_MAX_WIDTH};
   padding: ${spacingScale(1)};
   width: 100%;
-  ${props =>
+  ${(props) =>
     props.flex
       ? `
       display: flex; 

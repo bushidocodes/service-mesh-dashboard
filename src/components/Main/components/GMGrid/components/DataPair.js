@@ -7,7 +7,7 @@ import { spacingScale, edgeColor } from "style/styleFunctions";
 const DataPair = styled.div`
   display: flex;
   flex-direction: row;
-  ${props =>
+  ${(props) =>
     props.priority === "normal" || props.priority === "secondary"
       ? "font-size: 0.8em;"
       : ""};
@@ -15,7 +15,7 @@ const DataPair = styled.div`
   padding-top: ${spacingScale(0.25)};
   padding-bottom: ${spacingScale(0.25)};
   position: relative;
-  ${props => (props.priority === "primary" ? dataPairPrimary() : "")};
+  ${(props) => (props.priority === "primary" ? dataPairPrimary() : "")};
 `;
 
 DataPair.propTypes = {

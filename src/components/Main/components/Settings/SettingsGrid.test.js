@@ -16,7 +16,7 @@ let SettingGridWrap,
   mockState = state.default;
 
 describe("SettingsGrid component", () => {
-  beforeEach(function() {
+  beforeEach(function () {
     SettingGridWrap = mountWithIntl(
       <SettingsGrid store={mockStore(mockState)} />
     );
@@ -36,11 +36,9 @@ describe("SettingsGrid component", () => {
     SettingGridWrap = mountWithIntl(
       <SettingsGrid store={mockStore(mockState)} />
     );
-    expect(
-      SettingGridWrap.find("PollingSettings")
-        .find("h3")
-        .text()
-    ).toBe("Polling");
+    expect(SettingGridWrap.find("PollingSettings").find("h3").text()).toBe(
+      "Polling"
+    );
   });
 
   test("Has 2 Fabric Polling Settings if fabricServer prop is available", () => {
@@ -59,9 +57,7 @@ describe("SettingsGrid component", () => {
 
   test("Clear Cache button exists", () => {
     expect(
-      SettingGridWrap.find(Button)
-        .at(2)
-        .props().label === "Clear Cache"
+      SettingGridWrap.find(Button).at(2).props().label === "Clear Cache"
     ).toBe(true);
   });
 });

@@ -10,7 +10,7 @@ const Title = styled.h1`
   margin: 0;
   overflow: hidden;
   color: inherit;
-  font-weight: ${props => props.cardFontWeight};
+  font-weight: ${(props) => props.cardFontWeight};
   position: relative;
   z-index: 2;
 `;

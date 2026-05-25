@@ -4,7 +4,7 @@ import { PropTypes } from "prop-types";
 import { FONT_SIZE_SM, COLOR_WHITE, COLOR_GREEN } from "style/styleVariables";
 
 const SkipNav = styled.button.attrs({
-  onKeyDown: props => evt => {
+  onKeyDown: (props) => (evt) => {
     if (evt.keyCode === 13 || evt.keyCode === 32) {
       document.getElementById(props.skipToId).focus();
     }

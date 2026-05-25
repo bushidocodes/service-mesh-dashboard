@@ -25,7 +25,7 @@ const LanguageSelectorContent = styled.ul`
   display: flex;
   flex-direction: column;
 
-  ${props =>
+  ${(props) =>
     props.visible &&
     `right: 6em;
      opacity: 1;

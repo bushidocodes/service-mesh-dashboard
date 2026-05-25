@@ -2,7 +2,7 @@ import React from "react";
 import { PropTypes } from "prop-types";
 
 const Form = ({ children }) => {
-  return <form onSubmit={e => e.preventDefault()}>{children}</form>;
+  return <form onSubmit={(e) => e.preventDefault()}>{children}</form>;
 };
 
 Form.propTypes = {

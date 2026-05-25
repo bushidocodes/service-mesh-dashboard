@@ -31,7 +31,10 @@ class ServiceView extends Component {
   };
 
   componentDidMount() {
-    const { location: { state }, history } = this.props;
+    const {
+      location: { state },
+      history
+    } = this.props;
     if (state && state.message) {
       // Disable polling and clear metrics cache
       Actions.stopPollingAndPurgeInstanceMetrics();
@@ -44,7 +47,7 @@ class ServiceView extends Component {
     }
   }
 
-  setSortByAttribute = newSortByAttribute => {
+  setSortByAttribute = (newSortByAttribute) => {
     const {
       urlState: { ascending = "true", sortByAttribute = "name" },
       setUrlState
@@ -78,7 +81,7 @@ class ServiceView extends Component {
         <TableToolbar
           searchInputProps={{
             filterString,
-            setFilterString: filterString => setUrlState({ filterString }),
+            setFilterString: (filterString) => setUrlState({ filterString }),
             searchPlaceholder: intl.formatMessage({
               id: "serviceView.searchPlaceholder",
               defaultMessage: "Search Instances",

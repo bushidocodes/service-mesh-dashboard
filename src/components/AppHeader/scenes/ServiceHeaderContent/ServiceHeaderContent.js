@@ -40,9 +40,13 @@ function ServiceHeaderContent({ instanceCount, pathname, intl }) {
 }
 
 function mapStateToProps(state, ownProps) {
-  const { fabric: { services } } = state;
   const {
-    match: { params: { selectedServiceSlug } },
+    fabric: { services }
+  } = state;
+  const {
+    match: {
+      params: { selectedServiceSlug }
+    },
     location: { pathname }
   } = ownProps;
   return {

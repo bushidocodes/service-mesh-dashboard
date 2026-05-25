@@ -41,7 +41,7 @@ function FabricAppHeaderContent({ statusCount, intl }) {
           }
         ]}
       />
-      {microserviceStatuses.map(status => {
+      {microserviceStatuses.map((status) => {
         return (
           <Tab
             title={intl.formatMessage({

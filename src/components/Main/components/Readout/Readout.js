@@ -12,7 +12,7 @@ export default function Readout({
 }) {
   return (
     <ReadoutDisplay primary={primary} cacheCard={cacheCard}>
-      {readoutItems.map(item => (
+      {readoutItems.map((item) => (
         <ReadoutItem
           key={`${item.title}|${item.value}|${item.detail}`}
           {...item}

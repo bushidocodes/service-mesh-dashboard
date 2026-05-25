@@ -117,6 +117,7 @@ const groupingByStatusCardsViewMockData = [
     status: "Warning"
   }
 ];
-const singleGroupingByStatusCardsViewMockData = groupingByStatusCardsViewMockData.filter(
-  elem => elem.headerTitle === "Warning"
-);
+const singleGroupingByStatusCardsViewMockData =
+  groupingByStatusCardsViewMockData.filter(
+    (elem) => elem.headerTitle === "Warning"
+  );

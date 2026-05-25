@@ -95,7 +95,7 @@ storiesOf("App Header", module)
   .add("Tab Navigation", () => {
     return (
       <TabNav>
-        {mockTabs.map(item => {
+        {mockTabs.map((item) => {
           return (
             <Tab
               key={item.title}
@@ -108,7 +108,7 @@ storiesOf("App Header", module)
           );
         })}
         <TabGroup>
-          {mockSecondaryTabs.map(item => {
+          {mockSecondaryTabs.map((item) => {
             return (
               <Tab
                 key={item.title}
@@ -144,7 +144,7 @@ storiesOf("App Header", module)
           extras={object("Banner Extras", bannerExtras)}
         />
         <TabNav>
-          {mockTabs.map(item => {
+          {mockTabs.map((item) => {
             return (
               <Tab
                 key={item.title}
@@ -157,7 +157,7 @@ storiesOf("App Header", module)
             );
           })}
           <TabGroup>
-            {mockSecondaryTabs.map(item => {
+            {mockSecondaryTabs.map((item) => {
               return (
                 <Tab
                   key={item.title}

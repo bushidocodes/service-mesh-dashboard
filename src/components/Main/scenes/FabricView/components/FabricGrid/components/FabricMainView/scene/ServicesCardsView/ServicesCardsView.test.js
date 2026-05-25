@@ -19,7 +19,7 @@ const RouterWrap = (
   return (
     <MemoryRouter initialEntries={route}>
       <Route
-        render={props => (
+        render={(props) => (
           <ServicesCardsView
             {...props}
             groupByAttribute={groupByAttribute}
@@ -33,8 +33,8 @@ const RouterWrap = (
 };
 
 // used to filter mockMappedServices and return filtered array of mock mapped services
-const filterServicesByStatus = filter => {
-  return mockMappedServices.filter(service => {
+const filterServicesByStatus = (filter) => {
+  return mockMappedServices.filter((service) => {
     return service.status.toLowerCase() === filter;
   });
 };
@@ -42,7 +42,7 @@ const filterServicesByStatus = filter => {
 let wrapper;
 
 describe("ServicesCardsView component rendering", () => {
-  beforeEach(function() {
+  beforeEach(function () {
     wrapper = mount(RouterWrap(["/"]));
   });
 

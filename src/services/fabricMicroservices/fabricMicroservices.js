@@ -14,14 +14,14 @@ export function fetchFabricMicroservices(fabricServer) {
   if (fabricServer) {
     return axios
       .get(`${fabricServer}/services`, { responseType: "json" })
-      .then(response => response.data)
-      .then(arrayOfServices =>
-        arrayOfServices.map(service => ({
+      .then((response) => response.data)
+      .then((arrayOfServices) =>
+        arrayOfServices.map((service) => ({
           ...service,
           slug: memoizedSlugifyMicroservice(service.name, service.version)
         }))
       )
-      .then(arrayOfServices =>
+      .then((arrayOfServices) =>
         arrayOfServices.reduce((result, service) => {
           result[service.slug] = service;
           return result;
@@ -47,8 +47,8 @@ export function fetchAndStoreFabricMicroservicesEffect(
     );
   } else {
     fetchFabricMicroservices(fabricServer)
-      .then(results => Actions.fetchFabricMicroservicesSuccess(results))
-      .catch(err => Actions.fetchFabricMicroservicesFailure(err));
+      .then((results) => Actions.fetchFabricMicroservicesSuccess(results))
+      .catch((err) => Actions.fetchFabricMicroservicesFailure(err));
   }
 }
 

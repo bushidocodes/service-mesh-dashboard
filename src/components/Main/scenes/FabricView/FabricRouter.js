@@ -46,7 +46,12 @@ function FabricRouter({ services }) {
       <Route component={SettingsGrid} exact path="/settings" />
       <Route
         path="/:serviceSlug/:instanceID/"
-        render={({ match: { url, params: { serviceSlug, instanceID } } }) => {
+        render={({
+          match: {
+            url,
+            params: { serviceSlug, instanceID }
+          }
+        }) => {
           const baseURL = url[url.length - 1] === "/" ? url.slice(0, -1) : url;
 
           const service =
@@ -94,7 +99,7 @@ function FabricRouter({ services }) {
             } else if (
               // Check our instanceID against this services' instances
               service &&
-              !service.instances.some(obj => {
+              !service.instances.some((obj) => {
                 return obj.name === instanceID;
               })
             ) {
@@ -160,7 +165,9 @@ function FabricRouter({ services }) {
         path="/:selectedServiceSlug/"
         render={({
           location: { pathname },
-          match: { params: { selectedServiceSlug } },
+          match: {
+            params: { selectedServiceSlug }
+          },
           ...props
         }) => {
           // Blacklist known top level routes in render just in case.
@@ -238,7 +245,7 @@ function FabricRouter({ services }) {
       <Route
         exact
         path="/"
-        render={props => {
+        render={(props) => {
           return <FabricGrid {...props} services={_.values(services)} />;
         }}
       />

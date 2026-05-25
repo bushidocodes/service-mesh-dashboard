@@ -84,10 +84,7 @@ describe("Table Toolbar", () => {
 
   test("calls setDisplayType when a display type button is clicked", () => {
     // Simulate a button click and check if setDisplayType was called
-    wrapper
-      .find("button")
-      .find({ title: "Cards" })
-      .simulate("click");
+    wrapper.find("button").find({ title: "Cards" }).simulate("click");
     expect(wrapper.props().displayTypeProps.setDisplayType).toHaveBeenCalled();
   });
 

@@ -116,7 +116,7 @@ storiesOf("Icons", module)
   .add("gallery", () => {
     return (
       <div style={wrapperStyle}>
-        {glyphNames.map(glyph => {
+        {glyphNames.map((glyph) => {
           return (
             <Icon glyphName={glyph} key={glyph}>
               <Glyph name={glyph} />

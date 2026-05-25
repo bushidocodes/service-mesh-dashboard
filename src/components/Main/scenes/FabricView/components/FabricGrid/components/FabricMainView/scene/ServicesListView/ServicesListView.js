@@ -23,7 +23,7 @@ ListView.propTypes = {
 function ListView({ ascending, groupByAttribute, sortByAttribute, services }) {
   // get unique headers
   if (groupByAttribute !== "None") {
-    const dataGroupedByHeader = _.groupBy(services, item =>
+    const dataGroupedByHeader = _.groupBy(services, (item) =>
       item.headerTitle.toLowerCase()
     );
     const headerTitles = Object.keys(dataGroupedByHeader);
@@ -33,12 +33,12 @@ function ListView({ ascending, groupByAttribute, sortByAttribute, services }) {
     // If we are sorting by status, use microServiceStatuses as the headers
     // as they need to be in the order "Down, Warning, Stable"
     if (groupByAttribute === "Status") {
-      headers = microserviceStatuses.map(item => item.toLowerCase());
+      headers = microserviceStatuses.map((item) => item.toLowerCase());
     } else {
       headers = headerTitles;
     }
 
-    let verifiedHeaders = headers.filter(header => {
+    let verifiedHeaders = headers.filter((header) => {
       // checks to make sure there are microservices within the array
       return (
         !_.isEmpty(dataGroupedByHeader[header]) &&
@@ -61,7 +61,7 @@ function ListView({ ascending, groupByAttribute, sortByAttribute, services }) {
                 items={_.orderBy(
                   dataGroupedByHeader[header],
                   [
-                    item =>
+                    (item) =>
                       sortByAttribute === "Status"
                         ? _.indexOf(microserviceStatuses, item.status)
                         : item.name,
@@ -84,7 +84,7 @@ function ListView({ ascending, groupByAttribute, sortByAttribute, services }) {
             items={_.orderBy(
               services,
               [
-                item =>
+                (item) =>
                   sortByAttribute === "Status"
                     ? _.indexOf(microserviceStatuses, item.status)
                     : item.name,

@@ -30,17 +30,16 @@ export default function GMTable({ title, headers, rows = [] }) {
       {rows.map((row, rowIndex) => (
         <DataPair key={`row-${rowIndex}`}>
           {row &&
-            row.map(
-              (cell, cellIndex) =>
-                cellIndex === 0 ? (
-                  <DataKey key={`row-${rowIndex}-cell-${cellIndex}`}>
-                    {cell.toLocaleString()}
-                  </DataKey>
-                ) : (
-                  <DataValue key={`row-${rowIndex}-cell-${cellIndex}`}>
-                    {cell.toLocaleString()}
-                  </DataValue>
-                )
+            row.map((cell, cellIndex) =>
+              cellIndex === 0 ? (
+                <DataKey key={`row-${rowIndex}-cell-${cellIndex}`}>
+                  {cell.toLocaleString()}
+                </DataKey>
+              ) : (
+                <DataValue key={`row-${rowIndex}-cell-${cellIndex}`}>
+                  {cell.toLocaleString()}
+                </DataValue>
+              )
             )}
         </DataPair>
       ))}

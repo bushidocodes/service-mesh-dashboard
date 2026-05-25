@@ -37,35 +37,23 @@ describe("GO > SummaryGrid component", () => {
   });
 
   test("Has an 'uptime' dashboard in first position", () => {
-    expect(
-      SummaryGridWrap.find(Readout)
-        .at(0)
-        .html()
-        .includes("Uptime")
-    ).toBe(true);
+    expect(SummaryGridWrap.find(Readout).at(0).html().includes("Uptime")).toBe(
+      true
+    );
   });
 
   test("Has an 'average response time' dashboard in second position", () => {
     expect(
-      SummaryGridWrap.find(Readout)
-        .at(1)
-        .html()
-        .includes("Avg. Response Time")
+      SummaryGridWrap.find(Readout).at(1).html().includes("Avg. Response Time")
     ).toBe(true);
     expect(
-      SummaryGridWrap.find(Readout)
-        .at(1)
-        .html()
-        .includes("Error Rate")
+      SummaryGridWrap.find(Readout).at(1).html().includes("Error Rate")
     ).toBe(true);
   });
 
   test("Has a 'host CPU utilized' dashboard in third position", () => {
     expect(
-      SummaryGridWrap.find(Readout)
-        .at(2)
-        .html()
-        .includes("Host CPU Utilized")
+      SummaryGridWrap.find(Readout).at(2).html().includes("Host CPU Utilized")
     ).toBe(true);
   });
 

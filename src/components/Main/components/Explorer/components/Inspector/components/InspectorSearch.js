@@ -8,7 +8,9 @@ const InspectorSearch = styled.input`
   appearance: none;
   margin: 8px;
 
-  box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(0, 0, 0, 0),
+  box-shadow:
+    inset 0 0 0 rgba(0, 0, 0, 0),
+    0 0 0 rgba(0, 0, 0, 0),
     0 0 0 rgba(0, 0, 0, 0);
   text-align: left;
   user-select: auto;
@@ -37,7 +39,8 @@ const InspectorSearch = styled.input`
   }
 
   &:focus {
-    box-shadow: inset 0 0 0 rgba(255, 255, 255, 0.5),
+    box-shadow:
+      inset 0 0 0 rgba(255, 255, 255, 0.5),
       0 0 0 1px ${COLOR_HIGHLIGHT.mix(COLOR_WHITE, 0.25).string()},
       0 0 0 4px ${COLOR_HIGHLIGHT.mix(COLOR_WHITE, 0.75).string()};
     outline: none;

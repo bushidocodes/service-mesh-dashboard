@@ -16,7 +16,7 @@ const PollingSliderContainer = styled.div`
   padding: ${spacingScale(4)};
   position: relative;
   ${InputRange};
-  ${props =>
+  ${(props) =>
     props.isDisabled && // The following controls disabled styles for PollingSliderContainer & InputRange
     `
     background: #f3f3f3;

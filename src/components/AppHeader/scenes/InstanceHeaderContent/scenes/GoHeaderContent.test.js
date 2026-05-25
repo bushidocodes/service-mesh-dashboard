@@ -9,7 +9,7 @@ import { renderWithIntl } from "utils/i18nTesting";
 const RouterWrap = (
   <MemoryRouter>
     <Route
-      render={props => (
+      render={(props) => (
         <GoHeaderContent {...props} metrics={state.instance.metrics} />
       )}
     />

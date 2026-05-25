@@ -60,16 +60,14 @@ describe("Inspector", () => {
   });
 
   test("calls onClick when user selects a metric", () => {
-    wrapper
-      .find(InspectorItem)
-      .first()
-      .simulate("click");
+    wrapper.find(InspectorItem).first().simulate("click");
     expect(wrapper.props().onClick).toHaveBeenCalled();
   });
 
   test("passes active prop to the selected metric's styled-component", () => {
     // Function that returns the ReactWrapper of any element(s) with an "active" prop
-    const findActiveItem = () => wrapper.findWhere(item => item.props().active);
+    const findActiveItem = () =>
+      wrapper.findWhere((item) => item.props().active);
     expect(findActiveItem()).toHaveLength(0);
 
     // Set a selected metric and search for item with active prop again

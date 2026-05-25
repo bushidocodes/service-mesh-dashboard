@@ -54,7 +54,11 @@ describe("GMLineChart utils functions", () => {
       "A tabular representation of the Chart chart data: median 2.00 average 2.00 mode no value occurs more than once maximum 3 minimum 1 number of observations 3 complete data time series follows 1,2,3";
 
     const mockTimeSeriesArrayNoData = [
-      [["timestamp1", 0], ["timestamp1", 0], ["timestamp1", 0]],
+      [
+        ["timestamp1", 0],
+        ["timestamp1", 0],
+        ["timestamp1", 0]
+      ],
       1
     ];
     const mockOutputIfNoData =

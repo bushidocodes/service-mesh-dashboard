@@ -59,7 +59,7 @@ export default class ThreadsTableLineItem extends Component {
    * Toggles the stacktrace drawer open or closed
    * @memberof ThreadsTableLineItem
    */
-  toggleStack = e => {
+  toggleStack = (e) => {
     if (e) {
       blurTableRow(e);
     }
@@ -76,10 +76,10 @@ export default class ThreadsTableLineItem extends Component {
         isOpen={this.state.isOpen}
         selectable={stack.length > 0}
         key={id}
-        onClick={evt => {
+        onClick={(evt) => {
           stack.length > 0 ? this.toggleStack(evt) : blurTableRow(evt);
         }}
-        onKeyDown={evt => {
+        onKeyDown={(evt) => {
           if (stack.length && evt.keyCode === 13) {
             evt.preventDefault();
             this.toggleStack();
@@ -106,7 +106,7 @@ export default class ThreadsTableLineItem extends Component {
         </TableColThread>
         <TableDrawerCollapse
           isOpened={this.state.isOpen}
-          onClick={evt => {
+          onClick={(evt) => {
             evt.stopPropagation();
             blurTableRow(evt);
           }}

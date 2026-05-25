@@ -10,8 +10,8 @@ import { fetchInstanceThreads } from "./apis";
 function fetchAndStoreInstanceThreadsEffect(endpoint) {
   if (!endpoint) return;
   fetchInstanceThreads(endpoint)
-    .then(json => Actions.fetchThreadsSuccess(json))
-    .catch(err => Actions.fetchThreadsFailure(err));
+    .then((json) => Actions.fetchThreadsSuccess(json))
+    .catch((err) => Actions.fetchThreadsFailure(err));
 }
 Effect("fetchAndStoreInstanceThreads", fetchAndStoreInstanceThreadsEffect);
 

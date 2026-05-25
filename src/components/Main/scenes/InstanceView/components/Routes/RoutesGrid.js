@@ -32,11 +32,9 @@ class RoutesGrid extends Component {
    * in the url bar.
    * @param {Array} routes
    */
-  sort = routes => {
-    const {
-      ascending = "true",
-      sortByAttribute = "route"
-    } = this.props.urlState;
+  sort = (routes) => {
+    const { ascending = "true", sortByAttribute = "route" } =
+      this.props.urlState;
     const sortOrder = ascending === "true" ? ["asc"] : ["desc"];
 
     return _.orderBy(routes, sortByAttribute, sortOrder);
@@ -48,7 +46,7 @@ class RoutesGrid extends Component {
    * When sorting by latency and error percent and the sortKey is new, set the initial sort order to descending
    * @param {String} newSortByAttribute
    */
-  setSortByAttribute = newSortByAttribute => {
+  setSortByAttribute = (newSortByAttribute) => {
     const {
       urlState: { ascending = "true", sortByAttribute = "route" },
       setUrlState
@@ -87,7 +85,7 @@ class RoutesGrid extends Component {
           <TableToolbar
             searchInputProps={{
               filterString,
-              setFilterString: filterString => setUrlState({ filterString }),
+              setFilterString: (filterString) => setUrlState({ filterString }),
               searchPlaceholder: intl.formatMessage({
                 id: "routesGrid.searchPlaceholder",
                 defaultMessage: "Search Routes",
@@ -146,7 +144,7 @@ class RoutesGrid extends Component {
               type={"Route"}
               items={this.sort(
                 this.props.routes.filter(
-                  routeObj =>
+                  (routeObj) =>
                     routeObj.route
                       .toLowerCase()
                       .indexOf(filterString.trim().toLowerCase()) !== -1

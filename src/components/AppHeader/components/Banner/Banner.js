@@ -22,7 +22,7 @@ function Banner({ title, extras, hideBackground = false }) {
       <Header>{title || "—"}</Header>
       {extras && (
         <Fragment>
-          {extras.map(extra => (
+          {extras.map((extra) => (
             <Extra href={extra.path} key={extra.title}>
               {extra.title}
             </Extra>

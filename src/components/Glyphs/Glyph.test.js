@@ -20,12 +20,7 @@ describe("Glyph", () => {
   });
 
   test("returns a Glyph with a scale corresponding to the ratio prop", () => {
-    expect(
-      wrapper
-        .find("g")
-        .props()
-        .transform.includes("scale(1)")
-    ).toBe(true);
+    expect(wrapper.find("g").props().transform.includes("scale(1)")).toBe(true);
   });
 
   test("returns an empty <g> if a glyph name is not found", () => {

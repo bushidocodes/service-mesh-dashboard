@@ -31,11 +31,9 @@ class FunctionsGrid extends Component {
    * in the url bar.
    * @param {Array} funcs
    */
-  sort = routes => {
-    const {
-      ascending = "true",
-      sortByAttribute = "func"
-    } = this.props.urlState;
+  sort = (routes) => {
+    const { ascending = "true", sortByAttribute = "func" } =
+      this.props.urlState;
     const sortOrder = ascending === "true" ? ["asc"] : ["desc"];
 
     return _.orderBy(routes, sortByAttribute, sortOrder);
@@ -47,7 +45,7 @@ class FunctionsGrid extends Component {
    *  When sorting by latency and error percent and the sortKey is new, set the initial sort order to descending
    * @param {String} newSortByAttribute
    */
-  setSortByAttribute = newSortByAttribute => {
+  setSortByAttribute = (newSortByAttribute) => {
     const {
       urlState: { ascending = "true", sortByAttribute = "func" },
       setUrlState
@@ -86,7 +84,7 @@ class FunctionsGrid extends Component {
           <TableToolbar
             searchInputProps={{
               filterString,
-              setFilterString: filterString => setUrlState({ filterString }),
+              setFilterString: (filterString) => setUrlState({ filterString }),
               searchPlaceholder: intl.formatMessage({
                 id: "functionsGrid.searchPlaceholder",
                 defaultMessage: "Search Functions",
@@ -145,7 +143,7 @@ class FunctionsGrid extends Component {
               type={"Function"}
               items={this.sort(
                 this.props.funcs.filter(
-                  funcObj =>
+                  (funcObj) =>
                     funcObj.func
                       .toLowerCase()
                       .indexOf(filterString.trim().toLowerCase()) !== -1

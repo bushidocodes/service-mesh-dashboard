@@ -9,7 +9,7 @@ const threadsTable = State({
     const threadsTable =
       threadIds.length === 0
         ? []
-        : threadIds.map(id => ({
+        : threadIds.map((id) => ({
             name: threads[id].thread,
             id: id,
             priority: threads[id].priority,

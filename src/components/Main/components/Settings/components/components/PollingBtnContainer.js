@@ -35,7 +35,7 @@ const PollingBtnContainer = styled.div`
   &:hover svg,
   &:active svg,
   &:focus svg {
-    ${props => !props.isDisabled && `transform: scale(1.1)`};
+    ${(props) => !props.isDisabled && `transform: scale(1.1)`};
     transition: all 0.1s ease;
   }
   &:active svg {

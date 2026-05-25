@@ -38,7 +38,7 @@ class Inspector extends Component {
     // Filter out keys that don't match the searchQuery
     const filteredData = searchQuery
       ? data.filter(
-          i => i.toLowerCase().indexOf(searchQuery.toLowerCase()) !== -1
+          (i) => i.toLowerCase().indexOf(searchQuery.toLowerCase()) !== -1
         )
       : data;
 
@@ -50,7 +50,7 @@ class Inspector extends Component {
       <InspectorWrap>
         <InspectorToolbar>
           <InspectorSearch
-            onChange={evt => onSearch(evt.target.value)}
+            onChange={(evt) => onSearch(evt.target.value)}
             placeholder={intl.formatMessage({
               id: "inspector.searchPlaceholder",
               defaultMessage: "Search",
@@ -66,7 +66,7 @@ class Inspector extends Component {
           />
           <label>
             <InspectorHideZero
-              onChange={evt => onChange(evt.target.checked, evt.target.name)}
+              onChange={(evt) => onChange(evt.target.checked, evt.target.name)}
               checked={hideZeroMetric}
               disabled={hideStaticMetric}
             />
@@ -78,7 +78,7 @@ class Inspector extends Component {
           </label>
           <label>
             <InspectorHideStatic
-              onChange={evt => onChange(evt.target.checked, evt.target.name)}
+              onChange={(evt) => onChange(evt.target.checked, evt.target.name)}
               checked={hideStaticMetric}
             />
             <FormattedMessage
@@ -90,15 +90,15 @@ class Inspector extends Component {
         </InspectorToolbar>
         {data.length > 0 && (
           <InspectorData>
-            {filteredData.map(key => (
+            {filteredData.map((key) => (
               <InspectorItem
                 active={selectedMetric === key}
                 key={key}
-                onClick={evt => {
+                onClick={(evt) => {
                   onClick(evt.target.innerText);
                   evt.target.blur();
                 }}
-                onKeyDown={evt => {
+                onKeyDown={(evt) => {
                   if (evt.keyCode === 13) {
                     onClick(evt.target.innerText);
                   }

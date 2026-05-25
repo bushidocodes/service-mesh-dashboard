@@ -88,21 +88,20 @@ function GMLineChart({
                 description="Empty line chart message"
               />
             </h1>
-            {expectedAttributes &&
-              expectedAttributes.length > 0 && (
-                <Fragment>
-                  <FormattedMessage
-                    id="GMLineChart.noMetricsFound"
-                    defaultMessage="Could not find the following metrics:"
-                    description="Empty line chart message"
-                  />
-                  <ul>
-                    {expectedAttributes.map(attribute => (
-                      <li key={attribute}>{attribute}</li>
-                    ))}
-                  </ul>
-                </Fragment>
-              )}
+            {expectedAttributes && expectedAttributes.length > 0 && (
+              <Fragment>
+                <FormattedMessage
+                  id="GMLineChart.noMetricsFound"
+                  defaultMessage="Could not find the following metrics:"
+                  description="Empty line chart message"
+                />
+                <ul>
+                  {expectedAttributes.map((attribute) => (
+                    <li key={attribute}>{attribute}</li>
+                  ))}
+                </ul>
+              </Fragment>
+            )}
           </LineChartEmpty>
         ) : (
           <DygraphWrapper
@@ -114,7 +113,7 @@ function GMLineChart({
       </LineChartContent>
       <LineChartDetails>
         {detailLines &&
-          detailLines.map(element => (
+          detailLines.map((element) => (
             <LineDetail key={element}>{element}</LineDetail>
           ))}
       </LineChartDetails>

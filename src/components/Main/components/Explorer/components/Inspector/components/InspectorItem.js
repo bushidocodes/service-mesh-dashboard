@@ -39,7 +39,7 @@ const InspectorItem = styled.div`
     outline: 0;
   }
 
-  ${props =>
+  ${(props) =>
     props.active &&
     `background: ${COLOR_HIGHLIGHT.string()};
     color: ${COLOR_WHITE.string()} !important;

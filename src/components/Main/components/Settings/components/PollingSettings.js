@@ -118,7 +118,7 @@ class PollingSettings extends Component {
             disabled={isDisabled}
             maxValue={120}
             minValue={5}
-            onChange={value => {
+            onChange={(value) => {
               this.setState({ localInterval: value });
               this.state.debouncedSetInterval(value * 1000);
             }}

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const TableColThread = TableCol.extend`
   flex: 0 1 5em;
-  ${props =>
+  ${(props) =>
     props.right
       ? `
       flex: 0 1 7em;
