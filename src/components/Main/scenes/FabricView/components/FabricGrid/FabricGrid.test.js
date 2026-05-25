@@ -66,14 +66,16 @@ const mockServices = _.values({
 const RouterWrap = (route = ["/"], services = mockServices) => {
   return (
     <MemoryRouter initialEntries={route}>
-      <Route render={props => <FabricGrid {...props} services={services} />} />
+      <Route
+        render={(props) => <FabricGrid {...props} services={services} />}
+      />
     </MemoryRouter>
   );
 };
 
 // A helper function that takes in a filter string and returns only services that match
-const filterServicesByStatus = filter => {
-  return mockServices.filter(service => {
+const filterServicesByStatus = (filter) => {
+  return mockServices.filter((service) => {
     let status = computeStatus(
       service.instances.length,
       service.minimum,
@@ -95,9 +97,7 @@ let FabricGridWrap = mountWithIntl(RouterWrap());
 describe("Fabric Grid Main View", () => {
   afterEach(() => {
     // Reset the url bar state to defaults after every test
-    FabricGridWrap.find("FabricGrid")
-      .props()
-      .setUrlState(urlStateDefaults);
+    FabricGridWrap.find("FabricGrid").props().setUrlState(urlStateDefaults);
   });
 
   test("renders all services in cards view", () => {
@@ -187,9 +187,7 @@ describe("Fabric Grid Main View", () => {
 
 describe("Fabric Grid Status Views", () => {
   afterEach(() => {
-    FabricGridWrap.find("FabricGrid")
-      .props()
-      .setUrlState(urlStateDefaults);
+    FabricGridWrap.find("FabricGrid").props().setUrlState(urlStateDefaults);
   });
 
   // In the following tests, we have to generate filtered services to pass down to the route,

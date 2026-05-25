@@ -16,7 +16,7 @@ const TableRow = styled.li.attrs({
   tabIndex: 0
 })`
   align-items: center;
-  background-color: ${props =>
+  background-color: ${(props) =>
     props.isOpen
       ? contrastColor(COLOR_CONTENT_BACKGROUND, 0.04).string()
       : contrastColor(COLOR_CONTENT_BACKGROUND, 0).string()};
@@ -25,10 +25,10 @@ const TableRow = styled.li.attrs({
   flex-wrap: wrap;
   min-height: ${spacingScale(4.5)};
   width: 100%;
-  cursor: ${props => (props.selectable ? `pointer` : `default`)};
+  cursor: ${(props) => (props.selectable ? `pointer` : `default`)};
 
   &:hover {
-    ${props => props.selectable && `background-color: ${TABLE_HOVER}; `};
+    ${(props) => props.selectable && `background-color: ${TABLE_HOVER}; `};
   }
   &:focus {
     outline: -webkit-focus-ring-color auto 5px;
@@ -40,7 +40,7 @@ const TableRow = styled.li.attrs({
 
   > * {
     ${rowChildSpacing()};
-    ${props => (props.overflowVisible ? `overflow: visible;` : "")};
+    ${(props) => (props.overflowVisible ? `overflow: visible;` : "")};
   }
 `;
 

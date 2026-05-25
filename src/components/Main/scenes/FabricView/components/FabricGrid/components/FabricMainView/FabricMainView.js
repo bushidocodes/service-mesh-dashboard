@@ -24,7 +24,7 @@ export default function FabricMainView({
   services
 }) {
   // Do data transformation stuff
-  const mappedServices = services.map(service => {
+  const mappedServices = services.map((service) => {
     return {
       ...service,
       authorized: service.authorized,

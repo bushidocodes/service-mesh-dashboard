@@ -17,7 +17,7 @@ const DataDisplay = styled.div`
   height: 100%;
   padding: ${spacingScale(1)};
   padding-top: ${spacingScale(6)};
-  ${props => (props.table ? "text-align: right" : "")};
+  ${(props) => (props.table ? "text-align: right" : "")};
 `;
 
 DataDisplay.propTypes = {

@@ -20,7 +20,7 @@ const store = configureStore()(mockState);
 const RouterWrap = (
   <Provider store={store}>
     <MemoryRouter>
-      <Route render={props => <Explorer {...props} />} />
+      <Route render={(props) => <Explorer {...props} />} />
     </MemoryRouter>
   </Provider>
 );

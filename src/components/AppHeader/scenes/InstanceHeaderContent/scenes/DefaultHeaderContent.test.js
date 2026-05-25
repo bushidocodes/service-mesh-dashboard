@@ -9,7 +9,7 @@ import DefaultHeaderContent from "./DefaultHeaderContent";
 const RouterWrap = (
   <MemoryRouter>
     <Route
-      render={props => (
+      render={(props) => (
         <DefaultHeaderContent {...props} metrics={state.instance.metrics} />
       )}
     />

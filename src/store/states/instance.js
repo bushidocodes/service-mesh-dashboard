@@ -39,7 +39,7 @@ const instance = State({
     // And add it to the ordered index of timestamps
     result.timestamps = [...existingTimestamps, latestTimestamp];
     // And deep merge the new results into the keys of the existing state object
-    Object.keys(payload).forEach(metric => {
+    Object.keys(payload).forEach((metric) => {
       result[metric] = {
         ...result[metric],
         [latestTimestamp]: payload[metric]
@@ -79,7 +79,7 @@ export function _sliceMetrics(source = {}) {
     );
   }
   // Go through each metric and omit the oldest timestamp
-  Object.keys(metrics).forEach(metric => {
+  Object.keys(metrics).forEach((metric) => {
     // Ignore the ordered array of timestamps
     if (metric !== "timestamps") {
       metrics[metric] = _.omit(metrics[metric], oldestTimestamp);

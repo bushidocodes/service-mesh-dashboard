@@ -82,30 +82,12 @@ describe("Table component", () => {
   });
 
   test("renders correct header texts", () => {
-    expect(
-      wrapper
-        .find(TableColHeader)
-        .at(0)
-        .text()
-    ).toBe("Route");
-    expect(
-      wrapper
-        .find(TableColHeader)
-        .at(1)
-        .text()
-    ).toBe("Requests/sec");
-    expect(
-      wrapper
-        .find(TableColHeader)
-        .at(2)
-        .text()
-    ).toBe("Requests");
-    expect(
-      wrapper
-        .find(TableColLatencyHeader)
-        .text()
-        .includes("Latency")
-    ).toBe(true);
+    expect(wrapper.find(TableColHeader).at(0).text()).toBe("Route");
+    expect(wrapper.find(TableColHeader).at(1).text()).toBe("Requests/sec");
+    expect(wrapper.find(TableColHeader).at(2).text()).toBe("Requests");
+    expect(wrapper.find(TableColLatencyHeader).text().includes("Latency")).toBe(
+      true
+    );
   });
 
   test("when provided routes data, renders <TableLineItem />", () => {

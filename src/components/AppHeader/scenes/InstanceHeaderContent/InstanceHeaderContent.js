@@ -46,7 +46,7 @@ class InstanceHeaderContent extends Component {
         let chartData, lines;
         // Render lines of text if present
         if (_.has(value, "summaryCard.lines")) {
-          lines = value.summaryCard.lines.map(line => {
+          lines = value.summaryCard.lines.map((line) => {
             return {
               name: intl.formatMessage(line.name),
               value: parseJSONString(line.value, metrics, intl.formatMessage)

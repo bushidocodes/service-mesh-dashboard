@@ -36,13 +36,15 @@ storiesOf("Vizfill bar", module)
           min: 0,
           max: 100,
           step: 5
-        })}%{" Error Percent "}
+        })}
+        %{" Error Percent "}
         {number("Error Percent", 50, {
           range: true,
           min: 0,
           max: 100,
           step: 5
-        })}%
+        })}
+        %
       </TableColVizBar>
     </div>
   ));

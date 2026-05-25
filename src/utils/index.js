@@ -45,7 +45,7 @@ export const convertMS = (ms = 0) => {
   let d = Math.floor(h / 24);
   h = h % 24;
 
-  [d, h, m, s] = [d, h, m, s].map(el => {
+  [d, h, m, s] = [d, h, m, s].map((el) => {
     if (el === 0) return "00";
     else if (el < 10) return `0${el}`;
     else return el;
@@ -82,8 +82,8 @@ export const relativeReqPercent = (arrObj = [], key = "") => {
   let max = _.max(_.map(arrObj, key));
   // If we can't find a max value, just return the original array of objects
   if (!max) return arrObj;
-  return _.map(arrObj, el =>
-    _.extend({}, el, { relativeReqPercent: el[key] / max * 100 })
+  return _.map(arrObj, (el) =>
+    _.extend({}, el, { relativeReqPercent: (el[key] / max) * 100 })
   );
 };
 
@@ -96,7 +96,7 @@ export const relativeReqPercent = (arrObj = [], key = "") => {
  * @returns string
  */
 export function calculateErrorPercent(requests, errors) {
-  const errorPercent = requests ? errors / requests * 100 : 0;
+  const errorPercent = requests ? (errors / requests) * 100 : 0;
   return formatAsDecimalString(errorPercent);
 }
 
@@ -128,7 +128,7 @@ export function formatAsDecimalString(source, numberOfDecimals = 3) {
  * @returns
  */
 function formatAsDecimalStringFormatter(maxDecimals = 3) {
-  return function(scalar, units) {
+  return function (scalar, units) {
     if (scalar === "") return;
     const scalarAsNumber = _.toNumber(scalar);
     return `${scalarAsNumber.toLocaleString(undefined, {
@@ -162,9 +162,7 @@ export function formatMetricString(rawValue, baseUnit, resultUnit, precision) {
       .toString();
     return result;
   } else {
-    return Qty(rawValue)
-      .format(formatAsDecimalStringFormatter())
-      .toString();
+    return Qty(rawValue).format(formatAsDecimalStringFormatter()).toString();
   }
 }
 

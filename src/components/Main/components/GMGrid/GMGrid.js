@@ -73,17 +73,17 @@ export class GMGrid extends Component {
         const dygraph = mapDygraphKeysToNetChange(
           getDygraphOfValue(
             metrics,
-            chart.data.timeseries.map(ts => ts.attribute)
+            chart.data.timeseries.map((ts) => ts.attribute)
           ),
           chart.data.timeseries
-            .filter(ts => ts.type === "netChange")
-            .map(ts => ts.attribute)
+            .filter((ts) => ts.type === "netChange")
+            .map((ts) => ts.attribute)
         );
         return (
           <GMLineChart
             detailLines={
               chart.data.detailLines &&
-              chart.data.detailLines.map(line =>
+              chart.data.detailLines.map((line) =>
                 parseJSONString(line, metrics, intl.formatMessage)
               )
             }
@@ -96,7 +96,7 @@ export class GMGrid extends Component {
       case "GMTable":
         return (
           <GMTable
-            headers={chart.data.headers.map(header =>
+            headers={chart.data.headers.map((header) =>
               intl.formatMessage(header)
             )}
             rows={chart.data.rows.map((row, outerIdx) => {
@@ -185,7 +185,7 @@ export class GMGrid extends Component {
           }
           rowHeight={dashboard.grid.rowHeight}
         >
-          {dashboard.charts.map(chart => (
+          {dashboard.charts.map((chart) => (
             <div
               data-grid={chart.position}
               key={chart.key}

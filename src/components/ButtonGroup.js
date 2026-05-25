@@ -9,7 +9,7 @@ const ButtonGroup = styled.div`
   * + * {
     margin-left: ${spacingScale(0.5)};
   }
-  ${props =>
+  ${(props) =>
     props.toolbar ? `padding: ${spacingScale(0)} ${spacingScale(1)};` : ""};
 `;
 

@@ -39,9 +39,11 @@ function GoHeaderContent({ basePath, metrics, headerTabs, intl }) {
             value: (
               <UpTime
                 startTime={getLatestAttribute(metrics, "system/start_time")}
-                render={uptime => (
+                render={(uptime) => (
                   <ArrayValue>
-                    {_.map(uptime, el => <span key={el}>{el} </span>)}
+                    {_.map(uptime, (el) => (
+                      <span key={el}>{el} </span>
+                    ))}
                   </ArrayValue>
                 )}
               />

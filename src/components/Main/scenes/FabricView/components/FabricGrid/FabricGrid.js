@@ -33,7 +33,10 @@ class FabricGrid extends Component {
   };
 
   componentDidMount() {
-    const { location: { state }, history } = this.props;
+    const {
+      location: { state },
+      history
+    } = this.props;
     // Refresh services from the Fabric Server every time this loads
     Actions.fetchAndStoreFabricMicroservices();
     // State added by fabric router
@@ -50,7 +53,7 @@ class FabricGrid extends Component {
     }
   }
 
-  setSortByAttribute = sortByAttribute => {
+  setSortByAttribute = (sortByAttribute) => {
     if (this.props.urlState.sortByAttribute === sortByAttribute) {
       this.props.setUrlState({
         ascending: !JSON.parse(this.props.urlState.ascending)
@@ -74,7 +77,7 @@ class FabricGrid extends Component {
       },
       intl
     } = this.props;
-    const filteredServices = services.filter(service => {
+    const filteredServices = services.filter((service) => {
       return (
         service.name
           .toLowerCase()
@@ -115,11 +118,11 @@ class FabricGrid extends Component {
           <TableToolbar
             displayTypeProps={{
               displayType: displayType,
-              setDisplayType: displayType => setUrlState({ displayType })
+              setDisplayType: (displayType) => setUrlState({ displayType })
             }}
             searchInputProps={{
               filterString: searchQuery,
-              setFilterString: searchQuery => setUrlState({ searchQuery }),
+              setFilterString: (searchQuery) => setUrlState({ searchQuery }),
               searchPlaceholder: intl.formatMessage({
                 id: "fabric.searchPlaceholder",
                 defaultMessage: "Search Services",
@@ -162,7 +165,7 @@ class FabricGrid extends Component {
                 }
               ],
               groupByAttribute: groupByAttribute,
-              setGroupByAttribute: groupByAttribute =>
+              setGroupByAttribute: (groupByAttribute) =>
                 setUrlState({ groupByAttribute })
             }}
             sortByProps={sortByProps}

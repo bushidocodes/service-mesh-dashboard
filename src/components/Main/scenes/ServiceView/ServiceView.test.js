@@ -19,7 +19,7 @@ const mockData = {
 // Wrap Service View in Memory Router to mock route props (history, match, location)
 const RouterWrap = (
   <MemoryRouter>
-    <Route render={props => <ServiceView {...props} {...mockData} />} />
+    <Route render={(props) => <ServiceView {...props} {...mockData} />} />
   </MemoryRouter>
 );
 

@@ -10,7 +10,7 @@ import FabricHeaderContent from "./FabricHeaderContent";
 const RouterWrap = (
   <MemoryRouter>
     <Route
-      render={props => (
+      render={(props) => (
         <FabricHeaderContent {...props} store={configureMockStore()(state)} />
       )}
     />

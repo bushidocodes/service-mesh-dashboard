@@ -19,9 +19,7 @@ export const COLOR_WHITE = Color("#fff");
 
 export const COLOR_HIGHLIGHT = COLOR_BRAND_PRIMARY;
 export const COLOR_SUCCESS = Color("#0aab2a");
-export const COLOR_DANGER = Color("red")
-  .darken(0.15)
-  .saturate(0.1);
+export const COLOR_DANGER = Color("red").darken(0.15).saturate(0.1);
 export const COLOR_WARNING = Color("#FAC60F");
 export const COLOR_INFO = Color("blue");
 

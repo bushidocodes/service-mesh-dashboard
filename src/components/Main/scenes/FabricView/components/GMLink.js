@@ -6,7 +6,7 @@ import { COLOR_HIGHLIGHT, COLOR_CONTENT_MUTED } from "style/styleVariables";
 
 const GMLink = styled(Link)`
   width: 100%;
-  cursor: ${props => (props.cursor ? props.cursor : "pointer")};
+  cursor: ${(props) => (props.cursor ? props.cursor : "pointer")};
   text-decoration: none;
   color: black;
   display: flex;
@@ -16,7 +16,7 @@ const GMLink = styled(Link)`
   }
 
   &:hover {
-    ${props =>
+    ${(props) =>
       props.disabled
         ? `
         color: ${COLOR_CONTENT_MUTED.string()};
@@ -31,7 +31,7 @@ const GMLink = styled(Link)`
     outline: 0;
   }
 
-  ${props =>
+  ${(props) =>
     props.disabled &&
     `
       color: ${COLOR_CONTENT_MUTED.string()};

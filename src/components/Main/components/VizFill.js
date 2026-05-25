@@ -7,7 +7,7 @@ const VizFill = styled.div`
   background-color: currentColor;
   border-radius: inherit;
   bottom: 0;
-  color: ${props =>
+  color: ${(props) =>
     props.colorDegree
       ? `${COLOR_SUCCESS.mix(COLOR_DANGER, props.colorDegree / 100)}`
       : "currentColor"};
@@ -15,7 +15,7 @@ const VizFill = styled.div`
   min-width: 2px;
   position: absolute;
   top: 0;
-  width: ${props => (props.width ? `${props.width}%` : "0%")};
+  width: ${(props) => (props.width ? `${props.width}%` : "0%")};
 `;
 
 VizFill.propTypes = {

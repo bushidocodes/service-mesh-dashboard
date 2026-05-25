@@ -23,7 +23,7 @@ const TooltipContent = styled.div`
   z-index: ${ZINDEX_TOOLTIP};
 
   /* Position the tooltip */
-  ${props => getPosition(props.position)};
+  ${(props) => getPosition(props.position)};
 `;
 
 function getPosition(position) {

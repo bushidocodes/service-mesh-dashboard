@@ -6,7 +6,10 @@ let wrapper;
 const props = {
   title: "Requests",
   headers: ["Requests", "Success"],
-  rows: [["http", 0, 0], ["https", 1743, 4324]]
+  rows: [
+    ["http", 0, 0],
+    ["https", 1743, 4324]
+  ]
 };
 describe("<GMTable> stateless child component of GMGrid", () => {
   beforeEach(() => {

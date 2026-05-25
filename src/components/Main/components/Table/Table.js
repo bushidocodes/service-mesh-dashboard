@@ -67,16 +67,18 @@ function Table({ items, type, selectedServiceSlug, serviceIsMetered, status }) {
             )
           )}
         {type === "Instance" &&
-          items.map(instance => (
+          items.map((instance) => (
             <GMServiceTableLineItem
               name={instance.name}
               serviceIsMetered={serviceIsMetered}
               uptime={
                 <UpTime
                   startTime={instance.start_time}
-                  render={uptime => (
+                  render={(uptime) => (
                     <ArrayValue>
-                      {_.map(uptime, el => <span key={el}>{el} </span>)}
+                      {_.map(uptime, (el) => (
+                        <span key={el}>{el} </span>
+                      ))}
                     </ArrayValue>
                   )}
                 />

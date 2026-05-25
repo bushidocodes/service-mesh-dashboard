@@ -20,7 +20,7 @@ let mockProps = {
 };
 
 describe("PollingSettings component", () => {
-  beforeEach(function() {
+  beforeEach(function () {
     mockStartPolling.mockClear();
     mockStopPolling.mockClear();
     wrapper = mountWithIntl(<PollingSettings {...mockProps} />);
@@ -60,13 +60,7 @@ describe("PollingSettings component", () => {
   });
 
   test("Glyph is rendered as part of the resume/ pause button", () => {
-    expect(
-      wrapper
-        .find("button")
-        .find("g")
-        .at(1)
-        .hasClass("glyph")
-    ).toBe(true);
+    expect(wrapper.find("button").find("g").at(1).hasClass("glyph")).toBe(true);
   });
 
   test("LayoutSection component is rendered by making sure header tag contains 'Instance Polling' text", () => {

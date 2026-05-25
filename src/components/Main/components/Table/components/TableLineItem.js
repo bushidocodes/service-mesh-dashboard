@@ -67,10 +67,10 @@ class TableLineItem extends Component {
   componentDidMount() {
     const SparklineSVG = document.querySelectorAll("svg[preserveAspectRatio]");
     if (!_.isEmpty(SparklineSVG))
-      _.forEach(SparklineSVG, svg => svg.setAttribute("focusable", "false"));
+      _.forEach(SparklineSVG, (svg) => svg.setAttribute("focusable", "false"));
   }
 
-  toggleDrawer = e => {
+  toggleDrawer = (e) => {
     if (e) {
       blurTableRow(e);
     }
@@ -82,8 +82,8 @@ class TableLineItem extends Component {
       <TableRow
         selectable
         isOpen={this.state.isOpen}
-        onClick={evt => this.toggleDrawer(evt)}
-        onKeyDown={evt => {
+        onClick={(evt) => this.toggleDrawer(evt)}
+        onKeyDown={(evt) => {
           if (evt.keyCode === 13) {
             evt.preventDefault();
             this.toggleDrawer();
@@ -153,7 +153,7 @@ class TableLineItem extends Component {
         </TableCol>
         <TableDrawerCollapse
           isOpened={this.state.isOpen}
-          onClick={evt => {
+          onClick={(evt) => {
             evt.stopPropagation();
             blurTableRow(evt);
           }}

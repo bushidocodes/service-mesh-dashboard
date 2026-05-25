@@ -30,11 +30,8 @@ class ThreadsGrid extends Component {
   };
 
   componentDidMount() {
-    const {
-      fabricServer,
-      selectedServiceSlug,
-      selectedInstanceID
-    } = this.props;
+    const { fabricServer, selectedServiceSlug, selectedInstanceID } =
+      this.props;
 
     // If fabricServer is truthy, we are running with a "Fabric Server" discovery service,
     // so we need to dynamically build the endpoint for the threads API.
@@ -47,7 +44,7 @@ class ThreadsGrid extends Component {
     }
   }
 
-  setSortByAttribute = newSortByAttribute => {
+  setSortByAttribute = (newSortByAttribute) => {
     const {
       urlState: { ascending = "true", sortByAttribute = "id" },
       setUrlState
@@ -74,7 +71,7 @@ class ThreadsGrid extends Component {
     const { ascending, sortByAttribute = "id" } = this.props.urlState;
     let sortOrder = ascending === "true" ? ["asc"] : ["desc"];
     // thread["id"] is a string, so we need to convert to an int to sort properly
-    const sortFunc = thread => {
+    const sortFunc = (thread) => {
       return sortByAttribute === "id"
         ? parseInt(thread["id"], 10)
         : thread[sortByAttribute].toLowerCase();
@@ -95,7 +92,7 @@ class ThreadsGrid extends Component {
       intl
     } = this.props;
     const filteredThreads = threads.filter(
-      thread =>
+      (thread) =>
         thread.name.toLowerCase().indexOf(filterString.trim().toLowerCase()) !==
         -1
     );
@@ -106,7 +103,7 @@ class ThreadsGrid extends Component {
           <TableToolbar
             searchInputProps={{
               filterString: filterString,
-              setFilterString: filterString => setUrlState({ filterString }),
+              setFilterString: (filterString) => setUrlState({ filterString }),
               searchPlaceholder: intl.formatMessage({
                 id: "threadsGrid.searchPlaceholder",
                 defaultMessage: "Search Threads",
@@ -163,7 +160,7 @@ class ThreadsGrid extends Component {
                 }
               ],
               groupByAttribute: groupByAttribute,
-              setGroupByAttribute: groupByAttribute =>
+              setGroupByAttribute: (groupByAttribute) =>
                 setUrlState({ groupByAttribute })
             }}
           />

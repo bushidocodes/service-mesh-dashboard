@@ -17,7 +17,7 @@ ServicesList.propTypes = {
 export default function ServicesList({ items, groupByAttribute }) {
   return (
     <SectionItems>
-      {items.map(item => (
+      {items.map((item) => (
         <ServicesListItem
           authorized={item.authorized}
           metered={item.metered}

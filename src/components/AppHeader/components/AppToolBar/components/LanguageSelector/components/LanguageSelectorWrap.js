@@ -6,7 +6,7 @@ const LanguageSelectorWrap = styled.div`
   font-weight: 700;
   cursor: pointer;
   > :first-child {
-    ${props => (props.visible ? `opacity: 1;` : `opacity: 0.8;`)};
+    ${(props) => (props.visible ? `opacity: 1;` : `opacity: 0.8;`)};
     :hover {
       opacity: 1;
     }

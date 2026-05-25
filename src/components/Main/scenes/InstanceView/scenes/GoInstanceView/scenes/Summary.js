@@ -80,9 +80,11 @@ function SummaryGrid({
                 value: (
                   <UpTime
                     startTime={startTime}
-                    render={uptime => (
+                    render={(uptime) => (
                       <ArrayValue>
-                        {_.map(uptime, el => <span key={el}>{el} </span>)}
+                        {_.map(uptime, (el) => (
+                          <span key={el}>{el} </span>
+                        ))}
                       </ArrayValue>
                     )}
                   />

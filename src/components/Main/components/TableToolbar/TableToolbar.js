@@ -65,7 +65,7 @@ function TableToolbar({
         {searchInputProps && (
           <Form>
             <SearchInput
-              onChange={evt =>
+              onChange={(evt) =>
                 searchInputProps.setFilterString(evt.target.value)
               }
               placeholder={searchInputProps.searchPlaceholder}
@@ -110,12 +110,12 @@ function TableToolbar({
             name="form-field-group-by"
             options={groupByProps.groupByOptions}
             value={groupByProps.groupByAttribute}
-            onChange={val => {
+            onChange={(val) => {
               val && groupByProps.setGroupByAttribute(val.value);
             }}
             clearable={false}
             searchable={true}
-            valueRenderer={val => (
+            valueRenderer={(val) => (
               <GMSelectValueRenderer
                 title={intl.formatMessage({
                   id: "tableToolbar.group",
@@ -133,12 +133,12 @@ function TableToolbar({
             name="form-field-sort-by"
             options={sortByProps.sortByOptions}
             value={sortByProps.sortByAttribute}
-            onChange={val => {
+            onChange={(val) => {
               val && sortByProps.setSortByAttribute(val.value);
             }}
             clearable={false}
             searchable={true}
-            valueRenderer={val => (
+            valueRenderer={(val) => (
               <GMSelectValueRenderer
                 title={intl.formatMessage({
                   id: "tableToolbar.sort",

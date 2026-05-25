@@ -8,7 +8,7 @@ const DocsLink = styled.a`
   margin-left: 0;
   cursor: pointer;
   pointer-events: auto;
-  color: ${props => props.cardFontColor};
+  color: ${(props) => props.cardFontColor};
   transition: all 0.3s ease;
   transform: scale(1);
   will-change: transform;

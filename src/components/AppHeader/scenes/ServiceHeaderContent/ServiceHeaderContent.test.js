@@ -15,7 +15,7 @@ const RouterWrap = (
   >
     <Route
       path={`/:serviceName/:serviceVersion`}
-      render={props => (
+      render={(props) => (
         <ServiceHeaderContent {...props} store={configureMockStore()(state)} />
       )}
     />

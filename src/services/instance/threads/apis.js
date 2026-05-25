@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export function fetchInstanceThreads(endpoint) {
-  return axios.get(endpoint, { responseType: "json" }).then(response => {
+  return axios.get(endpoint, { responseType: "json" }).then((response) => {
     // The response should have provided JSON, which Axios unpacks auto-magically
     // to an object. We need to manually reject the promise if this didn't happen
     // as expected.

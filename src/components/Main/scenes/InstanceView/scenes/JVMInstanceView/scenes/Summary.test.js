@@ -25,11 +25,7 @@ describe("JVM > SummaryGrid component", () => {
   });
 
   test("Has an error boundary", () => {
-    expect(
-      SummaryGridWrap.dive()
-        .dive()
-        .find(ErrorBoundary).length
-    ).toBe(1);
+    expect(SummaryGridWrap.dive().dive().find(ErrorBoundary).length).toBe(1);
   });
 
   test("Has a layout section that contains 'vital' dashboards", () => {
@@ -42,11 +38,7 @@ describe("JVM > SummaryGrid component", () => {
   });
 
   test("Has a read out group that contains three readout dashboards", () => {
-    expect(
-      SummaryGridWrap.dive()
-        .dive()
-        .find(Readout)
-    ).toHaveLength(3);
+    expect(SummaryGridWrap.dive().dive().find(Readout)).toHaveLength(3);
   });
 
   test("Has an 'uptime' dashboard in first position", () => {
@@ -91,17 +83,10 @@ describe("JVM > SummaryGrid component", () => {
   });
 
   test("Has a chart with correct props passed down", () => {
-    expect(
-      SummaryGridWrap.dive()
-        .dive()
-        .find(GMLineChart).length
-    ).toBe(1);
+    expect(SummaryGridWrap.dive().dive().find(GMLineChart).length).toBe(1);
     expect(
       Object.keys(
-        SummaryGridWrap.dive()
-          .dive()
-          .find(GMLineChart)
-          .props()
+        SummaryGridWrap.dive().dive().find(GMLineChart).props()
       ).includes("dygraph")
     ).toBe(true);
     expect(

@@ -13,7 +13,7 @@ const Breadcrumbs = styled.ol`
   padding: 0;
 
   > li:first-child {
-    ${props => (props.hideRoot ? hide : "")};
+    ${(props) => (props.hideRoot ? hide : "")};
   }
 `;
 

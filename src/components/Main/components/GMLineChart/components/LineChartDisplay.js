@@ -13,7 +13,7 @@ const LineChartDisplay = styled.div.attrs({
   flex: 1 1 100%;
   flex-direction: column;
   font-family: ${FONT_STACK_DATA};
-  ${props => (props.height ? chartHeight(props.height) : "height:  100%")};
+  ${(props) => (props.height ? chartHeight(props.height) : "height:  100%")};
   width: 100%;
 `;
 

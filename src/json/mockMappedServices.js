@@ -61,22 +61,19 @@ export default [
     runtime: "GO",
     metered: true,
     instances: [],
-    slug:
-      "icpf-entry-statistics-team-mail-transmission-sequential-application-v3-8"
+    slug: "icpf-entry-statistics-team-mail-transmission-sequential-application-v3-8"
   },
   {
     authorized: true,
     headerTitle: "Down",
-    name:
-      "Mail Odrive Gateway Transfer Authentication Routing Internet Remote Domain User Application",
+    name: "Mail Odrive Gateway Transfer Authentication Routing Internet Remote Domain User Application",
     version: "3.9",
     docsLink: "https://www.google.com",
     status: "Down",
     runtime: "JVM",
     metered: true,
     instances: [],
-    slug:
-      "mail-odrive-gateway-transfer-authentication-routing-internet-remote-domain-user-application-v3-9"
+    slug: "mail-odrive-gateway-transfer-authentication-routing-internet-remote-domain-user-application-v3-9"
   },
   {
     authorized: true,
@@ -98,8 +95,7 @@ export default [
   {
     authorized: true,
     headerTitle: "Warning",
-    name:
-      "Domain Authentication Virtual Odrive Up2 Entry Internet Bootstrap User Sequential End",
+    name: "Domain Authentication Virtual Odrive Up2 Entry Internet Bootstrap User Sequential End",
     version: "1.5",
     docsLink: "https://www.google.com",
     status: "Warning",
@@ -111,14 +107,12 @@ export default [
         start_time: 1284267771165
       }
     ],
-    slug:
-      "domain-authentication-virtual-odrive-up2-entry-internet-bootstrap-user-sequential-end-v1-5"
+    slug: "domain-authentication-virtual-odrive-up2-entry-internet-bootstrap-user-sequential-end-v1-5"
   },
   {
     authorized: true,
     headerTitle: "Warning",
-    name:
-      "Routing Mail File Entry Gateway Backroom Job Transmission Discovery Bootstrap Entry",
+    name: "Routing Mail File Entry Gateway Backroom Job Transmission Discovery Bootstrap Entry",
     version: "3.5",
     docsLink: "https://www.google.com",
     status: "Warning",
@@ -130,14 +124,12 @@ export default [
         start_time: 997068178924
       }
     ],
-    slug:
-      "routing-mail-file-entry-gateway-backroom-job-transmission-discovery-bootstrap-entry-v3-5"
+    slug: "routing-mail-file-entry-gateway-backroom-job-transmission-discovery-bootstrap-entry-v3-5"
   },
   {
     authorized: true,
     headerTitle: "Warning",
-    name:
-      "Odrive Transmission Up2 Statistics Job Internet Entry Team AAC Network Information",
+    name: "Odrive Transmission Up2 Statistics Job Internet Entry Team AAC Network Information",
     version: "1.3",
     docsLink: "https://www.google.com",
     status: "Warning",
@@ -165,14 +157,12 @@ export default [
         start_time: 839590131373
       }
     ],
-    slug:
-      "odrive-transmission-up2-statistics-job-internet-entry-team-aac-network-information-v1-3"
+    slug: "odrive-transmission-up2-statistics-job-internet-entry-team-aac-network-information-v1-3"
   },
   {
     authorized: true,
     headerTitle: "Warning",
-    name:
-      "Network Transfer Routing Backroom Gateway Up2 Resource Team Authentication Remote Editor",
+    name: "Network Transfer Routing Backroom Gateway Up2 Resource Team Authentication Remote Editor",
     version: "2",
     docsLink: "https://www.google.com",
     status: "Warning",
@@ -200,8 +190,7 @@ export default [
         start_time: 345446242181
       }
     ],
-    slug:
-      "network-transfer-routing-backroom-gateway-up2-resource-team-authentication-remote-editor-v2"
+    slug: "network-transfer-routing-backroom-gateway-up2-resource-team-authentication-remote-editor-v2"
   },
   {
     authorized: true,
@@ -343,8 +332,7 @@ export default [
   {
     authorized: true,
     headerTitle: "Stable",
-    name:
-      "Job Transfer Export AAC Network Domain Authentication Discovery Application",
+    name: "Job Transfer Export AAC Network Domain Authentication Discovery Application",
     version: "1.6",
     docsLink: "https://www.google.com",
     status: "Stable",
@@ -360,8 +348,7 @@ export default [
         start_time: 1061793060778
       }
     ],
-    slug:
-      "job-transfer-export-aac-network-domain-authentication-discovery-application-v1-6"
+    slug: "job-transfer-export-aac-network-domain-authentication-discovery-application-v1-6"
   },
   {
     authorized: true,
@@ -445,8 +432,7 @@ export default [
   {
     authorized: true,
     headerTitle: "Warning",
-    name:
-      "Transmission Entry Virtual Backroom Network AAC Job Structure Export Infrastructure",
+    name: "Transmission Entry Virtual Backroom Network AAC Job Structure Export Infrastructure",
     version: "2.3",
     docsLink: "https://www.google.com",
     status: "Warning",
@@ -458,14 +444,12 @@ export default [
         start_time: 583604257504
       }
     ],
-    slug:
-      "transmission-entry-virtual-backroom-network-aac-job-structure-export-infrastructure-v2-3"
+    slug: "transmission-entry-virtual-backroom-network-aac-job-structure-export-infrastructure-v2-3"
   },
   {
     authorized: true,
     headerTitle: "Warning",
-    name:
-      "Routing Backroom Internet Team Network Authentication Job Export Service",
+    name: "Routing Backroom Internet Team Network Authentication Job Export Service",
     version: "3.7",
     docsLink: "https://www.google.com",
     status: "Warning",
@@ -493,8 +477,7 @@ export default [
         start_time: 1290991440768
       }
     ],
-    slug:
-      "routing-backroom-internet-team-network-authentication-job-export-service-v3-7"
+    slug: "routing-backroom-internet-team-network-authentication-job-export-service-v3-7"
   },
   {
     authorized: true,
@@ -520,8 +503,7 @@ export default [
   {
     authorized: true,
     headerTitle: "Stable",
-    name:
-      "Team Mail Authentication Job Odrive ICPF Structure Network User Gateway System",
+    name: "Team Mail Authentication Job Odrive ICPF Structure Network User Gateway System",
     version: "1.9",
     docsLink: "https://www.google.com",
     status: "Stable",
@@ -541,8 +523,7 @@ export default [
         start_time: 210140259146
       }
     ],
-    slug:
-      "team-mail-authentication-job-odrive-icpf-structure-network-user-gateway-system-v1-9"
+    slug: "team-mail-authentication-job-odrive-icpf-structure-network-user-gateway-system-v1-9"
   },
   {
     authorized: true,
@@ -597,8 +578,7 @@ export default [
   {
     authorized: true,
     headerTitle: "Warning",
-    name:
-      "Backroom Domain File AAC Authentication Internet Export Odrive User Program",
+    name: "Backroom Domain File AAC Authentication Internet Export Odrive User Program",
     version: "2",
     docsLink: "https://www.google.com",
     status: "Warning",
@@ -610,8 +590,7 @@ export default [
         start_time: 158708219588
       }
     ],
-    slug:
-      "backroom-domain-file-aac-authentication-internet-export-odrive-user-program-v2"
+    slug: "backroom-domain-file-aac-authentication-internet-export-odrive-user-program-v2"
   },
   {
     authorized: true,
@@ -674,8 +653,7 @@ export default [
   {
     authorized: true,
     headerTitle: "Stable",
-    name:
-      "Backroom Resource Internet Structure Virtual Network Discovery Protocol",
+    name: "Backroom Resource Internet Structure Virtual Network Discovery Protocol",
     version: "4.7",
     docsLink: "https://www.google.com",
     status: "Stable",
@@ -699,14 +677,12 @@ export default [
         start_time: 485712845135
       }
     ],
-    slug:
-      "backroom-resource-internet-structure-virtual-network-discovery-protocol-v4-7"
+    slug: "backroom-resource-internet-structure-virtual-network-discovery-protocol-v4-7"
   },
   {
     authorized: true,
     headerTitle: "Warning",
-    name:
-      "Mail Gateway Internet Entry Export File Transmission Virtual Management Authentication Service",
+    name: "Mail Gateway Internet Entry Export File Transmission Virtual Management Authentication Service",
     version: "3.8",
     docsLink: "https://www.google.com",
     status: "Warning",
@@ -718,8 +694,7 @@ export default [
         start_time: 661154245229
       }
     ],
-    slug:
-      "mail-gateway-internet-entry-export-file-transmission-virtual-management-authentication-service-v3-8"
+    slug: "mail-gateway-internet-entry-export-file-transmission-virtual-management-authentication-service-v3-8"
   },
   {
     authorized: true,
@@ -790,8 +765,7 @@ export default [
         start_time: 71230174358
       }
     ],
-    slug:
-      "mail-internet-job-bootstrap-authentication-user-network-information-v4-9"
+    slug: "mail-internet-job-bootstrap-authentication-user-network-information-v4-9"
   },
   {
     authorized: true,
@@ -974,8 +948,7 @@ export default [
         start_time: 1429326961466
       }
     ],
-    slug:
-      "internet-export-bootstrap-virtual-structure-domain-infrastructure-v5-1"
+    slug: "internet-export-bootstrap-virtual-structure-domain-infrastructure-v5-1"
   },
   {
     authorized: true,
@@ -1008,14 +981,12 @@ export default [
         start_time: 47413273489
       }
     ],
-    slug:
-      "aac-transmission-virtual-message-up2-discovery-resource-debugger-v1-8"
+    slug: "aac-transmission-virtual-message-up2-discovery-resource-debugger-v1-8"
   },
   {
     authorized: true,
     headerTitle: "Warning",
-    name:
-      "Bootstrap Network Domain Up2 User Authentication Resource Job Statistics Editor",
+    name: "Bootstrap Network Domain Up2 User Authentication Resource Job Statistics Editor",
     version: "2.7",
     docsLink: "https://www.google.com",
     status: "Warning",
@@ -1043,8 +1014,7 @@ export default [
         start_time: 757053925507
       }
     ],
-    slug:
-      "bootstrap-network-domain-up2-user-authentication-resource-job-statistics-editor-v2-7"
+    slug: "bootstrap-network-domain-up2-user-authentication-resource-job-statistics-editor-v2-7"
   },
   {
     authorized: true,
@@ -1091,8 +1061,7 @@ export default [
   {
     authorized: true,
     headerTitle: "Warning",
-    name:
-      "Bootstrap Domain Backroom User Up2 Mail ICPF Transmission Application",
+    name: "Bootstrap Domain Backroom User Up2 Mail ICPF Transmission Application",
     version: "2.8",
     docsLink: "https://www.google.com",
     status: "Warning",
@@ -1108,22 +1077,19 @@ export default [
         start_time: 1429057988019
       }
     ],
-    slug:
-      "bootstrap-domain-backroom-user-up2-mail-icpf-transmission-application-v2-8"
+    slug: "bootstrap-domain-backroom-user-up2-mail-icpf-transmission-application-v2-8"
   },
   {
     authorized: true,
     headerTitle: "Down",
-    name:
-      "Backroom Remote Domain Entry Transmission AAC Network ICPF Structure Up2 Version",
+    name: "Backroom Remote Domain Entry Transmission AAC Network ICPF Structure Up2 Version",
     version: "4",
     docsLink: "https://www.google.com",
     status: "Down",
     runtime: "JVM",
     metered: true,
     instances: [],
-    slug:
-      "backroom-remote-domain-entry-transmission-aac-network-icpf-structure-up2-version-v4"
+    slug: "backroom-remote-domain-entry-transmission-aac-network-icpf-structure-up2-version-v4"
   },
   {
     authorized: true,
@@ -1145,8 +1111,7 @@ export default [
   {
     authorized: true,
     headerTitle: "Warning",
-    name:
-      "File Network Message Backroom Internet Discovery Mail Transmission Entry Measurement",
+    name: "File Network Message Backroom Internet Discovery Mail Transmission Entry Measurement",
     version: "1.5",
     docsLink: "https://www.google.com",
     status: "Warning",
@@ -1166,8 +1131,7 @@ export default [
         start_time: 801548127801
       }
     ],
-    slug:
-      "file-network-message-backroom-internet-discovery-mail-transmission-entry-measurement-v1-5"
+    slug: "file-network-message-backroom-internet-discovery-mail-transmission-entry-measurement-v1-5"
   },
   {
     authorized: true,
@@ -1218,8 +1182,7 @@ export default [
   {
     authorized: true,
     headerTitle: "Warning",
-    name:
-      "Gateway Odrive Routing Remote Mail Transfer Internet Bootstrap Option",
+    name: "Gateway Odrive Routing Remote Mail Transfer Internet Bootstrap Option",
     version: "4.3",
     docsLink: "https://www.google.com",
     status: "Warning",
@@ -1247,28 +1210,24 @@ export default [
         start_time: 623169687012
       }
     ],
-    slug:
-      "gateway-odrive-routing-remote-mail-transfer-internet-bootstrap-option-v4-3"
+    slug: "gateway-odrive-routing-remote-mail-transfer-internet-bootstrap-option-v4-3"
   },
   {
     authorized: true,
     headerTitle: "Down",
-    name:
-      "Domain Message Sequential ICPF Team Management Transfer Up2 Virtual Routing End",
+    name: "Domain Message Sequential ICPF Team Management Transfer Up2 Virtual Routing End",
     version: "1.9",
     docsLink: "https://www.google.com",
     status: "Down",
     runtime: "JVM",
     metered: true,
     instances: [],
-    slug:
-      "domain-message-sequential-icpf-team-management-transfer-up2-virtual-routing-end-v1-9"
+    slug: "domain-message-sequential-icpf-team-management-transfer-up2-virtual-routing-end-v1-9"
   },
   {
     authorized: true,
     headerTitle: "Warning",
-    name:
-      "Backroom Statistics Gateway Team Transmission Management Routing Mail Sequential Monitoring",
+    name: "Backroom Statistics Gateway Team Transmission Management Routing Mail Sequential Monitoring",
     version: "1.5",
     docsLink: "https://www.google.com",
     status: "Warning",
@@ -1280,8 +1239,7 @@ export default [
         start_time: 1234293362242
       }
     ],
-    slug:
-      "backroom-statistics-gateway-team-transmission-management-routing-mail-sequential-monitoring-v1-5"
+    slug: "backroom-statistics-gateway-team-transmission-management-routing-mail-sequential-monitoring-v1-5"
   },
   {
     authorized: true,
@@ -1395,8 +1353,7 @@ export default [
   {
     authorized: true,
     headerTitle: "Warning",
-    name:
-      "Gateway Transmission Virtual Bootstrap Up2 Message Statistics Job Authentication Remote Device",
+    name: "Gateway Transmission Virtual Bootstrap Up2 Message Statistics Job Authentication Remote Device",
     version: "4.7",
     docsLink: "https://www.google.com",
     status: "Warning",
@@ -1420,8 +1377,7 @@ export default [
         start_time: 935492221712
       }
     ],
-    slug:
-      "gateway-transmission-virtual-bootstrap-up2-message-statistics-job-authentication-remote-device-v4-7"
+    slug: "gateway-transmission-virtual-bootstrap-up2-message-statistics-job-authentication-remote-device-v4-7"
   },
   {
     authorized: true,
@@ -1443,16 +1399,14 @@ export default [
   {
     authorized: true,
     headerTitle: "Down",
-    name:
-      "Backroom Resource Management Message Transfer Sequential Export Team Mail Analysis",
+    name: "Backroom Resource Management Message Transfer Sequential Export Team Mail Analysis",
     version: "3",
     docsLink: "https://www.google.com",
     status: "Down",
     runtime: "GO",
     metered: true,
     instances: [],
-    slug:
-      "backroom-resource-management-message-transfer-sequential-export-team-mail-analysis-v3"
+    slug: "backroom-resource-management-message-transfer-sequential-export-team-mail-analysis-v3"
   },
   {
     authorized: true,
@@ -1495,8 +1449,7 @@ export default [
   {
     authorized: true,
     headerTitle: "Warning",
-    name:
-      "Entry Transfer Structure Internet Gateway Backroom Message ICPF Resource Routing Application",
+    name: "Entry Transfer Structure Internet Gateway Backroom Message ICPF Resource Routing Application",
     version: "2.7",
     docsLink: "https://www.google.com",
     status: "Warning",
@@ -1508,8 +1461,7 @@ export default [
         start_time: 101158420771
       }
     ],
-    slug:
-      "entry-transfer-structure-internet-gateway-backroom-message-icpf-resource-routing-application-v2-7"
+    slug: "entry-transfer-structure-internet-gateway-backroom-message-icpf-resource-routing-application-v2-7"
   },
   {
     authorized: true,
@@ -1538,8 +1490,7 @@ export default [
     runtime: "JVM",
     metered: true,
     instances: [],
-    slug:
-      "odrive-discovery-transmission-structure-bootstrap-gateway-protocol-v2-4"
+    slug: "odrive-discovery-transmission-structure-bootstrap-gateway-protocol-v2-4"
   },
   {
     authorized: true,
@@ -1631,8 +1582,7 @@ export default [
   {
     authorized: true,
     headerTitle: "Warning",
-    name:
-      "Backroom Entry Gateway Statistics AAC Resource Network Up2 Measurement",
+    name: "Backroom Entry Gateway Statistics AAC Resource Network Up2 Measurement",
     version: "2",
     docsLink: "https://www.google.com",
     status: "Warning",
@@ -1648,8 +1598,7 @@ export default [
         start_time: 1222454556060
       }
     ],
-    slug:
-      "backroom-entry-gateway-statistics-aac-resource-network-up2-measurement-v2"
+    slug: "backroom-entry-gateway-statistics-aac-resource-network-up2-measurement-v2"
   },
   {
     authorized: true,
@@ -1675,8 +1624,7 @@ export default [
   {
     authorized: true,
     headerTitle: "Warning",
-    name:
-      "Mail Resource Network Bootstrap Message Backroom Up2 Export Discovery Channel",
+    name: "Mail Resource Network Bootstrap Message Backroom Up2 Export Discovery Channel",
     version: "3.2",
     docsLink: "https://www.google.com",
     status: "Warning",
@@ -1696,8 +1644,7 @@ export default [
         start_time: 855146814889
       }
     ],
-    slug:
-      "mail-resource-network-bootstrap-message-backroom-up2-export-discovery-channel-v3-2"
+    slug: "mail-resource-network-bootstrap-message-backroom-up2-export-discovery-channel-v3-2"
   },
   {
     authorized: true,
@@ -1727,8 +1674,7 @@ export default [
   {
     authorized: true,
     headerTitle: "Warning",
-    name:
-      "Sequential Authentication Transfer Structure Resource File Information",
+    name: "Sequential Authentication Transfer Structure Resource File Information",
     version: "3.3",
     docsLink: "https://www.google.com",
     status: "Warning",
@@ -1740,8 +1686,7 @@ export default [
         start_time: 1216779167082
       }
     ],
-    slug:
-      "sequential-authentication-transfer-structure-resource-file-information-v3-3"
+    slug: "sequential-authentication-transfer-structure-resource-file-information-v3-3"
   },
   {
     authorized: true,
@@ -1758,8 +1703,7 @@ export default [
   {
     authorized: true,
     headerTitle: "Stable",
-    name:
-      "Bootstrap Job Management Sequential Virtual Odrive Transmission Statistics System",
+    name: "Bootstrap Job Management Sequential Virtual Odrive Transmission Statistics System",
     version: "2.3",
     docsLink: "https://www.google.com",
     status: "Stable",
@@ -1779,14 +1723,12 @@ export default [
         start_time: 447958511875
       }
     ],
-    slug:
-      "bootstrap-job-management-sequential-virtual-odrive-transmission-statistics-system-v2-3"
+    slug: "bootstrap-job-management-sequential-virtual-odrive-transmission-statistics-system-v2-3"
   },
   {
     authorized: true,
     headerTitle: "Warning",
-    name:
-      "Odrive Bootstrap Export Backroom Team Entry Transmission Resource Management Application",
+    name: "Odrive Bootstrap Export Backroom Team Entry Transmission Resource Management Application",
     version: "2.7",
     docsLink: "https://www.google.com",
     status: "Warning",
@@ -1798,8 +1740,7 @@ export default [
         start_time: 1125865259432
       }
     ],
-    slug:
-      "odrive-bootstrap-export-backroom-team-entry-transmission-resource-management-application-v2-7"
+    slug: "odrive-bootstrap-export-backroom-team-entry-transmission-resource-management-application-v2-7"
   },
   {
     authorized: true,
@@ -1862,8 +1803,7 @@ export default [
   {
     authorized: true,
     headerTitle: "Stable",
-    name:
-      "Authentication Internet Backroom Virtual Discovery Management Remote Export News",
+    name: "Authentication Internet Backroom Virtual Discovery Management Remote Export News",
     version: "1.9",
     docsLink: "https://www.google.com",
     status: "Stable",
@@ -1887,14 +1827,12 @@ export default [
         start_time: 865872586262
       }
     ],
-    slug:
-      "authentication-internet-backroom-virtual-discovery-management-remote-export-news-v1-9"
+    slug: "authentication-internet-backroom-virtual-discovery-management-remote-export-news-v1-9"
   },
   {
     authorized: true,
     headerTitle: "Stable",
-    name:
-      "Statistics Export AAC Team Message Transfer Up2 Transmission Remote Service",
+    name: "Statistics Export AAC Team Message Transfer Up2 Transmission Remote Service",
     version: "1.9",
     docsLink: "https://www.google.com",
     status: "Stable",
@@ -1922,8 +1860,7 @@ export default [
         start_time: 84202518539
       }
     ],
-    slug:
-      "statistics-export-aac-team-message-transfer-up2-transmission-remote-service-v1-9"
+    slug: "statistics-export-aac-team-message-transfer-up2-transmission-remote-service-v1-9"
   },
   {
     authorized: true,
@@ -2079,8 +2016,7 @@ export default [
   {
     authorized: true,
     headerTitle: "Warning",
-    name:
-      "Odrive AAC Sequential Gateway Transmission Routing Internet Mail Authentication Monitoring",
+    name: "Odrive AAC Sequential Gateway Transmission Routing Internet Mail Authentication Monitoring",
     version: "1.9",
     docsLink: "https://www.google.com",
     status: "Warning",
@@ -2092,8 +2028,7 @@ export default [
         start_time: 889237045979
       }
     ],
-    slug:
-      "odrive-aac-sequential-gateway-transmission-routing-internet-mail-authentication-monitoring-v1-9"
+    slug: "odrive-aac-sequential-gateway-transmission-routing-internet-mail-authentication-monitoring-v1-9"
   },
   {
     authorized: true,
@@ -2175,8 +2110,7 @@ export default [
         start_time: 646246143110
       }
     ],
-    slug:
-      "structure-team-resource-job-file-mail-statistics-entry-application-v2-1"
+    slug: "structure-team-resource-job-file-mail-statistics-entry-application-v2-1"
   },
   {
     authorized: true,
@@ -2226,8 +2160,7 @@ export default [
   {
     authorized: true,
     headerTitle: "Warning",
-    name:
-      "Mail Odrive Management Team User Job Message File Domain Bootstrap Channel",
+    name: "Mail Odrive Management Team User Job Message File Domain Bootstrap Channel",
     version: "4.3",
     docsLink: "https://www.google.com",
     status: "Warning",
@@ -2251,8 +2184,7 @@ export default [
         start_time: 1034511000003
       }
     ],
-    slug:
-      "mail-odrive-management-team-user-job-message-file-domain-bootstrap-channel-v4-3"
+    slug: "mail-odrive-management-team-user-job-message-file-domain-bootstrap-channel-v4-3"
   },
   {
     authorized: true,
@@ -2290,16 +2222,14 @@ export default [
   {
     authorized: true,
     headerTitle: "Down",
-    name:
-      "Gateway ICPF Routing Internet Export Discovery Sequential Odrive Transmission File Infrastructure",
+    name: "Gateway ICPF Routing Internet Export Discovery Sequential Odrive Transmission File Infrastructure",
     version: "3.9",
     docsLink: "https://www.google.com",
     status: "Down",
     runtime: "GO",
     metered: true,
     instances: [],
-    slug:
-      "gateway-icpf-routing-internet-export-discovery-sequential-odrive-transmission-file-infrastructure-v3-9"
+    slug: "gateway-icpf-routing-internet-export-discovery-sequential-odrive-transmission-file-infrastructure-v3-9"
   },
   {
     authorized: true,
@@ -2379,8 +2309,7 @@ export default [
   {
     authorized: true,
     headerTitle: "Warning",
-    name:
-      "Sequential Routing Mail File Remote Domain Odrive Statistics Entry Network News",
+    name: "Sequential Routing Mail File Remote Domain Odrive Statistics Entry Network News",
     version: "4.1",
     docsLink: "https://www.google.com",
     status: "Warning",
@@ -2396,8 +2325,7 @@ export default [
         start_time: 826561076331
       }
     ],
-    slug:
-      "sequential-routing-mail-file-remote-domain-odrive-statistics-entry-network-news-v4-1"
+    slug: "sequential-routing-mail-file-remote-domain-odrive-statistics-entry-network-news-v4-1"
   },
   {
     authorized: true,
@@ -2468,8 +2396,7 @@ export default [
         start_time: 895631321663
       }
     ],
-    slug:
-      "structure-job-discovery-aac-bootstrap-internet-mail-odrive-program-v1-7"
+    slug: "structure-job-discovery-aac-bootstrap-internet-mail-odrive-program-v1-7"
   },
   {
     authorized: true,
@@ -2774,8 +2701,7 @@ export default [
   {
     authorized: true,
     headerTitle: "Warning",
-    name:
-      "Transfer Structure Entry Authentication Mail AAC Virtual Network Analysis",
+    name: "Transfer Structure Entry Authentication Mail AAC Virtual Network Analysis",
     version: "1.7",
     docsLink: "https://www.google.com",
     status: "Warning",
@@ -2787,8 +2713,7 @@ export default [
         start_time: 1206085160091
       }
     ],
-    slug:
-      "transfer-structure-entry-authentication-mail-aac-virtual-network-analysis-v1-7"
+    slug: "transfer-structure-entry-authentication-mail-aac-virtual-network-analysis-v1-7"
   },
   {
     authorized: true,
@@ -2822,8 +2747,7 @@ export default [
   {
     authorized: true,
     headerTitle: "Warning",
-    name:
-      "Management Remote Resource Statistics Odrive Entry Discovery Routing Structure Message Service",
+    name: "Management Remote Resource Statistics Odrive Entry Discovery Routing Structure Message Service",
     version: "1.4",
     docsLink: "https://www.google.com",
     status: "Warning",
@@ -2839,8 +2763,7 @@ export default [
         start_time: 459243406296
       }
     ],
-    slug:
-      "management-remote-resource-statistics-odrive-entry-discovery-routing-structure-message-service-v1-4"
+    slug: "management-remote-resource-statistics-odrive-entry-discovery-routing-structure-message-service-v1-4"
   },
   {
     authorized: true,
@@ -2874,8 +2797,7 @@ export default [
   {
     authorized: true,
     headerTitle: "Stable",
-    name:
-      "Statistics Odrive Up2 Sequential Team Transfer Internet Routing Message Debugger",
+    name: "Statistics Odrive Up2 Sequential Team Transfer Internet Routing Message Debugger",
     version: "2.6",
     docsLink: "https://www.google.com",
     status: "Stable",
@@ -2895,8 +2817,7 @@ export default [
         start_time: 738386833024
       }
     ],
-    slug:
-      "statistics-odrive-up2-sequential-team-transfer-internet-routing-message-debugger-v2-6"
+    slug: "statistics-odrive-up2-sequential-team-transfer-internet-routing-message-debugger-v2-6"
   },
   {
     authorized: true,
@@ -2951,8 +2872,7 @@ export default [
   {
     authorized: true,
     headerTitle: "Warning",
-    name:
-      "Export Up2 Odrive Sequential Transfer Job Team Transmission Routing Domain Analysis",
+    name: "Export Up2 Odrive Sequential Transfer Job Team Transmission Routing Domain Analysis",
     version: "4.4",
     docsLink: "https://www.google.com",
     status: "Warning",
@@ -2976,8 +2896,7 @@ export default [
         start_time: 1504971615725
       }
     ],
-    slug:
-      "export-up2-odrive-sequential-transfer-job-team-transmission-routing-domain-analysis-v4-4"
+    slug: "export-up2-odrive-sequential-transfer-job-team-transmission-routing-domain-analysis-v4-4"
   },
   {
     authorized: true,
@@ -2994,8 +2913,7 @@ export default [
   {
     authorized: true,
     headerTitle: "Warning",
-    name:
-      "Bootstrap AAC Mail Transmission Remote Message User Authentication Monitoring",
+    name: "Bootstrap AAC Mail Transmission Remote Message User Authentication Monitoring",
     version: "2.2",
     docsLink: "https://www.google.com",
     status: "Warning",
@@ -3015,8 +2933,7 @@ export default [
         start_time: 787243311833
       }
     ],
-    slug:
-      "bootstrap-aac-mail-transmission-remote-message-user-authentication-monitoring-v2-2"
+    slug: "bootstrap-aac-mail-transmission-remote-message-user-authentication-monitoring-v2-2"
   },
   {
     authorized: true,
@@ -3117,8 +3034,7 @@ export default [
   {
     authorized: true,
     headerTitle: "Warning",
-    name:
-      "Routing Sequential Mail Odrive Transmission Internet Bootstrap Statistics Gateway Analysis",
+    name: "Routing Sequential Mail Odrive Transmission Internet Bootstrap Statistics Gateway Analysis",
     version: "4.3",
     docsLink: "https://www.google.com",
     status: "Warning",
@@ -3142,14 +3058,12 @@ export default [
         start_time: 1101974881603
       }
     ],
-    slug:
-      "routing-sequential-mail-odrive-transmission-internet-bootstrap-statistics-gateway-analysis-v4-3"
+    slug: "routing-sequential-mail-odrive-transmission-internet-bootstrap-statistics-gateway-analysis-v4-3"
   },
   {
     authorized: true,
     headerTitle: "Warning",
-    name:
-      "Network Gateway Virtual Export Authentication Entry Resource Up2 Mail Version",
+    name: "Network Gateway Virtual Export Authentication Entry Resource Up2 Mail Version",
     version: "3.4",
     docsLink: "https://www.google.com",
     status: "Warning",
@@ -3177,8 +3091,7 @@ export default [
         start_time: 800693344875
       }
     ],
-    slug:
-      "network-gateway-virtual-export-authentication-entry-resource-up2-mail-version-v3-4"
+    slug: "network-gateway-virtual-export-authentication-entry-resource-up2-mail-version-v3-4"
   },
   {
     authorized: true,
@@ -3269,8 +3182,7 @@ export default [
     runtime: "GO",
     metered: true,
     instances: [],
-    slug:
-      "sequential-transfer-statistics-backroom-remote-team-icpf-analysis-v2-8"
+    slug: "sequential-transfer-statistics-backroom-remote-team-icpf-analysis-v2-8"
   },
   {
     authorized: true,

@@ -28,7 +28,7 @@ function GMServiceTableLineItem({
   intl
 }) {
   // this is done to search up the DOM tree to find table row and take away its focus to prevent outline on click while preserving tabbing outline
-  const blurTableRow = e => {
+  const blurTableRow = (e) => {
     let node = e.target;
     while (
       typeof node.className !== "string" ||
@@ -40,7 +40,11 @@ function GMServiceTableLineItem({
   };
 
   return (
-    <TableRow tabIndex="-1" onClick={evt => blurTableRow(evt)} overflowVisible>
+    <TableRow
+      tabIndex="-1"
+      onClick={(evt) => blurTableRow(evt)}
+      overflowVisible
+    >
       <TableCol style={{ flex: "1 1 20%" }}>
         {!serviceIsMetered && (
           <Icon title="No Metrics">
@@ -60,7 +64,7 @@ function GMServiceTableLineItem({
         >
           <GMLink
             disabled={!serviceIsMetered}
-            onClick={serviceIsMetered ? null : e => e.preventDefault()}
+            onClick={serviceIsMetered ? null : (e) => e.preventDefault()}
             to={path}
           >
             {name}

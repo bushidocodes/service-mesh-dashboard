@@ -4,7 +4,7 @@ import { spacingScale } from "style/styleFunctions";
 import { FONT_WEIGHT_SEMIBOLD } from "style/styleVariables";
 
 const Runtime = styled.span`
-  color: ${props => props.cardFontColor};
+  color: ${(props) => props.cardFontColor};
   font-weight: ${FONT_WEIGHT_SEMIBOLD};
   text-align: left;
   flex: 1 1 100%;

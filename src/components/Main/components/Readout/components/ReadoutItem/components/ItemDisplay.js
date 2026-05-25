@@ -8,11 +8,11 @@ import { spacingScale } from "style/styleFunctions";
 const ItemDisplay = styled.div`
   align-items: center;
   display: flex;
-  flex: ${props => (props.flex ? props.flex : "0 1 100%")};
+  flex: ${(props) => (props.flex ? props.flex : "0 1 100%")};
   -webkit-flex: 1 1 0; /* stylelint-disable-line */
   flex-direction: row;
   justify-content: center;
-  min-height: ${props => (props.cacheCard ? "125px" : "75px")};
+  min-height: ${(props) => (props.cacheCard ? "125px" : "75px")};
   padding: ${spacingScale(1)} ${spacingScale(0.5)};
   position: relative;
 

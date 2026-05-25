@@ -9,7 +9,7 @@ import isEmpty from "lodash/isEmpty";
  */
 export function numericalTimeSeriesFunc(array) {
   if (array instanceof Array === true && !isEmpty(array)) {
-    return array.map(cell => cell[1]);
+    return array.map((cell) => cell[1]);
   } else {
     return 0;
   }

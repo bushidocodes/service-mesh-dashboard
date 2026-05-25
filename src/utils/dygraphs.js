@@ -18,7 +18,7 @@ export function getDygraphOfValue(metrics, keys) {
   };
   if (!metrics || !keys) return results;
   // Not all keys will be present at all times in the metrics object
-  const validKeys = keys.filter(key => Object.keys(metrics).includes(key));
+  const validKeys = keys.filter((key) => Object.keys(metrics).includes(key));
   // Exit with dummy output if none of the keys were in the metrics object
   if (validKeys.length === 0) return results;
   // Or set as the keys of the results object
@@ -27,8 +27,8 @@ export function getDygraphOfValue(metrics, keys) {
     return uniq([...acc, ...Object.keys(metrics[key])]).sort((a, b) => a - b);
   }, []);
   // Map over the timestamps and generate the dygraph format
-  results.data = timestamps.map(ts => {
-    return [new Date(Number(ts)), ...validKeys.map(key => metrics[key][ts])];
+  results.data = timestamps.map((ts) => {
+    return [new Date(Number(ts)), ...validKeys.map((key) => metrics[key][ts])];
   });
   results.attributes = ["Time", ...validKeys];
   return results;
@@ -46,7 +46,7 @@ export function getDygraphOfValue(metrics, keys) {
 export function mapDygraphKeysToNetChange(
   dygraph,
   attributesToMap = dygraph.attributes.filter(
-    arr => arr !== "Time" && arr !== "time"
+    (arr) => arr !== "Time" && arr !== "time"
   )
 ) {
   return _mapOverDygraphKeys(dygraph, attributesToMap, _netChangeMapper);

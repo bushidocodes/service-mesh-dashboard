@@ -17,9 +17,9 @@ export const getRoutesTable = createSelector(
     // Now build the table
     const routesTable = [];
     const routesPaths = Object.keys(routesTree);
-    routesPaths.forEach(routePath => {
+    routesPaths.forEach((routePath) => {
       let baseObj = { route: routePath };
-      routesTree[routePath].forEach(routeVerb => {
+      routesTree[routePath].forEach((routeVerb) => {
         const errorsCountKey = `route${routePath}/${routeVerb}/errors.count`;
         const inThroughputKey = `route${routePath}/${routeVerb}/in_throughput`;
         const outThroughputKey = `route${routePath}/${routeVerb}/out_throughput`;
@@ -76,7 +76,7 @@ export const getFunctionsMetrics = metricsKeySelectorGenerator("function");
  */
 export const getFunctionsList = createSelector(
   getFunctionsMetrics,
-  functionsMetrics => _getFunctionsList(functionsMetrics)
+  (functionsMetrics) => _getFunctionsList(functionsMetrics)
 );
 
 /**
@@ -90,7 +90,7 @@ function _getFunctionsList(functionsMetrics) {
   if (keys.length > 0) {
     // Grab the function name from the key, filter for uniqueness, and exclude "all" (the rollup metrics key)
     return _.without(
-      _.uniq(keys.map(key => key.match(/function\/(.*)\/.*/)[1])),
+      _.uniq(keys.map((key) => key.match(/function\/(.*)\/.*/)[1])),
       "all"
     );
   } else {
@@ -122,7 +122,7 @@ function _getFunctionsTable(funcs, funcMetrics) {
     ["latency9990", "latency_ms.p9990"],
     ["latency9999", "latency_ms.p9999"]
   ];
-  return funcs.map(func => {
+  return funcs.map((func) => {
     const res = { func: func };
     labelKeyPairs.forEach(([label, key]) => {
       res[label] = getLatestAttribute(funcMetrics, `function/${func}/${key}`);

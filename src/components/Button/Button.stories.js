@@ -98,21 +98,21 @@ storiesOf("Button", module)
   ))
   .add("types", () => (
     <div style={wrapperStyle}>
-      {types.map(type => (
+      {types.map((type) => (
         <Button type={type} label={type} key={type} clickAction={() => {}} />
       ))}
     </div>
   ))
   .add("sizes", () => (
     <div style={wrapperStyle}>
-      {sizes.map(size => (
+      {sizes.map((size) => (
         <Button size={size} label={size} key={size} clickAction={() => {}} />
       ))}
     </div>
   ))
   .add("outlines", () => (
     <div style={wrapperStyle}>
-      {outlines.map(outline => (
+      {outlines.map((outline) => (
         <Button
           outline={outline}
           label={outline}
@@ -124,7 +124,7 @@ storiesOf("Button", module)
   ))
   .add("orientations", () => (
     <div style={wrapperStyle}>
-      {orientations.map(orientation => (
+      {orientations.map((orientation) => (
         <Button
           glyph={"Bell"}
           orientation={orientation}

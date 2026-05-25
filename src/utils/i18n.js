@@ -32,12 +32,12 @@ export function getLocale() {
         navigator.browserLanguage,
         navigator.systemLanguage
       )
-      .map(locale => LOCALE_ALIASES[locale] || locale)
+      .map((locale) => LOCALE_ALIASES[locale] || locale)
   );
 
   // return the first locale that matches one of our supported locales
   const preferredLocale = locales.find(
-    locale => SUPPORTED_LOCALES.indexOf(locale) !== -1
+    (locale) => SUPPORTED_LOCALES.indexOf(locale) !== -1
   );
 
   return preferredLocale || DEFAULT_LOCALE;

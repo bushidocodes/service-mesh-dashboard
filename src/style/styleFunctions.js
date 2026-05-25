@@ -154,7 +154,7 @@ export function errorColor(errorPercent = 1) {
  * @param {string} height ("xs", "sm", "normal", "lg", "xl", "max")
  * @returns {string} - height attribute
  */
-export const chartHeight = height => {
+export const chartHeight = (height) => {
   let factor;
   switch (height) {
     case "normal":
@@ -182,10 +182,7 @@ export const chartHeight = height => {
 export function darkenColor(color, percent) {
   if (color.saturationl() > 10) {
     // If the element has any substantial color to it, then you can mess with the saturation
-    return color
-      .darken(percent)
-      .saturate(percent)
-      .rgb();
+    return color.darken(percent).saturate(percent).rgb();
     // return saturate(darken(color, percent), percent);
   } else {
     // Otherwise, don't add color where there wasn't any to start with
@@ -197,10 +194,7 @@ export function darkenColor(color, percent) {
 // Darken the color, but wash out the color a bit, for a more natural highlighted look
 export function lightenColor(color, percent) {
   if (color.saturationl() > 10) {
-    return color
-      .lighten(percent)
-      .desaturate(percent)
-      .rgb();
+    return color.lighten(percent).desaturate(percent).rgb();
   } else {
     // Otherwise, don't add color where there wasn't any to start with
     return color.lighten(percent);

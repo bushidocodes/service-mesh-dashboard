@@ -121,7 +121,7 @@ export default class DygraphWrapper extends React.Component {
   render() {
     return (
       <DygraphContainer
-        innerRef={elem => {
+        innerRef={(elem) => {
           this.div = elem;
         }}
       />
@@ -151,11 +151,11 @@ function generateOptions({ baseOptions = {}, attributes, dygraphMetadata }) {
   // If a chart all uses the same units, label the Y axis with the
   // appropriate labels
   const resultUnits = _.values(dygraphMetadata)
-    .map(elem => elem.resultUnit)
-    .filter(elem => elem);
+    .map((elem) => elem.resultUnit)
+    .filter((elem) => elem);
   const baseUnits = _.values(dygraphMetadata)
-    .map(elem => elem.baseUnit)
-    .filter(elem => elem);
+    .map((elem) => elem.baseUnit)
+    .filter((elem) => elem);
   const universalUnit =
     _.uniq(resultUnits).length === 1 && _.uniq(baseUnits).length === 1;
   if (universalUnit) {
@@ -165,7 +165,7 @@ function generateOptions({ baseOptions = {}, attributes, dygraphMetadata }) {
     options.axes = {
       y: {
         axisLabelWidth: width,
-        axisLabelFormatter: y =>
+        axisLabelFormatter: (y) =>
           formatMetricString(y, baseUnits[0], resultUnits[0], 0)
       }
     };

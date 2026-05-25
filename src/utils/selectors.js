@@ -5,13 +5,14 @@ import { microserviceStatuses } from "utils/constants";
 
 // Reselect Input Selectors
 
-export const getMetrics = state => state.instance.metrics;
-export const getDashboards = state => state.dashboards;
-export const getServices = state => state.fabric.services;
+export const getMetrics = (state) => state.instance.metrics;
+export const getDashboards = (state) => state.dashboards;
+export const getServices = (state) => state.fabric.services;
 
-export const getFabricServer = state => state.settings.fabricServer;
-export const getSelectedInstanceID = state => state.fabric.selectedInstanceID;
-export const getSelectedServiceSlug = state => state.fabric.selectedServiceSlug;
+export const getFabricServer = (state) => state.settings.fabricServer;
+export const getSelectedInstanceID = (state) => state.fabric.selectedInstanceID;
+export const getSelectedServiceSlug = (state) =>
+  state.fabric.selectedServiceSlug;
 
 /**
  * Reselect selector that returns the current selected service from the Redux store
@@ -66,9 +67,9 @@ export const getBaseInstanceRoute = createSelector(
  */
 export function metricsKeySelectorGenerator(keyQuery, isPrefix = true) {
   const filterFunc = isPrefix
-    ? key => key.substr(0, keyQuery.length) === keyQuery
-    : key => key.indexOf(keyQuery) !== -1;
-  return createSelector([getMetrics], metrics =>
+    ? (key) => key.substr(0, keyQuery.length) === keyQuery
+    : (key) => key.indexOf(keyQuery) !== -1;
+  return createSelector([getMetrics], (metrics) =>
     _.pick(metrics, Object.keys(metrics).filter(filterFunc))
   );
 }
@@ -83,7 +84,7 @@ export const getRoutesMetrics = metricsKeySelectorGenerator("route");
  * A Reselect selector that generates a special hierarchical tree structure of route data
  * from the timeseries keys. It's used to render the special Route dashboards for the JVM
  */
-export const getRoutesTree = createSelector(getRoutesMetrics, routesMetrics =>
+export const getRoutesTree = createSelector(getRoutesMetrics, (routesMetrics) =>
   _buildRoutesTree(routesMetrics)
 );
 
@@ -122,9 +123,9 @@ function _buildRoutesTree(routeMetrics) {
  * @param {Object[]}
  * @returns {Object}
  */
-export const getStatusCount = createSelector(getServices, services => {
+export const getStatusCount = createSelector(getServices, (services) => {
   let statusCount = _.countBy(
-    _.values(services).map(service => {
+    _.values(services).map((service) => {
       let status = computeStatus(
         service.instances.length,
         service.minimum,

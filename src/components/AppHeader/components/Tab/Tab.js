@@ -38,7 +38,7 @@ function Tab({ href, icon, lines = [], title, chartData }) {
         </TabIcon>
         <h1>{title}</h1>
       </TabTitle>
-      {lines.map(item => {
+      {lines.map((item) => {
         return (
           <TabDetails key={item.name}>
             <TabKey>{item.name}</TabKey>

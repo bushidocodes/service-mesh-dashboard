@@ -62,9 +62,11 @@ function SummaryGrid({
                 value: (
                   <UpTime
                     startTime={getLatestAttribute(metrics, "jvm/start_time")}
-                    render={uptime => (
+                    render={(uptime) => (
                       <ArrayValue>
-                        {_.map(uptime, el => <span key={el}>{el} </span>)}
+                        {_.map(uptime, (el) => (
+                          <span key={el}>{el} </span>
+                        ))}
                       </ArrayValue>
                     )}
                   />

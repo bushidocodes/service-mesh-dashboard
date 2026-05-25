@@ -5,8 +5,12 @@ import _ from "lodash";
 import Uptime from "./UpTime";
 import ArrayValue from "components/ArrayValue";
 
-const renderFunc = uptime => (
-  <ArrayValue>{_.map(uptime, el => <span key={el}>{el} </span>)}</ArrayValue>
+const renderFunc = (uptime) => (
+  <ArrayValue>
+    {_.map(uptime, (el) => (
+      <span key={el}>{el} </span>
+    ))}
+  </ArrayValue>
 );
 
 const startTime = 1401164339200;

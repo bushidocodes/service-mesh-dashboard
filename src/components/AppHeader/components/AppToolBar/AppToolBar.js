@@ -64,29 +64,33 @@ function AppToolBar({
         <Breadcrumb>
           <Link to="/">fabric</Link>
         </Breadcrumb>
-        {//strip out leading slashes to get route as array
-        pathname
-          .replace(/^\/|\/$/g, "")
-          .replace("%2F", "/") // String out escaped slashes if found
-          .split("/")
-          .map((val, idx) => {
-            let breadcrumbName;
+        {
+          //strip out leading slashes to get route as array
+          pathname
+            .replace(/^\/|\/$/g, "")
+            .replace("%2F", "/") // String out escaped slashes if found
+            .split("/")
+            .map((val, idx) => {
+              let breadcrumbName;
 
-            if (serviceNameLookup[val]) {
-              // if the current value is a service name we need to look up the actual name from the slug
-              breadcrumbName = serviceNameLookup[val].name;
-            } else breadcrumbName = val;
+              if (serviceNameLookup[val]) {
+                // if the current value is a service name we need to look up the actual name from the slug
+                breadcrumbName = serviceNameLookup[val].name;
+              } else breadcrumbName = val;
 
-            return val ? (
-              <Breadcrumb key={`${val}|${idx}`}>
-                <Link to={`${pathname.substr(0, pathname.indexOf(val))}${val}`}>
-                  {breadcrumbName.length < 30
-                    ? breadcrumbName
-                    : `${breadcrumbName.substr(0, 30)}...`}
-                </Link>
-              </Breadcrumb>
-            ) : null;
-          })}
+              return val ? (
+                <Breadcrumb key={`${val}|${idx}`}>
+                  <Link
+                    to={`${pathname.substr(0, pathname.indexOf(val))}${val}`}
+                  >
+                    {breadcrumbName.length < 30
+                      ? breadcrumbName
+                      : `${breadcrumbName.substr(0, 30)}...`}
+                  </Link>
+                </Breadcrumb>
+              ) : null;
+            })
+        }
       </Breadcrumbs>
       <LanguageSelector />
       <AppVersionLink
@@ -99,7 +103,7 @@ function AppToolBar({
       </AppVersionLink>
 
       <ButtonGroup toolbar>
-        {toolbarButtons.map(button => (
+        {toolbarButtons.map((button) => (
           <NavButton
             active={pathname === "/settings" ? true : false}
             key={button.path}

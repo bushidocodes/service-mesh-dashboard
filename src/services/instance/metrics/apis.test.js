@@ -13,13 +13,13 @@ describe("App", () => {
     moxios.uninstall();
   });
 
-  it("fetches a metrics endpoint and returns a promise which resolves to the result", done => {
+  it("fetches a metrics endpoint and returns a promise which resolves to the result", (done) => {
     moxios.stubRequest("/admin/metrics.json", {
       status: 200,
       response: metrics
     });
     fetchInstanceMetrics("/admin/metrics.json", "JVM")
-      .then(json => expect(json).toMatchObject(metrics))
+      .then((json) => expect(json).toMatchObject(metrics))
       .then(() => done());
   });
 });
