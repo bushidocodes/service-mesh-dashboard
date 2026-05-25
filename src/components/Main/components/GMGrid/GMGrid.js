@@ -8,6 +8,7 @@ import { injectIntl, intlShape } from "react-intl";
 
 import GMBasicMetrics from "./components/GMBasicMetrics";
 import GMLineChart from "../GMLineChart";
+import withRouter from "utils/withRouter";
 import GMTable from "./components/GMTable";
 
 import ErrorBoundary from "components/ErrorBoundary";
@@ -223,4 +224,7 @@ function mapStateToProps({ dashboards, instance: { metrics } }, ownProps) {
   };
 }
 // default export for the connected component
-export default connect(mapStateToProps)(injectIntl(GMGrid));
+// withRouter injects match.params from useParams() so mapStateToProps can
+// read ownProps.match.params.dashboardName (react-router-dom v6 no longer
+// passes route props automatically).
+export default withRouter(connect(mapStateToProps)(injectIntl(GMGrid)));
