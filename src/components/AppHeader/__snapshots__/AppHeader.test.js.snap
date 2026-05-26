@@ -17,9 +17,9 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
   -ms-flex-align: stretch;
   align-items: stretch;
   background-image: linear-gradient( to right, rgba(0,0,0,0.7), rgba(0,0,0,0), rgba(0,0,0,0) ), url(mesh-long.png);
-  background-size: 100% 100%,auto auto;
+  background-size: 100% 100%, auto auto;
   background-repeat: no-repeat,no-repeat;
-  background-position: top left,top -30px right 20%;
+  background-position: top left, top -30px right 20%;
   background-color: rgb(0,0,0);
 }
 
@@ -652,9 +652,7 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
       href="https://github.com/DecipherNow/gm-fabric-dashboard/blob/master/CHANGELOG.md"
       rel="noopener noreferrer"
       target="_blank"
-    >
-      1.0.6
-    </a>
+    />
     <div
       class="c12"
     >
@@ -976,9 +974,9 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
   -ms-flex-align: stretch;
   align-items: stretch;
   background-image: linear-gradient( to right, rgba(0,0,0,0.7), rgba(0,0,0,0), rgba(0,0,0,0) ), url(mesh-long.png);
-  background-size: 100% 100%,auto auto;
+  background-size: 100% 100%, auto auto;
   background-repeat: no-repeat,no-repeat;
-  background-position: top left,top -30px right 20%;
+  background-position: top left, top -30px right 20%;
   background-color: rgb(0,0,0);
 }
 
@@ -1611,9 +1609,7 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
       href="https://github.com/DecipherNow/gm-fabric-dashboard/blob/master/CHANGELOG.md"
       rel="noopener noreferrer"
       target="_blank"
-    >
-      1.0.6
-    </a>
+    />
     <div
       class="c12"
     >

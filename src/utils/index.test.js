@@ -33,12 +33,14 @@ describe("trimID", () => {
 });
 
 describe("clearFabricIntervalIfNeeded", () => {
-  test("Initialize window.refreshFabricIntervalID as 10 for test ", () => {
+  test("Initialize window.refreshFabricIntervalID for test", () => {
     window.refreshFabricIntervalID = setInterval(
       () => console.log("interval set"),
       3000
     );
-    expect(window.refreshFabricIntervalID).toBe(10);
+    // The exact interval ID depends on how many timers have been created
+    // before this test runs; just assert that an ID was assigned.
+    expect(typeof window.refreshFabricIntervalID).toBe("number");
   });
   test("clears an interval with ID equal to window.refreshFabricIntervalID", () => {
     clearFabricIntervalIfNeeded();
@@ -128,7 +130,7 @@ describe("blurTableRow", () => {
     const wrapper = mount(
       <TableRow className="TableRow">
         <div className="div">
-          <span className="span" onClick={spy((e) => blurTableRow(e))}>
+          <span className="span" onClick={spy(e => blurTableRow(e))}>
             Words
           </span>
         </div>

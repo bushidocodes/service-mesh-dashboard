@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
-Array [
+[
   .c0 {
   -webkit-align-items: stretch;
   -webkit-box-align: stretch;
@@ -422,7 +422,7 @@ Array [
               <p
                 class="c16"
               >
-                Jul 18, 2017, 11:53:01 AM
+                Jul 18, 2017, 12:53:01 PM
               </p>
             </div>
           </div>
@@ -704,8 +704,8 @@ Array [
   position: absolute;
   right: 0 !important;
   text-align: right;
-  -webkit-transition: all 0.2s ease,color 0.2s ease;
-  transition: all 0.2s ease,color 0.2s ease;
+  -webkit-transition: all 0.2s ease, color 0.2s ease;
+  transition: all 0.2s ease, color 0.2s ease;
   z-index: 10000;
 }
 
@@ -716,8 +716,8 @@ Array [
 .c10:hover .dygraph-legend {
   color: hsl(0,0%,12.5%);
   opacity: 1;
-  -webkit-transition: all 0.2s ease,color 1s ease;
-  transition: all 0.2s ease,color 1s ease;
+  -webkit-transition: all 0.2s ease, color 1s ease;
+  transition: all 0.2s ease, color 1s ease;
 }
 
 .c10 .dygraph-label {

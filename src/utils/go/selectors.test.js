@@ -1,6 +1,6 @@
 import state from "../../json/mockReduxState";
 
-const { getFunctionsMetrics } = require.requireActual("./selectors");
+const { getFunctionsMetrics } = jest.requireActual("./selectors");
 
 describe("Reselect selector getFunctionsMetrics", () =>
   test("returns an array of keys starting with the substring function", () => {
