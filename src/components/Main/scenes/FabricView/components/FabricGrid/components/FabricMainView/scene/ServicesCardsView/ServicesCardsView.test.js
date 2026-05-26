@@ -1,6 +1,6 @@
 import React from "react";
 import { mount, shallow } from "enzyme";
-import { MemoryRouter, Route } from "react-router-dom";
+import { MemoryRouter, Route } from "react-router";
 
 import mockMappedServices from "json/mockMappedServices";
 

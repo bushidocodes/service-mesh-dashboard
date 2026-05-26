@@ -14,7 +14,7 @@ export function getFabricServer() {
   if (fabricServer !== "__FABRIC_SERVER__") {
     return fabricServer;
   } else if (process.env.NODE_ENV === "development") {
-    return "http://localhost:9000";
+    return "http://localhost:1337";
   } else {
     return null;
   }

@@ -1,8 +1,6 @@
-import styled from "styled-components";
-
 import TableCol from "./TableCol";
 
-const TableColArray = styled(TableCol)`
+const TableColArray = TableCol.extend`
   text-align: right;
   span + span {
     font-size: 80%;

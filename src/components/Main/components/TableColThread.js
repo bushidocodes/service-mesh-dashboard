@@ -1,9 +1,7 @@
-import styled from "styled-components";
-
 import TableCol from "./TableCol";
 import PropTypes from "prop-types";
 
-const TableColThread = styled(TableCol)`
+const TableColThread = TableCol.extend`
   flex: 0 1 5em;
   ${(props) =>
     props.right

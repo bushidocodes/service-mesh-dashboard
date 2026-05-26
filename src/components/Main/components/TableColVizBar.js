@@ -1,8 +1,6 @@
-import styled from "styled-components";
-
 import TableCol from "./TableCol";
 
-const TableColVizBar = styled(TableCol)`
+const TableColVizBar = TableCol.extend`
   flex: 1 1 20%;
   position: relative;
 `;

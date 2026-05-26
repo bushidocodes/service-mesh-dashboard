@@ -36,6 +36,7 @@ export default class DygraphWrapper extends React.Component {
       dygraphMetadata
     } = this.props;
     // Build the Dygraph options object including labels
+    // eslint-disable-next-line react/no-did-mount-set-state
     this.setState(
       {
         options: generateOptions({
@@ -120,7 +121,7 @@ export default class DygraphWrapper extends React.Component {
   render() {
     return (
       <DygraphContainer
-        ref={(elem) => {
+        innerRef={(elem) => {
           this.div = elem;
         }}
       />

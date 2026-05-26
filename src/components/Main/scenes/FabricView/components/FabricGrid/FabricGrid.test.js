@@ -1,5 +1,5 @@
 import React from "react";
-import { MemoryRouter, Route } from "react-router-dom";
+import { MemoryRouter, Route } from "react-router";
 import { Actions } from "jumpstate";
 import _ from "lodash";
 

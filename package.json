@@ -3,24 +3,52 @@
   "version": "1.0.6",
   "private": true,
   "engines": {
-    "node": ">=20.0.0",
-    "npm": ">=10.0.0"
+    "node": "^8.0.0",
+    "npm": "^5.0.0"
   },
   "dependencies": {
+    "@storybook/addon-knobs": "^3.3.10",
+    "autoprefixer": "^7.2.4",
     "axios": "0.17.1",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.1",
+    "babel-jest": "^22.0.6",
+    "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-runtime": "^6.26.0",
+    "case-sensitive-paths-webpack-plugin": "2.1.1",
+    "chalk": "^2.3.0",
     "color": "^2.0.1",
+    "css-loader": "^0.28.8",
     "dateformat": "^3.0.2",
+    "dotenv": "4.0.0",
     "dygraphs": "^2.1.0",
+    "eslint": "^4.15.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-flowtype": "^2.41.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.5.1",
+    "express": "^4.16.2",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.6",
     "filesize": "~3.5.11",
+    "fs-extra": "^5.0.0",
+    "history": "^4.7.2",
+    "html-webpack-plugin": "^2.30.1",
+    "install": "^0.10.2",
     "js-quantities": "^1.7.0",
     "jumpstate": "~2.2.2",
     "lodash": "~4.17.4",
     "object-sizeof": "^1.2.0",
+    "postcss-flexbugs-fixes": "^3.2.0",
+    "postcss-loader": "^2.0.10",
+    "promise": "^8.0.1",
     "prop-types": "^15.6.0",
-    "react": "^18.3.1",
+    "react": "^16.2.0",
     "react-collapse": "^4.0.3",
-    "react-dom": "^18.3.1",
-    "react-draggable": "^3.0.4",
+    "react-dev-utils": "^4.2.1",
+    "react-dom": "^16.2.0",
     "react-grid-layout": "^0.16.2",
     "react-input-range": "^1.3.0",
     "react-intl": "^2.4.0",
@@ -29,32 +57,39 @@
     "react-motion": "^0.5.2",
     "react-notification-system": "^0.2.16",
     "react-redux": "^5.0.6",
-    "react-resizable": "^1.7.5",
-    "react-router-dom": "^6.0.0",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
     "react-select": "^1.2.0",
     "react-sparklines": "^1.7.0",
     "react-transition-group": "^2.2.1",
     "redux": "~3.7.2",
     "redux-logger": "~3.0.6",
     "reselect": "~3.0.1",
-    "styled-components": "^5.3.11"
+    "style-loader": "^0.19.1",
+    "styled-components": "^2.4.0",
+    "testcafe-reporter-xunit": "^2.1.0",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.10.1",
+    "webpack-manifest-plugin": "^1.3.2",
+    "whatwg-fetch": "^2.0.3",
+    "with-url-state": "^1.2.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.0.0",
-    "@commitlint/config-conventional": "^19.0.0",
+    "@babel/plugin-transform-react-jsx-source": "^7.0.0-beta.32",
+    "@commitlint/cli": "^6.0.1",
+    "@commitlint/config-conventional": "^6.0.2",
     "@storybook/addon-actions": "^3.3.10",
     "@storybook/addon-info": "^3.3.10",
-    "@storybook/addon-knobs": "^3.3.10",
     "@storybook/addon-links": "^3.3.10",
     "@storybook/addon-options": "^3.3.10",
     "@storybook/addon-storyshots": "^3.3.10",
     "@storybook/addons": "^3.3.10",
     "@storybook/react": "^3.3.10",
-    "@vitejs/plugin-react": "^4.7.0",
-    "babel-core": "^6.26.0",
-    "babel-jest": "^22.0.6",
     "babel-plugin-dynamic-import-node": "^1.2.0",
+    "babel-plugin-lodash": "^3.3.2",
     "babel-plugin-styled-components": "^1.4.0",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
@@ -68,32 +103,32 @@
     "cors": "^2.8.4",
     "cross-env": "^5.1.1",
     "documentation": "^5.3.3",
-    "@cfaester/enzyme-adapter-react-18": "^0.8.0",
+    "dotenv-expand": "^4.0.1",
     "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.0",
-    "@eslint/js": "^9.0.0",
-    "eslint": "^9.0.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-jsx-a11y": "^6.10.0",
-    "eslint-plugin-react": "^7.37.0",
-    "globals": "^15.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-react-app": "^2.0.1",
+    "eslint-plugin-prettier": "^2.4.0",
     "glob-promise": "^3.3.0",
     "husky": "^0.15.0-beta.16",
     "jest": "^22.0.6",
     "jest-cli": "^22.0.6",
     "jest-junit": "^3.4.1",
-    "jest-styled-components": "^7.2.0",
+    "jest-styled-components": "^4.9.0",
     "junit-merge": "^1.2.3",
     "license-checker": "^16.0.0",
     "lint-staged": "^6.0.0",
+    "lodash-webpack-plugin": "^0.11.4",
     "moxios": "^0.4.0",
     "node-glob": "^1.2.0",
     "npm-check": "^5.5.2",
     "npm-run-all": "^4.1.2",
-    "prettier": "^3.5.0",
+    "prettier": "^1.10.2",
     "prompt": "^1.0.0",
     "raf": "^3.4.0",
-    "react-test-renderer": "^18.3.1",
+    "react-addons-test-utils": "^15.6.2",
+    "react-test-renderer": "^16.2.0",
     "redux-mock-store": "^1.3.0",
     "replace-in-file": "^3.1.0",
     "storybook-addon-intl": "^2.3.0",
@@ -106,33 +141,43 @@
     "testcafe": "^0.18.6",
     "testcafe-browser-provider-browserstack": "^1.2.0",
     "testcafe-react-selectors": "^1.0.5",
-    "vite": "^5.4.21"
+    "uglifyjs-webpack-plugin": "^1.1.6",
+    "webpack-bundle-analyzer": "^2.9.2"
   },
   "scripts": {
-    "build": "vite build",
-    "build-docker": "docker build -t deciphernow/gm-fabric-dashboard -f docker-prod/Dockerfile .",
+    "build": "node scripts/build.js",
+    "build-docker":
+      "docker build -t deciphernow/gm-fabric-dashboard -f docker-prod/Dockerfile .",
     "build-storybook": "build-storybook",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "draft-github-release": "node scripts/generateGitHubDraft.js",
-    "docs": "cross-env NODE_ENV=production node ./node_modules/documentation/bin/documentation.js build src/index.js -f md -o docs.md",
+    "docs":
+      "cross-env NODE_ENV=production node ./node_modules/documentation/bin/documentation.js build src/index.js -f md -o docs.md",
+    "eslint-prettier-check":
+      "node ./node_modules/eslint/bin/eslint --print-config .eslintrc | eslint-config-prettier-check",
     "format": "prettier --write 'src/**/*.{js,jsx}'",
     "junit-merge": "junit-merge",
     "lint-css": "stylelint --formatter string 'src/**/*.{js,jsx}'",
-    "lint-js": "node ./node_modules/eslint/bin/eslint src/",
+    "lint-js": "node ./node_modules/eslint/bin/eslint 'src'",
     "mock-sds": "node json-mock/discovery-service/sds.js",
-    "preview": "vite preview",
-    "preversion": "NODE_ENV=test CI=true npm-run-all --print-label lint-css lint-js test test:e2e:local",
+    "preversion":
+      "NODE_ENV=test CI=true npm-run-all --print-label lint-css lint-js test test:e2e:local",
     "publish": "node scripts/publish.js",
-    "report-dep-licenses": "license-checker --summary --out licenses/summary.txt && license-checker --csv --customPath licenses/licenseReportFormat.json --out licenses/report.csv",
-    "start": "npm-run-all --print-label --parallel start-ui mock-sds",
-    "start-ui": "vite",
+    "report-dep-licenses":
+      "license-checker --summary --out licenses/summary.txt && license-checker --csv --customPath licenses/licenseReportFormat.json --out licenses/report.csv",
+    "start": "npm run start-all",
+    "start-all": "npm-run-all --print-label --parallel start-ui mock-sds",
+    "start-ui": "node scripts/start.js",
     "storybook": "start-storybook -p 6006",
-    "test": "TZ=/usr/share/zoneinfo/America/New_York node scripts/test.js --env=jsdom",
-    "test:e2e:local": "testcafe chrome:headless ./e2e-tests/tests/*.js -a 'npm start' --app-init-delay 5000",
+    "test":
+      "TZ=/usr/share/zoneinfo/America/New_York node scripts/test.js --env=jsdom",
+    "test:e2e:local":
+      "testcafe chrome:headless ./e2e-tests/tests/*.js -a 'npm start' --app-init-delay 5000",
     "test:e2e": "node scripts/testcafe.js",
     "update-deps": "npm-check . --skip-unused -u",
     "update-snapshots": "CI=true npm run test -- --updateSnapshot",
-    "version": "npm-run-all --print-label changelog update-snapshots && git add -A"
+    "version":
+      "npm-run-all --print-label changelog update-snapshots && git add -A"
   },
   "husky": {
     "hooks": {
@@ -141,10 +186,7 @@
     }
   },
   "lint-staged": {
-    "*.js": [
-      "prettier --write",
-      "git add"
-    ]
+    "*.js": ["prettier --write", "git add"]
   },
   "jest-junit": {
     "suiteName": "GM Fabric",
@@ -154,21 +196,16 @@
     "usePathForSuiteName": "true"
   },
   "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx}"
-    ],
-    "coverageReporters": [
-      "lcov"
-    ],
+    "collectCoverageFrom": ["src/**/*.{js,jsx}"],
+    "coverageReporters": ["lcov"],
     "setupFiles": [
       "<rootDir>/config/polyfills.js",
       "raf/polyfill",
       "<rootDir>/config/jest/jestSetup.js"
     ],
-    "setupTestFrameworkScriptFile": "<rootDir>/config/jest/jestTestFrameworkSetup.js",
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ],
+    "setupTestFrameworkScriptFile":
+      "<rootDir>/config/jest/jestTestFrameworkSetup.js",
+    "snapshotSerializers": ["enzyme-to-json/serializer"],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.js?(x)",
       "<rootDir>/src/**/?(*.)(spec|test).js?(x)"
@@ -180,32 +217,19 @@
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
       "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
-    ],
+    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
     "moduleNameMapper": {
       "^react-native$": "react-native-web"
     },
-    "moduleDirectories": [
-      "node_modules",
-      "<rootDir>/src"
-    ],
-    "moduleFileExtensions": [
-      "web.js",
-      "js",
-      "json",
-      "web.jsx",
-      "jsx"
-    ]
+    "moduleDirectories": ["node_modules", "<rootDir>/src"],
+    "moduleFileExtensions": ["web.js", "js", "json", "web.jsx", "jsx"]
   },
   "babel": {
-    "presets": [
-      "react-app"
-    ]
+    "presets": ["react-app"]
   },
   "prettier": {
     "bracketSpacing": true,
-    "bracketSameLine": false,
+    "jsxBracketSameLine": false,
     "printWidth": 80,
     "semi": true,
     "singleQuote": false,
@@ -214,9 +238,7 @@
     "useTabs": false
   },
   "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
+    "extends": ["@commitlint/config-conventional"]
   },
   "browserslist": [
     "last 2 Chrome versions",
@@ -228,5 +250,6 @@
     "last 2 Edge versions",
     "Firefox ESR"
   ],
+  "proxy": "http://localhost:1337",
   "homepage": "./"
 }
