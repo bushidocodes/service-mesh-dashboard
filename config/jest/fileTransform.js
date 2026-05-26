@@ -6,7 +6,10 @@ const path = require("path");
 // http://facebook.github.io/jest/docs/tutorial-webpack.html
 
 module.exports = {
+  // Jest 27+ requires transformers to return { code } instead of a string.
   process(src, filename) {
-    return `module.exports = ${JSON.stringify(path.basename(filename))};`;
+    return {
+      code: `module.exports = ${JSON.stringify(path.basename(filename))};`
+    };
   }
 };

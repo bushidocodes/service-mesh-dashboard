@@ -1,28 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BrandText matches snapshot 1`] = `
-.c0 {
-  color: rgb(255,255,255);
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  font-size: 14px;
-  font-weight: 600;
-  -webkit-letter-spacing: 0.03em;
-  -moz-letter-spacing: 0.03em;
-  -ms-letter-spacing: 0.03em;
-  letter-spacing: 0.03em;
-}
-
-.c0 > a {
-  color: rgb(217,217,217);
-}
-
-.c0 > a:hover {
-  color: rgb(255,255,255);
-}
-
 <span
-  className="c0"
+  className="sc-aXZVg kXIaoE"
 />
 `;

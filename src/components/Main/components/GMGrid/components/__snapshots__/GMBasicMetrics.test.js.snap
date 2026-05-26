@@ -1,23 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1`] = `
-<styled.div>
-  <styled.h3>
+<.sc-aXZVg>
+  <.sc-gEvEer>
     Response Status Codes
-  </styled.h3>
-  <styled.div
+  </.sc-gEvEer>
+  <.sc-eqUAAy
     key="2XX-3468388"
     priority="primary"
   >
-    <styled.div>
+    <.sc-fqkvVR>
       2XX
-    </styled.div>
-    <styled.div>
+    </.sc-fqkvVR>
+    <.sc-dcJsrY>
       3,468,388
-      <styled.div>
+      <.sc-iGgWBj>
         <Sparklines
           data={
-            Array [
+            [
               3468388,
               3468388,
               3468388,
@@ -35,7 +35,7 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
           <SparklinesLine
             onMouseMove={[Function]}
             style={
-              Object {
+              {
                 "fill": "none",
                 "stroke": "currentColor",
                 "strokeWidth": 1,
@@ -44,7 +44,7 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
           />
           <SparklinesReferenceLine
             style={
-              Object {
+              {
                 "opacity": "0.4",
                 "stroke": "grey",
               }
@@ -52,22 +52,22 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
             type="mean"
           />
         </Sparklines>
-      </styled.div>
-    </styled.div>
-  </styled.div>
-  <styled.div
+      </.sc-iGgWBj>
+    </.sc-dcJsrY>
+  </.sc-eqUAAy>
+  <.sc-eqUAAy
     key="200-3468388"
     priority="primary"
   >
-    <styled.div>
+    <.sc-fqkvVR>
       200
-    </styled.div>
-    <styled.div>
+    </.sc-fqkvVR>
+    <.sc-dcJsrY>
       3,468,388
-      <styled.div>
+      <.sc-iGgWBj>
         <Sparklines
           data={
-            Array [
+            [
               3468388,
               3468388,
               3468388,
@@ -85,7 +85,7 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
           <SparklinesLine
             onMouseMove={[Function]}
             style={
-              Object {
+              {
                 "fill": "none",
                 "stroke": "currentColor",
                 "strokeWidth": 1,
@@ -94,7 +94,7 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
           />
           <SparklinesReferenceLine
             style={
-              Object {
+              {
                 "opacity": "0.4",
                 "stroke": "grey",
               }
@@ -102,22 +102,22 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
             type="mean"
           />
         </Sparklines>
-      </styled.div>
-    </styled.div>
-  </styled.div>
-  <styled.div
+      </.sc-iGgWBj>
+    </.sc-dcJsrY>
+  </.sc-eqUAAy>
+  <.sc-eqUAAy
     key="4XX-12"
     priority="normal"
   >
-    <styled.div>
+    <.sc-fqkvVR>
       4XX
-    </styled.div>
-    <styled.div>
+    </.sc-fqkvVR>
+    <.sc-dcJsrY>
       12
-      <styled.div>
+      <.sc-iGgWBj>
         <Sparklines
           data={
-            Array [
+            [
               12,
               12,
               12,
@@ -135,7 +135,7 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
           <SparklinesLine
             onMouseMove={[Function]}
             style={
-              Object {
+              {
                 "fill": "none",
                 "stroke": "currentColor",
                 "strokeWidth": 1,
@@ -144,7 +144,7 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
           />
           <SparklinesReferenceLine
             style={
-              Object {
+              {
                 "opacity": "0.4",
                 "stroke": "grey",
               }
@@ -152,22 +152,22 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
             type="mean"
           />
         </Sparklines>
-      </styled.div>
-    </styled.div>
-  </styled.div>
-  <styled.div
+      </.sc-iGgWBj>
+    </.sc-dcJsrY>
+  </.sc-eqUAAy>
+  <.sc-eqUAAy
     key="400-8"
     priority="normal"
   >
-    <styled.div>
+    <.sc-fqkvVR>
       400
-    </styled.div>
-    <styled.div>
+    </.sc-fqkvVR>
+    <.sc-dcJsrY>
       8
-      <styled.div>
+      <.sc-iGgWBj>
         <Sparklines
           data={
-            Array [
+            [
               8,
               8,
               8,
@@ -185,7 +185,7 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
           <SparklinesLine
             onMouseMove={[Function]}
             style={
-              Object {
+              {
                 "fill": "none",
                 "stroke": "currentColor",
                 "strokeWidth": 1,
@@ -194,7 +194,7 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
           />
           <SparklinesReferenceLine
             style={
-              Object {
+              {
                 "opacity": "0.4",
                 "stroke": "grey",
               }
@@ -202,22 +202,22 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
             type="mean"
           />
         </Sparklines>
-      </styled.div>
-    </styled.div>
-  </styled.div>
-  <styled.div
+      </.sc-iGgWBj>
+    </.sc-dcJsrY>
+  </.sc-eqUAAy>
+  <.sc-eqUAAy
     key="499-4"
     priority="normal"
   >
-    <styled.div>
+    <.sc-fqkvVR>
       499
-    </styled.div>
-    <styled.div>
+    </.sc-fqkvVR>
+    <.sc-dcJsrY>
       4
-      <styled.div>
+      <.sc-iGgWBj>
         <Sparklines
           data={
-            Array [
+            [
               4,
               4,
               4,
@@ -236,7 +236,7 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
           <SparklinesLine
             onMouseMove={[Function]}
             style={
-              Object {
+              {
                 "fill": "none",
                 "stroke": "currentColor",
                 "strokeWidth": 1,
@@ -245,7 +245,7 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
           />
           <SparklinesReferenceLine
             style={
-              Object {
+              {
                 "opacity": "0.4",
                 "stroke": "grey",
               }
@@ -253,22 +253,22 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
             type="mean"
           />
         </Sparklines>
-      </styled.div>
-    </styled.div>
-  </styled.div>
-  <styled.div
+      </.sc-iGgWBj>
+    </.sc-dcJsrY>
+  </.sc-eqUAAy>
+  <.sc-eqUAAy
     key="5XX-16"
     priority="normal"
   >
-    <styled.div>
+    <.sc-fqkvVR>
       5XX
-    </styled.div>
-    <styled.div>
+    </.sc-fqkvVR>
+    <.sc-dcJsrY>
       16
-      <styled.div>
+      <.sc-iGgWBj>
         <Sparklines
           data={
-            Array [
+            [
               16,
               16,
               16,
@@ -286,7 +286,7 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
           <SparklinesLine
             onMouseMove={[Function]}
             style={
-              Object {
+              {
                 "fill": "none",
                 "stroke": "currentColor",
                 "strokeWidth": 1,
@@ -295,7 +295,7 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
           />
           <SparklinesReferenceLine
             style={
-              Object {
+              {
                 "opacity": "0.4",
                 "stroke": "grey",
               }
@@ -303,22 +303,22 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
             type="mean"
           />
         </Sparklines>
-      </styled.div>
-    </styled.div>
-  </styled.div>
-  <styled.div
+      </.sc-iGgWBj>
+    </.sc-dcJsrY>
+  </.sc-eqUAAy>
+  <.sc-eqUAAy
     key="500-16"
     priority="normal"
   >
-    <styled.div>
+    <.sc-fqkvVR>
       500
-    </styled.div>
-    <styled.div>
+    </.sc-fqkvVR>
+    <.sc-dcJsrY>
       16
-      <styled.div>
+      <.sc-iGgWBj>
         <Sparklines
           data={
-            Array [
+            [
               16,
               16,
               16,
@@ -336,7 +336,7 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
           <SparklinesLine
             onMouseMove={[Function]}
             style={
-              Object {
+              {
                 "fill": "none",
                 "stroke": "currentColor",
                 "strokeWidth": 1,
@@ -345,7 +345,7 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
           />
           <SparklinesReferenceLine
             style={
-              Object {
+              {
                 "opacity": "0.4",
                 "stroke": "grey",
               }
@@ -353,8 +353,8 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
             type="mean"
           />
         </Sparklines>
-      </styled.div>
-    </styled.div>
-  </styled.div>
-</styled.div>
+      </.sc-iGgWBj>
+    </.sc-dcJsrY>
+  </.sc-eqUAAy>
+</.sc-aXZVg>
 `;

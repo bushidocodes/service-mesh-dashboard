@@ -1,6 +1,7 @@
 import state from "../../json/mockReduxState";
 
-const { getFunctionsMetrics } = require.requireActual("./selectors");
+// require.requireActual was removed in Jest 27; use jest.requireActual instead.
+const { getFunctionsMetrics } = jest.requireActual("./selectors");
 
 describe("Reselect selector getFunctionsMetrics", () =>
   test("returns an array of keys starting with the substring function", () => {

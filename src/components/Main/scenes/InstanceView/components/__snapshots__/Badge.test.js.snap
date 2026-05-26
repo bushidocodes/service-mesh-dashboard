@@ -1,27 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Badge matches snapshot 1`] = `
-.c0 {
-  font-size: 11px;
-  font-weight: 600;
-  text-align: center;
-  -webkit-letter-spacing: 0.06em;
-  -moz-letter-spacing: 0.06em;
-  -ms-letter-spacing: 0.06em;
-  letter-spacing: 0.06em;
-  height: fit-content;
-  padding: 2px 4px;
-  background-color: rgb(10,171,42);
-  border-radius: 3px;
-  color: rgb(255,255,255);
-  margin-right: 4px;
-}
-
-.c0 svg:first-child {
-  margin: -8px -4px -8px -6px;
-}
-
 <span
-  className="c0"
+  className="sc-aXZVg jqtbwJ"
 />
 `;

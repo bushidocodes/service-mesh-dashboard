@@ -111,5 +111,5 @@ describe("Fabric Microservices Module ", () => {
       )
       .then(() => done());
   });
-  xit("fetches metrics from a microservice via the discovery service");
+  xit("fetches metrics from a microservice via the discovery service", () => {});
 });

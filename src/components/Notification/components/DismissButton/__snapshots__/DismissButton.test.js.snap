@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DismissButton matches snapshot 1`] = `
-<styled.div>
+<.sc-eqUAAy>
   <Icon>
     <Close />
   </Icon>
-</styled.div>
+</.sc-eqUAAy>
 `;

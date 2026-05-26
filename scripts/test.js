@@ -8,12 +8,13 @@ process.env.PUBLIC_URL = "";
 // Makes the script crash on unhandled rejections instead of silently
 // ignoring them. In the future, promise rejections that are not handled will
 // terminate the Node.js process with a non-zero exit code.
-process.on("unhandledRejection", err => {
+process.on("unhandledRejection", (err) => {
   throw err;
 });
 
-// Ensure environment variables are read.
-require("../config/env");
+// Note: config/env.js (CRA-era webpack env loader) is intentionally not
+// required here. Vite handles env injection for dev/prod builds via vite.config.js
+// and Jest resolves src/ aliases via moduleDirectories in jest config.
 
 const jest = require("jest");
 const argv = process.argv.slice(2);

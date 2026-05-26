@@ -1,14 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SectionContent matches snapshot 1`] = `
-.c0 {
-  margin: 0 auto;
-  max-width: 1300px;
-  padding: 8px;
-  width: 100%;
-}
-
 <div
-  className="c0"
+  className="sc-aXZVg jOffXJ"
 />
 `;

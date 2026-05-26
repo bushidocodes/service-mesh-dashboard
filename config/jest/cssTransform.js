@@ -4,8 +4,9 @@
 // http://facebook.github.io/jest/docs/tutorial-webpack.html
 
 module.exports = {
+  // Jest 27+ requires transformers to return { code } instead of a string.
   process() {
-    return "module.exports = {};";
+    return { code: "module.exports = {};" };
   },
   getCacheKey() {
     // The output is always the same.

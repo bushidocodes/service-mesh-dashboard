@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`A Footer container should render 1`] = `
-<styled.footer>
-  <styled.a
+<.sc-gEvEer>
+  <.sc-eqUAAy
     href="http://deciphernow.com"
     rel="noopener noreferrer"
     target="_blank"
@@ -12,17 +12,17 @@ exports[`A Footer container should render 1`] = `
       alt="Decipher Technology Studios"
       src="decipher-logo-long.png"
     />
-  </styled.a>
-  <styled.p>
+  </.sc-eqUAAy>
+  <.sc-aXZVg>
     <FormattedHTMLMessage
       defaultMessage="Copyright © 2018 Decipher Technology Studios. All rights reserved.  <br /> Copyright © 2018 Grey Matter, a Decipher Technology Studios product. All rights reserved."
       description="Footer copyright message"
       id="footer.copyright"
-      values={Object {}}
+      values={{}}
     />
-  </styled.p>
-  <styled.div>
-    <styled.a
+  </.sc-aXZVg>
+  <.sc-fqkvVR>
+    <.sc-dcJsrY
       href="http://github.com/DecipherNow"
       rel="noopener noreferrer"
       target="_blank"
@@ -37,8 +37,8 @@ exports[`A Footer container should render 1`] = `
           ratio={1}
         />
       </Icon>
-    </styled.a>
-    <styled.a
+    </.sc-dcJsrY>
+    <.sc-dcJsrY
       href="http://twitter.com/deciphernow"
       rel="noopener noreferrer"
       target="_blank"
@@ -53,8 +53,8 @@ exports[`A Footer container should render 1`] = `
           ratio={1}
         />
       </Icon>
-    </styled.a>
-    <styled.a
+    </.sc-dcJsrY>
+    <.sc-dcJsrY
       href="http://www.linkedin.com/company/decipher-technology-studios"
       rel="noopener noreferrer"
       target="_blank"
@@ -69,7 +69,7 @@ exports[`A Footer container should render 1`] = `
           ratio={1}
         />
       </Icon>
-    </styled.a>
-  </styled.div>
-</styled.footer>
+    </.sc-dcJsrY>
+  </.sc-fqkvVR>
+</.sc-gEvEer>
 `;

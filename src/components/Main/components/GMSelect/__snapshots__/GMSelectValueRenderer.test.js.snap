@@ -6,8 +6,8 @@ exports[`GMSelectValueRenderer matches snapshot 1`] = `
     Yo
      
   </span>
-  <styled.span>
+  <.sc-aXZVg>
     Yo label
-  </styled.span>
+  </.sc-aXZVg>
 </span>
 `;

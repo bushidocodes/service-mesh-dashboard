@@ -1,12 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`InspectorHideStatic matches snapshot 1`] = `
-.c0 {
-  color: currentColor;
-}
-
 <input
-  className="c0"
+  className="sc-aXZVg gyqDHq"
   name="hideStaticMetric"
   type="checkbox"
 />

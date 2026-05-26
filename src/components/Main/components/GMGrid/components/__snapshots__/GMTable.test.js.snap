@@ -1,61 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<GMTable> stateless child component of GMGrid matches snapshot 1`] = `
-<styled.div
+<.sc-aXZVg
   table={true}
 >
-  <styled.h3>
+  <.sc-gEvEer>
     Requests
-  </styled.h3>
-  <styled.div>
-    <styled.div
+  </.sc-gEvEer>
+  <.sc-eqUAAy>
+    <.sc-iGgWBj
       key="header-0"
     >
       Requests
-    </styled.div>
-    <styled.div
+    </.sc-iGgWBj>
+    <.sc-iGgWBj
       key="header-1"
     >
       Success
-    </styled.div>
-  </styled.div>
-  <styled.div
+    </.sc-iGgWBj>
+  </.sc-eqUAAy>
+  <.sc-eqUAAy
     key="row-0"
   >
-    <styled.div
+    <.sc-fqkvVR
       key="row-0-cell-0"
     >
       http
-    </styled.div>
-    <styled.div
+    </.sc-fqkvVR>
+    <.sc-dcJsrY
       key="row-0-cell-1"
     >
       0
-    </styled.div>
-    <styled.div
+    </.sc-dcJsrY>
+    <.sc-dcJsrY
       key="row-0-cell-2"
     >
       0
-    </styled.div>
-  </styled.div>
-  <styled.div
+    </.sc-dcJsrY>
+  </.sc-eqUAAy>
+  <.sc-eqUAAy
     key="row-1"
   >
-    <styled.div
+    <.sc-fqkvVR
       key="row-1-cell-0"
     >
       https
-    </styled.div>
-    <styled.div
+    </.sc-fqkvVR>
+    <.sc-dcJsrY
       key="row-1-cell-1"
     >
       1,743
-    </styled.div>
-    <styled.div
+    </.sc-dcJsrY>
+    <.sc-dcJsrY
       key="row-1-cell-2"
     >
       4,324
-    </styled.div>
-  </styled.div>
-</styled.div>
+    </.sc-dcJsrY>
+  </.sc-eqUAAy>
+</.sc-aXZVg>
 `;

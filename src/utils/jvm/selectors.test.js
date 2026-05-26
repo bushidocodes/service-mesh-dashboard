@@ -1,7 +1,8 @@
 import state from "../../json/mockReduxState";
 
+// require.requireActual was removed in Jest 27; use jest.requireActual instead.
 const { getVisibleThreads, getThreadCounts } =
-  require.requireActual("./selectors");
+  jest.requireActual("./selectors");
 
 describe("Reselect selector getVisibleThreads", () =>
   test("returns an array of thread objects matching state.settings.threadsFilter ", () => {

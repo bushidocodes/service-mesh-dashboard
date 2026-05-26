@@ -15,7 +15,8 @@ const {
   generateHeaderTabs,
   getStatusCount,
   getRuntime
-} = require.requireActual("./selectors");
+  // require.requireActual was removed in Jest 27; use jest.requireActual instead.
+} = jest.requireActual("./selectors");
 
 const simpleState = {
   instance: {

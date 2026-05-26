@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ConfirmationModal matches snapshot when closed 1`] = `
-<Styled(Modal)
+<.sc-iGgWBj
   aria={
-    Object {
+    {
       "describedby": "secondaryText",
       "labelledby": "question",
     }
@@ -12,7 +12,7 @@ exports[`ConfirmationModal matches snapshot when closed 1`] = `
   overlayClassName="modalOverlay"
   shouldCloseOnOverlayClick={true}
 >
-  <styled.span
+  <.sc-gEvEer
     onClick={[Function]}
   >
     <Icon>
@@ -22,8 +22,8 @@ exports[`ConfirmationModal matches snapshot when closed 1`] = `
         ratio={1}
       />
     </Icon>
-  </styled.span>
-  <styled.div>
+  </.sc-gEvEer>
+  <.sc-eqUAAy>
     <Icon
       backgroundColor="hsla(0, 100%, 42.5%, 0.8)"
       backgroundStyle="BackgroundTriangleSmall"
@@ -36,18 +36,18 @@ exports[`ConfirmationModal matches snapshot when closed 1`] = `
         ratio={1}
       />
     </Icon>
-    <styled.h2
+    <.sc-fqkvVR
       id="question"
     >
       Will this test pass?
-    </styled.h2>
-    <styled.p
+    </.sc-fqkvVR>
+    <.sc-dcJsrY
       id="secondaryText"
     >
       Only time will tell
-    </styled.p>
-  </styled.div>
-  <styled.div>
+    </.sc-dcJsrY>
+  </.sc-eqUAAy>
+  <.sc-aXZVg>
     <Button
       clickAction={[Function]}
       label="Cancel"
@@ -57,14 +57,14 @@ exports[`ConfirmationModal matches snapshot when closed 1`] = `
       label="Confirm"
       type="danger"
     />
-  </styled.div>
-</Styled(Modal)>
+  </.sc-aXZVg>
+</.sc-iGgWBj>
 `;
 
 exports[`ConfirmationModal matches snapshot when open 1`] = `
-<Styled(Modal)
+<.sc-iGgWBj
   aria={
-    Object {
+    {
       "describedby": "secondaryText",
       "labelledby": "question",
     }
@@ -73,7 +73,7 @@ exports[`ConfirmationModal matches snapshot when open 1`] = `
   overlayClassName="modalOverlay"
   shouldCloseOnOverlayClick={true}
 >
-  <styled.span
+  <.sc-gEvEer
     onClick={[Function]}
   >
     <Icon>
@@ -83,8 +83,8 @@ exports[`ConfirmationModal matches snapshot when open 1`] = `
         ratio={1}
       />
     </Icon>
-  </styled.span>
-  <styled.div>
+  </.sc-gEvEer>
+  <.sc-eqUAAy>
     <Icon
       backgroundColor="hsla(0, 100%, 42.5%, 0.8)"
       backgroundStyle="BackgroundTriangleSmall"
@@ -97,18 +97,18 @@ exports[`ConfirmationModal matches snapshot when open 1`] = `
         ratio={1}
       />
     </Icon>
-    <styled.h2
+    <.sc-fqkvVR
       id="question"
     >
       Will this test pass?
-    </styled.h2>
-    <styled.p
+    </.sc-fqkvVR>
+    <.sc-dcJsrY
       id="secondaryText"
     >
       Only time will tell
-    </styled.p>
-  </styled.div>
-  <styled.div>
+    </.sc-dcJsrY>
+  </.sc-eqUAAy>
+  <.sc-aXZVg>
     <Button
       clickAction={[Function]}
       label="Cancel"
@@ -118,6 +118,6 @@ exports[`ConfirmationModal matches snapshot when open 1`] = `
       label="Confirm"
       type="danger"
     />
-  </styled.div>
-</Styled(Modal)>
+  </.sc-aXZVg>
+</.sc-iGgWBj>
 `;

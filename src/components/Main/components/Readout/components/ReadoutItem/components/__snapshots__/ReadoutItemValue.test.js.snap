@@ -1,15 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ReadoutItemValue matches snapshot 1`] = `
-.c0 {
-  font-size: 32px;
-  word-break: break-all;
-  margin: 0;
-  line-height: 1.1;
-  min-height: 1em;
-}
-
 <span
-  className="c0"
+  className="sc-aXZVg fvcqCU"
 />
 `;

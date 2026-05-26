@@ -1,69 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TabLink matches snapshot 1`] = `
-.c0 {
-  background-color: rgb(45,45,45);
-  font-weight: 400;
-  -webkit-flex: 1 1 1%;
-  -ms-flex: 1 1 1%;
-  flex: 1 1 1%;
-  margin: 1px 1px 0 0;
-  overflow: hidden;
-  padding: 4px 8px 8px;
-  position: relative;
-  -webkit-transition: all 0.15s ease;
-  transition: all 0.15s ease;
-}
-
-.c0::after {
-  border-radius: 1px;
-  box-shadow: 0 0 1em 1px rgb(10,171,42);
-  color: inherit;
-  content: "";
-  height: 1px;
-  left: 0;
-  opacity: 0;
-  pointer-events: none;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 100;
-}
-
-.c0:hover {
-  background-color: rgb(54,54,54);
-}
-
-.c0:hover:after {
-  opacity: 0.5;
-}
-
-.c0.active {
-  background-color: rgb(77,77,77);
-}
-
-.c0.active:after {
-  background-color: rgb(84,196,106);
-  opacity: 1;
-  -webkit-transition: 0.1s;
-  transition: 0.1s;
-}
-
-.c0:active:after {
-  background-color: rgb(84,196,106);
-  opacity: 1;
-  -webkit-transition: 0.1s;
-  transition: 0.1s;
-}
-
-.c0:focus {
-  outline: rgb(10,171,42) auto 3px;
-}
-
-<NavLink
-  activeClassName="active"
-  ariaCurrent="true"
-  className="c0"
+<[object Object]
+  className="sc-aXZVg keaEUt"
   exact={true}
   to="/"
 />
