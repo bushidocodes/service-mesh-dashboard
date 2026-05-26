@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import NotificationSystem from "react-notification-system";
-import { createGlobalStyle } from "styled-components";
+import { injectGlobal } from "styled-components";
 
 import {
   NotificationWrapper,
@@ -10,7 +10,7 @@ import {
 
 // Inject our "faux" styled-components that contain
 // 3rd party classnames into the global stylesheet
-const NotificationGlobalStyles = createGlobalStyle`
+injectGlobal`
 ${NotificationWrapper};
 ${NotificationBody};
 ${NotificationTitle}
@@ -21,13 +21,9 @@ export default class Notification extends Component {
     window.addNotification = this.refs.notificationSystem.addNotification;
   }
   render() {
-    // Note: react-notification-system uses style={false} to disable its default
-    // inline styles — this is intentional even though it looks unusual.
-    return (
-      <>
-        <NotificationGlobalStyles />
-        <NotificationSystem ref="notificationSystem" style={false} />
-      </>
-    );
+    // Note: React Notification uses an unusual syntax for disabling
+    // default styles, which forces us to overtime this eslint rule
+    // eslint-disable-next-line react/style-prop-object
+    return <NotificationSystem ref="notificationSystem" style={false} />;
   }
 }

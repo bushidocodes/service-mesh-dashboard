@@ -2,7 +2,7 @@ import { Actions } from "jumpstate";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { withRouter } from "utils/withRouter";
+import { withRouter } from "react-router-dom";
 
 import AppContent from "./components/AppContent";
 import { LazyLoader } from "components/LazyLoader";

@@ -1,5 +1,6 @@
 import React from "react";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { PropTypes } from "prop-types";
+import { Redirect, Route, Switch } from "react-router-dom";
 
 import { LazyLoader } from "components/LazyLoader";
 import NotFound from "components/Main/scenes/InstanceView/components/NotFound";
@@ -24,24 +25,34 @@ const GMGrid = LazyLoader({
   loader: () => import("components/Main/components/GMGrid")
 });
 
+JVMInstanceRouter.propTypes = {
+  baseURL: PropTypes.string
+};
+
 /**
- * JVM Runtime Router.
- * Paths are relative to the parent /:serviceSlug/:instanceID/* route.
+ * JVM Runtime Router
  * @export
  * @returns JSX.Element
  */
-export default function JVMInstanceRouter() {
+export default function JVMInstanceRouter({ baseURL }) {
   return (
-    <Routes>
-      {/* Redirect instance root → /summary */}
-      <Route index element={<Navigate replace to="summary" />} />
-      <Route path="summary" element={<SummaryGrid />} />
-      <Route path="threads" element={<ThreadsGrid />} />
-      <Route path="routes" element={<RoutesGrid />} />
-      <Route path="explorer" element={<Explorer />} />
-      {/* Catch-all for dynamically generated dashboards */}
-      <Route path=":dashboardName" element={<GMGrid />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+    <Switch>
+      {/* Root Redirect */}
+      <Route
+        exact
+        path={baseURL}
+        render={() => <Redirect to={`${baseURL}/summary`} />}
+      />
+      {/* Custom Runtime Specific Stuff */}
+      <Route component={SummaryGrid} path={`${baseURL}/summary`} />
+      <Route component={ThreadsGrid} path={`${baseURL}/threads`} />
+      <Route component={RoutesGrid} path={`${baseURL}/routes`} />
+      {/* General Routes shared by all runtimes */}
+      <Route component={Explorer} path={`${baseURL}/explorer`} />
+      {/* Catch all route for dynamically generated dashboards */}
+      <Route component={GMGrid} path={`${baseURL}/:dashboardName`} />
+      {/* Should never match, but included just in case */}
+      <Route component={NotFound} path="*" />
+    </Switch>
   );
 }

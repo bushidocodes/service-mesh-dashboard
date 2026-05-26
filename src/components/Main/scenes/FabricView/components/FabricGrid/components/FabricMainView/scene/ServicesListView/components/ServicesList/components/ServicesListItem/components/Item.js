@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+import GMLink from "components/Main/scenes/FabricView/components/GMLink";
 import { spacingScale, contrastColor } from "style/styleFunctions";
 import {
   FONT_SIZE_XS,
@@ -14,19 +15,19 @@ const LineItemStyle = styled.div`
   flex: 0 0 auto;
 `;
 
-const ItemName = styled(LineItemStyle)`
+const ItemName = LineItemStyle.extend`
   margin-right: ${spacingScale(1)};
   font-weight: ${FONT_WEIGHT_SEMIBOLD};
   flex: 0 1 auto;
 `;
 
-const ItemIcon = styled(LineItemStyle)`
+const ItemIcon = LineItemStyle.extend`
   flex: 0 0 auto;
   margin-left: -${spacingScale(0.5)};
   margin-right: -${spacingScale(0.25)};
 `;
 
-const ItemRuntime = styled(LineItemStyle)`
+const ItemRuntime = LineItemStyle.extend`
   justify-self: flex-end;
   flex: 0 1 auto;
 
@@ -44,15 +45,15 @@ const ItemRuntime = styled(LineItemStyle)`
   }
 `;
 
-const ItemVersion = styled(LineItemStyle)`
+const ItemVersion = LineItemStyle.extend`
   flex: 0 1 auto;
   text-align: right;
 `;
 
-const ItemInfo = styled.div`
-  &:hover {
-    color: inherit;
-  }
+const ItemInfo = GMLink.withComponent("div").extend`
+&:hover {
+color: inherit;
+}
 `;
 
 export { ItemName, ItemVersion, ItemIcon, ItemRuntime, ItemInfo };

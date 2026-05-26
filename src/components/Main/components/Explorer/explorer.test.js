@@ -1,5 +1,5 @@
 import React from "react";
-import { MemoryRouter, Route } from "react-router-dom";
+import { MemoryRouter, Route } from "react-router";
 import { Provider } from "react-redux";
 import configureStore from "redux-mock-store";
 import { mountWithIntl, renderWithIntl } from "utils/i18nTesting";

@@ -1,7 +1,7 @@
 import _ from "lodash";
 import { PropTypes } from "prop-types";
 import React, { Fragment } from "react";
-import { withRouter } from "utils/withRouter";
+import { withRouter } from "react-router-dom";
 
 import ServicesList from "./components/ServicesList";
 import SectionContainer from "./components/SectionContainer";

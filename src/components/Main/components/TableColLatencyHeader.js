@@ -6,7 +6,7 @@ import TableColHeader from "./TableColHeader";
 import Tooltip from "components/Tooltip";
 import { injectIntl, intlShape, FormattedMessage } from "react-intl";
 
-const LatencyHeaderWrap = styled(TableColHeader)`
+const LatencyHeaderWrap = TableColHeader.extend`
   display: flex;
   justify-content: flex-end;
   align-items: center;

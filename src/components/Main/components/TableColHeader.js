@@ -1,10 +1,8 @@
-import styled from "styled-components";
-
 import TableCol from "./TableCol";
 
 import { rowChildSpacing } from "style/styleFunctions";
 
-const TableColHeader = styled(TableCol)`
+const TableColHeader = TableCol.extend`
   ${rowChildSpacing()};
 `;
 export default TableColHeader;

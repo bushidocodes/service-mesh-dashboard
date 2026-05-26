@@ -1,8 +1,6 @@
-import styled from "styled-components";
-
 import TableColHeader from "./TableColHeader";
 
-const TableColHeaderThread = styled(TableColHeader)`
+const TableColHeaderThread = TableColHeader.extend`
   flex: 0 1 5em;
 `;
 export default TableColHeaderThread;
