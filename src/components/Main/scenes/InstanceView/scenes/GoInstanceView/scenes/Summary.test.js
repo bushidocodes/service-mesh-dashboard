@@ -1,7 +1,7 @@
 import React from "react";
 import configureStore from "redux-mock-store";
 
-import { shallowWithIntl, renderWithIntl } from "utils/i18nTesting";
+import { mountWithIntl, renderWithIntl } from "utils/i18nTesting";
 import mockState from "json/mockReduxStateGO";
 
 import LayoutSection from "components/LayoutSection";
@@ -12,13 +12,15 @@ import SummaryGrid from "./Summary";
 
 const mockStore = configureStore()(mockState);
 
-const SummaryGridWrap = shallowWithIntl(<SummaryGrid store={mockStore} />)
-  .dive()
-  .dive();
+let SummaryGridWrap;
 
 describe("GO > SummaryGrid component", () => {
+  beforeEach(() => {
+    SummaryGridWrap = mountWithIntl(<SummaryGrid />, mockStore);
+  });
+
   test("Matched the snapshot", () => {
-    const tree = renderWithIntl(<SummaryGrid store={mockStore} />);
+    const tree = renderWithIntl(<SummaryGrid />, mockStore);
     expect(tree).toMatchSnapshot();
   });
 

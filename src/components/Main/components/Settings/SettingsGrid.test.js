@@ -17,13 +17,11 @@ let SettingGridWrap,
 
 describe("SettingsGrid component", () => {
   beforeEach(function () {
-    SettingGridWrap = mountWithIntl(
-      <SettingsGrid store={mockStore(mockState)} />
-    );
+    SettingGridWrap = mountWithIntl(<SettingsGrid />, mockStore(mockState));
   });
 
   test("Matches snapshot", () => {
-    let tree = mountWithIntl(<SettingsGrid store={mockStore(mockState)} />);
+    let tree = mountWithIntl(<SettingsGrid />, mockStore(mockState));
     expect(tree).toMatchSnapshot();
   });
 
@@ -33,9 +31,7 @@ describe("SettingsGrid component", () => {
 
   test("Has 1 Fabric Polling Setting if fabricServer prop is not available and its called Polling", () => {
     mockState.settings.fabricServer = "";
-    SettingGridWrap = mountWithIntl(
-      <SettingsGrid store={mockStore(mockState)} />
-    );
+    SettingGridWrap = mountWithIntl(<SettingsGrid />, mockStore(mockState));
     expect(SettingGridWrap.find("PollingSettings").find("h3").text()).toBe(
       "Polling"
     );
@@ -43,9 +39,7 @@ describe("SettingsGrid component", () => {
 
   test("Has 2 Fabric Polling Settings if fabricServer prop is available", () => {
     mockState.settings.fabricServer = "http://localhost:1337";
-    SettingGridWrap = mountWithIntl(
-      <SettingsGrid store={mockStore(mockState)} />
-    );
+    SettingGridWrap = mountWithIntl(<SettingsGrid />, mockStore(mockState));
     expect(SettingGridWrap.find("PollingSettings").length).toBe(2);
   });
 

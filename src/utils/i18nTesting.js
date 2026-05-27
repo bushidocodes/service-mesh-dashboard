@@ -1,5 +1,6 @@
 import React from "react";
 import { IntlProvider, intlShape } from "react-intl";
+import { Provider } from "react-redux";
 import { mount, shallow, render } from "enzyme";
 
 import { flattenMessages } from "utils/i18n";
@@ -35,19 +36,29 @@ function nodeWithIntlProp(node) {
 }
 
 export function shallowWithIntl(node) {
-  return shallow(nodeWithIntlProp(node), {
-    context: { intl }
-  });
+  return shallow(nodeWithIntlProp(node), { context: { intl } });
 }
 
-export function mountWithIntl(node) {
+export function mountWithIntl(node, store = null) {
+  if (store) {
+    return mount(<Provider store={store}>{nodeWithIntlProp(node)}</Provider>, {
+      context: { intl },
+      childContextTypes: { intl: intlShape }
+    });
+  }
   return mount(nodeWithIntlProp(node), {
     context: { intl },
     childContextTypes: { intl: intlShape }
   });
 }
 
-export function renderWithIntl(node) {
+export function renderWithIntl(node, store = null) {
+  if (store) {
+    return render(<Provider store={store}>{nodeWithIntlProp(node)}</Provider>, {
+      context: { intl },
+      childContextTypes: { intl: intlShape }
+    });
+  }
   return render(nodeWithIntlProp(node), {
     context: { intl },
     childContextTypes: { intl: intlShape }
