@@ -60,11 +60,8 @@ exports[`TabLink matches snapshot 1`] = `
   outline: rgb(10,171,42) auto 3px;
 }
 
-<NavLink
-  activeClassName="active"
-  ariaCurrent="true"
+<NavLinkWrapper
   className="c0"
-  exact={true}
   to="/"
 />
 `;

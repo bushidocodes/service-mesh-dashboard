@@ -1,6 +1,6 @@
 import React from "react";
 import { mount, shallow } from "enzyme";
-import { MemoryRouter, Route } from "react-router";
+import { MemoryRouter, Routes, Route } from "react-router-dom";
 
 import mockMappedServices from "json/mockMappedServices";
 
@@ -18,16 +18,18 @@ const RouterWrap = (
 ) => {
   return (
     <MemoryRouter initialEntries={route}>
-      <Route
-        render={(props) => (
-          <ServicesCardsView
-            {...props}
-            groupByAttribute={groupByAttribute}
-            sortByAttribute={"Name"}
-            services={services}
-          />
-        )}
-      />
+      <Routes>
+        <Route
+          path="*"
+          element={
+            <ServicesCardsView
+              groupByAttribute={groupByAttribute}
+              sortByAttribute={"Name"}
+              services={services}
+            />
+          }
+        />
+      </Routes>
     </MemoryRouter>
   );
 };

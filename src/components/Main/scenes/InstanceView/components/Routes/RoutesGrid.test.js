@@ -1,4 +1,5 @@
 import React from "react";
+import { MemoryRouter } from "react-router-dom";
 import configureMockStore from "redux-mock-store";
 
 // Utilities
@@ -75,11 +76,19 @@ let wrapper;
 
 describe("RoutesGrid View", () => {
   beforeEach(() => {
-    wrapper = mountWithIntl(<RoutesGrid store={store} />).find("RoutesGrid");
+    wrapper = mountWithIntl(
+      <MemoryRouter>
+        <RoutesGrid store={store} />
+      </MemoryRouter>
+    ).find("RoutesGrid");
   });
 
   test("matches snapshot", () => {
-    const tree = renderWithIntl(<RoutesGrid store={store} />);
+    const tree = renderWithIntl(
+      <MemoryRouter>
+        <RoutesGrid store={store} />
+      </MemoryRouter>
+    );
     expect(tree).toMatchSnapshot();
   });
 
@@ -93,7 +102,11 @@ describe("RoutesGrid View", () => {
     // create state with no metrics and reconfigure mock store with new state
     const state = Object.assign({}, mockState, { instance: { metrics: {} } });
     const store = configureMockStore()(state);
-    wrapper = mountWithIntl(<RoutesGrid store={store} />);
+    wrapper = mountWithIntl(
+      <MemoryRouter>
+        <RoutesGrid store={store} />
+      </MemoryRouter>
+    );
     expect(wrapper.find(NotFoundError)).toHaveLength(1);
   });
 

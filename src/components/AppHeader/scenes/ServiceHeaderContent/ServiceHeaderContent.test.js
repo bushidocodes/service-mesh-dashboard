@@ -1,6 +1,6 @@
 import React from "react";
 import { renderWithIntl } from "utils/i18nTesting";
-import { MemoryRouter, Route } from "react-router";
+import { MemoryRouter, Routes, Route } from "react-router-dom";
 
 import state from "json/mockReduxState";
 import ServiceHeaderContent from "./ServiceHeaderContent";
@@ -13,12 +13,12 @@ const RouterWrap = (
       "/Authentication Statistics File Resource Network Export ICPF Mail Domain End/4.3"
     ]}
   >
-    <Route
-      path={`/:serviceName/:serviceVersion`}
-      render={(props) => (
-        <ServiceHeaderContent {...props} store={configureMockStore()(state)} />
-      )}
-    />
+    <Routes>
+      <Route
+        path="*"
+        element={<ServiceHeaderContent store={configureMockStore()(state)} />}
+      />
+    </Routes>
   </MemoryRouter>
 );
 

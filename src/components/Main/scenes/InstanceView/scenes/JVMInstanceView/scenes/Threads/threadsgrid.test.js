@@ -1,4 +1,5 @@
 import React from "react";
+import { MemoryRouter } from "react-router-dom";
 import { Actions } from "jumpstate";
 import configureMockStore from "redux-mock-store";
 import { CreateJumpstateMiddleware } from "jumpstate";
@@ -35,7 +36,11 @@ const threadsTableProps = {
 };
 
 // Wrap ThreadsGrid in Memory Router
-const RouterWrap = <ThreadsGrid store={store} />;
+const RouterWrap = (
+  <MemoryRouter>
+    <ThreadsGrid store={store} />
+  </MemoryRouter>
+);
 
 let wrapper;
 

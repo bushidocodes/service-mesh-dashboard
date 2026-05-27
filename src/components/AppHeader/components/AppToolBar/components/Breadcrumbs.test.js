@@ -3,7 +3,7 @@ import { mount, shallow } from "enzyme";
 import Breadcrumbs from "./Breadcrumbs";
 import Breadcrumb from "./Breadcrumb";
 import { Link } from "react-router-dom";
-import { MemoryRouter } from "react-router";
+import { MemoryRouter } from "react-router-dom";
 
 describe("Breadcrumbs", () => {
   it("matches snapshot when showing root", () => {

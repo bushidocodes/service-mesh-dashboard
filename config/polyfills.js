@@ -1,5 +1,15 @@
 "use strict";
 
+// TextEncoder/TextDecoder are not in the jsdom global by default.
+// enzyme@3.11 → cheerio@1.2 → undici requires them at module load time.
+const { TextEncoder, TextDecoder } = require("util");
+if (typeof global.TextDecoder === "undefined") {
+  global.TextDecoder = TextDecoder;
+}
+if (typeof global.TextEncoder === "undefined") {
+  global.TextEncoder = TextEncoder;
+}
+
 if (typeof Promise === "undefined") {
   // Rejection tracking prevents a common issue where React gets into an
   // inconsistent state due to an error, but it gets swallowed by a Promise,

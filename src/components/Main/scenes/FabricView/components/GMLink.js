@@ -1,10 +1,17 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { PropTypes } from "prop-types";
 
 import { COLOR_HIGHLIGHT, COLOR_CONTENT_MUTED } from "style/styleVariables";
 
-const GMLink = styled(Link)`
+// Wrap Link in a plain function component so styled-components v2 can wrap it.
+// React Router v6 exports Link as a forwardRef object (typeof === "object").
+function LinkWrapper(props) {
+  return <Link {...props} />;
+}
+
+const GMLink = styled(LinkWrapper)`
   width: 100%;
   cursor: ${(props) => (props.cursor ? props.cursor : "pointer")};
   text-decoration: none;

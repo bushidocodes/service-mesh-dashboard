@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { PropTypes } from "prop-types";
 import { Actions } from "jumpstate";
 import _ from "lodash";
-import { withRouter } from "react-router-dom";
+import { withRouter } from "utils/withRouter";
 import { injectIntl, intlShape } from "react-intl";
 
 import Table from "components/Main/components/Table";

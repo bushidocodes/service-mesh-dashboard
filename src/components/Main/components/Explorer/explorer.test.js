@@ -1,5 +1,5 @@
 import React from "react";
-import { MemoryRouter, Route } from "react-router";
+import { MemoryRouter, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import configureStore from "redux-mock-store";
 import { mountWithIntl, renderWithIntl } from "utils/i18nTesting";
@@ -20,7 +20,9 @@ const store = configureStore()(mockState);
 const RouterWrap = (
   <Provider store={store}>
     <MemoryRouter>
-      <Route render={(props) => <Explorer {...props} />} />
+      <Routes>
+        <Route path="*" element={<Explorer />} />
+      </Routes>
     </MemoryRouter>
   </Provider>
 );

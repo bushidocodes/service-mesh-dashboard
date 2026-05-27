@@ -1,3 +1,4 @@
+import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
@@ -14,11 +15,17 @@ const COLOR_TAB_BACKGROUND_BASE = contrastColor(COLOR_ALT_BACKGROUND, 0.175);
 const COLOR_TAB_BACKGROUND_ACTIVE = contrastColor(COLOR_ALT_BACKGROUND, 0.3);
 const COLOR_TAB_HIGHLIGHT = COLOR_HIGHLIGHT;
 
+// Wrap NavLink in a plain function component so styled-components v2 can wrap it.
+// React Router v6 exports NavLink as a forwardRef object, which styled-components v2
+// rejects because it checks typeof target === "function".
+// In v6, NavLink is always exact by default — the "exact" attr is no longer needed.
+function NavLinkWrapper(props) {
+  return <NavLink {...props} />;
+}
+
 // Note: Edge requires the overflow: hidden property to maintian
 // equal sized cards. flex-basis is not sufficient!
-const TabLink = styled(NavLink).attrs({
-  exact: true
-})`
+const TabLink = styled(NavLinkWrapper)`
   background-color: ${COLOR_TAB_BACKGROUND_BASE.string()};
   font-weight: ${FONT_WEIGHT_REGULAR};
   flex: 1 1 ${TAB_WIDTH_BASE};

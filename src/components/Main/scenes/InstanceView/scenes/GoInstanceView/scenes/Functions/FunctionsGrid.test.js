@@ -1,4 +1,5 @@
 import React from "react";
+import { MemoryRouter } from "react-router-dom";
 import configureStore from "redux-mock-store";
 import _ from "lodash";
 
@@ -24,10 +25,14 @@ noMetricsState.instance.metrics = _.omitBy(
 let wrapper;
 
 const FunctionsGridWithMockStore = (
-  <FunctionsGrid store={mockStore(mockState)} />
+  <MemoryRouter>
+    <FunctionsGrid store={mockStore(mockState)} />
+  </MemoryRouter>
 );
 const FunctionsGridWithMissingMetricsStore = (
-  <FunctionsGrid store={mockStore(noMetricsState)} />
+  <MemoryRouter>
+    <FunctionsGrid store={mockStore(noMetricsState)} />
+  </MemoryRouter>
 );
 
 const sortByOptions = [
