@@ -98,8 +98,10 @@ export default class DygraphWrapper extends React.Component {
 
   /** Clean up when the component unmounts */
   componentWillUnmount() {
-    this.graph.destroy();
-    delete this.graph;
+    if (this.graph) {
+      this.graph.destroy();
+      delete this.graph;
+    }
   }
 
   /**
@@ -120,7 +122,7 @@ export default class DygraphWrapper extends React.Component {
   render() {
     return (
       <DygraphContainer
-        innerRef={(elem) => {
+        ref={(elem) => {
           this.div = elem;
         }}
       />
