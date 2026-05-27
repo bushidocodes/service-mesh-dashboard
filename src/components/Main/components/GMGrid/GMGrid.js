@@ -5,6 +5,7 @@ import { Responsive, WidthProvider } from "react-grid-layout";
 import { connect } from "react-redux";
 import { createGlobalStyle } from "styled-components";
 import { injectIntl, intlShape } from "react-intl";
+import withRouter from "utils/withRouter";
 
 import GMBasicMetrics from "./components/GMBasicMetrics";
 import GMLineChart from "../GMLineChart";
@@ -219,4 +220,4 @@ function mapStateToProps({ dashboards, instance: { metrics } }, ownProps) {
   };
 }
 // default export for the connected component
-export default connect(mapStateToProps)(injectIntl(GMGrid));
+export default withRouter(connect(mapStateToProps)(injectIntl(GMGrid)));

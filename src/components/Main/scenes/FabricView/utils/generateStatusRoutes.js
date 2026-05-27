@@ -15,14 +15,13 @@ import { computeStatus } from "utils/selectors";
 
 function generateStatusRoutes(services) {
   return microserviceStatuses.map((route) => {
-    route = route.toLowerCase();
     const filtered = _.values(services).filter((service) => {
       let status = computeStatus(
         service.instances.length,
         service.minimum,
         service.maximum
       );
-      return status.toLowerCase() === route;
+      return status === route;
     });
     return (
       <Route

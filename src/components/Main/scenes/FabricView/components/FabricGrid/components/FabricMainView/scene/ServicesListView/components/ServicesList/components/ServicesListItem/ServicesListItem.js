@@ -73,7 +73,7 @@ export default class ServicesListItem extends Component {
             tabIndex="0"
             onClick={isAccessible ? null : (e) => this.manageFocus(e.target, e)}
             title={title}
-            to={slug}
+            to={`/${slug}`}
           >
             <IconWrapper>
               {groupByAttribute.toLowerCase() !== "status" && (
