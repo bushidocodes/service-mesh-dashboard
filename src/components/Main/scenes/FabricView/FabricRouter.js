@@ -114,14 +114,7 @@ function InstanceRouteElement({ services }) {
       instanceID={instanceID}
     />
   ) : (
-    <Navigate
-      to={{
-        pathname: pathname,
-        state: {
-          message
-        }
-      }}
-    />
+    <Navigate to={pathname} state={{ message }} />
   );
 }
 
@@ -193,12 +186,7 @@ function ServiceRouteElement({ services }) {
       status={status}
     />
   ) : (
-    <Navigate
-      to={{
-        pathname: "/",
-        state: { message }
-      }}
-    />
+    <Navigate to="/" state={{ message }} />
   );
 }
 
