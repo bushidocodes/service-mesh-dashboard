@@ -1,7 +1,7 @@
 import _ from "lodash";
 import { PropTypes } from "prop-types";
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter } from "utils/withRouter";
 
 import GMServiceHeader from "components/Main/scenes/FabricView/components/FabricGrid/components/FabricMainView/components/GMServiceHeader";
 import { microserviceStatuses } from "utils/constants";

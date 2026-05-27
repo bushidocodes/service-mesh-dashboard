@@ -51,12 +51,7 @@ function NavButton({
   labelStyle
 }) {
   return (
-    <NavLink
-      activeClassName={"active"}
-      tabIndex={tabIndex}
-      title={label}
-      to={to}
-    >
+    <NavLink tabIndex={tabIndex} title={label} to={to}>
       <ButtonWrap
         active={active}
         type={type}

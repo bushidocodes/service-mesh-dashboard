@@ -1,5 +1,5 @@
 import React from "react";
-import { MemoryRouter, Route } from "react-router";
+import { MemoryRouter, Routes, Route } from "react-router-dom";
 import { Actions } from "jumpstate";
 import _ from "lodash";
 
@@ -66,9 +66,9 @@ const mockServices = _.values({
 const RouterWrap = (route = ["/"], services = mockServices) => {
   return (
     <MemoryRouter initialEntries={route}>
-      <Route
-        render={(props) => <FabricGrid {...props} services={services} />}
-      />
+      <Routes>
+        <Route path="*" element={<FabricGrid services={services} />} />
+      </Routes>
     </MemoryRouter>
   );
 };

@@ -1,6 +1,5 @@
 import React from "react";
-import { PropTypes } from "prop-types";
-import { Redirect, Route, Switch } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 import { LazyLoader } from "components/LazyLoader";
 import NotFound from "components/Main/scenes/InstanceView/components/NotFound";
@@ -17,32 +16,23 @@ const GMGrid = LazyLoader({
   loader: () => import("components/Main/components/GMGrid")
 });
 
-DefaultInstanceRouter.propTypes = {
-  baseURL: PropTypes.string
-};
-
 /**
  * Default Runtime Router for unknown Runtimes
  * @export
  * @returns JSX.Element
  */
-export default function DefaultInstanceRouter({ baseURL }) {
+export default function DefaultInstanceRouter() {
   return (
-    <Switch>
+    <Routes>
       {/* Root Redirect */}
-      <Route
-        exact
-        path={baseURL}
-        render={() => <Redirect to={`${baseURL}/explorer`} />}
-      />
+      <Route index element={<Navigate to="explorer" replace />} />
       {/* General Routes shared by all runtimes */}
-      {/* Only route to settings if this we aren't using FabricRouter */}
-      {!baseURL && <Route component={SettingsGrid} exact path={`/settings`} />}
-      <Route component={Explorer} path={`${baseURL}/explorer`} />
+      <Route path="settings" element={<SettingsGrid />} />
+      <Route path="explorer" element={<Explorer />} />
       {/* Catch all route for dynamically generated dashboards */}
-      <Route component={GMGrid} path={`${baseURL}/:dashboardName`} />
+      <Route path=":dashboardName" element={<GMGrid />} />
       {/* Should never match, but included just in case */}
-      <Route component={NotFound} path="*" />
-    </Switch>
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 }

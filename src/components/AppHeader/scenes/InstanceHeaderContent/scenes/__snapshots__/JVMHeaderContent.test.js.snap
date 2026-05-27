@@ -176,9 +176,8 @@ exports[`JVMHeaderContent matches snapshot 1`] = `
   class="c0"
 >
   <a
-    aria-current="false"
     class="c1"
-    href="undefined/summary"
+    href="/undefined/summary"
   >
     <div
       class="c2"
@@ -236,9 +235,8 @@ exports[`JVMHeaderContent matches snapshot 1`] = `
     </dl>
   </a>
   <a
-    aria-current="false"
     class="c1"
-    href="undefined/routes"
+    href="/undefined/routes"
   >
     <div
       class="c2"
@@ -294,9 +292,8 @@ exports[`JVMHeaderContent matches snapshot 1`] = `
     </dl>
   </a>
   <a
-    aria-current="false"
     class="c1"
-    href="undefined/threads"
+    href="/undefined/threads"
   >
     <div
       class="c2"
@@ -432,9 +429,8 @@ exports[`JVMHeaderContent matches snapshot 1`] = `
     </div>
   </a>
   <a
-    aria-current="false"
     class="c1"
-    href="undefined/explorer"
+    href="/undefined/explorer"
   >
     <div
       class="c2"

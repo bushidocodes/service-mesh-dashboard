@@ -1431,58 +1431,66 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
             shouldFocusAfterRender={true}
             shouldReturnFocusAfterClose={true}
           >
-            <ModalPortal
-              aria={
-                {
-                  "describedby": "secondaryText",
-                  "labelledby": "question",
-                }
+            <Portal
+              containerInfo={
+                <div
+                  class="ReactModalPortal"
+                />
               }
-              ariaHideApp={true}
-              bodyOpenClassName="ReactModal__Body--open"
-              className="c0"
-              closeTimeoutMS={0}
-              defaultStyles={
-                {
-                  "content": {
-                    "WebkitOverflowScrolling": "touch",
-                    "background": "#fff",
-                    "border": "1px solid #ccc",
-                    "borderRadius": "4px",
-                    "bottom": "40px",
-                    "left": "40px",
-                    "outline": "none",
-                    "overflow": "auto",
-                    "padding": "20px",
-                    "position": "absolute",
-                    "right": "40px",
-                    "top": "40px",
-                  },
-                  "overlay": {
-                    "backgroundColor": "rgba(255, 255, 255, 0.75)",
-                    "bottom": 0,
-                    "left": 0,
-                    "position": "fixed",
-                    "right": 0,
-                    "top": 0,
-                  },
+            >
+              <ModalPortal
+                aria={
+                  {
+                    "describedby": "secondaryText",
+                    "labelledby": "question",
+                  }
                 }
-              }
-              isOpen={false}
-              overlayClassName="modalOverlay"
-              parentSelector={[Function]}
-              portalClassName="ReactModalPortal"
-              shouldCloseOnEsc={true}
-              shouldCloseOnOverlayClick={true}
-              shouldFocusAfterRender={true}
-              shouldReturnFocusAfterClose={true}
-              style={
-                {
-                  "content": {},
-                  "overlay": {},
+                ariaHideApp={true}
+                bodyOpenClassName="ReactModal__Body--open"
+                className="c0"
+                closeTimeoutMS={0}
+                defaultStyles={
+                  {
+                    "content": {
+                      "WebkitOverflowScrolling": "touch",
+                      "background": "#fff",
+                      "border": "1px solid #ccc",
+                      "borderRadius": "4px",
+                      "bottom": "40px",
+                      "left": "40px",
+                      "outline": "none",
+                      "overflow": "auto",
+                      "padding": "20px",
+                      "position": "absolute",
+                      "right": "40px",
+                      "top": "40px",
+                    },
+                    "overlay": {
+                      "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                      "bottom": 0,
+                      "left": 0,
+                      "position": "fixed",
+                      "right": 0,
+                      "top": 0,
+                    },
+                  }
                 }
-              }
-            />
+                isOpen={false}
+                overlayClassName="modalOverlay"
+                parentSelector={[Function]}
+                portalClassName="ReactModalPortal"
+                shouldCloseOnEsc={true}
+                shouldCloseOnOverlayClick={true}
+                shouldFocusAfterRender={true}
+                shouldReturnFocusAfterClose={true}
+                style={
+                  {
+                    "content": {},
+                    "overlay": {},
+                  }
+                }
+              />
+            </Portal>
           </Modal>
         </Styled(Modal)>
       </ConfirmationModal>

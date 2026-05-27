@@ -160,7 +160,7 @@ exports[`FabricHeaderContent matches snapshot 1`] = `
   class="c0"
 >
   <a
-    aria-current="true"
+    aria-current="page"
     class="c1 active"
     href="/"
   >
@@ -218,7 +218,6 @@ exports[`FabricHeaderContent matches snapshot 1`] = `
     </dl>
   </a>
   <a
-    aria-current="false"
     class="c1"
     href="/Down"
   >
@@ -280,7 +279,6 @@ exports[`FabricHeaderContent matches snapshot 1`] = `
     </dl>
   </a>
   <a
-    aria-current="false"
     class="c1"
     href="/Warning"
   >
@@ -344,7 +342,6 @@ exports[`FabricHeaderContent matches snapshot 1`] = `
     </dl>
   </a>
   <a
-    aria-current="false"
     class="c1"
     href="/Stable"
   >

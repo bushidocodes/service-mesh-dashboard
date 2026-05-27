@@ -160,7 +160,7 @@ exports[`ServiceHeaderContent matches snapshot 1`] = `
   class="c0"
 >
   <a
-    aria-current="true"
+    aria-current="page"
     class="c1 active"
     href="/Authentication Statistics File Resource Network Export ICPF Mail Domain End/4.3"
   >

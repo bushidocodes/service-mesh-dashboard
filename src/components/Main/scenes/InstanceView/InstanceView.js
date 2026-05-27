@@ -2,7 +2,6 @@ import { Actions } from "jumpstate";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
 
 import { LazyLoader } from "components/LazyLoader";
 
@@ -27,7 +26,6 @@ const JVMRouter = LazyLoader({
  */
 class InstanceView extends Component {
   static propTypes = {
-    baseURL: PropTypes.string.isRequired, // Computed value derived and passed from Fabric Router
     instanceID: PropTypes.string.isRequired, // Route param passed from Fabric Router
     runtime: PropTypes.string.isRequired,
     selectedInstanceID: PropTypes.string,
@@ -76,14 +74,14 @@ class InstanceView extends Component {
   }
 
   render() {
-    const { baseURL, runtime } = this.props;
+    const { runtime } = this.props;
     switch (runtime) {
       case "JVM":
-        return <JVMRouter baseURL={baseURL} />;
+        return <JVMRouter />;
       case "GO":
-        return <GoRouter baseURL={baseURL} />;
+        return <GoRouter />;
       default:
-        return <DefaultRouter baseURL={baseURL} />;
+        return <DefaultRouter />;
     }
   }
 }
@@ -95,4 +93,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default withRouter(connect(mapStateToProps)(InstanceView));
+export default connect(mapStateToProps)(InstanceView);

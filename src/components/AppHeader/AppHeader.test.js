@@ -1,5 +1,5 @@
 import React from "react";
-import { MemoryRouter, Route } from "react-router";
+import { MemoryRouter, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import configureMockStore from "redux-mock-store";
 
@@ -19,7 +19,9 @@ const store = configureMockStore()(mockState);
 const anAppHeader = (
   <Provider store={store}>
     <MemoryRouter initialEntries={["/Down"]}>
-      <Route render={(props) => <AppHeader {...props} />} />
+      <Routes>
+        <Route path="*" element={<AppHeader />} />
+      </Routes>
     </MemoryRouter>
   </Provider>
 );

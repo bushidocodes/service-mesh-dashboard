@@ -143,7 +143,6 @@ exports[`DefaultHeaderContent matches snapshot 1`] = `
   class="c0"
 >
   <a
-    aria-current="false"
     class="c1"
     href="/explorer"
   >

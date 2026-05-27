@@ -1,5 +1,5 @@
 import React from "react";
-import { MemoryRouter, Route } from "react-router";
+import { MemoryRouter, Routes, Route } from "react-router-dom";
 
 import { mountWithIntl, renderWithIntl } from "utils/i18nTesting";
 
@@ -19,7 +19,9 @@ const mockData = {
 // Wrap Service View in Memory Router to mock route props (history, match, location)
 const RouterWrap = (
   <MemoryRouter>
-    <Route render={(props) => <ServiceView {...props} {...mockData} />} />
+    <Routes>
+      <Route path="*" element={<ServiceView {...mockData} />} />
+    </Routes>
   </MemoryRouter>
 );
 

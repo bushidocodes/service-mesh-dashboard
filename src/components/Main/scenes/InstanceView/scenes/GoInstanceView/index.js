@@ -1,6 +1,5 @@
 import React from "react";
-import { Redirect, Route, Switch } from "react-router-dom";
-import { PropTypes } from "prop-types";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 import { LazyLoader } from "components/LazyLoader";
 import NotFound from "components/Main/scenes/InstanceView/components/NotFound";
@@ -29,36 +28,27 @@ const GMGrid = LazyLoader({
   loader: () => import("components/Main/components/GMGrid")
 });
 
-GoInstanceRouter.propTypes = {
-  baseURL: PropTypes.string
-};
-
 /**
  * Go Runtime Router
  * @export
  * @returns JSX.Element
  */
-export default function GoInstanceRouter({ baseURL }) {
+export default function GoInstanceRouter() {
   return (
-    <Switch>
+    <Routes>
       {/* Root Redirect */}
-      <Route
-        exact
-        path={baseURL}
-        render={() => <Redirect to={`${baseURL}/summary`} />}
-      />
+      <Route index element={<Navigate to="summary" replace />} />
       {/* Custom Runtime Specific Stuff */}
-      <Route component={SummaryGrid} path={`${baseURL}/summary`} />
-      <Route component={RoutesGrid} path={`${baseURL}/routes`} />
-      <Route component={FunctionsGrid} path={`${baseURL}/functions`} />
+      <Route path="summary" element={<SummaryGrid />} />
+      <Route path="routes" element={<RoutesGrid />} />
+      <Route path="functions" element={<FunctionsGrid />} />
       {/* General Routes shared by all runtimes */}
-      {/* Only route to settings if this we aren't using FabricRouter */}
-      {!baseURL && <Route component={SettingsGrid} exact path="/settings" />}
-      <Route component={Explorer} path={`${baseURL}/explorer`} />
+      <Route path="settings" element={<SettingsGrid />} />
+      <Route path="explorer" element={<Explorer />} />
       {/* Catch all route for dynamically generated dashboards */}
-      <Route component={GMGrid} path={`${baseURL}/:dashboardName`} />
+      <Route path=":dashboardName" element={<GMGrid />} />
       {/* Should never match, but included just in case */}
-      <Route component={NotFound} path="*" />
-    </Switch>
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { Route } from "react-router";
+import { Route } from "react-router-dom";
 import _ from "lodash";
 
 import FabricGrid from "../components/FabricGrid";
@@ -16,27 +16,19 @@ import { computeStatus } from "utils/selectors";
 function generateStatusRoutes(services) {
   return microserviceStatuses.map((route) => {
     route = route.toLowerCase();
+    const filtered = _.values(services).filter((service) => {
+      let status = computeStatus(
+        service.instances.length,
+        service.minimum,
+        service.maximum
+      );
+      return status.toLowerCase() === route;
+    });
     return (
       <Route
-        exact
         key={`/${route}`}
         path={`/${route}`}
-        render={(props) => {
-          return (
-            <FabricGrid
-              {...props}
-              services={_.values(services).filter((service) => {
-                let status = computeStatus(
-                  service.instances.length,
-                  service.minimum,
-                  service.maximum
-                );
-                return status.toLowerCase() === route;
-              })}
-              statusView={true}
-            />
-          );
-        }}
+        element={<FabricGrid services={filtered} statusView={true} />}
       />
     );
   });

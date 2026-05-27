@@ -21,16 +21,13 @@ export const routerLocationShape = PropTypes.shape({
 // Button Style Shape
 
 // React Router History Shape
-// https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/api/history.md
+// Updated for React Router v6: the withRouter shim (utils/withRouter.js) provides
+// only the subset of history methods that the app actually uses. v4-specific fields
+// (action, block, createHref, length, listen) are not available in v6.
 export const routerHistoryShape = PropTypes.shape({
-  action: PropTypes.string.isRequired,
-  block: PropTypes.func.isRequired,
-  createHref: PropTypes.func.isRequired,
   go: PropTypes.func.isRequired,
   goBack: PropTypes.func.isRequired,
   goForward: PropTypes.func.isRequired,
-  length: PropTypes.number.isRequired,
-  listen: PropTypes.func.isRequired,
   location: routerLocationShape.isRequired,
   push: PropTypes.func.isRequired,
   replace: PropTypes.func.isRequired
