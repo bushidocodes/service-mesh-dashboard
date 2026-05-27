@@ -1,7 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ToolbarCenter matches snapshot 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 33%;
+  -ms-flex: 1 1 33%;
+  flex: 1 1 33%;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
 <div
-  className="sc-aXZVg fqynlr"
+  className="c0"
 />
 `;

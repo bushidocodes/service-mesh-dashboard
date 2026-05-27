@@ -1,7 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`VizBar matches snapshot 1`] = `
+.c0 {
+  background-color: rgb(230,230,230);
+  border-radius: 1px 4px 4px 1px;
+  bottom: 0;
+  height: 3px;
+  left: 0;
+  position: absolute;
+  right: 16px;
+}
+
 <div
-  className="sc-aXZVg cDZtQq"
+  className="c0"
 />
 `;

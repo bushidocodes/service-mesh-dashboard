@@ -1,7 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ExtrasContainer matches snapshot 1`] = `
+.c0 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.c0 > * {
+  pointer-events: auto;
+}
+
 <div
-  className="sc-aXZVg fTfcgk"
+  className="c0"
 />
 `;

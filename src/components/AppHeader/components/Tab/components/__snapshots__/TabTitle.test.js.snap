@@ -1,7 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TabTitle matches snapshot 1`] = `
+.c0 {
+  color: rgb(255,255,255);
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 4px 0 0;
+}
+
+.c0 h1 {
+  font-size: 18px;
+  -webkit-flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
+  line-height: 1;
+  margin: 0;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
 <div
-  className="sc-aXZVg zqygP"
+  className="c0"
 />
 `;

@@ -1,7 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ArrayValue matches snapshot 1`] = `
+.c0 span + span {
+  font-size: 80%;
+  opacity: 0.8;
+}
+
 <div
-  className="sc-aXZVg cJCSdw"
+  className="c0"
 />
 `;

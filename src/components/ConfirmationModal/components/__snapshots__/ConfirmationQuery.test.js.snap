@@ -1,7 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ConfirmationQuery matches snapshot 1`] = `
+.c0 {
+  margin: 0;
+  text-align: center;
+}
+
 <h2
-  className="sc-aXZVg eYxXBI"
+  className="c0"
 />
 `;

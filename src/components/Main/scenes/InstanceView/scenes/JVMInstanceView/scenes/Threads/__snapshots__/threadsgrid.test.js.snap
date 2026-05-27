@@ -2,16 +2,236 @@
 
 exports[`ThreadsGrid View matches snapshot 1`] = `
 [
-  <div
-    class="sc-ikkxIA dOESoQ"
+  .c2 {
+  background-image: url(magnifier.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  text-indent: 20px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: black;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: left;
+  text-transform: none;
+  padding: 1.4px 4px;
+  background-color: rgb(255,255,255);
+  border-radius: 3px;
+  border: 1px solid rgb(242,242,242);
+  border-bottom-color: rgb(230,230,230);
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
+  box-shadow: inset 0 0 0 transparent,0 0 0 transparent,0 0 0 transparent;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.c2::-webkit-search-cancel-button {
+  cursor: pointer;
+}
+
+.c2:hover {
+  background-color: rgb(250,250,250);
+  border-color: rgb(237,237,237);
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  border-bottom-color: rgb(217,217,217);
+  color: black;
+}
+
+.c2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgb(10,171,42);
+  z-index: 1;
+}
+
+.c2::-webkit-input-placeholder {
+  color: currentColor;
+  opacity: 1;
+  text-align: center;
+}
+
+.c2::-moz-placeholder {
+  color: currentColor;
+  opacity: 1;
+  text-align: center;
+}
+
+.c2:-ms-input-placeholder {
+  color: currentColor;
+  opacity: 1;
+  text-align: center;
+}
+
+.c2::placeholder {
+  color: currentColor;
+  opacity: 1;
+  text-align: center;
+}
+
+.c2::-ms-expand {
+  background-color: transparent;
+  border: 0;
+}
+
+.c5 {
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  font-size: 14px;
+  font-weight: 600;
+  height: 28px;
+  max-width: 125px;
+  position: relative;
+  width: 100%;
+  z-index: 1020;
+}
+
+.c5 .Select-control {
+  height: 28px !important;
+}
+
+.c5 .Select-control .Select-placeholder {
+  line-height: 28px;
+}
+
+.c5 .Select-control .Select-value {
+  line-height: 28px !important;
+}
+
+.c5 .Select-control .Select-value .Select-value-label {
+  line-height: 28px;
+}
+
+.c5 .Select-control .Select-input {
+  height: 28px;
+}
+
+.c6 {
+  margin-left: 4px;
+  opacity: 0.6;
+  font-size: 11px;
+}
+
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: hsl(0,0%,96%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 36px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 1300px;
+  padding: 2px 16px;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 33%;
+  -ms-flex: 1 1 33%;
+  flex: 1 1 33%;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 33%;
+  -ms-flex: 1 1 33%;
+  flex: 1 1 33%;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 33%;
+  -ms-flex: 1 1 33%;
+  flex: 1 1 33%;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+@media all and (min-width:1300px) {
+  .c0:after {
+    background-color: inherit;
+    content: "";
+    height: inherit;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+  }
+
+  .c0 > * {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+<div
+    class="c0"
   >
     <div
-      class="sc-dAbbOL gzYpgy"
+      class="c1"
     >
       <form>
         <input
           aria-label="Search Threads"
-          class="sc-cPiKLX diRBqj"
+          class="c2"
           placeholder="Search Threads"
           type="search"
           value=""
@@ -19,13 +239,13 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
       </form>
     </div>
     <div
-      class="sc-fUnMCh fWeXa"
+      class="c3"
     />
     <div
-      class="sc-feUZmu edeCEJ"
+      class="c4"
     >
       <div
-        class="Select sc-fPXMVe drsIcf has-value is-searchable Select--single"
+        class="Select c5 has-value is-searchable Select--single"
       >
         <input
           name="form-field-group-by"
@@ -53,7 +273,7 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
                     Group 
                   </span>
                   <span
-                    class="sc-gFqAkR esafbX"
+                    class="c6"
                   >
                     None
                   </span>
@@ -88,7 +308,7 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
         </div>
       </div>
       <div
-        class="Select sc-fPXMVe drsIcf has-value is-searchable Select--single"
+        class="Select c5 has-value is-searchable Select--single"
       >
         <input
           name="form-field-sort-by"
@@ -116,7 +336,7 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
                     Sort 
                   </span>
                   <span
-                    class="sc-gFqAkR esafbX"
+                    class="c6"
                   >
                     ID
                   </span>
@@ -152,14 +372,176 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
       </div>
     </div>
   </div>,
-  <div
-    class="sc-dAlyuH jUfBmT"
+  .c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgb(255,255,255);
+  box-shadow: inset 0 -1px hsl(0,0%,92%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  font-weight: 400;
+  overflow: visible;
+  width: 100%;
+}
+
+.c2 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+}
+
+.c3 {
+  padding-right: 16px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c3:first-child {
+  padding-left: 16px;
+}
+
+.c4 {
+  -webkit-flex: 0 1 5em;
+  -ms-flex: 0 1 5em;
+  flex: 0 1 5em;
+}
+
+.c5 {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c7 {
+  -webkit-flex: 0 1 5em;
+  -ms-flex: 0 1 5em;
+  flex: 0 1 5em;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.c10 {
+  -webkit-flex: 0 1 5em;
+  -ms-flex: 0 1 5em;
+  flex: 0 1 5em;
+  -webkit-flex: 0 1 7em;
+  -ms-flex: 0 1 7em;
+  flex: 0 1 7em;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgb(255,255,255);
+  box-shadow: inset 0 -1px hsl(0,0%,92%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  min-height: 36px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.c6:hover {
+  background-color: hsl(0,0%,98%);
+}
+
+.c6:focus {
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+.c6:focus:active:hover {
+  outline: 0;
+}
+
+.c6 > * {
+  padding-right: 16px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c6 > *:first-child {
+  padding-left: 16px;
+}
+
+.c9 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.c8 {
+  z-index: 1;
+  height: 24px;
+  width: 24px;
+  color: rgb(10,171,42);
+  word-spacing: 0;
+  vertical-align: middle;
+}
+
+.c8:not(:root) {
+  overflow: visible;
+}
+
+.c11 {
+  z-index: 1;
+  height: 24px;
+  width: 24px;
+  color: currentColor;
+  word-spacing: 0;
+  vertical-align: middle;
+}
+
+.c11:not(:root) {
+  overflow: visible;
+}
+
+.c0 {
+  display: block;
+  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1300px;
+  width: 100%;
+}
+
+<div
+    class="c0"
   >
     <div
-      class="sc-aXZVg hzbXYb"
+      class="c1"
     >
       <div
-        class="sc-gEvEer sc-eqUAAy sc-fqkvVR gVslNl kANjAX jrxxzg"
+        class="c2 c3 c4"
         style="text-align:center"
       >
         <span>
@@ -167,7 +549,7 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
         </span>
       </div>
       <div
-        class="sc-gEvEer sc-eqUAAy sc-fqkvVR gVslNl kANjAX jrxxzg"
+        class="c2 c3 c4"
         style="text-align:center"
       >
         <span>
@@ -175,14 +557,14 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
         </span>
       </div>
       <div
-        class="sc-gEvEer sc-eqUAAy gVslNl kANjAX"
+        class="c2 c3"
       >
         <span>
           Name
         </span>
       </div>
       <div
-        class="sc-gEvEer sc-eqUAAy sc-fqkvVR gVslNl kANjAX jrxxzg"
+        class="c2 c3 c4"
         style="text-align:right;flex:0 1 7em"
       >
         <span>
@@ -190,7 +572,7 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
         </span>
       </div>
       <div
-        class="sc-gEvEer sc-eqUAAy sc-fqkvVR gVslNl kANjAX jrxxzg"
+        class="c2 c3 c4"
         style="text-align:right;flex:0 1 7em"
       >
         <span>
@@ -198,23 +580,23 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
         </span>
       </div>
       <div
-        class="sc-gEvEer sc-eqUAAy sc-fqkvVR gVslNl kANjAX jrxxzg"
+        class="c2 c3 c4"
       />
     </div>
     <ol
-      class="sc-dcJsrY hsrmcx"
+      class="c5"
     >
       <li
-        class="sc-imWYAI eASLtf"
+        class="c6"
         role="link"
         tabindex="0"
       >
         <div
-          class="sc-gEvEer sc-gsFSXq gVslNl drGGol"
+          class="c2 c7"
         >
           <svg
             aria-labelledby="ariaLabelledby"
-            class="sc-dhKdcB gWXFop"
+            class="c8"
             focusable="false"
             version="1.1"
             viewBox="0 0 24 24"
@@ -234,7 +616,7 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
               />
             </g>
             <g
-              class="sc-jXbUNg lkMoOK"
+              class="c9"
               fill="currentColor"
               title=""
             >
@@ -247,31 +629,31 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
           </svg>
         </div>
         <div
-          class="sc-gEvEer sc-gsFSXq gVslNl drGGol"
+          class="c2 c7"
         >
           2
         </div>
         <div
-          class="sc-gEvEer gVslNl"
+          class="c2"
         >
           Test Runnable
         </div>
         <div
-          class="sc-gEvEer sc-gsFSXq gVslNl ilosHa"
+          class="c2 c10"
         >
           Yes
         </div>
         <div
-          class="sc-gEvEer sc-gsFSXq gVslNl ilosHa"
+          class="c2 c10"
         >
           8
         </div>
         <div
-          class="sc-gEvEer sc-gsFSXq gVslNl drGGol"
+          class="c2 c7"
         >
           <svg
             aria-labelledby="ariaLabelledby"
-            class="sc-dhKdcB cMqCnH"
+            class="c11"
             focusable="false"
             version="1.1"
             viewBox="0 0 24 24"
@@ -279,7 +661,7 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
             xmlns="http://www.w3.org/2000/svg"
           >
             <g
-              class="sc-jXbUNg lkMoOK"
+              class="c9"
               fill="currentColor"
               title=""
             >

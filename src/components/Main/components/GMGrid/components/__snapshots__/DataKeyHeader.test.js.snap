@@ -1,7 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataKeyHeader matches snapshot 1`] = `
+.c0 {
+  -webkit-flex: 1 1 33%;
+  -ms-flex: 1 1 33%;
+  flex: 1 1 33%;
+  opacity: 0.65;
+  text-align: right;
+}
+
+.c1:first-child {
+  margin-left: 33%;
+}
+
 <div
-  className="sc-aXZVg sc-gEvEer dEMkvY unBcR"
+  className="c0 c1"
 />
 `;

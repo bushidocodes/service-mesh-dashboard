@@ -1,7 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TableBody matches snapshot 1`] = `
+.c0 {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 <ol
-  className="sc-aXZVg hnzqkW"
+  className="c0"
 />
 `;

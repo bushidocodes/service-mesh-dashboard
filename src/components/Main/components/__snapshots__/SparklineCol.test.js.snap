@@ -1,7 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SparklineCol matches snapshot 1`] = `
+.c0 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+}
+
+.c1 {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.c1 svg {
+  height: 24px;
+}
+
 <div
-  className="sc-aXZVg sc-gEvEer chKTjV eZxzXr"
+  className="c0 c1"
 />
 `;

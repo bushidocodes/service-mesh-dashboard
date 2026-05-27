@@ -1,32 +1,148 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<TableLineItem/> matches snapshot 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgb(255,255,255);
+  box-shadow: inset 0 -1px hsl(0,0%,92%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  min-height: 36px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.c0:hover {
+  background-color: hsl(0,0%,98%);
+}
+
+.c0:focus {
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+.c0:focus:active:hover {
+  outline: 0;
+}
+
+.c0 > * {
+  padding-right: 16px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c0 > *:first-child {
+  padding-left: 16px;
+}
+
+.c1 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+}
+
+.c7 {
+  color: hsl(0,100%,42.5%);
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+}
+
+.c2 {
+  -webkit-flex: 1 1 20%;
+  -ms-flex: 1 1 20%;
+  flex: 1 1 20%;
+  position: relative;
+}
+
+.c6 {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.c6 svg {
+  height: 24px;
+}
+
+.c4 {
+  background-color: rgb(230,230,230);
+  border-radius: 1px 4px 4px 1px;
+  bottom: 0;
+  height: 3px;
+  left: 0;
+  position: absolute;
+  right: 16px;
+}
+
+.c5 {
+  background-color: currentColor;
+  border-radius: inherit;
+  bottom: 0;
+  color: rgb(32,154,38);
+  left: 0;
+  min-width: 2px;
+  position: absolute;
+  top: 0;
+  width: 20%;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c3 > div {
+  margin-top: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
 <li
-  class="sc-dhKdcB bPElmX"
+  class="c0"
   role="link"
   tabindex="0"
 >
   <div
-    class="sc-kpDqfm sc-dAlyuH ixXcqK bpINrq"
+    class="c1 c2"
   >
     <div
-      class="sc-eDPEul jrJIiH"
+      class="c3"
     >
       <div>
         CatalogStream
       </div>
     </div>
     <div
-      class="sc-jEACwC fzhdSd"
+      class="c4"
     >
       <div
-        class="sc-cPiKLX gBMStw"
+        class="c5"
         width="20"
       />
     </div>
   </div>
   <div
-    class="sc-kpDqfm sc-jlZhew ixXcqK iqtvPX"
+    class="c1 c6"
   >
     <svg
       preserveAspectRatio="xMaxYMin"
@@ -76,19 +192,19 @@ exports[`<TableLineItem/> matches snapshot 1`] = `
     </svg>
   </div>
   <div
-    class="sc-kpDqfm ixXcqK"
+    class="c1"
     style="text-align:right"
   >
     14,333
   </div>
   <div
-    class="sc-kpDqfm fVcujv"
+    class="c7"
     style="text-align:right"
   >
     10.000%
   </div>
   <div
-    class="sc-kpDqfm ixXcqK"
+    class="c1"
     style="text-align:right;display:flex;flex-direction:column"
   >
     <div>

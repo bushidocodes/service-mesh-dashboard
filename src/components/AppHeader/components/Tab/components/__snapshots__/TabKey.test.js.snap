@@ -1,7 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TabKey matches snapshot 1`] = `
+.c0 {
+  color: rgb(213,213,213);
+  padding-right: 4px;
+  display: inline-block;
+}
+
 <dt
-  className="sc-aXZVg dwhQPH"
+  className="c0"
 />
 `;

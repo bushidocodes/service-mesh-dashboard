@@ -1,7 +1,73 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Breadcrumb matches snapshot 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: black;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c0:before {
+  color: rgb(204,204,204);
+  content: ">";
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 4px;
+  -webkit-transform: scaleX(0.5);
+  -ms-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+}
+
+.c0 a {
+  color: rgb(217,217,217);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: auto;
+  padding: 8px 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c0 a:hover {
+  color: rgb(255,255,255);
+}
+
+.c0:first-child:before {
+  content: none;
+}
+
+.c0:first-child a {
+  padding-left: 16px;
+}
+
+@media (max-width:800px) {
+  .c0 {
+    max-width: calc(100vw/4);
+    overflow: hidden;
+  }
+}
+
+@media (max-width:567px) {
+  .c0 {
+    max-width: calc(100vw/9);
+    overflow: hidden;
+  }
+}
+
 <li
-  className="sc-aXZVg ecOagr"
+  className="c0"
 />
 `;

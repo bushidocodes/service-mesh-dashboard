@@ -1,28 +1,364 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Explorer View matches snapshot 1`] = `
+.c2 {
+  border-radius: 3px;
+  bottom: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  height: 100%;
+  left: 0;
+  line-height: 1.2;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.c3 {
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  box-shadow: 0 1px 0 0 hsl(0,0%,92%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 0 112px;
+  -ms-flex: 0 0 112px;
+  flex: 0 0 112px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 > * {
+  padding: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.c7 {
+  -webkit-flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
+  margin: 0 auto;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+  padding: 0 8px;
+  width: 100%;
+  word-break: break-all;
+}
+
+.c8 {
+  border-radius: 3px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 4px 8px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  will-change: transform;
+  word-wrap: break-word;
+}
+
+.c8:first-child {
+  margin-top: 8px;
+}
+
+.c8:focus {
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+.c8:hover {
+  color: rgb(10,171,42);
+}
+
+.c8:active {
+  color: rgb(10,171,42);
+  -webkit-transform: scale(0.9875);
+  -ms-transform: scale(0.9875);
+  transform: scale(0.9875);
+  -webkit-transition-duration: 0;
+  transition-duration: 0;
+}
+
+.c8:focus:active:hover {
+  outline: 0;
+}
+
+.c4 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: black;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: left;
+  text-transform: none;
+  padding: 1.4px 4px;
+  background-color: rgb(255,255,255);
+  border-radius: 3px;
+  border: 1px solid rgb(242,242,242);
+  border-bottom-color: rgb(230,230,230);
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
+  box-shadow: inset 0 0 0 transparent,0 0 0 transparent,0 0 0 transparent;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 8px;
+  box-shadow: inset 0 0 0 rgba(0,0,0,0), 0 0 0 rgba(0,0,0,0), 0 0 0 rgba(0,0,0,0);
+  text-align: left;
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
+  width: calc(100% - 16px);
+}
+
+.c4:hover {
+  background-color: rgb(250,250,250);
+  border-color: rgb(237,237,237);
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  border-bottom-color: rgb(217,217,217);
+  color: black;
+}
+
+.c4:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgb(10,171,42);
+  z-index: 1;
+}
+
+.c4::-webkit-input-placeholder {
+  color: currentColor;
+  opacity: 1;
+  text-align: center;
+}
+
+.c4::-moz-placeholder {
+  color: currentColor;
+  opacity: 1;
+  text-align: center;
+}
+
+.c4:-ms-input-placeholder {
+  color: currentColor;
+  opacity: 1;
+  text-align: center;
+}
+
+.c4::placeholder {
+  color: currentColor;
+  opacity: 1;
+  text-align: center;
+}
+
+.c4::-ms-expand {
+  background-color: transparent;
+  border: 0;
+}
+
+.c4[type="text"],
+.c4[type="search"] {
+  cursor: text;
+}
+
+.c4[type="text"]:focus::-webkit-input-placeholder,
+.c4[type="search"]:focus::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+.c4[type="text"]:focus::-moz-placeholder,
+.c4[type="search"]:focus::-moz-placeholder {
+  opacity: 0;
+}
+
+.c4[type="text"]:focus:-ms-input-placeholder,
+.c4[type="search"]:focus:-ms-input-placeholder {
+  opacity: 0;
+}
+
+.c4[type="text"]:focus::placeholder,
+.c4[type="search"]:focus::placeholder {
+  opacity: 0;
+}
+
+.c4::-webkit-input-placeholder {
+  color: currentColor;
+  opacity: 1;
+  text-align: center;
+}
+
+.c4::-moz-placeholder {
+  color: currentColor;
+  opacity: 1;
+  text-align: center;
+}
+
+.c4:-ms-input-placeholder {
+  color: currentColor;
+  opacity: 1;
+  text-align: center;
+}
+
+.c4::placeholder {
+  color: currentColor;
+  opacity: 1;
+  text-align: center;
+}
+
+.c4::-ms-expand {
+  background-color: transparent;
+  border: 0;
+}
+
+.c4:focus {
+  box-shadow: inset 0 0 0 rgba(255,255,255,0.5), 0 0 0 1px rgb(71,192,95), 0 0 0 4px rgb(194,234,202);
+  outline: none;
+}
+
+.c5 {
+  color: currentColor;
+}
+
+.c6 {
+  color: currentColor;
+}
+
+.c0 {
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  min-height: 400px;
+  padding: 0 16px 16px;
+}
+
+.c1 {
+  border-right: 1px solid hsl(0,0%,92%);
+  -webkit-flex: 0 0 300px;
+  -ms-flex: 0 0 300px;
+  flex: 0 0 300px;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.c9 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+}
+
+@media all and (min-width:800px) {
+  .c0 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+@media all and (min-width:800px) {
+  .c1 {
+    -webkit-flex: 0 0 40%;
+    -ms-flex: 0 0 40%;
+    flex: 0 0 40%;
+    margin-bottom: 0;
+    margin-right: 16px;
+    max-width: 550px;
+  }
+}
+
+@media all and (min-width:800px) {
+  .c9 {
+    -webkit-flex: 1 0 60%;
+    -ms-flex: 1 0 60%;
+    flex: 1 0 60%;
+  }
+}
+
 <div
-  class="sc-dLMFU hEjjGX"
+  class="c0"
 >
   <div
-    class="sc-eDPEul gapdZB"
+    class="c1"
   >
     <div
-      class="sc-dhKdcB hnScgt"
+      class="c2"
     >
       <div
-        class="sc-kpDqfm fFHfXC"
+        class="c3"
       >
         <input
           aria-label="Search All Metrics"
-          class="sc-cwHptR jHDdPT"
+          class="c4"
           placeholder="Search"
           type="search"
           value=""
         />
         <label>
           <input
-            class="sc-jEACwC cPVRUx"
+            class="c5"
             name="hideZeroMetric"
             type="checkbox"
           />
@@ -32,7 +368,7 @@ exports[`Explorer View matches snapshot 1`] = `
         </label>
         <label>
           <input
-            class="sc-cPiKLX hdyOYB"
+            class="c6"
             name="hideStaticMetric"
             type="checkbox"
           />
@@ -42,1144 +378,1144 @@ exports[`Explorer View matches snapshot 1`] = `
         </label>
       </div>
       <ul
-        class="sc-dAlyuH iIaOxj"
+        class="c7"
       >
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           finagle/build/revision
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           finagle/clientregistry/initialresolution_ms
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           finagle/clientregistry/size
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           finagle/future_pool/active_tasks
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           finagle/future_pool/completed_tasks
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           finagle/future_pool/pool_size
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           finagle/timer/deviation_ms.avg
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           finagle/timer/deviation_ms.count
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           finagle/timer/deviation_ms.max
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           finagle/timer/deviation_ms.min
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           finagle/timer/deviation_ms.p50
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           finagle/timer/deviation_ms.p90
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           finagle/timer/deviation_ms.p95
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           finagle/timer/deviation_ms.p99
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           finagle/timer/deviation_ms.p9990
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           finagle/timer/deviation_ms.p9999
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           finagle/timer/deviation_ms.sum
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           finagle/timer/pending_tasks.avg
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           finagle/timer/pending_tasks.count
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           finagle/timer/pending_tasks.max
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           finagle/timer/pending_tasks.min
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           finagle/timer/pending_tasks.p50
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           finagle/timer/pending_tasks.p90
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           finagle/timer/pending_tasks.p95
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           finagle/timer/pending_tasks.p99
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           finagle/timer/pending_tasks.p9990
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           finagle/timer/pending_tasks.p9999
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           finagle/timer/pending_tasks.sum
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           function/CatalogStream/errors.count
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           function/CatalogStream/in_throughput
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           function/CatalogStream/latency_ms.avg
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           function/CatalogStream/latency_ms.count
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           function/CatalogStream/latency_ms.max
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           function/CatalogStream/latency_ms.min
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           function/CatalogStream/latency_ms.p50
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           function/CatalogStream/latency_ms.p90
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           function/CatalogStream/latency_ms.p95
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           function/CatalogStream/latency_ms.p99
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           function/CatalogStream/latency_ms.p9990
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           function/CatalogStream/latency_ms.p9999
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           function/CatalogStream/latency_ms.sum
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           function/CatalogStream/out_throughput
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           function/CatalogStream/requests
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           function/OrderItem/errors.count
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           function/OrderItem/in_throughput
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           function/OrderItem/latency_ms.avg
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           function/OrderItem/latency_ms.count
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           function/OrderItem/latency_ms.max
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           function/OrderItem/latency_ms.min
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           function/OrderItem/latency_ms.p50
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           function/OrderItem/latency_ms.p90
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           function/OrderItem/latency_ms.p95
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           function/OrderItem/latency_ms.p99
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           function/OrderItem/latency_ms.p9990
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           function/OrderItem/latency_ms.p9999
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           function/OrderItem/latency_ms.sum
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           function/OrderItem/out_throughput
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           function/OrderItem/requests
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           http/closes
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           http/connection_duration.count
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           http/connection_received_bytes.count
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           http/connection_requests.count
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           http/connection_sent_bytes.count
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           http/connections
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           http/connects
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           http/dtab/size.count
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           http/handletime_us.count
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           http/nacks
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           http/nonretryable_nacks
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           http/pending
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           http/read_timeout
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           http/received_bytes
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           http/request_latency_ms.count
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           http/request_payload_bytes.count
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           http/requests
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           http/response_payload_bytes.count
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           http/sent_bytes
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           http/socket_unwritable_ms
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           http/socket_writable_ms
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           http/success
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           http/transit_latency_ms.count
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           http/write_timeout
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/application_time_millis
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/classes/current_loaded
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/classes/total_loaded
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/classes/total_unloaded
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/compilation/time_msec
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/fd_count
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/fd_limit
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/gc/PS_MarkSweep/cycles
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/gc/PS_MarkSweep/msec
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/gc/PS_Scavenge/cycles
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/gc/PS_Scavenge/msec
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/gc/cycles
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/gc/eden/pause_msec.count
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/gc/msec
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/heap/committed
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/heap/max
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/heap/used
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/mem/allocations/eden/bytes
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/mem/buffer/direct/count
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/mem/buffer/direct/max
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/mem/buffer/direct/used
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/mem/buffer/mapped/count
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/mem/buffer/mapped/max
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/mem/buffer/mapped/used
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/mem/current/Code_Cache/max
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/mem/current/Code_Cache/used
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/mem/current/Compressed_Class_Space/max
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/mem/current/Compressed_Class_Space/used
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/mem/current/Metaspace/max
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/mem/current/Metaspace/used
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/mem/current/PS_Eden_Space/max
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/mem/current/PS_Eden_Space/used
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/mem/current/PS_Old_Gen/max
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/mem/current/PS_Old_Gen/used
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/mem/current/PS_Survivor_Space/max
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/mem/current/PS_Survivor_Space/used
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/mem/current/used
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/mem/metaspace/max_capacity
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/mem/postGC/PS_Eden_Space/max
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/mem/postGC/PS_Eden_Space/used
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/mem/postGC/PS_Old_Gen/max
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/mem/postGC/PS_Old_Gen/used
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/mem/postGC/PS_Survivor_Space/max
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/mem/postGC/PS_Survivor_Space/used
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/mem/postGC/used
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/nonheap/committed
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/nonheap/max
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/nonheap/used
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/num_cpus
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/postGC/PS_Eden_Space/max
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/postGC/PS_Eden_Space/used
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/postGC/PS_Old_Gen/max
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/postGC/PS_Old_Gen/used
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/postGC/PS_Survivor_Space/max
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/postGC/PS_Survivor_Space/used
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/postGC/used
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/safepoint/count
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/safepoint/sync_time_millis
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/safepoint/total_time_millis
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/start_time
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/tenuring_threshold
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/thread/count
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/thread/daemon_count
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/thread/peak_count
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           jvm/uptime
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           larger_than_threadlocal_out_buffer
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           response_size.count
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           route/functionalroles/GET/errors.count
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           route/functionalroles/GET/in_throughput
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           route/functionalroles/GET/latency_ms.avg
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           route/functionalroles/GET/latency_ms.count
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           route/functionalroles/GET/latency_ms.max
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           route/functionalroles/GET/latency_ms.min
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           route/functionalroles/GET/latency_ms.p50
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           route/functionalroles/GET/latency_ms.p90
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           route/functionalroles/GET/latency_ms.p95
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           route/functionalroles/GET/latency_ms.p99
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           route/functionalroles/GET/latency_ms.p9990
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           route/functionalroles/GET/latency_ms.p9999
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           route/functionalroles/GET/latency_ms.sum
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           route/functionalroles/GET/out_throughput
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           route/functionalroles/GET/requests
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           route/ping/GET/requests
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           route/ping/GET/response_size.count
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           route/ping/GET/status/200
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           route/ping/GET/status/2XX
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           route/ping/GET/time.count
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           route/ping/GET/time/200.count
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           route/ping/GET/time/2XX.count
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           scheduler/blocking_ms
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           scheduler/dispatches
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           service/failure
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           srv/thrift::non-ssl/dtab/size.count
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           srv/thrift::non-ssl/handletime_us.count
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           srv/thrift::non-ssl/pending
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           srv/thrift::non-ssl/request_latency_ms.count
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           srv/thrift::non-ssl/requests
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           srv/thrift::non-ssl/success
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           srv/thrift::non-ssl/transit_latency_ms.count
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           status/200
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           status/2XX
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           time/200.count
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           time/2XX.count
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           toggles/com.twitter.finagle.core/checksum
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           toggles/com.twitter.finagle.http/checksum
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           toggles/com.twitter.finagle.netty4/checksum
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           toggles/com.twitter.finagle.stats/checksum
         </div>
         <div
-          class="sc-jlZhew Wrkpn"
+          class="c8"
           tabindex="0"
         >
           toggles/com.twitter.finagle.thrift/checksum
@@ -1188,7 +1524,7 @@ exports[`Explorer View matches snapshot 1`] = `
     </div>
   </div>
   <div
-    class="sc-eldPxv glTrVl"
+    class="c9"
   >
     <span>
       Select a metric to display

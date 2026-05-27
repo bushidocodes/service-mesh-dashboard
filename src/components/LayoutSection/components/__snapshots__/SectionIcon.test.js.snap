@@ -1,7 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SectionIcon matches snapshot 1`] = `
+.c0 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-right: 8px !important;
+}
+
 <span
-  className="sc-aXZVg gDmtDY"
+  className="c0"
 />
 `;

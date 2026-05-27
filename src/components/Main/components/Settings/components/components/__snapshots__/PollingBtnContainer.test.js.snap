@@ -1,7 +1,71 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PollingBtnContainer matches snapshot 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  border: 1px solid rgb(230,230,230);
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 0 160px;
+  -ms-flex: 0 0 160px;
+  flex: 0 0 160px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 140px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 160px;
+}
+
+.c0 .label {
+  bottom: 10px;
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+.c0 > svg {
+  color: rgb(10,171,42);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  will-change: transform;
+}
+
+.c0 .btn-type-polling > svg {
+  height: 100%;
+}
+
+.c0:hover svg,
+.c0:active svg,
+.c0:focus svg {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c0:active svg {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: all 0;
+  transition: all 0;
+}
+
 <div
-  className="sc-aXZVg bHcTkI"
+  className="c0"
 />
 `;

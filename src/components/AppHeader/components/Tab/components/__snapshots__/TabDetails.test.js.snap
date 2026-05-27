@@ -1,7 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TabDetails matches snapshot 1`] = `
+.c0 {
+  margin: 0 0 4px 24px;
+  font-size: 11px;
+  color: rgb(255,255,255);
+}
+
 <dl
-  className="sc-aXZVg YYzWd"
+  className="c0"
 />
 `;

@@ -1,7 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Toolbar matches snapshot 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: hsl(0,0%,96%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 36px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 1300px;
+  padding: 2px 16px;
+}
+
+@media all and (min-width:1300px) {
+  .c0:after {
+    background-color: inherit;
+    content: "";
+    height: inherit;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+  }
+
+  .c0 > * {
+    position: relative;
+    z-index: 2;
+  }
+}
+
 <div
-  className="sc-aXZVg gbxVXL"
+  className="c0"
 />
 `;

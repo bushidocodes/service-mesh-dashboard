@@ -1,7 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TabVal matches snapshot 1`] = `
+.c0 {
+  margin: 0;
+  display: inline-block;
+}
+
 <dd
-  className="sc-aXZVg gDxPoN"
+  className="c0"
 />
 `;

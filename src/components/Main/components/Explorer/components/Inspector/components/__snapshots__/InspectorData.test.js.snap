@@ -1,7 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`InspectorData matches snapshot 1`] = `
+.c0 {
+  -webkit-flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
+  margin: 0 auto;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+  padding: 0 8px;
+  width: 100%;
+  word-break: break-all;
+}
+
 <ul
-  className="sc-aXZVg eMNQuA"
+  className="c0"
 />
 `;

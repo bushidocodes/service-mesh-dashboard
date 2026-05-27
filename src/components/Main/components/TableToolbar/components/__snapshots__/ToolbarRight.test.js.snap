@@ -1,7 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ToolbarRight matches snapshot 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 33%;
+  -ms-flex: 1 1 33%;
+  flex: 1 1 33%;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
 <div
-  className="sc-aXZVg kvxKHP"
+  className="c0"
 />
 `;

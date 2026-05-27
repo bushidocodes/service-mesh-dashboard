@@ -1,7 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TableColVizBar matches snapshot 1`] = `
+.c0 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+}
+
+.c1 {
+  -webkit-flex: 1 1 20%;
+  -ms-flex: 1 1 20%;
+  flex: 1 1 20%;
+  position: relative;
+}
+
 <div
-  className="sc-aXZVg sc-gEvEer chKTjV bbExiV"
+  className="c0 c1"
 />
 `;

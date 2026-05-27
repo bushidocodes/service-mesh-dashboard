@@ -1,7 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`VizFill matches snapshot 1`] = `
+.c0 {
+  background-color: currentColor;
+  border-radius: inherit;
+  bottom: 0;
+  color: currentColor;
+  left: 0;
+  min-width: 2px;
+  position: absolute;
+  top: 0;
+  width: 0%;
+}
+
 <div
-  className="sc-aXZVg lEmaV"
+  className="c0"
 />
 `;

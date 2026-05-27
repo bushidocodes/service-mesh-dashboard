@@ -1,17 +1,398 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Service View matches snapshot 1`] = `
+.c12 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgb(255,255,255);
+  box-shadow: inset 0 -1px hsl(0,0%,92%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  min-height: 36px;
+  width: 100%;
+  cursor: default;
+}
+
+.c12:focus {
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+.c12:focus:active:hover {
+  outline: 0;
+}
+
+.c12 > * {
+  padding-right: 16px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: visible;
+}
+
+.c12 > *:first-child {
+  padding-left: 16px;
+}
+
+.c9 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+}
+
+.c16 {
+  text-align: right;
+}
+
+.c16 span + span {
+  font-size: 80%;
+  opacity: 0.8;
+}
+
+.c14 {
+  width: 100%;
+  cursor: pointer;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: black;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c14:focus {
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+.c14:hover {
+  color: rgb(10,171,42);
+}
+
+.c14:focus:active:hover {
+  outline: 0;
+}
+
+.c15 {
+  background-color: rgba(0,0,0,0.8);
+  border-radius: 6px;
+  color: rgb(255,255,255);
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-size: 11px;
+  opacity: 0;
+  padding: 10px;
+  position: absolute;
+  text-align: left;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+  visibility: hidden;
+  white-space: normal;
+  width: 160px;
+  z-index: 1070;
+  right: 120%;
+  top: -5px;
+}
+
+.c13 {
+  border-bottom: 1px solid rgb(217,217,217);
+  cursor: default;
+  display: inline-block;
+  position: relative;
+}
+
+.c17 span + span {
+  font-size: 80%;
+  opacity: 0.8;
+}
+
+.c7 {
+  display: block;
+  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1300px;
+  width: 100%;
+}
+
+.c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgb(255,255,255);
+  box-shadow: inset 0 -1px hsl(0,0%,92%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  font-weight: 400;
+  overflow: visible;
+  width: 100%;
+}
+
+.c11 {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c10 {
+  padding-right: 16px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c10:first-child {
+  padding-left: 16px;
+}
+
+.c2 {
+  background-image: url(magnifier.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  text-indent: 20px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: black;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: left;
+  text-transform: none;
+  padding: 1.4px 4px;
+  background-color: rgb(255,255,255);
+  border-radius: 3px;
+  border: 1px solid rgb(242,242,242);
+  border-bottom-color: rgb(230,230,230);
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
+  box-shadow: inset 0 0 0 transparent,0 0 0 transparent,0 0 0 transparent;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.c2::-webkit-search-cancel-button {
+  cursor: pointer;
+}
+
+.c2:hover {
+  background-color: rgb(250,250,250);
+  border-color: rgb(237,237,237);
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  border-bottom-color: rgb(217,217,217);
+  color: black;
+}
+
+.c2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgb(10,171,42);
+  z-index: 1;
+}
+
+.c2::-webkit-input-placeholder {
+  color: currentColor;
+  opacity: 1;
+  text-align: center;
+}
+
+.c2::-moz-placeholder {
+  color: currentColor;
+  opacity: 1;
+  text-align: center;
+}
+
+.c2:-ms-input-placeholder {
+  color: currentColor;
+  opacity: 1;
+  text-align: center;
+}
+
+.c2::placeholder {
+  color: currentColor;
+  opacity: 1;
+  text-align: center;
+}
+
+.c2::-ms-expand {
+  background-color: transparent;
+  border: 0;
+}
+
+.c5 {
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  font-size: 14px;
+  font-weight: 600;
+  height: 28px;
+  max-width: 125px;
+  position: relative;
+  width: 100%;
+  z-index: 1020;
+}
+
+.c5 .Select-control {
+  height: 28px !important;
+}
+
+.c5 .Select-control .Select-placeholder {
+  line-height: 28px;
+}
+
+.c5 .Select-control .Select-value {
+  line-height: 28px !important;
+}
+
+.c5 .Select-control .Select-value .Select-value-label {
+  line-height: 28px;
+}
+
+.c5 .Select-control .Select-input {
+  height: 28px;
+}
+
+.c6 {
+  margin-left: 4px;
+  opacity: 0.6;
+  font-size: 11px;
+}
+
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: hsl(0,0%,96%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 36px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 1300px;
+  padding: 2px 16px;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 33%;
+  -ms-flex: 1 1 33%;
+  flex: 1 1 33%;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 33%;
+  -ms-flex: 1 1 33%;
+  flex: 1 1 33%;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 33%;
+  -ms-flex: 1 1 33%;
+  flex: 1 1 33%;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+@media all and (min-width:1300px) {
+  .c0:after {
+    background-color: inherit;
+    content: "";
+    height: inherit;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+  }
+
+  .c0 > * {
+    position: relative;
+    z-index: 2;
+  }
+}
+
 <div>
   <div
-    class="sc-kOPcWz jnKXzD"
+    class="c0"
   >
     <div
-      class="sc-cWSHoV evaeyq"
+      class="c1"
     >
       <form>
         <input
           aria-label="Search Instances"
-          class="sc-koXPp iTWkcy"
+          class="c2"
           placeholder="Search Instances"
           type="search"
           value=""
@@ -19,13 +400,13 @@ exports[`Service View matches snapshot 1`] = `
       </form>
     </div>
     <div
-      class="sc-dCFHLb hrYBdC"
+      class="c3"
     />
     <div
-      class="sc-eBMEME cuuClm"
+      class="c4"
     >
       <div
-        class="Select sc-kOHTFB bgssjn has-value is-searchable Select--single"
+        class="Select c5 has-value is-searchable Select--single"
       >
         <input
           name="form-field-sort-by"
@@ -53,7 +434,7 @@ exports[`Service View matches snapshot 1`] = `
                     Sort 
                   </span>
                   <span
-                    class="sc-dtInlm Wppst"
+                    class="c6"
                   >
                     Name
                   </span>
@@ -90,13 +471,13 @@ exports[`Service View matches snapshot 1`] = `
     </div>
   </div>
   <div
-    class="sc-feUZmu gfVOQS"
+    class="c7"
   >
     <div
-      class="sc-fUnMCh lgOKxe"
+      class="c8"
     >
       <div
-        class="sc-kpDqfm sc-fHjqPf ixXcqK fOvYjE"
+        class="c9 c10"
         style="flex:1 1 20%"
       >
         <span>
@@ -104,7 +485,7 @@ exports[`Service View matches snapshot 1`] = `
         </span>
       </div>
       <div
-        class="sc-kpDqfm sc-fHjqPf ixXcqK fOvYjE"
+        class="c9 c10"
         style="text-align:right"
       >
         <span>
@@ -113,107 +494,107 @@ exports[`Service View matches snapshot 1`] = `
       </div>
     </div>
     <ol
-      class="sc-hzhJZQ cFnspL"
+      class="c11"
     >
       <li
-        class="sc-dhKdcB aSYEc"
+        class="c12"
         tabindex="0"
       >
         <div
-          class="sc-kpDqfm ixXcqK"
+          class="c9"
           style="flex:1 1 20%"
         >
           <div
-            class="sc-ikkxIA eYhErn"
+            class="c13"
             disabled=""
             style="border:none"
           >
             <a
-              class="sc-fPXMVe iuxEnB"
+              class="c14"
               href="/cool-service-v1-0/serviceID1"
             >
               serviceID1
             </a>
             <div
-              class="sc-gFqAkR llNZjD"
+              class="c15"
             >
               This microservice instance does not have metrics to display.
             </div>
           </div>
         </div>
         <div
-          class="sc-kpDqfm sc-eldPxv ixXcqK bxHTdz"
+          class="c9 c16"
         >
           <div
-            class="sc-dAbbOL jWIHso"
+            class="c17"
           />
         </div>
       </li>
       <li
-        class="sc-dhKdcB aSYEc"
+        class="c12"
         tabindex="0"
       >
         <div
-          class="sc-kpDqfm ixXcqK"
+          class="c9"
           style="flex:1 1 20%"
         >
           <div
-            class="sc-ikkxIA eYhErn"
+            class="c13"
             disabled=""
             style="border:none"
           >
             <a
-              class="sc-fPXMVe iuxEnB"
+              class="c14"
               href="/cool-service-v1-0/serviceID2"
             >
               serviceID2
             </a>
             <div
-              class="sc-gFqAkR llNZjD"
+              class="c15"
             >
               This microservice instance does not have metrics to display.
             </div>
           </div>
         </div>
         <div
-          class="sc-kpDqfm sc-eldPxv ixXcqK bxHTdz"
+          class="c9 c16"
         >
           <div
-            class="sc-dAbbOL jWIHso"
+            class="c17"
           />
         </div>
       </li>
       <li
-        class="sc-dhKdcB aSYEc"
+        class="c12"
         tabindex="0"
       >
         <div
-          class="sc-kpDqfm ixXcqK"
+          class="c9"
           style="flex:1 1 20%"
         >
           <div
-            class="sc-ikkxIA eYhErn"
+            class="c13"
             disabled=""
             style="border:none"
           >
             <a
-              class="sc-fPXMVe iuxEnB"
+              class="c14"
               href="/cool-service-v1-0/serviceID3"
             >
               serviceID3
             </a>
             <div
-              class="sc-gFqAkR llNZjD"
+              class="c15"
             >
               This microservice instance does not have metrics to display.
             </div>
           </div>
         </div>
         <div
-          class="sc-kpDqfm sc-eldPxv ixXcqK bxHTdz"
+          class="c9 c16"
         >
           <div
-            class="sc-dAbbOL jWIHso"
+            class="c17"
           />
         </div>
       </li>

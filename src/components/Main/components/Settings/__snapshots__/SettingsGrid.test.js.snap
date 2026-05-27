@@ -1,6 +1,681 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SettingsGrid component Matches snapshot 1`] = `
+.c6 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.c5 {
+  z-index: 1;
+  height: 24px;
+  width: 24px;
+  color: currentColor;
+  word-spacing: 0;
+  vertical-align: middle;
+}
+
+.c5:not(:root) {
+  overflow: visible;
+}
+
+.c11 {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 600;
+  border-width: 1px;
+  line-height: 1.4;
+  border-style: solid;
+  text-transform: none;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: rgb(255,255,255);
+  border-color: rgb(255,255,255);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,94%);
+  color: rgb(0,0,0);
+  font-size: 21px;
+  border-radius: 3px;
+  padding: 2px 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-top: 4px;
+}
+
+.c11:hover {
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c11:focus,
+.c11:active {
+  -webkit-transition: all 0 ease;
+  transition: all 0 ease;
+}
+
+.c11 > * {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c11:active {
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+  background-color: hsl(0,0%,92.5%);
+  border-color: hsl(0,0%,92.5%);
+  border-top-color: hsl(0,0%,98%);
+  border-bottom-color: hsl(0,0%,87%);
+  color: hsl(0,0%,0%);
+}
+
+.c11:hover {
+  background-color: hsl(0,0%,98.5%);
+  border-color: hsl(0,0%,98.5%);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,92.6%);
+  color: hsl(0,0%,0%);
+}
+
+.c11:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0aab2a;
+  z-index: 1;
+}
+
+.c11[disabled],
+.c11[disabled]:hover,
+.c11[disabled]:focus,
+.c11[disabled]:active {
+  cursor: default;
+  opacity: 0.8;
+  background-color: hsl(0,0%,94%);
+  border-color: hsl(0,0%,94%);
+  color: hsl(0,0%,0%);
+}
+
+.c11 > svg {
+  width: 24px;
+  height: 24px;
+}
+
+.c11 > :not(:first-child) {
+  margin-top: 0.25px;
+}
+
+.c20 {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 600;
+  border-width: 1px;
+  line-height: 1.4;
+  border-style: solid;
+  text-transform: none;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: rgb(255,255,255);
+  border-color: hsl(0,0%,94%);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,82%);
+  color: rgb(0,0,0);
+  font-size: 14px;
+  border-radius: 3px;
+  padding: 1.4px 4px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c20:hover {
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c20:focus,
+.c20:active {
+  -webkit-transition: all 0 ease;
+  transition: all 0 ease;
+}
+
+.c20 > * {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c20:active {
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+  background-color: hsl(0,0%,92.5%);
+  border-color: hsl(0,0%,87%);
+  border-top-color: hsl(0,0%,95.3%);
+  border-bottom-color: hsl(0,0%,75.8%);
+  color: hsl(0,0%,0%);
+}
+
+.c20:hover {
+  background-color: hsl(0,0%,98.5%);
+  border-color: hsl(0,0%,92.6%);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,80.8%);
+  color: hsl(0,0%,0%);
+}
+
+.c20:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0aab2a;
+  z-index: 1;
+}
+
+.c20[disabled],
+.c20[disabled]:hover,
+.c20[disabled]:focus,
+.c20[disabled]:active {
+  cursor: default;
+  opacity: 0.8;
+  background-color: hsl(0,0%,94%);
+  border-color: hsl(0,0%,94%);
+  color: hsl(0,0%,0%);
+}
+
+.c20 > svg {
+  width: 24px;
+  height: 24px;
+}
+
+.c20 > :not(:first-child) {
+  margin-left: 4px;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+}
+
+.c2 {
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  color: rgb(32,32,32);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 32px;
+}
+
+.c2:first-of-type > * {
+  border-top: 0;
+}
+
+.c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-top: 1px solid rgb(217,217,217);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0 auto;
+  max-width: 1300px;
+  padding: 16px;
+  width: 100%;
+}
+
+.c8 {
+  margin: 0 auto;
+  max-width: 1300px;
+  padding: 8px;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-right: 8px !important;
+}
+
+.c7 {
+  color: inherit;
+  font-size: 18px;
+  margin: 0;
+}
+
+.c10 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  border: 1px solid rgb(230,230,230);
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 0 160px;
+  -ms-flex: 0 0 160px;
+  flex: 0 0 160px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 140px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 160px;
+}
+
+.c10 .label {
+  bottom: 10px;
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+.c10 > svg {
+  color: rgb(10,171,42);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  will-change: transform;
+}
+
+.c10 .btn-type-polling > svg {
+  height: 100%;
+}
+
+.c10:hover svg,
+.c10:active svg,
+.c10:focus svg {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c10:active svg {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: all 0;
+  transition: all 0;
+}
+
+.c13 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: 1px solid rgb(230,230,230);
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 1 50%;
+  -ms-flex: 0 1 50%;
+  flex: 0 1 50%;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: 16px;
+  padding: 32px;
+  position: relative;
+}
+
+.c13 .input-range__label.input-range__label--value {
+  color: rgb(10,171,42);
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 0;
+  margin-left: -50%;
+  -webkit-transform: translateX(-50%) translateY(4px);
+  -ms-transform: translateX(-50%) translateY(4px);
+  transform: translateX(-50%) translateY(4px);
+  text-align: center;
+  will-change: transform;
+}
+
+.c13 .input-range__label.input-range__label--value .input-range__label-container {
+  position: static;
+}
+
+.c13 .label {
+  bottom: 10px;
+  font-size: 14px;
+  left: 0px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+.c13 .input-range__slider-container {
+  -webkit-transition: left 0;
+  transition: left 0;
+  will-change: transform;
+}
+
+.c13 .input-range__slider {
+  background: rgb(10,171,42);
+  border: none;
+  border-radius: 0;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  -webkit-transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
+}
+
+.c13 .input-range__slider:hover,
+.c13 .input-range__slider:focus,
+.c13 .input-range__slider:active {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.c13 .input-range__slider:before {
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid rgb(10,171,42);
+  color: rgb(10,171,42);
+  content: "";
+  height: 0;
+  position: absolute;
+  top: 100%;
+  width: 0;
+}
+
+.c13 .input-range__track {
+  background-color: rgb(230,230,230);
+  border-radius: 20px;
+}
+
+.c12 {
+  background-color: rgba(0,0,0,0.8);
+  border-radius: 6px;
+  color: rgb(255,255,255);
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-size: 11px;
+  opacity: 0;
+  padding: 10px;
+  position: absolute;
+  text-align: left;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+  visibility: hidden;
+  white-space: normal;
+  width: 160px;
+  z-index: 1070;
+  right: 120%;
+  top: -5px;
+}
+
+.c9 {
+  border-bottom: 1px solid rgb(217,217,217);
+  cursor: default;
+  display: inline-block;
+  position: relative;
+}
+
+.c1 {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: rgba(0,0,0,0.85);
+  border-radius: 3px;
+  color: rgb(242,242,242);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 400px;
+  left: 50%;
+  margin-top: -200px;
+  opacity: 0;
+  padding: 24px;
+  position: absolute;
+  top: 50vh;
+  -webkit-transform: translateX(-50%) translateY(50px) scale(0.98);
+  -ms-transform: translateX(-50%) translateY(50px) scale(0.98);
+  transform: translateX(-50%) translateY(50px) scale(0.98);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  width: 500px;
+}
+
+.c1 > [class*="Content"] > * {
+  position: relative;
+  top: 0.5em;
+  -webkit-transition: all 0.4s cubic-bezier(0.1,0.5,0.2,1.3);
+  transition: all 0.4s cubic-bezier(0.1,0.5,0.2,1.3);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+[class*="after-close"] > .c0 {
+  opacity: 0;
+  -webkit-transform: translateX(-50%) translateY(0) scale(0.5);
+  -ms-transform: translateX(-50%) translateY(0) scale(0.5);
+  transform: translateX(-50%) translateY(0) scale(0.5);
+}
+
+[class*="after-close"] > .c0 > [class*="Content"] > * {
+  top: 1em;
+}
+
+[class*="after-open"] > .c0 {
+  opacity: 1;
+  -webkit-transform: translateX(-50%) translateY(0) scale(1);
+  -ms-transform: translateX(-50%) translateY(0) scale(1);
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+[class*="after-open"] > .c0:focus {
+  outline: 0;
+}
+
+[class*="after-open"] > .c0 > [class*="Content"] > * {
+  top: 0;
+}
+
+.c14 {
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  background-color: rgb(230,230,230);
+  border-radius: 3px;
+  color: rgb(0,0,0);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 300px;
+  -ms-flex: 1 1 300px;
+  flex: 1 1 300px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  margin: 4px;
+}
+
+.c14:first-child:last-child {
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+}
+
+.c14:first-child:last-child > * {
+  text-align: center;
+}
+
+.c14:first-child:last-child > * > :first-child {
+  padding-left: 0;
+}
+
+.c16 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 1 100%;
+  -ms-flex: 0 1 100%;
+  flex: 0 1 100%;
+  -webkit-flex: 1 1 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-height: 125px;
+  padding: 8px 4px;
+  position: relative;
+}
+
+.c15 + .c15:before {
+  border-top: 1px solid currentColor;
+  content: "";
+  left: 0;
+  opacity: 0.125;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.c16 button {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  margin: 8px 0;
+}
+
+.c17 {
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 8px 0;
+}
+
+.c17:first-child {
+  padding-left: 16px;
+}
+
+.c18 {
+  font-size: 11px;
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+  min-height: 1em;
+}
+
+.c19 {
+  font-size: 32px;
+  word-break: break-all;
+  margin: 0;
+  line-height: 1.1;
+  min-height: 1em;
+}
+
+@media all and (max-width:1000px) {
+  .c14 {
+    -webkit-flex: 0 0 300px;
+    -ms-flex: 0 0 300px;
+    flex: 0 0 300px;
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+  }
+}
+
 <Connect(InjectIntl(SettingsGrid))
   intl={
     {
@@ -746,7 +1421,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
             }
             ariaHideApp={true}
             bodyOpenClassName="ReactModal__Body--open"
-            className="sc-ikkxIA aShTM"
+            className="c0 c1"
             closeTimeoutMS={0}
             isOpen={false}
             overlayClassName="modalOverlay"
@@ -773,7 +1448,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                 }
                 ariaHideApp={true}
                 bodyOpenClassName="ReactModal__Body--open"
-                className="sc-ikkxIA aShTM"
+                className="c0 c1"
                 closeTimeoutMS={0}
                 defaultStyles={
                   {
@@ -1054,15 +1729,15 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
             >
               <styled.section>
                 <section
-                  className="sc-iGgWBj jREpOu"
+                  className="c2"
                 >
                   <styled.header>
                     <header
-                      className="sc-gsFSXq notZu"
+                      className="c3"
                     >
                       <styled.span>
                         <span
-                          className="sc-imWYAI eCbnYE"
+                          className="c4"
                         >
                           <Icon>
                             <styled.svg
@@ -1073,7 +1748,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                             >
                               <svg
                                 aria-labelledby="ariaLabelledby"
-                                className="sc-gEvEer bnkFvn"
+                                className="c5"
                                 focusable="false"
                                 version="1.1"
                                 viewBox="0 0 24 24"
@@ -1085,7 +1760,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                   title=""
                                 >
                                   <g
-                                    className="sc-aXZVg lcZsxU"
+                                    className="c6"
                                     fill="currentColor"
                                     title=""
                                   >
@@ -1117,7 +1792,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                       </styled.span>
                       <styled.h3>
                         <h3
-                          className="sc-jXbUNg eihRJG"
+                          className="c7"
                         >
                           Fabric Polling
                         </h3>
@@ -1128,7 +1803,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                     flex={true}
                   >
                     <div
-                      className="sc-kAyceB eHvGEI"
+                      className="c8"
                     >
                       <Tooltip
                         containerStyle={
@@ -1153,7 +1828,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                           }
                         >
                           <div
-                            className="sc-jlZhew dmYHvQ"
+                            className="c9"
                             disabled={true}
                             style={
                               {
@@ -1165,7 +1840,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                               isDisabled={false}
                             >
                               <div
-                                className="sc-dhKdcB gCqYdo"
+                                className="c10"
                               >
                                 <Button
                                   clickAction={[Function]}
@@ -1216,7 +1891,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                     type="polling"
                                   >
                                     <button
-                                      className="sc-eqUAAy MlDjZ"
+                                      className="c11"
                                       disabled={false}
                                       onClick={[Function]}
                                       orientation="vertical"
@@ -1242,7 +1917,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                         >
                                           <svg
                                             aria-labelledby="ariaLabelledby"
-                                            className="sc-gEvEer bnkFvn"
+                                            className="c5"
                                             focusable="false"
                                             version="1.1"
                                             viewBox="0 0 24 24"
@@ -1254,7 +1929,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                               title=""
                                             >
                                               <g
-                                                className="sc-aXZVg lcZsxU"
+                                                className="c6"
                                                 fill="currentColor"
                                                 title=""
                                               >
@@ -1309,7 +1984,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                               }
                             >
                               <div
-                                className="sc-dAlyuH fOiogS"
+                                className="c12"
                                 style={
                                   {
                                     "top": "0px",
@@ -1325,7 +2000,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                         isDisabled={false}
                       >
                         <div
-                          className="sc-kpDqfm iXzHdw"
+                          className="c13"
                           id="ctrl-slider-Fabric Polling"
                         >
                           <InputRange
@@ -1782,15 +2457,15 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
             >
               <styled.section>
                 <section
-                  className="sc-iGgWBj jREpOu"
+                  className="c2"
                 >
                   <styled.header>
                     <header
-                      className="sc-gsFSXq notZu"
+                      className="c3"
                     >
                       <styled.span>
                         <span
-                          className="sc-imWYAI eCbnYE"
+                          className="c4"
                         >
                           <Icon>
                             <styled.svg
@@ -1801,7 +2476,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                             >
                               <svg
                                 aria-labelledby="ariaLabelledby"
-                                className="sc-gEvEer bnkFvn"
+                                className="c5"
                                 focusable="false"
                                 version="1.1"
                                 viewBox="0 0 24 24"
@@ -1813,7 +2488,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                   title=""
                                 >
                                   <g
-                                    className="sc-aXZVg lcZsxU"
+                                    className="c6"
                                     fill="currentColor"
                                     title=""
                                   >
@@ -1845,7 +2520,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                       </styled.span>
                       <styled.h3>
                         <h3
-                          className="sc-jXbUNg eihRJG"
+                          className="c7"
                         >
                           Instance Polling
                         </h3>
@@ -1856,7 +2531,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                     flex={true}
                   >
                     <div
-                      className="sc-kAyceB eHvGEI"
+                      className="c8"
                     >
                       <Tooltip
                         containerStyle={
@@ -1882,7 +2557,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                           }
                         >
                           <div
-                            className="sc-jlZhew dmYHvQ"
+                            className="c9"
                             disabled={true}
                             style={
                               {
@@ -1894,7 +2569,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                               isDisabled={false}
                             >
                               <div
-                                className="sc-dhKdcB gCqYdo"
+                                className="c10"
                               >
                                 <Button
                                   clickAction={[Function]}
@@ -1945,7 +2620,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                     type="polling"
                                   >
                                     <button
-                                      className="sc-eqUAAy MlDjZ"
+                                      className="c11"
                                       disabled={false}
                                       onClick={[Function]}
                                       orientation="vertical"
@@ -1971,7 +2646,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                         >
                                           <svg
                                             aria-labelledby="ariaLabelledby"
-                                            className="sc-gEvEer bnkFvn"
+                                            className="c5"
                                             focusable="false"
                                             version="1.1"
                                             viewBox="0 0 24 24"
@@ -1983,7 +2658,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                               title=""
                                             >
                                               <g
-                                                className="sc-aXZVg lcZsxU"
+                                                className="c6"
                                                 fill="currentColor"
                                                 title=""
                                               >
@@ -2038,7 +2713,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                               }
                             >
                               <div
-                                className="sc-dAlyuH fOiogS"
+                                className="c12"
                                 style={
                                   {
                                     "top": "0px",
@@ -2056,7 +2731,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                         isDisabled={false}
                       >
                         <div
-                          className="sc-kpDqfm iXzHdw"
+                          className="c13"
                           id="ctrl-slider-Instance Polling"
                         >
                           <InputRange
@@ -2283,15 +2958,15 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
         >
           <styled.section>
             <section
-              className="sc-iGgWBj jREpOu"
+              className="c2"
             >
               <styled.header>
                 <header
-                  className="sc-gsFSXq notZu"
+                  className="c3"
                 >
                   <styled.span>
                     <span
-                      className="sc-imWYAI eCbnYE"
+                      className="c4"
                     >
                       <Icon>
                         <styled.svg
@@ -2302,7 +2977,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                         >
                           <svg
                             aria-labelledby="ariaLabelledby"
-                            className="sc-gEvEer bnkFvn"
+                            className="c5"
                             focusable="false"
                             version="1.1"
                             viewBox="0 0 24 24"
@@ -2314,7 +2989,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                               title=""
                             >
                               <g
-                                className="sc-aXZVg lcZsxU"
+                                className="c6"
                                 fill="currentColor"
                                 title=""
                               >
@@ -2346,7 +3021,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                   </styled.span>
                   <styled.h3>
                     <h3
-                      className="sc-jXbUNg eihRJG"
+                      className="c7"
                     >
                       Metrics Cache
                     </h3>
@@ -2357,7 +3032,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                 flex={true}
               >
                 <div
-                  className="sc-kAyceB eHvGEI"
+                  className="c8"
                 >
                   <Readout
                     cacheCard={true}
@@ -2380,7 +3055,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                       cacheCard={true}
                     >
                       <div
-                        className="sc-dAbbOL gcRsVM"
+                        className="c14"
                       >
                         <ReadoutItem
                           cacheCard={true}
@@ -2392,22 +3067,22 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                             cacheCard={true}
                           >
                             <div
-                              className="sc-feUZmu iMGdJC"
+                              className="c15 c16"
                             >
                               <styled.div>
                                 <div
-                                  className="sc-fUnMCh cdOQzn"
+                                  className="c17"
                                 >
                                   <styled.h2>
                                     <h2
-                                      className="sc-hmdomO jKSvcA"
+                                      className="c18"
                                     >
                                       Cache Size
                                     </h2>
                                   </styled.h2>
                                   <styled.span>
                                     <span
-                                      className="sc-bXCLTC fBrSeE"
+                                      className="c19"
                                     >
                                       67.48 KB
                                     </span>
@@ -2424,7 +3099,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                       title="Clear Cache"
                                     >
                                       <button
-                                        className="sc-eqUAAy fQCXEn"
+                                        className="c20"
                                         onClick={[Function]}
                                         tabIndex={0}
                                         title="Clear Cache"
@@ -2438,7 +3113,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                           >
                                             <svg
                                               aria-labelledby="ariaLabelledby"
-                                              className="sc-gEvEer bnkFvn"
+                                              className="c5"
                                               focusable="false"
                                               version="1.1"
                                               viewBox="0 0 24 24"
@@ -2450,7 +3125,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                                 title=""
                                               >
                                                 <g
-                                                  className="sc-aXZVg lcZsxU"
+                                                  className="c6"
                                                   fill="currentColor"
                                                   title=""
                                                 >

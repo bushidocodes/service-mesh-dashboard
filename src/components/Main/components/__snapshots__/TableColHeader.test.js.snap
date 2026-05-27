@@ -1,7 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TableColHeader matches snapshot 1`] = `
+.c0 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+}
+
+.c1 {
+  padding-right: 16px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c1:first-child {
+  padding-left: 16px;
+}
+
 <div
-  className="sc-aXZVg sc-gEvEer chKTjV hLbWhR"
+  className="c0 c1"
 />
 `;
