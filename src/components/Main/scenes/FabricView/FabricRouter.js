@@ -1,5 +1,5 @@
 import _ from "lodash";
-import React from "react";
+import React, { Suspense } from "react";
 import { connect } from "react-redux";
 import { Routes, Route, Navigate, useParams } from "react-router-dom";
 import { injectIntl } from "react-intl";
@@ -9,6 +9,7 @@ import FabricGrid from "./components/FabricGrid";
 import ServiceView from "components/Main/scenes/ServiceView";
 import generateStatusRoutes from "./utils/generateStatusRoutes";
 import { LazyLoader } from "components/LazyLoader";
+import { Loading } from "components/Loading";
 
 import { computeStatus } from "utils/selectors";
 import { serviceShape } from "components/PropTypes";
@@ -216,23 +217,28 @@ const ServiceRouteElement = injectIntl(ServiceRouteElementInner);
  */
 function FabricRouter({ services }) {
   return (
-    <Routes>
-      <Route path="/settings" element={<SettingsGrid />} />
-      <Route
-        path="/:serviceSlug/:instanceID/*"
-        element={<InstanceRouteElement services={services} />}
-      />
+    <Suspense fallback={<Loading />}>
+      <Routes>
+        <Route path="/settings" element={<SettingsGrid />} />
+        <Route
+          path="/:serviceSlug/:instanceID/*"
+          element={<InstanceRouteElement services={services} />}
+        />
 
-      {/* Utility function that generates Routes for /down, /warning, and /stable */}
-      {generateStatusRoutes(services)}
+        {/* Utility function that generates Routes for /down, /warning, and /stable */}
+        {generateStatusRoutes(services)}
 
-      <Route
-        path="/:selectedServiceSlug"
-        element={<ServiceRouteElement services={services} />}
-      />
-      {/* For the root route, mount the Fabric Grid, the element used to depict an entire Fabric of microservices*/}
-      <Route path="/" element={<FabricGrid services={_.values(services)} />} />
-    </Routes>
+        <Route
+          path="/:selectedServiceSlug"
+          element={<ServiceRouteElement services={services} />}
+        />
+        {/* For the root route, mount the Fabric Grid, the element used to depict an entire Fabric of microservices*/}
+        <Route
+          path="/"
+          element={<FabricGrid services={_.values(services)} />}
+        />
+      </Routes>
+    </Suspense>
   );
 }
 

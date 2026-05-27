@@ -1,27 +1,21 @@
-import Loadable from "react-loadable";
-import { Loading } from "components/Loading";
+import { lazy } from "react";
 
-const LazyLoader = (opts) => {
-  // react-loadable v5 only unwraps `module.default` when the module has
-  // `__esModule: true` (a webpack/Babel convention).  Vite serves real ESM so
-  // dynamic import() returns a namespace object WITHOUT that flag.  Wrap the
-  // loader here — once — so every LazyLoader call site gets the right default
-  // export regardless of bundler.
-  const wrappedLoader = opts.loader
-    ? () => opts.loader().then((m) => m.default || m)
-    : undefined;
-
-  return Loadable(
-    Object.assign(
-      {
-        loading: Loading,
-        delay: 250,
-        timeout: 15000
-      },
-      opts,
-      wrappedLoader ? { loader: wrappedLoader } : null
-    )
-  );
-};
-
-export { LazyLoader };
+/**
+ * Thin wrapper around React.lazy() that preserves the call signature used
+ * by call sites in this codebase (`LazyLoader({ loader: () => import(...) })`),
+ * while delegating to the native React lazy loading APIs introduced in
+ * React 16.6 / 18.
+ *
+ * Vite serves real ESM, so a dynamic import() returns a Module namespace
+ * object whose `.default` property holds the default export. Most lazy
+ * targets here are React component modules that use `export default`, so
+ * `m.default` is the right thing to pass to React.lazy. The `?? m` fallback
+ * keeps the previous behaviour of accepting a module that itself acts as
+ * the component (e.g. an old CJS module that sets module.exports directly).
+ *
+ * Must be paired with a <Suspense fallback={<Loading />}> boundary
+ * somewhere up the tree. Wrap that boundary in an <ErrorBoundary> to
+ * surface load failures gracefully.
+ */
+export const LazyLoader = (opts) =>
+  lazy(() => opts.loader().then((m) => ({ default: m.default ?? m })));

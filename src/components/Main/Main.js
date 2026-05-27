@@ -1,11 +1,13 @@
 import { Actions } from "jumpstate";
 import { PropTypes } from "prop-types";
-import React, { Component } from "react";
+import React, { Component, Suspense } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "utils/withRouter";
 
 import AppContent from "./components/AppContent";
+import ErrorBoundary from "components/ErrorBoundary";
 import { LazyLoader } from "components/LazyLoader";
+import { Loading } from "components/Loading";
 
 import { getFabricServer } from "utils/head";
 import { dashboardShape } from "components/PropTypes";
@@ -52,7 +54,11 @@ class Main extends Component {
     return (
       <AppContent id="main-content" tabIndex="0">
         {/* main-content id is here so that SkipNav can focus on it */}
-        <FabricRouter />
+        <ErrorBoundary>
+          <Suspense fallback={<Loading />}>
+            <FabricRouter />
+          </Suspense>
+        </ErrorBoundary>
       </AppContent>
     );
   }
