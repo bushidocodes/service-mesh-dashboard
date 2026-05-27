@@ -106,7 +106,6 @@ function TableToolbar({
       <ToolbarRight>
         {groupByProps && (
           <GMSelect
-            matchPos="start"
             name="form-field-group-by"
             options={groupByProps.groupByOptions}
             value={groupByProps.groupByAttribute}
@@ -129,7 +128,6 @@ function TableToolbar({
         )}
         {sortByProps && (
           <GMSelect
-            matchPos="start"
             name="form-field-sort-by"
             options={sortByProps.sortByOptions}
             value={sortByProps.sortByAttribute}
