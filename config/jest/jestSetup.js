@@ -96,7 +96,7 @@ console.error = (message, ...args) => {
   // React 18 deprecates string refs. Notification.js was converted to createRef
   // but third-party libs (react-notification-system) may still trigger this.
   if (msg.includes("string ref")) return;
-  // react-select@1, react-collapse use deprecated lifecycle methods.
+  // react-collapse uses deprecated lifecycle methods.
   // Suppress until those libraries are upgraded.
   if (msg.includes("componentWillMount")) return;
   if (msg.includes("componentWillReceiveProps")) return;
