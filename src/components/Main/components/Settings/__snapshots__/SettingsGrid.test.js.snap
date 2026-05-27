@@ -677,8 +677,8 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
 
 <Connect(InjectIntl(SettingsGrid))
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -687,8 +687,8 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -696,7 +696,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
         "getRelativeFormat": [Function],
       },
       "locale": "en-US",
-      "messages": Object {
+      "messages": {
         "GMLineChart.noChartableData": "No Chartable Data",
         "GMLineChart.noMetricsFound": "Could not find the following metrics:",
         "GMLineChart.screenReaderGraphDescription.noData": "The average for currently displayed data is equal to 0.",
@@ -885,7 +885,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
     }
   }
   store={
-    Object {
+    {
       "clearActions": [Function],
       "dispatch": [Function],
       "getActions": [Function],
@@ -901,8 +901,8 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
     fabricServer="http://localhost:1337"
     instanceMetricsPollingInterval={10000}
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -911,8 +911,8 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -920,7 +920,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
           "getRelativeFormat": [Function],
         },
         "locale": "en-US",
-        "messages": Object {
+        "messages": {
           "GMLineChart.noChartableData": "No Chartable Data",
           "GMLineChart.noMetricsFound": "Could not find the following metrics:",
           "GMLineChart.screenReaderGraphDescription.noData": "The average for currently displayed data is equal to 0.",
@@ -1113,7 +1113,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
     metricsCacheSize="67.48 KB"
     selectedInstanceID="2smao7xwboy0000000000"
     store={
-      Object {
+      {
         "clearActions": [Function],
         "dispatch": [Function],
         "getActions": [Function],
@@ -1124,7 +1124,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
     }
     storeSubscription={
       Subscription {
-        "listeners": Object {
+        "listeners": {
           "clear": [Function],
           "get": [Function],
           "notify": [Function],
@@ -1132,7 +1132,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
         },
         "onStateChange": [Function],
         "parentSub": undefined,
-        "store": Object {
+        "store": {
           "clearActions": [Function],
           "dispatch": [Function],
           "getActions": [Function],
@@ -1150,8 +1150,8 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
       fabricServer="http://localhost:1337"
       instanceMetricsPollingInterval={10000}
       intl={
-        Object {
-          "defaultFormats": Object {},
+        {
+          "defaultFormats": {},
           "defaultLocale": "en",
           "formatDate": [Function],
           "formatHTMLMessage": [Function],
@@ -1160,8 +1160,8 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
           "formatPlural": [Function],
           "formatRelative": [Function],
           "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
+          "formats": {},
+          "formatters": {
             "getDateTimeFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
@@ -1169,7 +1169,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
             "getRelativeFormat": [Function],
           },
           "locale": "en-US",
-          "messages": Object {
+          "messages": {
             "GMLineChart.noChartableData": "No Chartable Data",
             "GMLineChart.noMetricsFound": "Could not find the following metrics:",
             "GMLineChart.screenReaderGraphDescription.noData": "The average for currently displayed data is equal to 0.",
@@ -1362,7 +1362,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
       metricsCacheSize="67.48 KB"
       selectedInstanceID="2smao7xwboy0000000000"
       store={
-        Object {
+        {
           "clearActions": [Function],
           "dispatch": [Function],
           "getActions": [Function],
@@ -1373,7 +1373,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
       }
       storeSubscription={
         Subscription {
-          "listeners": Object {
+          "listeners": {
             "clear": [Function],
             "get": [Function],
             "notify": [Function],
@@ -1381,7 +1381,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
           },
           "onStateChange": [Function],
           "parentSub": undefined,
-          "store": Object {
+          "store": {
             "clearActions": [Function],
             "dispatch": [Function],
             "getActions": [Function],
@@ -1402,7 +1402,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
       >
         <Styled(Modal)
           aria={
-            Object {
+            {
               "describedby": "secondaryText",
               "labelledby": "question",
             }
@@ -1413,7 +1413,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
         >
           <Modal
             aria={
-              Object {
+              {
                 "describedby": "secondaryText",
                 "labelledby": "question",
               }
@@ -1433,7 +1433,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
           >
             <ModalPortal
               aria={
-                Object {
+                {
                   "describedby": "secondaryText",
                   "labelledby": "question",
                 }
@@ -1443,8 +1443,8 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
               className="c0"
               closeTimeoutMS={0}
               defaultStyles={
-                Object {
-                  "content": Object {
+                {
+                  "content": {
                     "WebkitOverflowScrolling": "touch",
                     "background": "#fff",
                     "border": "1px solid #ccc",
@@ -1458,7 +1458,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                     "right": "40px",
                     "top": "40px",
                   },
-                  "overlay": Object {
+                  "overlay": {
                     "backgroundColor": "rgba(255, 255, 255, 0.75)",
                     "bottom": 0,
                     "left": 0,
@@ -1477,9 +1477,9 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
               shouldFocusAfterRender={true}
               shouldReturnFocusAfterClose={true}
               style={
-                Object {
-                  "content": Object {},
-                  "overlay": Object {},
+                {
+                  "content": {},
+                  "overlay": {},
                 }
               }
             />
@@ -1501,8 +1501,8 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
             glyph="Fabric"
             interval={10000}
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -1511,8 +1511,8 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
@@ -1520,7 +1520,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                   "getRelativeFormat": [Function],
                 },
                 "locale": "en-US",
-                "messages": Object {
+                "messages": {
                   "GMLineChart.noChartableData": "No Chartable Data",
                   "GMLineChart.noMetricsFound": "Could not find the following metrics:",
                   "GMLineChart.screenReaderGraphDescription.noData": "The average for currently displayed data is equal to 0.",
@@ -1798,12 +1798,12 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                     >
                       <Tooltip
                         containerStyle={
-                          Object {
+                          {
                             "border": "none",
                           }
                         }
                         contentStyle={
-                          Object {
+                          {
                             "top": "0px",
                           }
                         }
@@ -1813,7 +1813,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                         <styled.div
                           disabled={true}
                           style={
-                            Object {
+                            {
                               "border": "none",
                             }
                           }
@@ -1822,7 +1822,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                             className="c8"
                             disabled={true}
                             style={
-                              Object {
+                              {
                                 "border": "none",
                               }
                             }
@@ -1841,7 +1841,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                   glyphRatio={3}
                                   label="Pause Polling"
                                   labelStyle={
-                                    Object {
+                                    {
                                       "bottom": "10px",
                                       "fontSize": "14px",
                                       "left": "0px",
@@ -1853,7 +1853,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                   outline="raised"
                                   size="xl"
                                   style={
-                                    Object {
+                                    {
                                       "height": "100%",
                                       "position": "relative",
                                       "width": "100%",
@@ -1870,7 +1870,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                     outline="raised"
                                     size="xl"
                                     style={
-                                      Object {
+                                      {
                                         "height": "100%",
                                         "position": "relative",
                                         "width": "100%",
@@ -1888,7 +1888,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                       orientation="vertical"
                                       size="xl"
                                       style={
-                                        Object {
+                                        {
                                           "height": "100%",
                                           "position": "relative",
                                           "width": "100%",
@@ -1950,7 +1950,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                       </Icon>
                                       <span
                                         style={
-                                          Object {
+                                          {
                                             "bottom": "10px",
                                             "fontSize": "14px",
                                             "left": "0px",
@@ -1969,7 +1969,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                             <styled.div
                               position="left"
                               style={
-                                Object {
+                                {
                                   "top": "0px",
                                 }
                               }
@@ -1977,7 +1977,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                               <div
                                 className="c11"
                                 style={
-                                  Object {
+                                  {
                                     "top": "0px",
                                   }
                                 }
@@ -1998,7 +1998,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                             allowSameValues={false}
                             aria-labelledby="polling interval-name"
                             classNames={
-                              Object {
+                              {
                                 "activeTrack": "input-range__track input-range__track--active",
                                 "disabledInputRange": "input-range input-range--disabled",
                                 "inputRange": "input-range",
@@ -2028,7 +2028,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                             >
                               <Label
                                 classNames={
-                                  Object {
+                                  {
                                     "activeTrack": "input-range__track input-range__track--active",
                                     "disabledInputRange": "input-range input-range--disabled",
                                     "inputRange": "input-range",
@@ -2055,7 +2055,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                               </Label>
                               <Track
                                 classNames={
-                                  Object {
+                                  {
                                     "activeTrack": "input-range__track input-range__track--active",
                                     "disabledInputRange": "input-range input-range--disabled",
                                     "inputRange": "input-range",
@@ -2071,7 +2071,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                 onTrackDrag={[Function]}
                                 onTrackMouseDown={[Function]}
                                 percentages={
-                                  Object {
+                                  {
                                     "max": 0.043478260869565216,
                                     "min": 0,
                                   }
@@ -2085,7 +2085,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                   <div
                                     className="input-range__track input-range__track--active"
                                     style={
-                                      Object {
+                                      {
                                         "left": "0%",
                                         "width": "4.3478260869565215%",
                                       }
@@ -2093,7 +2093,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                   />
                                   <Slider
                                     classNames={
-                                      Object {
+                                      {
                                         "activeTrack": "input-range__track input-range__track--active",
                                         "disabledInputRange": "input-range input-range--disabled",
                                         "inputRange": "input-range",
@@ -2118,7 +2118,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                     <span
                                       className="input-range__slider-container"
                                       style={
-                                        Object {
+                                        {
                                           "left": "4.3478260869565215%",
                                           "position": "absolute",
                                         }
@@ -2126,7 +2126,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                     >
                                       <Label
                                         classNames={
-                                          Object {
+                                          {
                                             "activeTrack": "input-range__track input-range__track--active",
                                             "disabledInputRange": "input-range input-range--disabled",
                                             "inputRange": "input-range",
@@ -2169,7 +2169,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                               </Track>
                               <Label
                                 classNames={
-                                  Object {
+                                  {
                                     "activeTrack": "input-range__track input-range__track--active",
                                     "disabledInputRange": "input-range input-range--disabled",
                                     "inputRange": "input-range",
@@ -2227,8 +2227,8 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
             glyph="ServiceInstance"
             interval={10000}
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -2237,8 +2237,8 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
@@ -2246,7 +2246,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                   "getRelativeFormat": [Function],
                 },
                 "locale": "en-US",
-                "messages": Object {
+                "messages": {
                   "GMLineChart.noChartableData": "No Chartable Data",
                   "GMLineChart.noMetricsFound": "Could not find the following metrics:",
                   "GMLineChart.screenReaderGraphDescription.noData": "The average for currently displayed data is equal to 0.",
@@ -2526,13 +2526,13 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                     >
                       <Tooltip
                         containerStyle={
-                          Object {
+                          {
                             "border": "none",
                           }
                         }
                         content="Select an instance to turn on polling"
                         contentStyle={
-                          Object {
+                          {
                             "top": "0px",
                           }
                         }
@@ -2542,7 +2542,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                         <styled.div
                           disabled={true}
                           style={
-                            Object {
+                            {
                               "border": "none",
                             }
                           }
@@ -2551,7 +2551,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                             className="c8"
                             disabled={true}
                             style={
-                              Object {
+                              {
                                 "border": "none",
                               }
                             }
@@ -2570,7 +2570,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                   glyphRatio={3}
                                   label="Resume Polling"
                                   labelStyle={
-                                    Object {
+                                    {
                                       "bottom": "10px",
                                       "fontSize": "14px",
                                       "left": "0px",
@@ -2582,7 +2582,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                   outline="raised"
                                   size="xl"
                                   style={
-                                    Object {
+                                    {
                                       "height": "100%",
                                       "position": "relative",
                                       "width": "100%",
@@ -2599,7 +2599,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                     outline="raised"
                                     size="xl"
                                     style={
-                                      Object {
+                                      {
                                         "height": "100%",
                                         "position": "relative",
                                         "width": "100%",
@@ -2617,7 +2617,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                       orientation="vertical"
                                       size="xl"
                                       style={
-                                        Object {
+                                        {
                                           "height": "100%",
                                           "position": "relative",
                                           "width": "100%",
@@ -2679,7 +2679,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                       </Icon>
                                       <span
                                         style={
-                                          Object {
+                                          {
                                             "bottom": "10px",
                                             "fontSize": "14px",
                                             "left": "0px",
@@ -2698,7 +2698,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                             <styled.div
                               position="left"
                               style={
-                                Object {
+                                {
                                   "top": "0px",
                                 }
                               }
@@ -2706,7 +2706,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                               <div
                                 className="c11"
                                 style={
-                                  Object {
+                                  {
                                     "top": "0px",
                                   }
                                 }
@@ -2729,7 +2729,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                             allowSameValues={false}
                             aria-labelledby="polling interval-name"
                             classNames={
-                              Object {
+                              {
                                 "activeTrack": "input-range__track input-range__track--active",
                                 "disabledInputRange": "input-range input-range--disabled",
                                 "inputRange": "input-range",
@@ -2759,7 +2759,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                             >
                               <Label
                                 classNames={
-                                  Object {
+                                  {
                                     "activeTrack": "input-range__track input-range__track--active",
                                     "disabledInputRange": "input-range input-range--disabled",
                                     "inputRange": "input-range",
@@ -2786,7 +2786,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                               </Label>
                               <Track
                                 classNames={
-                                  Object {
+                                  {
                                     "activeTrack": "input-range__track input-range__track--active",
                                     "disabledInputRange": "input-range input-range--disabled",
                                     "inputRange": "input-range",
@@ -2802,7 +2802,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                 onTrackDrag={[Function]}
                                 onTrackMouseDown={[Function]}
                                 percentages={
-                                  Object {
+                                  {
                                     "max": 0.043478260869565216,
                                     "min": 0,
                                   }
@@ -2816,7 +2816,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                   <div
                                     className="input-range__track input-range__track--active"
                                     style={
-                                      Object {
+                                      {
                                         "left": "0%",
                                         "width": "4.3478260869565215%",
                                       }
@@ -2824,7 +2824,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                   />
                                   <Slider
                                     classNames={
-                                      Object {
+                                      {
                                         "activeTrack": "input-range__track input-range__track--active",
                                         "disabledInputRange": "input-range input-range--disabled",
                                         "inputRange": "input-range",
@@ -2849,7 +2849,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                     <span
                                       className="input-range__slider-container"
                                       style={
-                                        Object {
+                                        {
                                           "left": "4.3478260869565215%",
                                           "position": "absolute",
                                         }
@@ -2857,7 +2857,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                     >
                                       <Label
                                         classNames={
-                                          Object {
+                                          {
                                             "activeTrack": "input-range__track input-range__track--active",
                                             "disabledInputRange": "input-range input-range--disabled",
                                             "inputRange": "input-range",
@@ -2900,7 +2900,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                               </Track>
                               <Label
                                 classNames={
-                                  Object {
+                                  {
                                     "activeTrack": "input-range__track input-range__track--active",
                                     "disabledInputRange": "input-range input-range--disabled",
                                     "inputRange": "input-range",
@@ -3028,8 +3028,8 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                   <Readout
                     cacheCard={true}
                     readoutItems={
-                      Array [
-                        Object {
+                      [
+                        {
                           "children": <Button
                             clickAction={[Function]}
                             glyph="Close"

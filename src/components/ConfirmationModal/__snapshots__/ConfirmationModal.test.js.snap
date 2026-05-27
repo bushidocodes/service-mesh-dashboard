@@ -3,7 +3,7 @@
 exports[`ConfirmationModal matches snapshot when closed 1`] = `
 <Styled(Modal)
   aria={
-    Object {
+    {
       "describedby": "secondaryText",
       "labelledby": "question",
     }
@@ -64,7 +64,7 @@ exports[`ConfirmationModal matches snapshot when closed 1`] = `
 exports[`ConfirmationModal matches snapshot when open 1`] = `
 <Styled(Modal)
   aria={
-    Object {
+    {
       "describedby": "secondaryText",
       "labelledby": "question",
     }

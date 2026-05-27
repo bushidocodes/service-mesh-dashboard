@@ -27,8 +27,8 @@ exports[`DygraphWrapper matches default snapshot 1`] = `
   position: absolute;
   right: 0 !important;
   text-align: right;
-  -webkit-transition: all 0.2s ease,color 0.2s ease;
-  transition: all 0.2s ease,color 0.2s ease;
+  -webkit-transition: all 0.2s ease, color 0.2s ease;
+  transition: all 0.2s ease, color 0.2s ease;
   z-index: 10000;
 }
 
@@ -39,8 +39,8 @@ exports[`DygraphWrapper matches default snapshot 1`] = `
 .c0:hover .dygraph-legend {
   color: hsl(0,0%,12.5%);
   opacity: 1;
-  -webkit-transition: all 0.2s ease,color 1s ease;
-  transition: all 0.2s ease,color 1s ease;
+  -webkit-transition: all 0.2s ease, color 1s ease;
+  transition: all 0.2s ease, color 1s ease;
 }
 
 .c0 .dygraph-label {

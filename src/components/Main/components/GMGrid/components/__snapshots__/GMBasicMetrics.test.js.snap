@@ -17,7 +17,7 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
       <styled.div>
         <Sparklines
           data={
-            Array [
+            [
               3468388,
               3468388,
               3468388,
@@ -35,7 +35,7 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
           <SparklinesLine
             onMouseMove={[Function]}
             style={
-              Object {
+              {
                 "fill": "none",
                 "stroke": "currentColor",
                 "strokeWidth": 1,
@@ -44,7 +44,7 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
           />
           <SparklinesReferenceLine
             style={
-              Object {
+              {
                 "opacity": "0.4",
                 "stroke": "grey",
               }
@@ -67,7 +67,7 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
       <styled.div>
         <Sparklines
           data={
-            Array [
+            [
               3468388,
               3468388,
               3468388,
@@ -85,7 +85,7 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
           <SparklinesLine
             onMouseMove={[Function]}
             style={
-              Object {
+              {
                 "fill": "none",
                 "stroke": "currentColor",
                 "strokeWidth": 1,
@@ -94,7 +94,7 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
           />
           <SparklinesReferenceLine
             style={
-              Object {
+              {
                 "opacity": "0.4",
                 "stroke": "grey",
               }
@@ -117,7 +117,7 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
       <styled.div>
         <Sparklines
           data={
-            Array [
+            [
               12,
               12,
               12,
@@ -135,7 +135,7 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
           <SparklinesLine
             onMouseMove={[Function]}
             style={
-              Object {
+              {
                 "fill": "none",
                 "stroke": "currentColor",
                 "strokeWidth": 1,
@@ -144,7 +144,7 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
           />
           <SparklinesReferenceLine
             style={
-              Object {
+              {
                 "opacity": "0.4",
                 "stroke": "grey",
               }
@@ -167,7 +167,7 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
       <styled.div>
         <Sparklines
           data={
-            Array [
+            [
               8,
               8,
               8,
@@ -185,7 +185,7 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
           <SparklinesLine
             onMouseMove={[Function]}
             style={
-              Object {
+              {
                 "fill": "none",
                 "stroke": "currentColor",
                 "strokeWidth": 1,
@@ -194,7 +194,7 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
           />
           <SparklinesReferenceLine
             style={
-              Object {
+              {
                 "opacity": "0.4",
                 "stroke": "grey",
               }
@@ -217,7 +217,7 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
       <styled.div>
         <Sparklines
           data={
-            Array [
+            [
               4,
               4,
               4,
@@ -236,7 +236,7 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
           <SparklinesLine
             onMouseMove={[Function]}
             style={
-              Object {
+              {
                 "fill": "none",
                 "stroke": "currentColor",
                 "strokeWidth": 1,
@@ -245,7 +245,7 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
           />
           <SparklinesReferenceLine
             style={
-              Object {
+              {
                 "opacity": "0.4",
                 "stroke": "grey",
               }
@@ -268,7 +268,7 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
       <styled.div>
         <Sparklines
           data={
-            Array [
+            [
               16,
               16,
               16,
@@ -286,7 +286,7 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
           <SparklinesLine
             onMouseMove={[Function]}
             style={
-              Object {
+              {
                 "fill": "none",
                 "stroke": "currentColor",
                 "strokeWidth": 1,
@@ -295,7 +295,7 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
           />
           <SparklinesReferenceLine
             style={
-              Object {
+              {
                 "opacity": "0.4",
                 "stroke": "grey",
               }
@@ -318,7 +318,7 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
       <styled.div>
         <Sparklines
           data={
-            Array [
+            [
               16,
               16,
               16,
@@ -336,7 +336,7 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
           <SparklinesLine
             onMouseMove={[Function]}
             style={
-              Object {
+              {
                 "fill": "none",
                 "stroke": "currentColor",
                 "strokeWidth": 1,
@@ -345,7 +345,7 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1
           />
           <SparklinesReferenceLine
             style={
-              Object {
+              {
                 "opacity": "0.4",
                 "stroke": "grey",
               }
