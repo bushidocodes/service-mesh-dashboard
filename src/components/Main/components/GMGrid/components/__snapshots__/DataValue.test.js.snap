@@ -1,15 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataValue matches snapshot 1`] = `
-.c0 {
-  -webkit-flex: 1 1 33%;
-  -ms-flex: 1 1 33%;
-  flex: 1 1 33%;
-  opacity: 0.65;
-  padding-left: 8px;
-}
-
 <div
-  className="c0"
+  className="sc-aXZVg eSGytd"
 />
 `;

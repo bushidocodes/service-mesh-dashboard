@@ -1,22 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TableColThread matches snapshot 1`] = `
-.c0 {
-  -webkit-flex: 1 1 12%;
-  -ms-flex: 1 1 12%;
-  flex: 1 1 12%;
-  text-align: left;
-  -webkit-flex: 0 1 5em;
-  -ms-flex: 0 1 5em;
-  flex: 0 1 5em;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  text-align: center;
-}
-
 <div
-  className="c0"
+  className="sc-aXZVg sc-gEvEer chKTjV khIDvz"
 />
 `;

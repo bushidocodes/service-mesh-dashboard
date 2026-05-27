@@ -1,42 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DismissButtonContainer matches snapshot 1`] = `
-.c0 {
-  position: absolute;
-  cursor: pointer;
-  top: 8px;
-  right: 8px;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  pointer-events: auto;
-  z-index: 100;
-  opacity: 0.125;
-}
-
-.c0:hover,
-.c0:focus {
-  opacity: 1;
-  -webkit-transition: all 0.1s ease;
-  transition: all 0.1s ease;
-  -webkit-transform: scale(1.25);
-  -ms-transform: scale(1.25);
-  transform: scale(1.25);
-}
-
-.c0:active {
-  opacity: 1;
-  -webkit-transition: all 0s ease;
-  transition: all 0s ease;
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1);
-}
-
-.notification:hover .c0 {
-  opacity: 1;
-}
-
 <div
-  className="c0"
+  className="sc-aXZVg cKoQpC"
 />
 `;

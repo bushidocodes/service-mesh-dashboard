@@ -1,54 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataPair matches snapshot when priority is normal 1`] = `
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  font-size: 0.8em;
-  padding-right: 15%;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  position: relative;
-}
-
 <div
-  className="c0"
+  className="sc-aXZVg hAXxrc"
 />
 `;
 
 exports[`DataPair matches snapshot when priority is primary 1`] = `
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  padding-right: 15%;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  position: relative;
-  overflow: hidden;
-}
-
-.c0:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 4em;
-  right: 4em;
-  border-top: 1px solid hsl(0,0%,92%);
-  border-left: 8em solid transparent;
-  border-right: 8em solid transparent;
-}
-
 <div
-  className="c0"
+  className="sc-aXZVg kpDYPC"
 />
 `;

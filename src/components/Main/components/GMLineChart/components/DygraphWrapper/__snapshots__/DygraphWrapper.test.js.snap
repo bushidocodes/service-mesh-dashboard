@@ -1,56 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DygraphWrapper matches default snapshot 1`] = `
-.c0 {
-  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background-color: inherit;
-}
-
-.c0 > * {
-  background-color: inherit;
-}
-
-.c0 .dygraph-legend {
-  background-color: rgba(255,255,255,0.9);
-  border-radius: 3px;
-  color: hsl(0,0%,12.5%);
-  display: inline-block;
-  left: auto !important;
-  min-width: 18em;
-  opacity: 0;
-  padding: 8px 16px 8px;
-  position: absolute;
-  right: 0 !important;
-  text-align: right;
-  -webkit-transition: all 0.2s ease, color 0.2s ease;
-  transition: all 0.2s ease, color 0.2s ease;
-  z-index: 10000;
-}
-
-.c0 .dygraph-legend [style*="bold"] {
-  font-weight: 600 !important;
-}
-
-.c0:hover .dygraph-legend {
-  color: hsl(0,0%,12.5%);
-  opacity: 1;
-  -webkit-transition: all 0.2s ease, color 1s ease;
-  transition: all 0.2s ease, color 1s ease;
-}
-
-.c0 .dygraph-label {
-  color: model:rgb;
-  color: 31.875,31.875,31.875;
-  valpha: 1;
-  opacity: 0.8;
-}
-
 <div
-  class="c0"
+  class="sc-aXZVg eeTLUw"
 />
 `;

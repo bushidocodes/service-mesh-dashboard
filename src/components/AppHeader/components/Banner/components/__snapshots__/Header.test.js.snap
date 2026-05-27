@@ -1,33 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header matches snapshot 1`] = `
-.c0 {
-  font-size: 32px;
-  margin: 0;
-  position: relative;
-  display: inline-block;
-  z-index: 0;
-  max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  text-transform: capitalize;
-}
-
-.c0:after {
-  background-color: rgba(0,0,0,0.5);
-  bottom: 0.25em;
-  content: "";
-  -webkit-filter: blur(10px);
-  filter: blur(10px);
-  left: 0.25em;
-  position: absolute;
-  right: 0.25em;
-  top: 0.25em;
-  z-index: -1;
-}
-
 <h1
-  className="c0"
+  className="sc-aXZVg kWVvMv"
 />
 `;

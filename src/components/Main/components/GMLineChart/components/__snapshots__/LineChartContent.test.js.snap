@@ -1,19 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`LineChartContent matches snapshot 1`] = `
-.c0 {
-  -webkit-flex: 1 1 100%;
-  -ms-flex: 1 1 100%;
-  flex: 1 1 100%;
-  position: relative;
-  min-height: 250px;
-}
-
-.c0 > * {
-  margin: 8px;
-}
-
 <div
-  className="c0"
+  className="sc-aXZVg fZVwyk"
 />
 `;

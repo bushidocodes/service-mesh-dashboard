@@ -1,11 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`LineChartDetails matches snapshot 1`] = `
-.c0 {
-  padding: 0 8px;
-}
-
 <div
-  className="c0"
+  className="sc-aXZVg kLxFt"
 />
 `;

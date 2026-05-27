@@ -1,193 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`JVMHeaderContent matches snapshot 1`] = `
-.c2 {
-  color: rgb(255,255,255);
-  white-space: nowrap;
-  max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin: 4px 0 0;
-}
-
-.c2 h1 {
-  font-size: 18px;
-  -webkit-flex: 1 1 100%;
-  -ms-flex: 1 1 100%;
-  flex: 1 1 100%;
-  line-height: 1;
-  margin: 0;
-  font-weight: 600;
-  text-transform: capitalize;
-}
-
-.c6 {
-  margin: 0 0 4px 24px;
-  font-size: 11px;
-  color: rgb(255,255,255);
-}
-
-.c7 {
-  color: rgb(213,213,213);
-  padding-right: 4px;
-  display: inline-block;
-}
-
-.c8 {
-  margin: 0;
-  display: inline-block;
-}
-
-.c5 {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-}
-
-.c4 {
-  z-index: 1;
-  height: 24px;
-  width: 24px;
-  color: currentColor;
-  word-spacing: 0;
-  vertical-align: middle;
-}
-
-.c4:not(:root) {
-  overflow: visible;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 25px;
-}
-
-.c1 {
-  background-color: rgb(45,45,45);
-  font-weight: 400;
-  -webkit-flex: 1 1 1%;
-  -ms-flex: 1 1 1%;
-  flex: 1 1 1%;
-  margin: 1px 1px 0 0;
-  overflow: hidden;
-  padding: 4px 8px 8px;
-  position: relative;
-  -webkit-transition: all 0.15s ease;
-  transition: all 0.15s ease;
-}
-
-.c1::after {
-  border-radius: 1px;
-  box-shadow: 0 0 1em 1px rgb(10,171,42);
-  color: inherit;
-  content: "";
-  height: 1px;
-  left: 0;
-  opacity: 0;
-  pointer-events: none;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 100;
-}
-
-.c1:hover {
-  background-color: rgb(54,54,54);
-}
-
-.c1:hover:after {
-  opacity: 0.5;
-}
-
-.c1.active {
-  background-color: rgb(77,77,77);
-}
-
-.c1.active:after {
-  background-color: rgb(84,196,106);
-  opacity: 1;
-  -webkit-transition: 0.1s;
-  transition: 0.1s;
-}
-
-.c1:active:after {
-  background-color: rgb(84,196,106);
-  opacity: 1;
-  -webkit-transition: 0.1s;
-  transition: 0.1s;
-}
-
-.c1:focus {
-  outline: rgb(10,171,42) auto 3px;
-}
-
-.c10 {
-  height: 24px;
-  color: rgb(213,213,213);
-  margin: 0 2px;
-}
-
-.c10 > * {
-  width: 100%;
-  height: 100%;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: row wrap;
-  -ms-flex-flow: row wrap;
-  flex-flow: row wrap;
-  color: rgb(150,150,150);
-  background-color: rgba(0,0,0,0.30000000000000004);
-  padding: 0 1px 1px 1px;
-}
-
-.c9 span + span {
-  font-size: 80%;
-  opacity: 0.8;
-}
-
 <div
-  class="c0"
+  class="sc-jXbUNg TipbJ"
 >
   <a
-    class="c1"
+    class="sc-kAyceB enLmU"
     href="/undefined/summary"
   >
     <div
-      class="c2"
+      class="sc-aXZVg zqygP"
     >
       <span
-        class="c3"
+        class="sc-gsFSXq gcsYfk"
       >
         <svg
           aria-labelledby="ariaLabelledby"
-          class="c4"
+          class="sc-iGgWBj lgKbqH"
           focusable="false"
           version="1.1"
           viewBox="0 0 24 24"
@@ -195,7 +24,7 @@ exports[`JVMHeaderContent matches snapshot 1`] = `
           xmlns="http://www.w3.org/2000/svg"
         >
           <g
-            class="c5"
+            class="sc-dcJsrY jDtTFH"
             fill="currentColor"
             title=""
           >
@@ -218,35 +47,35 @@ exports[`JVMHeaderContent matches snapshot 1`] = `
       </h1>
     </div>
     <dl
-      class="c6"
+      class="sc-gEvEer gYCzjd"
     >
       <dt
-        class="c7"
+        class="sc-eqUAAy llUMQx"
       >
         Uptime
       </dt>
       <dd
-        class="c8"
+        class="sc-fqkvVR gFVBGJ"
       >
         <div
-          class="c9"
+          class="sc-dhKdcB hLMqDE"
         />
       </dd>
     </dl>
   </a>
   <a
-    class="c1"
+    class="sc-kAyceB enLmU"
     href="/undefined/routes"
   >
     <div
-      class="c2"
+      class="sc-aXZVg zqygP"
     >
       <span
-        class="c3"
+        class="sc-gsFSXq gcsYfk"
       >
         <svg
           aria-labelledby="ariaLabelledby"
-          class="c4"
+          class="sc-iGgWBj lgKbqH"
           focusable="false"
           version="1.1"
           viewBox="0 0 24 24"
@@ -254,7 +83,7 @@ exports[`JVMHeaderContent matches snapshot 1`] = `
           xmlns="http://www.w3.org/2000/svg"
         >
           <g
-            class="c5"
+            class="sc-dcJsrY jDtTFH"
             fill="currentColor"
             title=""
           >
@@ -277,33 +106,33 @@ exports[`JVMHeaderContent matches snapshot 1`] = `
       </h1>
     </div>
     <dl
-      class="c6"
+      class="sc-gEvEer gYCzjd"
     >
       <dt
-        class="c7"
+        class="sc-eqUAAy llUMQx"
       >
         Requests
       </dt>
       <dd
-        class="c8"
+        class="sc-fqkvVR gFVBGJ"
       >
         2
       </dd>
     </dl>
   </a>
   <a
-    class="c1"
+    class="sc-kAyceB enLmU"
     href="/undefined/threads"
   >
     <div
-      class="c2"
+      class="sc-aXZVg zqygP"
     >
       <span
-        class="c3"
+        class="sc-gsFSXq gcsYfk"
       >
         <svg
           aria-labelledby="ariaLabelledby"
-          class="c4"
+          class="sc-iGgWBj lgKbqH"
           focusable="false"
           version="1.1"
           viewBox="0 0 24 24"
@@ -311,7 +140,7 @@ exports[`JVMHeaderContent matches snapshot 1`] = `
           xmlns="http://www.w3.org/2000/svg"
         >
           <g
-            class="c5"
+            class="sc-dcJsrY jDtTFH"
             fill="currentColor"
             title=""
           >
@@ -334,21 +163,21 @@ exports[`JVMHeaderContent matches snapshot 1`] = `
       </h1>
     </div>
     <dl
-      class="c6"
+      class="sc-gEvEer gYCzjd"
     >
       <dt
-        class="c7"
+        class="sc-eqUAAy llUMQx"
       >
         Threads
       </dt>
       <dd
-        class="c8"
+        class="sc-fqkvVR gFVBGJ"
       >
         6
       </dd>
     </dl>
     <div
-      class="c10"
+      class="sc-imWYAI iKkXiV"
     >
       <svg
         preserveAspectRatio="none"
@@ -429,18 +258,18 @@ exports[`JVMHeaderContent matches snapshot 1`] = `
     </div>
   </a>
   <a
-    class="c1"
+    class="sc-kAyceB enLmU"
     href="/undefined/explorer"
   >
     <div
-      class="c2"
+      class="sc-aXZVg zqygP"
     >
       <span
-        class="c3"
+        class="sc-gsFSXq gcsYfk"
       >
         <svg
           aria-labelledby="ariaLabelledby"
-          class="c4"
+          class="sc-iGgWBj lgKbqH"
           focusable="false"
           version="1.1"
           viewBox="0 0 24 24"
@@ -448,7 +277,7 @@ exports[`JVMHeaderContent matches snapshot 1`] = `
           xmlns="http://www.w3.org/2000/svg"
         >
           <g
-            class="c5"
+            class="sc-dcJsrY jDtTFH"
             fill="currentColor"
             title=""
           >

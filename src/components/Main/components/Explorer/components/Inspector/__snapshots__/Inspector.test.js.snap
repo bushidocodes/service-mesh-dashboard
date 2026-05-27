@@ -1,280 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Inspector matches snapshot 1`] = `
-.c0 {
-  border-radius: 3px;
-  bottom: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  height: 100%;
-  left: 0;
-  line-height: 1.2;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-.c1 {
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  box-shadow: 0 1px 0 0 hsl(0,0%,92%);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 0 0 112px;
-  -ms-flex: 0 0 112px;
-  flex: 0 0 112px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c1 > * {
-  padding: 8px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-}
-
-.c5 {
-  -webkit-flex: 1 1 100%;
-  -ms-flex: 1 1 100%;
-  flex: 1 1 100%;
-  margin: 0 auto;
-  -webkit-overflow-scrolling: touch;
-  overflow-y: scroll;
-  padding: 0 8px;
-  width: 100%;
-  word-break: break-all;
-}
-
-.c6 {
-  border-radius: 3px;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 4px 8px;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-  will-change: transform;
-  word-wrap: break-word;
-}
-
-.c6:first-child {
-  margin-top: 8px;
-}
-
-.c6:focus {
-  outline: -webkit-focus-ring-color auto 5px;
-}
-
-.c6:hover {
-  color: rgb(10,171,42);
-}
-
-.c6:active {
-  color: rgb(10,171,42);
-  -webkit-transform: scale(0.9875);
-  -ms-transform: scale(0.9875);
-  transform: scale(0.9875);
-  -webkit-transition-duration: 0;
-  transition-duration: 0;
-}
-
-.c6:focus:active:hover {
-  outline: 0;
-}
-
-.c2 {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  color: black;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 1.4;
-  text-align: left;
-  text-transform: none;
-  padding: 1.4px 4px;
-  background-color: rgb(255,255,255);
-  border-radius: 3px;
-  border: 1px solid rgb(242,242,242);
-  border-bottom-color: rgb(230,230,230);
-  -webkit-user-select: auto;
-  -moz-user-select: auto;
-  -ms-user-select: auto;
-  user-select: auto;
-  box-shadow: inset 0 0 0 transparent,0 0 0 transparent,0 0 0 transparent;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  margin: 8px;
-  box-shadow: inset 0 0 0 rgba(0,0,0,0), 0 0 0 rgba(0,0,0,0), 0 0 0 rgba(0,0,0,0);
-  text-align: left;
-  -webkit-user-select: auto;
-  -moz-user-select: auto;
-  -ms-user-select: auto;
-  user-select: auto;
-  width: calc(100% - 16px);
-}
-
-.c2:hover {
-  background-color: rgb(250,250,250);
-  border-color: rgb(237,237,237);
-  -webkit-transition: all 0.1s ease;
-  transition: all 0.1s ease;
-  border-bottom-color: rgb(217,217,217);
-  color: black;
-}
-
-.c2:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px rgb(10,171,42);
-  z-index: 1;
-}
-
-.c2::-webkit-input-placeholder {
-  color: currentColor;
-  opacity: 1;
-  text-align: center;
-}
-
-.c2::-moz-placeholder {
-  color: currentColor;
-  opacity: 1;
-  text-align: center;
-}
-
-.c2:-ms-input-placeholder {
-  color: currentColor;
-  opacity: 1;
-  text-align: center;
-}
-
-.c2::placeholder {
-  color: currentColor;
-  opacity: 1;
-  text-align: center;
-}
-
-.c2::-ms-expand {
-  background-color: transparent;
-  border: 0;
-}
-
-.c2[type="text"],
-.c2[type="search"] {
-  cursor: text;
-}
-
-.c2[type="text"]:focus::-webkit-input-placeholder,
-.c2[type="search"]:focus::-webkit-input-placeholder {
-  opacity: 0;
-}
-
-.c2[type="text"]:focus::-moz-placeholder,
-.c2[type="search"]:focus::-moz-placeholder {
-  opacity: 0;
-}
-
-.c2[type="text"]:focus:-ms-input-placeholder,
-.c2[type="search"]:focus:-ms-input-placeholder {
-  opacity: 0;
-}
-
-.c2[type="text"]:focus::placeholder,
-.c2[type="search"]:focus::placeholder {
-  opacity: 0;
-}
-
-.c2::-webkit-input-placeholder {
-  color: currentColor;
-  opacity: 1;
-  text-align: center;
-}
-
-.c2::-moz-placeholder {
-  color: currentColor;
-  opacity: 1;
-  text-align: center;
-}
-
-.c2:-ms-input-placeholder {
-  color: currentColor;
-  opacity: 1;
-  text-align: center;
-}
-
-.c2::placeholder {
-  color: currentColor;
-  opacity: 1;
-  text-align: center;
-}
-
-.c2::-ms-expand {
-  background-color: transparent;
-  border: 0;
-}
-
-.c2:focus {
-  box-shadow: inset 0 0 0 rgba(255,255,255,0.5), 0 0 0 1px rgb(71,192,95), 0 0 0 4px rgb(194,234,202);
-  outline: none;
-}
-
-.c3 {
-  color: currentColor;
-}
-
-.c4 {
-  color: currentColor;
-}
-
 <div
-  class="c0"
+  class="sc-aXZVg hPWKod"
 >
   <div
-    class="c1"
+    class="sc-gEvEer hUelLp"
   >
     <input
       aria-label="Search All Metrics"
-      class="c2"
+      class="sc-dcJsrY ywDKU"
       placeholder="Search"
       type="search"
       value=""
     />
     <label>
       <input
-        class="c3"
+        class="sc-iGgWBj dJFdte"
         name="hideZeroMetric"
         type="checkbox"
       />
@@ -284,7 +26,7 @@ exports[`Inspector matches snapshot 1`] = `
     </label>
     <label>
       <input
-        class="c4"
+        class="sc-gsFSXq jTxPNY"
         name="hideStaticMetric"
         type="checkbox"
       />
@@ -294,88 +36,88 @@ exports[`Inspector matches snapshot 1`] = `
     </label>
   </div>
   <ul
-    class="c5"
+    class="sc-eqUAAy kamWmW"
   >
     <div
-      class="c6"
+      class="sc-fqkvVR bMZjcz"
       tabindex="0"
     >
       finagle/build/revision
     </div>
     <div
-      class="c6"
+      class="sc-fqkvVR bMZjcz"
       tabindex="0"
     >
       finagle/clientregistry/initialresolution_ms
     </div>
     <div
-      class="c6"
+      class="sc-fqkvVR bMZjcz"
       tabindex="0"
     >
       finagle/clientregistry/size
     </div>
     <div
-      class="c6"
+      class="sc-fqkvVR bMZjcz"
       tabindex="0"
     >
       finagle/future_pool/active_tasks
     </div>
     <div
-      class="c6"
+      class="sc-fqkvVR bMZjcz"
       tabindex="0"
     >
       finagle/future_pool/completed_tasks
     </div>
     <div
-      class="c6"
+      class="sc-fqkvVR bMZjcz"
       tabindex="0"
     >
       finagle/future_pool/pool_size
     </div>
     <div
-      class="c6"
+      class="sc-fqkvVR bMZjcz"
       tabindex="0"
     >
       finagle/timer/deviation_ms.avg
     </div>
     <div
-      class="c6"
+      class="sc-fqkvVR bMZjcz"
       tabindex="0"
     >
       http/closes
     </div>
     <div
-      class="c6"
+      class="sc-fqkvVR bMZjcz"
       tabindex="0"
     >
       http/connection_duration.count
     </div>
     <div
-      class="c6"
+      class="sc-fqkvVR bMZjcz"
       tabindex="0"
     >
       http/connection_received_bytes.count
     </div>
     <div
-      class="c6"
+      class="sc-fqkvVR bMZjcz"
       tabindex="0"
     >
       http/connection_requests.count
     </div>
     <div
-      class="c6"
+      class="sc-fqkvVR bMZjcz"
       tabindex="0"
     >
       http/connection_sent_bytes.count
     </div>
     <div
-      class="c6"
+      class="sc-fqkvVR bMZjcz"
       tabindex="0"
     >
       http/connections
     </div>
     <div
-      class="c6"
+      class="sc-fqkvVR bMZjcz"
       tabindex="0"
     >
       http/connects

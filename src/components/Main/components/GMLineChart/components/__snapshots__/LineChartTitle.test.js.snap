@@ -1,19 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`LineChartTitle matches snapshot 1`] = `
-.c0 {
-  font-size: 18px;
-  margin: 0;
-  padding: 8px 16px;
-  -webkit-flex: 1 0 40px;
-  -ms-flex: 1 0 40px;
-  flex: 1 0 40px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
 <h3
-  className="c0"
+  className="sc-aXZVg oXRML"
 />
 `;

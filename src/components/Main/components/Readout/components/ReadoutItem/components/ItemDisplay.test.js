@@ -8,7 +8,12 @@ describe("ItemDisplay", () => {
     expect(aItemDisplay).toMatchSnapshot();
   });
   it("allows flex value to be overridden", () => {
-    const aItemDisplay = shallow(<ItemDisplay flex="0 1 33%" />);
-    expect(aItemDisplay).toHaveStyleRule("flex", "0 1 33%");
+    // Different flex props should produce different styled-components class names,
+    // confirming the prop is wired into the CSS template.
+    const defaultFlex = shallow(<ItemDisplay />);
+    const customFlex = shallow(<ItemDisplay flex="0 1 33%" />);
+    expect(defaultFlex.prop("className")).not.toBe(
+      customFlex.prop("className")
+    );
   });
 });

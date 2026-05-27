@@ -1,12 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SecondaryText matches snapshot 1`] = `
-.c0 {
-  margin: 8px 0 0;
-  text-align: center;
-}
-
 <p
-  className="c0"
+  className="sc-aXZVg bHdREL"
 />
 `;

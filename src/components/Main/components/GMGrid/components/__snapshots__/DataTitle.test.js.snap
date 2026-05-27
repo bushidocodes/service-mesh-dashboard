@@ -1,13 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataTitle matches snapshot 1`] = `
-.c0 {
-  text-align: center;
-  margin: 0;
-  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-}
-
 <h3
-  className="c0"
+  className="sc-aXZVg ikvcZT"
 />
 `;

@@ -85,59 +85,13 @@ exports[`Breadcrumbs hides the first child when passed the hideRoot prop  1`] = 
 `;
 
 exports[`Breadcrumbs matches snapshot when hiding root 1`] = `
-.c0 {
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  height: inherit;
-  margin: 0;
-  padding: 0;
-}
-
-.c0 > li:first-child {
-  position: absolute;
-  visibility: hidden;
-  pointer-events: none;
-}
-
 <ol
-  className="c0"
+  className="sc-aXZVg FQaZN"
 />
 `;
 
 exports[`Breadcrumbs matches snapshot when showing root 1`] = `
-.c0 {
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  height: inherit;
-  margin: 0;
-  padding: 0;
-}
-
 <ol
-  className="c0"
+  className="sc-aXZVg dlIuER"
 />
 `;
