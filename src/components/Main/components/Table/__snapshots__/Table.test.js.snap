@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Table component matches snapshot 1`] = `
-.c15 {
+.c16 {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
 }
 
-.c14 {
+.c15 {
   z-index: 1;
   height: 24px;
   width: 24px;
@@ -16,11 +16,11 @@ exports[`Table component matches snapshot 1`] = `
   vertical-align: middle;
 }
 
-.c14:not(:root) {
+.c15:not(:root) {
   overflow: visible;
 }
 
-.c10 {
+.c11 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -39,19 +39,19 @@ exports[`Table component matches snapshot 1`] = `
   cursor: pointer;
 }
 
-.c10:hover {
+.c11:hover {
   background-color: hsl(0,0%,98%);
 }
 
-.c10:focus {
+.c11:focus {
   outline: -webkit-focus-ring-color auto 5px;
 }
 
-.c10:focus:active:hover {
+.c11:focus:active:hover {
   outline: 0;
 }
 
-.c10 > * {
+.c11 > * {
   padding-right: 16px;
   padding-top: 7px;
   padding-bottom: 7px;
@@ -60,11 +60,11 @@ exports[`Table component matches snapshot 1`] = `
   white-space: nowrap;
 }
 
-.c10 > *:first-child {
+.c11 > *:first-child {
   padding-left: 16px;
 }
 
-.c19 {
+.c2 {
   -webkit-flex: 1 1 12%;
   -ms-flex: 1 1 12%;
   flex: 1 1 12%;
@@ -79,31 +79,23 @@ exports[`Table component matches snapshot 1`] = `
   text-align: left;
 }
 
-.c11 {
-  -webkit-flex: 1 1 12%;
-  -ms-flex: 1 1 12%;
-  flex: 1 1 12%;
-  text-align: left;
+.c12 {
   -webkit-flex: 1 1 20%;
   -ms-flex: 1 1 20%;
   flex: 1 1 20%;
   position: relative;
 }
 
-.c18 {
-  -webkit-flex: 1 1 12%;
-  -ms-flex: 1 1 12%;
-  flex: 1 1 12%;
-  text-align: left;
+.c19 {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-.c18 svg {
+.c19 svg {
   height: 24px;
 }
 
-.c16 {
+.c17 {
   background-color: rgb(230,230,230);
   border-radius: 1px 4px 4px 1px;
   bottom: 0;
@@ -113,7 +105,7 @@ exports[`Table component matches snapshot 1`] = `
   right: 16px;
 }
 
-.c17 {
+.c18 {
   background-color: currentColor;
   border-radius: inherit;
   bottom: 0;
@@ -137,7 +129,7 @@ exports[`Table component matches snapshot 1`] = `
   width: 0%;
 }
 
-.c13 {
+.c14 {
   font-size: 11px;
   font-weight: 600;
   text-align: center;
@@ -145,6 +137,8 @@ exports[`Table component matches snapshot 1`] = `
   -moz-letter-spacing: 0.06em;
   -ms-letter-spacing: 0.06em;
   letter-spacing: 0.06em;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   padding: 2px 4px;
   background-color: rgb(10,171,42);
@@ -153,11 +147,11 @@ exports[`Table component matches snapshot 1`] = `
   margin-right: 4px;
 }
 
-.c13 svg:first-child {
+.c14 svg:first-child {
   margin: -8px -4px -8px -6px;
 }
 
-.c12 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -168,7 +162,7 @@ exports[`Table component matches snapshot 1`] = `
   align-items: center;
 }
 
-.c12 > div {
+.c13 > div {
   margin-top: 5px;
   white-space: nowrap;
   overflow: hidden;
@@ -176,7 +170,7 @@ exports[`Table component matches snapshot 1`] = `
   min-width: 0;
 }
 
-.c6 {
+.c7 {
   background-color: rgba(0,0,0,0.8);
   border-radius: 6px;
   color: rgb(255,255,255);
@@ -196,14 +190,14 @@ exports[`Table component matches snapshot 1`] = `
   top: -5px;
 }
 
-.c5 {
+.c6 {
   border-bottom: 1px solid rgb(217,217,217);
   cursor: help;
   display: inline-block;
   position: relative;
 }
 
-.c5:hover > :last-child {
+.c6:hover > :last-child {
   opacity: 1;
   visibility: visible;
   z-index: 1070;
@@ -237,18 +231,14 @@ exports[`Table component matches snapshot 1`] = `
   width: 100%;
 }
 
-.c9 {
+.c10 {
   display: block;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.c2 {
-  -webkit-flex: 1 1 12%;
-  -ms-flex: 1 1 12%;
-  flex: 1 1 12%;
-  text-align: left;
+.c3 {
   padding-right: 16px;
   padding-top: 7px;
   padding-bottom: 7px;
@@ -257,21 +247,11 @@ exports[`Table component matches snapshot 1`] = `
   white-space: nowrap;
 }
 
-.c2:first-child {
+.c3:first-child {
   padding-left: 16px;
 }
 
-.c3 {
-  -webkit-flex: 1 1 12%;
-  -ms-flex: 1 1 12%;
-  flex: 1 1 12%;
-  text-align: left;
-  padding-right: 16px;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -287,11 +267,7 @@ exports[`Table component matches snapshot 1`] = `
   overflow: visible;
 }
 
-.c3:first-child {
-  padding-left: 16px;
-}
-
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -309,12 +285,12 @@ exports[`Table component matches snapshot 1`] = `
   flex-direction: column;
 }
 
-.c8 {
+.c9 {
   font-size: 11px;
   color: rgb(77,77,77);
 }
 
-.c4 {
+.c5 {
   padding: 8px;
 }
 
@@ -325,7 +301,7 @@ exports[`Table component matches snapshot 1`] = `
     class="c1"
   >
     <div
-      class="c2"
+      class="c2 c3"
       style="flex:1 1 20%"
     >
       <span>
@@ -333,14 +309,14 @@ exports[`Table component matches snapshot 1`] = `
       </span>
     </div>
     <div
-      class="c2"
+      class="c2 c3"
     >
       <span>
         Requests/sec
       </span>
     </div>
     <div
-      class="c2"
+      class="c2 c3"
       style="text-align:right"
     >
       <span>
@@ -348,7 +324,7 @@ exports[`Table component matches snapshot 1`] = `
       </span>
     </div>
     <div
-      class="c2"
+      class="c2 c3"
       style="text-align:right"
     >
       <span>
@@ -356,34 +332,34 @@ exports[`Table component matches snapshot 1`] = `
       </span>
     </div>
     <div
-      class="c3"
+      class="c2 c3 c4"
     >
       <div
-        class="c4"
+        class="c5"
       >
         <div
-          class="c5"
+          class="c6"
         >
           <span>
             Latency
           </span>
           <div
-            class="c6"
+            class="c7"
           >
             Latency 50% refers to the average latency of the 50% percentile, while Latency 99% is the average latency for the slowest 1% of responses, also known as tail latency.
           </div>
         </div>
       </div>
       <div
-        class="c7"
+        class="c8"
       >
         <div
-          class="c8"
+          class="c9"
         >
           50%
         </div>
         <div
-          class="c8"
+          class="c9"
         >
           99%
         </div>
@@ -391,25 +367,25 @@ exports[`Table component matches snapshot 1`] = `
     </div>
   </div>
   <ol
-    class="c9"
+    class="c10"
   >
     <li
-      class="c10"
+      class="c11"
       role="link"
       tabindex="0"
     >
       <div
-        class="c11"
+        class="c2 c12"
       >
         <div
-          class="c12"
+          class="c13"
         >
           <span
-            class="c13"
+            class="c14"
           >
             <svg
               aria-labelledby="ariaLabelledby"
-              class="c14"
+              class="c15"
               focusable="false"
               version="1.1"
               viewBox="0 0 24 24"
@@ -417,7 +393,7 @@ exports[`Table component matches snapshot 1`] = `
               xmlns="http://www.w3.org/2000/svg"
             >
               <g
-                class="c15"
+                class="c16"
                 fill="currentColor"
                 title=""
               >
@@ -441,16 +417,16 @@ exports[`Table component matches snapshot 1`] = `
           </div>
         </div>
         <div
-          class="c16"
+          class="c17"
         >
           <div
-            class="c17"
+            class="c18"
             width="100"
           />
         </div>
       </div>
       <div
-        class="c18"
+        class="c2 c19"
       >
         <svg
           preserveAspectRatio="xMaxYMin"
@@ -500,7 +476,7 @@ exports[`Table component matches snapshot 1`] = `
         </svg>
       </div>
       <div
-        class="c19"
+        class="c2"
         style="text-align:right"
       >
         399,334
@@ -512,7 +488,7 @@ exports[`Table component matches snapshot 1`] = `
         0.000%
       </div>
       <div
-        class="c19"
+        class="c2"
         style="text-align:right;display:flex;flex-direction:column"
       >
         <div>
@@ -524,22 +500,22 @@ exports[`Table component matches snapshot 1`] = `
       </div>
     </li>
     <li
-      class="c10"
+      class="c11"
       role="link"
       tabindex="0"
     >
       <div
-        class="c11"
+        class="c2 c12"
       >
         <div
-          class="c12"
+          class="c13"
         >
           <span
-            class="c13"
+            class="c14"
           >
             <svg
               aria-labelledby="ariaLabelledby"
-              class="c14"
+              class="c15"
               focusable="false"
               version="1.1"
               viewBox="0 0 24 24"
@@ -547,7 +523,7 @@ exports[`Table component matches snapshot 1`] = `
               xmlns="http://www.w3.org/2000/svg"
             >
               <g
-                class="c15"
+                class="c16"
                 fill="currentColor"
                 title=""
               >
@@ -571,7 +547,7 @@ exports[`Table component matches snapshot 1`] = `
           </div>
         </div>
         <div
-          class="c16"
+          class="c17"
         >
           <div
             class="c21"
@@ -580,7 +556,7 @@ exports[`Table component matches snapshot 1`] = `
         </div>
       </div>
       <div
-        class="c18"
+        class="c2 c19"
       >
         <svg
           preserveAspectRatio="xMaxYMin"
@@ -630,7 +606,7 @@ exports[`Table component matches snapshot 1`] = `
         </svg>
       </div>
       <div
-        class="c19"
+        class="c2"
         style="text-align:right"
       >
         0
@@ -642,7 +618,7 @@ exports[`Table component matches snapshot 1`] = `
         0.000%
       </div>
       <div
-        class="c19"
+        class="c2"
         style="text-align:right;display:flex;flex-direction:column"
       >
         <div>

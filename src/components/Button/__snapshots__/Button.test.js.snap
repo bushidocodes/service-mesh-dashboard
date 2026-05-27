@@ -233,7 +233,7 @@ exports[`Button Snapshots matches orientation snapshots 2`] = `
 .c0 > :not(:first-child) {
   margin-left: 4px;
   -webkit-flex-basis: auto;
-  -ms-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
@@ -350,7 +350,7 @@ exports[`Button Snapshots matches outline snapshots 1`] = `
 .c0 > :not(:first-child) {
   margin-left: 4px;
   -webkit-flex-basis: auto;
-  -ms-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
@@ -460,7 +460,7 @@ exports[`Button Snapshots matches outline snapshots 2`] = `
 .c0 > :not(:first-child) {
   margin-left: 4px;
   -webkit-flex-basis: auto;
-  -ms-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
@@ -573,7 +573,7 @@ exports[`Button Snapshots matches outline snapshots 3`] = `
 .c0 > :not(:first-child) {
   margin-left: 4px;
   -webkit-flex-basis: auto;
-  -ms-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
@@ -683,7 +683,7 @@ exports[`Button Snapshots matches outline snapshots 4`] = `
 .c0 > :not(:first-child) {
   margin-left: 4px;
   -webkit-flex-basis: auto;
-  -ms-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
@@ -799,7 +799,7 @@ exports[`Button Snapshots matches outline snapshots 5`] = `
 .c0 > :not(:first-child) {
   margin-left: 4px;
   -webkit-flex-basis: auto;
-  -ms-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
@@ -924,7 +924,7 @@ exports[`Button Snapshots matches size snapshots 1`] = `
 .c0 > :not(:first-child) {
   margin-left: 4px;
   -webkit-flex-basis: auto;
-  -ms-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
@@ -1041,7 +1041,7 @@ exports[`Button Snapshots matches size snapshots 2`] = `
 .c0 > :not(:first-child) {
   margin-left: 4px;
   -webkit-flex-basis: auto;
-  -ms-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
@@ -1158,7 +1158,7 @@ exports[`Button Snapshots matches size snapshots 3`] = `
 .c0 > :not(:first-child) {
   margin-left: 4px;
   -webkit-flex-basis: auto;
-  -ms-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
@@ -1274,7 +1274,7 @@ exports[`Button Snapshots matches size snapshots 4`] = `
 .c0 > :not(:first-child) {
   margin-left: 4px;
   -webkit-flex-basis: auto;
-  -ms-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
@@ -1390,7 +1390,7 @@ exports[`Button Snapshots matches size snapshots 5`] = `
 .c0 > :not(:first-child) {
   margin-left: 4px;
   -webkit-flex-basis: auto;
-  -ms-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
@@ -1506,7 +1506,7 @@ exports[`Button Snapshots matches type snapshots 1`] = `
 .c0 > :not(:first-child) {
   margin-left: 4px;
   -webkit-flex-basis: auto;
-  -ms-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
@@ -1623,7 +1623,7 @@ exports[`Button Snapshots matches type snapshots 2`] = `
 .c0 > :not(:first-child) {
   margin-left: 4px;
   -webkit-flex-basis: auto;
-  -ms-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
@@ -1740,7 +1740,7 @@ exports[`Button Snapshots matches type snapshots 3`] = `
 .c0 > :not(:first-child) {
   margin-left: 4px;
   -webkit-flex-basis: auto;
-  -ms-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
@@ -1857,7 +1857,7 @@ exports[`Button Snapshots matches type snapshots 4`] = `
 .c0 > :not(:first-child) {
   margin-left: 4px;
   -webkit-flex-basis: auto;
-  -ms-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
@@ -1974,7 +1974,7 @@ exports[`Button Snapshots matches type snapshots 5`] = `
 .c0 > :not(:first-child) {
   margin-left: 4px;
   -webkit-flex-basis: auto;
-  -ms-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 

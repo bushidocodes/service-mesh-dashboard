@@ -44,9 +44,7 @@ exports[`<GMLineChart> stateless child component matches snapshot 1`] = `
 }
 
 .c3 .dygraph-label {
-  color: model:rgb;
-  color: 31.875,31.875,31.875;
-  valpha: 1;
+  color: rgb(32,32,32);
   opacity: 0.8;
 }
 

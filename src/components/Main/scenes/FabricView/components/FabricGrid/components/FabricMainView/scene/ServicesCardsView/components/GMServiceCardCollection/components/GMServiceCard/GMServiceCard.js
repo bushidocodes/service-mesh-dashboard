@@ -106,7 +106,7 @@ export default function GMServiceCard({
         disabled={isAccessible ? null : true}
         onClick={isAccessible ? null : (e) => e.preventDefault()}
         title={titleNameAttribute}
-        to={slug}
+        to={`/${slug}`}
       >
         <Title cardFontWeight={cardFontWeight}>{titleName}</Title>
       </ServiceLink>

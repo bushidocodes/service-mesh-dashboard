@@ -24,8 +24,9 @@ exports[`ReadoutDisplay matches snapshot when primary is false 1`] = `
 }
 
 .c0:first-child:last-child {
+  -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
-  -ms-flex-grow: 0;
+  -ms-flex-positive: 0;
   flex-grow: 0;
 }
 
@@ -77,8 +78,9 @@ exports[`ReadoutDisplay matches snapshot when primary is true 1`] = `
 }
 
 .c0:first-child:last-child {
+  -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
-  -ms-flex-grow: 0;
+  -ms-flex-positive: 0;
   flex-grow: 0;
 }
 

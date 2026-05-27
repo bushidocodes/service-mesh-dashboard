@@ -11,9 +11,7 @@ exports[`Copyright should render when screen is 800px or higher 1`] = `
   -webkit-transition: opacity 0.2s ease;
   transition: opacity 0.2s ease;
   cursor: default;
-  color: model:rgb;
-  color: 31.875,31.875,31.875;
-  valpha: 1;
+  color: rgb(32,32,32);
   border-top: 1px solid rgb(230,230,230);
   margin-top: 8px;
   padding: 8px;

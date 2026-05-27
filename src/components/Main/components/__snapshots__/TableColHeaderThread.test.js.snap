@@ -6,22 +6,28 @@ exports[`TableColHeaderThread matches snapshot 1`] = `
   -ms-flex: 1 1 12%;
   flex: 1 1 12%;
   text-align: left;
+}
+
+.c1 {
   padding-right: 16px;
   padding-top: 7px;
   padding-bottom: 7px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.c1:first-child {
+  padding-left: 16px;
+}
+
+.c2 {
   -webkit-flex: 0 1 5em;
   -ms-flex: 0 1 5em;
   flex: 0 1 5em;
 }
 
-.c0:first-child {
-  padding-left: 16px;
-}
-
 <div
-  className="c0"
+  className="c0 c1 c2"
 />
 `;

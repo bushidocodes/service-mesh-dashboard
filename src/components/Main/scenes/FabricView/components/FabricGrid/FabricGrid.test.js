@@ -1,4 +1,4 @@
-import React from "react";
+import React, { act } from "react";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
 import { Actions } from "jumpstate";
 import _ from "lodash";
@@ -92,12 +92,21 @@ const urlStateDefaults = {
   sortByAttribute: "Name"
 };
 
+// Helper: call setUrlState inside act() so React 18 flushes the update
+// before enzyme assertions run.
+const setUrlState = (wrapper, state) => {
+  act(() => {
+    wrapper.find("FabricGrid").props().setUrlState(state);
+  });
+  wrapper.update();
+};
+
 let FabricGridWrap = mountWithIntl(RouterWrap());
 
 describe("Fabric Grid Main View", () => {
   afterEach(() => {
     // Reset the url bar state to defaults after every test
-    FabricGridWrap.find("FabricGrid").props().setUrlState(urlStateDefaults);
+    setUrlState(FabricGridWrap, urlStateDefaults);
   });
 
   test("renders all services in cards view", () => {
@@ -127,30 +136,25 @@ describe("Fabric Grid Main View", () => {
     expect(FabricGridWrap.html().includes("warning")).toBe(true);
     expect(FabricGridWrap.html().includes("stable")).toBe(true);
     // Group by "Owner"
-    FabricGridWrap.find("FabricGrid")
-      .props()
-      .setUrlState({ groupByAttribute: "Owner" });
+    setUrlState(FabricGridWrap, { groupByAttribute: "Owner" });
     expect(FabricGridWrap.html().includes("domain")).toBe(true);
     expect(FabricGridWrap.html().includes("aac")).toBe(true);
     expect(FabricGridWrap.html().includes("bootstrap")).toBe(true);
     // Group by "Capability"
-    FabricGridWrap.find("FabricGrid")
-      .props()
-      .setUrlState({ groupByAttribute: "Capability" });
+    setUrlState(FabricGridWrap, { groupByAttribute: "Capability" });
     expect(FabricGridWrap.html().includes("system of record")).toBe(true);
     expect(FabricGridWrap.html().includes("crime fighting")).toBe(true);
     // Group by "None" (there should be no headers present)
-    FabricGridWrap.find("FabricGrid")
-      .props()
-      .setUrlState({ groupByAttribute: "None" });
+    setUrlState(FabricGridWrap, { groupByAttribute: "None" });
     expect(FabricGridWrap.html().includes("GMServiceHeader")).toBe(false);
   });
 
   test("sorts services by name and status", () => {
     // Sort by "Name"
-    FabricGridWrap.find("FabricGrid")
-      .props()
-      .setUrlState({ groupByAttribute: "None", sortByAttribute: "Name" });
+    setUrlState(FabricGridWrap, {
+      groupByAttribute: "None",
+      sortByAttribute: "Name"
+    });
     // Find and compare indices to determine the sorting order
     let first = FabricGridWrap.html().indexOf("AAC Remote Information");
     let second = FabricGridWrap.html().indexOf("Entry Monitoring");
@@ -160,9 +164,10 @@ describe("Fabric Grid Main View", () => {
     expect(first).toBeLessThan(second);
     expect(second).toBeLessThan(third);
     // Sort by "Status"
-    FabricGridWrap.find("FabricGrid")
-      .props()
-      .setUrlState({ groupByAttribute: "None", sortByAttribute: "Status" });
+    setUrlState(FabricGridWrap, {
+      groupByAttribute: "None",
+      sortByAttribute: "Status"
+    });
     // Sorting by status flips the order of Entry monitoring and AAC
     first = FabricGridWrap.html().indexOf("Entry Monitoring");
     second = FabricGridWrap.html().indexOf("AAC Remote Information");
@@ -172,9 +177,7 @@ describe("Fabric Grid Main View", () => {
   });
 
   test("filters services based on searchQuery", () => {
-    FabricGridWrap.find("FabricGrid")
-      .props()
-      .setUrlState({ searchQuery: "Grace" });
+    setUrlState(FabricGridWrap, { searchQuery: "Grace" });
     expect(FabricGridWrap.html().includes("AAC Remote Information")).toBe(
       false
     );
@@ -187,7 +190,7 @@ describe("Fabric Grid Main View", () => {
 
 describe("Fabric Grid Status Views", () => {
   afterEach(() => {
-    FabricGridWrap.find("FabricGrid").props().setUrlState(urlStateDefaults);
+    setUrlState(FabricGridWrap, urlStateDefaults);
   });
 
   // In the following tests, we have to generate filtered services to pass down to the route,

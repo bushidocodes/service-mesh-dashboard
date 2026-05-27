@@ -8,16 +8,16 @@ exports[`<GMTable> stateless child component of GMGrid matches snapshot 1`] = `
     Requests
   </styled.h3>
   <styled.div>
-    <styled.div
+    <Styled(styled.div)
       key="header-0"
     >
       Requests
-    </styled.div>
-    <styled.div
+    </Styled(styled.div)>
+    <Styled(styled.div)
       key="header-1"
     >
       Success
-    </styled.div>
+    </Styled(styled.div)>
   </styled.div>
   <styled.div
     key="row-0"

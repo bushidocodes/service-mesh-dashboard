@@ -83,7 +83,7 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
   overflow: visible;
 }
 
-.c11 {
+.c12 {
   z-index: 1;
   height: 48px;
   width: 48px;
@@ -92,7 +92,7 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
   vertical-align: middle;
 }
 
-.c11:not(:root) {
+.c12:not(:root) {
   overflow: visible;
 }
 
@@ -119,8 +119,9 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
 }
 
 .c8:first-child:last-child {
+  -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
-  -ms-flex-grow: 0;
+  -ms-flex-positive: 0;
   flex-grow: 0;
 }
 
@@ -132,7 +133,7 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
   padding-left: 0;
 }
 
-.c17 {
+.c18 {
   -webkit-align-items: stretch;
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
@@ -154,21 +155,22 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
   margin: 0;
 }
 
-.c17:first-child:last-child {
+.c18:first-child:last-child {
+  -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
-  -ms-flex-grow: 0;
+  -ms-flex-positive: 0;
   flex-grow: 0;
 }
 
-.c17:first-child:last-child > * {
+.c18:first-child:last-child > * {
   text-align: center;
 }
 
-.c17:first-child:last-child > * > :first-child {
+.c18:first-child:last-child > * > :first-child {
   padding-left: 0;
 }
 
-.c9 {
+.c10 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -203,14 +205,14 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
   top: 0;
 }
 
-.c9 button {
+.c10 button {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
   margin: 8px 0;
 }
 
-.c12 {
+.c13 {
   -webkit-align-items: stretch;
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
@@ -228,11 +230,11 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
   padding: 8px 0;
 }
 
-.c12:first-child {
+.c13:first-child {
   padding-left: 16px;
 }
 
-.c10 {
+.c11 {
   -webkit-flex: 0 0 80px;
   -ms-flex: 0 0 80px;
   flex: 0 0 80px;
@@ -251,7 +253,7 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
   text-align: center;
 }
 
-.c13 {
+.c14 {
   font-size: 11px;
   margin: 0;
   padding: 0;
@@ -259,7 +261,7 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
   min-height: 1em;
 }
 
-.c14 {
+.c15 {
   font-size: 32px;
   word-break: break-all;
   margin: 0;
@@ -267,7 +269,7 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
   min-height: 1em;
 }
 
-.c16 {
+.c17 {
   font-size: 11px;
   font-weight: 600;
   margin: 0;
@@ -291,7 +293,7 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
   width: 100%;
 }
 
-.c15 span + span {
+.c16 span + span {
   font-size: 80%;
   opacity: 0.8;
 }
@@ -308,7 +310,7 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
 }
 
 @media all and (max-width:1000px) {
-  .c17 {
+  .c18 {
     -webkit-flex: 0 0 100%;
     -ms-flex: 0 0 100%;
     flex: 0 0 100%;
@@ -371,14 +373,14 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
           class="c8"
         >
           <div
-            class="c9"
+            class="c9 c10"
           >
             <div
-              class="c10"
+              class="c11"
             >
               <svg
                 aria-labelledby="ariaLabelledby"
-                class="c11"
+                class="c12"
                 focusable="false"
                 version="1.1"
                 viewBox="0 0 24 24"
@@ -405,22 +407,22 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
               </svg>
             </div>
             <div
-              class="c12"
+              class="c13"
             >
               <h2
-                class="c13"
+                class="c14"
               >
                 Uptime
               </h2>
               <span
-                class="c14"
+                class="c15"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 />
               </span>
               <p
-                class="c16"
+                class="c17"
               >
                 Jul 18, 2017, 12:53:01 PM
               </p>
@@ -428,17 +430,17 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
           </div>
         </div>
         <div
-          class="c17"
+          class="c18"
         >
           <div
-            class="c9"
+            class="c9 c10"
           >
             <div
-              class="c10"
+              class="c11"
             >
               <svg
                 aria-labelledby="ariaLabelledby"
-                class="c11"
+                class="c12"
                 focusable="false"
                 version="1.1"
                 viewBox="0 0 24 24"
@@ -465,29 +467,29 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
               </svg>
             </div>
             <div
-              class="c12"
+              class="c13"
             >
               <h2
-                class="c13"
+                class="c14"
               >
                 Avg. Response Time
               </h2>
               <span
-                class="c14"
+                class="c15"
               >
                 —
               </span>
             </div>
           </div>
           <div
-            class="c9"
+            class="c9 c10"
           >
             <div
-              class="c10"
+              class="c11"
             >
               <svg
                 aria-labelledby="ariaLabelledby"
-                class="c11"
+                class="c12"
                 focusable="false"
                 version="1.1"
                 viewBox="0 0 24 24"
@@ -526,15 +528,15 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
               </svg>
             </div>
             <div
-              class="c12"
+              class="c13"
             >
               <h2
-                class="c13"
+                class="c14"
               >
                 Error Rate
               </h2>
               <span
-                class="c14"
+                class="c15"
               >
                 0%
               </span>
@@ -545,14 +547,14 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
           class="c8"
         >
           <div
-            class="c9"
+            class="c9 c10"
           >
             <div
-              class="c10"
+              class="c11"
             >
               <svg
                 aria-labelledby="ariaLabelledby"
-                class="c11"
+                class="c12"
                 focusable="false"
                 version="1.1"
                 viewBox="0 0 24 24"
@@ -579,15 +581,15 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
               </svg>
             </div>
             <div
-              class="c12"
+              class="c13"
             >
               <h2
-                class="c13"
+                class="c14"
               >
                 Host CPU Cores
               </h2>
               <span
-                class="c14"
+                class="c15"
               >
                 8
               </span>
@@ -721,9 +723,7 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
 }
 
 .c10 .dygraph-label {
-  color: model:rgb;
-  color: 31.875,31.875,31.875;
-  valpha: 1;
+  color: rgb(32,32,32);
   opacity: 0.8;
 }
 

@@ -136,7 +136,8 @@ describe("blurTableRow", () => {
         </div>
       </TableRow>
     );
-    const element = wrapper.instance().TableRow;
+    // In SC v5, styled components are function components, so instance() returns null.
+    const element = wrapper.instance()?.TableRow ?? wrapper.getDOMNode();
     const focusedElement = document.activeElement;
     wrapper.find("span").simulate("click");
     expect(spy).toHaveBeenCalled();

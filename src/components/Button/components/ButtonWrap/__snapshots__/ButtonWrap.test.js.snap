@@ -102,7 +102,7 @@ exports[`ButtonWrap should match snapshot 1`] = `
 .c0 > :not(:first-child) {
   margin-left: 4px;
   -webkit-flex-basis: auto;
-  -ms-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 

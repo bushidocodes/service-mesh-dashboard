@@ -94,8 +94,9 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
 
 .c5 {
   font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
-  -ms-flex-grow: 1;
+  -ms-flex-positive: 1;
   flex-grow: 1;
   font-size: 14px;
   font-weight: 600;
@@ -308,7 +309,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
       </div>
     </div>
   </div>,
-  .c10 {
+  .c11 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -327,19 +328,19 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
   cursor: pointer;
 }
 
-.c10:hover {
+.c11:hover {
   background-color: hsl(0,0%,98%);
 }
 
-.c10:focus {
+.c11:focus {
   outline: -webkit-focus-ring-color auto 5px;
 }
 
-.c10:focus:active:hover {
+.c11:focus:active:hover {
   outline: 0;
 }
 
-.c10 > * {
+.c11 > * {
   padding-right: 16px;
   padding-top: 7px;
   padding-bottom: 7px;
@@ -348,11 +349,11 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
   white-space: nowrap;
 }
 
-.c10 > *:first-child {
+.c11 > *:first-child {
   padding-left: 16px;
 }
 
-.c16 {
+.c2 {
   -webkit-flex: 1 1 12%;
   -ms-flex: 1 1 12%;
   flex: 1 1 12%;
@@ -367,31 +368,23 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
   text-align: left;
 }
 
-.c11 {
-  -webkit-flex: 1 1 12%;
-  -ms-flex: 1 1 12%;
-  flex: 1 1 12%;
-  text-align: left;
+.c12 {
   -webkit-flex: 1 1 20%;
   -ms-flex: 1 1 20%;
   flex: 1 1 20%;
   position: relative;
 }
 
-.c15 {
-  -webkit-flex: 1 1 12%;
-  -ms-flex: 1 1 12%;
-  flex: 1 1 12%;
-  text-align: left;
+.c16 {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-.c15 svg {
+.c16 svg {
   height: 24px;
 }
 
-.c13 {
+.c14 {
   background-color: rgb(230,230,230);
   border-radius: 1px 4px 4px 1px;
   bottom: 0;
@@ -401,7 +394,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
   right: 16px;
 }
 
-.c14 {
+.c15 {
   background-color: currentColor;
   border-radius: inherit;
   bottom: 0;
@@ -413,7 +406,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
   width: 100%;
 }
 
-.c12 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -424,7 +417,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
   align-items: center;
 }
 
-.c12 > div {
+.c13 > div {
   margin-top: 5px;
   white-space: nowrap;
   overflow: hidden;
@@ -432,7 +425,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
   min-width: 0;
 }
 
-.c6 {
+.c7 {
   background-color: rgba(0,0,0,0.8);
   border-radius: 6px;
   color: rgb(255,255,255);
@@ -452,14 +445,14 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
   top: -5px;
 }
 
-.c5 {
+.c6 {
   border-bottom: 1px solid rgb(217,217,217);
   cursor: help;
   display: inline-block;
   position: relative;
 }
 
-.c5:hover > :last-child {
+.c6:hover > :last-child {
   opacity: 1;
   visibility: visible;
   z-index: 1070;
@@ -493,18 +486,14 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
   width: 100%;
 }
 
-.c9 {
+.c10 {
   display: block;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.c2 {
-  -webkit-flex: 1 1 12%;
-  -ms-flex: 1 1 12%;
-  flex: 1 1 12%;
-  text-align: left;
+.c3 {
   padding-right: 16px;
   padding-top: 7px;
   padding-bottom: 7px;
@@ -513,21 +502,11 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
   white-space: nowrap;
 }
 
-.c2:first-child {
+.c3:first-child {
   padding-left: 16px;
 }
 
-.c3 {
-  -webkit-flex: 1 1 12%;
-  -ms-flex: 1 1 12%;
-  flex: 1 1 12%;
-  text-align: left;
-  padding-right: 16px;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -543,11 +522,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
   overflow: visible;
 }
 
-.c3:first-child {
-  padding-left: 16px;
-}
-
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -565,12 +540,12 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
   flex-direction: column;
 }
 
-.c8 {
+.c9 {
   font-size: 11px;
   color: rgb(77,77,77);
 }
 
-.c4 {
+.c5 {
   padding: 8px;
 }
 
@@ -581,7 +556,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
       class="c1"
     >
       <div
-        class="c2"
+        class="c2 c3"
         style="flex:1 1 20%"
       >
         <span>
@@ -589,14 +564,14 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
         </span>
       </div>
       <div
-        class="c2"
+        class="c2 c3"
       >
         <span>
           Requests/sec
         </span>
       </div>
       <div
-        class="c2"
+        class="c2 c3"
         style="text-align:right"
       >
         <span>
@@ -604,7 +579,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
         </span>
       </div>
       <div
-        class="c2"
+        class="c2 c3"
         style="text-align:right"
       >
         <span>
@@ -612,34 +587,34 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
         </span>
       </div>
       <div
-        class="c3"
+        class="c2 c3 c4"
       >
         <div
-          class="c4"
+          class="c5"
         >
           <div
-            class="c5"
+            class="c6"
           >
             <span>
               Latency
             </span>
             <div
-              class="c6"
+              class="c7"
             >
               Latency 50% refers to the average latency of the 50% percentile, while Latency 99% is the average latency for the slowest 1% of responses, also known as tail latency.
             </div>
           </div>
         </div>
         <div
-          class="c7"
+          class="c8"
         >
           <div
-            class="c8"
+            class="c9"
           >
             50%
           </div>
           <div
-            class="c8"
+            class="c9"
           >
             99%
           </div>
@@ -647,34 +622,34 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
       </div>
     </div>
     <ol
-      class="c9"
+      class="c10"
     >
       <li
-        class="c10"
+        class="c11"
         role="link"
         tabindex="0"
       >
         <div
-          class="c11"
+          class="c2 c12"
         >
           <div
-            class="c12"
+            class="c13"
           >
             <div>
               CatalogStream
             </div>
           </div>
           <div
-            class="c13"
+            class="c14"
           >
             <div
-              class="c14"
+              class="c15"
               width="100"
             />
           </div>
         </div>
         <div
-          class="c15"
+          class="c2 c16"
         >
           <svg
             preserveAspectRatio="xMaxYMin"
@@ -730,7 +705,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
           </svg>
         </div>
         <div
-          class="c16"
+          class="c2"
           style="text-align:right"
         >
           13
@@ -742,7 +717,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
           0%
         </div>
         <div
-          class="c16"
+          class="c2"
           style="text-align:right;display:flex;flex-direction:column"
         >
           <div>
@@ -754,31 +729,31 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
         </div>
       </li>
       <li
-        class="c10"
+        class="c11"
         role="link"
         tabindex="0"
       >
         <div
-          class="c11"
+          class="c2 c12"
         >
           <div
-            class="c12"
+            class="c13"
           >
             <div>
               OrderItem
             </div>
           </div>
           <div
-            class="c13"
+            class="c14"
           >
             <div
-              class="c14"
+              class="c15"
               width="100"
             />
           </div>
         </div>
         <div
-          class="c15"
+          class="c2 c16"
         >
           <svg
             preserveAspectRatio="xMaxYMin"
@@ -828,7 +803,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
           </svg>
         </div>
         <div
-          class="c16"
+          class="c2"
           style="text-align:right"
         >
           13
@@ -840,7 +815,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
           0%
         </div>
         <div
-          class="c16"
+          class="c2"
           style="text-align:right;display:flex;flex-direction:column"
         >
           <div>

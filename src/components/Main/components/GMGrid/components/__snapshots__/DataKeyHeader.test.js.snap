@@ -9,11 +9,11 @@ exports[`DataKeyHeader matches snapshot 1`] = `
   text-align: right;
 }
 
-.c0:first-child {
+.c1:first-child {
   margin-left: 33%;
 }
 
 <div
-  className="c0"
+  className="c0 c1"
 />
 `;

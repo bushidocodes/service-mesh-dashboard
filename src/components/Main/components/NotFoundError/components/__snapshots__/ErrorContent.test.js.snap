@@ -14,7 +14,7 @@ exports[`ErrorContent matches snapshot 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   -webkit-flex-basis: 600px;
-  -ms-flex-basis: 600px;
+  -ms-flex-preferred-size: 600px;
   flex-basis: 600px;
   -webkit-flex-flow: row nowrap;
   -ms-flex-flow: row nowrap;

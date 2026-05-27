@@ -45,7 +45,7 @@ exports[`<TableLineItem/> matches snapshot 1`] = `
   padding-left: 16px;
 }
 
-.c6 {
+.c1 {
   -webkit-flex: 1 1 12%;
   -ms-flex: 1 1 12%;
   flex: 1 1 12%;
@@ -60,31 +60,23 @@ exports[`<TableLineItem/> matches snapshot 1`] = `
   text-align: left;
 }
 
-.c1 {
-  -webkit-flex: 1 1 12%;
-  -ms-flex: 1 1 12%;
-  flex: 1 1 12%;
-  text-align: left;
+.c2 {
   -webkit-flex: 1 1 20%;
   -ms-flex: 1 1 20%;
   flex: 1 1 20%;
   position: relative;
 }
 
-.c5 {
-  -webkit-flex: 1 1 12%;
-  -ms-flex: 1 1 12%;
-  flex: 1 1 12%;
-  text-align: left;
+.c6 {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-.c5 svg {
+.c6 svg {
   height: 24px;
 }
 
-.c3 {
+.c4 {
   background-color: rgb(230,230,230);
   border-radius: 1px 4px 4px 1px;
   bottom: 0;
@@ -94,7 +86,7 @@ exports[`<TableLineItem/> matches snapshot 1`] = `
   right: 16px;
 }
 
-.c4 {
+.c5 {
   background-color: currentColor;
   border-radius: inherit;
   bottom: 0;
@@ -106,7 +98,7 @@ exports[`<TableLineItem/> matches snapshot 1`] = `
   width: 20%;
 }
 
-.c2 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -117,7 +109,7 @@ exports[`<TableLineItem/> matches snapshot 1`] = `
   align-items: center;
 }
 
-.c2 > div {
+.c3 > div {
   margin-top: 5px;
   white-space: nowrap;
   overflow: hidden;
@@ -131,26 +123,26 @@ exports[`<TableLineItem/> matches snapshot 1`] = `
   tabindex="0"
 >
   <div
-    class="c1"
+    class="c1 c2"
   >
     <div
-      class="c2"
+      class="c3"
     >
       <div>
         CatalogStream
       </div>
     </div>
     <div
-      class="c3"
+      class="c4"
     >
       <div
-        class="c4"
+        class="c5"
         width="20"
       />
     </div>
   </div>
   <div
-    class="c5"
+    class="c1 c6"
   >
     <svg
       preserveAspectRatio="xMaxYMin"
@@ -200,7 +192,7 @@ exports[`<TableLineItem/> matches snapshot 1`] = `
     </svg>
   </div>
   <div
-    class="c6"
+    class="c1"
     style="text-align:right"
   >
     14,333
@@ -212,7 +204,7 @@ exports[`<TableLineItem/> matches snapshot 1`] = `
     10.000%
   </div>
   <div
-    class="c6"
+    class="c1"
     style="text-align:right;display:flex;flex-direction:column"
   >
     <div>
