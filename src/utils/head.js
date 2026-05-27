@@ -7,8 +7,9 @@
  * @returns {String}
  */
 export function getFabricServer() {
-  const fabricServer = document.head.querySelector("[property=fabricServer]")
-    .content;
+  const fabricServer = document.head.querySelector(
+    "[property=fabricServer]"
+  ).content;
   // Return the metatag if set
   if (fabricServer !== "__FABRIC_SERVER__") {
     return fabricServer;
