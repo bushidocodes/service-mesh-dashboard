@@ -73,7 +73,9 @@ const generateRandomInstanceArray = () => {
   let arr = [];
   for (let i = 0; i < n; i++) {
     arr.push({
-      name: (Math.random() * 1e32).toString(36),
+      name: Array.from({ length: 21 }, () =>
+        Math.floor(Math.random() * 36).toString(36)
+      ).join(""),
       start_time: Math.floor(Math.random() * Date.now())
     });
   }
