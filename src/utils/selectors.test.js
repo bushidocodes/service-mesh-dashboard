@@ -123,7 +123,7 @@ xdescribe("generateHeaderTabs", () => {
   });
 
   test("returns an array of <Tab />'s", () => {
-    tabs.forEach(tab => {
+    tabs.forEach((tab) => {
       expect(tab).toMatchObject(Tab.prototype);
     });
   });

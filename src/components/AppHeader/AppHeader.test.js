@@ -19,7 +19,7 @@ const store = configureMockStore()(mockState);
 const anAppHeader = (
   <Provider store={store}>
     <MemoryRouter initialEntries={["/Down"]}>
-      <Route render={props => <AppHeader {...props} />} />
+      <Route render={(props) => <AppHeader {...props} />} />
     </MemoryRouter>
   </Provider>
 );

@@ -130,7 +130,7 @@ describe("blurTableRow", () => {
     const wrapper = mount(
       <TableRow className="TableRow">
         <div className="div">
-          <span className="span" onClick={spy(e => blurTableRow(e))}>
+          <span className="span" onClick={spy((e) => blurTableRow(e))}>
             Words
           </span>
         </div>
