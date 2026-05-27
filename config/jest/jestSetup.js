@@ -4,6 +4,72 @@ import Enzyme, { shallow, render, mount } from "enzyme";
 import Adapter from "@cfaester/enzyme-adapter-react-18";
 // React 18 Enzyme adapter
 Enzyme.configure({ adapter: new Adapter() });
+
+// Stub HTMLCanvasElement.getContext for JSDOM.
+// Libraries like Dygraphs call canvas.getContext('2d') during mount; JSDOM does
+// not implement it and throws a "not implemented" error that would fail tests.
+// Providing a no-op 2D context prevents the crash without affecting assertions
+// that only inspect props/DOM structure (never the actual pixel output).
+if (typeof HTMLCanvasElement !== "undefined") {
+  HTMLCanvasElement.prototype.getContext = jest.fn(() => ({
+    fillStyle: "",
+    strokeStyle: "",
+    lineWidth: 1,
+    font: "",
+    textAlign: "start",
+    textBaseline: "alphabetic",
+    globalAlpha: 1,
+    canvas: { width: 0, height: 0 },
+    fillRect: jest.fn(),
+    clearRect: jest.fn(),
+    strokeRect: jest.fn(),
+    beginPath: jest.fn(),
+    moveTo: jest.fn(),
+    lineTo: jest.fn(),
+    closePath: jest.fn(),
+    stroke: jest.fn(),
+    fill: jest.fn(),
+    arc: jest.fn(),
+    arcTo: jest.fn(),
+    bezierCurveTo: jest.fn(),
+    quadraticCurveTo: jest.fn(),
+    rect: jest.fn(),
+    ellipse: jest.fn(),
+    clip: jest.fn(),
+    rotate: jest.fn(),
+    scale: jest.fn(),
+    translate: jest.fn(),
+    transform: jest.fn(),
+    setTransform: jest.fn(),
+    resetTransform: jest.fn(),
+    save: jest.fn(),
+    restore: jest.fn(),
+    createLinearGradient: jest.fn(() => ({ addColorStop: jest.fn() })),
+    createRadialGradient: jest.fn(() => ({ addColorStop: jest.fn() })),
+    createPattern: jest.fn(() => null),
+    drawImage: jest.fn(),
+    fillText: jest.fn(),
+    strokeText: jest.fn(),
+    measureText: jest.fn(() => ({
+      width: 0,
+      actualBoundingBoxAscent: 0,
+      actualBoundingBoxDescent: 0,
+      actualBoundingBoxLeft: 0,
+      actualBoundingBoxRight: 0
+    })),
+    getImageData: jest.fn(() => ({
+      data: new Uint8ClampedArray(0),
+      width: 0,
+      height: 0
+    })),
+    putImageData: jest.fn(),
+    createImageData: jest.fn(() => ({ data: new Uint8ClampedArray(0) })),
+    setLineDash: jest.fn(),
+    getLineDash: jest.fn(() => []),
+    isPointInPath: jest.fn(() => false),
+    isPointInStroke: jest.fn(() => false)
+  }));
+}
 // Make Enzyme functions available in all test files without importing
 // Fail tests on any warning
 console.error = (message, ...args) => {
