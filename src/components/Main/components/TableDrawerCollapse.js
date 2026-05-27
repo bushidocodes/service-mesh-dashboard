@@ -1,10 +1,34 @@
+import React from "react";
 import styled from "styled-components";
-import Collapse from "react-collapse";
+import { UnmountClosed } from "react-collapse";
 
 import { COLOR_CONTENT_BACKGROUND } from "style/styleVariables";
 import { spacingScale, contrastColor } from "style/styleFunctions";
 
-const TableDrawerCollapse = styled(Collapse)`
+// react-collapse v5 uses a `theme` prop (not `className`) for its root element's
+// CSS class. styled-components injects styles via `className`, which react-collapse
+// silently ignores. This adapter forwards the injected className into theme.collapse
+// so the generated CSS actually reaches the DOM element.
+//
+// UnmountClosed is used instead of Collapse so that chart children (e.g. Dygraph)
+// are only mounted when the drawer is open — this avoids rendering cost and
+// prevents Dygraph from processing data before the canvas is visible.
+function CollapseBridge({ className, isOpened, children, ...rest }) {
+  return (
+    <UnmountClosed
+      isOpened={isOpened}
+      theme={{
+        collapse: `ReactCollapse--collapse${className ? ` ${className}` : ""}`,
+        content: "ReactCollapse--content"
+      }}
+      {...rest}
+    >
+      {children}
+    </UnmountClosed>
+  );
+}
+
+const TableDrawerCollapse = styled(CollapseBridge)`
   cursor: default;
   flex: 0 0 100%;
   min-height: 0;
