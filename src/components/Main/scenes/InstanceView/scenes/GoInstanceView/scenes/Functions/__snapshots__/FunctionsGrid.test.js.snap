@@ -549,32 +549,24 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
         class="c2 c3"
         style="flex:1 1 20%"
       >
-        <span>
-          Function
-        </span>
+        Function
       </div>
       <div
         class="c2 c3"
       >
-        <span>
-          Requests/sec
-        </span>
+        Requests/sec
       </div>
       <div
         class="c2 c3"
         style="text-align:right"
       >
-        <span>
-          Requests
-        </span>
+        Requests
       </div>
       <div
         class="c2 c3"
         style="text-align:right"
       >
-        <span>
-          Error %
-        </span>
+        Error %
       </div>
       <div
         class="c2 c3 c4"
@@ -585,9 +577,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
           <div
             class="c6"
           >
-            <span>
-              Latency
-            </span>
+            Latency
             <div
               class="c7"
             >

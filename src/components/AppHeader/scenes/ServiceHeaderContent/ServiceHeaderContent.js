@@ -2,14 +2,13 @@ import React from "react";
 import { PropTypes } from "prop-types";
 import { connect } from "react-redux";
 import { withRouter } from "utils/withRouter";
-import { injectIntl, intlShape } from "react-intl";
+import { injectIntl } from "react-intl";
 
 import Tab from "components/AppHeader/components/Tab";
 import TabNav from "components/AppHeader/components/TabNav";
 
 ServiceHeaderContent.propTypes = {
   instanceCount: PropTypes.number,
-  intl: intlShape.isRequired,
   pathname: PropTypes.string
 };
 

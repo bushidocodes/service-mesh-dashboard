@@ -117,7 +117,11 @@ export function screenReaderGraphDescription(timeSeries, title, intl) {
       max: numericalTimeSeries.sort()[numericalTimeSeries.length - 1],
       min: numericalTimeSeries.sort()[0],
       dataPoints: numericalTimeSeries.length,
-      timeSeries: numericalTimeSeries,
+      // react-intl v3+ formatMessage returns an array when a `values` entry
+      // is itself an array (it now supports rich-text values that mix React
+      // elements with strings). The screen-reader description must be a
+      // single string, so pre-join the time-series numbers here.
+      timeSeries: numericalTimeSeries.join(","),
       title
     };
 

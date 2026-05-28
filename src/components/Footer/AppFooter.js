@@ -1,4 +1,4 @@
-import { FormattedHTMLMessage } from "react-intl";
+import { FormattedMessage } from "react-intl";
 import React from "react";
 import Copyright from "./components/Copyright";
 import Footer from "./components/Footer";
@@ -26,12 +26,11 @@ export default function AppFooter() {
         <img alt="Decipher Technology Studios" src={longLogo} />
       </LongLogo>
       <Copyright>
-        <FormattedHTMLMessage
+        <FormattedMessage
           id="footer.copyright"
-          defaultMessage="Copyright &copy; 2018 Decipher Technology Studios. All rights reserved. 
-          <br /> Copyright &copy; 2018 Grey Matter, a Decipher Technology Studios product. All
-        rights reserved."
+          defaultMessage="Copyright © 2018 Decipher Technology Studios. All rights reserved.{br}Copyright © 2018 Grey Matter, a Decipher Technology Studios product. All rights reserved."
           description="Footer copyright message"
+          values={{ br: <br /> }}
         />
       </Copyright>
       <Links>

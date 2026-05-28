@@ -5,7 +5,7 @@ import {
   average,
   screenReaderGraphDescription
 } from "./utils";
-import { IntlProvider } from "react-intl";
+import { createIntl, createIntlCache } from "react-intl";
 
 describe("GMLineChart utils functions", () => {
   test("numericalTimeSeriesFunc produces an array of number", () => {
@@ -64,8 +64,9 @@ describe("GMLineChart utils functions", () => {
     const mockOutputIfNoData =
       "The average for currently displayed data is equal to 0.";
 
-    const intlProvider = new IntlProvider({ locale: "en" }, {});
-    const { intl } = intlProvider.getChildContext();
+    // react-intl v3+ removed the legacy IntlProvider class API in favour
+    // of the createIntl() factory for building intl objects outside React.
+    const intl = createIntl({ locale: "en" }, createIntlCache());
 
     expect(
       screenReaderGraphDescription(mockTimeSeriesArray, "Chart", intl)

@@ -1,7 +1,7 @@
 import _ from "lodash";
 import React from "react";
 import { PropTypes } from "prop-types";
-import { injectIntl, intlShape } from "react-intl";
+import { injectIntl } from "react-intl";
 
 import Tab from "components/AppHeader/components/Tab";
 import TabNav from "components/AppHeader/components/TabNav";
@@ -15,7 +15,6 @@ import { getSparkLineOfValue } from "utils/sparklines";
 JVMHeaderContent.propTypes = {
   basePath: PropTypes.string,
   headerTabs: PropTypes.arrayOf(PropTypes.element),
-  intl: intlShape.isRequired,
   metrics: metricsShape.isRequired
 };
 

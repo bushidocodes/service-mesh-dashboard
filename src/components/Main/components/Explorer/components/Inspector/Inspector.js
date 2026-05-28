@@ -1,6 +1,6 @@
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
-import { FormattedMessage, injectIntl, intlShape } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 
 import InspectorWrap from "./components/InspectorWrap";
 import InspectorToolbar from "./components/InspectorToolbar";
@@ -16,7 +16,6 @@ class Inspector extends Component {
     data: PropTypes.array.isRequired,
     hideStaticMetric: PropTypes.bool,
     hideZeroMetric: PropTypes.bool,
-    intl: intlShape.isRequired,
     onChange: PropTypes.func,
     onClick: PropTypes.func.isRequired,
     onSearch: PropTypes.func,

@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { FONT_SIZE_SM, COLOR_CONTENT_MUTED } from "style/styleVariables";
 import TableColHeader from "./TableColHeader";
 import Tooltip from "components/Tooltip";
-import { injectIntl, intlShape, FormattedMessage } from "react-intl";
+import { injectIntl, FormattedMessage } from "react-intl";
 
 const LatencyHeaderWrap = styled(TableColHeader)`
   display: flex;
@@ -59,8 +59,6 @@ function TableColLatencyHeader({ intl }) {
   );
 }
 
-TableColLatencyHeader.propTypes = {
-  intl: intlShape.isRequired
-};
+TableColLatencyHeader.propTypes = {};
 
 export default injectIntl(TableColLatencyHeader);

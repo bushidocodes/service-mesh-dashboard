@@ -362,9 +362,7 @@ exports[`Explorer View matches snapshot 1`] = `
             name="hideZeroMetric"
             type="checkbox"
           />
-          <span>
-            Hide all metrics with only zero values
-          </span>
+          Hide all metrics with only zero values
         </label>
         <label>
           <input
@@ -372,9 +370,7 @@ exports[`Explorer View matches snapshot 1`] = `
             name="hideStaticMetric"
             type="checkbox"
           />
-          <span>
-            Hide all static metrics
-          </span>
+          Hide all static metrics
         </label>
       </div>
       <ul
@@ -1526,9 +1522,7 @@ exports[`Explorer View matches snapshot 1`] = `
   <div
     class="c9"
   >
-    <span>
-      Select a metric to display
-    </span>
+    Select a metric to display
   </div>
 </div>
 `;

@@ -1,7 +1,7 @@
 import { Actions } from "jumpstate";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
-import { injectIntl, intlShape } from "react-intl";
+import { injectIntl } from "react-intl";
 
 import withUrlState from "components/withUrlState";
 import { withRouter } from "utils/withRouter";
@@ -19,7 +19,6 @@ import FabricMainView from "./components/FabricMainView";
 class FabricGrid extends Component {
   static propTypes = {
     history: routerHistoryShape,
-    intl: intlShape.isRequired,
     location: routerLocationShape,
     match: routerMatchShape,
     services: PropTypes.arrayOf(serviceShape),

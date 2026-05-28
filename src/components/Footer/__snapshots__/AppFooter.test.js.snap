@@ -14,11 +14,15 @@ exports[`A Footer container should render 1`] = `
     />
   </styled.a>
   <styled.p>
-    <FormattedHTMLMessage
-      defaultMessage="Copyright © 2018 Decipher Technology Studios. All rights reserved.  <br /> Copyright © 2018 Grey Matter, a Decipher Technology Studios product. All rights reserved."
+    <MemoizedFormattedMessage
+      defaultMessage="Copyright © 2018 Decipher Technology Studios. All rights reserved.{br}Copyright © 2018 Grey Matter, a Decipher Technology Studios product. All rights reserved."
       description="Footer copyright message"
       id="footer.copyright"
-      values={{}}
+      values={
+        {
+          "br": <br />,
+        }
+      }
     />
   </styled.p>
   <styled.div>
