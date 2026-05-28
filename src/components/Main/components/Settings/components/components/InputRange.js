@@ -1,73 +1,74 @@
-import {
-  FONT_SIZE_H2,
-  FONT_STACK_BASE,
-  FONT_SIZE_BASE,
-  FONT_WEIGHT_REGULAR,
-  COLOR_BRAND_PRIMARY,
-  COLOR_WHITE
-} from "style/styleVariables";
+import styled from "styled-components";
+
+import { COLOR_BRAND_PRIMARY, COLOR_WHITE } from "style/styleVariables";
 import { contrastColor } from "style/styleFunctions";
 
-// Necessary classNames for 3rd party slider
-const InputRange = `
-  .input-range__label.input-range__label--value {
-    color: ${COLOR_BRAND_PRIMARY.toString()};
-    font-family: ${FONT_STACK_BASE};
-    font-size: ${FONT_SIZE_H2};
-    font-weight: ${FONT_WEIGHT_REGULAR};
-    line-height: 0;
-    margin-left: -50%;
-    transform: translateX(-50%) translateY(4px);
-    text-align: center;
-    will-change: transform;
+const BRAND = COLOR_BRAND_PRIMARY.toString();
+const TRACK = contrastColor(COLOR_WHITE, 0.1).toString();
+const DISABLED = contrastColor(COLOR_WHITE, 0.6).toString();
 
-    .input-range__label-container {
-      position: static;
-    }
-  }
+// Native range input styled to replace the unmaintained `react-input-range`
+// package (which pinned the project to React 15/16 peer deps). A styled
+// <input type="range"> has zero dependencies, is fully keyboard-accessible
+// out of the box, and works on React 18.
+//
+// Range inputs require vendor-specific pseudo-elements to style the thumb and
+// track; the -webkit- and -moz- blocks cannot be combined into one selector
+// list (browsers drop the whole rule if any selector is unknown), so they are
+// duplicated intentionally.
+const InputRange = styled.input.attrs({ type: "range" })`
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  margin: 12px 0;
+  border-radius: 20px;
+  background: ${TRACK};
+  outline: none;
+  cursor: pointer;
 
-  .label {
-    bottom: 10px;
-    font-size: ${FONT_SIZE_BASE};
-    left: 0px;
-    position: absolute;
-    text-align: center;
-    width: 100%;
-  }
-
-  .input-range__slider-container {
-    transition: left 0;
-    will-change: transform;
-  }
-
-  .input-range__slider {
-    background: ${COLOR_BRAND_PRIMARY.toString()};
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
     border: none;
     border-radius: 0;
+    background: ${BRAND};
+    cursor: pointer;
     transition: transform 0.3s ease;
-
-    &:hover,
-    &:focus,
-    &:active {
-      transform: scale(1.1);
-    }
+  }
+  &::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border: none;
+    border-radius: 0;
+    background: ${BRAND};
+    cursor: pointer;
+    transition: transform 0.3s ease;
   }
 
-  .input-range__slider:before {
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    border-top: 7px solid ${COLOR_BRAND_PRIMARY.toString()};
-    color: ${COLOR_BRAND_PRIMARY.toString()};
-    content: "";
-    height: 0;
-    position: absolute;
-    top: 100%;
-    width: 0;
+  &:hover::-webkit-slider-thumb,
+  &:focus::-webkit-slider-thumb {
+    transform: scale(1.1);
+  }
+  &:hover::-moz-range-thumb,
+  &:focus::-moz-range-thumb {
+    transform: scale(1.1);
   }
 
-  .input-range__track {
-    background-color: ${contrastColor(COLOR_WHITE, 0.1)};
-    border-radius: 20px;
+  &:disabled {
+    cursor: default;
+  }
+  &:disabled::-webkit-slider-thumb {
+    background: ${DISABLED};
+    cursor: default;
+    transform: none;
+  }
+  &:disabled::-moz-range-thumb {
+    background: ${DISABLED};
+    cursor: default;
+    transform: none;
   }
 `;
 

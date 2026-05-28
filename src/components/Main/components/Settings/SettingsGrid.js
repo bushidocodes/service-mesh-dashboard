@@ -13,8 +13,6 @@ import ErrorBoundary from "components/ErrorBoundary";
 import ConfirmationModal from "components/ConfirmationModal";
 import Readout from "components/Main/components/Readout";
 
-import "react-input-range/lib/css/index.css";
-
 /**
  * Settings Page containing controls for things like polling rate, local storage, etc.
  * @param {Object} props - See proptypes for details

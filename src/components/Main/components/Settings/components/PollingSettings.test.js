@@ -68,12 +68,12 @@ describe("PollingSettings component", () => {
   });
 
   test("InputRange component is getting rendered", () => {
-    expect(wrapper.find(".input-range").length).toBe(1);
+    expect(wrapper.find("input[type='range']").length).toBe(1);
   });
 
   test("InputRange value depends on the initial state of the Polling Settings component", () => {
     mockProps.interval = 99000;
     const wrapper = mountWithIntl(<PollingSettings {...mockProps} />);
-    expect(wrapper.find("InputRange").props().value).toBe(99);
+    expect(wrapper.find("input[type='range']").props().value).toBe(99);
   });
 });
