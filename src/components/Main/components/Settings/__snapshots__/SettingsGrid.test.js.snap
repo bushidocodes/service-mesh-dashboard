@@ -1192,10 +1192,14 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                   bodyOpenClassName="ReactModal__Body--open"
                   className="c0 c1"
                   closeTimeoutMS={0}
+                  contentElement={[Function]}
                   isOpen={false}
                   overlayClassName="modalOverlay"
+                  overlayElement={[Function]}
                   parentSelector={[Function]}
                   portalClassName="ReactModalPortal"
+                  preventScroll={false}
+                  role="dialog"
                   shouldCloseOnEsc={true}
                   shouldCloseOnOverlayClick={true}
                   shouldFocusAfterRender={true}
@@ -1219,6 +1223,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                       bodyOpenClassName="ReactModal__Body--open"
                       className="c0 c1"
                       closeTimeoutMS={0}
+                      contentElement={[Function]}
                       defaultStyles={
                         {
                           "content": {
@@ -1247,8 +1252,11 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                       }
                       isOpen={false}
                       overlayClassName="modalOverlay"
+                      overlayElement={[Function]}
                       parentSelector={[Function]}
                       portalClassName="ReactModalPortal"
+                      preventScroll={false}
+                      role="dialog"
                       shouldCloseOnEsc={true}
                       shouldCloseOnOverlayClick={true}
                       shouldFocusAfterRender={true}
