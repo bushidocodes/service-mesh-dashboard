@@ -1,19 +1,6 @@
 import React from "react";
 
-import StoryRouter from "storybook-router";
-import { storiesOf } from "@storybook/react";
-
 import GMServiceCardCollection from "./index.js";
-
-// mock data is at the end of file
-storiesOf("Service Cards Collection", module)
-  .addDecorator(StoryRouter())
-  .add("with a single grouping header and group of cards", () => (
-    <GMServiceCardCollection items={singleGroupingByStatusCardsViewMockData} />
-  ))
-  .add("with multiple grouping headers and groups of cards", () => (
-    <GMServiceCardCollection items={groupingByStatusCardsViewMockData} />
-  ));
 
 // mock data for Section Cards View
 const groupingByStatusCardsViewMockData = [
@@ -121,3 +108,20 @@ const singleGroupingByStatusCardsViewMockData =
   groupingByStatusCardsViewMockData.filter(
     (elem) => elem.headerTitle === "Warning"
   );
+
+export default {
+  title: "Service Cards Collection",
+  component: GMServiceCardCollection
+};
+
+export const WithASingleGroupingHeaderAndGroupOfCards = {
+  render: () => (
+    <GMServiceCardCollection items={singleGroupingByStatusCardsViewMockData} />
+  )
+};
+
+export const WithMultipleGroupingHeadersAndGroupsOfCards = {
+  render: () => (
+    <GMServiceCardCollection items={groupingByStatusCardsViewMockData} />
+  )
+};

@@ -1,13 +1,16 @@
 import React from "react";
-import { storiesOf } from "@storybook/react";
-import { withKnobs, text } from "@storybook/addon-knobs/react";
 
 import NotFoundError from "./NotFoundError";
 
-storiesOf("NotFoundError", module)
-  .addDecorator(withKnobs)
-  .add("default", () => (
+export default {
+  title: "NotFoundError",
+  component: NotFoundError
+};
+
+export const Default = {
+  render: () => (
     <div style={{ display: "flex" }}>
-      <NotFoundError errorMsg={text("errorMsg")} />
+      <NotFoundError errorMsg={undefined} />
     </div>
-  ));
+  )
+};

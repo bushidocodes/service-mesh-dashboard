@@ -1,24 +1,21 @@
 import React from "react";
 
-import StoryRouter from "storybook-router";
-import { storiesOf } from "@storybook/react";
-import { withKnobs, text, select, boolean } from "@storybook/addon-knobs/react";
-
 import GMServiceListItem from "./index.js";
 import { slugifyMicroservice } from "utils";
 
-const serviceStatus = ["Stable", "Warning", "Down"];
+export default {
+  title: "Service List Item",
+  component: GMServiceListItem
+};
 
-storiesOf("Service List Item", module)
-  .addDecorator(StoryRouter())
-  .addDecorator(withKnobs)
-  .add("Service List Item", () => {
-    const name = text("Service Name", "Service");
-    const version = text("Version", "1.1");
+export const Default = {
+  render: () => {
+    const name = "Service";
+    const version = "1.1";
     return (
       <GMServiceListItem
         name={name}
-        runtime={select("Runtime", ["JVM", "GO"], "JVM")}
+        runtime="JVM"
         instances={[
           {
             name: "ee0fa3669fea7e9a0adea649c46bca56",
@@ -35,14 +32,17 @@ storiesOf("Service List Item", module)
         ]}
         version={version}
         slug={slugifyMicroservice(name, version)}
-        status={select("Service State", serviceStatus, "Stable")}
-        authorized={boolean("User is Authorized", true)}
-        metered={boolean("Service is Metered", true)}
-        docsLink={text("Docs Link", "#")}
+        status="Stable"
+        authorized={true}
+        metered={true}
+        docsLink="#"
       />
     );
-  })
-  .add("List of Service List Items", () => (
+  }
+};
+
+export const ListOfServiceListItems = {
+  render: () => (
     <ul>
       <GMServiceListItem
         name="Awesome Service"
@@ -137,4 +137,5 @@ storiesOf("Service List Item", module)
         runtime="GO"
       />
     </ul>
-  ));
+  )
+};

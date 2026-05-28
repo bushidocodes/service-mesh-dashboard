@@ -1,5 +1,4 @@
 import React from "react";
-import { storiesOf } from "@storybook/react";
 
 import TableToolbar from "./index.js";
 
@@ -47,10 +46,15 @@ const mockFabricViewProps = {
   }
 };
 
-storiesOf("Table Toolbar", module).add("default", () => {
-  return (
+export default {
+  title: "Table Toolbar",
+  component: TableToolbar
+};
+
+export const Default = {
+  render: () => (
     <div style={{ width: "100%" }}>
       <TableToolbar {...mockFabricViewProps} />
     </div>
-  );
-});
+  )
+};

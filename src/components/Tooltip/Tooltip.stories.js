@@ -1,12 +1,4 @@
 import React from "react";
-import { storiesOf } from "@storybook/react";
-import {
-  withKnobs,
-  text,
-  select,
-  boolean,
-  object
-} from "@storybook/addon-knobs/react";
 
 import Tooltip from "./index.js";
 
@@ -18,25 +10,26 @@ const wrapperStyle = {
   alignItems: "center"
 };
 
-storiesOf("Tooltip", module)
-  .addDecorator(withKnobs)
-  .add("default", () => {
-    let content = text("Tooltip Content", "This is a super cool tooltip!");
-    let position = select(
-      "Position",
-      ["top", "right", "bottom", "left"],
-      "top"
-    );
+export default {
+  title: "Tooltip",
+  component: Tooltip
+};
+
+export const Default = {
+  render: () => {
+    let content = "This is a super cool tooltip!";
+    let position = "top";
     return (
       <div style={wrapperStyle}>
         <Tooltip
           content={content}
           position={position}
-          disabled={boolean("disabled", false)}
-          containerStyle={object("containerStyle", {})}
+          disabled={false}
+          containerStyle={{}}
         >
           Hover over me
         </Tooltip>
       </div>
     );
-  });
+  }
+};

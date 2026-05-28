@@ -1,9 +1,5 @@
 import React from "react";
 
-import StoryRouter from "storybook-router";
-import { storiesOf } from "@storybook/react";
-import { withKnobs, number } from "@storybook/addon-knobs/react";
-
 import styled from "styled-components";
 
 import { spacingScale } from "style/styleFunctions";
@@ -35,23 +31,14 @@ const TableCol = styled.div`
     props.errorPercent ? `color: ${errorColor(props.errorPercent)}` : ""};
 `;
 
-storiesOf("Error text color", module)
-  .addDecorator(withKnobs)
-  .addDecorator(StoryRouter())
-  .add("Error text color", () => (
+export default {
+  title: "Error text color"
+};
+
+export const ErrorTextColor = {
+  render: () => (
     <div style={{ display: "flex" }}>
-      <TableCol
-        errorPercent={number("Number slider 0 to 1", 0.01, {
-          range: true,
-          min: 0,
-          max: 1,
-          step: 0.001
-        })}
-      >{`${number("Number slider 0 to 1", 0.01, {
-        range: true,
-        min: 0,
-        max: 1,
-        step: 0.001
-      })}%`}</TableCol>
+      <TableCol errorPercent={0.01}>{`${0.01}%`}</TableCol>
     </div>
-  ));
+  )
+};

@@ -1,29 +1,21 @@
 import React from "react";
 
-import { storiesOf } from "@storybook/react";
-import {
-  withKnobs,
-  number,
-  select,
-  object,
-  text
-} from "@storybook/addon-knobs/react";
-
 import GMLineChart from "./GMLineChart";
 
-storiesOf("GMLineChart", module)
-  .addDecorator(withKnobs)
-  .add("GMLineChart", () => {
-    const title = text("Title", "Awesomeness Factor");
-    const baseUnit = text("Base Unit", "B");
-    const resultUnit = text("Result Unit", "MB");
-    const label = text("Y Axis Label", "Heap Used");
-    const precision = number("# Decimals", 3);
-    const detailLines = object("Detail Lines", [
-      "Total Loaded: 10,200",
-      "Total Unloaded: 19"
-    ]);
-    const dygraphOptions = object("Dygraph Options", {
+export default {
+  title: "GMLineChart",
+  component: GMLineChart
+};
+
+export const Default = {
+  render: () => {
+    const title = "Awesomeness Factor";
+    const baseUnit = "B";
+    const resultUnit = "MB";
+    const label = "Heap Used";
+    const precision = 3;
+    const detailLines = ["Total Loaded: 10,200", "Total Unloaded: 19"];
+    const dygraphOptions = {
       animatedZooms: true,
       axisLineColor: "rgb(200, 200, 200)",
       colors: ["#0aab2a", "#002e6e", "#FF5733"],
@@ -36,12 +28,8 @@ storiesOf("GMLineChart", module)
       fillGraph: true,
       strokeWidth: 2.0,
       legend: "always"
-    });
-    const height = select(
-      "Height",
-      { xs: "xs", sm: "sm", normal: "normal", lg: "lg", xl: "xl", max: "max" },
-      "normal"
-    );
+    };
+    const height = "normal";
     const dygraphMetadata = {
       "wakka/wakka/heap_used": {
         baseUnit: baseUnit,
@@ -71,4 +59,5 @@ storiesOf("GMLineChart", module)
         title={title}
       />
     );
-  });
+  }
+};

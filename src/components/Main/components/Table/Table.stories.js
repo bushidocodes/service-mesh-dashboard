@@ -1,7 +1,4 @@
 import React from "react";
-import { storiesOf } from "@storybook/react";
-import StoryRouter from "storybook-router";
-import { withKnobs, object } from "@storybook/addon-knobs/react";
 
 import Table from "./index.js";
 
@@ -107,31 +104,31 @@ const mockInstanceTableItems = [
   { name: "serviceID3", start_time: 400000000000 }
 ];
 
-storiesOf("Table", module)
-  .addDecorator(withKnobs)
-  .addDecorator(StoryRouter())
-  .add("Routes Table", () => {
-    return (
-      <div style={{ width: "100%" }}>
-        <Table type="Route" items={object("items", mockRoutesTableItems)} />
-      </div>
-    );
-  })
-  .add("Functions Table", () => {
-    return (
-      <div style={{ width: "100%" }}>
-        <Table type="Function" items={object("items", mockFuncsTableItems)} />
-      </div>
-    );
-  })
-  .add("Instance Table", () => {
-    return (
-      <div style={{ width: "100%" }}>
-        <Table
-          status="stable"
-          type="Instance"
-          items={object("items", mockInstanceTableItems)}
-        />
-      </div>
-    );
-  });
+export default {
+  title: "Table",
+  component: Table
+};
+
+export const RoutesTable = {
+  render: () => (
+    <div style={{ width: "100%" }}>
+      <Table type="Route" items={mockRoutesTableItems} />
+    </div>
+  )
+};
+
+export const FunctionsTable = {
+  render: () => (
+    <div style={{ width: "100%" }}>
+      <Table type="Function" items={mockFuncsTableItems} />
+    </div>
+  )
+};
+
+export const InstanceTable = {
+  render: () => (
+    <div style={{ width: "100%" }}>
+      <Table status="stable" type="Instance" items={mockInstanceTableItems} />
+    </div>
+  )
+};

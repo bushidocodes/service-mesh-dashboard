@@ -1,8 +1,4 @@
 import React from "react";
-import StoryRouter from "storybook-router";
-
-import { storiesOf } from "@storybook/react";
-import { withKnobs, text, boolean, object } from "@storybook/addon-knobs/react";
 
 import AppToolBar from "./components/AppToolBar";
 import Tab from "./components/Tab";
@@ -81,19 +77,76 @@ const bannerExtras = [
   }
 ];
 
-storiesOf("App Header", module)
-  .addDecorator(withKnobs)
-  .addDecorator(StoryRouter())
-  .add("AppToolbar", () => (
+export default {
+  title: "App Header"
+};
+
+export const AppToolbar = {
+  render: () => (
     <AppToolBar
-      hideRoot={boolean("Hide Root Breadcrumb", true)}
-      pathname={text("pathname", "/stuff/things")}
-      appVersion={text("Version Number", "0.7.1")}
-      toolbarButtons={object("Toolbar Buttons", mockToolbarButtons)}
+      hideRoot={true}
+      pathname="/stuff/things"
+      appVersion="0.7.1"
+      toolbarButtons={mockToolbarButtons}
     />
-  ))
-  .add("Tab Navigation", () => {
-    return (
+  )
+};
+
+export const TabNavigation = {
+  render: () => (
+    <TabNav>
+      {mockTabs.map((item) => {
+        return (
+          <Tab
+            key={item.title}
+            href={item.path}
+            icon={item.icon}
+            lines={item.details}
+            title={item.title}
+            chartData={item.chartData}
+          />
+        );
+      })}
+      <TabGroup>
+        {mockSecondaryTabs.map((item) => {
+          return (
+            <Tab
+              key={item.title}
+              href={item.path}
+              icon={item.icon}
+              title={item.title}
+            />
+          );
+        })}
+      </TabGroup>
+    </TabNav>
+  )
+};
+
+export const BannerStory = {
+  render: () => (
+    <Banner
+      hideBackground={false}
+      title="Security Service: 00ab2a"
+      extras={bannerExtras}
+    />
+  )
+};
+
+export const DefaultAppHeader = {
+  render: () => (
+    <AppHeaderContainer>
+      <AppToolBar
+        hideRoot={true}
+        pathname="/stuff/things"
+        appVersion="0.7.1"
+        toolbarButtons={mockToolbarButtons}
+      />{" "}
+      <Banner
+        hideBackground={false}
+        title="Security Service: 00ab2a"
+        extras={bannerExtras}
+      />
       <TabNav>
         {mockTabs.map((item) => {
           return (
@@ -120,66 +173,6 @@ storiesOf("App Header", module)
           })}
         </TabGroup>
       </TabNav>
-    );
-  })
-  .add("Banner", () => (
-    <Banner
-      hideBackground={boolean("Hide Banner Background", false)}
-      title={text("Section Title", "Security Service: 00ab2a")}
-      extras={object("Banner Extras", bannerExtras)}
-    />
-  ))
-  .add("Default App Header", () => {
-    return (
-      <AppHeaderContainer>
-        <AppToolBar
-          hideRoot={boolean("Hide Root Breadcrumb", true)}
-          pathname={text("pathname", "/stuff/things")}
-          appVersion={text("Version Number", "0.7.1")}
-          toolbarButtons={object("Toolbar Buttons", mockToolbarButtons)}
-        />{" "}
-        <Banner
-          hideBackground={boolean("Hide Banner Background", false)}
-          title={text("Section Title", "Security Service: 00ab2a")}
-          extras={object("Banner Extras", bannerExtras)}
-        />
-        <TabNav>
-          {mockTabs.map((item) => {
-            return (
-              <Tab
-                key={item.title}
-                href={item.path}
-                icon={item.icon}
-                lines={item.details}
-                title={item.title}
-                chartData={item.chartData}
-              />
-            );
-          })}
-          <TabGroup>
-            {mockSecondaryTabs.map((item) => {
-              return (
-                <Tab
-                  key={item.title}
-                  href={item.path}
-                  icon={item.icon}
-                  title={item.title}
-                />
-              );
-            })}
-          </TabGroup>
-        </TabNav>
-      </AppHeaderContainer>
-    );
-  });
-
-// <AppHeader
-//   tabs={object("Tabs", mockTabs)}
-//   bannerTitle={"Security Service: 00ab2a"}
-//   bannerExtras={object("Banner Extras", bannerExtras)}
-//   secondaryTabs={object("Secondary Tabs", mockSecondaryTabs)}
-//   hideRoot={boolean("Hide Root Breadcrumb", true)}
-//   pathname={text("pathname", "/stuff/things")}
-//   AppVersion={text("Version Number", "0.7.1")}
-//   toolbarButtons={object("Toolbar Buttons", mockToolbarButtons)}
-// />
+    </AppHeaderContainer>
+  )
+};
