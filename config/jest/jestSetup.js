@@ -91,8 +91,11 @@ console.error = (message, ...args) => {
   // React 18 deprecates string refs. Notification.js was converted to createRef
   // but third-party libs (react-notification-system) may still trigger this.
   if (msg.includes("string ref")) return;
-  // react-collapse uses deprecated lifecycle methods.
-  // Suppress until those libraries are upgraded.
+  // Several pinned libraries still use the deprecated React 16 lifecycle
+  // methods: react-grid-layout, react-modal, react-resizable,
+  // react-draggable, react-notification-system, react-transition-group.
+  // (react-collapse no longer does as of v5.1.1.) Suppress until those
+  // libraries are upgraded — see issue #27.
   if (msg.includes("componentWillMount")) return;
   if (msg.includes("componentWillReceiveProps")) return;
   if (msg.includes("componentWillUpdate")) return;

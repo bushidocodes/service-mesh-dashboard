@@ -22,8 +22,14 @@ const SettingsGrid = LazyLoader({
   loader: () => import("components/Main/components/Settings")
 });
 
+// `services` is the state.fabric.services map (keyed by service slug), not a
+// single service — note the _.values(services) / services[slug] / Object.keys
+// access below. Validating it as a bare `serviceShape` made React check for a
+// top-level `services.authorized`, which is always undefined and fired a
+// "Failed prop type" warning on every render (including the initial one before
+// the SDS fetch resolves). objectOf(serviceShape) is the correct shape.
 FabricRouter.propTypes = {
-  services: serviceShape
+  services: PropTypes.objectOf(serviceShape)
 };
 
 /**
