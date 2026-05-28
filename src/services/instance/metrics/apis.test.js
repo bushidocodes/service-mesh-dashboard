@@ -1,25 +1,28 @@
-import moxios from "moxios";
+import axios from "axios";
 import { fetchInstanceMetrics } from "./apis";
 
 // Note: Outside of src directory, so module directory import not possible
 import metrics from "../../../../json-mock/jvm/metrics";
 
-describe("App", () => {
-  beforeEach(() => {
-    moxios.install();
-  });
+// axios v1 dropped moxios support; mock axios.get directly. fetchInstanceMetrics
+// only reads response.data, so resolving { data } reproduces moxios's stub.
+jest.mock("axios", () => ({
+  __esModule: true,
+  default: { get: jest.fn() }
+}));
 
+describe("fetchInstanceMetrics", () => {
   afterEach(() => {
-    moxios.uninstall();
+    jest.clearAllMocks();
   });
 
-  it("fetches a metrics endpoint and returns a promise which resolves to the result", (done) => {
-    moxios.stubRequest("/admin/metrics.json", {
-      status: 200,
-      response: metrics
+  it("fetches a metrics endpoint and returns a promise which resolves to the result", () => {
+    axios.get.mockResolvedValue({ data: metrics });
+    return fetchInstanceMetrics("/admin/metrics.json").then((json) => {
+      expect(axios.get).toHaveBeenCalledWith("/admin/metrics.json", {
+        responseType: "json"
+      });
+      expect(json).toMatchObject(metrics);
     });
-    fetchInstanceMetrics("/admin/metrics.json", "JVM")
-      .then((json) => expect(json).toMatchObject(metrics))
-      .then(() => done());
   });
 });
