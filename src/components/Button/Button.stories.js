@@ -1,14 +1,5 @@
 import React from "react";
 
-import { storiesOf } from "@storybook/react";
-import {
-  withKnobs,
-  number,
-  select,
-  text,
-  boolean,
-  color
-} from "@storybook/addon-knobs/react";
 import Button from "./Button";
 
 const wrapperStyle = {
@@ -74,43 +65,68 @@ const outlines = ["raised", "outline", "shadow", "none", "raised-outline"];
 const sizes = ["normal", "xs", "sm", "lg", "xl"];
 const orientations = ["vertical", "horizontal"];
 
-storiesOf("Button", module)
-  .addDecorator(withKnobs)
-  .add("default", () => (
-    <div style={wrapperStyle}>
-      <Button
-        active={boolean("active", false)}
-        label={text("label", "Hello World")}
-        type={select("type", types)}
-        glyph={select("glyph", glyphNames)}
-        glyphColor={color("glyphColor")}
-        glyphRatio={number("glyphRatio", 1)}
-        disabled={boolean("disabled", false)}
-        clickAction={() => alert("clicked")}
-        orientation={select("orientation", orientations, "horizontal")}
-        outline={select("outline", outlines, "none")}
-        prefix={text("prefix")}
-        suffix={text("suffix")}
-        size={select("size", sizes, "normal")}
-        tabIndex={number("tabIndex")}
-      />
-    </div>
-  ))
-  .add("types", () => (
+export default {
+  title: "Button",
+  component: Button,
+  argTypes: {
+    type: { control: "select", options: types },
+    glyph: { control: "select", options: glyphNames },
+    glyphColor: { control: "color" },
+    glyphRatio: { control: "number" },
+    orientation: { control: "select", options: orientations },
+    outline: { control: "select", options: outlines },
+    size: { control: "select", options: sizes },
+    active: { control: "boolean" },
+    disabled: { control: "boolean" },
+    label: { control: "text" },
+    prefix: { control: "text" },
+    suffix: { control: "text" },
+    tabIndex: { control: "number" }
+  }
+};
+
+const Wrapped = (args) => (
+  <div style={wrapperStyle}>
+    <Button {...args} />
+  </div>
+);
+
+export const Default = {
+  render: Wrapped,
+  args: {
+    active: false,
+    label: "Hello World",
+    orientation: "horizontal",
+    outline: "none",
+    size: "normal",
+    glyphRatio: 1,
+    disabled: false,
+    clickAction: () => alert("clicked")
+  }
+};
+
+export const Types = {
+  render: () => (
     <div style={wrapperStyle}>
       {types.map((type) => (
         <Button type={type} label={type} key={type} clickAction={() => {}} />
       ))}
     </div>
-  ))
-  .add("sizes", () => (
+  )
+};
+
+export const Sizes = {
+  render: () => (
     <div style={wrapperStyle}>
       {sizes.map((size) => (
         <Button size={size} label={size} key={size} clickAction={() => {}} />
       ))}
     </div>
-  ))
-  .add("outlines", () => (
+  )
+};
+
+export const Outlines = {
+  render: () => (
     <div style={wrapperStyle}>
       {outlines.map((outline) => (
         <Button
@@ -121,12 +137,15 @@ storiesOf("Button", module)
         />
       ))}
     </div>
-  ))
-  .add("orientations", () => (
+  )
+};
+
+export const Orientations = {
+  render: () => (
     <div style={wrapperStyle}>
       {orientations.map((orientation) => (
         <Button
-          glyph={"Bell"}
+          glyph="Bell"
           orientation={orientation}
           label={orientation}
           clickAction={() => {}}
@@ -134,4 +153,5 @@ storiesOf("Button", module)
         />
       ))}
     </div>
-  ));
+  )
+};

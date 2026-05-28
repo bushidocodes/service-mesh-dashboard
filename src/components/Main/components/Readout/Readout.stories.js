@@ -1,8 +1,5 @@
 import React from "react";
 
-import { storiesOf } from "@storybook/react";
-import { withKnobs, boolean, object } from "@storybook/addon-knobs/react";
-
 import ReadoutGroup from "../ReadoutGroup";
 import Readout from "./Readout";
 
@@ -53,24 +50,25 @@ const mockReadoutManyItems = [
   }
 ];
 
-storiesOf("Readout", module)
-  .addDecorator(withKnobs)
-  .add("Readout", () => (
-    <Readout
-      primary={boolean("Readout is Primary", false)}
-      readoutItems={object("Readout Items", mockReadoutItem)}
-    />
-  ))
-  .add("A Readout with Many Items ", () => (
-    <Readout
-      primary={boolean("Readout is Primary", false)}
-      readoutItems={object("Readout Items", mockReadoutManyItems)}
-    />
-  ))
-  .add("A Readout Group", () => (
+export default {
+  title: "Readout",
+  component: Readout
+};
+
+export const Default = {
+  render: () => <Readout primary={false} readoutItems={mockReadoutItem} />
+};
+
+export const AReadoutWithManyItems = {
+  render: () => <Readout primary={false} readoutItems={mockReadoutManyItems} />
+};
+
+export const AReadoutGroup = {
+  render: () => (
     <ReadoutGroup>
       <Readout readoutItems={mockReadoutItem} />
       <Readout primary={true} readoutItems={mockReadoutFewItems} />
       <Readout readoutItems={mockReadoutFewItems} />
     </ReadoutGroup>
-  ));
+  )
+};

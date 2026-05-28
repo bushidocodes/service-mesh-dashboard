@@ -1,36 +1,37 @@
 import React from "react";
 
-import StoryRouter from "storybook-router";
-import { storiesOf } from "@storybook/react";
-import { withKnobs, text, boolean, select } from "@storybook/addon-knobs/react";
 import { slugifyMicroservice } from "utils";
 
 import GMServiceCard from "./index.js";
 
-const serviceStatus = ["Stable", "Warning", "Down"];
+export default {
+  title: "Service Card",
+  component: GMServiceCard
+};
 
-storiesOf("Service Card", module)
-  .addDecorator(StoryRouter())
-  .addDecorator(withKnobs)
-  .add("Service Card", () => {
-    const name = text("Name", "Service Name");
-    const version = text("Version", "1.0");
+export const Default = {
+  render: () => {
+    const name = "Service Name";
+    const version = "1.0";
     return (
       <GMServiceCard
         name={name}
         slug={slugifyMicroservice(name, version)}
-        height={text("Height")}
-        width={text("Width")}
-        runtime={select("Runtime", ["JVM", "GO"], "JVM")}
-        metered={boolean("Service is Metered", true)}
+        height={undefined}
+        width={undefined}
+        runtime="JVM"
+        metered={true}
         version={version}
-        status={select("Service State", serviceStatus, "Stable")}
-        authorized={boolean("User is Authorized", true)}
-        docsLink={text("Docs Link", "#")}
+        status="Stable"
+        authorized={true}
+        docsLink="#"
       />
     );
-  })
-  .add("Services Grid", () => (
+  }
+};
+
+export const ServicesGrid = {
+  render: () => (
     <div style={{ display: "flex", flexDirection: "row", height: "150px" }}>
       <GMServiceCard
         name="Service 1"
@@ -105,4 +106,5 @@ storiesOf("Service Card", module)
         status="Warning"
       />
     </div>
-  ));
+  )
+};

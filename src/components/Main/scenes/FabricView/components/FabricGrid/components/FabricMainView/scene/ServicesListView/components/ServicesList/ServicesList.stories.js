@@ -1,18 +1,6 @@
 import React from "react";
 
-import StoryRouter from "storybook-router";
-import { storiesOf } from "@storybook/react";
-
 import GMServiceList from "./index.js";
-
-storiesOf("Service List Collection", module)
-  .addDecorator(StoryRouter())
-  .add("with a grouping header and group of lists", () => (
-    <GMServiceList items={singleGroupingByHeadingListViewMockData} />
-  ))
-  .add("with multiple grouping headers and groups of lists", () => (
-    <GMServiceList items={groupingByHeadingListViewMockData} />
-  ));
 
 // mock data for Section List View
 const groupingByHeadingListViewMockData = [
@@ -215,3 +203,18 @@ const singleGroupingByHeadingListViewMockData =
   groupingByHeadingListViewMockData.filter(
     (elem) => elem.headerTitle === "MEME Services"
   );
+
+export default {
+  title: "Service List Collection",
+  component: GMServiceList
+};
+
+export const WithAGroupingHeaderAndGroupOfLists = {
+  render: () => (
+    <GMServiceList items={singleGroupingByHeadingListViewMockData} />
+  )
+};
+
+export const WithMultipleGroupingHeadersAndGroupsOfLists = {
+  render: () => <GMServiceList items={groupingByHeadingListViewMockData} />
+};

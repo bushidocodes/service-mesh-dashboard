@@ -1,22 +1,18 @@
 import React from "react";
-import { storiesOf } from "@storybook/react";
-import { withKnobs, text, boolean, select } from "@storybook/addon-knobs/react";
 
 import GMServiceHeader from "./GMServiceHeader.js";
 
-const options = { down: "Down", warning: "Warning", stable: "Stable" };
+export default {
+  title: "Grouping Header",
+  component: GMServiceHeader
+};
 
-storiesOf("Grouping Header", module)
-  .addDecorator(withKnobs)
-  .add("Normal Header", () => (
-    <GMServiceHeader
-      headerTitle={text("Header Title", "Sample Title")}
-      showStatusIcon={boolean("Show Status Icon", false)}
-    />
-  ))
-  .add("With Status Icon", () => (
-    <GMServiceHeader
-      headerTitle={select("Status", options, "Stable")}
-      showStatusIcon={boolean("Use Status Icon", true)}
-    />
-  ));
+export const NormalHeader = {
+  render: () => (
+    <GMServiceHeader headerTitle="Sample Title" showStatusIcon={false} />
+  )
+};
+
+export const WithStatusIcon = {
+  render: () => <GMServiceHeader headerTitle="Stable" showStatusIcon={true} />
+};

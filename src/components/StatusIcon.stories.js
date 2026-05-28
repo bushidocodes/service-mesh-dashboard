@@ -1,9 +1,20 @@
 import React from "react";
-import { storiesOf } from "@storybook/react";
 
 import StatusIcon from "./StatusIcon";
 
-storiesOf("Status Icon", module)
-  .add("Down", () => <StatusIcon status="down" />)
-  .add("Stable", () => <StatusIcon status="stable" />)
-  .add("Warning", () => <StatusIcon status="warning" />);
+export default {
+  title: "Status Icon",
+  component: StatusIcon
+};
+
+export const Down = {
+  render: () => <StatusIcon status="down" />
+};
+
+export const Stable = {
+  render: () => <StatusIcon status="stable" />
+};
+
+export const Warning = {
+  render: () => <StatusIcon status="warning" />
+};

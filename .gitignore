@@ -15,6 +15,7 @@
 
 # production
 /build
+/storybook-static
 
 # license reports
 /licenses/report.csv
