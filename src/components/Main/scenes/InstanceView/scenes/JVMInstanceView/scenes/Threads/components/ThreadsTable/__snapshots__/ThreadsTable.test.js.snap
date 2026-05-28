@@ -72,40 +72,30 @@ exports[`ThreadsTable component matches the snapshot 1`] = `
       class="c2 c3 c4"
       style="text-align:center"
     >
-      <span>
-        State
-      </span>
+      State
     </div>
     <div
       class="c2 c3 c4"
       style="text-align:center"
     >
-      <span>
-        ID
-      </span>
+      ID
     </div>
     <div
       class="c2 c3"
     >
-      <span>
-        Name
-      </span>
+      Name
     </div>
     <div
       class="c2 c3 c4"
       style="text-align:right;flex:0 1 7em"
     >
-      <span>
-        Daemon
-      </span>
+      Daemon
     </div>
     <div
       class="c2 c3 c4"
       style="text-align:right;flex:0 1 7em"
     >
-      <span>
-        Priority
-      </span>
+      Priority
     </div>
     <div
       class="c2 c3 c4"

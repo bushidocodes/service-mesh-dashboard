@@ -88,11 +88,6 @@ console.error = (message, ...args) => {
   // in act(), so this fires in every test that calls setUrlState directly. The
   // assertions still work correctly; this is purely a testing-methodology warning.
   if (msg.includes("not wrapped in act")) return;
-  // react-redux v5 and react-intl v2 use the legacy contextTypes / childContextTypes
-  // APIs which React 18 warns about. These libraries are intentionally pinned here
-  // and will be upgraded in future PRs. Suppress until then.
-  if (msg.includes("legacy contextTypes API")) return;
-  if (msg.includes("childContextTypes")) return;
   // React 18 deprecates string refs. Notification.js was converted to createRef
   // but third-party libs (react-notification-system) may still trigger this.
   if (msg.includes("string ref")) return;

@@ -4,7 +4,7 @@ import objectSizeOf from "object-sizeof";
 import { PropTypes } from "prop-types";
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
-import { injectIntl, intlShape } from "react-intl";
+import { injectIntl } from "react-intl";
 
 import PollingSettings from "./components/PollingSettings";
 import Button from "components/Button";
@@ -24,7 +24,6 @@ class SettingsGrid extends Component {
     fabricPollingInterval: PropTypes.number,
     fabricServer: PropTypes.string,
     instanceMetricsPollingInterval: PropTypes.number,
-    intl: intlShape.isRequired,
     isPollingFabric: PropTypes.bool,
     isPollingInstanceMetrics: PropTypes.bool,
     metricsCacheSize: PropTypes.string,

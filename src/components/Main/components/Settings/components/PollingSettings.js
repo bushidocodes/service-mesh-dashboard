@@ -2,7 +2,7 @@ import _ from "lodash";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import InputRange from "react-input-range";
-import { injectIntl, intlShape } from "react-intl";
+import { injectIntl } from "react-intl";
 
 import { contrastColor } from "style/styleFunctions";
 import { COLOR_SUCCESS, COLOR_WHITE } from "style/styleVariables";
@@ -20,7 +20,6 @@ class PollingSettings extends Component {
     changePollingInterval: PropTypes.func.isRequired,
     glyph: PropTypes.string.isRequired,
     interval: PropTypes.number.isRequired,
-    intl: intlShape.isRequired,
     isDisabled: PropTypes.bool,
     isPolling: PropTypes.bool.isRequired,
     startPolling: PropTypes.func.isRequired,

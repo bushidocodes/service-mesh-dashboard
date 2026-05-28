@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import { Responsive, WidthProvider } from "react-grid-layout";
 import { connect } from "react-redux";
 import { createGlobalStyle } from "styled-components";
-import { injectIntl, intlShape } from "react-intl";
+import { injectIntl } from "react-intl";
 import withRouter from "utils/withRouter";
 
 import GMBasicMetrics from "./components/GMBasicMetrics";
@@ -40,7 +40,6 @@ const ResponsiveReactGridLayout = WidthProvider(Responsive);
 export class GMGrid extends Component {
   static propTypes = {
     dashboard: dashboardShape,
-    intl: intlShape.isRequired,
     match: routerMatchShape,
     metrics: metricsShape.isRequired,
     name: PropTypes.string

@@ -2,7 +2,7 @@ import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import _ from "lodash";
-import { injectIntl, intlShape } from "react-intl";
+import { injectIntl } from "react-intl";
 
 import Tab from "../../components/Tab";
 
@@ -32,7 +32,6 @@ class InstanceHeaderContent extends Component {
     dashboards: PropTypes.object.isRequired,
     headerTabs: PropTypes.arrayOf(PropTypes.element),
     history: routerHistoryShape,
-    intl: intlShape,
     location: routerLocationShape,
     match: routerMatchShape,
     metrics: PropTypes.object.isRequired,

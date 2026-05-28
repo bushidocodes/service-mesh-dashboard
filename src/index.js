@@ -2,7 +2,6 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import { HashRouter } from "react-router-dom";
-import { addLocaleData } from "react-intl";
 
 import AppContainer from "./components/AppContainer";
 import AppHeader from "./components/AppHeader";
@@ -14,12 +13,10 @@ import store from "./store";
 import "./services";
 import { GlobalFontStyles } from "./style/styleVariables";
 
-import de from "react-intl/locale-data/de";
-import en from "react-intl/locale-data/en";
-import es from "react-intl/locale-data/es";
-
-// Add locale data for our supported locales
-addLocaleData([...de, ...en, ...es]);
+// react-intl v3+ uses native Intl APIs (Node 13+, all modern browsers),
+// so the addLocaleData() shim and react-intl/locale-data/* imports that
+// were required in v2 have been removed. The browser/runtime now ships
+// the locale data this app needs.
 
 const root = createRoot(document.getElementById("root"));
 root.render(

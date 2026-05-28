@@ -53,9 +53,7 @@ exports[`LanguageSelector matches snapshot 1`] = `
 <div
   class="c0"
 >
-  <span>
-    Languages
-  </span>
+  Languages
   <ul
     class="c1"
   >

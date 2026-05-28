@@ -1,7 +1,7 @@
 // NPM Modules
 import React from "react";
 import { PropTypes } from "prop-types";
-import { injectIntl, intlShape } from "react-intl";
+import { injectIntl } from "react-intl";
 // Internal Components
 import SearchInput from "components/Main/components/GMSearchInput";
 import Button from "components/Button";
@@ -29,7 +29,6 @@ TableToolbar.propTypes = {
     groupByOptions: PropTypes.array.isRequired, // array of option objects for the GMSelect Group By dropdown
     setGroupByAttribute: PropTypes.func.isRequired // onChange handler for GMSelect Group By dropdown
   }),
-  intl: intlShape.isRequired,
   searchInputProps: PropTypes.shape({
     filterString: PropTypes.string.isRequired, // value for controlled SearchInput input
     setFilterString: PropTypes.func.isRequired, // onChange handler for search input
