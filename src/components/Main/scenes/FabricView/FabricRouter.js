@@ -2,7 +2,7 @@ import _ from "lodash";
 import React from "react";
 import { connect } from "react-redux";
 import { Routes, Route, Navigate, useParams } from "react-router-dom";
-import { FormattedMessage } from "react-intl";
+import { injectIntl } from "react-intl";
 import PropTypes from "prop-types";
 
 import FabricGrid from "./components/FabricGrid";
@@ -27,8 +27,14 @@ FabricRouter.propTypes = {
 
 /**
  * Renders the instance route content using useParams() to get serviceSlug and instanceID.
+ *
+ * `message` must be a **plain string** when passed in <Navigate state>.
+ * react-router pushes state through the browser History API, which uses the
+ * structured-clone algorithm — that algorithm cannot clone React elements
+ * (Symbol(react.element)), so a <FormattedMessage/> in state throws a
+ * DataCloneError. Pre-format with intl.formatMessage() instead.
  */
-function InstanceRouteElement({ services }) {
+function InstanceRouteElementInner({ services, intl }) {
   const { serviceSlug, instanceID } = useParams();
 
   const service = services && serviceSlug ? services[serviceSlug] : false;
@@ -46,29 +52,27 @@ function InstanceRouteElement({ services }) {
   // Checks are ordered by priority of the message
   if (!servicesAreNotLoaded) {
     if (!service) {
-      message = (
-        <FormattedMessage
-          id="fabricRouter.noService"
-          defaultMessage="{serviceSlug} is not a known microservice"
-          description="Error notification"
-          values={{ serviceSlug }}
-        />
+      message = intl.formatMessage(
+        {
+          id: "fabricRouter.noService",
+          defaultMessage: "{serviceSlug} is not a known microservice",
+          description: "Error notification"
+        },
+        { serviceSlug }
       );
     } else if (
       // Check if the user is authorized to view the service
       service &&
       !service.authorized
     ) {
-      message = (
-        <FormattedMessage
-          id="fabricRouter.notAuthorized"
-          defaultMessage="You are not authorized to view {serviceName} {serviceVersion}"
-          description="Error notification"
-          values={{
-            serviceName: service.name,
-            serviceVersion: service.version
-          }}
-        />
+      message = intl.formatMessage(
+        {
+          id: "fabricRouter.notAuthorized",
+          defaultMessage:
+            "You are not authorized to view {serviceName} {serviceVersion}",
+          description: "Error notification"
+        },
+        { serviceName: service.name, serviceVersion: service.version }
       );
     } else if (
       // Check our instanceID against this services' instances
@@ -78,30 +82,29 @@ function InstanceRouteElement({ services }) {
       })
     ) {
       // If isValidInstance is false, also set a pathname that will redirect to the service view
-      message = (
-        <FormattedMessage
-          id="fabricRouter.noInstance"
-          defaultMessage="{instanceID} is not a known instance of {serviceName} {serviceVersion}"
-          description="Error notification"
-          values={{
-            serviceName: service.name,
-            serviceVersion: service.version,
-            instanceID
-          }}
-        />
+      message = intl.formatMessage(
+        {
+          id: "fabricRouter.noInstance",
+          defaultMessage:
+            "{instanceID} is not a known instance of {serviceName} {serviceVersion}",
+          description: "Error notification"
+        },
+        {
+          serviceName: service.name,
+          serviceVersion: service.version,
+          instanceID
+        }
       );
       pathname = `/${serviceSlug}`;
     } else if (!service.metered) {
-      message = (
-        <FormattedMessage
-          id="fabricRouter.noMetrics"
-          defaultMessage="{serviceName} {serviceVersion} does not have metrics to display"
-          description="Error notification"
-          values={{
-            serviceName: service.name,
-            serviceVersion: service.version
-          }}
-        />
+      message = intl.formatMessage(
+        {
+          id: "fabricRouter.noMetrics",
+          defaultMessage:
+            "{serviceName} {serviceVersion} does not have metrics to display",
+          description: "Error notification"
+        },
+        { serviceName: service.name, serviceVersion: service.version }
       );
       pathname = `/${serviceSlug}`;
     }
@@ -114,25 +117,24 @@ function InstanceRouteElement({ services }) {
       instanceID={instanceID}
     />
   ) : (
-    <Navigate
-      to={{
-        pathname: pathname,
-        state: {
-          message
-        }
-      }}
-    />
+    <Navigate to={pathname} state={{ message }} />
   );
 }
 
-InstanceRouteElement.propTypes = {
-  services: PropTypes.object
+InstanceRouteElementInner.propTypes = {
+  services: PropTypes.object,
+  intl: PropTypes.object.isRequired
 };
+
+const InstanceRouteElement = injectIntl(InstanceRouteElementInner);
 
 /**
  * Renders the service route content using useParams() to get selectedServiceSlug.
+ *
+ * Same intl.formatMessage() pattern as InstanceRouteElement — see comment
+ * there for why <Navigate state> requires a plain string.
  */
-function ServiceRouteElement({ services }) {
+function ServiceRouteElementInner({ services, intl }) {
   const { selectedServiceSlug } = useParams();
 
   if (selectedServiceSlug === "settings") {
@@ -160,25 +162,23 @@ function ServiceRouteElement({ services }) {
   let message;
   // Checks are ordered by priority of the message
   if (!serviceIsValid) {
-    message = (
-      <FormattedMessage
-        id="fabricRouter.noService"
-        defaultMessage="{serviceSlug} is not a known microservice"
-        description="Error notification"
-        values={{ serviceSlug: selectedServiceSlug }}
-      />
+    message = intl.formatMessage(
+      {
+        id: "fabricRouter.noService",
+        defaultMessage: "{serviceSlug} is not a known microservice",
+        description: "Error notification"
+      },
+      { serviceSlug: selectedServiceSlug }
     );
   } else if (!userIsAuthorized) {
-    message = (
-      <FormattedMessage
-        id="fabricRouter.notAuthorized"
-        defaultMessage="You are not authorized to view {serviceName} {serviceVersion}"
-        description="Error notification"
-        values={{
-          serviceName: service.name,
-          serviceVersion: service.version
-        }}
-      />
+    message = intl.formatMessage(
+      {
+        id: "fabricRouter.notAuthorized",
+        defaultMessage:
+          "You are not authorized to view {serviceName} {serviceVersion}",
+        description: "Error notification"
+      },
+      { serviceName: service.name, serviceVersion: service.version }
     );
   }
 
@@ -193,18 +193,16 @@ function ServiceRouteElement({ services }) {
       status={status}
     />
   ) : (
-    <Navigate
-      to={{
-        pathname: "/",
-        state: { message }
-      }}
-    />
+    <Navigate to="/" state={{ message }} />
   );
 }
 
-ServiceRouteElement.propTypes = {
-  services: PropTypes.object
+ServiceRouteElementInner.propTypes = {
+  services: PropTypes.object,
+  intl: PropTypes.object.isRequired
 };
+
+const ServiceRouteElement = injectIntl(ServiceRouteElementInner);
 
 /**
  * Fabric Router is a top-level router that sits between the root container and the Instance Router
