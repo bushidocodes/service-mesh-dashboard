@@ -1,9 +1,10 @@
 import { Actions } from "jumpstate";
 import { PropTypes } from "prop-types";
-import React, { Component } from "react";
+import React, { Component, Suspense } from "react";
 import { connect } from "react-redux";
 
 import { LazyLoader } from "components/LazyLoader";
+import { Loading } from "components/Loading";
 
 const DefaultRouter = LazyLoader({
   loader: () => import("./scenes/DefaultInstanceView")
@@ -75,14 +76,22 @@ class InstanceView extends Component {
 
   render() {
     const { runtime } = this.props;
+    let RuntimeRouter;
     switch (runtime) {
       case "JVM":
-        return <JVMRouter />;
+        RuntimeRouter = JVMRouter;
+        break;
       case "GO":
-        return <GoRouter />;
+        RuntimeRouter = GoRouter;
+        break;
       default:
-        return <DefaultRouter />;
+        RuntimeRouter = DefaultRouter;
     }
+    return (
+      <Suspense fallback={<Loading />}>
+        <RuntimeRouter />
+      </Suspense>
+    );
   }
 }
 
