@@ -123,7 +123,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   margin-top: 0.25px;
 }
 
-.c20 {
+.c21 {
   box-sizing: border-box;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -164,24 +164,24 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   flex-direction: row;
 }
 
-.c20:hover {
+.c21:hover {
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
 
-.c20:focus,
-.c20:active {
+.c21:focus,
+.c21:active {
   -webkit-transition: all 0 ease;
   transition: all 0 ease;
 }
 
-.c20 > * {
+.c21 > * {
   -webkit-flex: 0 1 auto;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
 }
 
-.c20:active {
+.c21:active {
   -webkit-transition-duration: 0s;
   transition-duration: 0s;
   background-color: hsl(0,0%,92.5%);
@@ -191,7 +191,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   color: hsl(0,0%,0%);
 }
 
-.c20:hover {
+.c21:hover {
   background-color: hsl(0,0%,98.5%);
   border-color: hsl(0,0%,92.6%);
   border-top-color: hsl(0,0%,100%);
@@ -199,16 +199,16 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   color: hsl(0,0%,0%);
 }
 
-.c20:focus {
+.c21:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
-.c20[disabled],
-.c20[disabled]:hover,
-.c20[disabled]:focus,
-.c20[disabled]:active {
+.c21[disabled],
+.c21[disabled]:hover,
+.c21[disabled]:focus,
+.c21[disabled]:active {
   cursor: default;
   opacity: 0.8;
   background-color: hsl(0,0%,94%);
@@ -216,16 +216,92 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   color: hsl(0,0%,0%);
 }
 
-.c20 > svg {
+.c21 > svg {
   width: 24px;
   height: 24px;
 }
 
-.c20 > :not(:first-child) {
+.c21 > :not(:first-child) {
   margin-left: 4px;
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
+}
+
+.c14 {
+  -webkit-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  margin: 12px 0;
+  border-radius: 20px;
+  background: rgb(230,230,230);
+  outline: none;
+  cursor: pointer;
+}
+
+.c14::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: none;
+  border-radius: 0;
+  background: rgb(10,171,42);
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  -webkit-transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
+}
+
+.c14::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border: none;
+  border-radius: 0;
+  background: rgb(10,171,42);
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  -webkit-transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
+}
+
+.c14:hover::-webkit-slider-thumb,
+.c14:focus::-webkit-slider-thumb {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.c14:hover::-moz-range-thumb,
+.c14:focus::-moz-range-thumb {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.c14:disabled {
+  cursor: default;
+}
+
+.c14:disabled::-webkit-slider-thumb {
+  background: rgb(102,102,102);
+  cursor: default;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+.c14:disabled::-moz-range-thumb {
+  background: rgb(102,102,102);
+  cursor: default;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
 }
 
 .c2 {
@@ -391,71 +467,10 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   position: relative;
 }
 
-.c13 .input-range__label.input-range__label--value {
-  color: rgb(10,171,42);
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 0;
-  margin-left: -50%;
-  -webkit-transform: translateX(-50%) translateY(4px);
-  -ms-transform: translateX(-50%) translateY(4px);
-  transform: translateX(-50%) translateY(4px);
-  text-align: center;
-  will-change: transform;
-}
-
-.c13 .input-range__label.input-range__label--value .input-range__label-container {
-  position: static;
-}
-
 .c13 .label {
-  bottom: 10px;
   font-size: 14px;
-  left: 0px;
-  position: absolute;
   text-align: center;
   width: 100%;
-}
-
-.c13 .input-range__slider-container {
-  -webkit-transition: left 0;
-  transition: left 0;
-  will-change: transform;
-}
-
-.c13 .input-range__slider {
-  background: rgb(10,171,42);
-  border: none;
-  border-radius: 0;
-  -webkit-transition: -webkit-transform 0.3s ease;
-  -webkit-transition: transform 0.3s ease;
-  transition: transform 0.3s ease;
-}
-
-.c13 .input-range__slider:hover,
-.c13 .input-range__slider:focus,
-.c13 .input-range__slider:active {
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1);
-}
-
-.c13 .input-range__slider:before {
-  border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
-  border-top: 7px solid rgb(10,171,42);
-  color: rgb(10,171,42);
-  content: "";
-  height: 0;
-  position: absolute;
-  top: 100%;
-  width: 0;
-}
-
-.c13 .input-range__track {
-  background-color: rgb(230,230,230);
-  border-radius: 20px;
 }
 
 .c12 {
@@ -548,7 +563,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   top: 0;
 }
 
-.c14 {
+.c15 {
   -webkit-align-items: stretch;
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
@@ -570,22 +585,22 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   margin: 4px;
 }
 
-.c14:first-child:last-child {
+.c15:first-child:last-child {
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
   flex-grow: 0;
 }
 
-.c14:first-child:last-child > * {
+.c15:first-child:last-child > * {
   text-align: center;
 }
 
-.c14:first-child:last-child > * > :first-child {
+.c15:first-child:last-child > * > :first-child {
   padding-left: 0;
 }
 
-.c16 {
+.c17 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -610,7 +625,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   position: relative;
 }
 
-.c15 + .c15:before {
+.c16 + .c16:before {
   border-top: 1px solid currentColor;
   content: "";
   left: 0;
@@ -620,14 +635,14 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   top: 0;
 }
 
-.c16 button {
+.c17 button {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
   margin: 8px 0;
 }
 
-.c17 {
+.c18 {
   -webkit-align-items: stretch;
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
@@ -645,11 +660,11 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   padding: 8px 0;
 }
 
-.c17:first-child {
+.c18:first-child {
   padding-left: 16px;
 }
 
-.c18 {
+.c19 {
   font-size: 11px;
   margin: 0;
   padding: 0;
@@ -657,7 +672,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   min-height: 1em;
 }
 
-.c19 {
+.c20 {
   font-size: 32px;
   word-break: break-all;
   margin: 0;
@@ -666,7 +681,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
 }
 
 @media all and (max-width:1000px) {
-  .c14 {
+  .c15 {
     -webkit-flex: 0 0 300px;
     -ms-flex: 0 0 300px;
     flex: 0 0 300px;
@@ -1771,212 +1786,30 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                 className="c13"
                                 id="ctrl-slider-Fabric Polling"
                               >
-                                <InputRange
-                                  allowSameValues={false}
-                                  aria-labelledby="polling interval-name"
-                                  classNames={
-                                    {
-                                      "activeTrack": "input-range__track input-range__track--active",
-                                      "disabledInputRange": "input-range input-range--disabled",
-                                      "inputRange": "input-range",
-                                      "labelContainer": "input-range__label-container",
-                                      "maxLabel": "input-range__label input-range__label--max",
-                                      "minLabel": "input-range__label input-range__label--min",
-                                      "slider": "input-range__slider",
-                                      "sliderContainer": "input-range__slider-container",
-                                      "track": "input-range__track input-range__track--background",
-                                      "valueLabel": "input-range__label input-range__label--value",
-                                    }
-                                  }
+                                <styled.input
+                                  aria-labelledby="interval-name-Fabric Polling"
                                   disabled={false}
-                                  maxValue={120}
-                                  minValue={5}
+                                  max={120}
+                                  min={5}
                                   onChange={[Function]}
-                                  step={1}
                                   value={10}
                                 >
-                                  <div
-                                    aria-disabled={false}
-                                    className="input-range"
-                                    onKeyDown={[Function]}
-                                    onKeyUp={[Function]}
-                                    onMouseDown={[Function]}
-                                    onTouchStart={[Function]}
-                                  >
-                                    <Label
-                                      classNames={
-                                        {
-                                          "activeTrack": "input-range__track input-range__track--active",
-                                          "disabledInputRange": "input-range input-range--disabled",
-                                          "inputRange": "input-range",
-                                          "labelContainer": "input-range__label-container",
-                                          "maxLabel": "input-range__label input-range__label--max",
-                                          "minLabel": "input-range__label input-range__label--min",
-                                          "slider": "input-range__slider",
-                                          "sliderContainer": "input-range__slider-container",
-                                          "track": "input-range__track input-range__track--background",
-                                          "valueLabel": "input-range__label input-range__label--value",
-                                        }
-                                      }
-                                      type="min"
-                                    >
-                                      <span
-                                        className="input-range__label input-range__label--min"
-                                      >
-                                        <span
-                                          className="input-range__label-container"
-                                        >
-                                          5
-                                        </span>
-                                      </span>
-                                    </Label>
-                                    <Track
-                                      classNames={
-                                        {
-                                          "activeTrack": "input-range__track input-range__track--active",
-                                          "disabledInputRange": "input-range input-range--disabled",
-                                          "inputRange": "input-range",
-                                          "labelContainer": "input-range__label-container",
-                                          "maxLabel": "input-range__label input-range__label--max",
-                                          "minLabel": "input-range__label input-range__label--min",
-                                          "slider": "input-range__slider",
-                                          "sliderContainer": "input-range__slider-container",
-                                          "track": "input-range__track input-range__track--background",
-                                          "valueLabel": "input-range__label input-range__label--value",
-                                        }
-                                      }
-                                      onTrackDrag={[Function]}
-                                      onTrackMouseDown={[Function]}
-                                      percentages={
-                                        {
-                                          "max": 0.043478260869565216,
-                                          "min": 0,
-                                        }
-                                      }
-                                    >
-                                      <div
-                                        className="input-range__track input-range__track--background"
-                                        onMouseDown={[Function]}
-                                        onTouchStart={[Function]}
-                                      >
-                                        <div
-                                          className="input-range__track input-range__track--active"
-                                          style={
-                                            {
-                                              "left": "0%",
-                                              "width": "4.3478260869565215%",
-                                            }
-                                          }
-                                        />
-                                        <Slider
-                                          classNames={
-                                            {
-                                              "activeTrack": "input-range__track input-range__track--active",
-                                              "disabledInputRange": "input-range input-range--disabled",
-                                              "inputRange": "input-range",
-                                              "labelContainer": "input-range__label-container",
-                                              "maxLabel": "input-range__label input-range__label--max",
-                                              "minLabel": "input-range__label input-range__label--min",
-                                              "slider": "input-range__slider",
-                                              "sliderContainer": "input-range__slider-container",
-                                              "track": "input-range__track input-range__track--background",
-                                              "valueLabel": "input-range__label input-range__label--value",
-                                            }
-                                          }
-                                          key="max"
-                                          maxValue={120}
-                                          minValue={5}
-                                          onSliderDrag={[Function]}
-                                          onSliderKeyDown={[Function]}
-                                          percentage={0.043478260869565216}
-                                          type="max"
-                                          value={10}
-                                        >
-                                          <span
-                                            className="input-range__slider-container"
-                                            style={
-                                              {
-                                                "left": "4.3478260869565215%",
-                                                "position": "absolute",
-                                              }
-                                            }
-                                          >
-                                            <Label
-                                              classNames={
-                                                {
-                                                  "activeTrack": "input-range__track input-range__track--active",
-                                                  "disabledInputRange": "input-range input-range--disabled",
-                                                  "inputRange": "input-range",
-                                                  "labelContainer": "input-range__label-container",
-                                                  "maxLabel": "input-range__label input-range__label--max",
-                                                  "minLabel": "input-range__label input-range__label--min",
-                                                  "slider": "input-range__slider",
-                                                  "sliderContainer": "input-range__slider-container",
-                                                  "track": "input-range__track input-range__track--background",
-                                                  "valueLabel": "input-range__label input-range__label--value",
-                                                }
-                                              }
-                                              type="value"
-                                            >
-                                              <span
-                                                className="input-range__label input-range__label--value"
-                                              >
-                                                <span
-                                                  className="input-range__label-container"
-                                                >
-                                                  10
-                                                </span>
-                                              </span>
-                                            </Label>
-                                            <div
-                                              aria-valuemax={120}
-                                              aria-valuemin={5}
-                                              aria-valuenow={10}
-                                              className="input-range__slider"
-                                              draggable="false"
-                                              onKeyDown={[Function]}
-                                              onMouseDown={[Function]}
-                                              onTouchStart={[Function]}
-                                              role="slider"
-                                              tabIndex="0"
-                                            />
-                                          </span>
-                                        </Slider>
-                                      </div>
-                                    </Track>
-                                    <Label
-                                      classNames={
-                                        {
-                                          "activeTrack": "input-range__track input-range__track--active",
-                                          "disabledInputRange": "input-range input-range--disabled",
-                                          "inputRange": "input-range",
-                                          "labelContainer": "input-range__label-container",
-                                          "maxLabel": "input-range__label input-range__label--max",
-                                          "minLabel": "input-range__label input-range__label--min",
-                                          "slider": "input-range__slider",
-                                          "sliderContainer": "input-range__slider-container",
-                                          "track": "input-range__track input-range__track--background",
-                                          "valueLabel": "input-range__label input-range__label--value",
-                                        }
-                                      }
-                                      type="max"
-                                    >
-                                      <span
-                                        className="input-range__label input-range__label--max"
-                                      >
-                                        <span
-                                          className="input-range__label-container"
-                                        >
-                                          120
-                                        </span>
-                                      </span>
-                                    </Label>
-                                  </div>
-                                </InputRange>
+                                  <input
+                                    aria-labelledby="interval-name-Fabric Polling"
+                                    className="c14"
+                                    disabled={false}
+                                    max={120}
+                                    min={5}
+                                    onChange={[Function]}
+                                    type="range"
+                                    value={10}
+                                  />
+                                </styled.input>
                                 <span
                                   className="label"
                                   id="interval-name-Fabric Polling"
                                 >
+                                  10s 
                                   Polling Interval(s)
                                 </span>
                               </div>
@@ -2516,212 +2349,30 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                 className="c13"
                                 id="ctrl-slider-Instance Polling"
                               >
-                                <InputRange
-                                  allowSameValues={false}
-                                  aria-labelledby="polling interval-name"
-                                  classNames={
-                                    {
-                                      "activeTrack": "input-range__track input-range__track--active",
-                                      "disabledInputRange": "input-range input-range--disabled",
-                                      "inputRange": "input-range",
-                                      "labelContainer": "input-range__label-container",
-                                      "maxLabel": "input-range__label input-range__label--max",
-                                      "minLabel": "input-range__label input-range__label--min",
-                                      "slider": "input-range__slider",
-                                      "sliderContainer": "input-range__slider-container",
-                                      "track": "input-range__track input-range__track--background",
-                                      "valueLabel": "input-range__label input-range__label--value",
-                                    }
-                                  }
+                                <styled.input
+                                  aria-labelledby="interval-name-Instance Polling"
                                   disabled={false}
-                                  maxValue={120}
-                                  minValue={5}
+                                  max={120}
+                                  min={5}
                                   onChange={[Function]}
-                                  step={1}
                                   value={10}
                                 >
-                                  <div
-                                    aria-disabled={false}
-                                    className="input-range"
-                                    onKeyDown={[Function]}
-                                    onKeyUp={[Function]}
-                                    onMouseDown={[Function]}
-                                    onTouchStart={[Function]}
-                                  >
-                                    <Label
-                                      classNames={
-                                        {
-                                          "activeTrack": "input-range__track input-range__track--active",
-                                          "disabledInputRange": "input-range input-range--disabled",
-                                          "inputRange": "input-range",
-                                          "labelContainer": "input-range__label-container",
-                                          "maxLabel": "input-range__label input-range__label--max",
-                                          "minLabel": "input-range__label input-range__label--min",
-                                          "slider": "input-range__slider",
-                                          "sliderContainer": "input-range__slider-container",
-                                          "track": "input-range__track input-range__track--background",
-                                          "valueLabel": "input-range__label input-range__label--value",
-                                        }
-                                      }
-                                      type="min"
-                                    >
-                                      <span
-                                        className="input-range__label input-range__label--min"
-                                      >
-                                        <span
-                                          className="input-range__label-container"
-                                        >
-                                          5
-                                        </span>
-                                      </span>
-                                    </Label>
-                                    <Track
-                                      classNames={
-                                        {
-                                          "activeTrack": "input-range__track input-range__track--active",
-                                          "disabledInputRange": "input-range input-range--disabled",
-                                          "inputRange": "input-range",
-                                          "labelContainer": "input-range__label-container",
-                                          "maxLabel": "input-range__label input-range__label--max",
-                                          "minLabel": "input-range__label input-range__label--min",
-                                          "slider": "input-range__slider",
-                                          "sliderContainer": "input-range__slider-container",
-                                          "track": "input-range__track input-range__track--background",
-                                          "valueLabel": "input-range__label input-range__label--value",
-                                        }
-                                      }
-                                      onTrackDrag={[Function]}
-                                      onTrackMouseDown={[Function]}
-                                      percentages={
-                                        {
-                                          "max": 0.043478260869565216,
-                                          "min": 0,
-                                        }
-                                      }
-                                    >
-                                      <div
-                                        className="input-range__track input-range__track--background"
-                                        onMouseDown={[Function]}
-                                        onTouchStart={[Function]}
-                                      >
-                                        <div
-                                          className="input-range__track input-range__track--active"
-                                          style={
-                                            {
-                                              "left": "0%",
-                                              "width": "4.3478260869565215%",
-                                            }
-                                          }
-                                        />
-                                        <Slider
-                                          classNames={
-                                            {
-                                              "activeTrack": "input-range__track input-range__track--active",
-                                              "disabledInputRange": "input-range input-range--disabled",
-                                              "inputRange": "input-range",
-                                              "labelContainer": "input-range__label-container",
-                                              "maxLabel": "input-range__label input-range__label--max",
-                                              "minLabel": "input-range__label input-range__label--min",
-                                              "slider": "input-range__slider",
-                                              "sliderContainer": "input-range__slider-container",
-                                              "track": "input-range__track input-range__track--background",
-                                              "valueLabel": "input-range__label input-range__label--value",
-                                            }
-                                          }
-                                          key="max"
-                                          maxValue={120}
-                                          minValue={5}
-                                          onSliderDrag={[Function]}
-                                          onSliderKeyDown={[Function]}
-                                          percentage={0.043478260869565216}
-                                          type="max"
-                                          value={10}
-                                        >
-                                          <span
-                                            className="input-range__slider-container"
-                                            style={
-                                              {
-                                                "left": "4.3478260869565215%",
-                                                "position": "absolute",
-                                              }
-                                            }
-                                          >
-                                            <Label
-                                              classNames={
-                                                {
-                                                  "activeTrack": "input-range__track input-range__track--active",
-                                                  "disabledInputRange": "input-range input-range--disabled",
-                                                  "inputRange": "input-range",
-                                                  "labelContainer": "input-range__label-container",
-                                                  "maxLabel": "input-range__label input-range__label--max",
-                                                  "minLabel": "input-range__label input-range__label--min",
-                                                  "slider": "input-range__slider",
-                                                  "sliderContainer": "input-range__slider-container",
-                                                  "track": "input-range__track input-range__track--background",
-                                                  "valueLabel": "input-range__label input-range__label--value",
-                                                }
-                                              }
-                                              type="value"
-                                            >
-                                              <span
-                                                className="input-range__label input-range__label--value"
-                                              >
-                                                <span
-                                                  className="input-range__label-container"
-                                                >
-                                                  10
-                                                </span>
-                                              </span>
-                                            </Label>
-                                            <div
-                                              aria-valuemax={120}
-                                              aria-valuemin={5}
-                                              aria-valuenow={10}
-                                              className="input-range__slider"
-                                              draggable="false"
-                                              onKeyDown={[Function]}
-                                              onMouseDown={[Function]}
-                                              onTouchStart={[Function]}
-                                              role="slider"
-                                              tabIndex="0"
-                                            />
-                                          </span>
-                                        </Slider>
-                                      </div>
-                                    </Track>
-                                    <Label
-                                      classNames={
-                                        {
-                                          "activeTrack": "input-range__track input-range__track--active",
-                                          "disabledInputRange": "input-range input-range--disabled",
-                                          "inputRange": "input-range",
-                                          "labelContainer": "input-range__label-container",
-                                          "maxLabel": "input-range__label input-range__label--max",
-                                          "minLabel": "input-range__label input-range__label--min",
-                                          "slider": "input-range__slider",
-                                          "sliderContainer": "input-range__slider-container",
-                                          "track": "input-range__track input-range__track--background",
-                                          "valueLabel": "input-range__label input-range__label--value",
-                                        }
-                                      }
-                                      type="max"
-                                    >
-                                      <span
-                                        className="input-range__label input-range__label--max"
-                                      >
-                                        <span
-                                          className="input-range__label-container"
-                                        >
-                                          120
-                                        </span>
-                                      </span>
-                                    </Label>
-                                  </div>
-                                </InputRange>
+                                  <input
+                                    aria-labelledby="interval-name-Instance Polling"
+                                    className="c14"
+                                    disabled={false}
+                                    max={120}
+                                    min={5}
+                                    onChange={[Function]}
+                                    type="range"
+                                    value={10}
+                                  />
+                                </styled.input>
                                 <span
                                   className="label"
                                   id="interval-name-Instance Polling"
                                 >
+                                  10s 
                                   Polling Interval(s)
                                 </span>
                               </div>
@@ -2837,7 +2488,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                             cacheCard={true}
                           >
                             <div
-                              className="c14"
+                              className="c15"
                             >
                               <ReadoutItem
                                 cacheCard={true}
@@ -2849,22 +2500,22 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                   cacheCard={true}
                                 >
                                   <div
-                                    className="c15 c16"
+                                    className="c16 c17"
                                   >
                                     <styled.div>
                                       <div
-                                        className="c17"
+                                        className="c18"
                                       >
                                         <styled.h2>
                                           <h2
-                                            className="c18"
+                                            className="c19"
                                           >
                                             Cache Size
                                           </h2>
                                         </styled.h2>
                                         <styled.span>
                                           <span
-                                            className="c19"
+                                            className="c20"
                                           >
                                             67.48 KB
                                           </span>
@@ -2881,7 +2532,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                             title="Clear Cache"
                                           >
                                             <button
-                                              className="c20"
+                                              className="c21"
                                               onClick={[Function]}
                                               tabIndex={0}
                                               title="Clear Cache"

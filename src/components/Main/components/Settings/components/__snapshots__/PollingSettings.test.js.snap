@@ -1,6 +1,82 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PollingSettings component Matches the snapshot 1`] = `
+.c12 {
+  -webkit-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  margin: 12px 0;
+  border-radius: 20px;
+  background: rgb(230,230,230);
+  outline: none;
+  cursor: pointer;
+}
+
+.c12::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: none;
+  border-radius: 0;
+  background: rgb(10,171,42);
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  -webkit-transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
+}
+
+.c12::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border: none;
+  border-radius: 0;
+  background: rgb(10,171,42);
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  -webkit-transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
+}
+
+.c12:hover::-webkit-slider-thumb,
+.c12:focus::-webkit-slider-thumb {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.c12:hover::-moz-range-thumb,
+.c12:focus::-moz-range-thumb {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.c12:disabled {
+  cursor: default;
+}
+
+.c12:disabled::-webkit-slider-thumb {
+  background: rgb(102,102,102);
+  cursor: default;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+.c12:disabled::-moz-range-thumb {
+  background: rgb(102,102,102);
+  cursor: default;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
 .c4 {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
@@ -286,71 +362,10 @@ exports[`PollingSettings component Matches the snapshot 1`] = `
   position: relative;
 }
 
-.c11 .input-range__label.input-range__label--value {
-  color: rgb(10,171,42);
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 0;
-  margin-left: -50%;
-  -webkit-transform: translateX(-50%) translateY(4px);
-  -ms-transform: translateX(-50%) translateY(4px);
-  transform: translateX(-50%) translateY(4px);
-  text-align: center;
-  will-change: transform;
-}
-
-.c11 .input-range__label.input-range__label--value .input-range__label-container {
-  position: static;
-}
-
 .c11 .label {
-  bottom: 10px;
   font-size: 14px;
-  left: 0px;
-  position: absolute;
   text-align: center;
   width: 100%;
-}
-
-.c11 .input-range__slider-container {
-  -webkit-transition: left 0;
-  transition: left 0;
-  will-change: transform;
-}
-
-.c11 .input-range__slider {
-  background: rgb(10,171,42);
-  border: none;
-  border-radius: 0;
-  -webkit-transition: -webkit-transform 0.3s ease;
-  -webkit-transition: transform 0.3s ease;
-  transition: transform 0.3s ease;
-}
-
-.c11 .input-range__slider:hover,
-.c11 .input-range__slider:focus,
-.c11 .input-range__slider:active {
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1);
-}
-
-.c11 .input-range__slider:before {
-  border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
-  border-top: 7px solid rgb(10,171,42);
-  color: rgb(10,171,42);
-  content: "";
-  height: 0;
-  position: absolute;
-  top: 100%;
-  width: 0;
-}
-
-.c11 .input-range__track {
-  background-color: rgb(230,230,230);
-  border-radius: 20px;
 }
 
 .c10 {
@@ -485,65 +500,19 @@ exports[`PollingSettings component Matches the snapshot 1`] = `
       class="c11"
       id="ctrl-slider-Instance Polling"
     >
-      <div
-        aria-disabled="false"
-        class="input-range"
-      >
-        <span
-          class="input-range__label input-range__label--min"
-        >
-          <span
-            class="input-range__label-container"
-          >
-            5
-          </span>
-        </span>
-        <div
-          class="input-range__track input-range__track--background"
-        >
-          <div
-            class="input-range__track input-range__track--active"
-            style="left:0%;width:0%"
-          />
-          <span
-            class="input-range__slider-container"
-            style="position:absolute;left:0%"
-          >
-            <span
-              class="input-range__label input-range__label--value"
-            >
-              <span
-                class="input-range__label-container"
-              >
-                5
-              </span>
-            </span>
-            <div
-              aria-valuemax="120"
-              aria-valuemin="5"
-              aria-valuenow="5"
-              class="input-range__slider"
-              draggable="false"
-              role="slider"
-              tabindex="0"
-            />
-          </span>
-        </div>
-        <span
-          class="input-range__label input-range__label--max"
-        >
-          <span
-            class="input-range__label-container"
-          >
-            120
-          </span>
-        </span>
-      </div>
+      <input
+        aria-labelledby="interval-name-Instance Polling"
+        class="c12"
+        max="120"
+        min="5"
+        type="range"
+        value="5"
+      />
       <span
         class="label"
         id="interval-name-Instance Polling"
       >
-        Polling Interval(s)
+        5s Polling Interval(s)
       </span>
     </div>
   </div>

@@ -1,8 +1,9 @@
 import _ from "lodash";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
-import InputRange from "react-input-range";
 import { injectIntl } from "react-intl";
+
+import InputRange from "./components/InputRange";
 
 import { contrastColor } from "style/styleFunctions";
 import { COLOR_SUCCESS, COLOR_WHITE } from "style/styleVariables";
@@ -113,17 +114,19 @@ class PollingSettings extends Component {
           id={`ctrl-slider-${title}`}
         >
           <InputRange
-            aria-labelledby="polling interval-name"
+            aria-labelledby={`interval-name-${title}`}
             disabled={isDisabled}
-            maxValue={120}
-            minValue={5}
-            onChange={(value) => {
+            max={120}
+            min={5}
+            onChange={(e) => {
+              const value = Number(e.target.value);
               this.setState({ localInterval: value });
               this.state.debouncedSetInterval(value * 1000);
             }}
             value={this.state.localInterval}
           />
           <span className="label" id={`interval-name-${title}`}>
+            {`${this.state.localInterval}s `}
             {intl.formatMessage({
               id: "pollingSettings.pollingIntervals",
               defaultMessage: "Polling Interval(s)",
