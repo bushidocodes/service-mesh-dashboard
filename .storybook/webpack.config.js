@@ -7,7 +7,11 @@ const webpack = require("webpack");
 const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
 const paths = require("../config/paths");
 const WatchMissingNodeModulesPlugin = require("react-dev-utils/WatchMissingNodeModulesPlugin");
-const babelPlugins = require("../config/babelPlugins");
+
+// NOTE: This Storybook 3.x config has been non-functional since the React 18
+// upgrade (and the surrounding Vite migration). It is left in place as a
+// placeholder for a future upgrade to Storybook 8+, which will require
+// rewriting this file from scratch.
 
 module.exports = {
   resolve: {
@@ -42,8 +46,7 @@ module.exports = {
           // This is a feature of `babel-loader` for webpack (not Babel itself).
           // It enables caching results in ./node_modules/.cache/babel-loader/
           // directory for faster rebuilds.
-          cacheDirectory: true,
-          ...babelPlugins
+          cacheDirectory: true
         }
       },
       // "postcss" loader applies autoprefixer to our CSS.
