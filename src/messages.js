@@ -36,7 +36,7 @@ export default {
     },
     footer: {
       copyright:
-        "Copyright &copy; 2018 Decipher Technology Studios. All rights reserved. <br /> Copyright &copy; 2018 Grey Matter, a Decipher Technology Studios product. All rights reserved."
+        "Copyright © 2018 Decipher Technology Studios. All rights reserved.{br}Copyright © 2018 Grey Matter, a Decipher Technology Studios product. All rights reserved."
     },
     functionsGrid: {
       error: "No Functions Found",
@@ -380,7 +380,7 @@ export default {
     },
     footer: {
       copyright:
-        "Copyright &copy; 2018 Decipher Technology Studios. Todos los derechos reservados. <br /> Copyright &copy; 2018 Gray Matter, un producto de Decipher Technology Studios. Todos los derechos reservados."
+        "Copyright © 2018 Decipher Technology Studios. Todos los derechos reservados.{br}Copyright © 2018 Gray Matter, un producto de Decipher Technology Studios. Todos los derechos reservados."
     },
     functionsGrid: {
       error: "No se encontraron funciones",
@@ -722,7 +722,7 @@ export default {
     },
     footer: {
       copyright:
-        "Urheberrecht &copy; 2018 Decipher Technologie Studios. Alle Rechte vorbehalten. <br /> Urheberrecht &copy; 2018 Grey Matter, ein Produkt der Decipher Technology Studios. Alle Rechte vorbehalten."
+        "Urheberrecht © 2018 Decipher Technologie Studios. Alle Rechte vorbehalten.{br}Urheberrecht © 2018 Grey Matter, ein Produkt der Decipher Technology Studios. Alle Rechte vorbehalten."
     },
     functionsGrid: {
       error: "Keine Funktionen gefunden",
