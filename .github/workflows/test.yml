@@ -47,3 +47,6 @@ jobs:
 
       - name: Run ESLint
         run: npm run lint-js
+
+      - name: Run Stylelint (CSS)
+        run: npm run lint-css
