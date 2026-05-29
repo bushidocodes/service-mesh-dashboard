@@ -1,6 +1,8 @@
-import React, { Component } from "react";
-import NotificationSystem from "react-notification-system";
+import React from "react";
+import { ToastContainer } from "react-toastify";
 import { createGlobalStyle } from "styled-components";
+
+import "react-toastify/dist/ReactToastify.css";
 
 import {
   NotificationWrapper,
@@ -8,30 +10,24 @@ import {
   NotificationTitle
 } from "./style";
 
-// Inject our "faux" styled-components that contain
-// 3rd party classnames into the global stylesheet
+// Inject our "faux" styled-components that contain react-toastify's
+// classnames into the global stylesheet, re-theming the default toast to
+// match the dashboard (flat white card, our fonts, our dismiss/icon overlay).
 const NotificationGlobalStyle = createGlobalStyle`
 ${NotificationWrapper};
 ${NotificationBody};
 ${NotificationTitle}
 `;
 
-export default class Notification extends Component {
-  constructor(props) {
-    super(props);
-    this.notificationSystem = React.createRef();
-  }
-  componentDidMount() {
-    window.addNotification = this.notificationSystem.current.addNotification;
-  }
-  render() {
-    // Note: react-notification-system uses style={false} to disable its default
-    // inline styles — this is intentional even though it looks unusual.
-    return (
-      <React.Fragment>
-        <NotificationGlobalStyle />
-        <NotificationSystem ref={this.notificationSystem} style={false} />
-      </React.Fragment>
-    );
-  }
+// reportError() (services/notification) calls the imperative toast() API, so
+// no ref/window global is needed — toasts queue until this container mounts.
+// icon/closeButton are disabled here because our toast content renders its own
+// faint MessageIcon and DismissButton overlay (see services/notification).
+export default function Notification() {
+  return (
+    <React.Fragment>
+      <NotificationGlobalStyle />
+      <ToastContainer position="top-center" icon={false} closeButton={false} />
+    </React.Fragment>
+  );
 }

@@ -88,12 +88,9 @@ console.error = (message, ...args) => {
   // in act(), so this fires in every test that calls setUrlState directly. The
   // assertions still work correctly; this is purely a testing-methodology warning.
   if (msg.includes("not wrapped in act")) return;
-  // React 18 deprecates string refs. Notification.js was converted to createRef
-  // but third-party libs (react-notification-system) may still trigger this.
-  if (msg.includes("string ref")) return;
   // Several pinned libraries still use the deprecated React 16 lifecycle
   // methods: react-grid-layout, react-modal, react-resizable,
-  // react-draggable, react-notification-system, react-transition-group.
+  // react-draggable, react-transition-group.
   // (react-collapse no longer does as of v5.1.1.) Suppress until those
   // libraries are upgraded — see issue #27.
   if (msg.includes("componentWillMount")) return;
