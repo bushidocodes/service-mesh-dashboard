@@ -30,9 +30,9 @@ function CollapseBridge({ className, isOpened, children, ...rest }) {
 }
 
 CollapseBridge.propTypes = {
+  children: PropTypes.node,
   className: PropTypes.string,
-  isOpened: PropTypes.bool,
-  children: PropTypes.node
+  isOpened: PropTypes.bool
 };
 
 const TableDrawerCollapse = styled(CollapseBridge)`

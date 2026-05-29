@@ -85,8 +85,8 @@ class IntlTestHost extends React.Component {
 }
 
 IntlTestHost.propTypes = {
-  initialProps: PropTypes.object,
   Inner: PropTypes.elementType.isRequired,
+  initialProps: PropTypes.object,
   store: PropTypes.object
 };
 

@@ -110,17 +110,17 @@ export default function GMSelect({
 }
 
 GMSelect.propTypes = {
+  clearable: PropTypes.bool,
+  data: PropTypes.object,
+  isClearable: PropTypes.bool,
+  isSearchable: PropTypes.bool,
+  onChange: PropTypes.func,
+  options: PropTypes.arrayOf(PropTypes.object),
+  searchable: PropTypes.bool,
   value: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
     PropTypes.object
   ]),
-  options: PropTypes.arrayOf(PropTypes.object),
-  clearable: PropTypes.bool,
-  isClearable: PropTypes.bool,
-  searchable: PropTypes.bool,
-  isSearchable: PropTypes.bool,
-  valueRenderer: PropTypes.func,
-  onChange: PropTypes.func,
-  data: PropTypes.object
+  valueRenderer: PropTypes.func
 };
