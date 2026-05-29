@@ -14,20 +14,20 @@ ThreadsTable.propTypes = {
   groupByAttribute: PropTypes.string
 };
 
-ThreadsTable.defaultProps = {
-  filteredThreadData: [],
-  groupByAttribute: "none"
-};
-
 /**
- * Renders a table and appropriate headers based on the provided thread data
+ * Renders a table and appropriate headers based on the provided thread data.
+ * Defaults are expressed as JS default parameters rather than defaultProps,
+ * which React deprecated for function components.
  * @export
  * @param {Object[]} { filteredThreadData = [] }
  * @param {string} { groupByAttribute = "none" }
  * @returns JSX.Element
  */
 
-export default function ThreadsTable({ filteredThreadData, groupByAttribute }) {
+export default function ThreadsTable({
+  filteredThreadData = [],
+  groupByAttribute = "none"
+}) {
   // If we are grouping threads by state, we need to render headers
 
   if (groupByAttribute === "state") {

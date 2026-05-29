@@ -164,9 +164,14 @@ export const dashboardShape = PropTypes.shape({
   runtime: PropTypes.string,
   summaryCard: PropTypes.shape({
     icon: PropTypes.string,
+    // The card name and each line name are react-intl message descriptors
+    // ({ id, defaultMessage, description }) consumed via intl.formatMessage —
+    // see the dashboards JSON and InstanceHeaderContent. They are not plain
+    // strings, so allow either, matching chart `title`/`label` above.
+    name: PropTypes.oneOfType([PropTypes.string, intlMessageShape]),
     lines: PropTypes.arrayOf(
       PropTypes.shape({
-        name: PropTypes.string,
+        name: PropTypes.oneOfType([PropTypes.string, intlMessageShape]),
         value: PropTypes.arrayOf(
           PropTypes.shape({
             baseUnit: PropTypes.string,

@@ -37,10 +37,18 @@ class ThreadsGrid extends Component {
     // so we need to dynamically build the endpoint for the threads API.
     if (fabricServer) {
       const services = getState().fabric.services;
-      const { name, version } = services[selectedServiceSlug];
-      Actions.fetchAndStoreInstanceThreads(
-        `${fabricServer}/threads/${name}/${version}/${selectedInstanceID}`
-      );
+      // On a deep link or page refresh of the threads route, the fabric
+      // services map may not be populated yet: it is fetched asynchronously by
+      // FabricGrid, which only mounts on the root route. Guard against an
+      // undefined service so we don't throw while destructuring — the view
+      // simply renders "No Threads Found" until the data is available.
+      const service = services[selectedServiceSlug];
+      if (service) {
+        const { name, version } = service;
+        Actions.fetchAndStoreInstanceThreads(
+          `${fabricServer}/threads/${name}/${version}/${selectedInstanceID}`
+        );
+      }
     }
   }
 
