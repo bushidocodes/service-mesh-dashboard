@@ -1,5 +1,6 @@
 import globals from "globals";
 import reactPlugin from "eslint-plugin-react";
+import reactHooksPlugin from "eslint-plugin-react-hooks";
 import jsxA11y from "eslint-plugin-jsx-a11y";
 import jestPlugin from "eslint-plugin-jest";
 import prettierConfig from "eslint-config-prettier";
@@ -15,6 +16,7 @@ export default [
     files: ["src/**/*.js"],
     plugins: {
       react: reactPlugin,
+      "react-hooks": reactHooksPlugin,
       "jsx-a11y": jsxA11y
     },
     languageOptions: {
@@ -36,6 +38,11 @@ export default [
     rules: {
       // Core rules preserved from .eslintrc
       "linebreak-style": ["error", "unix"],
+
+      // Hooks rules — only the two classic guards; the v7 preset bundles
+      // experimental React Compiler rules that are not appropriate here
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
 
       // React rules — exact translation from .eslintrc
       // (severity 0 = off are omitted; 1 = warn)
