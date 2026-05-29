@@ -1,7 +1,11 @@
 // import { Actions } from "jumpstate";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
-import { Responsive, WidthProvider } from "react-grid-layout";
+// react-grid-layout v2 moved the flat v1-style props (breakpoints/cols/layouts,
+// the WidthProvider HOC, and the onLayoutChange(layout, layouts) signature) to
+// the "/legacy" entrypoint. The native v2 API is hooks-based; the legacy layer
+// keeps this static, read-only grid working without a rewrite. See issue #42.
+import { Responsive, WidthProvider } from "react-grid-layout/legacy";
 import { connect } from "react-redux";
 import { createGlobalStyle } from "styled-components";
 import { injectIntl } from "react-intl";
