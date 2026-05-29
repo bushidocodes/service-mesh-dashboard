@@ -1,7 +1,7 @@
 import Dygraph from "dygraphs";
 import { isEqual } from "lodash";
 import { PropTypes } from "prop-types";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import _ from "lodash";
 import { formatMetricString } from "utils";
 
@@ -13,128 +13,74 @@ import DygraphContainer from "./components/DygraphContainer";
  * Required Props include title (the string to show at that top of the card) and time series (the data to render).
  *
  * Optional props include detailLines, an array of strings listed below the line chart.
- *
- * @export
- * @class DygraphWrapper
- * @extends {React.Component}
  */
-export default class DygraphWrapper extends React.Component {
-  static propTypes = {
-    dygraph: PropTypes.object.isRequired,
-    dygraphMetadata: PropTypes.object,
-    dygraphOptions: PropTypes.object
-  };
+function DygraphWrapper({ dygraph, dygraphOptions, dygraphMetadata }) {
+  const graphRef = useRef(null);
+  const divRef = useRef(null);
+  const prevOptionsRef = useRef({});
 
-  state = {
-    options: {}
-  };
+  // Sync Dygraph options and data on prop changes. Declared before the mount
+  // effect so it runs first on the initial render — when graphRef is still
+  // null the early return prevents any update, deferring all work to the
+  // mount effect below.
+  useEffect(() => {
+    if (!graphRef.current) return;
 
-  componentDidMount() {
-    const {
-      dygraph: { data, attributes },
-      dygraphOptions,
-      dygraphMetadata
-    } = this.props;
-    // Build the Dygraph options object including labels
-    this.setState(
-      {
-        options: generateOptions({
-          baseOptions: dygraphOptions,
-          attributes,
-          dygraphMetadata
-        })
-      },
-      () => {
-        this.drawChart(this.div, data, this.state.options);
-      }
-    );
-  }
-
-  /**
-   * Instruct the existing Dygraph to update when new data is passed in as props or when labels change
-   * All other changes in the options object are ignored
-   * Also, resize the dygraph every time the component receives props
-   * @param {Object} nextProps
-   * @memberof DygraphWrapper
-   */
-  componentWillReceiveProps(nextProps) {
-    const {
-      dygraph: { data, attributes },
-      dygraphOptions,
-      dygraphMetadata
-    } = this.props;
-
+    const { data, attributes } = dygraph;
     const newOptions = generateOptions({
       baseOptions: dygraphOptions,
       attributes,
       dygraphMetadata
     });
 
-    if (!isEqual(this.state.options, newOptions)) {
-      this.setState({ options: newOptions }, () => {
-        if (this.graph) {
-          this.graph.updateOptions(this.state.options);
-        } else {
-          this.drawChart(this.div, data, this.state.options);
-        }
-      });
+    if (!isEqual(prevOptionsRef.current, newOptions)) {
+      prevOptionsRef.current = newOptions;
+      graphRef.current.updateOptions(newOptions);
     }
-    // Race conditions on some of the larger components like Explorer mean that
-    // we can render the wrapper multiple times before the actual Dygraph is
-    // rendered, causing this.graph to be undefined
-    if (this.graph) {
-      // Just pass the data each time because most renders are due to polling
-      this.graph.updateOptions({ file: data });
-      // This is getting called when not needed. Need to determine if Dygraph
-      // handles this sufficiently or if we need to call this selectively
-      this.graph.resize();
-    }
-  }
 
-  /** Block React from ever updating and use Dygraph methods to update the physical DOM */
-  shouldComponentUpdate() {
-    return false;
-  }
+    // Always push fresh data and resize; most renders come from polling
+    graphRef.current.updateOptions({ file: data });
+    graphRef.current.resize();
+  });
 
-  /** Clean up when the component unmounts */
-  componentWillUnmount() {
-    if (this.graph) {
-      this.graph.destroy();
-      delete this.graph;
-    }
-  }
+  // Initialize Dygraph on mount and destroy on unmount
+  useEffect(() => {
+    const { data, attributes } = dygraph;
+    const options = generateOptions({
+      baseOptions: dygraphOptions,
+      attributes,
+      dygraphMetadata
+    });
+    prevOptionsRef.current = options;
+    graphRef.current = new Dygraph(divRef.current, data, options);
 
-  /**
-   * Renders a dygraph to a physical DOM node
-   *
-   * @param {any} elem - Physical DOM node where the Dygraph should render
-   * @param {any} data - 2D array of timeseries data powering the Dygraph
-   * @param {any} options - Various options for how a Dygraph should look at feel.
-   * @memberof DygraphWrapper
-   */
-  drawChart = (elem, data, options) => {
-    this.graph = new Dygraph(elem, data, options);
-    if (!this.graph) {
-      console.log("error rendering Dygraph");
-    }
-  };
+    return () => {
+      if (graphRef.current) {
+        graphRef.current.destroy();
+        graphRef.current = null;
+      }
+    };
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  render() {
-    return (
-      <DygraphContainer
-        ref={(elem) => {
-          this.div = elem;
-        }}
-      />
-    );
-  }
+  return (
+    <DygraphContainer
+      ref={(elem) => {
+        divRef.current = elem;
+      }}
+    />
+  );
 }
+
+DygraphWrapper.propTypes = {
+  dygraph: PropTypes.object.isRequired,
+  dygraphMetadata: PropTypes.object,
+  dygraphOptions: PropTypes.object
+};
+
+export default DygraphWrapper;
 
 /**
  * Generates a valid Dygraph options object
- *
- * @param {any} { baseOptions = {}, attributes, dygraphMetadata }
- * @returns
  */
 function generateOptions({ baseOptions = {}, attributes, dygraphMetadata }) {
   let options = { ...DEFAULT_DYGRAPH_OPTIONS, ...baseOptions };
@@ -176,10 +122,6 @@ function generateOptions({ baseOptions = {}, attributes, dygraphMetadata }) {
 
 /**
  * Generates an array of labels for use in a Dygraph options object
- *
- * @param {any} rawAttributes
- * @param {any} dygraphMetadata
- * @returns
  */
 function generateLabels(rawAttributes, dygraphMetadata) {
   if (!rawAttributes || rawAttributes.length === 0) return {};
@@ -187,7 +129,7 @@ function generateLabels(rawAttributes, dygraphMetadata) {
   if (attributes[0] !== "Time") {
     attributes.unshift("Time");
   }
-  const results = attributes.map((attr, idx, arr) => {
+  const results = attributes.map((attr) => {
     if (
       dygraphMetadata &&
       dygraphMetadata[attr] &&
@@ -204,10 +146,6 @@ function generateLabels(rawAttributes, dygraphMetadata) {
 /**
  * Function factory for a dygraph legend formatter, which is used to customize
  * the text rendered in the pop over that appears when a user hovers over the graph
- *
- * @param {any} [dygraphMetadata={}]
- * @param {any} labels
- * @returns
  */
 function generatelegendFormatter(dygraphMetadata = {}, labels, colors) {
   return function legendFormatter(data) {
