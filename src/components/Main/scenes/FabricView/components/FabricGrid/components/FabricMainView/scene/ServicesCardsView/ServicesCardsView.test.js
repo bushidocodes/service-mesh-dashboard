@@ -48,8 +48,9 @@ describe("ServicesCardsView component rendering", () => {
     wrapper = mount(RouterWrap(["/"]));
   });
 
-  //snapshot test is left out as the randomly generated key requires updating snapshot each time
-  xtest("Has a snapshot", () => {
+  // Card keys are now derived from the (deterministic) group header rather than
+  // a random value, so the shallow snapshot is stable across runs.
+  test("Has a snapshot", () => {
     wrapper = shallow(RouterWrap(["/"]));
     expect(wrapper).toMatchSnapshot();
   });

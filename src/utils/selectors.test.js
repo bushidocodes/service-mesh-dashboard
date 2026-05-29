@@ -1,5 +1,4 @@
 import state from "../json/mockReduxState";
-import Tab from "components/AppHeader/components/Tab";
 
 const {
   getRoutesMetrics,
@@ -12,7 +11,6 @@ const {
   getSelectedInstanceID,
   getSelectedService,
   getSelectedServiceSlug,
-  generateHeaderTabs,
   getStatusCount,
   getRuntime
 } = jest.requireActual("./selectors");
@@ -109,75 +107,9 @@ describe("getRuntime", () => {
   });
 });
 
-// This should be refactored into tests for renderTabs in InstanceHeaderContent
-xdescribe("generateHeaderTabs", () => {
-  test("returns undefined if state.dashboards is empty", () => {
-    let modState = Object.assign({}, state, { dashboards: {} });
-    expect(generateHeaderTabs(modState)).toBeUndefined();
-  });
-
-  let tabs;
-
-  beforeAll(() => {
-    //tabs = generateHeaderTabs(state);
-  });
-
-  test("returns an array of <Tab />'s", () => {
-    tabs.forEach((tab) => {
-      expect(tab).toMatchObject(Tab.prototype);
-    });
-  });
-
-  test("passes title prop to <Tab />", () => {
-    const titles = ["HTTP", "JVM", "Finagle"];
-    tabs.forEach((tab, idx) => {
-      expect(tab.props.title).toBe(titles[idx]);
-    });
-  });
-
-  test("passes href prop to <Tab/>", () => {
-    const keys = ["http", "jvm", "finagle"];
-    const mockServiceSlug =
-      "authentication-statistics-file-resource-network-export-icpf-mail-domain-end-v4-3";
-    const mockInstance = "2smao7xwboy0000000000";
-
-    tabs.forEach((tab, idx) => {
-      expect(tab.props.href).toBe(
-        `/${mockServiceSlug}/${mockInstance}/${keys[idx]}`
-      );
-    });
-  });
-
-  test("passes icon prop to <Tab/>", () => {
-    const icons = ["Http", "JVM", "Finagle"];
-
-    tabs.forEach((tab, idx) => {
-      expect(tab.props.icon).toBe(icons[idx]);
-    });
-  });
-
-  test("passes lines prop to <Tab/> if lines of text are present", () => {
-    const keys = ["http", "jvm", "finagle"];
-    tabs.forEach((tab, i) => {
-      if (state.dashboards[keys[i]].summaryCard.lines) {
-        expect(tab.props).toHaveProperty("lines");
-      } else {
-        expect(tab.props).not.toHaveProperty("lines");
-      }
-    });
-  });
-
-  test("passes chartData prop to <Tab/> if chart is present", () => {
-    const keys = ["http", "jvm", "finagle"];
-    tabs.forEach((tab, i) => {
-      if (state.dashboards[keys[i]].summaryCard.chart) {
-        expect(tab.props.chartData).toBeDefined();
-      } else {
-        expect(tab.props.chartData).toBeUndefined();
-      }
-    });
-  });
-});
+// NOTE: the former `generateHeaderTabs` selector was removed; tab generation now
+// lives in InstanceHeaderContent.renderTabs() and is covered by that component's
+// test suite. The disabled selector tests that targeted it have been deleted.
 
 describe("metricsKeySelectorGenerator", () => {
   test("returns a Reselect selector", () => {

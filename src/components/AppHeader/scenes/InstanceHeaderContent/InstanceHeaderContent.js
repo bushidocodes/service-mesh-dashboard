@@ -26,7 +26,8 @@ import {
  * @extends {Component}
  */
 
-class InstanceHeaderContent extends Component {
+// named export for the unconnected component {InstanceHeaderContent} for unit tests
+export class InstanceHeaderContent extends Component {
   static propTypes = {
     basePath: PropTypes.string,
     dashboards: PropTypes.object.isRequired,

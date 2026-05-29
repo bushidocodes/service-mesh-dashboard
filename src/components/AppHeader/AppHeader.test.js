@@ -1,6 +1,7 @@
 import React from "react";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
+import { StyleSheetManager } from "styled-components";
 import configureMockStore from "redux-mock-store";
 
 // utils
@@ -26,30 +27,40 @@ const anAppHeader = (
   </Provider>
 );
 
+// stylis emits vendor prefixes (e.g. -moz-user-select, -moz-letter-spacing)
+// differently across platforms, so a raw styled-components snapshot diverges
+// between Linux CI and a Windows dev box. Rendering inside a StyleSheetManager
+// with disableVendorPrefixes strips them, yielding a platform-stable snapshot.
+const withoutVendorPrefixes = (node) => (
+  <StyleSheetManager disableVendorPrefixes>{node}</StyleSheetManager>
+);
+
 // mock getFabricServer
 jest.mock("../../utils/head");
+
+// The snapshot cases live in their own block without the mountWithIntl
+// beforeEach: that mount renders styled-components *with* vendor prefixes into
+// the shared stylesheet, which the serializer would then fold into the snapshot
+// and reintroduce the -moz- cross-platform drift we are avoiding here.
+describe("AppHeader snapshots", () => {
+  test("matches snapshot with instance view tabs", () => {
+    const wrapper = renderWithIntl(withoutVendorPrefixes(anAppHeader));
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  test("matches snapshot with fabric view tabs", () => {
+    // set a return value for getFabricServer() util func so that AppHeader renders <UseSDS /> and remount
+    getFabricServer.mockImplementation(() => "http://localhost:1337");
+    const wrapper = renderWithIntl(withoutVendorPrefixes(anAppHeader));
+    expect(wrapper).toMatchSnapshot();
+  });
+});
 
 describe("AppHeader component", () => {
   let AppHeaderWrapper;
 
   beforeEach(() => {
     AppHeaderWrapper = mountWithIntl(anAppHeader);
-  });
-
-  // TODO(jest-upgrade): jest-styled-components@4.9 + stylis generates
-  // -moz-user-select and -moz-letter-spacing vendor prefixes on Linux
-  // (CI) but not on Windows, causing snapshots to differ across platforms.
-  // Skip until jest-styled-components is upgraded alongside styled-components.
-  xtest("matches snapshot with instance view tabs", () => {
-    AppHeaderWrapper = renderWithIntl(anAppHeader);
-    expect(AppHeaderWrapper).toMatchSnapshot();
-  });
-
-  xtest("matches snapshot with fabric view tabs", () => {
-    // set a return value for getFabricServer() util func so that AppHeader renders <UseSDS /> and remount
-    getFabricServer.mockImplementation(() => "http://localhost:1337");
-    AppHeaderWrapper = renderWithIntl(anAppHeader);
-    expect(AppHeaderWrapper).toMatchSnapshot();
   });
 
   test("renders subcomponents", () => {

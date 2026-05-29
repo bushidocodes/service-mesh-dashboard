@@ -1,13 +1,143 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ThreadsTableLineItem component Matched the snapshot 1`] = `
+.c1 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+}
+
+.c2 {
+  -webkit-flex: 0 1 5em;
+  -ms-flex: 0 1 5em;
+  flex: 0 1 5em;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.c5 {
+  -webkit-flex: 0 1 5em;
+  -ms-flex: 0 1 5em;
+  flex: 0 1 5em;
+  -webkit-flex: 0 1 7em;
+  -ms-flex: 0 1 7em;
+  flex: 0 1 7em;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.c7 {
+  cursor: default;
+  -webkit-flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  min-height: 0;
+  overflow: hidden;
+  padding: 0;
+  white-space: normal;
+}
+
+.c7 > div:first-child {
+  box-shadow: inset 0 1px rgb(250,250,250);
+  box-sizing: border-box;
+  cursor: default;
+  height: auto;
+  margin: 0 16px;
+  padding: 16px 0;
+  text-align: left;
+  white-space: normal;
+}
+
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgb(255,255,255);
+  box-shadow: inset 0 -1px hsl(0,0%,92%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  min-height: 36px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.c0:hover {
+  background-color: hsl(0,0%,98%);
+}
+
+.c0:focus {
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+.c0:focus:active:hover {
+  outline: 0;
+}
+
+.c0 > * {
+  padding-right: 16px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c0 > *:first-child {
+  padding-left: 16px;
+}
+
+.c4 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.c3 {
+  z-index: 1;
+  height: 24px;
+  width: 24px;
+  color: hsl(46.69999999999999,100%,41.6%);
+  word-spacing: 0;
+  vertical-align: middle;
+}
+
+.c3:not(:root) {
+  overflow: visible;
+}
+
+.c6 {
+  z-index: 1;
+  height: 24px;
+  width: 24px;
+  color: currentColor;
+  word-spacing: 0;
+  vertical-align: middle;
+}
+
+.c6:not(:root) {
+  overflow: visible;
+}
+
 <ThreadsTableLineItem
   daemon={true}
   id={11}
   name="finagle/netty3-7"
   priority={10}
   stack={
-    Array [
+    [
       "sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)",
       "sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)",
       "sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)",
@@ -16,44 +146,24 @@ exports[`ThreadsTableLineItem component Matched the snapshot 1`] = `
   state="WAITING"
 >
   <styled.li
+    isOpen={false}
     key="11"
     onClick={[Function]}
     onKeyDown={[Function]}
     role="link"
-    selectable={false}
-    style={
-      Object {
-        "cursor": "pointer",
-      }
-    }
+    selectable={true}
     tabIndex={0}
   >
     <li
-      className="sc-ifAKCX lcJjke"
+      className="c0"
       onClick={[Function]}
       onKeyDown={[Function]}
       role="link"
-      style={
-        Object {
-          "cursor": "pointer",
-        }
-      }
       tabIndex={0}
     >
-      <styled.div
-        style={
-          Object {
-            "textAlign": "center",
-          }
-        }
-      >
+      <Styled(styled.div)>
         <div
-          className="sc-htpNat hCwLvp"
-          style={
-            Object {
-              "textAlign": "center",
-            }
-          }
+          className="c1 c2"
         >
           <StatusIcon
             status="warning"
@@ -72,7 +182,7 @@ exports[`ThreadsTableLineItem component Matched the snapshot 1`] = `
               >
                 <svg
                   aria-labelledby="ariaLabelledby"
-                  className="sc-bZQynM iFCtoG"
+                  className="c3"
                   focusable="false"
                   version="1.1"
                   viewBox="0 0 24 24"
@@ -109,7 +219,7 @@ exports[`ThreadsTableLineItem component Matched the snapshot 1`] = `
                     title=""
                   >
                     <g
-                      className="sc-EHOje cmgglm"
+                      className="c4"
                       fill="currentColor"
                       title=""
                     >
@@ -127,82 +237,42 @@ exports[`ThreadsTableLineItem component Matched the snapshot 1`] = `
             </Icon>
           </StatusIcon>
         </div>
-      </styled.div>
-      <styled.div
-        style={
-          Object {
-            "textAlign": "center",
-          }
-        }
-      >
+      </Styled(styled.div)>
+      <Styled(styled.div)>
         <div
-          className="sc-htpNat hCwLvp"
-          style={
-            Object {
-              "textAlign": "center",
-            }
-          }
+          className="c1 c2"
         >
           11
         </div>
-      </styled.div>
+      </Styled(styled.div)>
       <styled.div>
         <div
-          className="sc-bwzfXH dECyiq"
+          className="c1"
         >
           finagle/netty3-7
         </div>
       </styled.div>
-      <styled.div
-        style={
-          Object {
-            "textAlign": "right",
-          }
-        }
+      <Styled(styled.div)
+        right={true}
       >
         <div
-          className="sc-htpNat hCwLvp"
-          style={
-            Object {
-              "textAlign": "right",
-            }
-          }
+          className="c1 c5"
         >
           Yes
         </div>
-      </styled.div>
-      <styled.div
-        style={
-          Object {
-            "textAlign": "right",
-          }
-        }
+      </Styled(styled.div)>
+      <Styled(styled.div)
+        right={true}
       >
         <div
-          className="sc-htpNat hCwLvp"
-          style={
-            Object {
-              "textAlign": "right",
-            }
-          }
+          className="c1 c5"
         >
           10
         </div>
-      </styled.div>
-      <styled.div
-        style={
-          Object {
-            "textAlign": "center",
-          }
-        }
-      >
+      </Styled(styled.div)>
+      <Styled(styled.div)>
         <div
-          className="sc-htpNat hCwLvp"
-          style={
-            Object {
-              "textAlign": "center",
-            }
-          }
+          className="c1 c2"
         >
           <Icon>
             <styled.svg
@@ -213,7 +283,7 @@ exports[`ThreadsTableLineItem component Matched the snapshot 1`] = `
             >
               <svg
                 aria-labelledby="ariaLabelledby"
-                className="sc-bZQynM bRvplg"
+                className="c6"
                 focusable="false"
                 version="1.1"
                 viewBox="0 0 24 24"
@@ -225,7 +295,7 @@ exports[`ThreadsTableLineItem component Matched the snapshot 1`] = `
                   title=""
                 >
                   <g
-                    className="sc-EHOje cmgglm"
+                    className="c4"
                     fill="currentColor"
                     title=""
                   >
@@ -254,17 +324,28 @@ exports[`ThreadsTableLineItem component Matched the snapshot 1`] = `
             </styled.svg>
           </Icon>
         </div>
-      </styled.div>
-      <Styled(UnmountClosed)
+      </Styled(styled.div)>
+      <Styled(CollapseBridge)
         isOpened={false}
         onClick={[Function]}
       >
-        <UnmountClosed
-          className="sc-bxivhb iiOIu"
+        <CollapseBridge
+          className="c7"
           isOpened={false}
           onClick={[Function]}
-        />
-      </Styled(UnmountClosed)>
+        >
+          <UnmountClosed
+            isOpened={false}
+            onClick={[Function]}
+            theme={
+              {
+                "collapse": "ReactCollapse--collapse sc-fqkvVR c7",
+                "content": "ReactCollapse--content",
+              }
+            }
+          />
+        </CollapseBridge>
+      </Styled(CollapseBridge)>
     </li>
   </styled.li>
 </ThreadsTableLineItem>

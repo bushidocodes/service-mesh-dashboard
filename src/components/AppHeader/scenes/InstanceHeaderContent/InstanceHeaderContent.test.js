@@ -1,85 +1,70 @@
 import React from "react";
-
-import configureMockStore from "redux-mock-store";
+import { shallow } from "enzyme";
 
 import state from "json/mockReduxState";
-import { generateHeaderTabs } from "utils/selectors";
-import { shallowWithIntl } from "utils/i18nTesting";
-import InstanceHeaderContent from "./index";
 
-const store = configureMockStore()(state);
+// Unconnected named export so we can drive the runtime switch directly via props
+// rather than through connect()+injectIntl(); the connected default export wires
+// `runtime` from state.fabric.services[selectedServiceSlug].runtime.
+import { InstanceHeaderContent } from "./InstanceHeaderContent";
+import JVMHeaderContent from "./scenes/JVMHeaderContent";
+import GoHeaderContent from "./scenes/GoHeaderContent";
+import DefaultHeaderContent from "./scenes/DefaultHeaderContent";
 
-// Wrap in Memory Router to mock route props (history, match, location)
-const ConnectedInstanceHeaderContent = <InstanceHeaderContent store={store} />;
+// renderTabs() calls intl.formatMessage() on message descriptors
+// ({ id, defaultMessage }) drawn from the dashboards fixture; this mock echoes
+// the default message (and tolerates plain strings).
+const intl = {
+  formatMessage: (message) =>
+    typeof message === "string"
+      ? message
+      : (message && (message.defaultMessage || message.id)) || ""
+};
 
-xdescribe("InstanceHeaderContent", () => {
-  let wrapper;
+const baseProps = {
+  basePath: "/go-exemplar-v1-0/2smao7xwboy0000000000",
+  dashboards: state.dashboards,
+  metrics: state.instance.metrics,
+  intl
+};
 
-  beforeEach(() => {
-    // mount with context and childContextTypes, which prevents our test from
-    // choking on a connect()'ed child component that requires context
-    wrapper = shallowWithIntl(ConnectedInstanceHeaderContent);
-  });
-
+describe("InstanceHeaderContent", () => {
   test("returns JVMHeaderContent when runtime prop is JVM", () => {
-    // modify state
-    let modState = Object.assign({}, state, {
-      fabric: {
-        ...state.fabric,
-        selectedServiceSlug: "jvm-exemplar-v1-0"
-      }
-    });
-
-    // remount with modified store state
-    wrapper = shallowWithIntl(
-      <InstanceHeaderContent store={configureMockStore()(modState)} />
-    )
-      .dive()
-      .dive();
-
-    expect(wrapper.find("JVMHeaderContent")).toHaveLength(1);
-    expect(wrapper.find("GoHeaderContent")).toHaveLength(0);
-    expect(wrapper.find("DefaultHeaderContent")).toHaveLength(0);
+    const wrapper = shallow(
+      <InstanceHeaderContent {...baseProps} runtime="JVM" />
+    );
+    expect(wrapper.find(JVMHeaderContent)).toHaveLength(1);
+    expect(wrapper.find(GoHeaderContent)).toHaveLength(0);
+    expect(wrapper.find(DefaultHeaderContent)).toHaveLength(0);
   });
 
   test("returns GoHeaderContent when runtime prop is GO", () => {
-    // modify state
-    let modState = Object.assign({}, state, {
-      fabric: {
-        ...state.fabric,
-        selectedServiceSlug: "go-exemplar-v1-0"
-      }
-    });
-
-    // remount with modified store state
-    wrapper = shallowWithIntl(
-      <InstanceHeaderContent store={configureMockStore()(modState)} />
-    )
-      .dive()
-      .dive();
-    expect(wrapper.find("GoHeaderContent")).toHaveLength(1);
-    expect(wrapper.find("JVMHeaderContent")).toHaveLength(0);
-    expect(wrapper.find("DefaultHeaderContent")).toHaveLength(0);
+    const wrapper = shallow(
+      <InstanceHeaderContent {...baseProps} runtime="GO" />
+    );
+    expect(wrapper.find(GoHeaderContent)).toHaveLength(1);
+    expect(wrapper.find(JVMHeaderContent)).toHaveLength(0);
+    expect(wrapper.find(DefaultHeaderContent)).toHaveLength(0);
   });
 
-  test("passes correct props to children", () => {
-    // modify state
-    let modState = Object.assign({}, state, {
-      fabric: {
-        ...state.fabric,
-        selectedServiceSlug: "go-exemplar-v1-0"
-      }
-    });
-    wrapper = shallowWithIntl(
-      <InstanceHeaderContent store={configureMockStore()(modState)} />
-    )
-      .dive()
-      .dive();
+  test("returns DefaultHeaderContent for an unrecognized runtime", () => {
+    const wrapper = shallow(
+      <InstanceHeaderContent {...baseProps} runtime="" />
+    );
+    expect(wrapper.find(DefaultHeaderContent)).toHaveLength(1);
+    expect(wrapper.find(JVMHeaderContent)).toHaveLength(0);
+    expect(wrapper.find(GoHeaderContent)).toHaveLength(0);
+  });
 
-    expect(wrapper.find("GoHeaderContent").props()).toMatchObject({
-      basePath: "/go-exemplar-v1-0/2smao7xwboy0000000000",
-      metrics: state.instance.metrics,
-      headerTabs: generateHeaderTabs(state)
-    });
+  test("passes basePath, metrics, and a tab per dashboard to the active runtime view", () => {
+    const wrapper = shallow(
+      <InstanceHeaderContent {...baseProps} runtime="GO" />
+    );
+    const props = wrapper.find(GoHeaderContent).props();
+
+    expect(props.basePath).toBe(baseProps.basePath);
+    expect(props.metrics).toBe(state.instance.metrics);
+    // renderTabs() emits one <Tab> per dashboard (http, jvm, finagle).
+    expect(props.headerTabs).toHaveLength(Object.keys(state.dashboards).length);
   });
 });
