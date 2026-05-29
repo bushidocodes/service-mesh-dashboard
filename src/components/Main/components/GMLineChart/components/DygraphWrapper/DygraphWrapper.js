@@ -60,7 +60,7 @@ function DygraphWrapper({ dygraph, dygraphOptions, dygraphMetadata }) {
         graphRef.current = null;
       }
     };
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <DygraphContainer
