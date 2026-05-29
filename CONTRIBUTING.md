@@ -91,7 +91,7 @@ The subject of your commit should be less than 72 characters and should not begi
 * Avoid bringing in external CSS libraries or frameworks.
 * Stay consistent with the Decipher brand guide
 * All submissions should include function-level documentation using the JSDocs syntax
-* All PRs should strive for full test coverage. Anything less than 75% unit test coverage will fail CI.
+* All PRs should strive for full test coverage.
 * Test your code locally using `npm test` prior to pushing your branch to origin. Our CI infrastructure will fail your build if any tests fail
 * Respect our browser support matrix
 * All submissions should respect this [Web Accessibility Checklist](https://a11yproject.com/checklist.html) and allow easy navigation for keyboard-only users and screen readers.

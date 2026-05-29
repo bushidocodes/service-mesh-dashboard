@@ -124,12 +124,6 @@
     "usePathForSuiteName": "true"
   },
   "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx}"
-    ],
-    "coverageReporters": [
-      "lcov"
-    ],
     "setupFiles": [
       "<rootDir>/config/polyfills.js",
       "raf/polyfill",
