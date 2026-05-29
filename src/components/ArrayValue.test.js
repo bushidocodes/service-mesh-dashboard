@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import ArrayValue from "./ArrayValue";
 
 describe("ArrayValue", () => {
   it("matches snapshot", () => {
-    const aArrayValue = shallow(<ArrayValue />);
-    expect(aArrayValue).toMatchSnapshot();
+    const { asFragment } = render(<ArrayValue />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

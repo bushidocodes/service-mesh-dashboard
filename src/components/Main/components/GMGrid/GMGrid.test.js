@@ -1,5 +1,7 @@
+/* eslint-disable react/no-multi-comp, react/prop-types -- lightweight jest.mock stubs */
 import React from "react";
-import { shallow } from "enzyme";
+import { render, screen } from "@testing-library/react";
+
 import GMBasicMetrics from "./components/GMBasicMetrics";
 import GMLineChart from "../GMLineChart";
 import GMTable from "./components/GMTable";
@@ -10,7 +12,47 @@ import NotFoundError from "components/Main/components/NotFoundError";
 // Connected Components section from https://redux.js.org/docs/recipes/WritingTests.html
 import { GMGrid } from "./GMGrid";
 
-let wrapper;
+// GMGrid maps a dashboard's JSON config to chart components inside an
+// ErrorBoundary + responsive grid. Enzyme counted those children by type
+// (.find(Comp)); RTL is DOM-based, so each child chart is replaced with an
+// identifiable stub and ErrorBoundary with a pass-through stub. This keeps the
+// "renders N of chart type X" assertions observable without mounting the real
+// (canvas/dygraph-heavy) charts — mirroring the original shallow render.
+jest.mock("../GMLineChart", () => {
+  const React = require("react");
+  return () => React.createElement("div", { "data-testid": "gm-line-chart" });
+});
+jest.mock("./components/GMTable", () => {
+  const React = require("react");
+  return () => React.createElement("div", { "data-testid": "gm-table" });
+});
+jest.mock("./components/GMBasicMetrics", () => {
+  const React = require("react");
+  return () =>
+    React.createElement("div", { "data-testid": "gm-basic-metrics" });
+});
+jest.mock("components/Main/components/NotFoundError", () => {
+  const React = require("react");
+  return () => React.createElement("div", { "data-testid": "not-found-error" });
+});
+jest.mock("components/ErrorBoundary", () => {
+  const React = require("react");
+  return ({ children }) =>
+    React.createElement("div", { "data-testid": "error-boundary" }, children);
+});
+// react-grid-layout/legacy measures the DOM (WidthProvider) and cannot mount in
+// jsdom — the original shallow render never reached it. Stub it to a plain
+// container that renders its children so the chart stubs inside stay countable.
+jest.mock("react-grid-layout/legacy", () => {
+  const React = require("react");
+  return {
+    __esModule: true,
+    Responsive: ({ children }) =>
+      React.createElement("div", { "data-testid": "grid" }, children),
+    WidthProvider: (Comp) => Comp
+  };
+});
+
 let props = {
   dashboard: {
     name: "Go",
@@ -179,36 +221,35 @@ const intl = {
 };
 
 describe("Service Instance View: JVM/GO/HTTP <GMGrid>", () => {
-  beforeEach(() => {
-    wrapper = shallow(<GMGrid {...props} intl={intl} />);
-  });
-
   test("matches snapshot", () => {
-    expect(wrapper).toMatchSnapshot();
+    const { asFragment } = render(<GMGrid {...props} intl={intl} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test("renders correct components", () => {
-    expect(wrapper.find(ErrorBoundary)).toHaveLength(1);
+    render(<GMGrid {...props} intl={intl} />);
+    expect(screen.getByTestId("error-boundary")).toBeInTheDocument();
   });
 
   test("renders appropriate chart type (<GMTable>,<GMBasicMetrics> and <GMLineChart>) when provided dashboard charts", () => {
-    expect(wrapper.find(GMLineChart)).toHaveLength(2);
-    expect(wrapper.find(GMTable)).toHaveLength(1);
-    expect(wrapper.find(GMBasicMetrics)).toHaveLength(1);
-    expect(wrapper.find(NotFoundError)).toHaveLength(0);
+    render(<GMGrid {...props} intl={intl} />);
+    expect(screen.getAllByTestId("gm-line-chart")).toHaveLength(2);
+    expect(screen.getAllByTestId("gm-table")).toHaveLength(1);
+    expect(screen.getAllByTestId("gm-basic-metrics")).toHaveLength(1);
+    expect(screen.queryAllByTestId("not-found-error")).toHaveLength(0);
   });
 
   test("returns <NotFoundError> if dashboard does not exist", () => {
-    wrapper = shallow(
+    render(
       <GMGrid
         match={{ isExact: true, params: {}, path: "/", url: "/" }}
         metrics={{}}
         intl={intl}
       />
     );
-    expect(wrapper.find(NotFoundError)).toHaveLength(1);
-    expect(wrapper.find(GMLineChart)).toHaveLength(0);
-    expect(wrapper.find(GMTable)).toHaveLength(0);
-    expect(wrapper.find(GMBasicMetrics)).toHaveLength(0);
+    expect(screen.getByTestId("not-found-error")).toBeInTheDocument();
+    expect(screen.queryAllByTestId("gm-line-chart")).toHaveLength(0);
+    expect(screen.queryAllByTestId("gm-table")).toHaveLength(0);
+    expect(screen.queryAllByTestId("gm-basic-metrics")).toHaveLength(0);
   });
 });

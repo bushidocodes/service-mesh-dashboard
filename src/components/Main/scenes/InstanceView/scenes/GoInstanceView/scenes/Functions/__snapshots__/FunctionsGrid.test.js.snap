@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
-[
+<DocumentFragment>
   .c2 {
   background-image: url(magnifier.svg);
   background-repeat: no-repeat;
@@ -259,7 +259,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
                 id="react-select-2-input"
                 role="combobox"
                 spellcheck="false"
-                style="label:input;color:inherit;background:0;opacity:1;width:100%;grid-area:1 / 2;font:inherit;min-width:2px;border:0;margin:0;outline:0;padding:0"
+                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
                 tabindex="0"
                 type="text"
                 value=""
@@ -298,7 +298,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
         />
       </div>
     </div>
-  </div>,
+  </div>
   .c11 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -547,7 +547,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
     >
       <div
         class="c2 c3"
-        style="flex:1 1 20%"
+        style="flex: 1 1 20%;"
       >
         Function
       </div>
@@ -558,13 +558,13 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
       </div>
       <div
         class="c2 c3"
-        style="text-align:right"
+        style="text-align: right;"
       >
         Requests
       </div>
       <div
         class="c2 c3"
-        style="text-align:right"
+        style="text-align: right;"
       >
         Error %
       </div>
@@ -632,6 +632,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
           class="c2 c16"
         >
           <svg
+            focusable="false"
             preserveAspectRatio="xMaxYMin"
             viewBox="0 0 240 32"
           >
@@ -640,43 +641,43 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
                 cx="2"
                 cy="16"
                 r="2"
-                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
               />
               <circle
                 cx="61"
                 cy="16"
                 r="2"
-                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
               />
               <circle
                 cx="120"
                 cy="16"
                 r="2"
-                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
               />
               <circle
                 cx="179"
                 cy="16"
                 r="2"
-                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
               />
               <circle
                 cx="238"
                 cy="16"
                 r="2"
-                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
               />
               <polyline
                 points="2 16 61 16 120 16 179 16 238 16 238 30 2 30 2 16"
-                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
               />
               <polyline
                 points="2 16 61 16 120 16 179 16 238 16"
-                style="stroke:currentColor;stroke-width:1;stroke-linejoin:round;stroke-linecap:round;fill:none"
+                style="stroke: currentColor; stroke-width: 1; stroke-linejoin: round; stroke-linecap: round; fill: none;"
               />
             </g>
             <line
-              style="stroke:grey;opacity:0.4"
+              style="stroke: grey; opacity: 0.4;"
               x1="2"
               x2="238"
               y1="18"
@@ -686,19 +687,19 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
         </div>
         <div
           class="c2"
-          style="text-align:right"
+          style="text-align: right;"
         >
           13
         </div>
         <div
           class="c17"
-          style="text-align:right"
+          style="text-align: right;"
         >
           0%
         </div>
         <div
           class="c2"
-          style="text-align:right;display:flex;flex-direction:column"
+          style="text-align: right; display: flex; flex-direction: column;"
         >
           <div>
             1,956 ms
@@ -736,6 +737,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
           class="c2 c16"
         >
           <svg
+            focusable="false"
             preserveAspectRatio="xMaxYMin"
             viewBox="0 0 240 32"
           >
@@ -744,37 +746,37 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
                 cx="2"
                 cy="16"
                 r="2"
-                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
               />
               <circle
                 cx="80.66666666666667"
                 cy="16"
                 r="2"
-                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
               />
               <circle
                 cx="159.33333333333334"
                 cy="16"
                 r="2"
-                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
               />
               <circle
                 cx="238"
                 cy="16"
                 r="2"
-                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
               />
               <polyline
                 points="2 16 80.66666666666667 16 159.33333333333334 16 238 16 238 30 2 30 2 16"
-                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
               />
               <polyline
                 points="2 16 80.66666666666667 16 159.33333333333334 16 238 16"
-                style="stroke:currentColor;stroke-width:1;stroke-linejoin:round;stroke-linecap:round;fill:none"
+                style="stroke: currentColor; stroke-width: 1; stroke-linejoin: round; stroke-linecap: round; fill: none;"
               />
             </g>
             <line
-              style="stroke:grey;opacity:0.4"
+              style="stroke: grey; opacity: 0.4;"
               x1="2"
               x2="238"
               y1="18"
@@ -784,19 +786,19 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
         </div>
         <div
           class="c2"
-          style="text-align:right"
+          style="text-align: right;"
         >
           13
         </div>
         <div
           class="c17"
-          style="text-align:right"
+          style="text-align: right;"
         >
           0%
         </div>
         <div
           class="c2"
-          style="text-align:right;display:flex;flex-direction:column"
+          style="text-align: right; display: flex; flex-direction: column;"
         >
           <div>
             2,339 ms
@@ -807,6 +809,6 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
         </div>
       </li>
     </ol>
-  </div>,
-]
+  </div>
+</DocumentFragment>
 `;

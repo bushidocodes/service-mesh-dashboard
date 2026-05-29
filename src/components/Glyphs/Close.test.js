@@ -1,10 +1,14 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import Close from "./Close";
 
 describe("Close", () => {
   it("matches snapshot", () => {
-    const aClose = shallow(<Close />);
-    expect(aClose).toMatchSnapshot();
+    const { asFragment } = render(
+      <svg>
+        <Close />
+      </svg>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

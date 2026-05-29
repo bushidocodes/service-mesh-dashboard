@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import TableColHeader from "./TableColHeader";
 
 describe("TableColHeader", () => {
   it("matches snapshot", () => {
-    const aTableColHeader = shallow(<TableColHeader />);
-    expect(aTableColHeader).toMatchSnapshot();
+    const { asFragment } = render(<TableColHeader />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

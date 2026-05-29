@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`VizBar matches snapshot 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   background-color: rgb(230,230,230);
   border-radius: 1px 4px 4px 1px;
   bottom: 0;
@@ -12,6 +13,7 @@ exports[`VizBar matches snapshot 1`] = `
 }
 
 <div
-  className="c0"
-/>
+    class="c0"
+  />
+</DocumentFragment>
 `;

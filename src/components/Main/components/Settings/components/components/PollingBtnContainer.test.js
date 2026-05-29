@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import PollingBtnContainer from "./PollingBtnContainer";
 
 describe("PollingBtnContainer", () => {
   it("matches snapshot", () => {
-    const aPollingBtnContainer = shallow(<PollingBtnContainer />);
-    expect(aPollingBtnContainer).toMatchSnapshot();
+    const { asFragment } = render(<PollingBtnContainer />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

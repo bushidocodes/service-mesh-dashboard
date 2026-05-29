@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import ConfirmationQuery from "./ConfirmationQuery";
 
 describe("ConfirmationQuery", () => {
   it("matches snapshot", () => {
-    const aConfirmationQuery = shallow(<ConfirmationQuery />);
-    expect(aConfirmationQuery).toMatchSnapshot();
+    const { asFragment } = render(<ConfirmationQuery />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

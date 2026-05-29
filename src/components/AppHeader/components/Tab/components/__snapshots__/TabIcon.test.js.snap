@@ -1,7 +1,58 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TabIcon matches snapshot 1`] = `
-<styled.span>
-  <Icon />
-</styled.span>
+<DocumentFragment>
+  .c2 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.c1 {
+  z-index: 1;
+  height: 24px;
+  width: 24px;
+  color: currentColor;
+  word-spacing: 0;
+  vertical-align: middle;
+}
+
+.c1:not(:root) {
+  overflow: visible;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 25px;
+}
+
+<span
+    class="c0"
+  >
+    <svg
+      aria-labelledby="ariaLabelledby"
+      class="c1"
+      focusable="false"
+      version="1.1"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <g
+        class="c2"
+        fill="currentColor"
+        title=""
+      >
+        <title />
+      </g>
+    </svg>
+  </span>
+</DocumentFragment>
 `;

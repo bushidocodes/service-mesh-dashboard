@@ -1,10 +1,14 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import Threads from "./Threads";
 
 describe("Threads", () => {
   it("matches snapshot", () => {
-    const aThreads = shallow(<Threads />);
-    expect(aThreads).toMatchSnapshot();
+    const { asFragment } = render(
+      <svg>
+        <Threads />
+      </svg>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

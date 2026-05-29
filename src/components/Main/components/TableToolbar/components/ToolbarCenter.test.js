@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import ToolbarCenter from "./ToolbarCenter";
 
 describe("ToolbarCenter", () => {
   it("matches snapshot", () => {
-    const aToolbarCenter = shallow(<ToolbarCenter />);
-    expect(aToolbarCenter).toMatchSnapshot();
+    const { asFragment } = render(<ToolbarCenter />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

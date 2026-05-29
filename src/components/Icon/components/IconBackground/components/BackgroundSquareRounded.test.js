@@ -1,10 +1,14 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import BackgroundSquareRounded from "./BackgroundSquareRounded";
 
 describe("BackgroundSquareRounded", () => {
   it("matches snapshot", () => {
-    const aBackgroundSquareRounded = shallow(<BackgroundSquareRounded />);
-    expect(aBackgroundSquareRounded).toMatchSnapshot();
+    const { asFragment } = render(
+      <svg>
+        <BackgroundSquareRounded />
+      </svg>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

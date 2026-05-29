@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ReadoutItemDetail matches snapshot 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   font-size: 11px;
   font-weight: 600;
   margin: 0;
@@ -10,6 +11,7 @@ exports[`ReadoutItemDetail matches snapshot 1`] = `
 }
 
 <p
-  className="c0"
-/>
+    class="c0"
+  />
+</DocumentFragment>
 `;

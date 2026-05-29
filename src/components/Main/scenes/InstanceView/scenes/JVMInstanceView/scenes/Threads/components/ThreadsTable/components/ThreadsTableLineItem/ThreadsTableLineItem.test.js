@@ -1,13 +1,11 @@
 import React from "react";
-import { mount, shallow } from "enzyme";
+import { render, fireEvent, screen } from "@testing-library/react";
 
 import ThreadsTableLineItem from "./index";
-import TableRow from "components/Main/components/TableRow";
 
 // import Actions
 import "services";
 
-let ThreadsTableLineItemWrap;
 const mockProps = {
   daemon: true,
   id: 11,
@@ -21,32 +19,50 @@ const mockProps = {
   state: "WAITING"
 };
 
-const mockedEvent = {
-  target: {
-    className: "TableRow",
-    blur: () => {}
-  }
-};
-
 describe("ThreadsTableLineItem component", () => {
-  beforeEach(() => {
-    ThreadsTableLineItemWrap = mount(<ThreadsTableLineItem {...mockProps} />);
-  });
-
   test("Matched the snapshot", () => {
-    expect(ThreadsTableLineItemWrap).toMatchSnapshot();
+    const { asFragment } = render(<ThreadsTableLineItem {...mockProps} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
-  // use 'shallow' instead of mount for instance tests
+  // The enzyme test read the component's private `isOpen` state directly. RTL is
+  // DOM-based, so we assert on isOpen's visible manifestation instead: the drawer
+  // is rendered through TableDrawerCollapse -> react-collapse's UnmountClosed.
+  // While closed-from-the-start it renders nothing, so the collapse wrapper
+  // (.ReactCollapse--collapse) is absent. Opening mounts that wrapper with
+  // aria-hidden="false"; closing again flips it to aria-hidden="true". (The wrapper
+  // and its stack-trace content are NOT removed on close in jsdom, because
+  // UnmountClosed only unmounts after a CSS transition that never fires here, but
+  // aria-hidden flips synchronously with isOpen, so it is the reliable proxy.)
   test("should toggle row's open/closed state when row is clicked", () => {
-    ThreadsTableLineItemWrap = shallow(<ThreadsTableLineItem {...mockProps} />);
+    const { container } = render(<ThreadsTableLineItem {...mockProps} />);
 
-    const row = ThreadsTableLineItemWrap.find(TableRow);
-    row.simulate("click", mockedEvent);
+    // The row's onClick runs blurTableRow, which walks up from the event target
+    // looking for an ancestor whose className starts with "TableRow" and calls
+    // .blur() on it. The original enzyme test simulated a synthetic event whose
+    // target.className was "TableRow"; the real styled-component className does
+    // not start with "TableRow" (and is re-applied on every render), so we tag
+    // the RTL mount container (an ancestor React never re-renders) to give
+    // blurTableRow its terminating node and avoid walking past document to null.
+    container.className = "TableRow";
 
-    expect(ThreadsTableLineItemWrap.state().isOpen).toEqual(true);
+    const row = screen.getByRole("link");
 
-    row.simulate("click", mockedEvent);
-    expect(ThreadsTableLineItemWrap.state().isOpen).toEqual(false);
+    // Drawer starts closed: UnmountClosed has not mounted the collapse wrapper.
+    expect(container.querySelector(".ReactCollapse--collapse")).toBeNull();
+
+    fireEvent.click(row);
+    // Drawer open.
+    expect(container.querySelector(".ReactCollapse--collapse")).toHaveAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+    fireEvent.click(row);
+    // Drawer closed again.
+    expect(container.querySelector(".ReactCollapse--collapse")).toHaveAttribute(
+      "aria-hidden",
+      "true"
+    );
   });
 });

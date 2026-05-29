@@ -1,13 +1,89 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SettingsGrid component Matches snapshot 1`] = `
-.c6 {
+<DocumentFragment>
+  .c12 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  margin: 12px 0;
+  border-radius: 20px;
+  background: rgb(230,230,230);
+  outline: none;
+  cursor: pointer;
+}
+
+.c12::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: none;
+  border-radius: 0;
+  background: rgb(10,171,42);
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  -webkit-transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
+}
+
+.c12::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border: none;
+  border-radius: 0;
+  background: rgb(10,171,42);
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  -webkit-transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
+}
+
+.c12:disabled {
+  cursor: default;
+}
+
+.c12:hover::-webkit-slider-thumb,
+.c12:focus::-webkit-slider-thumb {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.c12:hover::-moz-range-thumb,
+.c12:focus::-moz-range-thumb {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.c12:disabled::-webkit-slider-thumb {
+  background: rgb(102,102,102);
+  cursor: default;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+.c12:disabled::-moz-range-thumb {
+  background: rgb(102,102,102);
+  cursor: default;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+.c4 {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
 }
 
-.c5 {
+.c3 {
   z-index: 1;
   height: 24px;
   width: 24px;
@@ -16,11 +92,11 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   vertical-align: middle;
 }
 
-.c5:not(:root) {
+.c3:not(:root) {
   overflow: visible;
 }
 
-.c11 {
+.c9 {
   box-sizing: border-box;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -62,24 +138,24 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   padding-top: 4px;
 }
 
-.c11:hover {
+.c9:hover {
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
 
-.c11:focus,
-.c11:active {
+.c9:focus,
+.c9:active {
   -webkit-transition: all 0 ease;
   transition: all 0 ease;
 }
 
-.c11 > * {
+.c9 > * {
   -webkit-flex: 0 1 auto;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
 }
 
-.c11:active {
+.c9:active {
   -webkit-transition-duration: 0s;
   transition-duration: 0s;
   background-color: hsl(0,0%,92.5%);
@@ -89,7 +165,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   color: hsl(0,0%,0%);
 }
 
-.c11:hover {
+.c9:hover {
   background-color: hsl(0,0%,98.5%);
   border-color: hsl(0,0%,98.5%);
   border-top-color: hsl(0,0%,100%);
@@ -97,16 +173,16 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   color: hsl(0,0%,0%);
 }
 
-.c11:focus {
+.c9:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
-.c11[disabled],
-.c11[disabled]:hover,
-.c11[disabled]:focus,
-.c11[disabled]:active {
+.c9[disabled],
+.c9[disabled]:hover,
+.c9[disabled]:focus,
+.c9[disabled]:active {
   cursor: default;
   opacity: 0.8;
   background-color: hsl(0,0%,94%);
@@ -114,16 +190,868 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   color: hsl(0,0%,0%);
 }
 
-.c11 > svg {
+.c9 > svg {
   width: 24px;
   height: 24px;
 }
 
-.c11 > :not(:first-child) {
+.c9 > :not(:first-child) {
   margin-top: 0.25px;
 }
 
-.c21 {
+.c0 {
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  color: rgb(32,32,32);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 32px;
+}
+
+.c0:first-of-type > * {
+  border-top: 0;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-top: 1px solid rgb(217,217,217);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0 auto;
+  max-width: 1300px;
+  padding: 16px;
+  width: 100%;
+}
+
+.c6 {
+  margin: 0 auto;
+  max-width: 1300px;
+  padding: 8px;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c2 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-right: 8px !important;
+}
+
+.c5 {
+  color: inherit;
+  font-size: 18px;
+  margin: 0;
+}
+
+.c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  border: 1px solid rgb(230,230,230);
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 0 160px;
+  -ms-flex: 0 0 160px;
+  flex: 0 0 160px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 140px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 160px;
+}
+
+.c8 .label {
+  bottom: 10px;
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+.c8 > svg {
+  color: rgb(10,171,42);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  will-change: transform;
+}
+
+.c8 .btn-type-polling > svg {
+  height: 100%;
+}
+
+.c8:hover svg,
+.c8:active svg,
+.c8:focus svg {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c8:active svg {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: all 0;
+  transition: all 0;
+}
+
+.c11 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: 1px solid rgb(230,230,230);
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 1 50%;
+  -ms-flex: 0 1 50%;
+  flex: 0 1 50%;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: 16px;
+  padding: 32px;
+  position: relative;
+}
+
+.c11 .label {
+  font-size: 14px;
+  text-align: center;
+  width: 100%;
+}
+
+.c10 {
+  background-color: rgba(0,0,0,0.8);
+  border-radius: 6px;
+  color: rgb(255,255,255);
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-size: 11px;
+  opacity: 0;
+  padding: 10px;
+  position: absolute;
+  text-align: left;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+  visibility: hidden;
+  white-space: normal;
+  width: 160px;
+  z-index: 1070;
+  right: 120%;
+  top: -5px;
+}
+
+.c7 {
+  border-bottom: 1px solid rgb(217,217,217);
+  cursor: default;
+  display: inline-block;
+  position: relative;
+}
+
+<section
+    class="c0"
+  >
+    <header
+      class="c1"
+    >
+      <span
+        class="c2"
+      >
+        <svg
+          aria-labelledby="ariaLabelledby"
+          class="c3"
+          focusable="false"
+          version="1.1"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+        >
+          <g
+            class="c4"
+            fill="currentColor"
+            title=""
+          >
+            <title />
+            <g
+              class="glyph"
+              fill="currentColor"
+              transform="translate(0 0) scale(1)"
+            >
+              <path
+                d="M10.4915289,10.6867475 C10.8581835,10.2659432 11.3980346,10 12,10 C13.1045695,10 14,10.8954305 14,12 C14,12.149429 13.9836124,12.2950305 13.9525363,12.4351054 L16.4807554,13.6992149 C16.8475649,13.2712029 17.3921111,13 18,13 C19.1045695,13 20,13.8954305 20,15 C20,16.1045695 19.1045695,17 18,17 C16.8954305,17 16,16.1045695 16,15 C16,14.8620114 16.0139744,14.7272866 16.0405851,14.5971638 L13.4975725,13.3256575 C13.1311622,13.7392765 12.5960287,14 12,14 C10.8954305,14 10,13.1045695 10,12 C10,11.8562885 10.0151576,11.7161172 10.0439612,11.5809976 L7.50847107,10.3132525 C7.14181648,10.7340568 6.60196542,11 6,11 C4.8954305,11 4,10.1045695 4,9 C4,7.8954305 4.8954305,7 6,7 C7.1045695,7 8,7.8954305 8,9 C8,9.14371154 7.98484245,9.28388284 7.95603883,9.41900242 L10.4915289,10.6867475 Z M10.0405851,17.5971638 L7.49757253,16.3256575 C7.13116215,16.7392765 6.59602869,17 6,17 C4.8954305,17 4,16.1045695 4,15 C4,13.8954305 4.8954305,13 6,13 C7.1045695,13 8,13.8954305 8,15 C8,15.149429 7.98361238,15.2950305 7.95253631,15.4351054 L10.4807554,16.6992149 C10.8475649,16.2712029 11.3921111,16 12,16 C13.1045695,16 14,16.8954305 14,18 C14,19.1045695 13.1045695,20 12,20 C10.8954305,20 10,19.1045695 10,18 C10,17.8620114 10.0139744,17.7272866 10.0405851,17.5971638 Z M16.0439612,8.58099758 L13.5084711,7.31325253 C13.1418165,7.73405681 12.6019654,8 12,8 C10.8954305,8 10,7.1045695 10,6 C10,4.8954305 10.8954305,4 12,4 C13.1045695,4 14,4.8954305 14,6 C14,6.14371154 13.9848424,6.28388284 13.9560388,6.41900242 L16.4915289,7.68674747 C16.8581835,7.26594319 17.3980346,7 18,7 C19.1045695,7 20,7.8954305 20,9 C20,10.1045695 19.1045695,11 18,11 C16.8954305,11 16,10.1045695 16,9 C16,8.85628846 16.0151576,8.71611716 16.0439612,8.58099758 Z"
+                id="Combined-Shape"
+              />
+            </g>
+          </g>
+        </svg>
+      </span>
+      <h3
+        class="c5"
+      >
+        Fabric Polling
+      </h3>
+    </header>
+    <div
+      class="c6"
+    >
+      <div
+        class="c7"
+        disabled=""
+      >
+        <div
+          class="c8"
+        >
+          <button
+            class="c9"
+            orientation="vertical"
+            style="width: 100%; height: 100%; position: relative; z-index: 0;"
+            tabindex="0"
+            title="Pause Polling"
+            type="polling"
+          >
+            <svg
+              aria-labelledby="ariaLabelledby"
+              class="c3"
+              focusable="false"
+              version="1.1"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <g
+                class="c4"
+                fill="currentColor"
+                title=""
+              >
+                <title />
+                <g
+                  class="glyph"
+                  fill="rgb(10, 171, 42)"
+                  transform="translate(-24 -24) scale(3)"
+                >
+                  <path
+                    d="M6,5 L10.6153846,5 L10.6153846,19 L6,19 L6,5 Z M13.3846154,5 L18,5 L18,19 L13.3846154,19 L13.3846154,5 Z"
+                    id="Combined-Shape"
+                  />
+                </g>
+              </g>
+            </svg>
+            <span
+              style="font-size: 14px; position: absolute; bottom: 10px; width: 100%; left: 0px;"
+            >
+              Pause Polling
+            </span>
+          </button>
+        </div>
+        <div
+          class="c10"
+          style="top: 0px;"
+        />
+      </div>
+      <div
+        class="c11"
+        id="ctrl-slider-Fabric Polling"
+      >
+        <input
+          aria-labelledby="interval-name-Fabric Polling"
+          class="c12"
+          max="120"
+          min="5"
+          type="range"
+          value="10"
+        />
+        <span
+          class="label"
+          id="interval-name-Fabric Polling"
+        >
+          10s Polling Interval(s)
+        </span>
+      </div>
+    </div>
+  </section>
+  .c12 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  margin: 12px 0;
+  border-radius: 20px;
+  background: rgb(230,230,230);
+  outline: none;
+  cursor: pointer;
+}
+
+.c12::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: none;
+  border-radius: 0;
+  background: rgb(10,171,42);
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  -webkit-transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
+}
+
+.c12::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border: none;
+  border-radius: 0;
+  background: rgb(10,171,42);
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  -webkit-transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
+}
+
+.c12:disabled {
+  cursor: default;
+}
+
+.c12:hover::-webkit-slider-thumb,
+.c12:focus::-webkit-slider-thumb {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.c12:hover::-moz-range-thumb,
+.c12:focus::-moz-range-thumb {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.c12:disabled::-webkit-slider-thumb {
+  background: rgb(102,102,102);
+  cursor: default;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+.c12:disabled::-moz-range-thumb {
+  background: rgb(102,102,102);
+  cursor: default;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+.c4 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.c3 {
+  z-index: 1;
+  height: 24px;
+  width: 24px;
+  color: currentColor;
+  word-spacing: 0;
+  vertical-align: middle;
+}
+
+.c3:not(:root) {
+  overflow: visible;
+}
+
+.c9 {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 600;
+  border-width: 1px;
+  line-height: 1.4;
+  border-style: solid;
+  text-transform: none;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: rgb(255,255,255);
+  border-color: rgb(255,255,255);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,94%);
+  color: rgb(0,0,0);
+  font-size: 21px;
+  border-radius: 3px;
+  padding: 2px 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-top: 4px;
+}
+
+.c9:hover {
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c9:focus,
+.c9:active {
+  -webkit-transition: all 0 ease;
+  transition: all 0 ease;
+}
+
+.c9 > * {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c9:active {
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+  background-color: hsl(0,0%,92.5%);
+  border-color: hsl(0,0%,92.5%);
+  border-top-color: hsl(0,0%,98%);
+  border-bottom-color: hsl(0,0%,87%);
+  color: hsl(0,0%,0%);
+}
+
+.c9:hover {
+  background-color: hsl(0,0%,98.5%);
+  border-color: hsl(0,0%,98.5%);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,92.6%);
+  color: hsl(0,0%,0%);
+}
+
+.c9:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0aab2a;
+  z-index: 1;
+}
+
+.c9[disabled],
+.c9[disabled]:hover,
+.c9[disabled]:focus,
+.c9[disabled]:active {
+  cursor: default;
+  opacity: 0.8;
+  background-color: hsl(0,0%,94%);
+  border-color: hsl(0,0%,94%);
+  color: hsl(0,0%,0%);
+}
+
+.c9 > svg {
+  width: 24px;
+  height: 24px;
+}
+
+.c9 > :not(:first-child) {
+  margin-top: 0.25px;
+}
+
+.c0 {
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  color: rgb(32,32,32);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 32px;
+}
+
+.c0:first-of-type > * {
+  border-top: 0;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-top: 1px solid rgb(217,217,217);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0 auto;
+  max-width: 1300px;
+  padding: 16px;
+  width: 100%;
+}
+
+.c6 {
+  margin: 0 auto;
+  max-width: 1300px;
+  padding: 8px;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c2 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-right: 8px !important;
+}
+
+.c5 {
+  color: inherit;
+  font-size: 18px;
+  margin: 0;
+}
+
+.c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  border: 1px solid rgb(230,230,230);
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 0 160px;
+  -ms-flex: 0 0 160px;
+  flex: 0 0 160px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 140px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 160px;
+}
+
+.c8 .label {
+  bottom: 10px;
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+.c8 > svg {
+  color: rgb(10,171,42);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  will-change: transform;
+}
+
+.c8 .btn-type-polling > svg {
+  height: 100%;
+}
+
+.c8:hover svg,
+.c8:active svg,
+.c8:focus svg {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c8:active svg {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: all 0;
+  transition: all 0;
+}
+
+.c11 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: 1px solid rgb(230,230,230);
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 1 50%;
+  -ms-flex: 0 1 50%;
+  flex: 0 1 50%;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: 16px;
+  padding: 32px;
+  position: relative;
+}
+
+.c11 .label {
+  font-size: 14px;
+  text-align: center;
+  width: 100%;
+}
+
+.c10 {
+  background-color: rgba(0,0,0,0.8);
+  border-radius: 6px;
+  color: rgb(255,255,255);
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-size: 11px;
+  opacity: 0;
+  padding: 10px;
+  position: absolute;
+  text-align: left;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+  visibility: hidden;
+  white-space: normal;
+  width: 160px;
+  z-index: 1070;
+  right: 120%;
+  top: -5px;
+}
+
+.c7 {
+  border-bottom: 1px solid rgb(217,217,217);
+  cursor: default;
+  display: inline-block;
+  position: relative;
+}
+
+<section
+    class="c0"
+  >
+    <header
+      class="c1"
+    >
+      <span
+        class="c2"
+      >
+        <svg
+          aria-labelledby="ariaLabelledby"
+          class="c3"
+          focusable="false"
+          version="1.1"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+        >
+          <g
+            class="c4"
+            fill="currentColor"
+            title=""
+          >
+            <title />
+            <g
+              class="glyph"
+              fill="currentColor"
+              transform="translate(0 0) scale(1)"
+            >
+              <path
+                d="M6.19728719,10.4682661 L3.58689267,10.0076082 C3.3149522,9.95961873 3.05559772,10.1411669 3.00760822,10.4131073 C2.95961873,10.6850478 3.14116686,10.9444023 3.41310733,10.9923918 L6.02457766,11.4532395 C6.05503334,11.1160942 6.11337821,10.7869947 6.19728719,10.4682661 Z M17.9754223,12.5467605 L20.5868927,13.0076082 C20.8588331,13.0555977 21.0403813,13.3149522 20.9923918,13.5868927 C20.9444023,13.8588331 20.6850478,14.0403813 20.4131073,13.9923918 L17.8027128,13.5317339 C17.8866218,13.2130053 17.9449667,12.8839058 17.9754223,12.5467605 Z M7,12 C7,9.23857625 9.23857625,7 12,7 C14.7614237,7 17,9.23857625 17,12 C17,14.7614237 14.7614237,17 12,17 C9.23857625,17 7,14.7614237 7,12 Z M16.0107373,12.4288082 L16.0107373,11.5125591 L14.8991901,11.1460594 L14.641357,10.5218647 L15.145564,9.46817824 L14.4981164,8.82107731 L13.4610543,9.34219399 L12.8365252,9.08449893 L12.4411811,7.985 L11.5244411,7.985 L11.1634748,9.09595204 L10.5274865,9.3536471 L9.4732355,8.84971009 L8.82578791,9.49681102 L9.34718376,10.5333178 L9.08935065,11.1575125 L7.98926271,11.5469184 L7.98926271,12.4574409 L9.1008099,12.8239406 L9.35864301,13.4481353 L8.85443604,14.5018218 L9.50188363,15.1489227 L10.5389457,14.627806 L11.1634748,14.8855011 L11.5588189,15.985 L12.4698292,15.985 L12.8307956,14.874048 L13.4667839,14.6163529 L14.5210349,15.1202899 L15.1684825,14.473189 L14.641357,13.4366822 L14.9106494,12.8124875 L16.0107373,12.417355 L16.0107373,12.4288082 Z M12,13.7058304 C11.0488823,13.7058304 10.2811126,12.9384717 10.2811126,11.9878633 C10.2811126,11.0372548 11.0488823,10.2698962 12,10.2698962 C12.9511177,10.2698962 13.7188874,11.0372548 13.7188874,11.9878633 C13.7188874,12.9384717 12.9511177,13.7058304 12,13.7058304 Z"
+                id="Combined-Shape"
+              />
+            </g>
+          </g>
+        </svg>
+      </span>
+      <h3
+        class="c5"
+      >
+        Instance Polling
+      </h3>
+    </header>
+    <div
+      class="c6"
+    >
+      <div
+        class="c7"
+        disabled=""
+      >
+        <div
+          class="c8"
+        >
+          <button
+            class="c9"
+            orientation="vertical"
+            style="width: 100%; height: 100%; position: relative; z-index: 0;"
+            tabindex="0"
+            title="Resume Polling"
+            type="polling"
+          >
+            <svg
+              aria-labelledby="ariaLabelledby"
+              class="c3"
+              focusable="false"
+              version="1.1"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <g
+                class="c4"
+                fill="currentColor"
+                title=""
+              >
+                <title />
+                <g
+                  class="glyph"
+                  fill="rgb(10, 171, 42)"
+                  transform="translate(-24 -24) scale(3)"
+                >
+                  <polygon
+                    id="Triangle-6"
+                    points="19 12 7 20 7 4"
+                  />
+                </g>
+              </g>
+            </svg>
+            <span
+              style="font-size: 14px; position: absolute; bottom: 10px; width: 100%; left: 0px;"
+            >
+              Resume Polling
+            </span>
+          </button>
+        </div>
+        <div
+          class="c10"
+          style="top: 0px;"
+        >
+          Select an instance to turn on polling
+        </div>
+      </div>
+      <div
+        class="c11"
+        id="ctrl-slider-Instance Polling"
+      >
+        <input
+          aria-labelledby="interval-name-Instance Polling"
+          class="c12"
+          max="120"
+          min="5"
+          type="range"
+          value="10"
+        />
+        <span
+          class="label"
+          id="interval-name-Instance Polling"
+        >
+          10s Polling Interval(s)
+        </span>
+      </div>
+    </div>
+  </section>
+  .c4 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.c3 {
+  z-index: 1;
+  height: 24px;
+  width: 24px;
+  color: currentColor;
+  word-spacing: 0;
+  vertical-align: middle;
+}
+
+.c3:not(:root) {
+  overflow: visible;
+}
+
+.c13 {
   box-sizing: border-box;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -164,24 +1092,24 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   flex-direction: row;
 }
 
-.c21:hover {
+.c13:hover {
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
 
-.c21:focus,
-.c21:active {
+.c13:focus,
+.c13:active {
   -webkit-transition: all 0 ease;
   transition: all 0 ease;
 }
 
-.c21 > * {
+.c13 > * {
   -webkit-flex: 0 1 auto;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
 }
 
-.c21:active {
+.c13:active {
   -webkit-transition-duration: 0s;
   transition-duration: 0s;
   background-color: hsl(0,0%,92.5%);
@@ -191,7 +1119,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   color: hsl(0,0%,0%);
 }
 
-.c21:hover {
+.c13:hover {
   background-color: hsl(0,0%,98.5%);
   border-color: hsl(0,0%,92.6%);
   border-top-color: hsl(0,0%,100%);
@@ -199,16 +1127,16 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   color: hsl(0,0%,0%);
 }
 
-.c21:focus {
+.c13:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
-.c21[disabled],
-.c21[disabled]:hover,
-.c21[disabled]:focus,
-.c21[disabled]:active {
+.c13[disabled],
+.c13[disabled]:hover,
+.c13[disabled]:focus,
+.c13[disabled]:active {
   cursor: default;
   opacity: 0.8;
   background-color: hsl(0,0%,94%);
@@ -216,94 +1144,19 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   color: hsl(0,0%,0%);
 }
 
-.c21 > svg {
+.c13 > svg {
   width: 24px;
   height: 24px;
 }
 
-.c21 > :not(:first-child) {
+.c13 > :not(:first-child) {
   margin-left: 4px;
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
-.c14 {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  width: 100%;
-  height: 6px;
-  margin: 12px 0;
-  border-radius: 20px;
-  background: rgb(230,230,230);
-  outline: none;
-  cursor: pointer;
-}
-
-.c14::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  width: 16px;
-  height: 16px;
-  border: none;
-  border-radius: 0;
-  background: rgb(10,171,42);
-  cursor: pointer;
-  -webkit-transition: -webkit-transform 0.3s ease;
-  -webkit-transition: transform 0.3s ease;
-  transition: transform 0.3s ease;
-}
-
-.c14::-moz-range-thumb {
-  width: 16px;
-  height: 16px;
-  border: none;
-  border-radius: 0;
-  background: rgb(10,171,42);
-  cursor: pointer;
-  -webkit-transition: -webkit-transform 0.3s ease;
-  -webkit-transition: transform 0.3s ease;
-  transition: transform 0.3s ease;
-}
-
-.c14:disabled {
-  cursor: default;
-}
-
-.c14:hover::-webkit-slider-thumb,
-.c14:focus::-webkit-slider-thumb {
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1);
-}
-
-.c14:hover::-moz-range-thumb,
-.c14:focus::-moz-range-thumb {
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1);
-}
-
-.c14:disabled::-webkit-slider-thumb {
-  background: rgb(102,102,102);
-  cursor: default;
-  -webkit-transform: none;
-  -ms-transform: none;
-  transform: none;
-}
-
-.c14:disabled::-moz-range-thumb {
-  background: rgb(102,102,102);
-  cursor: default;
-  -webkit-transform: none;
-  -ms-transform: none;
-  transform: none;
-}
-
-.c2 {
+.c0 {
   -webkit-align-items: stretch;
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
@@ -322,11 +1175,11 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   margin-bottom: 32px;
 }
 
-.c2:first-of-type > * {
+.c0:first-of-type > * {
   border-top: 0;
 }
 
-.c3 {
+.c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -345,7 +1198,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   width: 100%;
 }
 
-.c8 {
+.c6 {
   margin: 0 auto;
   max-width: 1300px;
   padding: 8px;
@@ -363,206 +1216,20 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   flex-direction: row;
 }
 
-.c4 {
+.c2 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-right: 8px !important;
 }
 
-.c7 {
+.c5 {
   color: inherit;
   font-size: 18px;
   margin: 0;
 }
 
-.c10 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  border: 1px solid rgb(230,230,230);
-  border-radius: 3px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 0 0 160px;
-  -ms-flex: 0 0 160px;
-  flex: 0 0 160px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 140px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 160px;
-}
-
-.c10 .label {
-  bottom: 10px;
-  position: absolute;
-  left: 0;
-  width: 100%;
-}
-
-.c10 > svg {
-  color: rgb(10,171,42);
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  will-change: transform;
-}
-
-.c10 .btn-type-polling > svg {
-  height: 100%;
-}
-
-.c10:hover svg,
-.c10:active svg,
-.c10:focus svg {
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1);
-  -webkit-transition: all 0.1s ease;
-  transition: all 0.1s ease;
-}
-
-.c10:active svg {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-  -webkit-transition: all 0;
-  transition: all 0;
-}
-
-.c13 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border: 1px solid rgb(230,230,230);
-  border-radius: 3px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 0 1 50%;
-  -ms-flex: 0 1 50%;
-  flex: 0 1 50%;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  margin-left: 16px;
-  padding: 32px;
-  position: relative;
-}
-
-.c13 .label {
-  font-size: 14px;
-  text-align: center;
-  width: 100%;
-}
-
-.c12 {
-  background-color: rgba(0,0,0,0.8);
-  border-radius: 6px;
-  color: rgb(255,255,255);
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-size: 11px;
-  opacity: 0;
-  padding: 10px;
-  position: absolute;
-  text-align: left;
-  -webkit-transition: opacity 1s;
-  transition: opacity 1s;
-  visibility: hidden;
-  white-space: normal;
-  width: 160px;
-  z-index: 1070;
-  right: 120%;
-  top: -5px;
-}
-
-.c9 {
-  border-bottom: 1px solid rgb(217,217,217);
-  cursor: default;
-  display: inline-block;
-  position: relative;
-}
-
-.c1 {
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  background-color: rgba(0,0,0,0.85);
-  border-radius: 3px;
-  color: rgb(242,242,242);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 400px;
-  left: 50%;
-  margin-top: -200px;
-  opacity: 0;
-  padding: 24px;
-  position: absolute;
-  top: 50vh;
-  -webkit-transform: translateX(-50%) translateY(50px) scale(0.98);
-  -ms-transform: translateX(-50%) translateY(50px) scale(0.98);
-  transform: translateX(-50%) translateY(50px) scale(0.98);
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-  width: 500px;
-}
-
-.c1 > [class*="Content"] > * {
-  position: relative;
-  top: 0.5em;
-  -webkit-transition: all 0.4s cubic-bezier(0.1,0.5,0.2,1.3);
-  transition: all 0.4s cubic-bezier(0.1,0.5,0.2,1.3);
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-}
-
-[class*="after-close"] > .c0 {
-  opacity: 0;
-  -webkit-transform: translateX(-50%) translateY(0) scale(0.5);
-  -ms-transform: translateX(-50%) translateY(0) scale(0.5);
-  transform: translateX(-50%) translateY(0) scale(0.5);
-}
-
-[class*="after-close"] > .c0 > [class*="Content"] > * {
-  top: 1em;
-}
-
-[class*="after-open"] > .c0 {
-  opacity: 1;
-  -webkit-transform: translateX(-50%) translateY(0) scale(1);
-  -ms-transform: translateX(-50%) translateY(0) scale(1);
-  transform: translateX(-50%) translateY(0) scale(1);
-}
-
-[class*="after-open"] > .c0:focus {
-  outline: 0;
-}
-
-[class*="after-open"] > .c0 > [class*="Content"] > * {
-  top: 0;
-}
-
-.c15 {
+.c7 {
   -webkit-align-items: stretch;
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
@@ -584,22 +1251,22 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   margin: 4px;
 }
 
-.c15:first-child:last-child {
+.c7:first-child:last-child {
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
   flex-grow: 0;
 }
 
-.c15:first-child:last-child > * {
+.c7:first-child:last-child > * {
   text-align: center;
 }
 
-.c15:first-child:last-child > * > :first-child {
+.c7:first-child:last-child > * > :first-child {
   padding-left: 0;
 }
 
-.c17 {
+.c9 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -624,7 +1291,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   position: relative;
 }
 
-.c16 + .c16:before {
+.c8 + .c8:before {
   border-top: 1px solid currentColor;
   content: "";
   left: 0;
@@ -634,14 +1301,14 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   top: 0;
 }
 
-.c17 button {
+.c9 button {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
   margin: 8px 0;
 }
 
-.c18 {
+.c10 {
   -webkit-align-items: stretch;
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
@@ -659,11 +1326,11 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   padding: 8px 0;
 }
 
-.c18:first-child {
+.c10:first-child {
   padding-left: 16px;
 }
 
-.c19 {
+.c11 {
   font-size: 11px;
   margin: 0;
   padding: 0;
@@ -671,7 +1338,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   min-height: 1em;
 }
 
-.c20 {
+.c12 {
   font-size: 32px;
   word-break: break-all;
   margin: 0;
@@ -680,7 +1347,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
 }
 
 @media all and (max-width:1000px) {
-  .c15 {
+  .c7 {
     -webkit-flex: 0 0 300px;
     -ms-flex: 0 0 300px;
     flex: 0 0 300px;
@@ -690,1933 +1357,111 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   }
 }
 
-<IntlTestHost
-  Inner={
-    {
-      "$$typeof": Symbol(react.memo),
-      "WrappedComponent": [Function],
-      "compare": null,
-      "type": [Function],
-    }
-  }
-  initialProps={{}}
-  store={
-    {
-      "clearActions": [Function],
-      "dispatch": [Function],
-      "getActions": [Function],
-      "getState": [Function],
-      "replaceReducer": [Function],
-      "subscribe": [Function],
-    }
-  }
->
-  <Provider
-    store={
-      {
-        "clearActions": [Function],
-        "dispatch": [Function],
-        "getActions": [Function],
-        "getState": [Function],
-        "replaceReducer": [Function],
-        "subscribe": [Function],
-      }
-    }
+<section
+    class="c0"
   >
-    <IntlProvider
-      defaultFormats={{}}
-      defaultLocale="en"
-      fallbackOnEmptyString={true}
-      formats={{}}
-      locale="en-US"
-      messages={
-        {
-          "GMLineChart.noChartableData": "No Chartable Data",
-          "GMLineChart.noMetricsFound": "Could not find the following metrics:",
-          "GMLineChart.screenReaderGraphDescription.noData": "The average for currently displayed data is equal to 0.",
-          "GMLineChart.screenReaderGraphDescription.withData": "A tabular representation of the {title} chart data: median {median} average {average} mode {mode} maximum {max} minimum {min} number of observations {dataPoints} complete data time series follows {timeSeries}",
-          "GMServiceTableLineItem.tooltip": "This microservice instance does not have metrics to display.",
-          "explorer.selectMetric": "Select a metric to display",
-          "fabric.capability": "Capability",
-          "fabric.error": "No Services Found",
-          "fabric.name": "Name",
-          "fabric.none": "None",
-          "fabric.owner": "Owner",
-          "fabric.searchPlaceholder": "Search Services",
-          "fabric.status": "Status",
-          "fabricHeaderContent.allServices": "All Services",
-          "fabricHeaderContent.down": "Down",
-          "fabricHeaderContent.services": "Services",
-          "fabricHeaderContent.stable": "Stable",
-          "fabricHeaderContent.summary": "Summary",
-          "fabricHeaderContent.warning": "Warning",
-          "fabricMicroservices.disableFetchError": "Automatically disabling the fetching of Fabric microservices after three attempts.",
-          "fabricMicroservices.fetchError": "Fetching Fabric Microservices failed",
-          "fabricRouter.noInstance": "{instanceID} is not a known instance of {serviceName} {serviceVersion}",
-          "fabricRouter.noMetrics": "{serviceName} {serviceVersion} does not have metrics to display",
-          "fabricRouter.noService": "{serviceSlug} is not a known microservice",
-          "fabricRouter.notAuthorized": "You are not authorized to view {serviceName} {serviceVersion}",
-          "footer.copyright": "Copyright © 2018 Decipher Technology Studios. All rights reserved.{br}Copyright © 2018 Grey Matter, a Decipher Technology Studios product. All rights reserved.",
-          "functionsGrid.error": "No Functions Found",
-          "functionsGrid.errorPercent": "Error %",
-          "functionsGrid.function": "Function",
-          "functionsGrid.latency50": "Latency 50%",
-          "functionsGrid.latency99": "Latency 99%",
-          "functionsGrid.requests": "Requests",
-          "functionsGrid.searchPlaceholder": "Search Functions",
-          "goHeaderContent.explorer": "Explorer",
-          "goHeaderContent.functions": "Functions",
-          "goHeaderContent.requests": "Requests",
-          "goHeaderContent.routes": "Routes",
-          "goHeaderContent.summary": "Summary",
-          "goHeaderContent.uptime": "Uptime",
-          "goInstance.go.chart.goroutines.timeseries.goroutinesChartLabel": "# of allocated goroutines",
-          "goInstance.go.chart.goroutines.title": "Goroutines",
-          "goInstance.go.chart.heapChart.detailLines.garbageCollectionRuns": "Garbage Collection Runs:",
-          "goInstance.go.chart.heapChart.detailLines.totalGarbageCollectionPause": "Total GC Pause:",
-          "goInstance.go.chart.heapChart.timeseries.heapSizeChartLabel": "Go Heap Size",
-          "goInstance.go.chart.heapChart.timeseries.heapUsedChartLabel": "Go Heap Used",
-          "goInstance.go.chart.heapChart.timeseries.processMemoryUsedChartLabel": "Process Memory Used",
-          "goInstance.go.chart.heapChart.title": "Heap",
-          "goInstance.go.summaryCard.lines.heapUsed": "Heap Used",
-          "goInstance.go.summaryCard.name": "Go",
-          "inspector.hideStaticMetric": "Hide all static metrics",
-          "inspector.hideZeroMetric": "Hide all metrics with only zero values",
-          "inspector.searchAriaLabel": "Search All Metrics",
-          "inspector.searchPlaceholder": "Search",
-          "instanceMetricsUtils.disableFetchError": "Automatically disabling the fetching of metrics after three attempts. You can turn polling back on in Settings.",
-          "instanceMetricsUtils.fetchError": "Fetching Metrics failed",
-          "jvmHeaderContent.explorer": "Explorer",
-          "jvmHeaderContent.requests": "Requests",
-          "jvmHeaderContent.routes": "Routes",
-          "jvmHeaderContent.summary": "Summary",
-          "jvmHeaderContent.threads": "Threads",
-          "jvmHeaderContent.uptime": "Uptime",
-          "jvmInstance.finagle.chart.clientRegistryChart.detailLines.initialResolution": "Initial Resolution",
-          "jvmInstance.finagle.chart.clientRegistryChart.detailLines.size": "Size",
-          "jvmInstance.finagle.chart.clientRegistryChart.title": "Client Registry",
-          "jvmInstance.finagle.chart.futurePoolTasksChart.detailLines.activeTasks": "Active Tasks",
-          "jvmInstance.finagle.chart.futurePoolTasksChart.detailLines.completedTasks": "Completed Tasks",
-          "jvmInstance.finagle.chart.futurePoolTasksChart.detailLines.poolSize": "Pool Size",
-          "jvmInstance.finagle.chart.futurePoolTasksChart.title": "Future Pool",
-          "jvmInstance.finagle.chart.pendingTimerTasksChart.detailLines.average": "Average",
-          "jvmInstance.finagle.chart.pendingTimerTasksChart.detailLines.count": "Count",
-          "jvmInstance.finagle.chart.pendingTimerTasksChart.detailLines.maximum": "Maximum",
-          "jvmInstance.finagle.chart.pendingTimerTasksChart.detailLines.minimum": "Minimum",
-          "jvmInstance.finagle.chart.pendingTimerTasksChart.detailLines.sum": "Total",
-          "jvmInstance.finagle.chart.pendingTimerTasksChart.title": "Pending Timer Tasks",
-          "jvmInstance.finagle.chart.timerDeviationChart.detailLines.average": "Average",
-          "jvmInstance.finagle.chart.timerDeviationChart.detailLines.count": "Count",
-          "jvmInstance.finagle.chart.timerDeviationChart.detailLines.maximum": "Maximum",
-          "jvmInstance.finagle.chart.timerDeviationChart.detailLines.minimum": "Minimum",
-          "jvmInstance.finagle.chart.timerDeviationChart.detailLines.sum": "Total",
-          "jvmInstance.finagle.chart.timerDeviationChart.title": "Timer Deviation",
-          "jvmInstance.finagle.summaryCard.lines.activeTasks": "Active Tasks",
-          "jvmInstance.finagle.summaryCard.lines.pendingTasks": "Pend. Tasks",
-          "jvmInstance.finagle.summaryCard.name": "Finagle",
-          "jvmInstance.http.chart.connections.timeseries.httpConnectionsLabel": "# of active HTTP connections",
-          "jvmInstance.http.chart.connections.timeseries.httpsConnectionsLabel": "# of active HTTPS connections",
-          "jvmInstance.http.chart.connections.title": "Connections",
-          "jvmInstance.http.chart.dataTransferRates.timeseries.httpReceivedLabel": "HTTP Received",
-          "jvmInstance.http.chart.dataTransferRates.timeseries.httpSentLabel": "HTTP Sent",
-          "jvmInstance.http.chart.dataTransferRates.timeseries.httpsReceivedLabel": "HTTPS Received",
-          "jvmInstance.http.chart.dataTransferRates.timeseries.httpsSentLabel": "HTTPS Sent",
-          "jvmInstance.http.chart.dataTransferRates.title": "Data Transfer Rates",
-          "jvmInstance.http.chart.requests.headers.requests": "Requests",
-          "jvmInstance.http.chart.requests.headers.successes": "Successes",
-          "jvmInstance.http.chart.requests.rowHeaders.http": "HTTP",
-          "jvmInstance.http.chart.requests.rowHeaders.https": "HTTPS",
-          "jvmInstance.http.chart.requests.title": "Requests",
-          "jvmInstance.http.chart.responseStatusCodes.detailLines.rc200": "200",
-          "jvmInstance.http.chart.responseStatusCodes.detailLines.rc2XX": "2XX",
-          "jvmInstance.http.chart.responseStatusCodes.detailLines.rc400": "400",
-          "jvmInstance.http.chart.responseStatusCodes.detailLines.rc499": "499",
-          "jvmInstance.http.chart.responseStatusCodes.detailLines.rc4XX": "4XX",
-          "jvmInstance.http.chart.responseStatusCodes.detailLines.rc500": "500",
-          "jvmInstance.http.chart.responseStatusCodes.detailLines.rc5XX": "5XX",
-          "jvmInstance.http.chart.responseStatusCodes.title": "Response Status Codes",
-          "jvmInstance.http.summaryCard.lines.httpReceived": "Received",
-          "jvmInstance.http.summaryCard.lines.httpSent": "Sent",
-          "jvmInstance.http.summaryCard.name": "HTTP",
-          "jvmInstance.jvm.chart.classesChart.detailLines.totalLoadedClassesLabel": "Total Loaded:",
-          "jvmInstance.jvm.chart.classesChart.detailLines.totalUnloadedClassesLabel": "Total Unloaded:",
-          "jvmInstance.jvm.chart.classesChart.timeseries.currentLoadedClassesLabel": "Current Loaded JVM Classes",
-          "jvmInstance.jvm.chart.classesChart.title": "Classes",
-          "jvmInstance.jvm.chart.heapChart.detailLines.maxHeap": "Max Heap:",
-          "jvmInstance.jvm.chart.heapChart.timeseries.jvmHeapCommittedLabel": "JVM Heap Committed",
-          "jvmInstance.jvm.chart.heapChart.timeseries.jvmHeapUsedLabel": "JVM Heap Used",
-          "jvmInstance.jvm.chart.heapChart.title": "Heap",
-          "jvmInstance.jvm.summaryCard.lines.memoryUsed": "Mem. Used",
-          "jvmInstance.jvm.summaryCard.name": "JVM",
-          "languageSelector.languages": "Languages",
-          "pollingSettings.button.pause": "Pause Polling",
-          "pollingSettings.button.resume": "Resume Polling",
-          "pollingSettings.pollingIntervals": "Polling Interval(s)",
-          "routesGrid.error": "No Routes Found",
-          "routesGrid.errorPercent": "Error %",
-          "routesGrid.latency50": "Latency 50%",
-          "routesGrid.latency99": "Latency 99%",
-          "routesGrid.requests": "Requests",
-          "routesGrid.route": "Route",
-          "routesGrid.searchPlaceholder": "Search Routes",
-          "serviceHeaderContent.instances": "Instances",
-          "serviceView.error": "No Instances Found",
-          "serviceView.name": "Name",
-          "serviceView.searchPlaceholder": "Search Instances",
-          "serviceView.uptime": "Uptime",
-          "settingsGrid.cacheSize": "Cache Size",
-          "settingsGrid.clearCache": "Clear Cache",
-          "settingsGrid.fabricPolling": "Fabric Polling",
-          "settingsGrid.instancePolling": "Instance Polling",
-          "settingsGrid.metricsCache": "Metrics Cache",
-          "settingsGrid.modal.question": "Are you sure that you want to clear the cached metrics data?",
-          "settingsGrid.modal.secondary": "This action cannot be undone.",
-          "settingsGrid.polling": "Polling",
-          "settingsGrid.tooltip": "Select an instance to turn on polling",
-          "summary.errorRate": "Error Rate",
-          "summary.hostCPUCores": "Host CPU Cores",
-          "summary.hostCPUUsage": "Host CPU Utilized",
-          "summary.hostCPUUsageDetail": "{count, plural, one {# Core on Host} other {#  Cores on Host}}",
-          "summary.memoryUsage": "Memory Utilized",
-          "summary.memoryUsageDetail": "{hostMemoryAvail} Free on Host",
-          "summary.requestsPerSecond": "Requests Per Second",
-          "summary.responseTime": "Avg. Response Time",
-          "summary.statistics": "Statistics",
-          "summary.uptime": "Uptime",
-          "summary.vitals": "Vitals",
-          "table.errorPercent": "Error %",
-          "table.function": "Function",
-          "table.instance": "Instance",
-          "table.latency": "Latency",
-          "table.requests": "Requests",
-          "table.requestsSec": "Requests/sec",
-          "table.route": "Route",
-          "table.uptime": "Uptime",
-          "tableColLatencyHeader.latency": "Latency",
-          "tableColLatencyHeader.latency50": "50%",
-          "tableColLatencyHeader.latency99": "99%",
-          "tableColLatencyHeader.tooltip": "Latency 50% refers to the average latency of the 50% percentile, while Latency 99% is the average latency for the slowest 1% of responses, also known as tail latency.",
-          "tableLineItem.requests": "Requests over Time for {item}",
-          "tableToolbar.cards": "Cards",
-          "tableToolbar.group": "Group",
-          "tableToolbar.list": "List",
-          "tableToolbar.sort": "Sort",
-          "threadsGrid.errorFetchFail": "Failed to Fetch Threads",
-          "threadsGrid.errorNotFound": "No Threads Found",
-          "threadsGrid.id": "ID",
-          "threadsGrid.name": "Name",
-          "threadsGrid.none": "None",
-          "threadsGrid.searchPlaceholder": "Search Threads",
-          "threadsGrid.state": "State",
-          "threadsTableHeader.daemon": "Daemon",
-          "threadsTableHeader.id": "ID",
-          "threadsTableHeader.name": "Name",
-          "threadsTableHeader.priority": "Priority",
-          "threadsTableHeader.state": "State",
-        }
-      }
-      onError={[Function]}
-      onWarn={[Function]}
-      textComponent={Symbol(react.fragment)}
+    <header
+      class="c1"
     >
-      <Connect(injectIntl(SettingsGrid))>
-        <injectIntl(SettingsGrid)
-          dispatch={[Function]}
-          fabricPollingInterval={10000}
-          fabricServer="http://localhost:1337"
-          instanceMetricsPollingInterval={10000}
-          isPollingFabric={true}
-          isPollingInstanceMetrics={false}
-          metricsCacheSize="67.48 KB"
-          selectedInstanceID="2smao7xwboy0000000000"
+      <span
+        class="c2"
+      >
+        <svg
+          aria-labelledby="ariaLabelledby"
+          class="c3"
+          focusable="false"
+          version="1.1"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
         >
-          <SettingsGrid
-            dispatch={[Function]}
-            fabricPollingInterval={10000}
-            fabricServer="http://localhost:1337"
-            instanceMetricsPollingInterval={10000}
-            intl={
-              {
-                "$t": [Function],
-                "defaultFormats": {},
-                "defaultLocale": "en",
-                "defaultRichTextElements": undefined,
-                "fallbackOnEmptyString": true,
-                "formatDate": [Function],
-                "formatDateTimeRange": [Function],
-                "formatDateToParts": [Function],
-                "formatDisplayName": [Function],
-                "formatList": [Function],
-                "formatListToParts": [Function],
-                "formatMessage": [Function],
-                "formatNumber": [Function],
-                "formatNumberToParts": [Function],
-                "formatPlural": [Function],
-                "formatRelativeTime": [Function],
-                "formatTime": [Function],
-                "formatTimeToParts": [Function],
-                "formats": {},
-                "formatters": {
-                  "getDateTimeFormat": [Function],
-                  "getDisplayNames": [Function],
-                  "getListFormat": [Function],
-                  "getMessageFormat": [Function],
-                  "getNumberFormat": [Function],
-                  "getPluralRules": [Function],
-                  "getRelativeTimeFormat": [Function],
-                },
-                "locale": "en-US",
-                "messages": {
-                  "GMLineChart.noChartableData": "No Chartable Data",
-                  "GMLineChart.noMetricsFound": "Could not find the following metrics:",
-                  "GMLineChart.screenReaderGraphDescription.noData": "The average for currently displayed data is equal to 0.",
-                  "GMLineChart.screenReaderGraphDescription.withData": "A tabular representation of the {title} chart data: median {median} average {average} mode {mode} maximum {max} minimum {min} number of observations {dataPoints} complete data time series follows {timeSeries}",
-                  "GMServiceTableLineItem.tooltip": "This microservice instance does not have metrics to display.",
-                  "explorer.selectMetric": "Select a metric to display",
-                  "fabric.capability": "Capability",
-                  "fabric.error": "No Services Found",
-                  "fabric.name": "Name",
-                  "fabric.none": "None",
-                  "fabric.owner": "Owner",
-                  "fabric.searchPlaceholder": "Search Services",
-                  "fabric.status": "Status",
-                  "fabricHeaderContent.allServices": "All Services",
-                  "fabricHeaderContent.down": "Down",
-                  "fabricHeaderContent.services": "Services",
-                  "fabricHeaderContent.stable": "Stable",
-                  "fabricHeaderContent.summary": "Summary",
-                  "fabricHeaderContent.warning": "Warning",
-                  "fabricMicroservices.disableFetchError": "Automatically disabling the fetching of Fabric microservices after three attempts.",
-                  "fabricMicroservices.fetchError": "Fetching Fabric Microservices failed",
-                  "fabricRouter.noInstance": "{instanceID} is not a known instance of {serviceName} {serviceVersion}",
-                  "fabricRouter.noMetrics": "{serviceName} {serviceVersion} does not have metrics to display",
-                  "fabricRouter.noService": "{serviceSlug} is not a known microservice",
-                  "fabricRouter.notAuthorized": "You are not authorized to view {serviceName} {serviceVersion}",
-                  "footer.copyright": "Copyright © 2018 Decipher Technology Studios. All rights reserved.{br}Copyright © 2018 Grey Matter, a Decipher Technology Studios product. All rights reserved.",
-                  "functionsGrid.error": "No Functions Found",
-                  "functionsGrid.errorPercent": "Error %",
-                  "functionsGrid.function": "Function",
-                  "functionsGrid.latency50": "Latency 50%",
-                  "functionsGrid.latency99": "Latency 99%",
-                  "functionsGrid.requests": "Requests",
-                  "functionsGrid.searchPlaceholder": "Search Functions",
-                  "goHeaderContent.explorer": "Explorer",
-                  "goHeaderContent.functions": "Functions",
-                  "goHeaderContent.requests": "Requests",
-                  "goHeaderContent.routes": "Routes",
-                  "goHeaderContent.summary": "Summary",
-                  "goHeaderContent.uptime": "Uptime",
-                  "goInstance.go.chart.goroutines.timeseries.goroutinesChartLabel": "# of allocated goroutines",
-                  "goInstance.go.chart.goroutines.title": "Goroutines",
-                  "goInstance.go.chart.heapChart.detailLines.garbageCollectionRuns": "Garbage Collection Runs:",
-                  "goInstance.go.chart.heapChart.detailLines.totalGarbageCollectionPause": "Total GC Pause:",
-                  "goInstance.go.chart.heapChart.timeseries.heapSizeChartLabel": "Go Heap Size",
-                  "goInstance.go.chart.heapChart.timeseries.heapUsedChartLabel": "Go Heap Used",
-                  "goInstance.go.chart.heapChart.timeseries.processMemoryUsedChartLabel": "Process Memory Used",
-                  "goInstance.go.chart.heapChart.title": "Heap",
-                  "goInstance.go.summaryCard.lines.heapUsed": "Heap Used",
-                  "goInstance.go.summaryCard.name": "Go",
-                  "inspector.hideStaticMetric": "Hide all static metrics",
-                  "inspector.hideZeroMetric": "Hide all metrics with only zero values",
-                  "inspector.searchAriaLabel": "Search All Metrics",
-                  "inspector.searchPlaceholder": "Search",
-                  "instanceMetricsUtils.disableFetchError": "Automatically disabling the fetching of metrics after three attempts. You can turn polling back on in Settings.",
-                  "instanceMetricsUtils.fetchError": "Fetching Metrics failed",
-                  "jvmHeaderContent.explorer": "Explorer",
-                  "jvmHeaderContent.requests": "Requests",
-                  "jvmHeaderContent.routes": "Routes",
-                  "jvmHeaderContent.summary": "Summary",
-                  "jvmHeaderContent.threads": "Threads",
-                  "jvmHeaderContent.uptime": "Uptime",
-                  "jvmInstance.finagle.chart.clientRegistryChart.detailLines.initialResolution": "Initial Resolution",
-                  "jvmInstance.finagle.chart.clientRegistryChart.detailLines.size": "Size",
-                  "jvmInstance.finagle.chart.clientRegistryChart.title": "Client Registry",
-                  "jvmInstance.finagle.chart.futurePoolTasksChart.detailLines.activeTasks": "Active Tasks",
-                  "jvmInstance.finagle.chart.futurePoolTasksChart.detailLines.completedTasks": "Completed Tasks",
-                  "jvmInstance.finagle.chart.futurePoolTasksChart.detailLines.poolSize": "Pool Size",
-                  "jvmInstance.finagle.chart.futurePoolTasksChart.title": "Future Pool",
-                  "jvmInstance.finagle.chart.pendingTimerTasksChart.detailLines.average": "Average",
-                  "jvmInstance.finagle.chart.pendingTimerTasksChart.detailLines.count": "Count",
-                  "jvmInstance.finagle.chart.pendingTimerTasksChart.detailLines.maximum": "Maximum",
-                  "jvmInstance.finagle.chart.pendingTimerTasksChart.detailLines.minimum": "Minimum",
-                  "jvmInstance.finagle.chart.pendingTimerTasksChart.detailLines.sum": "Total",
-                  "jvmInstance.finagle.chart.pendingTimerTasksChart.title": "Pending Timer Tasks",
-                  "jvmInstance.finagle.chart.timerDeviationChart.detailLines.average": "Average",
-                  "jvmInstance.finagle.chart.timerDeviationChart.detailLines.count": "Count",
-                  "jvmInstance.finagle.chart.timerDeviationChart.detailLines.maximum": "Maximum",
-                  "jvmInstance.finagle.chart.timerDeviationChart.detailLines.minimum": "Minimum",
-                  "jvmInstance.finagle.chart.timerDeviationChart.detailLines.sum": "Total",
-                  "jvmInstance.finagle.chart.timerDeviationChart.title": "Timer Deviation",
-                  "jvmInstance.finagle.summaryCard.lines.activeTasks": "Active Tasks",
-                  "jvmInstance.finagle.summaryCard.lines.pendingTasks": "Pend. Tasks",
-                  "jvmInstance.finagle.summaryCard.name": "Finagle",
-                  "jvmInstance.http.chart.connections.timeseries.httpConnectionsLabel": "# of active HTTP connections",
-                  "jvmInstance.http.chart.connections.timeseries.httpsConnectionsLabel": "# of active HTTPS connections",
-                  "jvmInstance.http.chart.connections.title": "Connections",
-                  "jvmInstance.http.chart.dataTransferRates.timeseries.httpReceivedLabel": "HTTP Received",
-                  "jvmInstance.http.chart.dataTransferRates.timeseries.httpSentLabel": "HTTP Sent",
-                  "jvmInstance.http.chart.dataTransferRates.timeseries.httpsReceivedLabel": "HTTPS Received",
-                  "jvmInstance.http.chart.dataTransferRates.timeseries.httpsSentLabel": "HTTPS Sent",
-                  "jvmInstance.http.chart.dataTransferRates.title": "Data Transfer Rates",
-                  "jvmInstance.http.chart.requests.headers.requests": "Requests",
-                  "jvmInstance.http.chart.requests.headers.successes": "Successes",
-                  "jvmInstance.http.chart.requests.rowHeaders.http": "HTTP",
-                  "jvmInstance.http.chart.requests.rowHeaders.https": "HTTPS",
-                  "jvmInstance.http.chart.requests.title": "Requests",
-                  "jvmInstance.http.chart.responseStatusCodes.detailLines.rc200": "200",
-                  "jvmInstance.http.chart.responseStatusCodes.detailLines.rc2XX": "2XX",
-                  "jvmInstance.http.chart.responseStatusCodes.detailLines.rc400": "400",
-                  "jvmInstance.http.chart.responseStatusCodes.detailLines.rc499": "499",
-                  "jvmInstance.http.chart.responseStatusCodes.detailLines.rc4XX": "4XX",
-                  "jvmInstance.http.chart.responseStatusCodes.detailLines.rc500": "500",
-                  "jvmInstance.http.chart.responseStatusCodes.detailLines.rc5XX": "5XX",
-                  "jvmInstance.http.chart.responseStatusCodes.title": "Response Status Codes",
-                  "jvmInstance.http.summaryCard.lines.httpReceived": "Received",
-                  "jvmInstance.http.summaryCard.lines.httpSent": "Sent",
-                  "jvmInstance.http.summaryCard.name": "HTTP",
-                  "jvmInstance.jvm.chart.classesChart.detailLines.totalLoadedClassesLabel": "Total Loaded:",
-                  "jvmInstance.jvm.chart.classesChart.detailLines.totalUnloadedClassesLabel": "Total Unloaded:",
-                  "jvmInstance.jvm.chart.classesChart.timeseries.currentLoadedClassesLabel": "Current Loaded JVM Classes",
-                  "jvmInstance.jvm.chart.classesChart.title": "Classes",
-                  "jvmInstance.jvm.chart.heapChart.detailLines.maxHeap": "Max Heap:",
-                  "jvmInstance.jvm.chart.heapChart.timeseries.jvmHeapCommittedLabel": "JVM Heap Committed",
-                  "jvmInstance.jvm.chart.heapChart.timeseries.jvmHeapUsedLabel": "JVM Heap Used",
-                  "jvmInstance.jvm.chart.heapChart.title": "Heap",
-                  "jvmInstance.jvm.summaryCard.lines.memoryUsed": "Mem. Used",
-                  "jvmInstance.jvm.summaryCard.name": "JVM",
-                  "languageSelector.languages": "Languages",
-                  "pollingSettings.button.pause": "Pause Polling",
-                  "pollingSettings.button.resume": "Resume Polling",
-                  "pollingSettings.pollingIntervals": "Polling Interval(s)",
-                  "routesGrid.error": "No Routes Found",
-                  "routesGrid.errorPercent": "Error %",
-                  "routesGrid.latency50": "Latency 50%",
-                  "routesGrid.latency99": "Latency 99%",
-                  "routesGrid.requests": "Requests",
-                  "routesGrid.route": "Route",
-                  "routesGrid.searchPlaceholder": "Search Routes",
-                  "serviceHeaderContent.instances": "Instances",
-                  "serviceView.error": "No Instances Found",
-                  "serviceView.name": "Name",
-                  "serviceView.searchPlaceholder": "Search Instances",
-                  "serviceView.uptime": "Uptime",
-                  "settingsGrid.cacheSize": "Cache Size",
-                  "settingsGrid.clearCache": "Clear Cache",
-                  "settingsGrid.fabricPolling": "Fabric Polling",
-                  "settingsGrid.instancePolling": "Instance Polling",
-                  "settingsGrid.metricsCache": "Metrics Cache",
-                  "settingsGrid.modal.question": "Are you sure that you want to clear the cached metrics data?",
-                  "settingsGrid.modal.secondary": "This action cannot be undone.",
-                  "settingsGrid.polling": "Polling",
-                  "settingsGrid.tooltip": "Select an instance to turn on polling",
-                  "summary.errorRate": "Error Rate",
-                  "summary.hostCPUCores": "Host CPU Cores",
-                  "summary.hostCPUUsage": "Host CPU Utilized",
-                  "summary.hostCPUUsageDetail": "{count, plural, one {# Core on Host} other {#  Cores on Host}}",
-                  "summary.memoryUsage": "Memory Utilized",
-                  "summary.memoryUsageDetail": "{hostMemoryAvail} Free on Host",
-                  "summary.requestsPerSecond": "Requests Per Second",
-                  "summary.responseTime": "Avg. Response Time",
-                  "summary.statistics": "Statistics",
-                  "summary.uptime": "Uptime",
-                  "summary.vitals": "Vitals",
-                  "table.errorPercent": "Error %",
-                  "table.function": "Function",
-                  "table.instance": "Instance",
-                  "table.latency": "Latency",
-                  "table.requests": "Requests",
-                  "table.requestsSec": "Requests/sec",
-                  "table.route": "Route",
-                  "table.uptime": "Uptime",
-                  "tableColLatencyHeader.latency": "Latency",
-                  "tableColLatencyHeader.latency50": "50%",
-                  "tableColLatencyHeader.latency99": "99%",
-                  "tableColLatencyHeader.tooltip": "Latency 50% refers to the average latency of the 50% percentile, while Latency 99% is the average latency for the slowest 1% of responses, also known as tail latency.",
-                  "tableLineItem.requests": "Requests over Time for {item}",
-                  "tableToolbar.cards": "Cards",
-                  "tableToolbar.group": "Group",
-                  "tableToolbar.list": "List",
-                  "tableToolbar.sort": "Sort",
-                  "threadsGrid.errorFetchFail": "Failed to Fetch Threads",
-                  "threadsGrid.errorNotFound": "No Threads Found",
-                  "threadsGrid.id": "ID",
-                  "threadsGrid.name": "Name",
-                  "threadsGrid.none": "None",
-                  "threadsGrid.searchPlaceholder": "Search Threads",
-                  "threadsGrid.state": "State",
-                  "threadsTableHeader.daemon": "Daemon",
-                  "threadsTableHeader.id": "ID",
-                  "threadsTableHeader.name": "Name",
-                  "threadsTableHeader.priority": "Priority",
-                  "threadsTableHeader.state": "State",
-                },
-                "onError": [Function],
-                "onWarn": [Function],
-                "textComponent": Symbol(react.fragment),
-                "timeZone": undefined,
-                "wrapRichTextChunksInFragment": undefined,
-              }
-            }
-            isPollingFabric={true}
-            isPollingInstanceMetrics={false}
-            metricsCacheSize="67.48 KB"
-            selectedInstanceID="2smao7xwboy0000000000"
+          <g
+            class="c4"
+            fill="currentColor"
+            title=""
           >
-            <ConfirmationModal
-              isOpen={false}
-              onCancel={[Function]}
-              onConfirm={[Function]}
-              question="Are you sure that you want to clear the cached metrics data?"
-              secondary="This action cannot be undone."
+            <title />
+            <g
+              class="glyph"
+              fill="currentColor"
+              transform="translate(0 0) scale(1)"
             >
-              <Styled(Modal)
-                aria={
-                  {
-                    "describedby": "secondaryText",
-                    "labelledby": "question",
-                  }
-                }
-                isOpen={false}
-                overlayClassName="modalOverlay"
-                shouldCloseOnOverlayClick={true}
+              <path
+                d="M9.08563005,15.9573707 C9.69514275,15.552113 10.2056702,15.0097978 10.573215,14.3744224 L13.426785,14.3744224 C13.7943298,15.0097978 14.3048573,15.552113 14.9143699,15.9573707 L9.08563005,15.9573707 Z M6.459681,15.9573707 C4.27408551,15.9573707 2.50231029,14.1855955 2.50231029,12 C2.50231029,9.81440451 4.27408551,8.04262929 6.459681,8.04262929 C8.6452765,8.04262929 10.4170517,9.81440451 10.4170517,12 C10.4170517,14.1855955 8.6452765,15.9573707 6.459681,15.9573707 Z M6.459681,14.3744224 C7.7710383,14.3744224 8.83410343,13.3113573 8.83410343,12 C8.83410343,10.6886427 7.7710383,9.62557757 6.459681,9.62557757 C5.14832371,9.62557757 4.08525857,10.6886427 4.08525857,12 C4.08525857,13.3113573 5.14832371,14.3744224 6.459681,14.3744224 Z M17.540319,15.9573707 C15.3547235,15.9573707 13.5829483,14.1855955 13.5829483,12 C13.5829483,9.81440451 15.3547235,8.04262929 17.540319,8.04262929 C19.7259145,8.04262929 21.4976897,9.81440451 21.4976897,12 C21.4976897,14.1855955 19.7259145,15.9573707 17.540319,15.9573707 Z M17.540319,14.3744224 C18.8516763,14.3744224 19.9147414,13.3113573 19.9147414,12 C19.9147414,10.6886427 18.8516763,9.62557757 17.540319,9.62557757 C16.2289617,9.62557757 15.1658966,10.6886427 15.1658966,12 C15.1658966,13.3113573 16.2289617,14.3744224 17.540319,14.3744224 Z"
+                id="shape"
+              />
+            </g>
+          </g>
+        </svg>
+      </span>
+      <h3
+        class="c5"
+      >
+        Metrics Cache
+      </h3>
+    </header>
+    <div
+      class="c6"
+    >
+      <div
+        class="c7"
+      >
+        <div
+          class="c8 c9"
+        >
+          <div
+            class="c10"
+          >
+            <h2
+              class="c11"
+            >
+              Cache Size
+            </h2>
+            <span
+              class="c12"
+            >
+              67.48 KB
+            </span>
+            <button
+              class="c13"
+              tabindex="0"
+              title="Clear Cache"
+            >
+              <svg
+                aria-labelledby="ariaLabelledby"
+                class="c3"
+                focusable="false"
+                version="1.1"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
               >
-                <Modal
-                  aria={
-                    {
-                      "describedby": "secondaryText",
-                      "labelledby": "question",
-                    }
-                  }
-                  ariaHideApp={true}
-                  bodyOpenClassName="ReactModal__Body--open"
-                  className="c0 c1"
-                  closeTimeoutMS={0}
-                  contentElement={[Function]}
-                  isOpen={false}
-                  overlayClassName="modalOverlay"
-                  overlayElement={[Function]}
-                  parentSelector={[Function]}
-                  portalClassName="ReactModalPortal"
-                  preventScroll={false}
-                  role="dialog"
-                  shouldCloseOnEsc={true}
-                  shouldCloseOnOverlayClick={true}
-                  shouldFocusAfterRender={true}
-                  shouldReturnFocusAfterClose={true}
+                <g
+                  class="c4"
+                  fill="currentColor"
+                  title=""
                 >
-                  <Portal
-                    containerInfo={
-                      <div
-                        class="ReactModalPortal"
-                      />
-                    }
+                  <title />
+                  <g
+                    class="glyph"
+                    fill="currentColor"
+                    transform="translate(0 0) scale(1)"
                   >
-                    <ModalPortal
-                      aria={
-                        {
-                          "describedby": "secondaryText",
-                          "labelledby": "question",
-                        }
-                      }
-                      ariaHideApp={true}
-                      bodyOpenClassName="ReactModal__Body--open"
-                      className="c0 c1"
-                      closeTimeoutMS={0}
-                      contentElement={[Function]}
-                      defaultStyles={
-                        {
-                          "content": {
-                            "WebkitOverflowScrolling": "touch",
-                            "background": "#fff",
-                            "border": "1px solid #ccc",
-                            "borderRadius": "4px",
-                            "bottom": "40px",
-                            "left": "40px",
-                            "outline": "none",
-                            "overflow": "auto",
-                            "padding": "20px",
-                            "position": "absolute",
-                            "right": "40px",
-                            "top": "40px",
-                          },
-                          "overlay": {
-                            "backgroundColor": "rgba(255, 255, 255, 0.75)",
-                            "bottom": 0,
-                            "left": 0,
-                            "position": "fixed",
-                            "right": 0,
-                            "top": 0,
-                          },
-                        }
-                      }
-                      isOpen={false}
-                      overlayClassName="modalOverlay"
-                      overlayElement={[Function]}
-                      parentSelector={[Function]}
-                      portalClassName="ReactModalPortal"
-                      preventScroll={false}
-                      role="dialog"
-                      shouldCloseOnEsc={true}
-                      shouldCloseOnOverlayClick={true}
-                      shouldFocusAfterRender={true}
-                      shouldReturnFocusAfterClose={true}
-                      style={
-                        {
-                          "content": {},
-                          "overlay": {},
-                        }
-                      }
+                    <path
+                      d="M12,10.9528132 L6.76406623,5.71687948 C6.47489359,5.42770684 6.00605212,5.42770684 5.71687948,5.71687948 C5.42770684,6.00605212 5.42770684,6.47489359 5.71687948,6.76406623 L10.9528132,12 L5.71687948,17.2359338 C5.42770684,17.5251064 5.42770684,17.9939479 5.71687948,18.2831205 C6.00605212,18.5722932 6.47489359,18.5722932 6.76406623,18.2831205 L12,13.0471868 L17.2359338,18.2831205 C17.5251064,18.5722932 17.9939479,18.5722932 18.2831205,18.2831205 C18.5722932,17.9939479 18.5722932,17.5251064 18.2831205,17.2359338 L13.0471868,12 L18.2831205,6.76406623 C18.5722932,6.47489359 18.5722932,6.00605212 18.2831205,5.71687948 C17.9939479,5.42770684 17.5251064,5.42770684 17.2359338,5.71687948 L12,10.9528132 Z"
+                      id="Combined-Shape"
                     />
-                  </Portal>
-                </Modal>
-              </Styled(Modal)>
-            </ConfirmationModal>
-            <ErrorBoundary>
-              <injectIntl(PollingSettings)
-                changePollingInterval={[Function]}
-                glyph="Fabric"
-                interval={10000}
-                isPolling={true}
-                startPolling={[Function]}
-                stopPolling={[Function]}
-                title="Fabric Polling"
-              >
-                <PollingSettings
-                  changePollingInterval={[Function]}
-                  glyph="Fabric"
-                  interval={10000}
-                  intl={
-                    {
-                      "$t": [Function],
-                      "defaultFormats": {},
-                      "defaultLocale": "en",
-                      "defaultRichTextElements": undefined,
-                      "fallbackOnEmptyString": true,
-                      "formatDate": [Function],
-                      "formatDateTimeRange": [Function],
-                      "formatDateToParts": [Function],
-                      "formatDisplayName": [Function],
-                      "formatList": [Function],
-                      "formatListToParts": [Function],
-                      "formatMessage": [Function],
-                      "formatNumber": [Function],
-                      "formatNumberToParts": [Function],
-                      "formatPlural": [Function],
-                      "formatRelativeTime": [Function],
-                      "formatTime": [Function],
-                      "formatTimeToParts": [Function],
-                      "formats": {},
-                      "formatters": {
-                        "getDateTimeFormat": [Function],
-                        "getDisplayNames": [Function],
-                        "getListFormat": [Function],
-                        "getMessageFormat": [Function],
-                        "getNumberFormat": [Function],
-                        "getPluralRules": [Function],
-                        "getRelativeTimeFormat": [Function],
-                      },
-                      "locale": "en-US",
-                      "messages": {
-                        "GMLineChart.noChartableData": "No Chartable Data",
-                        "GMLineChart.noMetricsFound": "Could not find the following metrics:",
-                        "GMLineChart.screenReaderGraphDescription.noData": "The average for currently displayed data is equal to 0.",
-                        "GMLineChart.screenReaderGraphDescription.withData": "A tabular representation of the {title} chart data: median {median} average {average} mode {mode} maximum {max} minimum {min} number of observations {dataPoints} complete data time series follows {timeSeries}",
-                        "GMServiceTableLineItem.tooltip": "This microservice instance does not have metrics to display.",
-                        "explorer.selectMetric": "Select a metric to display",
-                        "fabric.capability": "Capability",
-                        "fabric.error": "No Services Found",
-                        "fabric.name": "Name",
-                        "fabric.none": "None",
-                        "fabric.owner": "Owner",
-                        "fabric.searchPlaceholder": "Search Services",
-                        "fabric.status": "Status",
-                        "fabricHeaderContent.allServices": "All Services",
-                        "fabricHeaderContent.down": "Down",
-                        "fabricHeaderContent.services": "Services",
-                        "fabricHeaderContent.stable": "Stable",
-                        "fabricHeaderContent.summary": "Summary",
-                        "fabricHeaderContent.warning": "Warning",
-                        "fabricMicroservices.disableFetchError": "Automatically disabling the fetching of Fabric microservices after three attempts.",
-                        "fabricMicroservices.fetchError": "Fetching Fabric Microservices failed",
-                        "fabricRouter.noInstance": "{instanceID} is not a known instance of {serviceName} {serviceVersion}",
-                        "fabricRouter.noMetrics": "{serviceName} {serviceVersion} does not have metrics to display",
-                        "fabricRouter.noService": "{serviceSlug} is not a known microservice",
-                        "fabricRouter.notAuthorized": "You are not authorized to view {serviceName} {serviceVersion}",
-                        "footer.copyright": "Copyright © 2018 Decipher Technology Studios. All rights reserved.{br}Copyright © 2018 Grey Matter, a Decipher Technology Studios product. All rights reserved.",
-                        "functionsGrid.error": "No Functions Found",
-                        "functionsGrid.errorPercent": "Error %",
-                        "functionsGrid.function": "Function",
-                        "functionsGrid.latency50": "Latency 50%",
-                        "functionsGrid.latency99": "Latency 99%",
-                        "functionsGrid.requests": "Requests",
-                        "functionsGrid.searchPlaceholder": "Search Functions",
-                        "goHeaderContent.explorer": "Explorer",
-                        "goHeaderContent.functions": "Functions",
-                        "goHeaderContent.requests": "Requests",
-                        "goHeaderContent.routes": "Routes",
-                        "goHeaderContent.summary": "Summary",
-                        "goHeaderContent.uptime": "Uptime",
-                        "goInstance.go.chart.goroutines.timeseries.goroutinesChartLabel": "# of allocated goroutines",
-                        "goInstance.go.chart.goroutines.title": "Goroutines",
-                        "goInstance.go.chart.heapChart.detailLines.garbageCollectionRuns": "Garbage Collection Runs:",
-                        "goInstance.go.chart.heapChart.detailLines.totalGarbageCollectionPause": "Total GC Pause:",
-                        "goInstance.go.chart.heapChart.timeseries.heapSizeChartLabel": "Go Heap Size",
-                        "goInstance.go.chart.heapChart.timeseries.heapUsedChartLabel": "Go Heap Used",
-                        "goInstance.go.chart.heapChart.timeseries.processMemoryUsedChartLabel": "Process Memory Used",
-                        "goInstance.go.chart.heapChart.title": "Heap",
-                        "goInstance.go.summaryCard.lines.heapUsed": "Heap Used",
-                        "goInstance.go.summaryCard.name": "Go",
-                        "inspector.hideStaticMetric": "Hide all static metrics",
-                        "inspector.hideZeroMetric": "Hide all metrics with only zero values",
-                        "inspector.searchAriaLabel": "Search All Metrics",
-                        "inspector.searchPlaceholder": "Search",
-                        "instanceMetricsUtils.disableFetchError": "Automatically disabling the fetching of metrics after three attempts. You can turn polling back on in Settings.",
-                        "instanceMetricsUtils.fetchError": "Fetching Metrics failed",
-                        "jvmHeaderContent.explorer": "Explorer",
-                        "jvmHeaderContent.requests": "Requests",
-                        "jvmHeaderContent.routes": "Routes",
-                        "jvmHeaderContent.summary": "Summary",
-                        "jvmHeaderContent.threads": "Threads",
-                        "jvmHeaderContent.uptime": "Uptime",
-                        "jvmInstance.finagle.chart.clientRegistryChart.detailLines.initialResolution": "Initial Resolution",
-                        "jvmInstance.finagle.chart.clientRegistryChart.detailLines.size": "Size",
-                        "jvmInstance.finagle.chart.clientRegistryChart.title": "Client Registry",
-                        "jvmInstance.finagle.chart.futurePoolTasksChart.detailLines.activeTasks": "Active Tasks",
-                        "jvmInstance.finagle.chart.futurePoolTasksChart.detailLines.completedTasks": "Completed Tasks",
-                        "jvmInstance.finagle.chart.futurePoolTasksChart.detailLines.poolSize": "Pool Size",
-                        "jvmInstance.finagle.chart.futurePoolTasksChart.title": "Future Pool",
-                        "jvmInstance.finagle.chart.pendingTimerTasksChart.detailLines.average": "Average",
-                        "jvmInstance.finagle.chart.pendingTimerTasksChart.detailLines.count": "Count",
-                        "jvmInstance.finagle.chart.pendingTimerTasksChart.detailLines.maximum": "Maximum",
-                        "jvmInstance.finagle.chart.pendingTimerTasksChart.detailLines.minimum": "Minimum",
-                        "jvmInstance.finagle.chart.pendingTimerTasksChart.detailLines.sum": "Total",
-                        "jvmInstance.finagle.chart.pendingTimerTasksChart.title": "Pending Timer Tasks",
-                        "jvmInstance.finagle.chart.timerDeviationChart.detailLines.average": "Average",
-                        "jvmInstance.finagle.chart.timerDeviationChart.detailLines.count": "Count",
-                        "jvmInstance.finagle.chart.timerDeviationChart.detailLines.maximum": "Maximum",
-                        "jvmInstance.finagle.chart.timerDeviationChart.detailLines.minimum": "Minimum",
-                        "jvmInstance.finagle.chart.timerDeviationChart.detailLines.sum": "Total",
-                        "jvmInstance.finagle.chart.timerDeviationChart.title": "Timer Deviation",
-                        "jvmInstance.finagle.summaryCard.lines.activeTasks": "Active Tasks",
-                        "jvmInstance.finagle.summaryCard.lines.pendingTasks": "Pend. Tasks",
-                        "jvmInstance.finagle.summaryCard.name": "Finagle",
-                        "jvmInstance.http.chart.connections.timeseries.httpConnectionsLabel": "# of active HTTP connections",
-                        "jvmInstance.http.chart.connections.timeseries.httpsConnectionsLabel": "# of active HTTPS connections",
-                        "jvmInstance.http.chart.connections.title": "Connections",
-                        "jvmInstance.http.chart.dataTransferRates.timeseries.httpReceivedLabel": "HTTP Received",
-                        "jvmInstance.http.chart.dataTransferRates.timeseries.httpSentLabel": "HTTP Sent",
-                        "jvmInstance.http.chart.dataTransferRates.timeseries.httpsReceivedLabel": "HTTPS Received",
-                        "jvmInstance.http.chart.dataTransferRates.timeseries.httpsSentLabel": "HTTPS Sent",
-                        "jvmInstance.http.chart.dataTransferRates.title": "Data Transfer Rates",
-                        "jvmInstance.http.chart.requests.headers.requests": "Requests",
-                        "jvmInstance.http.chart.requests.headers.successes": "Successes",
-                        "jvmInstance.http.chart.requests.rowHeaders.http": "HTTP",
-                        "jvmInstance.http.chart.requests.rowHeaders.https": "HTTPS",
-                        "jvmInstance.http.chart.requests.title": "Requests",
-                        "jvmInstance.http.chart.responseStatusCodes.detailLines.rc200": "200",
-                        "jvmInstance.http.chart.responseStatusCodes.detailLines.rc2XX": "2XX",
-                        "jvmInstance.http.chart.responseStatusCodes.detailLines.rc400": "400",
-                        "jvmInstance.http.chart.responseStatusCodes.detailLines.rc499": "499",
-                        "jvmInstance.http.chart.responseStatusCodes.detailLines.rc4XX": "4XX",
-                        "jvmInstance.http.chart.responseStatusCodes.detailLines.rc500": "500",
-                        "jvmInstance.http.chart.responseStatusCodes.detailLines.rc5XX": "5XX",
-                        "jvmInstance.http.chart.responseStatusCodes.title": "Response Status Codes",
-                        "jvmInstance.http.summaryCard.lines.httpReceived": "Received",
-                        "jvmInstance.http.summaryCard.lines.httpSent": "Sent",
-                        "jvmInstance.http.summaryCard.name": "HTTP",
-                        "jvmInstance.jvm.chart.classesChart.detailLines.totalLoadedClassesLabel": "Total Loaded:",
-                        "jvmInstance.jvm.chart.classesChart.detailLines.totalUnloadedClassesLabel": "Total Unloaded:",
-                        "jvmInstance.jvm.chart.classesChart.timeseries.currentLoadedClassesLabel": "Current Loaded JVM Classes",
-                        "jvmInstance.jvm.chart.classesChart.title": "Classes",
-                        "jvmInstance.jvm.chart.heapChart.detailLines.maxHeap": "Max Heap:",
-                        "jvmInstance.jvm.chart.heapChart.timeseries.jvmHeapCommittedLabel": "JVM Heap Committed",
-                        "jvmInstance.jvm.chart.heapChart.timeseries.jvmHeapUsedLabel": "JVM Heap Used",
-                        "jvmInstance.jvm.chart.heapChart.title": "Heap",
-                        "jvmInstance.jvm.summaryCard.lines.memoryUsed": "Mem. Used",
-                        "jvmInstance.jvm.summaryCard.name": "JVM",
-                        "languageSelector.languages": "Languages",
-                        "pollingSettings.button.pause": "Pause Polling",
-                        "pollingSettings.button.resume": "Resume Polling",
-                        "pollingSettings.pollingIntervals": "Polling Interval(s)",
-                        "routesGrid.error": "No Routes Found",
-                        "routesGrid.errorPercent": "Error %",
-                        "routesGrid.latency50": "Latency 50%",
-                        "routesGrid.latency99": "Latency 99%",
-                        "routesGrid.requests": "Requests",
-                        "routesGrid.route": "Route",
-                        "routesGrid.searchPlaceholder": "Search Routes",
-                        "serviceHeaderContent.instances": "Instances",
-                        "serviceView.error": "No Instances Found",
-                        "serviceView.name": "Name",
-                        "serviceView.searchPlaceholder": "Search Instances",
-                        "serviceView.uptime": "Uptime",
-                        "settingsGrid.cacheSize": "Cache Size",
-                        "settingsGrid.clearCache": "Clear Cache",
-                        "settingsGrid.fabricPolling": "Fabric Polling",
-                        "settingsGrid.instancePolling": "Instance Polling",
-                        "settingsGrid.metricsCache": "Metrics Cache",
-                        "settingsGrid.modal.question": "Are you sure that you want to clear the cached metrics data?",
-                        "settingsGrid.modal.secondary": "This action cannot be undone.",
-                        "settingsGrid.polling": "Polling",
-                        "settingsGrid.tooltip": "Select an instance to turn on polling",
-                        "summary.errorRate": "Error Rate",
-                        "summary.hostCPUCores": "Host CPU Cores",
-                        "summary.hostCPUUsage": "Host CPU Utilized",
-                        "summary.hostCPUUsageDetail": "{count, plural, one {# Core on Host} other {#  Cores on Host}}",
-                        "summary.memoryUsage": "Memory Utilized",
-                        "summary.memoryUsageDetail": "{hostMemoryAvail} Free on Host",
-                        "summary.requestsPerSecond": "Requests Per Second",
-                        "summary.responseTime": "Avg. Response Time",
-                        "summary.statistics": "Statistics",
-                        "summary.uptime": "Uptime",
-                        "summary.vitals": "Vitals",
-                        "table.errorPercent": "Error %",
-                        "table.function": "Function",
-                        "table.instance": "Instance",
-                        "table.latency": "Latency",
-                        "table.requests": "Requests",
-                        "table.requestsSec": "Requests/sec",
-                        "table.route": "Route",
-                        "table.uptime": "Uptime",
-                        "tableColLatencyHeader.latency": "Latency",
-                        "tableColLatencyHeader.latency50": "50%",
-                        "tableColLatencyHeader.latency99": "99%",
-                        "tableColLatencyHeader.tooltip": "Latency 50% refers to the average latency of the 50% percentile, while Latency 99% is the average latency for the slowest 1% of responses, also known as tail latency.",
-                        "tableLineItem.requests": "Requests over Time for {item}",
-                        "tableToolbar.cards": "Cards",
-                        "tableToolbar.group": "Group",
-                        "tableToolbar.list": "List",
-                        "tableToolbar.sort": "Sort",
-                        "threadsGrid.errorFetchFail": "Failed to Fetch Threads",
-                        "threadsGrid.errorNotFound": "No Threads Found",
-                        "threadsGrid.id": "ID",
-                        "threadsGrid.name": "Name",
-                        "threadsGrid.none": "None",
-                        "threadsGrid.searchPlaceholder": "Search Threads",
-                        "threadsGrid.state": "State",
-                        "threadsTableHeader.daemon": "Daemon",
-                        "threadsTableHeader.id": "ID",
-                        "threadsTableHeader.name": "Name",
-                        "threadsTableHeader.priority": "Priority",
-                        "threadsTableHeader.state": "State",
-                      },
-                      "onError": [Function],
-                      "onWarn": [Function],
-                      "textComponent": Symbol(react.fragment),
-                      "timeZone": undefined,
-                      "wrapRichTextChunksInFragment": undefined,
-                    }
-                  }
-                  isPolling={true}
-                  startPolling={[Function]}
-                  stopPolling={[Function]}
-                  title="Fabric Polling"
-                >
-                  <LayoutSection
-                    flex={true}
-                    icon="Fabric"
-                    title="Fabric Polling"
-                  >
-                    <styled.section>
-                      <section
-                        className="c2"
-                      >
-                        <styled.header>
-                          <header
-                            className="c3"
-                          >
-                            <styled.span>
-                              <span
-                                className="c4"
-                              >
-                                <Icon>
-                                  <styled.svg
-                                    aria-labelledby="ariaLabelledby"
-                                    focusable="false"
-                                    glyphColor="currentColor"
-                                    iconRatio="1"
-                                  >
-                                    <svg
-                                      aria-labelledby="ariaLabelledby"
-                                      className="c5"
-                                      focusable="false"
-                                      version="1.1"
-                                      viewBox="0 0 24 24"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      xmlnsXlink="http://www.w3.org/1999/xlink"
-                                    >
-                                      <styled.g
-                                        ratio={1}
-                                        title=""
-                                      >
-                                        <g
-                                          className="c6"
-                                          fill="currentColor"
-                                          title=""
-                                        >
-                                          <title />
-                                          <Glyph
-                                            glyphColor="currentColor"
-                                            name="Fabric"
-                                            ratio={1}
-                                          >
-                                            <g
-                                              className="glyph"
-                                              fill="currentColor"
-                                              transform="translate(0 0) scale(1)"
-                                            >
-                                              <Fabric>
-                                                <path
-                                                  d="M10.4915289,10.6867475 C10.8581835,10.2659432 11.3980346,10 12,10 C13.1045695,10 14,10.8954305 14,12 C14,12.149429 13.9836124,12.2950305 13.9525363,12.4351054 L16.4807554,13.6992149 C16.8475649,13.2712029 17.3921111,13 18,13 C19.1045695,13 20,13.8954305 20,15 C20,16.1045695 19.1045695,17 18,17 C16.8954305,17 16,16.1045695 16,15 C16,14.8620114 16.0139744,14.7272866 16.0405851,14.5971638 L13.4975725,13.3256575 C13.1311622,13.7392765 12.5960287,14 12,14 C10.8954305,14 10,13.1045695 10,12 C10,11.8562885 10.0151576,11.7161172 10.0439612,11.5809976 L7.50847107,10.3132525 C7.14181648,10.7340568 6.60196542,11 6,11 C4.8954305,11 4,10.1045695 4,9 C4,7.8954305 4.8954305,7 6,7 C7.1045695,7 8,7.8954305 8,9 C8,9.14371154 7.98484245,9.28388284 7.95603883,9.41900242 L10.4915289,10.6867475 Z M10.0405851,17.5971638 L7.49757253,16.3256575 C7.13116215,16.7392765 6.59602869,17 6,17 C4.8954305,17 4,16.1045695 4,15 C4,13.8954305 4.8954305,13 6,13 C7.1045695,13 8,13.8954305 8,15 C8,15.149429 7.98361238,15.2950305 7.95253631,15.4351054 L10.4807554,16.6992149 C10.8475649,16.2712029 11.3921111,16 12,16 C13.1045695,16 14,16.8954305 14,18 C14,19.1045695 13.1045695,20 12,20 C10.8954305,20 10,19.1045695 10,18 C10,17.8620114 10.0139744,17.7272866 10.0405851,17.5971638 Z M16.0439612,8.58099758 L13.5084711,7.31325253 C13.1418165,7.73405681 12.6019654,8 12,8 C10.8954305,8 10,7.1045695 10,6 C10,4.8954305 10.8954305,4 12,4 C13.1045695,4 14,4.8954305 14,6 C14,6.14371154 13.9848424,6.28388284 13.9560388,6.41900242 L16.4915289,7.68674747 C16.8581835,7.26594319 17.3980346,7 18,7 C19.1045695,7 20,7.8954305 20,9 C20,10.1045695 19.1045695,11 18,11 C16.8954305,11 16,10.1045695 16,9 C16,8.85628846 16.0151576,8.71611716 16.0439612,8.58099758 Z"
-                                                  id="Combined-Shape"
-                                                />
-                                              </Fabric>
-                                            </g>
-                                          </Glyph>
-                                        </g>
-                                      </styled.g>
-                                    </svg>
-                                  </styled.svg>
-                                </Icon>
-                              </span>
-                            </styled.span>
-                            <styled.h3>
-                              <h3
-                                className="c7"
-                              >
-                                Fabric Polling
-                              </h3>
-                            </styled.h3>
-                          </header>
-                        </styled.header>
-                        <styled.div
-                          flex={true}
-                        >
-                          <div
-                            className="c8"
-                          >
-                            <Tooltip
-                              containerStyle={
-                                {
-                                  "border": "none",
-                                }
-                              }
-                              contentStyle={
-                                {
-                                  "top": "0px",
-                                }
-                              }
-                              disabled={true}
-                              position="left"
-                            >
-                              <styled.div
-                                disabled={true}
-                                style={
-                                  {
-                                    "border": "none",
-                                  }
-                                }
-                              >
-                                <div
-                                  className="c9"
-                                  disabled={true}
-                                  style={
-                                    {
-                                      "border": "none",
-                                    }
-                                  }
-                                >
-                                  <styled.div
-                                    isDisabled={false}
-                                  >
-                                    <div
-                                      className="c10"
-                                    >
-                                      <Button
-                                        clickAction={[Function]}
-                                        disabled={false}
-                                        glyph="Pause"
-                                        glyphColor="rgb(10, 171, 42)"
-                                        glyphRatio={3}
-                                        label="Pause Polling"
-                                        labelStyle={
-                                          {
-                                            "bottom": "10px",
-                                            "fontSize": "14px",
-                                            "left": "0px",
-                                            "position": "absolute",
-                                            "width": "100%",
-                                          }
-                                        }
-                                        orientation="vertical"
-                                        outline="raised"
-                                        size="xl"
-                                        style={
-                                          {
-                                            "height": "100%",
-                                            "position": "relative",
-                                            "width": "100%",
-                                            "zIndex": 0,
-                                          }
-                                        }
-                                        tabIndex={0}
-                                        type="polling"
-                                      >
-                                        <styled.button
-                                          disabled={false}
-                                          onClick={[Function]}
-                                          orientation="vertical"
-                                          outline="raised"
-                                          size="xl"
-                                          style={
-                                            {
-                                              "height": "100%",
-                                              "position": "relative",
-                                              "width": "100%",
-                                              "zIndex": 0,
-                                            }
-                                          }
-                                          tabIndex={0}
-                                          title="Pause Polling"
-                                          type="polling"
-                                        >
-                                          <button
-                                            className="c11"
-                                            disabled={false}
-                                            onClick={[Function]}
-                                            orientation="vertical"
-                                            size="xl"
-                                            style={
-                                              {
-                                                "height": "100%",
-                                                "position": "relative",
-                                                "width": "100%",
-                                                "zIndex": 0,
-                                              }
-                                            }
-                                            tabIndex={0}
-                                            title="Pause Polling"
-                                            type="polling"
-                                          >
-                                            <Icon>
-                                              <styled.svg
-                                                aria-labelledby="ariaLabelledby"
-                                                focusable="false"
-                                                glyphColor="currentColor"
-                                                iconRatio="1"
-                                              >
-                                                <svg
-                                                  aria-labelledby="ariaLabelledby"
-                                                  className="c5"
-                                                  focusable="false"
-                                                  version="1.1"
-                                                  viewBox="0 0 24 24"
-                                                  xmlns="http://www.w3.org/2000/svg"
-                                                  xmlnsXlink="http://www.w3.org/1999/xlink"
-                                                >
-                                                  <styled.g
-                                                    ratio={1}
-                                                    title=""
-                                                  >
-                                                    <g
-                                                      className="c6"
-                                                      fill="currentColor"
-                                                      title=""
-                                                    >
-                                                      <title />
-                                                      <Glyph
-                                                        glyphColor="rgb(10, 171, 42)"
-                                                        name="Pause"
-                                                        ratio={3}
-                                                      >
-                                                        <g
-                                                          className="glyph"
-                                                          fill="rgb(10, 171, 42)"
-                                                          transform="translate(-24 -24) scale(3)"
-                                                        >
-                                                          <Pause>
-                                                            <path
-                                                              d="M6,5 L10.6153846,5 L10.6153846,19 L6,19 L6,5 Z M13.3846154,5 L18,5 L18,19 L13.3846154,19 L13.3846154,5 Z"
-                                                              id="Combined-Shape"
-                                                            />
-                                                          </Pause>
-                                                        </g>
-                                                      </Glyph>
-                                                    </g>
-                                                  </styled.g>
-                                                </svg>
-                                              </styled.svg>
-                                            </Icon>
-                                            <span
-                                              style={
-                                                {
-                                                  "bottom": "10px",
-                                                  "fontSize": "14px",
-                                                  "left": "0px",
-                                                  "position": "absolute",
-                                                  "width": "100%",
-                                                }
-                                              }
-                                            >
-                                              Pause Polling
-                                            </span>
-                                          </button>
-                                        </styled.button>
-                                      </Button>
-                                    </div>
-                                  </styled.div>
-                                  <styled.div
-                                    position="left"
-                                    style={
-                                      {
-                                        "top": "0px",
-                                      }
-                                    }
-                                  >
-                                    <div
-                                      className="c12"
-                                      style={
-                                        {
-                                          "top": "0px",
-                                        }
-                                      }
-                                    />
-                                  </styled.div>
-                                </div>
-                              </styled.div>
-                            </Tooltip>
-                            <styled.div
-                              id="ctrl-slider-Fabric Polling"
-                              isDisabled={false}
-                            >
-                              <div
-                                className="c13"
-                                id="ctrl-slider-Fabric Polling"
-                              >
-                                <styled.input
-                                  aria-labelledby="interval-name-Fabric Polling"
-                                  disabled={false}
-                                  max={120}
-                                  min={5}
-                                  onChange={[Function]}
-                                  value={10}
-                                >
-                                  <input
-                                    aria-labelledby="interval-name-Fabric Polling"
-                                    className="c14"
-                                    disabled={false}
-                                    max={120}
-                                    min={5}
-                                    onChange={[Function]}
-                                    type="range"
-                                    value={10}
-                                  />
-                                </styled.input>
-                                <span
-                                  className="label"
-                                  id="interval-name-Fabric Polling"
-                                >
-                                  10s 
-                                  Polling Interval(s)
-                                </span>
-                              </div>
-                            </styled.div>
-                          </div>
-                        </styled.div>
-                      </section>
-                    </styled.section>
-                  </LayoutSection>
-                </PollingSettings>
-              </injectIntl(PollingSettings)>
-              <injectIntl(PollingSettings)
-                changePollingInterval={[Function]}
-                glyph="ServiceInstance"
-                interval={10000}
-                isDisabled={false}
-                isPolling={false}
-                startPolling={[Function]}
-                stopPolling={[Function]}
-                title="Instance Polling"
-                tooltipContent="Select an instance to turn on polling"
-              >
-                <PollingSettings
-                  changePollingInterval={[Function]}
-                  glyph="ServiceInstance"
-                  interval={10000}
-                  intl={
-                    {
-                      "$t": [Function],
-                      "defaultFormats": {},
-                      "defaultLocale": "en",
-                      "defaultRichTextElements": undefined,
-                      "fallbackOnEmptyString": true,
-                      "formatDate": [Function],
-                      "formatDateTimeRange": [Function],
-                      "formatDateToParts": [Function],
-                      "formatDisplayName": [Function],
-                      "formatList": [Function],
-                      "formatListToParts": [Function],
-                      "formatMessage": [Function],
-                      "formatNumber": [Function],
-                      "formatNumberToParts": [Function],
-                      "formatPlural": [Function],
-                      "formatRelativeTime": [Function],
-                      "formatTime": [Function],
-                      "formatTimeToParts": [Function],
-                      "formats": {},
-                      "formatters": {
-                        "getDateTimeFormat": [Function],
-                        "getDisplayNames": [Function],
-                        "getListFormat": [Function],
-                        "getMessageFormat": [Function],
-                        "getNumberFormat": [Function],
-                        "getPluralRules": [Function],
-                        "getRelativeTimeFormat": [Function],
-                      },
-                      "locale": "en-US",
-                      "messages": {
-                        "GMLineChart.noChartableData": "No Chartable Data",
-                        "GMLineChart.noMetricsFound": "Could not find the following metrics:",
-                        "GMLineChart.screenReaderGraphDescription.noData": "The average for currently displayed data is equal to 0.",
-                        "GMLineChart.screenReaderGraphDescription.withData": "A tabular representation of the {title} chart data: median {median} average {average} mode {mode} maximum {max} minimum {min} number of observations {dataPoints} complete data time series follows {timeSeries}",
-                        "GMServiceTableLineItem.tooltip": "This microservice instance does not have metrics to display.",
-                        "explorer.selectMetric": "Select a metric to display",
-                        "fabric.capability": "Capability",
-                        "fabric.error": "No Services Found",
-                        "fabric.name": "Name",
-                        "fabric.none": "None",
-                        "fabric.owner": "Owner",
-                        "fabric.searchPlaceholder": "Search Services",
-                        "fabric.status": "Status",
-                        "fabricHeaderContent.allServices": "All Services",
-                        "fabricHeaderContent.down": "Down",
-                        "fabricHeaderContent.services": "Services",
-                        "fabricHeaderContent.stable": "Stable",
-                        "fabricHeaderContent.summary": "Summary",
-                        "fabricHeaderContent.warning": "Warning",
-                        "fabricMicroservices.disableFetchError": "Automatically disabling the fetching of Fabric microservices after three attempts.",
-                        "fabricMicroservices.fetchError": "Fetching Fabric Microservices failed",
-                        "fabricRouter.noInstance": "{instanceID} is not a known instance of {serviceName} {serviceVersion}",
-                        "fabricRouter.noMetrics": "{serviceName} {serviceVersion} does not have metrics to display",
-                        "fabricRouter.noService": "{serviceSlug} is not a known microservice",
-                        "fabricRouter.notAuthorized": "You are not authorized to view {serviceName} {serviceVersion}",
-                        "footer.copyright": "Copyright © 2018 Decipher Technology Studios. All rights reserved.{br}Copyright © 2018 Grey Matter, a Decipher Technology Studios product. All rights reserved.",
-                        "functionsGrid.error": "No Functions Found",
-                        "functionsGrid.errorPercent": "Error %",
-                        "functionsGrid.function": "Function",
-                        "functionsGrid.latency50": "Latency 50%",
-                        "functionsGrid.latency99": "Latency 99%",
-                        "functionsGrid.requests": "Requests",
-                        "functionsGrid.searchPlaceholder": "Search Functions",
-                        "goHeaderContent.explorer": "Explorer",
-                        "goHeaderContent.functions": "Functions",
-                        "goHeaderContent.requests": "Requests",
-                        "goHeaderContent.routes": "Routes",
-                        "goHeaderContent.summary": "Summary",
-                        "goHeaderContent.uptime": "Uptime",
-                        "goInstance.go.chart.goroutines.timeseries.goroutinesChartLabel": "# of allocated goroutines",
-                        "goInstance.go.chart.goroutines.title": "Goroutines",
-                        "goInstance.go.chart.heapChart.detailLines.garbageCollectionRuns": "Garbage Collection Runs:",
-                        "goInstance.go.chart.heapChart.detailLines.totalGarbageCollectionPause": "Total GC Pause:",
-                        "goInstance.go.chart.heapChart.timeseries.heapSizeChartLabel": "Go Heap Size",
-                        "goInstance.go.chart.heapChart.timeseries.heapUsedChartLabel": "Go Heap Used",
-                        "goInstance.go.chart.heapChart.timeseries.processMemoryUsedChartLabel": "Process Memory Used",
-                        "goInstance.go.chart.heapChart.title": "Heap",
-                        "goInstance.go.summaryCard.lines.heapUsed": "Heap Used",
-                        "goInstance.go.summaryCard.name": "Go",
-                        "inspector.hideStaticMetric": "Hide all static metrics",
-                        "inspector.hideZeroMetric": "Hide all metrics with only zero values",
-                        "inspector.searchAriaLabel": "Search All Metrics",
-                        "inspector.searchPlaceholder": "Search",
-                        "instanceMetricsUtils.disableFetchError": "Automatically disabling the fetching of metrics after three attempts. You can turn polling back on in Settings.",
-                        "instanceMetricsUtils.fetchError": "Fetching Metrics failed",
-                        "jvmHeaderContent.explorer": "Explorer",
-                        "jvmHeaderContent.requests": "Requests",
-                        "jvmHeaderContent.routes": "Routes",
-                        "jvmHeaderContent.summary": "Summary",
-                        "jvmHeaderContent.threads": "Threads",
-                        "jvmHeaderContent.uptime": "Uptime",
-                        "jvmInstance.finagle.chart.clientRegistryChart.detailLines.initialResolution": "Initial Resolution",
-                        "jvmInstance.finagle.chart.clientRegistryChart.detailLines.size": "Size",
-                        "jvmInstance.finagle.chart.clientRegistryChart.title": "Client Registry",
-                        "jvmInstance.finagle.chart.futurePoolTasksChart.detailLines.activeTasks": "Active Tasks",
-                        "jvmInstance.finagle.chart.futurePoolTasksChart.detailLines.completedTasks": "Completed Tasks",
-                        "jvmInstance.finagle.chart.futurePoolTasksChart.detailLines.poolSize": "Pool Size",
-                        "jvmInstance.finagle.chart.futurePoolTasksChart.title": "Future Pool",
-                        "jvmInstance.finagle.chart.pendingTimerTasksChart.detailLines.average": "Average",
-                        "jvmInstance.finagle.chart.pendingTimerTasksChart.detailLines.count": "Count",
-                        "jvmInstance.finagle.chart.pendingTimerTasksChart.detailLines.maximum": "Maximum",
-                        "jvmInstance.finagle.chart.pendingTimerTasksChart.detailLines.minimum": "Minimum",
-                        "jvmInstance.finagle.chart.pendingTimerTasksChart.detailLines.sum": "Total",
-                        "jvmInstance.finagle.chart.pendingTimerTasksChart.title": "Pending Timer Tasks",
-                        "jvmInstance.finagle.chart.timerDeviationChart.detailLines.average": "Average",
-                        "jvmInstance.finagle.chart.timerDeviationChart.detailLines.count": "Count",
-                        "jvmInstance.finagle.chart.timerDeviationChart.detailLines.maximum": "Maximum",
-                        "jvmInstance.finagle.chart.timerDeviationChart.detailLines.minimum": "Minimum",
-                        "jvmInstance.finagle.chart.timerDeviationChart.detailLines.sum": "Total",
-                        "jvmInstance.finagle.chart.timerDeviationChart.title": "Timer Deviation",
-                        "jvmInstance.finagle.summaryCard.lines.activeTasks": "Active Tasks",
-                        "jvmInstance.finagle.summaryCard.lines.pendingTasks": "Pend. Tasks",
-                        "jvmInstance.finagle.summaryCard.name": "Finagle",
-                        "jvmInstance.http.chart.connections.timeseries.httpConnectionsLabel": "# of active HTTP connections",
-                        "jvmInstance.http.chart.connections.timeseries.httpsConnectionsLabel": "# of active HTTPS connections",
-                        "jvmInstance.http.chart.connections.title": "Connections",
-                        "jvmInstance.http.chart.dataTransferRates.timeseries.httpReceivedLabel": "HTTP Received",
-                        "jvmInstance.http.chart.dataTransferRates.timeseries.httpSentLabel": "HTTP Sent",
-                        "jvmInstance.http.chart.dataTransferRates.timeseries.httpsReceivedLabel": "HTTPS Received",
-                        "jvmInstance.http.chart.dataTransferRates.timeseries.httpsSentLabel": "HTTPS Sent",
-                        "jvmInstance.http.chart.dataTransferRates.title": "Data Transfer Rates",
-                        "jvmInstance.http.chart.requests.headers.requests": "Requests",
-                        "jvmInstance.http.chart.requests.headers.successes": "Successes",
-                        "jvmInstance.http.chart.requests.rowHeaders.http": "HTTP",
-                        "jvmInstance.http.chart.requests.rowHeaders.https": "HTTPS",
-                        "jvmInstance.http.chart.requests.title": "Requests",
-                        "jvmInstance.http.chart.responseStatusCodes.detailLines.rc200": "200",
-                        "jvmInstance.http.chart.responseStatusCodes.detailLines.rc2XX": "2XX",
-                        "jvmInstance.http.chart.responseStatusCodes.detailLines.rc400": "400",
-                        "jvmInstance.http.chart.responseStatusCodes.detailLines.rc499": "499",
-                        "jvmInstance.http.chart.responseStatusCodes.detailLines.rc4XX": "4XX",
-                        "jvmInstance.http.chart.responseStatusCodes.detailLines.rc500": "500",
-                        "jvmInstance.http.chart.responseStatusCodes.detailLines.rc5XX": "5XX",
-                        "jvmInstance.http.chart.responseStatusCodes.title": "Response Status Codes",
-                        "jvmInstance.http.summaryCard.lines.httpReceived": "Received",
-                        "jvmInstance.http.summaryCard.lines.httpSent": "Sent",
-                        "jvmInstance.http.summaryCard.name": "HTTP",
-                        "jvmInstance.jvm.chart.classesChart.detailLines.totalLoadedClassesLabel": "Total Loaded:",
-                        "jvmInstance.jvm.chart.classesChart.detailLines.totalUnloadedClassesLabel": "Total Unloaded:",
-                        "jvmInstance.jvm.chart.classesChart.timeseries.currentLoadedClassesLabel": "Current Loaded JVM Classes",
-                        "jvmInstance.jvm.chart.classesChart.title": "Classes",
-                        "jvmInstance.jvm.chart.heapChart.detailLines.maxHeap": "Max Heap:",
-                        "jvmInstance.jvm.chart.heapChart.timeseries.jvmHeapCommittedLabel": "JVM Heap Committed",
-                        "jvmInstance.jvm.chart.heapChart.timeseries.jvmHeapUsedLabel": "JVM Heap Used",
-                        "jvmInstance.jvm.chart.heapChart.title": "Heap",
-                        "jvmInstance.jvm.summaryCard.lines.memoryUsed": "Mem. Used",
-                        "jvmInstance.jvm.summaryCard.name": "JVM",
-                        "languageSelector.languages": "Languages",
-                        "pollingSettings.button.pause": "Pause Polling",
-                        "pollingSettings.button.resume": "Resume Polling",
-                        "pollingSettings.pollingIntervals": "Polling Interval(s)",
-                        "routesGrid.error": "No Routes Found",
-                        "routesGrid.errorPercent": "Error %",
-                        "routesGrid.latency50": "Latency 50%",
-                        "routesGrid.latency99": "Latency 99%",
-                        "routesGrid.requests": "Requests",
-                        "routesGrid.route": "Route",
-                        "routesGrid.searchPlaceholder": "Search Routes",
-                        "serviceHeaderContent.instances": "Instances",
-                        "serviceView.error": "No Instances Found",
-                        "serviceView.name": "Name",
-                        "serviceView.searchPlaceholder": "Search Instances",
-                        "serviceView.uptime": "Uptime",
-                        "settingsGrid.cacheSize": "Cache Size",
-                        "settingsGrid.clearCache": "Clear Cache",
-                        "settingsGrid.fabricPolling": "Fabric Polling",
-                        "settingsGrid.instancePolling": "Instance Polling",
-                        "settingsGrid.metricsCache": "Metrics Cache",
-                        "settingsGrid.modal.question": "Are you sure that you want to clear the cached metrics data?",
-                        "settingsGrid.modal.secondary": "This action cannot be undone.",
-                        "settingsGrid.polling": "Polling",
-                        "settingsGrid.tooltip": "Select an instance to turn on polling",
-                        "summary.errorRate": "Error Rate",
-                        "summary.hostCPUCores": "Host CPU Cores",
-                        "summary.hostCPUUsage": "Host CPU Utilized",
-                        "summary.hostCPUUsageDetail": "{count, plural, one {# Core on Host} other {#  Cores on Host}}",
-                        "summary.memoryUsage": "Memory Utilized",
-                        "summary.memoryUsageDetail": "{hostMemoryAvail} Free on Host",
-                        "summary.requestsPerSecond": "Requests Per Second",
-                        "summary.responseTime": "Avg. Response Time",
-                        "summary.statistics": "Statistics",
-                        "summary.uptime": "Uptime",
-                        "summary.vitals": "Vitals",
-                        "table.errorPercent": "Error %",
-                        "table.function": "Function",
-                        "table.instance": "Instance",
-                        "table.latency": "Latency",
-                        "table.requests": "Requests",
-                        "table.requestsSec": "Requests/sec",
-                        "table.route": "Route",
-                        "table.uptime": "Uptime",
-                        "tableColLatencyHeader.latency": "Latency",
-                        "tableColLatencyHeader.latency50": "50%",
-                        "tableColLatencyHeader.latency99": "99%",
-                        "tableColLatencyHeader.tooltip": "Latency 50% refers to the average latency of the 50% percentile, while Latency 99% is the average latency for the slowest 1% of responses, also known as tail latency.",
-                        "tableLineItem.requests": "Requests over Time for {item}",
-                        "tableToolbar.cards": "Cards",
-                        "tableToolbar.group": "Group",
-                        "tableToolbar.list": "List",
-                        "tableToolbar.sort": "Sort",
-                        "threadsGrid.errorFetchFail": "Failed to Fetch Threads",
-                        "threadsGrid.errorNotFound": "No Threads Found",
-                        "threadsGrid.id": "ID",
-                        "threadsGrid.name": "Name",
-                        "threadsGrid.none": "None",
-                        "threadsGrid.searchPlaceholder": "Search Threads",
-                        "threadsGrid.state": "State",
-                        "threadsTableHeader.daemon": "Daemon",
-                        "threadsTableHeader.id": "ID",
-                        "threadsTableHeader.name": "Name",
-                        "threadsTableHeader.priority": "Priority",
-                        "threadsTableHeader.state": "State",
-                      },
-                      "onError": [Function],
-                      "onWarn": [Function],
-                      "textComponent": Symbol(react.fragment),
-                      "timeZone": undefined,
-                      "wrapRichTextChunksInFragment": undefined,
-                    }
-                  }
-                  isDisabled={false}
-                  isPolling={false}
-                  startPolling={[Function]}
-                  stopPolling={[Function]}
-                  title="Instance Polling"
-                  tooltipContent="Select an instance to turn on polling"
-                >
-                  <LayoutSection
-                    flex={true}
-                    icon="ServiceInstance"
-                    title="Instance Polling"
-                  >
-                    <styled.section>
-                      <section
-                        className="c2"
-                      >
-                        <styled.header>
-                          <header
-                            className="c3"
-                          >
-                            <styled.span>
-                              <span
-                                className="c4"
-                              >
-                                <Icon>
-                                  <styled.svg
-                                    aria-labelledby="ariaLabelledby"
-                                    focusable="false"
-                                    glyphColor="currentColor"
-                                    iconRatio="1"
-                                  >
-                                    <svg
-                                      aria-labelledby="ariaLabelledby"
-                                      className="c5"
-                                      focusable="false"
-                                      version="1.1"
-                                      viewBox="0 0 24 24"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      xmlnsXlink="http://www.w3.org/1999/xlink"
-                                    >
-                                      <styled.g
-                                        ratio={1}
-                                        title=""
-                                      >
-                                        <g
-                                          className="c6"
-                                          fill="currentColor"
-                                          title=""
-                                        >
-                                          <title />
-                                          <Glyph
-                                            glyphColor="currentColor"
-                                            name="ServiceInstance"
-                                            ratio={1}
-                                          >
-                                            <g
-                                              className="glyph"
-                                              fill="currentColor"
-                                              transform="translate(0 0) scale(1)"
-                                            >
-                                              <ServiceInstance>
-                                                <path
-                                                  d="M6.19728719,10.4682661 L3.58689267,10.0076082 C3.3149522,9.95961873 3.05559772,10.1411669 3.00760822,10.4131073 C2.95961873,10.6850478 3.14116686,10.9444023 3.41310733,10.9923918 L6.02457766,11.4532395 C6.05503334,11.1160942 6.11337821,10.7869947 6.19728719,10.4682661 Z M17.9754223,12.5467605 L20.5868927,13.0076082 C20.8588331,13.0555977 21.0403813,13.3149522 20.9923918,13.5868927 C20.9444023,13.8588331 20.6850478,14.0403813 20.4131073,13.9923918 L17.8027128,13.5317339 C17.8866218,13.2130053 17.9449667,12.8839058 17.9754223,12.5467605 Z M7,12 C7,9.23857625 9.23857625,7 12,7 C14.7614237,7 17,9.23857625 17,12 C17,14.7614237 14.7614237,17 12,17 C9.23857625,17 7,14.7614237 7,12 Z M16.0107373,12.4288082 L16.0107373,11.5125591 L14.8991901,11.1460594 L14.641357,10.5218647 L15.145564,9.46817824 L14.4981164,8.82107731 L13.4610543,9.34219399 L12.8365252,9.08449893 L12.4411811,7.985 L11.5244411,7.985 L11.1634748,9.09595204 L10.5274865,9.3536471 L9.4732355,8.84971009 L8.82578791,9.49681102 L9.34718376,10.5333178 L9.08935065,11.1575125 L7.98926271,11.5469184 L7.98926271,12.4574409 L9.1008099,12.8239406 L9.35864301,13.4481353 L8.85443604,14.5018218 L9.50188363,15.1489227 L10.5389457,14.627806 L11.1634748,14.8855011 L11.5588189,15.985 L12.4698292,15.985 L12.8307956,14.874048 L13.4667839,14.6163529 L14.5210349,15.1202899 L15.1684825,14.473189 L14.641357,13.4366822 L14.9106494,12.8124875 L16.0107373,12.417355 L16.0107373,12.4288082 Z M12,13.7058304 C11.0488823,13.7058304 10.2811126,12.9384717 10.2811126,11.9878633 C10.2811126,11.0372548 11.0488823,10.2698962 12,10.2698962 C12.9511177,10.2698962 13.7188874,11.0372548 13.7188874,11.9878633 C13.7188874,12.9384717 12.9511177,13.7058304 12,13.7058304 Z"
-                                                  id="Combined-Shape"
-                                                />
-                                              </ServiceInstance>
-                                            </g>
-                                          </Glyph>
-                                        </g>
-                                      </styled.g>
-                                    </svg>
-                                  </styled.svg>
-                                </Icon>
-                              </span>
-                            </styled.span>
-                            <styled.h3>
-                              <h3
-                                className="c7"
-                              >
-                                Instance Polling
-                              </h3>
-                            </styled.h3>
-                          </header>
-                        </styled.header>
-                        <styled.div
-                          flex={true}
-                        >
-                          <div
-                            className="c8"
-                          >
-                            <Tooltip
-                              containerStyle={
-                                {
-                                  "border": "none",
-                                }
-                              }
-                              content="Select an instance to turn on polling"
-                              contentStyle={
-                                {
-                                  "top": "0px",
-                                }
-                              }
-                              disabled={true}
-                              position="left"
-                            >
-                              <styled.div
-                                disabled={true}
-                                style={
-                                  {
-                                    "border": "none",
-                                  }
-                                }
-                              >
-                                <div
-                                  className="c9"
-                                  disabled={true}
-                                  style={
-                                    {
-                                      "border": "none",
-                                    }
-                                  }
-                                >
-                                  <styled.div
-                                    isDisabled={false}
-                                  >
-                                    <div
-                                      className="c10"
-                                    >
-                                      <Button
-                                        clickAction={[Function]}
-                                        disabled={false}
-                                        glyph="Play"
-                                        glyphColor="rgb(10, 171, 42)"
-                                        glyphRatio={3}
-                                        label="Resume Polling"
-                                        labelStyle={
-                                          {
-                                            "bottom": "10px",
-                                            "fontSize": "14px",
-                                            "left": "0px",
-                                            "position": "absolute",
-                                            "width": "100%",
-                                          }
-                                        }
-                                        orientation="vertical"
-                                        outline="raised"
-                                        size="xl"
-                                        style={
-                                          {
-                                            "height": "100%",
-                                            "position": "relative",
-                                            "width": "100%",
-                                            "zIndex": 0,
-                                          }
-                                        }
-                                        tabIndex={0}
-                                        type="polling"
-                                      >
-                                        <styled.button
-                                          disabled={false}
-                                          onClick={[Function]}
-                                          orientation="vertical"
-                                          outline="raised"
-                                          size="xl"
-                                          style={
-                                            {
-                                              "height": "100%",
-                                              "position": "relative",
-                                              "width": "100%",
-                                              "zIndex": 0,
-                                            }
-                                          }
-                                          tabIndex={0}
-                                          title="Resume Polling"
-                                          type="polling"
-                                        >
-                                          <button
-                                            className="c11"
-                                            disabled={false}
-                                            onClick={[Function]}
-                                            orientation="vertical"
-                                            size="xl"
-                                            style={
-                                              {
-                                                "height": "100%",
-                                                "position": "relative",
-                                                "width": "100%",
-                                                "zIndex": 0,
-                                              }
-                                            }
-                                            tabIndex={0}
-                                            title="Resume Polling"
-                                            type="polling"
-                                          >
-                                            <Icon>
-                                              <styled.svg
-                                                aria-labelledby="ariaLabelledby"
-                                                focusable="false"
-                                                glyphColor="currentColor"
-                                                iconRatio="1"
-                                              >
-                                                <svg
-                                                  aria-labelledby="ariaLabelledby"
-                                                  className="c5"
-                                                  focusable="false"
-                                                  version="1.1"
-                                                  viewBox="0 0 24 24"
-                                                  xmlns="http://www.w3.org/2000/svg"
-                                                  xmlnsXlink="http://www.w3.org/1999/xlink"
-                                                >
-                                                  <styled.g
-                                                    ratio={1}
-                                                    title=""
-                                                  >
-                                                    <g
-                                                      className="c6"
-                                                      fill="currentColor"
-                                                      title=""
-                                                    >
-                                                      <title />
-                                                      <Glyph
-                                                        glyphColor="rgb(10, 171, 42)"
-                                                        name="Play"
-                                                        ratio={3}
-                                                      >
-                                                        <g
-                                                          className="glyph"
-                                                          fill="rgb(10, 171, 42)"
-                                                          transform="translate(-24 -24) scale(3)"
-                                                        >
-                                                          <Play>
-                                                            <polygon
-                                                              id="Triangle-6"
-                                                              points="19 12 7 20 7 4"
-                                                            />
-                                                          </Play>
-                                                        </g>
-                                                      </Glyph>
-                                                    </g>
-                                                  </styled.g>
-                                                </svg>
-                                              </styled.svg>
-                                            </Icon>
-                                            <span
-                                              style={
-                                                {
-                                                  "bottom": "10px",
-                                                  "fontSize": "14px",
-                                                  "left": "0px",
-                                                  "position": "absolute",
-                                                  "width": "100%",
-                                                }
-                                              }
-                                            >
-                                              Resume Polling
-                                            </span>
-                                          </button>
-                                        </styled.button>
-                                      </Button>
-                                    </div>
-                                  </styled.div>
-                                  <styled.div
-                                    position="left"
-                                    style={
-                                      {
-                                        "top": "0px",
-                                      }
-                                    }
-                                  >
-                                    <div
-                                      className="c12"
-                                      style={
-                                        {
-                                          "top": "0px",
-                                        }
-                                      }
-                                    >
-                                      Select an instance to turn on polling
-                                    </div>
-                                  </styled.div>
-                                </div>
-                              </styled.div>
-                            </Tooltip>
-                            <styled.div
-                              id="ctrl-slider-Instance Polling"
-                              isDisabled={false}
-                            >
-                              <div
-                                className="c13"
-                                id="ctrl-slider-Instance Polling"
-                              >
-                                <styled.input
-                                  aria-labelledby="interval-name-Instance Polling"
-                                  disabled={false}
-                                  max={120}
-                                  min={5}
-                                  onChange={[Function]}
-                                  value={10}
-                                >
-                                  <input
-                                    aria-labelledby="interval-name-Instance Polling"
-                                    className="c14"
-                                    disabled={false}
-                                    max={120}
-                                    min={5}
-                                    onChange={[Function]}
-                                    type="range"
-                                    value={10}
-                                  />
-                                </styled.input>
-                                <span
-                                  className="label"
-                                  id="interval-name-Instance Polling"
-                                >
-                                  10s 
-                                  Polling Interval(s)
-                                </span>
-                              </div>
-                            </styled.div>
-                          </div>
-                        </styled.div>
-                      </section>
-                    </styled.section>
-                  </LayoutSection>
-                </PollingSettings>
-              </injectIntl(PollingSettings)>
-              <LayoutSection
-                flex={true}
-                icon="Tape"
-                title="Metrics Cache"
-              >
-                <styled.section>
-                  <section
-                    className="c2"
-                  >
-                    <styled.header>
-                      <header
-                        className="c3"
-                      >
-                        <styled.span>
-                          <span
-                            className="c4"
-                          >
-                            <Icon>
-                              <styled.svg
-                                aria-labelledby="ariaLabelledby"
-                                focusable="false"
-                                glyphColor="currentColor"
-                                iconRatio="1"
-                              >
-                                <svg
-                                  aria-labelledby="ariaLabelledby"
-                                  className="c5"
-                                  focusable="false"
-                                  version="1.1"
-                                  viewBox="0 0 24 24"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  xmlnsXlink="http://www.w3.org/1999/xlink"
-                                >
-                                  <styled.g
-                                    ratio={1}
-                                    title=""
-                                  >
-                                    <g
-                                      className="c6"
-                                      fill="currentColor"
-                                      title=""
-                                    >
-                                      <title />
-                                      <Glyph
-                                        glyphColor="currentColor"
-                                        name="Tape"
-                                        ratio={1}
-                                      >
-                                        <g
-                                          className="glyph"
-                                          fill="currentColor"
-                                          transform="translate(0 0) scale(1)"
-                                        >
-                                          <Tape>
-                                            <path
-                                              d="M9.08563005,15.9573707 C9.69514275,15.552113 10.2056702,15.0097978 10.573215,14.3744224 L13.426785,14.3744224 C13.7943298,15.0097978 14.3048573,15.552113 14.9143699,15.9573707 L9.08563005,15.9573707 Z M6.459681,15.9573707 C4.27408551,15.9573707 2.50231029,14.1855955 2.50231029,12 C2.50231029,9.81440451 4.27408551,8.04262929 6.459681,8.04262929 C8.6452765,8.04262929 10.4170517,9.81440451 10.4170517,12 C10.4170517,14.1855955 8.6452765,15.9573707 6.459681,15.9573707 Z M6.459681,14.3744224 C7.7710383,14.3744224 8.83410343,13.3113573 8.83410343,12 C8.83410343,10.6886427 7.7710383,9.62557757 6.459681,9.62557757 C5.14832371,9.62557757 4.08525857,10.6886427 4.08525857,12 C4.08525857,13.3113573 5.14832371,14.3744224 6.459681,14.3744224 Z M17.540319,15.9573707 C15.3547235,15.9573707 13.5829483,14.1855955 13.5829483,12 C13.5829483,9.81440451 15.3547235,8.04262929 17.540319,8.04262929 C19.7259145,8.04262929 21.4976897,9.81440451 21.4976897,12 C21.4976897,14.1855955 19.7259145,15.9573707 17.540319,15.9573707 Z M17.540319,14.3744224 C18.8516763,14.3744224 19.9147414,13.3113573 19.9147414,12 C19.9147414,10.6886427 18.8516763,9.62557757 17.540319,9.62557757 C16.2289617,9.62557757 15.1658966,10.6886427 15.1658966,12 C15.1658966,13.3113573 16.2289617,14.3744224 17.540319,14.3744224 Z"
-                                              id="shape"
-                                            />
-                                          </Tape>
-                                        </g>
-                                      </Glyph>
-                                    </g>
-                                  </styled.g>
-                                </svg>
-                              </styled.svg>
-                            </Icon>
-                          </span>
-                        </styled.span>
-                        <styled.h3>
-                          <h3
-                            className="c7"
-                          >
-                            Metrics Cache
-                          </h3>
-                        </styled.h3>
-                      </header>
-                    </styled.header>
-                    <styled.div
-                      flex={true}
-                    >
-                      <div
-                        className="c8"
-                      >
-                        <Readout
-                          cacheCard={true}
-                          readoutItems={
-                            [
-                              {
-                                "children": <Button
-                                  clickAction={[Function]}
-                                  glyph="Close"
-                                  label="Clear Cache"
-                                  tabIndex={0}
-                                />,
-                                "title": "Cache Size",
-                                "value": "67.48 KB",
-                              },
-                            ]
-                          }
-                        >
-                          <styled.div
-                            cacheCard={true}
-                          >
-                            <div
-                              className="c15"
-                            >
-                              <ReadoutItem
-                                cacheCard={true}
-                                key="Cache Size|67.48 KB|undefined"
-                                title="Cache Size"
-                                value="67.48 KB"
-                              >
-                                <styled.div
-                                  cacheCard={true}
-                                >
-                                  <div
-                                    className="c16 c17"
-                                  >
-                                    <styled.div>
-                                      <div
-                                        className="c18"
-                                      >
-                                        <styled.h2>
-                                          <h2
-                                            className="c19"
-                                          >
-                                            Cache Size
-                                          </h2>
-                                        </styled.h2>
-                                        <styled.span>
-                                          <span
-                                            className="c20"
-                                          >
-                                            67.48 KB
-                                          </span>
-                                        </styled.span>
-                                        <Button
-                                          clickAction={[Function]}
-                                          glyph="Close"
-                                          label="Clear Cache"
-                                          tabIndex={0}
-                                        >
-                                          <styled.button
-                                            onClick={[Function]}
-                                            tabIndex={0}
-                                            title="Clear Cache"
-                                          >
-                                            <button
-                                              className="c21"
-                                              onClick={[Function]}
-                                              tabIndex={0}
-                                              title="Clear Cache"
-                                            >
-                                              <Icon>
-                                                <styled.svg
-                                                  aria-labelledby="ariaLabelledby"
-                                                  focusable="false"
-                                                  glyphColor="currentColor"
-                                                  iconRatio="1"
-                                                >
-                                                  <svg
-                                                    aria-labelledby="ariaLabelledby"
-                                                    className="c5"
-                                                    focusable="false"
-                                                    version="1.1"
-                                                    viewBox="0 0 24 24"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    xmlnsXlink="http://www.w3.org/1999/xlink"
-                                                  >
-                                                    <styled.g
-                                                      ratio={1}
-                                                      title=""
-                                                    >
-                                                      <g
-                                                        className="c6"
-                                                        fill="currentColor"
-                                                        title=""
-                                                      >
-                                                        <title />
-                                                        <Glyph
-                                                          glyphColor="currentColor"
-                                                          name="Close"
-                                                          ratio={1}
-                                                        >
-                                                          <g
-                                                            className="glyph"
-                                                            fill="currentColor"
-                                                            transform="translate(0 0) scale(1)"
-                                                          >
-                                                            <Close>
-                                                              <path
-                                                                d="M12,10.9528132 L6.76406623,5.71687948 C6.47489359,5.42770684 6.00605212,5.42770684 5.71687948,5.71687948 C5.42770684,6.00605212 5.42770684,6.47489359 5.71687948,6.76406623 L10.9528132,12 L5.71687948,17.2359338 C5.42770684,17.5251064 5.42770684,17.9939479 5.71687948,18.2831205 C6.00605212,18.5722932 6.47489359,18.5722932 6.76406623,18.2831205 L12,13.0471868 L17.2359338,18.2831205 C17.5251064,18.5722932 17.9939479,18.5722932 18.2831205,18.2831205 C18.5722932,17.9939479 18.5722932,17.5251064 18.2831205,17.2359338 L13.0471868,12 L18.2831205,6.76406623 C18.5722932,6.47489359 18.5722932,6.00605212 18.2831205,5.71687948 C17.9939479,5.42770684 17.5251064,5.42770684 17.2359338,5.71687948 L12,10.9528132 Z"
-                                                                id="Combined-Shape"
-                                                              />
-                                                            </Close>
-                                                          </g>
-                                                        </Glyph>
-                                                      </g>
-                                                    </styled.g>
-                                                  </svg>
-                                                </styled.svg>
-                                              </Icon>
-                                              <span>
-                                                Clear Cache
-                                              </span>
-                                            </button>
-                                          </styled.button>
-                                        </Button>
-                                      </div>
-                                    </styled.div>
-                                  </div>
-                                </styled.div>
-                              </ReadoutItem>
-                            </div>
-                          </styled.div>
-                        </Readout>
-                      </div>
-                    </styled.div>
-                  </section>
-                </styled.section>
-              </LayoutSection>
-            </ErrorBoundary>
-          </SettingsGrid>
-        </injectIntl(SettingsGrid)>
-      </Connect(injectIntl(SettingsGrid))>
-    </IntlProvider>
-  </Provider>
-</IntlTestHost>
+                  </g>
+                </g>
+              </svg>
+              <span>
+                Clear Cache
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
 `;

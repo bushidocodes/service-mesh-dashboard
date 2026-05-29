@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import SkipNav from "./SkipNav";
 
 describe("SkipNav", () => {
   it("matches snapshot", () => {
-    const aSkipNav = shallow(<SkipNav />);
-    expect(aSkipNav).toMatchSnapshot();
+    const { asFragment } = render(<SkipNav />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

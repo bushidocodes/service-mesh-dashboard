@@ -1,9 +1,11 @@
-// Based on https://hackernoon.com/testing-react-components-with-jest-and-enzyme-41d592c174f
-// import "babel-polyfill";
-import Enzyme, { shallow, render, mount } from "enzyme";
-import Adapter from "@cfaester/enzyme-adapter-react-18";
-// React 18 Enzyme adapter
-Enzyme.configure({ adapter: new Adapter() });
+// Freeze the wall clock so components that derive values from the current time
+// produce deterministic output. <UpTime/> renders `Date.now() - startTime`, so
+// under React Testing Library's full-tree render its snapshot would otherwise
+// drift every second. The enzyme suite avoided this only because shallow
+// rendering never reached <UpTime/>. Pinning Date.now() (alongside the existing
+// TZ=America/New_York pin) keeps uptime snapshots stable across CI runs.
+const FIXED_NOW = 1780000000000; // 2026-05-28T03:06:40Z
+Date.now = () => FIXED_NOW;
 
 // Stub HTMLCanvasElement.getContext for JSDOM.
 // Libraries like Dygraphs call canvas.getContext('2d') during mount; JSDOM does
@@ -70,7 +72,6 @@ if (typeof HTMLCanvasElement !== "undefined") {
     isPointInStroke: jest.fn(() => false)
   }));
 }
-// Make Enzyme functions available in all test files without importing
 // Fail tests on any warning
 console.error = (message, ...args) => {
   // Normalize message to a string whether it's a string, Error, or format arg
@@ -80,13 +81,13 @@ console.error = (message, ...args) => {
       : message instanceof Error
         ? message.message
         : String(message);
-  // React Router v6 uses useLayoutEffect internally, which fires a benign SSR
-  // warning when enzyme's render() calls renderToStaticMarkup. Suppress it.
+  // React Router v6 uses useLayoutEffect internally, which can fire a benign SSR
+  // warning in the jsdom environment. Suppress it.
   if (msg.includes("useLayoutEffect")) return;
-  // React 16/18 warns when a state update (e.g. setSearchParams inside withUrlState)
-  // is triggered outside of act(). Enzyme does not automatically wrap prop calls
-  // in act(), so this fires in every test that calls setUrlState directly. The
-  // assertions still work correctly; this is purely a testing-methodology warning.
+  // Some pinned libraries (react-select, react-grid-layout, etc.) trigger state
+  // updates from async callbacks that React Testing Library cannot auto-wrap in
+  // act(). The assertions still work correctly; this is purely a testing-
+  // methodology warning.
   if (msg.includes("not wrapped in act")) return;
   // Several pinned libraries still use the deprecated React 16 lifecycle
   // methods: react-grid-layout, react-modal, react-resizable,

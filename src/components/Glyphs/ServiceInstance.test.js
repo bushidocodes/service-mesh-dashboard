@@ -1,10 +1,14 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import ServiceInstance from "./ServiceInstance";
 
 describe("ServiceInstance", () => {
   it("matches snapshot", () => {
-    const aServiceInstance = shallow(<ServiceInstance />);
-    expect(aServiceInstance).toMatchSnapshot();
+    const { asFragment } = render(
+      <svg>
+        <ServiceInstance />
+      </svg>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

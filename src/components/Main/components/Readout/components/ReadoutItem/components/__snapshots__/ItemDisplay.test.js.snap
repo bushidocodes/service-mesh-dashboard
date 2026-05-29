@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ItemDisplay matches snapshot 1`] = `
-.c1 {
+<DocumentFragment>
+  .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -44,6 +45,7 @@ exports[`ItemDisplay matches snapshot 1`] = `
 }
 
 <div
-  className="c0 c1"
-/>
+    class="c0 c1"
+  />
+</DocumentFragment>
 `;

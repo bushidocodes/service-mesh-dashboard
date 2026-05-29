@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ButtonWrap should match snapshot 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   box-sizing: border-box;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -107,6 +108,7 @@ exports[`ButtonWrap should match snapshot 1`] = `
 }
 
 <button
-  className="c0"
-/>
+    class="c0"
+  />
+</DocumentFragment>
 `;

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`GO > SummaryGrid component Matched the snapshot 1`] = `
-[
+<DocumentFragment>
   .c0 {
   -webkit-align-items: stretch;
   -webkit-box-align: stretch;
@@ -94,6 +94,22 @@ exports[`GO > SummaryGrid component Matched the snapshot 1`] = `
 
 .c12:not(:root) {
   overflow: visible;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  orphans: 2;
+  width: 100%;
 }
 
 .c8 {
@@ -277,22 +293,6 @@ exports[`GO > SummaryGrid component Matched the snapshot 1`] = `
   opacity: 0.85;
 }
 
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: row wrap;
-  -ms-flex-flow: row wrap;
-  flex-flow: row wrap;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  orphans: 2;
-  width: 100%;
-}
-
 .c16 span + span {
   font-size: 80%;
   opacity: 0.8;
@@ -335,8 +335,8 @@ exports[`GO > SummaryGrid component Matched the snapshot 1`] = `
           focusable="false"
           version="1.1"
           viewBox="0 0 24 24"
-          xlink="http://www.w3.org/1999/xlink"
           xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
         >
           <g
             class="c4"
@@ -384,8 +384,8 @@ exports[`GO > SummaryGrid component Matched the snapshot 1`] = `
                 focusable="false"
                 version="1.1"
                 viewBox="0 0 24 24"
-                xlink="http://www.w3.org/1999/xlink"
                 xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
               >
                 <g
                   class="c4"
@@ -419,7 +419,17 @@ exports[`GO > SummaryGrid component Matched the snapshot 1`] = `
               >
                 <div
                   class="c16"
-                />
+                >
+                  <span>
+                    02h 
+                  </span>
+                  <span>
+                    46m 
+                  </span>
+                  <span>
+                    40s 
+                  </span>
+                </div>
               </span>
               <p
                 class="c17"
@@ -444,8 +454,8 @@ exports[`GO > SummaryGrid component Matched the snapshot 1`] = `
                 focusable="false"
                 version="1.1"
                 viewBox="0 0 24 24"
-                xlink="http://www.w3.org/1999/xlink"
                 xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
               >
                 <g
                   class="c4"
@@ -493,8 +503,8 @@ exports[`GO > SummaryGrid component Matched the snapshot 1`] = `
                 focusable="false"
                 version="1.1"
                 viewBox="0 0 24 24"
-                xlink="http://www.w3.org/1999/xlink"
                 xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
               >
                 <g
                   class="iconBorder"
@@ -558,8 +568,8 @@ exports[`GO > SummaryGrid component Matched the snapshot 1`] = `
                 focusable="false"
                 version="1.1"
                 viewBox="0 0 24 24"
-                xlink="http://www.w3.org/1999/xlink"
                 xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
               >
                 <g
                   class="c4"
@@ -612,8 +622,8 @@ exports[`GO > SummaryGrid component Matched the snapshot 1`] = `
                 focusable="false"
                 version="1.1"
                 viewBox="0 0 24 24"
-                xlink="http://www.w3.org/1999/xlink"
                 xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
               >
                 <g
                   class="c4"
@@ -657,7 +667,7 @@ exports[`GO > SummaryGrid component Matched the snapshot 1`] = `
         </div>
       </div>
     </div>
-  </section>,
+  </section>
   .c0 {
   -webkit-align-items: stretch;
   -webkit-box-align: stretch;
@@ -851,8 +861,8 @@ exports[`GO > SummaryGrid component Matched the snapshot 1`] = `
           focusable="false"
           version="1.1"
           viewBox="0 0 24 24"
-          xlink="http://www.w3.org/1999/xlink"
           xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
         >
           <g
             class="c4"
@@ -895,7 +905,7 @@ exports[`GO > SummaryGrid component Matched the snapshot 1`] = `
       class="c6"
     >
       <div
-        style="height:250px"
+        style="height: 250px;"
       >
         <div
           aria-label="The average for currently displayed data is equal to 0."
@@ -916,7 +926,33 @@ exports[`GO > SummaryGrid component Matched the snapshot 1`] = `
           >
             <div
               class="c10"
-            />
+              style="height: 320px; width: 480px;"
+            >
+              <div
+                style="text-align: left; position: relative; width: 0px; height: 0px;"
+              >
+                <canvas
+                  height="0"
+                  style="position: absolute; width: 0px; height: 0px;"
+                  width="0"
+                />
+                <canvas
+                  height="0"
+                  style="position: absolute; width: 0px; height: 0px;"
+                  width="0"
+                />
+                <input
+                  class="dygraph-roller"
+                  size="2"
+                  style="display: none; top: -45px; left: 57px;"
+                  type="text"
+                />
+                <div
+                  class="dygraph-legend"
+                  style="left: -6px; top: 0px;"
+                />
+              </div>
+            </div>
           </div>
           <div
             class="c11"
@@ -924,6 +960,6 @@ exports[`GO > SummaryGrid component Matched the snapshot 1`] = `
         </div>
       </div>
     </div>
-  </section>,
-]
+  </section>
+</DocumentFragment>
 `;

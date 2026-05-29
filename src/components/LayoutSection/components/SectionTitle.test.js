@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import SectionTitle from "./SectionTitle";
 
 describe("SectionTitle", () => {
   it("matches snapshot", () => {
-    const aSectionTitle = shallow(<SectionTitle />);
-    expect(aSectionTitle).toMatchSnapshot();
+    const { asFragment } = render(<SectionTitle />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

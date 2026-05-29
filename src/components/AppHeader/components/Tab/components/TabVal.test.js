@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import TabVal from "./TabVal";
 
 describe("TabVal", () => {
   it("matches snapshot", () => {
-    const aTabVal = shallow(<TabVal />);
-    expect(aTabVal).toMatchSnapshot();
+    const { asFragment } = render(<TabVal />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

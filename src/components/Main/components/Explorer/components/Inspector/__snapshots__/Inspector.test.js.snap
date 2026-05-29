@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Inspector matches snapshot 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   border-radius: 3px;
   bottom: 0;
   display: -webkit-box;
@@ -260,122 +261,123 @@ exports[`Inspector matches snapshot 1`] = `
 }
 
 <div
-  class="c0"
->
-  <div
-    class="c1"
+    class="c0"
   >
-    <input
-      aria-label="Search All Metrics"
-      class="c2"
-      placeholder="Search"
-      type="search"
-      value=""
-    />
-    <label>
+    <div
+      class="c1"
+    >
       <input
-        class="c3"
-        name="hideZeroMetric"
-        type="checkbox"
+        aria-label="Search All Metrics"
+        class="c2"
+        placeholder="Search"
+        type="search"
+        value=""
       />
-      Hide all metrics with only zero values
-    </label>
-    <label>
-      <input
-        class="c4"
-        name="hideStaticMetric"
-        type="checkbox"
-      />
-      Hide all static metrics
-    </label>
+      <label>
+        <input
+          class="c3"
+          name="hideZeroMetric"
+          type="checkbox"
+        />
+        Hide all metrics with only zero values
+      </label>
+      <label>
+        <input
+          class="c4"
+          name="hideStaticMetric"
+          type="checkbox"
+        />
+        Hide all static metrics
+      </label>
+    </div>
+    <ul
+      class="c5"
+    >
+      <div
+        class="c6"
+        tabindex="0"
+      >
+        finagle/build/revision
+      </div>
+      <div
+        class="c6"
+        tabindex="0"
+      >
+        finagle/clientregistry/initialresolution_ms
+      </div>
+      <div
+        class="c6"
+        tabindex="0"
+      >
+        finagle/clientregistry/size
+      </div>
+      <div
+        class="c6"
+        tabindex="0"
+      >
+        finagle/future_pool/active_tasks
+      </div>
+      <div
+        class="c6"
+        tabindex="0"
+      >
+        finagle/future_pool/completed_tasks
+      </div>
+      <div
+        class="c6"
+        tabindex="0"
+      >
+        finagle/future_pool/pool_size
+      </div>
+      <div
+        class="c6"
+        tabindex="0"
+      >
+        finagle/timer/deviation_ms.avg
+      </div>
+      <div
+        class="c6"
+        tabindex="0"
+      >
+        http/closes
+      </div>
+      <div
+        class="c6"
+        tabindex="0"
+      >
+        http/connection_duration.count
+      </div>
+      <div
+        class="c6"
+        tabindex="0"
+      >
+        http/connection_received_bytes.count
+      </div>
+      <div
+        class="c6"
+        tabindex="0"
+      >
+        http/connection_requests.count
+      </div>
+      <div
+        class="c6"
+        tabindex="0"
+      >
+        http/connection_sent_bytes.count
+      </div>
+      <div
+        class="c6"
+        tabindex="0"
+      >
+        http/connections
+      </div>
+      <div
+        class="c6"
+        tabindex="0"
+      >
+        http/connects
+      </div>
+    </ul>
   </div>
-  <ul
-    class="c5"
-  >
-    <div
-      class="c6"
-      tabindex="0"
-    >
-      finagle/build/revision
-    </div>
-    <div
-      class="c6"
-      tabindex="0"
-    >
-      finagle/clientregistry/initialresolution_ms
-    </div>
-    <div
-      class="c6"
-      tabindex="0"
-    >
-      finagle/clientregistry/size
-    </div>
-    <div
-      class="c6"
-      tabindex="0"
-    >
-      finagle/future_pool/active_tasks
-    </div>
-    <div
-      class="c6"
-      tabindex="0"
-    >
-      finagle/future_pool/completed_tasks
-    </div>
-    <div
-      class="c6"
-      tabindex="0"
-    >
-      finagle/future_pool/pool_size
-    </div>
-    <div
-      class="c6"
-      tabindex="0"
-    >
-      finagle/timer/deviation_ms.avg
-    </div>
-    <div
-      class="c6"
-      tabindex="0"
-    >
-      http/closes
-    </div>
-    <div
-      class="c6"
-      tabindex="0"
-    >
-      http/connection_duration.count
-    </div>
-    <div
-      class="c6"
-      tabindex="0"
-    >
-      http/connection_received_bytes.count
-    </div>
-    <div
-      class="c6"
-      tabindex="0"
-    >
-      http/connection_requests.count
-    </div>
-    <div
-      class="c6"
-      tabindex="0"
-    >
-      http/connection_sent_bytes.count
-    </div>
-    <div
-      class="c6"
-      tabindex="0"
-    >
-      http/connections
-    </div>
-    <div
-      class="c6"
-      tabindex="0"
-    >
-      http/connects
-    </div>
-  </ul>
-</div>
+</DocumentFragment>
 `;

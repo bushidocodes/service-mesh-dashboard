@@ -1,7 +1,7 @@
 "use strict";
 
-// TextEncoder/TextDecoder are not in the jsdom global by default.
-// enzyme@3.11 → cheerio@1.2 → undici requires them at module load time.
+// TextEncoder/TextDecoder are not in the jsdom global by default, but some
+// dependencies require them at module load time.
 const { TextEncoder, TextDecoder } = require("util");
 if (typeof global.TextDecoder === "undefined") {
   global.TextDecoder = TextDecoder;

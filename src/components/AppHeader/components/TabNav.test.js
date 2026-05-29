@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import TabNav from "./TabNav";
 
 describe("TabNav", () => {
   it("matches snapshot", () => {
-    const aTabNav = shallow(<TabNav />);
-    expect(aTabNav).toMatchSnapshot();
+    const { asFragment } = render(<TabNav />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -1,7 +1,9 @@
-import React, { act } from "react";
+import React from "react";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
 import { Actions } from "jumpstate";
 import _ from "lodash";
+
+import { fireEvent, screen } from "@testing-library/react";
 
 // Utilities
 import { computeStatus } from "utils/selectors";
@@ -62,7 +64,10 @@ const mockServices = _.values({
   }
 });
 
-// Wrap Fabric Grid in Memory Router to mock route props (history, match, location)
+// Wrap Fabric Grid in Memory Router to mock route props (history, match, location).
+// FabricGrid reads its display/group/sort/search state from the URL query string
+// (via the withUrlState HOC), so the previous enzyme `setUrlState(...)` calls are
+// replaced by rendering at a route whose query string encodes the desired state.
 const RouterWrap = (route = ["/"], services = mockServices) => {
   return (
     <MemoryRouter initialEntries={route}>
@@ -85,154 +90,157 @@ const filterServicesByStatus = (filter) => {
   });
 };
 
-const urlStateDefaults = {
-  displayType: "Cards",
-  groupByAttribute: "Status",
-  searchQuery: "",
-  sortByAttribute: "Name"
-};
-
-// Helper: call setUrlState inside act() so React 18 flushes the update
-// before enzyme assertions run.
-const setUrlState = (wrapper, state) => {
-  act(() => {
-    wrapper.find("FabricGrid").props().setUrlState(state);
-  });
-  wrapper.update();
-};
-
-let FabricGridWrap = mountWithIntl(RouterWrap());
+// DOM markers used to translate the old enzyme component queries:
+// - Each GMServiceCard renders its name inside a <Title> styled.h1, so the number
+//   of <h1> headings equals the number of cards rendered.
+// - Each service row (card or list item) renders a single link to its detail page
+//   (<a href="/{slug}">); docs links point to external URLs, so anchors whose href
+//   starts with "/" count the service rows in either display mode.
+// - Group headers (GMServiceHeader) for the Owner/Capability groupings render an
+//   <img alt=""> services icon, which is header-exclusive, so counting those
+//   distinguishes a grouped view from the ungrouped ("None") view.
+const headingCount = (container) => container.querySelectorAll("h1").length;
+const serviceLinkCount = (container) =>
+  container.querySelectorAll('a[href^="/"]').length;
+const groupHeaderCount = (container) =>
+  container.querySelectorAll('img[alt=""]').length;
 
 describe("Fabric Grid Main View", () => {
-  afterEach(() => {
-    // Reset the url bar state to defaults after every test
-    setUrlState(FabricGridWrap, urlStateDefaults);
-  });
-
   test("renders all services in cards view", () => {
-    expect(FabricGridWrap.find("GMServiceCard")).toHaveLength(3);
-    expect(FabricGridWrap.find("GMServiceListItem")).toHaveLength(0);
-    expect(FabricGridWrap.html().includes("AAC Remote Information")).toBe(true);
-    expect(FabricGridWrap.html().includes("Entry Monitoring")).toBe(true);
-    expect(
-      FabricGridWrap.html().includes("Grace Hopper Battleship Control Program")
-    ).toBe(true);
+    const { container } = mountWithIntl(RouterWrap());
+    // Cards view (default) renders one <h1> title per card and no list rows.
+    expect(headingCount(container)).toBe(3);
+    expect(serviceLinkCount(container)).toBe(3);
+    expect(container).toHaveTextContent("AAC Remote Information");
+    expect(container).toHaveTextContent("Entry Monitoring");
+    expect(container).toHaveTextContent(
+      "Grace Hopper Battleship Control Program"
+    );
   });
 
   test("renders all services in list view", () => {
-    FabricGridWrap.find("button[title='List']").simulate("click");
-    expect(FabricGridWrap.find("ServicesListItem")).toHaveLength(3);
-    expect(FabricGridWrap.find("GMServiceCard")).toHaveLength(0);
-    expect(FabricGridWrap.html().includes("AAC Remote Information")).toBe(true);
-    expect(FabricGridWrap.html().includes("Entry Monitoring")).toBe(true);
-    expect(
-      FabricGridWrap.html().includes("Grace Hopper Battleship Control Program")
-    ).toBe(true);
+    const { container } = mountWithIntl(RouterWrap());
+    // Toggle to list view by clicking the "List" display-type button.
+    fireEvent.click(screen.getByTitle("List"));
+    // List rows render the name in a <div>, not an <h1>, so there are no card
+    // headings, while each service still renders one detail link.
+    expect(headingCount(container)).toBe(0);
+    expect(serviceLinkCount(container)).toBe(3);
+    expect(container).toHaveTextContent("AAC Remote Information");
+    expect(container).toHaveTextContent("Entry Monitoring");
+    expect(container).toHaveTextContent(
+      "Grace Hopper Battleship Control Program"
+    );
   });
 
   test("groups services by Owner, Capability, Status, and None", () => {
     // Group by "Status" (groupByAttribute's default)
-    expect(FabricGridWrap.html().includes("down")).toBe(true);
-    expect(FabricGridWrap.html().includes("warning")).toBe(true);
-    expect(FabricGridWrap.html().includes("stable")).toBe(true);
+    let view = mountWithIntl(RouterWrap());
+    expect(view.container.innerHTML.toLowerCase()).toContain("down");
+    expect(view.container.innerHTML.toLowerCase()).toContain("warning");
+    expect(view.container.innerHTML.toLowerCase()).toContain("stable");
     // Group by "Owner"
-    setUrlState(FabricGridWrap, { groupByAttribute: "Owner" });
-    expect(FabricGridWrap.html().includes("domain")).toBe(true);
-    expect(FabricGridWrap.html().includes("aac")).toBe(true);
-    expect(FabricGridWrap.html().includes("bootstrap")).toBe(true);
+    view = mountWithIntl(RouterWrap(["/?groupByAttribute=Owner"]));
+    expect(view.container.innerHTML.toLowerCase()).toContain("domain");
+    expect(view.container.innerHTML.toLowerCase()).toContain("aac");
+    expect(view.container.innerHTML.toLowerCase()).toContain("bootstrap");
     // Group by "Capability"
-    setUrlState(FabricGridWrap, { groupByAttribute: "Capability" });
-    expect(FabricGridWrap.html().includes("system of record")).toBe(true);
-    expect(FabricGridWrap.html().includes("crime fighting")).toBe(true);
-    // Group by "None" (there should be no headers present)
-    setUrlState(FabricGridWrap, { groupByAttribute: "None" });
-    expect(FabricGridWrap.html().includes("GMServiceHeader")).toBe(false);
+    view = mountWithIntl(RouterWrap(["/?groupByAttribute=Capability"]));
+    expect(view.container.innerHTML.toLowerCase()).toContain(
+      "system of record"
+    );
+    expect(view.container.innerHTML.toLowerCase()).toContain("crime fighting");
+    // Group by "None" (there should be no grouping headers present)
+    // NOTE: the original assertion `html().includes("GMServiceHeader")` checked
+    // for an enzyme component name that never appears in real HTML, so it was
+    // vacuous. Instead assert the observable result of "None": no group-header
+    // services icon is rendered, and the header-exclusive Owner/Capability titles
+    // are absent from the output.
+    view = mountWithIntl(RouterWrap(["/?groupByAttribute=None"]));
+    expect(groupHeaderCount(view.container)).toBe(0);
+    expect(view.container.innerHTML.toLowerCase()).not.toContain("domain");
+    expect(view.container.innerHTML.toLowerCase()).not.toContain(
+      "system of record"
+    );
   });
 
   test("sorts services by name and status", () => {
     // Sort by "Name"
-    setUrlState(FabricGridWrap, {
-      groupByAttribute: "None",
-      sortByAttribute: "Name"
-    });
+    let html = mountWithIntl(
+      RouterWrap(["/?groupByAttribute=None&sortByAttribute=Name"])
+    ).container.innerHTML;
     // Find and compare indices to determine the sorting order
-    let first = FabricGridWrap.html().indexOf("AAC Remote Information");
-    let second = FabricGridWrap.html().indexOf("Entry Monitoring");
-    let third = FabricGridWrap.html().indexOf(
-      "Grace Hopper Battleship Control Program"
-    );
+    let first = html.indexOf("AAC Remote Information");
+    let second = html.indexOf("Entry Monitoring");
+    let third = html.indexOf("Grace Hopper Battleship Control Program");
     expect(first).toBeLessThan(second);
     expect(second).toBeLessThan(third);
     // Sort by "Status"
-    setUrlState(FabricGridWrap, {
-      groupByAttribute: "None",
-      sortByAttribute: "Status"
-    });
+    html = mountWithIntl(
+      RouterWrap(["/?groupByAttribute=None&sortByAttribute=Status"])
+    ).container.innerHTML;
     // Sorting by status flips the order of Entry monitoring and AAC
-    first = FabricGridWrap.html().indexOf("Entry Monitoring");
-    second = FabricGridWrap.html().indexOf("AAC Remote Information");
+    first = html.indexOf("Entry Monitoring");
+    second = html.indexOf("AAC Remote Information");
+    third = html.indexOf("Grace Hopper Battleship Control Program");
 
     expect(first).toBeLessThan(second);
     expect(second).toBeLessThan(third);
   });
 
   test("filters services based on searchQuery", () => {
-    setUrlState(FabricGridWrap, { searchQuery: "Grace" });
-    expect(FabricGridWrap.html().includes("AAC Remote Information")).toBe(
-      false
+    const { container } = mountWithIntl(RouterWrap(["/?searchQuery=Grace"]));
+    expect(container).not.toHaveTextContent("AAC Remote Information");
+    expect(container).not.toHaveTextContent("Entry Monitoring");
+    expect(container).toHaveTextContent(
+      "Grace Hopper Battleship Control Program"
     );
-    expect(FabricGridWrap.html().includes("Entry Monitoring")).toBe(false);
-    expect(
-      FabricGridWrap.html().includes("Grace Hopper Battleship Control Program")
-    ).toBe(true);
   });
 });
 
 describe("Fabric Grid Status Views", () => {
-  afterEach(() => {
-    setUrlState(FabricGridWrap, urlStateDefaults);
-  });
-
   // In the following tests, we have to generate filtered services to pass down to the route,
   // to mock what we do in FabricGrid router
   test("render the correct services in stable view", () => {
     const filteredServices = filterServicesByStatus("stable");
-    FabricGridWrap = mountWithIntl(RouterWrap(["/stable"], filteredServices));
+    const { container } = mountWithIntl(
+      RouterWrap(["/stable"], filteredServices)
+    );
 
     // Check that there is only one stable card rendered
-    expect(FabricGridWrap.find("GMServiceCard")).toHaveLength(1);
-    expect(FabricGridWrap.html().includes("AAC Remote Information")).toBe(
-      false
+    expect(headingCount(container)).toBe(1);
+    expect(container).not.toHaveTextContent("AAC Remote Information");
+    expect(container).not.toHaveTextContent("Entry Monitoring");
+    expect(container).toHaveTextContent(
+      "Grace Hopper Battleship Control Program"
     );
-    expect(FabricGridWrap.html().includes("Entry Monitoring")).toBe(false);
-    expect(
-      FabricGridWrap.html().includes("Grace Hopper Battleship Control Program")
-    ).toBe(true);
   });
 
   test("render the correct services in warning view", () => {
     const filteredServices = filterServicesByStatus("warning");
-    FabricGridWrap = mountWithIntl(RouterWrap(["/warning"], filteredServices));
+    const { container } = mountWithIntl(
+      RouterWrap(["/warning"], filteredServices)
+    );
     // Check that there is only one warning card rendered
-    expect(FabricGridWrap.find("GMServiceCard")).toHaveLength(1);
-    expect(FabricGridWrap.html().includes("AAC Remote Information")).toBe(true);
-    expect(FabricGridWrap.html().includes("Entry Monitoring")).toBe(false);
-    expect(
-      FabricGridWrap.html().includes("Grace Hopper Battleship Control Program")
-    ).toBe(false);
+    expect(headingCount(container)).toBe(1);
+    expect(container).toHaveTextContent("AAC Remote Information");
+    expect(container).not.toHaveTextContent("Entry Monitoring");
+    expect(container).not.toHaveTextContent(
+      "Grace Hopper Battleship Control Program"
+    );
   });
 
   test("render the correct services in down view", () => {
     const filteredServices = filterServicesByStatus("down");
-    FabricGridWrap = mountWithIntl(RouterWrap(["/down"], filteredServices));
-    // Check that there is only one down card rendered
-    expect(FabricGridWrap.find("GMServiceCard")).toHaveLength(1);
-    expect(FabricGridWrap.html().includes("AAC Remote Information")).toBe(
-      false
+    const { container } = mountWithIntl(
+      RouterWrap(["/down"], filteredServices)
     );
-    expect(FabricGridWrap.html().includes("Entry Monitoring")).toBe(true);
-    expect(
-      FabricGridWrap.html().includes("Grace Hopper Battleship Control Program")
-    ).toBe(false);
+    // Check that there is only one down card rendered
+    expect(headingCount(container)).toBe(1);
+    expect(container).not.toHaveTextContent("AAC Remote Information");
+    expect(container).toHaveTextContent("Entry Monitoring");
+    expect(container).not.toHaveTextContent(
+      "Grace Hopper Battleship Control Program"
+    );
   });
 });

@@ -1,10 +1,14 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import ServicesWhite from "./ServicesWhite";
 
 describe("ServicesWhite", () => {
   it("matches snapshot", () => {
-    const aServicesWhite = shallow(<ServicesWhite />);
-    expect(aServicesWhite).toMatchSnapshot();
+    const { asFragment } = render(
+      <svg>
+        <ServicesWhite />
+      </svg>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import ReadoutItemDetail from "./ReadoutItemDetail";
 
 describe("ReadoutItemDetail", () => {
   it("matches snapshot", () => {
-    const aReadoutItemDetail = shallow(<ReadoutItemDetail />);
-    expect(aReadoutItemDetail).toMatchSnapshot();
+    const { asFragment } = render(<ReadoutItemDetail />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

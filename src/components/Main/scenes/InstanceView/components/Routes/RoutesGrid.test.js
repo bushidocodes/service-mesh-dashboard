@@ -1,135 +1,104 @@
 import React from "react";
 import { MemoryRouter } from "react-router-dom";
 import configureMockStore from "redux-mock-store";
+import { screen, fireEvent, within } from "@testing-library/react";
 
 // Utilities
 import mockState from "json/mockReduxState";
-import { mountWithIntl, renderWithIntl } from "utils/i18nTesting";
+import { renderWithIntl } from "utils/i18nTesting";
 
 // Components
 import RoutesGrid from "./index";
-import NotFoundError from "components/Main/components/NotFoundError";
 
 // Create a mock store and initialize with mock data
 const store = configureMockStore()(mockState);
 
-// Props that should be passed down to routes Table
-const routesTableProps = {
-  items: [
-    {
-      errorPercent: "0",
-      errorsCount: 0,
-      inThroughput: 0,
-      latency50: 0,
-      latency99: 9,
-      outThroughput: 1580,
-      requests: 17725,
-      requestsPerSecond_dygraph: {
-        data: [
-          [new Date("2017-07-18T22:13:34.314Z"), 0],
-          [new Date("2017-07-18T22:13:49.215Z"), 0],
-          [new Date("2017-07-18T22:14:04.215Z"), 0],
-          [new Date("2017-07-18T22:14:19.217Z"), 0],
-          [new Date("2017-07-18T22:14:34.215Z"), 0],
-          [new Date("2017-07-18T22:14:49.215Z"), 0],
-          [new Date("2017-07-18T22:15:04.216Z"), 0],
-          [new Date("2017-07-18T22:15:19.215Z"), 0],
-          [new Date("2017-07-18T22:15:34.216Z"), 0]
-        ],
-        attributes: ["Time", "route/functionalroles/GET/requests"]
-      },
-      requestsPerSecond_sparkline: [0, 0, 0, 0, 0, 0, 0, 0],
-      route: "/functionalroles",
-      verb: "GET"
-    },
-    {
-      errorPercent: "0",
-      errorsCount: 0,
-      inThroughput: 0,
-      latency50: 0,
-      latency99: 0,
-      outThroughput: 0,
-      requests: 1,
-      requestsPerSecond_dygraph: {
-        data: [
-          [new Date("2017-07-18T22:13:34.314Z"), 0],
-          [new Date("2017-07-18T22:13:49.215Z"), 0],
-          [new Date("2017-07-18T22:14:04.215Z"), 0],
-          [new Date("2017-07-18T22:14:19.217Z"), 0],
-          [new Date("2017-07-18T22:14:34.215Z"), 0],
-          [new Date("2017-07-18T22:14:49.215Z"), 0],
-          [new Date("2017-07-18T22:15:04.216Z"), 0],
-          [new Date("2017-07-18T22:15:19.215Z"), 0],
-          [new Date("2017-07-18T22:15:34.216Z"), 0]
-        ],
-        attributes: ["Time", "route/ping/GET/requests"]
-      },
-      requestsPerSecond_sparkline: [0, 0, 0, 0, 0, 0, 0, 0],
-      route: "/ping",
-      verb: "GET"
-    }
-  ],
-  type: "Route"
-};
-
-let wrapper;
-
 describe("RoutesGrid View", () => {
   beforeEach(() => {
-    wrapper = mountWithIntl(
-      <MemoryRouter>
-        <RoutesGrid store={store} />
-      </MemoryRouter>
-    ).find("RoutesGrid");
-  });
-
-  test("matches snapshot", () => {
-    const tree = renderWithIntl(
+    renderWithIntl(
       <MemoryRouter>
         <RoutesGrid store={store} />
       </MemoryRouter>
     );
-    expect(tree).toMatchSnapshot();
+  });
+
+  test("matches snapshot", () => {
+    const { asFragment } = renderWithIntl(
+      <MemoryRouter>
+        <RoutesGrid store={store} />
+      </MemoryRouter>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test("renders correct components", () => {
-    expect(wrapper.find("TableToolbar")).toHaveLength(1);
-    expect(wrapper.find("Table")).toHaveLength(1);
-    expect(wrapper.find("ErrorBoundary")).toHaveLength(1);
+    // TableToolbar renders the search input (a <input type="search">) and the
+    // Sort By dropdown (react-select combobox); Table renders one <li role="link">
+    // per route; ErrorBoundary is an invisible wrapper around Table so we assert
+    // on the Table rows it guards.
+    // NOTE: original counted <TableToolbar/>, <Table/> and <ErrorBoundary/> by
+    // component type. RTL is DOM-based, so we assert the observable DOM each
+    // produces: the toolbar's searchbox + sort combobox, and the Table's rows.
+    expect(screen.getByRole("searchbox")).toBeInTheDocument();
+    expect(screen.getByRole("combobox")).toBeInTheDocument();
+    expect(screen.getAllByRole("link")).toHaveLength(2);
   });
 
   test("renders NotFoundError when there are no routes", () => {
     // create state with no metrics and reconfigure mock store with new state
     const state = Object.assign({}, mockState, { instance: { metrics: {} } });
     const store = configureMockStore()(state);
-    wrapper = mountWithIntl(
+    renderWithIntl(
       <MemoryRouter>
         <RoutesGrid store={store} />
       </MemoryRouter>
     );
-    expect(wrapper.find(NotFoundError)).toHaveLength(1);
+    // NOTE: original asserted one <NotFoundError/> instance. NotFoundError
+    // renders its errorMsg as text, so we assert the rendered message instead.
+    expect(screen.getByText("No Routes Found")).toBeInTheDocument();
   });
 
   test("passes the correct props down to TableToolbar", () => {
-    expect(wrapper.find("TableToolbar").props()).toMatchObject({
-      searchInputProps: {
-        filterString: "",
-        searchPlaceholder: "Search Routes"
-      },
-      sortByProps: {
-        sortByAttribute: "route",
-        sortByOptions: [
-          { label: "Route", value: "route" },
-          { label: "Requests", value: "requests" },
-          { label: "Error %", value: "errorPercent" },
-          { label: "Latency 50%", value: "latency50" },
-          { label: "Latency 99%", value: "latency99" }
-        ]
-      }
-    });
+    // NOTE: original read TableToolbar's props object directly. RTL cannot read
+    // props, so we assert the DOM those props produce.
+    // searchInputProps.searchPlaceholder ("Search Routes") and
+    // searchInputProps.filterString ("") manifest on the search input.
+    const searchInput = screen.getByRole("searchbox");
+    expect(searchInput).toHaveAttribute("placeholder", "Search Routes");
+    expect(searchInput).toHaveValue("");
+
+    // sortByProps.sortByAttribute ("route") manifests as the selected value
+    // displayed in the Sort By dropdown, rendered as "Sort Route".
+    const sortDropdown = screen.getByRole("combobox");
+    expect(sortDropdown.closest(".gm-select__control")).toHaveTextContent(
+      "Sort Route"
+    );
+
+    // sortByProps.sortByOptions manifest as the dropdown's menu options once it
+    // is opened. Open the menu and assert every option label is present.
+    fireEvent.keyDown(sortDropdown, { key: "ArrowDown", code: "ArrowDown" });
+    const listbox = screen.getByRole("listbox");
+    const options = within(listbox).getAllByText(
+      /^(Route|Requests|Error %|Latency 50%|Latency 99%)$/
+    );
+    expect(options.map((opt) => opt.textContent)).toEqual([
+      "Route",
+      "Requests",
+      "Error %",
+      "Latency 50%",
+      "Latency 99%"
+    ]);
   });
 
   test("passes the correct props down to Table", () => {
-    expect(wrapper.find("Table").props()).toMatchObject(routesTableProps);
+    // NOTE: original read Table's props (items + type:"Route"). RTL cannot read
+    // props, so we assert the DOM those items produce: one row per route, each
+    // showing the route path and verb. Routes are sorted ascending by route, so
+    // "/functionalroles" precedes "/ping".
+    const rows = screen.getAllByRole("link");
+    expect(rows).toHaveLength(2);
+    expect(rows[0]).toHaveTextContent("/functionalroles");
+    expect(rows[1]).toHaveTextContent("/ping");
+    rows.forEach((row) => expect(row).toHaveTextContent("GET"));
   });
 });

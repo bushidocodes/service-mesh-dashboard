@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import CancelX from "./CancelX";
 
 describe("CancelX", () => {
   it("matches snapshot", () => {
-    const aCancelX = shallow(<CancelX />);
-    expect(aCancelX).toMatchSnapshot();
+    const { asFragment } = render(<CancelX />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import NotFound from "./NotFound";
 
 describe("NotFound", () => {
   it("matches snapshot", () => {
-    const aNotFound = shallow(<NotFound />);
-    expect(aNotFound).toMatchSnapshot();
+    const { asFragment } = render(<NotFound />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

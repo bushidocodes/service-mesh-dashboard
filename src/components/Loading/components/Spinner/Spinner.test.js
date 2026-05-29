@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import Spinner from "./Spinner";
 
 describe("Spinner", () => {
   it("matches snapshot", () => {
-    const aSpinner = shallow(<Spinner />);
-    expect(aSpinner).toMatchSnapshot();
+    const { asFragment } = render(<Spinner />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

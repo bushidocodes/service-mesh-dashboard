@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import InspectorItem from "./InspectorItem";
 
 describe("InspectorItem", () => {
   it("matches snapshot", () => {
-    const aInspectorItem = shallow(<InspectorItem />);
-    expect(aInspectorItem).toMatchSnapshot();
+    const { asFragment } = render(<InspectorItem />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

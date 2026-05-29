@@ -1,10 +1,14 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import Negation from "./Negation";
 
 describe("Negation", () => {
   it("matches snapshot", () => {
-    const aNegation = shallow(<Negation />);
-    expect(aNegation).toMatchSnapshot();
+    const { asFragment } = render(
+      <svg>
+        <Negation />
+      </svg>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

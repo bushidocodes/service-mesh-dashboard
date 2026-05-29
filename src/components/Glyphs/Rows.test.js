@@ -1,10 +1,14 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import Rows from "./Rows";
 
 describe("Rows", () => {
   it("matches snapshot", () => {
-    const aRows = shallow(<Rows />);
-    expect(aRows).toMatchSnapshot();
+    const { asFragment } = render(
+      <svg>
+        <Rows />
+      </svg>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

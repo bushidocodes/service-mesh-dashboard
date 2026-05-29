@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import TableColArray from "./TableColArray";
 
 describe("TableColArray", () => {
   it("matches snapshot", () => {
-    const aTableColArray = shallow(<TableColArray />);
-    expect(aTableColArray).toMatchSnapshot();
+    const { asFragment } = render(<TableColArray />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import ReadoutItemIconStyle from "./ReadoutItemIconStyle";
 
 describe("ReadoutItemIconStyle", () => {
   it("matches snapshot", () => {
-    const aReadoutItemIconStyle = shallow(<ReadoutItemIconStyle />);
-    expect(aReadoutItemIconStyle).toMatchSnapshot();
+    const { asFragment } = render(<ReadoutItemIconStyle />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

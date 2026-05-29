@@ -1,9 +1,7 @@
 import React from "react";
-import { mount, render } from "enzyme";
+import { render, screen, fireEvent } from "@testing-library/react";
 
 import Button from "./Button";
-import ButtonWrap from "./components/ButtonWrap";
-import Glyph from "components/Glyphs/";
 
 const types = ["danger", "info", "primary", "warning", "polling"];
 const outlines = ["raised", "outline", "shadow", "none", "raised-outline"];
@@ -33,19 +31,17 @@ const props = {
 describe("Button", () => {
   describe("Snapshots", () => {
     test("matches type snapshots", () => {
-      let tree;
       types.forEach((type) => {
-        tree = render(
+        const { asFragment } = render(
           <Button type={type} label={type} key={type} clickAction={() => {}} />
         );
-        expect(tree).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
       });
     });
 
     test("matches outline snapshots", () => {
-      let tree;
       outlines.forEach((outline) => {
-        tree = render(
+        const { asFragment } = render(
           <Button
             outline={outline}
             label={outline}
@@ -53,24 +49,22 @@ describe("Button", () => {
             clickAction={() => {}}
           />
         );
-        expect(tree).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
       });
     });
 
     test("matches size snapshots", () => {
-      let tree;
       sizes.forEach((size) => {
-        tree = render(
+        const { asFragment } = render(
           <Button size={size} label={size} key={size} clickAction={() => {}} />
         );
-        expect(tree).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
       });
     });
 
     test("matches orientation snapshots", () => {
-      let tree;
       orientations.forEach((orientation) => {
-        tree = render(
+        const { asFragment } = render(
           <Button
             orientation={orientation}
             label={orientation}
@@ -78,12 +72,12 @@ describe("Button", () => {
             clickAction={() => {}}
           />
         );
-        expect(tree).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
       });
     });
 
     test("matches prefix/suffix snapshot", () => {
-      let tree = (
+      const { asFragment } = render(
         <Button
           prefix="Prefix"
           suffix="Suffix"
@@ -91,52 +85,71 @@ describe("Button", () => {
           clickAction={() => {}}
         />
       );
-      expect(tree).toMatchSnapshot();
+      expect(asFragment()).toMatchSnapshot();
     });
 
     test("matches active snapshot", () => {
-      let tree = <Button active label="Button" clickAction={() => {}} />;
-      expect(tree).toMatchSnapshot();
+      const { asFragment } = render(
+        <Button active label="Button" clickAction={() => {}} />
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
 
     test("matches disabled snapshot", () => {
-      let tree = <Button disabled label="Button" clickAction={() => {}} />;
-      expect(tree).toMatchSnapshot();
+      const { asFragment } = render(
+        <Button disabled label="Button" clickAction={() => {}} />
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
   });
 
   describe("Props", () => {
-    let wrapper;
-    beforeEach(() => {
-      wrapper = mount(<Button {...props}>{["Hello World"]}</Button>);
-    });
-
     test("passes correct props to ButtonWrap", () => {
-      expect(wrapper.find(ButtonWrap).props()).toMatchObject({
-        active: false,
-        disabled: false,
-        iconSize: "sm",
-        onClick: wrapper.props().clickAction,
-        orientation: "horizontal",
-        outline: "outline",
-        size: "normal",
-        style: {},
-        tabIndex: 0,
-        title: "Button",
-        type: "primary"
-      });
+      const clickAction = jest.fn();
+      render(
+        <Button {...props} clickAction={clickAction}>
+          {["Hello World"]}
+        </Button>
+      );
+      // ButtonWrap is a styled.button; assert the observable DOM produced by the
+      // props Button forwards to it.
+      const button = screen.getByRole("button");
+      // title={label}
+      expect(button).toHaveAttribute("title", "Button");
+      // tabIndex
+      expect(button).toHaveAttribute("tabindex", "0");
+      // disabled={false} -> not disabled
+      expect(button).not.toBeDisabled();
+      // onClick={clickAction}
+      fireEvent.click(button);
+      expect(clickAction).toHaveBeenCalledTimes(1);
+      // NOTE: active, iconSize, orientation, outline, size, style and type have
+      // no plain DOM attribute manifestation (they only feed styled-components
+      // CSS generation), so they are not directly asserted here. The styled
+      // output is covered by the Snapshots describe block above.
     });
 
     test("passes correct props to Glyph", () => {
-      expect(wrapper.find(Glyph).props()).toMatchObject({
-        glyphColor: "#fff",
-        name: "Bell",
-        ratio: 1
-      });
+      const { container } = render(
+        <Button {...props}>{["Hello World"]}</Button>
+      );
+      // Glyph renders <g className="glyph" fill={glyphColor} transform=...>
+      // with the named glyph (Bell) inside it.
+      const glyph = container.querySelector("g.glyph");
+      expect(glyph).toBeInTheDocument();
+      // glyphColor="#fff"
+      expect(glyph).toHaveAttribute("fill", "#fff");
+      // ratio=1 -> translate(0 0) scale(1)
+      expect(glyph).toHaveAttribute("transform", "translate(0 0) scale(1)");
+      // name="Bell" -> Bell glyph renders a <path id="Shape">
+      expect(glyph.querySelector("path#Shape")).toBeInTheDocument();
     });
 
     test("renders children", () => {
-      expect(wrapper.html().includes("Hello World")).toBe(true);
+      const { container } = render(
+        <Button {...props}>{["Hello World"]}</Button>
+      );
+      expect(container).toHaveTextContent("Hello World");
     });
   });
 });

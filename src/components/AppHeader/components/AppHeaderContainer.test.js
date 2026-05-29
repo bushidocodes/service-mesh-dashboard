@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import AppHeaderContainer from "./AppHeaderContainer";
 
 describe("AppHeaderContainer", () => {
   it("matches snapshot", () => {
-    const aAppHeaderContainer = shallow(<AppHeaderContainer />);
-    expect(aAppHeaderContainer).toMatchSnapshot();
+    const { asFragment } = render(<AppHeaderContainer />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

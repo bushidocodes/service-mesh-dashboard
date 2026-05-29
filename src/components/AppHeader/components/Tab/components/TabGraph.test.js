@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import TabGraph from "./TabGraph";
 
 describe("TabGraph", () => {
   it("matches snapshot", () => {
-    const aTabGraph = shallow(<TabGraph />);
-    expect(aTabGraph).toMatchSnapshot();
+    const { asFragment } = render(<TabGraph />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -1,10 +1,14 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import Cog from "./Cog";
 
 describe("Cog", () => {
   it("matches snapshot", () => {
-    const aCog = shallow(<Cog />);
-    expect(aCog).toMatchSnapshot();
+    const { asFragment } = render(
+      <svg>
+        <Cog />
+      </svg>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

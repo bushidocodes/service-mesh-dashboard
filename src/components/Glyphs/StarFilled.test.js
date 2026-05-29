@@ -1,10 +1,14 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import StarFilled from "./StarFilled";
 
 describe("StarFilled", () => {
   it("matches snapshot", () => {
-    const aStarFilled = shallow(<StarFilled />);
-    expect(aStarFilled).toMatchSnapshot();
+    const { asFragment } = render(
+      <svg>
+        <StarFilled />
+      </svg>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AppContent matches snapshot 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   background-color: rgb(255,255,255);
   display: -webkit-box;
   display: -webkit-flex;
@@ -21,6 +22,7 @@ exports[`AppContent matches snapshot 1`] = `
 }
 
 <div
-  className="c0"
-/>
+    class="c0"
+  />
+</DocumentFragment>
 `;

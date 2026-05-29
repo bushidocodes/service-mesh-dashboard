@@ -1,14 +1,14 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import DataPair from "./DataPair";
 
 describe("DataPair", () => {
   it("matches snapshot when priority is primary", () => {
-    const aDataPair = shallow(<DataPair priority="primary" />);
-    expect(aDataPair).toMatchSnapshot();
+    const { asFragment } = render(<DataPair priority="primary" />);
+    expect(asFragment()).toMatchSnapshot();
   });
   it("matches snapshot when priority is normal", () => {
-    const aDataPair = shallow(<DataPair priority="normal" />);
-    expect(aDataPair).toMatchSnapshot();
+    const { asFragment } = render(<DataPair priority="normal" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

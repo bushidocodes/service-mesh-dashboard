@@ -1,17 +1,17 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import ReadoutItemData from "./ReadoutItemData";
 
 describe("ReadoutItemData", () => {
   it("matches snapshot", () => {
-    const aReadoutItemData = shallow(<ReadoutItemData />);
-    expect(aReadoutItemData).toMatchSnapshot();
+    const { asFragment } = render(<ReadoutItemData />);
+    expect(asFragment()).toMatchSnapshot();
   });
   it("allows padding-left of first-child to be overridden", () => {
-    const aReadoutItemData = shallow(<ReadoutItemData paddingLeft="99px" />);
+    const { container } = render(<ReadoutItemData paddingLeft="99px" />);
     // The override applies to padding-left under the :first-child selector;
     // jest-styled-components targets nested rules via the `modifier` option.
-    expect(aReadoutItemData).toHaveStyleRule("padding-left", "99px", {
+    expect(container.firstChild).toHaveStyleRule("padding-left", "99px", {
       modifier: ":first-child"
     });
   });

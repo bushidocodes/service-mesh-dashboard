@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import SectionIcon from "./SectionIcon";
 
 describe("SectionIcon", () => {
   it("matches snapshot", () => {
-    const aSectionIcon = shallow(<SectionIcon />);
-    expect(aSectionIcon).toMatchSnapshot();
+    const { asFragment } = render(<SectionIcon />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

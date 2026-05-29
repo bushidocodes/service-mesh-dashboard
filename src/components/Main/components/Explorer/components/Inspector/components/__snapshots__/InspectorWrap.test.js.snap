@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`InspectorWrap matches snapshot 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   border-radius: 3px;
   bottom: 0;
   display: -webkit-box;
@@ -21,6 +22,7 @@ exports[`InspectorWrap matches snapshot 1`] = `
 }
 
 <div
-  className="c0"
-/>
+    class="c0"
+  />
+</DocumentFragment>
 `;

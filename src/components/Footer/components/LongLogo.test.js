@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import LongLogo from "./LongLogo";
 
 describe("LongLogo", () => {
   it("should render", () => {
-    const aLongLogo = shallow(<LongLogo />);
-    expect(aLongLogo).toMatchSnapshot();
+    const { asFragment } = render(<LongLogo />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

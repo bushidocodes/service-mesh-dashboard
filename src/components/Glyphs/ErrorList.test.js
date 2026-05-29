@@ -1,10 +1,14 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import ErrorList from "./ErrorList";
 
 describe("ErrorList", () => {
   it("matches snapshot", () => {
-    const aErrorList = shallow(<ErrorList />);
-    expect(aErrorList).toMatchSnapshot();
+    const { asFragment } = render(
+      <svg>
+        <ErrorList />
+      </svg>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

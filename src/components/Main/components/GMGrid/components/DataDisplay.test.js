@@ -1,14 +1,14 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import DataDisplay from "./DataDisplay";
 
 describe("DataDisplay", () => {
   it("matches snapshot when table is false", () => {
-    const aDataDisplay = shallow(<DataDisplay table={false} />);
-    expect(aDataDisplay).toMatchSnapshot();
+    const { asFragment } = render(<DataDisplay table={false} />);
+    expect(asFragment()).toMatchSnapshot();
   });
   it("matches snapshot when table is true", () => {
-    const aDataDisplay = shallow(<DataDisplay table={true} />);
-    expect(aDataDisplay).toMatchSnapshot();
+    const { asFragment } = render(<DataDisplay table={true} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

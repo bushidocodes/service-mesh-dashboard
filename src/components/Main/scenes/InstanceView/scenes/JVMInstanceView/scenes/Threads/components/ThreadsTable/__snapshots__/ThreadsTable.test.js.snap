@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ThreadsTable component matches the snapshot 1`] = `
-.c1 {
+<DocumentFragment>
+  .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -63,46 +64,47 @@ exports[`ThreadsTable component matches the snapshot 1`] = `
 }
 
 <div
-  class="c0"
->
-  <div
-    class="c1"
+    class="c0"
   >
     <div
-      class="c2 c3 c4"
-      style="text-align:center"
+      class="c1"
     >
-      State
+      <div
+        class="c2 c3 c4"
+        style="text-align: center;"
+      >
+        State
+      </div>
+      <div
+        class="c2 c3 c4"
+        style="text-align: center;"
+      >
+        ID
+      </div>
+      <div
+        class="c2 c3"
+      >
+        Name
+      </div>
+      <div
+        class="c2 c3 c4"
+        style="text-align: right; flex: 0 1 7em;"
+      >
+        Daemon
+      </div>
+      <div
+        class="c2 c3 c4"
+        style="text-align: right; flex: 0 1 7em;"
+      >
+        Priority
+      </div>
+      <div
+        class="c2 c3 c4"
+      />
     </div>
-    <div
-      class="c2 c3 c4"
-      style="text-align:center"
-    >
-      ID
-    </div>
-    <div
-      class="c2 c3"
-    >
-      Name
-    </div>
-    <div
-      class="c2 c3 c4"
-      style="text-align:right;flex:0 1 7em"
-    >
-      Daemon
-    </div>
-    <div
-      class="c2 c3 c4"
-      style="text-align:right;flex:0 1 7em"
-    >
-      Priority
-    </div>
-    <div
-      class="c2 c3 c4"
+    <ol
+      class="c5"
     />
   </div>
-  <ol
-    class="c5"
-  />
-</div>
+</DocumentFragment>
 `;

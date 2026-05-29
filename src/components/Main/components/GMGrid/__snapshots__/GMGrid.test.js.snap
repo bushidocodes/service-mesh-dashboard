@@ -1,267 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Service Instance View: JVM/GO/HTTP <GMGrid> matches snapshot 1`] = `
-<ErrorBoundary>
-  <Memo(l) />
-  <WidthProvider(ResponsiveReactGridLayout)
-    breakpoints={
-      {
-        "lg": 1200,
-        "md": 996,
-        "sm": 768,
-      }
-    }
-    cols={
-      {
-        "lg": 12,
-        "md": 8,
-        "sm": 4,
-      }
-    }
-    isDraggable={false}
-    isResizable={false}
-    layouts={
-      {
-        "lg": [
-          {
-            "h": 9,
-            "i": "Heap",
-            "minH": 5,
-            "minW": 4,
-            "w": 6,
-            "x": 0,
-            "y": 0,
-          },
-          {
-            "h": 9,
-            "i": "Goroutines",
-            "minH": 5,
-            "minW": 4,
-            "w": 6,
-            "x": 6,
-            "y": 0,
-          },
-        ],
-        "md": [
-          {
-            "h": 9,
-            "i": "Heap",
-            "minH": 5,
-            "minW": 4,
-            "w": 8,
-            "x": 0,
-            "y": 0,
-          },
-          {
-            "h": 9,
-            "i": "Goroutines",
-            "minH": 5,
-            "minW": 4,
-            "w": 8,
-            "x": 0,
-            "y": 9,
-          },
-        ],
-        "sm": [
-          {
-            "h": 9,
-            "i": "Heap",
-            "minH": 5,
-            "minW": 4,
-            "w": 6,
-            "x": 0,
-            "y": 0,
-          },
-          {
-            "h": 9,
-            "i": "Goroutines",
-            "minH": 5,
-            "minW": 4,
-            "w": 6,
-            "x": 6,
-            "y": 0,
-          },
-        ],
-      }
-    }
-    onLayoutChange={[Function]}
-    rowHeight={60}
+<DocumentFragment>
+  <div
+    data-testid="error-boundary"
   >
     <div
-      key="Requests"
-      style={
-        {
-          "overflow": "hidden",
-        }
-      }
+      data-testid="grid"
     >
-      <GMTable
-        headers={
-          [
-            "Requests",
-            "Success",
-          ]
-        }
-        rows={
-          [
-            [
-              "http",
-              0,
-              0,
-            ],
-            [
-              "https",
-              0,
-              0,
-            ],
-          ]
-        }
-        title="Requests"
-      />
+      <div
+        style="overflow: hidden;"
+      >
+        <div
+          data-testid="gm-table"
+        />
+      </div>
+      <div
+        style="overflow: hidden;"
+      >
+        <div
+          data-testid="gm-basic-metrics"
+        />
+      </div>
+      <div
+        style="overflow: hidden;"
+      >
+        <div
+          data-testid="gm-line-chart"
+        />
+      </div>
+      <div
+        style="overflow: hidden;"
+      >
+        <div
+          data-testid="gm-line-chart"
+        />
+      </div>
     </div>
-    <div
-      key="Response Status Codes"
-      style={
-        {
-          "overflow": "hidden",
-        }
-      }
-    >
-      <GMBasicMetrics
-        detailLines={
-          [
-            [
-              "2XX",
-              0,
-              "primary",
-              [
-                0,
-                0,
-              ],
-            ],
-            [
-              "200",
-              0,
-              "primary",
-              [
-                0,
-                0,
-              ],
-            ],
-            [
-              "4XX",
-              0,
-              "normal",
-              [
-                0,
-                0,
-              ],
-            ],
-            [
-              "400",
-              0,
-              "normal",
-              [
-                0,
-                0,
-              ],
-            ],
-            [
-              "499",
-              0,
-              "normal",
-              [
-                0,
-                0,
-              ],
-            ],
-            [
-              "5XX",
-              0,
-              "normal",
-              [
-                0,
-                0,
-              ],
-            ],
-            [
-              "500",
-              0,
-              "normal",
-              [
-                0,
-                0,
-              ],
-            ],
-          ]
-        }
-        title="Response Status Codes"
-      />
-    </div>
-    <div
-      key="Heap"
-      style={
-        {
-          "overflow": "hidden",
-        }
-      }
-    >
-      <injectIntl(GMLineChart)
-        detailLines={
-          [
-            "Garbage Collection Runs: 0",
-            "Total GC Pause: 0 ms",
-          ]
-        }
-        dygraph={
-          {
-            "attributes": [],
-            "data": [],
-          }
-        }
-        dygraphMetadata={
-          {
-            "go_metrics/runtime/alloc_bytes": {
-              "baseUnit": "B",
-              "label": "Go Heap Used (MB)",
-              "precision": 0,
-              "resultUnit": "MB",
-            },
-          }
-        }
-        height="max"
-        title="Heap"
-      />
-    </div>
-    <div
-      key="Goroutines"
-      style={
-        {
-          "overflow": "hidden",
-        }
-      }
-    >
-      <injectIntl(GMLineChart)
-        dygraph={
-          {
-            "attributes": [],
-            "data": [],
-          }
-        }
-        dygraphMetadata={
-          {
-            "go_metrics/runtime/num_goroutines": {
-              "baseUnit": undefined,
-              "label": "# of allocated goroutines",
-              "precision": undefined,
-              "resultUnit": undefined,
-            },
-          }
-        }
-        height="max"
-        title="Goroutines"
-      />
-    </div>
-  </WidthProvider(ResponsiveReactGridLayout)>
-</ErrorBoundary>
+  </div>
+</DocumentFragment>
 `;

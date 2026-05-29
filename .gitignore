@@ -24,6 +24,9 @@
 # Ignore build assets
 /build
 
+# audit / migration workspace (see CLAUDE.md)
+.issue-review/
+
 # misc
 .vscode/chrome
 .playwright-mcp

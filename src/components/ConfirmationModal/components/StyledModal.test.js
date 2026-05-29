@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import StyledModal from "./StyledModal";
 
 describe("StyledModal", () => {
   it("matches snapshot", () => {
-    const aStyledModal = shallow(<StyledModal />);
-    expect(aStyledModal).toMatchSnapshot();
+    const { asFragment } = render(<StyledModal isOpen={false} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

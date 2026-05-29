@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import DygraphContainer from "./DygraphContainer";
 
 describe("DygraphContainer", () => {
   it("matches snapshot", () => {
-    const aDygraphContainer = shallow(<DygraphContainer />);
-    expect(aDygraphContainer).toMatchSnapshot();
+    const { asFragment } = render(<DygraphContainer />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

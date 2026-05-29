@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ThreadsTableLineItem component Matched the snapshot 1`] = `
-.c1 {
+<DocumentFragment>
+  .c1 {
   -webkit-flex: 1 1 12%;
   -ms-flex: 1 1 12%;
   flex: 1 1 12%;
@@ -31,28 +32,6 @@ exports[`ThreadsTableLineItem component Matched the snapshot 1`] = `
   -ms-flex-pack: end;
   justify-content: flex-end;
   text-align: right;
-}
-
-.c7 {
-  cursor: default;
-  -webkit-flex: 0 0 100%;
-  -ms-flex: 0 0 100%;
-  flex: 0 0 100%;
-  min-height: 0;
-  overflow: hidden;
-  padding: 0;
-  white-space: normal;
-}
-
-.c7 > div:first-child {
-  box-shadow: inset 0 1px rgb(250,250,250);
-  box-sizing: border-box;
-  cursor: default;
-  height: auto;
-  margin: 0 16px;
-  padding: 16px 0;
-  text-align: left;
-  white-space: normal;
 }
 
 .c0 {
@@ -131,222 +110,99 @@ exports[`ThreadsTableLineItem component Matched the snapshot 1`] = `
   overflow: visible;
 }
 
-<ThreadsTableLineItem
-  daemon={true}
-  id={11}
-  name="finagle/netty3-7"
-  priority={10}
-  stack={
-    [
-      "sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)",
-      "sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)",
-      "sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)",
-    ]
-  }
-  state="WAITING"
->
-  <styled.li
-    isOpen={false}
-    key="11"
-    onClick={[Function]}
-    onKeyDown={[Function]}
+<li
+    class="c0"
     role="link"
-    selectable={true}
-    tabIndex={0}
+    tabindex="0"
   >
-    <li
-      className="c0"
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      role="link"
-      tabIndex={0}
+    <div
+      class="c1 c2"
     >
-      <Styled(styled.div)>
-        <div
-          className="c1 c2"
-        >
-          <StatusIcon
-            status="warning"
-          >
-            <Icon
-              backgroundColor="hsl(46.69999999999999, 100%, 46.8%)"
-              backgroundOpacity=".3"
-              backgroundStyle="BackgroundTriangleSmall"
-              glyphColor="hsl(46.69999999999999, 100%, 41.6%)"
-            >
-              <styled.svg
-                aria-labelledby="ariaLabelledby"
-                focusable="false"
-                glyphColor="hsl(46.69999999999999, 100%, 41.6%)"
-                iconRatio="1"
-              >
-                <svg
-                  aria-labelledby="ariaLabelledby"
-                  className="c3"
-                  focusable="false"
-                  version="1.1"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlnsXlink="http://www.w3.org/1999/xlink"
-                >
-                  <IconBackground
-                    backgroundColor="hsl(46.69999999999999, 100%, 46.8%)"
-                    backgroundOpacity=".3"
-                    name="BackgroundTriangleSmall"
-                    ratio="1"
-                  >
-                    <BackgroundTriangleSmall
-                      backgroundColor="hsl(46.69999999999999, 100%, 46.8%)"
-                      backgroundOpacity=".3"
-                      name="BackgroundTriangleSmall"
-                    >
-                      <g
-                        className="iconBackground"
-                        fill="hsl(46.69999999999999, 100%, 46.8%)"
-                        fillOpacity=".3"
-                        fillRule="evenodd"
-                        id="TriangleSmall"
-                      >
-                        <path
-                          d="M12.8468583,4.36325889 L20.9902272,17.4723234 C21.2816549,17.9414591 21.1375941,18.5580176 20.6684584,18.8494453 C20.5100456,18.9478516 20.3272715,19 20.1407818,19 L3.80424764,19 C3.25196289,19 2.80424764,18.5522847 2.80424764,18 C2.80424764,17.8125803 2.85691709,17.6289327 2.95624934,17.4700011 L11.1494146,4.36093656 C11.442125,3.89260003 12.0590754,3.75022687 12.5274119,4.0429372 C12.6569646,4.12390762 12.7662427,4.23348515 12.8468583,4.36325889 Z"
-                          id="Background"
-                        />
-                      </g>
-                    </BackgroundTriangleSmall>
-                  </IconBackground>
-                  <styled.g
-                    ratio={1}
-                    title=""
-                  >
-                    <g
-                      className="c4"
-                      fill="currentColor"
-                      title=""
-                    >
-                      <title />
-                      <Exclamation>
-                        <path
-                          d="M11,14 L13,14 L13,16 L11,16 L11,14 Z M11,9 L13,9 L13,11.0070282 L12.5,13 L11.5,13 L11,11.0070282 L11,9 Z"
-                          id="Exclamation"
-                        />
-                      </Exclamation>
-                    </g>
-                  </styled.g>
-                </svg>
-              </styled.svg>
-            </Icon>
-          </StatusIcon>
-        </div>
-      </Styled(styled.div)>
-      <Styled(styled.div)>
-        <div
-          className="c1 c2"
-        >
-          11
-        </div>
-      </Styled(styled.div)>
-      <styled.div>
-        <div
-          className="c1"
-        >
-          finagle/netty3-7
-        </div>
-      </styled.div>
-      <Styled(styled.div)
-        right={true}
+      <svg
+        aria-labelledby="ariaLabelledby"
+        class="c3"
+        focusable="false"
+        version="1.1"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
       >
-        <div
-          className="c1 c5"
+        <g
+          class="iconBackground"
+          fill="hsl(46.69999999999999, 100%, 46.8%)"
+          fill-opacity=".3"
+          fill-rule="evenodd"
+          id="TriangleSmall"
         >
-          Yes
-        </div>
-      </Styled(styled.div)>
-      <Styled(styled.div)
-        right={true}
-      >
-        <div
-          className="c1 c5"
-        >
-          10
-        </div>
-      </Styled(styled.div)>
-      <Styled(styled.div)>
-        <div
-          className="c1 c2"
-        >
-          <Icon>
-            <styled.svg
-              aria-labelledby="ariaLabelledby"
-              focusable="false"
-              glyphColor="currentColor"
-              iconRatio="1"
-            >
-              <svg
-                aria-labelledby="ariaLabelledby"
-                className="c6"
-                focusable="false"
-                version="1.1"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlnsXlink="http://www.w3.org/1999/xlink"
-              >
-                <styled.g
-                  ratio={1}
-                  title=""
-                >
-                  <g
-                    className="c4"
-                    fill="currentColor"
-                    title=""
-                  >
-                    <title />
-                    <Glyph
-                      glyphColor="currentColor"
-                      name="Threads"
-                      ratio={1}
-                    >
-                      <g
-                        className="glyph"
-                        fill="currentColor"
-                        transform="translate(0 0) scale(1)"
-                      >
-                        <Threads>
-                          <path
-                            d="M7,7 L19,7 L19,9 L7,9 L7,7 Z M6,11 L18,11 L18,13 L6,13 L6,11 Z M5,15 L17,15 L17,17 L5,17 L5,15 Z"
-                            id="shape"
-                          />
-                        </Threads>
-                      </g>
-                    </Glyph>
-                  </g>
-                </styled.g>
-              </svg>
-            </styled.svg>
-          </Icon>
-        </div>
-      </Styled(styled.div)>
-      <Styled(CollapseBridge)
-        isOpened={false}
-        onClick={[Function]}
-      >
-        <CollapseBridge
-          className="c7"
-          isOpened={false}
-          onClick={[Function]}
-        >
-          <UnmountClosed
-            isOpened={false}
-            onClick={[Function]}
-            theme={
-              {
-                "collapse": "ReactCollapse--collapse sc-fqkvVR c7",
-                "content": "ReactCollapse--content",
-              }
-            }
+          <path
+            d="M12.8468583,4.36325889 L20.9902272,17.4723234 C21.2816549,17.9414591 21.1375941,18.5580176 20.6684584,18.8494453 C20.5100456,18.9478516 20.3272715,19 20.1407818,19 L3.80424764,19 C3.25196289,19 2.80424764,18.5522847 2.80424764,18 C2.80424764,17.8125803 2.85691709,17.6289327 2.95624934,17.4700011 L11.1494146,4.36093656 C11.442125,3.89260003 12.0590754,3.75022687 12.5274119,4.0429372 C12.6569646,4.12390762 12.7662427,4.23348515 12.8468583,4.36325889 Z"
+            id="Background"
           />
-        </CollapseBridge>
-      </Styled(CollapseBridge)>
-    </li>
-  </styled.li>
-</ThreadsTableLineItem>
+        </g>
+        <g
+          class="c4"
+          fill="currentColor"
+          title=""
+        >
+          <title />
+          <path
+            d="M11,14 L13,14 L13,16 L11,16 L11,14 Z M11,9 L13,9 L13,11.0070282 L12.5,13 L11.5,13 L11,11.0070282 L11,9 Z"
+            id="Exclamation"
+          />
+        </g>
+      </svg>
+    </div>
+    <div
+      class="c1 c2"
+    >
+      11
+    </div>
+    <div
+      class="c1"
+    >
+      finagle/netty3-7
+    </div>
+    <div
+      class="c1 c5"
+    >
+      Yes
+    </div>
+    <div
+      class="c1 c5"
+    >
+      10
+    </div>
+    <div
+      class="c1 c2"
+    >
+      <svg
+        aria-labelledby="ariaLabelledby"
+        class="c6"
+        focusable="false"
+        version="1.1"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      >
+        <g
+          class="c4"
+          fill="currentColor"
+          title=""
+        >
+          <title />
+          <g
+            class="glyph"
+            fill="currentColor"
+            transform="translate(0 0) scale(1)"
+          >
+            <path
+              d="M7,7 L19,7 L19,9 L7,9 L7,7 Z M6,11 L18,11 L18,13 L6,13 L6,11 Z M5,15 L17,15 L17,17 L5,17 L5,15 Z"
+              id="shape"
+            />
+          </g>
+        </g>
+      </svg>
+    </div>
+  </li>
+</DocumentFragment>
 `;

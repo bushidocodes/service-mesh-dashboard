@@ -1,17 +1,31 @@
 import React from "react";
-import {
-  mountWithIntl,
-  shallowWithIntl,
-  renderWithIntl
-} from "utils/i18nTesting";
+import { screen } from "@testing-library/react";
+import { renderWithIntl } from "utils/i18nTesting";
 
 import Table from "./index.js";
 import TableLineItem from "./components/TableLineItem";
 import GMServiceTableLineItem from "./components/GMServiceTableLineItem";
-import TableColHeader from "components/Main/components/TableColHeader";
-import TableColLatencyHeader from "components/Main/components/TableColLatencyHeader";
 
-let wrapper;
+// Enzyme reached into the rendered tree to count TableLineItem /
+// GMServiceTableLineItem instances and read the props Table passed them
+// (.find(Comp).at(i).props()). RTL is DOM-based and cannot query by component
+// type or read React props, so both line-item components are replaced with
+// jest.fn stubs: jest.fn().mock.calls captures the exact props each received
+// (preserving the prop-assertions) and a data-testid lets us count instances.
+// The header components are left real so we can assert their rendered text.
+jest.mock("./components/TableLineItem", () => {
+  const React = require("react");
+  return jest.fn(() =>
+    React.createElement("div", { "data-testid": "table-line-item" })
+  );
+});
+jest.mock("./components/GMServiceTableLineItem", () => {
+  const React = require("react");
+  return jest.fn(() =>
+    React.createElement("div", { "data-testid": "gm-service-table-line-item" })
+  );
+});
+
 let routesProps = {
   type: "Route",
   items: [
@@ -73,33 +87,33 @@ let instancesProps = {
 
 describe("Table component", () => {
   beforeEach(() => {
-    wrapper = mountWithIntl(<Table {...routesProps} />);
+    TableLineItem.mockClear();
+    GMServiceTableLineItem.mockClear();
+    renderWithIntl(<Table {...routesProps} />);
   });
 
   test("matches snapshot", () => {
-    const tree = renderWithIntl(<Table {...routesProps} />);
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = renderWithIntl(<Table {...routesProps} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test("renders correct header texts", () => {
-    expect(wrapper.find(TableColHeader).at(0).text()).toBe("Route");
-    expect(wrapper.find(TableColHeader).at(1).text()).toBe("Requests/sec");
-    expect(wrapper.find(TableColHeader).at(2).text()).toBe("Requests");
-    expect(wrapper.find(TableColLatencyHeader).text().includes("Latency")).toBe(
-      true
-    );
+    expect(screen.getByText("Route")).toBeInTheDocument();
+    expect(screen.getByText("Requests/sec")).toBeInTheDocument();
+    expect(screen.getByText("Requests")).toBeInTheDocument();
+    // TableColLatencyHeader renders a "Latency" label plus an explanatory
+    // tooltip that also contains the word, so match all and assert presence.
+    expect(screen.getAllByText(/Latency/).length).toBeGreaterThan(0);
   });
 
   test("when provided routes data, renders <TableLineItem />", () => {
-    expect(wrapper.find(TableLineItem).length).toEqual(2);
-    expect(wrapper.find(GMServiceTableLineItem).length).toEqual(0);
+    expect(TableLineItem).toHaveBeenCalledTimes(2);
+    expect(GMServiceTableLineItem).not.toHaveBeenCalled();
   });
 
   test("passes correct data to <TableLineItem />", () => {
-    const firstTableLine = wrapper.find(TableLineItem).at(0);
-    const secondTableLine = wrapper.find(TableLineItem).at(1);
-
-    expect(firstTableLine.props()).toEqual({
+    // mock.calls[i][0] is the exact props object Table passed the i-th line item.
+    expect(TableLineItem.mock.calls[0][0]).toEqual({
       item: "/categories",
       errorPercent: "0.000",
       latency50: 0,
@@ -117,7 +131,7 @@ describe("Table component", () => {
       requestsPerSecond_sparkline: [0, 25, 430, 1256],
       verb: "GET"
     });
-    expect(secondTableLine.props()).toEqual({
+    expect(TableLineItem.mock.calls[1][0]).toEqual({
       item: "/topics",
       errorPercent: "0.000",
       latency50: 0,
@@ -139,22 +153,19 @@ describe("Table component", () => {
 });
 
 describe("Table component with instances prop", () => {
-  let firstGMServiceTableLineItem;
   beforeEach(() => {
-    wrapper = shallowWithIntl(<Table {...instancesProps} />);
-    firstGMServiceTableLineItem = wrapper
-      .dive()
-      .find(GMServiceTableLineItem)
-      .at(0);
+    TableLineItem.mockClear();
+    GMServiceTableLineItem.mockClear();
+    renderWithIntl(<Table {...instancesProps} />);
   });
 
   test("when provided instances data, renders <GMServiceTableLineItem />", () => {
-    expect(wrapper.find(GMServiceTableLineItem).length).toEqual(3);
-    expect(wrapper.find(TableLineItem).length).toEqual(0);
+    expect(GMServiceTableLineItem).toHaveBeenCalledTimes(3);
+    expect(TableLineItem).not.toHaveBeenCalled();
   });
 
   test("passes correct props to <GMServiceTableLineItem />", () => {
-    expect(firstGMServiceTableLineItem.props()).toHaveProperty(
+    expect(GMServiceTableLineItem.mock.calls[0][0]).toHaveProperty(
       "path",
       "/authentication-management-transfer-odrive-gateway-statistics-up2-channel/26d7cmoduw8w000000000"
     );

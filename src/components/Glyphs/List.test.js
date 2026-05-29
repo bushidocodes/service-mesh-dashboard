@@ -1,10 +1,14 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import List from "./List";
 
 describe("List", () => {
   it("matches snapshot", () => {
-    const aList = shallow(<List />);
-    expect(aList).toMatchSnapshot();
+    const { asFragment } = render(
+      <svg>
+        <List />
+      </svg>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

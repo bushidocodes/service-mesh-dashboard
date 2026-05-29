@@ -1,10 +1,14 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import Docs from "./Docs";
 
 describe("Docs", () => {
   it("matches snapshot", () => {
-    const aDocs = shallow(<Docs />);
-    expect(aDocs).toMatchSnapshot();
+    const { asFragment } = render(
+      <svg>
+        <Docs />
+      </svg>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

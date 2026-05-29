@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import MetricsList from "./MetricsList";
 
 describe("MetricsList", () => {
   it("matches snapshot", () => {
-    const aMetricsList = shallow(<MetricsList />);
-    expect(aMetricsList).toMatchSnapshot();
+    const { asFragment } = render(<MetricsList />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

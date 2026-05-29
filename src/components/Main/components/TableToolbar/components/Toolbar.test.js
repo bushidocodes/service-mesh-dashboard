@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import Toolbar from "./Toolbar";
 
 describe("Toolbar", () => {
   it("matches snapshot", () => {
-    const aToolbar = shallow(<Toolbar />);
-    expect(aToolbar).toMatchSnapshot();
+    const { asFragment } = render(<Toolbar />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

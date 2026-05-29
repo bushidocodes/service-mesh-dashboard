@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import TabGroup from "./TabGroup";
 
 describe("TabGroup", () => {
   it("matches snapshot", () => {
-    const aTabGroup = shallow(<TabGroup />);
-    expect(aTabGroup).toMatchSnapshot();
+    const { asFragment } = render(<TabGroup />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

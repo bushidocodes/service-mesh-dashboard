@@ -1,10 +1,14 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import Scatterplot from "./Scatterplot";
 
 describe("Scatterplot", () => {
   it("matches snapshot", () => {
-    const aScatterplot = shallow(<Scatterplot />);
-    expect(aScatterplot).toMatchSnapshot();
+    const { asFragment } = render(
+      <svg>
+        <Scatterplot />
+      </svg>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

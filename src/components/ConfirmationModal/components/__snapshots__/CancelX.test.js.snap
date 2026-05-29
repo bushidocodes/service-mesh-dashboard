@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CancelX matches snapshot 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   cursor: pointer;
   height: 24px;
   position: absolute;
@@ -30,6 +31,7 @@ exports[`CancelX matches snapshot 1`] = `
 }
 
 <span
-  className="c0"
-/>
+    class="c0"
+  />
+</DocumentFragment>
 `;

@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DygraphContainer matches snapshot 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   position: absolute;
   top: 0;
@@ -49,6 +50,7 @@ exports[`DygraphContainer matches snapshot 1`] = `
 }
 
 <div
-  className="c0"
-/>
+    class="c0"
+  />
+</DocumentFragment>
 `;

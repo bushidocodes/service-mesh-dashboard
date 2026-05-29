@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<TableLineItem/> matches snapshot 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -118,101 +119,103 @@ exports[`<TableLineItem/> matches snapshot 1`] = `
 }
 
 <li
-  class="c0"
-  role="link"
-  tabindex="0"
->
-  <div
-    class="c1 c2"
+    class="c0"
+    role="link"
+    tabindex="0"
   >
     <div
-      class="c3"
+      class="c1 c2"
     >
-      <div>
-        CatalogStream
+      <div
+        class="c3"
+      >
+        <div>
+          CatalogStream
+        </div>
+      </div>
+      <div
+        class="c4"
+      >
+        <div
+          class="c5"
+          width="20"
+        />
       </div>
     </div>
     <div
-      class="c4"
+      class="c1 c6"
     >
-      <div
-        class="c5"
-        width="20"
-      />
+      <svg
+        focusable="false"
+        preserveAspectRatio="xMaxYMin"
+        viewBox="0 0 240 32"
+      >
+        <g>
+          <circle
+            cx="2"
+            cy="29.999999999999996"
+            r="2"
+            style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+          />
+          <circle
+            cx="80.66666666666667"
+            cy="29.442675159235666"
+            r="2"
+            style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+          />
+          <circle
+            cx="159.33333333333334"
+            cy="20.4140127388535"
+            r="2"
+            style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+          />
+          <circle
+            cx="238"
+            cy="2"
+            r="2"
+            style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+          />
+          <polyline
+            points="2 29.999999999999996 80.66666666666667 29.442675159235666 159.33333333333334 20.4140127388535 238 2 238 30 2 30 2 29.999999999999996"
+            style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+          />
+          <polyline
+            points="2 29.999999999999996 80.66666666666667 29.442675159235666 159.33333333333334 20.4140127388535 238 2"
+            style="stroke: currentColor; stroke-width: 1; stroke-linejoin: round; stroke-linecap: round; fill: none;"
+          />
+        </g>
+        <line
+          style="stroke: grey; opacity: 0.4;"
+          x1="2"
+          x2="238"
+          y1="22.46417197452229"
+          y2="22.46417197452229"
+        />
+      </svg>
     </div>
-  </div>
-  <div
-    class="c1 c6"
-  >
-    <svg
-      preserveAspectRatio="xMaxYMin"
-      viewBox="0 0 240 32"
+    <div
+      class="c1"
+      style="text-align: right;"
     >
-      <g>
-        <circle
-          cx="2"
-          cy="29.999999999999996"
-          r="2"
-          style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
-        />
-        <circle
-          cx="80.66666666666667"
-          cy="29.442675159235666"
-          r="2"
-          style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
-        />
-        <circle
-          cx="159.33333333333334"
-          cy="20.4140127388535"
-          r="2"
-          style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
-        />
-        <circle
-          cx="238"
-          cy="2"
-          r="2"
-          style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
-        />
-        <polyline
-          points="2 29.999999999999996 80.66666666666667 29.442675159235666 159.33333333333334 20.4140127388535 238 2 238 30 2 30 2 29.999999999999996"
-          style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
-        />
-        <polyline
-          points="2 29.999999999999996 80.66666666666667 29.442675159235666 159.33333333333334 20.4140127388535 238 2"
-          style="stroke:currentColor;stroke-width:1;stroke-linejoin:round;stroke-linecap:round;fill:none"
-        />
-      </g>
-      <line
-        style="stroke:grey;opacity:0.4"
-        x1="2"
-        x2="238"
-        y1="22.46417197452229"
-        y2="22.46417197452229"
-      />
-    </svg>
-  </div>
-  <div
-    class="c1"
-    style="text-align:right"
-  >
-    14,333
-  </div>
-  <div
-    class="c7"
-    style="text-align:right"
-  >
-    10.000%
-  </div>
-  <div
-    class="c1"
-    style="text-align:right;display:flex;flex-direction:column"
-  >
-    <div>
-      445 ms
+      14,333
     </div>
-    <div>
-      35 ms
+    <div
+      class="c7"
+      style="text-align: right;"
+    >
+      10.000%
     </div>
-  </div>
-</li>
+    <div
+      class="c1"
+      style="text-align: right; display: flex; flex-direction: column;"
+    >
+      <div>
+        445 ms
+      </div>
+      <div>
+        35 ms
+      </div>
+    </div>
+  </li>
+</DocumentFragment>
 `;

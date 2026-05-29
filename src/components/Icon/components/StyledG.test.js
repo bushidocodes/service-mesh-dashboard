@@ -1,10 +1,14 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import StyledG from "./StyledG";
 
 describe("StyledG", () => {
   it("matches snapshot", () => {
-    const aStyledG = shallow(<StyledG />);
-    expect(aStyledG).toMatchSnapshot();
+    const { asFragment } = render(
+      <svg>
+        <StyledG />
+      </svg>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

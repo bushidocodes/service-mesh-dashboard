@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
-[
+<DocumentFragment>
   .c0 {
   -webkit-align-items: stretch;
   -webkit-box-align: stretch;
@@ -335,8 +335,8 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
           focusable="false"
           version="1.1"
           viewBox="0 0 24 24"
-          xlink="http://www.w3.org/1999/xlink"
           xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
         >
           <g
             class="c4"
@@ -384,8 +384,8 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
                 focusable="false"
                 version="1.1"
                 viewBox="0 0 24 24"
-                xlink="http://www.w3.org/1999/xlink"
                 xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
               >
                 <g
                   class="c4"
@@ -419,7 +419,20 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
               >
                 <div
                   class="c16"
-                />
+                >
+                  <span>
+                    3236d 
+                  </span>
+                  <span>
+                    03h 
+                  </span>
+                  <span>
+                    33m 
+                  </span>
+                  <span>
+                    38s 
+                  </span>
+                </div>
               </span>
               <p
                 class="c17"
@@ -444,8 +457,8 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
                 focusable="false"
                 version="1.1"
                 viewBox="0 0 24 24"
-                xlink="http://www.w3.org/1999/xlink"
                 xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
               >
                 <g
                   class="c4"
@@ -493,8 +506,8 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
                 focusable="false"
                 version="1.1"
                 viewBox="0 0 24 24"
-                xlink="http://www.w3.org/1999/xlink"
                 xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
               >
                 <g
                   class="iconBorder"
@@ -558,8 +571,8 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
                 focusable="false"
                 version="1.1"
                 viewBox="0 0 24 24"
-                xlink="http://www.w3.org/1999/xlink"
                 xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
               >
                 <g
                   class="c4"
@@ -598,7 +611,7 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
         </div>
       </div>
     </div>
-  </section>,
+  </section>
   .c0 {
   -webkit-align-items: stretch;
   -webkit-box-align: stretch;
@@ -792,8 +805,8 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
           focusable="false"
           version="1.1"
           viewBox="0 0 24 24"
-          xlink="http://www.w3.org/1999/xlink"
           xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
         >
           <g
             class="c4"
@@ -836,7 +849,7 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
       class="c6"
     >
       <div
-        style="height:250px"
+        style="height: 250px;"
       >
         <div
           aria-label="The average for currently displayed data is equal to 0."
@@ -857,7 +870,33 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
           >
             <div
               class="c10"
-            />
+              style="height: 320px; width: 480px;"
+            >
+              <div
+                style="text-align: left; position: relative; width: 0px; height: 0px;"
+              >
+                <canvas
+                  height="0"
+                  style="position: absolute; width: 0px; height: 0px;"
+                  width="0"
+                />
+                <canvas
+                  height="0"
+                  style="position: absolute; width: 0px; height: 0px;"
+                  width="0"
+                />
+                <input
+                  class="dygraph-roller"
+                  size="2"
+                  style="display: none; top: -45px; left: 57px;"
+                  type="text"
+                />
+                <div
+                  class="dygraph-legend"
+                  style="left: -6px; top: 0px;"
+                />
+              </div>
+            </div>
           </div>
           <div
             class="c11"
@@ -865,6 +904,6 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
         </div>
       </div>
     </div>
-  </section>,
-]
+  </section>
+</DocumentFragment>
 `;

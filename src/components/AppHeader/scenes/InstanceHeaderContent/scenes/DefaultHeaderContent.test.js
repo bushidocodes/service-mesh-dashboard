@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "enzyme";
+import { render } from "@testing-library/react";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
 
 import state from "json/mockReduxState";
@@ -19,7 +19,7 @@ const RouterWrap = (
 
 describe("DefaultHeaderContent", () => {
   test("matches snapshot", () => {
-    const tree = render(RouterWrap);
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(RouterWrap);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

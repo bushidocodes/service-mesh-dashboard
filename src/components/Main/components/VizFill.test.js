@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import VizFill from "./VizFill";
 
 describe("VizFill", () => {
   it("matches snapshot", () => {
-    const aVizFill = shallow(<VizFill />);
-    expect(aVizFill).toMatchSnapshot();
+    const { asFragment } = render(<VizFill />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

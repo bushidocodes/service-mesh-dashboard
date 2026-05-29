@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import LineChartEmpty from "./LineChartEmpty";
 
 describe("LineChartEmpty", () => {
   it("matches snapshot", () => {
-    const aLineChartEmpty = shallow(<LineChartEmpty />);
-    expect(aLineChartEmpty).toMatchSnapshot();
+    const { asFragment } = render(<LineChartEmpty />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
