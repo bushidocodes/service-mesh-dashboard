@@ -17,7 +17,6 @@ const DISABLED = contrastColor(COLOR_WHITE, 0.6).toString();
 // list (browsers drop the whole rule if any selector is unknown), so they are
 // duplicated intentionally.
 const InputRange = styled.input.attrs({ type: "range" })`
-  -webkit-appearance: none;
   appearance: none;
   width: 100%;
   height: 6px;
@@ -28,6 +27,7 @@ const InputRange = styled.input.attrs({ type: "range" })`
   cursor: pointer;
 
   &::-webkit-slider-thumb {
+    /* stylelint-disable-next-line property-no-vendor-prefix */
     -webkit-appearance: none;
     appearance: none;
     width: 16px;
@@ -48,6 +48,10 @@ const InputRange = styled.input.attrs({ type: "range" })`
     transition: transform 0.3s ease;
   }
 
+  &:disabled {
+    cursor: default;
+  }
+
   &:hover::-webkit-slider-thumb,
   &:focus::-webkit-slider-thumb {
     transform: scale(1.1);
@@ -57,9 +61,6 @@ const InputRange = styled.input.attrs({ type: "range" })`
     transform: scale(1.1);
   }
 
-  &:disabled {
-    cursor: default;
-  }
   &:disabled::-webkit-slider-thumb {
     background: ${DISABLED};
     cursor: default;

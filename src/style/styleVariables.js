@@ -205,5 +205,4 @@ export const GlobalFontStyles = createGlobalStyle`
     bottom: 0;
     width: 100%;
   }
-
 `;

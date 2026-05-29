@@ -230,7 +230,6 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
 
 .c14 {
   -webkit-appearance: none;
-  -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   width: 100%;
@@ -270,6 +269,10 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   transition: transform 0.3s ease;
 }
 
+.c14:disabled {
+  cursor: default;
+}
+
 .c14:hover::-webkit-slider-thumb,
 .c14:focus::-webkit-slider-thumb {
   -webkit-transform: scale(1.1);
@@ -282,10 +285,6 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
-}
-
-.c14:disabled {
-  cursor: default;
 }
 
 .c14:disabled::-webkit-slider-thumb {
