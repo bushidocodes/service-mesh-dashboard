@@ -1,13 +1,16 @@
 import _ from "lodash";
+import { waitForReact } from "testcafe-react-selectors";
 
 import FabricViewModel from "../view-models/fabric-view-model";
 
-fixture`Fabric View`.page`http://localhost:3000/`;
+fixture`Fabric View`.page`http://localhost:3000/`.beforeEach(async () => {
+  await waitForReact();
+});
 
 const fabricView = new FabricViewModel();
 const defaultTimeout = 30; // Number of seconds to wait before giving up repeated attempts
 
-test("Validate Service Counts", async t => {
+test("Validate Service Counts", async (t) => {
   // Check that there are an equal amount of cards as list items
   let attempts = 0;
   let allServicesCardsCount = 0;
@@ -119,7 +122,7 @@ test("Validate Service Counts", async t => {
     .eql(stableServicesTabCount, "Stable service count matches");
 });
 
-test("Validate Filtering: Search", async t => {
+test("Validate Filtering: Search", async (t) => {
   let allServicesCardsCount = 0,
     initialServiceCardCount = 0,
     attempts = 0;
@@ -159,7 +162,7 @@ test("Validate Filtering: Search", async t => {
       .expect(
         await fabricView.servicesCards
           .nth(i)
-          .innerText.then(text => text.toLowerCase())
+          .innerText.then((text) => text.toLowerCase())
       )
       .contains(searchString, "No service cards contain the search string");
   }
@@ -203,7 +206,7 @@ test("Validate Filtering: Search", async t => {
     );
 });
 
-test("Validate Filtering: Grouping", async t => {
+test("Validate Filtering: Grouping", async (t) => {
   /*/  Group by Owner /*/
 
   await t.click(fabricView.selectGroup).click(fabricView.optionGroupOwner);
@@ -213,7 +216,7 @@ test("Validate Filtering: Grouping", async t => {
 
   // Get names of all unique owners
   const allOwners = await _.uniq(
-    allServicesFromProps.props.services.map(service => service.owner)
+    allServicesFromProps.props.services.map((service) => service.owner)
   );
   let servicesSectionsCount = await fabricView.servicesSections.count;
 
@@ -230,7 +233,7 @@ test("Validate Filtering: Grouping", async t => {
       .expect(
         await fabricView.servicesHeaders
           .nth(i)
-          .innerText.then(text => text.toLowerCase())
+          .innerText.then((text) => text.toLowerCase())
       )
       .contains(allOwners[i].toLowerCase());
   }
@@ -240,7 +243,7 @@ test("Validate Filtering: Grouping", async t => {
   await t.click(fabricView.selectGroup).click(fabricView.optionGroupCapability);
 
   const allCapabilites = await _.uniq(
-    allServicesFromProps.props.services.map(service => service.capability)
+    allServicesFromProps.props.services.map((service) => service.capability)
   );
   servicesSectionsCount = await fabricView.servicesSections.count;
 
@@ -257,7 +260,7 @@ test("Validate Filtering: Grouping", async t => {
       .expect(
         await fabricView.servicesHeaders
           .nth(i)
-          .innerText.then(text => text.toLowerCase())
+          .innerText.then((text) => text.toLowerCase())
       )
       .contains(allCapabilites[i].toLowerCase());
   }
@@ -281,7 +284,7 @@ test("Validate Filtering: Grouping", async t => {
       .expect(
         await fabricView.servicesHeaders
           .nth(i)
-          .innerText.then(text => text.toLowerCase())
+          .innerText.then((text) => text.toLowerCase())
       )
       .contains(allStatuses[i].toLowerCase());
   }
@@ -298,21 +301,20 @@ test("Validate Filtering: Grouping", async t => {
   await t.expect(sectionsHeaderCount).eql(0, "The number of headers is not 0");
 });
 
-test("Validate Filtering: Sorting", async t => {
+test("Validate Filtering: Sorting", async (t) => {
   /*/ Sort by Status /*/
   // First group by none so we can easily see the effects of sorting
   await t.click(fabricView.selectGroup).click(fabricView.optionGroupNone);
   await t.click(fabricView.selectSort).click(fabricView.optionSortStatus);
 
   // Add a custom property that computes the index of an element in the grid.
-  const serviceCardsWithIndices = fabricView.servicesCards.addCustomDOMProperties(
-    {
-      indexInGrid: el => {
+  const serviceCardsWithIndices =
+    fabricView.servicesCards.addCustomDOMProperties({
+      indexInGrid: (el) => {
         const nodes = Array.prototype.slice.call(el.parentElement.children);
         return nodes.indexOf(el);
       }
-    }
-  );
+    });
 
   // Get the positions of the first/last cards of each type
   const indexOfLastDownCard = await serviceCardsWithIndices
@@ -340,11 +342,17 @@ test("Validate Filtering: Sorting", async t => {
     if (i !== allServicesCardsCount - 1) {
       const currentServiceName = await fabricView.servicesCards
         .nth(i)
-        .innerText.then(text => text.toLowerCase());
+        .innerText.then((text) => text.toLowerCase());
       const nextServiceName = await fabricView.servicesCards
         .nth(i + 1)
-        .innerText.then(text => text.toLowerCase());
-      await t.expect(currentServiceName).lte(nextServiceName);
+        .innerText.then((text) => text.toLowerCase());
+      // TestCafe 3.x assertions (.lte/.gte/.lt/.gt) require numbers/dates;
+      // do the lexicographic comparison in JS and assert the boolean result.
+      await t
+        .expect(currentServiceName <= nextServiceName)
+        .ok(
+          `Service cards not sorted alphabetically: "${currentServiceName}" should sort before "${nextServiceName}"`
+        );
     }
   }
 });

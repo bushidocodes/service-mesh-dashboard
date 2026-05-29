@@ -1,4 +1,4 @@
-import ReactSelector from "testcafe-react-selectors";
+import { ReactSelector } from "testcafe-react-selectors";
 import BaseView from "./base-view-model";
 import messages from "../../src/messages";
 

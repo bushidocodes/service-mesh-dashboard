@@ -1,4 +1,4 @@
-import ReactSelector from "testcafe-react-selectors";
+import { ReactSelector } from "testcafe-react-selectors";
 import { Selector } from "testcafe";
 import BaseViewModel from "./base-view-model";
 import messages from "../../src/messages";
@@ -68,24 +68,24 @@ export default class BaseInstanceViewModel extends BaseViewModel {
     );
     this.routesChart = ReactSelector("LineChartDisplay");
     this.routesChartTitle = ReactSelector("LineChartTitle");
-    this.selectSortRoutes = Selector(".Select-control").withText(
+    this.selectSortRoutes = Selector(".gm-select__control").withText(
       messages[locale]["tableToolbar"]["sort"]
     );
     // this.selectSort needs to be selected first
     // so that the following options are created in the DOM
-    this.optionSortRoutesRoute = Selector(".Select-option").withText(
+    this.optionSortRoutesRoute = Selector(".gm-select__option").withText(
       messages[locale]["routesGrid"]["route"]
     );
-    this.optionSortRoutesStatus = Selector(".Select-option").withText(
+    this.optionSortRoutesStatus = Selector(".gm-select__option").withText(
       messages[locale]["routesGrid"]["requests"]
     );
-    this.optionSortRoutesError = Selector(".Select-option").withText(
+    this.optionSortRoutesError = Selector(".gm-select__option").withText(
       messages[locale]["routesGrid"]["errorPercent"]
     );
-    this.optionSortRoutesLatency50 = Selector(".Select-option").withText(
+    this.optionSortRoutesLatency50 = Selector(".gm-select__option").withText(
       messages[locale]["routesGrid"]["latency50"]
     );
-    this.optionSortRoutesLatency99 = Selector(".Select-option").withText(
+    this.optionSortRoutesLatency99 = Selector(".gm-select__option").withText(
       messages[locale]["routesGrid"]["latency99"]
     );
 

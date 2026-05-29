@@ -98,6 +98,7 @@ export default function GMSelect({
 
   return (
     <Select
+      classNamePrefix="gm-select"
       value={resolvedValue}
       options={options}
       isClearable={isClearable ?? clearable ?? false}

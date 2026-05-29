@@ -1,4 +1,4 @@
-import ReactSelector from "testcafe-react-selectors";
+import { ReactSelector } from "testcafe-react-selectors";
 import BaseViewModel from "./base-view-model";
 import { Selector } from "testcafe";
 import messages from "../../src/messages";
@@ -45,33 +45,33 @@ export default class FabricViewModel extends BaseViewModel {
       messages[locale]["tableToolbar"]["list"]
     );
 
-    this.selectGroup = Selector(".Select-control").withText(
+    this.selectGroup = Selector(".gm-select__control").withText(
       messages[locale]["tableToolbar"]["group"]
     );
     // this.selectSort needs to be selected first,
     // so that the following options are created in the DOM
-    this.optionGroupOwner = Selector(".Select-option").withText(
+    this.optionGroupOwner = Selector(".gm-select__option").withText(
       messages[locale]["fabric"]["owner"]
     );
-    this.optionGroupCapability = Selector(".Select-option").withText(
+    this.optionGroupCapability = Selector(".gm-select__option").withText(
       messages[locale]["fabric"]["capability"]
     );
-    this.optionGroupStatus = Selector(".Select-option").withText(
+    this.optionGroupStatus = Selector(".gm-select__option").withText(
       messages[locale]["fabric"]["status"]
     );
-    this.optionGroupNone = Selector(".Select-option").withText(
+    this.optionGroupNone = Selector(".gm-select__option").withText(
       messages[locale]["fabric"]["none"]
     );
 
-    this.selectSort = Selector(".Select-control").withText(
+    this.selectSort = Selector(".gm-select__control").withText(
       messages[locale]["tableToolbar"]["sort"]
     );
     // this.selectSort needs to be selected first,
     // so that the following options are created in the DOM
-    this.optionSortName = Selector(".Select-option").withText(
+    this.optionSortName = Selector(".gm-select__option").withText(
       messages[locale]["fabric"]["name"]
     );
-    this.optionSortStatus = Selector(".Select-option").withText(
+    this.optionSortStatus = Selector(".gm-select__option").withText(
       messages[locale]["fabric"]["status"]
     );
 

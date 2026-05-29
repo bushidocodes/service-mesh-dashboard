@@ -1,3 +1,5 @@
+import { waitForReact } from "testcafe-react-selectors";
+
 import InstanceJvmViewModel from "../view-models/instance-jvm-view-model";
 import FabricViewModel from "../view-models/fabric-view-model";
 import ServiceViewModel from "../view-models/service-view-model";
@@ -6,16 +8,19 @@ const instanceViewModel = new InstanceJvmViewModel();
 const fabricViewModel = new FabricViewModel();
 const serviceViewModel = new ServiceViewModel();
 
-fixture`Instance View: JVM`.page`http://localhost:3000/`.beforeEach(async t => {
-  await t
-    .click(fabricViewModel.linkStable)
-    .click(fabricViewModel.servicesCards.withText("JVM"))
-    .click(serviceViewModel.instanceIDs.nth(0));
-});
+fixture`Instance View: JVM`.page`http://localhost:3000/`.beforeEach(
+  async (t) => {
+    await waitForReact();
+    await t
+      .click(fabricViewModel.linkStable)
+      .click(fabricViewModel.servicesCards.withText("JVM"))
+      .click(serviceViewModel.instanceIDs.nth(0));
+  }
+);
 
 const defaultTimeout = 30;
 
-test("Validate Basic Instance View (JVM) Layout", async t => {
+test("Validate Basic Instance View (JVM) Layout", async (t) => {
   let attempts = 0,
     allTabCount = 0;
 
@@ -30,22 +35,21 @@ test("Validate Basic Instance View (JVM) Layout", async t => {
   await t.expect(allTabCount).eql(7);
 });
 
-test("Summary View", async t => {
+test("Summary View", async (t) => {
   /*/ Summary view (JVM specific items)
       Tests for other summary view items can be found in ./base-instance-view.js
   /*/
-  const summaryHostCPUReadoutText = await instanceViewModel.summaryHostCPUReadout.find(
-    "span"
-  ).innerText;
+  const summaryHostCPUReadoutText =
+    await instanceViewModel.summaryHostCPUReadout.find("span").innerText;
 
   await t
-    .expect(instanceViewModel.summaryHostCPUReadout)
+    .expect(instanceViewModel.summaryHostCPUReadout.exists)
     .ok()
     .expect(summaryHostCPUReadoutText)
     .match(/\d+/g); // match one or more digits https://regexr.com/3l5ef
 });
 
-test("Threads View", async t => {
+test("Threads View", async (t) => {
   // Navigate to Threads view
   await t.click(instanceViewModel.linkThreads);
 
@@ -64,7 +68,7 @@ test("Threads View", async t => {
   await t.expect(stackTraceCount).eql(1);
 });
 
-test("HTTP View", async t => {
+test("HTTP View", async (t) => {
   // Navigate to HTTP view
   await t.click(instanceViewModel.linkHTTP);
 
@@ -88,7 +92,7 @@ test("HTTP View", async t => {
   await t.expect(httpGrid4Text).contains("Response Status Codes");
 });
 
-test("JVM View", async t => {
+test("JVM View", async (t) => {
   // Navigate to HTTP view
   await t.click(instanceViewModel.linkJVM);
 
@@ -108,7 +112,7 @@ test("JVM View", async t => {
   await t.expect(jvmGrid2Text).contains("Classes");
 });
 
-test("Finagle View", async t => {
+test("Finagle View", async (t) => {
   // Navigate to HTTP view
   await t.click(instanceViewModel.linkFinagle);
 
