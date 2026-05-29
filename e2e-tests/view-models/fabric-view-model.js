@@ -82,11 +82,7 @@ export default class FabricViewModel extends BaseViewModel {
     this.servicesList = ReactSelector("ServicesListItem");
     this.servicesSections = ReactSelector("GMServiceCardCollection");
     this.servicesHeaders = ReactSelector("GMServiceHeader");
-    this.serviceCardsJVM = ReactSelector("GMServiceCard")
-      .find("footer")
-      .withText("JVM");
-    this.serviceCardsGo = ReactSelector("GMServiceCard")
-      .find("footer")
-      .withText("GO");
+    this.serviceCardsJVM = ReactSelector("GMServiceCard").withText("JVM");
+    this.serviceCardsGo = ReactSelector("GMServiceCard").withText("GO");
   }
 }
