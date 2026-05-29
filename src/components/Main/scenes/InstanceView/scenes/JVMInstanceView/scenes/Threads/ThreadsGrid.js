@@ -20,6 +20,7 @@ import { getVisibleThreads } from "utils/jvm/selectors";
 class ThreadsGrid extends Component {
   static propTypes = {
     fabricServer: PropTypes.string,
+    intl: PropTypes.object.isRequired,
     selectedInstanceID: PropTypes.string,
     selectedServiceSlug: PropTypes.string,
     setUrlState: PropTypes.func.isRequired,

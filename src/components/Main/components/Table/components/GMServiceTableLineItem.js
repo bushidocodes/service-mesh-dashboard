@@ -11,6 +11,7 @@ import Icon from "components/Icon";
 import NoMetrics from "components/Glyphs/NoMetrics";
 
 GMServiceTableLineItem.propTypes = {
+  intl: PropTypes.object.isRequired,
   name: PropTypes.string.isRequired,
   path: PropTypes.string.isRequired,
   serviceIsMetered: PropTypes.bool,

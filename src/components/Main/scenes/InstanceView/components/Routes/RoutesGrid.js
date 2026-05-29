@@ -21,6 +21,7 @@ import withUrlState from "components/withUrlState";
 
 class RoutesGrid extends Component {
   static propTypes = {
+    intl: PropTypes.object.isRequired,
     routes: PropTypes.array,
     setUrlState: PropTypes.func.isRequired,
     urlState: PropTypes.object.isRequired

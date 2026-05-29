@@ -45,6 +45,7 @@ const FlexParent = styled.div`
 class TableLineItem extends Component {
   static propTypes = {
     errorPercent: PropTypes.string.isRequired,
+    intl: PropTypes.object.isRequired,
     item: PropTypes.string.isRequired,
     latency50: PropTypes.number.isRequired,
     latency99: PropTypes.number.isRequired,

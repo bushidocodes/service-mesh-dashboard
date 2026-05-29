@@ -158,6 +158,7 @@ function SummaryGrid({
 
 SummaryGrid.propTypes = {
   errorPercent: PropTypes.string,
+  intl: PropTypes.object.isRequired,
   metrics: metricsShape,
   selectedInstanceID: PropTypes.string,
   selectedServiceSlug: PropTypes.string

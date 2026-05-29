@@ -19,6 +19,7 @@ import FabricMainView from "./components/FabricMainView";
 class FabricGrid extends Component {
   static propTypes = {
     history: routerHistoryShape,
+    intl: PropTypes.object.isRequired,
     location: routerLocationShape,
     match: routerMatchShape,
     services: PropTypes.arrayOf(serviceShape),

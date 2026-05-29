@@ -13,6 +13,7 @@ import { getLatestAttribute } from "utils/latestAttribute";
 GoHeaderContent.propTypes = {
   basePath: PropTypes.string,
   headerTabs: PropTypes.arrayOf(PropTypes.element),
+  intl: PropTypes.object.isRequired,
   metrics: metricsShape.isRequired
 };
 

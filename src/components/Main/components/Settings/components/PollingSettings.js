@@ -21,6 +21,7 @@ class PollingSettings extends Component {
     changePollingInterval: PropTypes.func.isRequired,
     glyph: PropTypes.string.isRequired,
     interval: PropTypes.number.isRequired,
+    intl: PropTypes.object.isRequired,
     isDisabled: PropTypes.bool,
     isPolling: PropTypes.bool.isRequired,
     startPolling: PropTypes.func.isRequired,

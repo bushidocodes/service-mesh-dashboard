@@ -45,7 +45,11 @@ TableToolbar.propTypes = {
     PropTypes.node
   ]),
   toolbarLeftChildren: PropTypes.oneOfType([PropTypes.element, PropTypes.node]),
-  toolbarRightChildren: PropTypes.oneOfType([PropTypes.element, PropTypes.node])
+  toolbarRightChildren: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.node
+  ]),
+  intl: PropTypes.object.isRequired
 };
 
 function TableToolbar({

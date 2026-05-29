@@ -22,6 +22,7 @@ import withUrlState from "components/withUrlState";
 class FunctionsGrid extends Component {
   static propTypes = {
     funcs: PropTypes.array,
+    intl: PropTypes.object.isRequired,
     setUrlState: PropTypes.func.isRequired,
     urlState: PropTypes.object.isRequired
   };

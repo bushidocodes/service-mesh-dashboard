@@ -15,6 +15,7 @@ import { getSparkLineOfValue } from "utils/sparklines";
 JVMHeaderContent.propTypes = {
   basePath: PropTypes.string,
   headerTabs: PropTypes.arrayOf(PropTypes.element),
+  intl: PropTypes.object.isRequired,
   metrics: metricsShape.isRequired
 };
 

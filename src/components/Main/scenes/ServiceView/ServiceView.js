@@ -21,6 +21,7 @@ class ServiceView extends Component {
   static propTypes = {
     history: routerHistoryShape.isRequired,
     instances: PropTypes.arrayOf(serviceInstanceShape).isRequired,
+    intl: PropTypes.object.isRequired,
     location: routerLocationShape.isRequired,
     selectedServiceSlug: PropTypes.string.isRequired,
     serviceIsMetered: PropTypes.bool,

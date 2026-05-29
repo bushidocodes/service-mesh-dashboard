@@ -207,6 +207,7 @@ function SummaryGrid({
 }
 
 SummaryGrid.propTypes = {
+  intl: PropTypes.object.isRequired,
   metrics: metricsShape,
   selectedInstanceID: PropTypes.string,
   selectedServiceSlug: PropTypes.string
