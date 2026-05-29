@@ -47,10 +47,13 @@ class FabricGrid extends Component {
       Actions.stopPollingAndPurgeInstanceMetrics();
       // Display notification
       reportError(state.message);
-      // Reset location state
-      history.replace({
-        state: {}
-      });
+      // Reset location state. Defer past the current commit: componentDidMount
+      // runs in React's layout phase, before React Router's passive effect marks
+      // navigation as active, so calling navigate()/history.replace() here
+      // synchronously triggers a "You should call navigate() in a
+      // React.useEffect()" warning. A setTimeout(0) runs after the passive
+      // effects have flushed, when navigation is ready.
+      setTimeout(() => history.replace({ state: {} }), 0);
     }
   }
 
