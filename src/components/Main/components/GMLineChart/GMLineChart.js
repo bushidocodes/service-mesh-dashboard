@@ -33,10 +33,6 @@ GMLineChart.propTypes = {
   title: PropTypes.string.isRequired
 };
 
-GMLineChart.defaultProps = {
-  height: "normal"
-};
-
 /**
  * Title, Dygraph-based chart, and optional lines of text
  * Validates timeseries data and displays error messages if a chart cannot be displayed.
@@ -48,7 +44,7 @@ function GMLineChart({
   dygraph: { data, attributes },
   dygraphMetadata,
   dygraphOptions,
-  height,
+  height = "normal",
   intl,
   title
 }) {
