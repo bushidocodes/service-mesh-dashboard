@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import { UnmountClosed } from "react-collapse";
 
@@ -27,6 +28,12 @@ function CollapseBridge({ className, isOpened, children, ...rest }) {
     </UnmountClosed>
   );
 }
+
+CollapseBridge.propTypes = {
+  className: PropTypes.string,
+  isOpened: PropTypes.bool,
+  children: PropTypes.node
+};
 
 const TableDrawerCollapse = styled(CollapseBridge)`
   cursor: default;
