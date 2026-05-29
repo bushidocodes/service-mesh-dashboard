@@ -33,12 +33,12 @@ describe("ThreadsTableLineItem component", () => {
     ThreadsTableLineItemWrap = mount(<ThreadsTableLineItem {...mockProps} />);
   });
 
-  xtest("Matched the snapshot", () => {
+  test("Matched the snapshot", () => {
     expect(ThreadsTableLineItemWrap).toMatchSnapshot();
   });
 
   // use 'shallow' instead of mount for instance tests
-  xtest("should toggle row's open/closed state when row is clicked", () => {
+  test("should toggle row's open/closed state when row is clicked", () => {
     ThreadsTableLineItemWrap = shallow(<ThreadsTableLineItem {...mockProps} />);
 
     const row = ThreadsTableLineItemWrap.find(TableRow);

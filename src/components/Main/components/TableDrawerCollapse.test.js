@@ -3,7 +3,7 @@ import { shallow } from "enzyme";
 import TableDrawerCollapse from "./TableDrawerCollapse";
 
 describe("TableDrawerCollapse", () => {
-  xit("matches snapshot", () => {
+  it("matches snapshot", () => {
     const aTableDrawerCollapse = shallow(<TableDrawerCollapse />);
     expect(aTableDrawerCollapse).toMatchSnapshot();
   });

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GMSelect matches snapshot 1`] = `
+<ForwardRef
+  components={{}}
+  isClearable={false}
+  isSearchable={true}
+  styles={
+    {
+      "clearIndicator": [Function],
+      "container": [Function],
+      "control": [Function],
+      "dropdownIndicator": [Function],
+      "input": [Function],
+      "placeholder": [Function],
+      "singleValue": [Function],
+      "valueContainer": [Function],
+    }
+  }
+  value={null}
+/>
+`;

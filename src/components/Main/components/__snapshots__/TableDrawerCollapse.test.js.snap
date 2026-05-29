@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TableDrawerCollapse matches snapshot 1`] = `
+.c0 {
+  cursor: default;
+  -webkit-flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  min-height: 0;
+  overflow: hidden;
+  padding: 0;
+  white-space: normal;
+}
+
+.c0 > div:first-child {
+  box-shadow: inset 0 1px rgb(250,250,250);
+  box-sizing: border-box;
+  cursor: default;
+  height: auto;
+  margin: 0 16px;
+  padding: 16px 0;
+  text-align: left;
+  white-space: normal;
+}
+
+<CollapseBridge
+  className="c0"
+/>
+`;

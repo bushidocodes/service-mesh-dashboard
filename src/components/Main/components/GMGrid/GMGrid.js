@@ -44,6 +44,9 @@ const ResponsiveReactGridLayout = WidthProvider(Responsive);
 export class GMGrid extends Component {
   static propTypes = {
     dashboard: dashboardShape,
+    // Injected by the injectIntl() HOC on the connected default export and
+    // consumed throughout renderChart() via intl.formatMessage().
+    intl: PropTypes.object.isRequired,
     match: routerMatchShape,
     metrics: metricsShape.isRequired,
     name: PropTypes.string

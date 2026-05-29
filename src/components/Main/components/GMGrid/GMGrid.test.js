@@ -58,6 +58,7 @@ let props = {
     },
     charts: [
       {
+        key: "Requests",
         title: "Requests",
         type: "GMTable",
         data: {
@@ -69,6 +70,7 @@ let props = {
         }
       },
       {
+        key: "Response Status Codes",
         title: "Response Status Codes",
         type: "GMBasicMetrics",
         data: {
@@ -84,6 +86,7 @@ let props = {
         }
       },
       {
+        key: "Heap",
         title: "Heap",
         type: "GMLineChart",
         data: {
@@ -121,6 +124,7 @@ let props = {
         }
       },
       {
+        key: "Goroutines",
         title: "Goroutines",
         type: "GMLineChart",
         data: {
@@ -135,7 +139,12 @@ let props = {
       }
     ]
   },
-  match: {},
+  match: {
+    isExact: true,
+    params: { dashboardName: "go" },
+    path: "/",
+    url: "/"
+  },
   metrics: {
     timestamps: [
       "1510699694557",
@@ -157,9 +166,21 @@ let props = {
   name: "go"
 };
 
-xdescribe("Service Instance View: JVM/GO/HTTP <GMGrid>", () => {
+// The connected default export wraps GMGrid in injectIntl(), which supplies the
+// `intl` prop consumed all over renderChart(). The unconnected named export used
+// here gets none, so we hand it a minimal mock. This fixture passes plain strings
+// (not react-intl message descriptors) as labels/titles, so formatMessage just
+// echoes strings back; descriptors are handled defensively for completeness.
+const intl = {
+  formatMessage: (message) =>
+    typeof message === "string"
+      ? message
+      : (message && (message.defaultMessage || message.id)) || ""
+};
+
+describe("Service Instance View: JVM/GO/HTTP <GMGrid>", () => {
   beforeEach(() => {
-    wrapper = shallow(<GMGrid {...props} />);
+    wrapper = shallow(<GMGrid {...props} intl={intl} />);
   });
 
   test("matches snapshot", () => {
@@ -178,7 +199,13 @@ xdescribe("Service Instance View: JVM/GO/HTTP <GMGrid>", () => {
   });
 
   test("returns <NotFoundError> if dashboard does not exist", () => {
-    wrapper = shallow(<GMGrid match={{}} metrics={{}} />);
+    wrapper = shallow(
+      <GMGrid
+        match={{ isExact: true, params: {}, path: "/", url: "/" }}
+        metrics={{}}
+        intl={intl}
+      />
+    );
     expect(wrapper.find(NotFoundError)).toHaveLength(1);
     expect(wrapper.find(GMLineChart)).toHaveLength(0);
     expect(wrapper.find(GMTable)).toHaveLength(0);

@@ -7,9 +7,12 @@ describe("ReadoutItemData", () => {
     const aReadoutItemData = shallow(<ReadoutItemData />);
     expect(aReadoutItemData).toMatchSnapshot();
   });
-  // We are not yet able to match children elements
-  xit("allows padding-left of first-child to be overridden", () => {
+  it("allows padding-left of first-child to be overridden", () => {
     const aReadoutItemData = shallow(<ReadoutItemData paddingLeft="99px" />);
-    expect(aReadoutItemData).toHaveStyleRule("padding", "99px 0");
+    // The override applies to padding-left under the :first-child selector;
+    // jest-styled-components targets nested rules via the `modifier` option.
+    expect(aReadoutItemData).toHaveStyleRule("padding-left", "99px", {
+      modifier: ":first-child"
+    });
   });
 });
