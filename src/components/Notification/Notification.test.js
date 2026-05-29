@@ -1,6 +1,6 @@
 import React from "react";
 import { mount } from "enzyme";
-import NotificationSystem from "react-notification-system";
+import { ToastContainer } from "react-toastify";
 
 import Notification from "./index";
 
@@ -11,11 +11,11 @@ describe("Notification", () => {
     wrapper = mount(<Notification />);
   });
 
-  test("returns <NotificationSystem />", () => {
-    expect(wrapper.find(NotificationSystem)).toHaveLength(1);
+  afterEach(() => {
+    wrapper.unmount();
   });
 
-  test("attaches an addNotification method to the window object", () => {
-    expect(window.addNotification).toBeDefined();
+  test("renders a react-toastify <ToastContainer />", () => {
+    expect(wrapper.find(ToastContainer)).toHaveLength(1);
   });
 });

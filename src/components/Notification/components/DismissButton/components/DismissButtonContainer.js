@@ -24,7 +24,7 @@ const DismissButtonContainer = styled.div`
     transform: scale(1.1);
   }
 
-  .notification:hover & {
+  .Toastify__toast:hover & {
     opacity: 1;
   }
 `;
