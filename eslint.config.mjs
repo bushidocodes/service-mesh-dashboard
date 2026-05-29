@@ -1,6 +1,7 @@
 import globals from "globals";
 import reactPlugin from "eslint-plugin-react";
 import jsxA11y from "eslint-plugin-jsx-a11y";
+import jestPlugin from "eslint-plugin-jest";
 import prettierConfig from "eslint-config-prettier";
 
 export default [
@@ -53,6 +54,21 @@ export default [
       "react/self-closing-comp": "warn",
       "react/sort-comp": "warn",
       "react/sort-prop-types": "warn"
+    }
+  },
+
+  // Test files — guard against silently disabled or focused tests
+  {
+    files: ["src/**/*.test.js", "src/**/__tests__/**/*.js"],
+    plugins: {
+      jest: jestPlugin
+    },
+    languageOptions: {
+      globals: globals.jest
+    },
+    rules: {
+      "jest/no-disabled-tests": "error",
+      "jest/no-focused-tests": "error"
     }
   },
 
