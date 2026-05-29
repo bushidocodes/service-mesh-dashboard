@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import ButtonLabelSuffix from "./ButtonLabelSuffix";
 
 describe("ButtonLabelSuffix", () => {
   it("matches snapshot", () => {
-    const aButtonLabelSuffix = shallow(<ButtonLabelSuffix />);
-    expect(aButtonLabelSuffix).toMatchSnapshot();
+    const { asFragment } = render(<ButtonLabelSuffix />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

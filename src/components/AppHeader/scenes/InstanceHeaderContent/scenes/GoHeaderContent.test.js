@@ -19,7 +19,7 @@ const RouterWrap = (
 
 describe("GoHeaderContent", () => {
   test("matches snapshot", () => {
-    const tree = renderWithIntl(RouterWrap);
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = renderWithIntl(RouterWrap);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import TabIcon from "./TabIcon";
 
 describe("TabIcon", () => {
   it("matches snapshot", () => {
-    const aTabIcon = shallow(<TabIcon />);
-    expect(aTabIcon).toMatchSnapshot();
+    const { asFragment } = render(<TabIcon />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

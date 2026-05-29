@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import Breadcrumb from "./Breadcrumb";
 
 describe("Breadcrumb", () => {
   it("matches snapshot", () => {
-    const aBreadcrumb = shallow(<Breadcrumb />);
-    expect(aBreadcrumb).toMatchSnapshot();
+    const { asFragment } = render(<Breadcrumb />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

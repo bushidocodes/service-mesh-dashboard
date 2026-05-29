@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`InspectorData matches snapshot 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   -webkit-flex: 1 1 100%;
   -ms-flex: 1 1 100%;
   flex: 1 1 100%;
@@ -14,6 +15,7 @@ exports[`InspectorData matches snapshot 1`] = `
 }
 
 <ul
-  className="c0"
-/>
+    class="c0"
+  />
+</DocumentFragment>
 `;

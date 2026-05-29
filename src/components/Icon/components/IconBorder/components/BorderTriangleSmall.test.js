@@ -1,10 +1,14 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import BorderTriangleSmall from "./BorderTriangleSmall";
 
 describe("BorderTriangleSmall", () => {
   it("matches snapshot", () => {
-    const aBorderTriangleSmall = shallow(<BorderTriangleSmall />);
-    expect(aBorderTriangleSmall).toMatchSnapshot();
+    const { asFragment } = render(
+      <svg>
+        <BorderTriangleSmall />
+      </svg>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

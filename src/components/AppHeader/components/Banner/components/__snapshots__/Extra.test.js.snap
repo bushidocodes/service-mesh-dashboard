@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Extra matches snapshot 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   background-color: rgb(51,51,51);
   border-radius: 3px;
   color: rgb(230,230,230);
@@ -29,6 +30,7 @@ exports[`Extra matches snapshot 1`] = `
 }
 
 <a
-  className="c0"
-/>
+    class="c0"
+  />
+</DocumentFragment>
 `;

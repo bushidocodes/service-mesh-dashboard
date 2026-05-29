@@ -1,10 +1,14 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import BackgroundTriangleSmall from "./BackgroundTriangleSmall";
 
 describe("BackgroundTriangleSmall", () => {
   it("matches snapshot", () => {
-    const aBackgroundTriangleSmall = shallow(<BackgroundTriangleSmall />);
-    expect(aBackgroundTriangleSmall).toMatchSnapshot();
+    const { asFragment } = render(
+      <svg>
+        <BackgroundTriangleSmall />
+      </svg>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

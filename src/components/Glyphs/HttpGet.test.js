@@ -1,10 +1,14 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import HttpGet from "./HttpGet";
 
 describe("HttpGet", () => {
   it("matches snapshot", () => {
-    const aHttpGet = shallow(<HttpGet />);
-    expect(aHttpGet).toMatchSnapshot();
+    const { asFragment } = render(
+      <svg>
+        <HttpGet />
+      </svg>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

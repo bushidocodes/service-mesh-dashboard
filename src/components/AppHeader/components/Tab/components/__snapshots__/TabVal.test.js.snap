@@ -1,12 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TabVal matches snapshot 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   margin: 0;
   display: inline-block;
 }
 
 <dd
-  className="c0"
-/>
+    class="c0"
+  />
+</DocumentFragment>
 `;

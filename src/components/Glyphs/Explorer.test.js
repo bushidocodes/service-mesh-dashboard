@@ -1,10 +1,14 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import Explorer from "./Explorer";
 
 describe("Explorer", () => {
   it("matches snapshot", () => {
-    const aExplorer = shallow(<Explorer />);
-    expect(aExplorer).toMatchSnapshot();
+    const { asFragment } = render(
+      <svg>
+        <Explorer />
+      </svg>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

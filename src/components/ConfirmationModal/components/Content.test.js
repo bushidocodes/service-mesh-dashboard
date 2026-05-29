@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import Content from "./Content";
 
 describe("Content", () => {
   it("matches snapshot", () => {
-    const aContent = shallow(<Content />);
-    expect(aContent).toMatchSnapshot();
+    const { asFragment } = render(<Content />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

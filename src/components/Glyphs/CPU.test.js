@@ -1,10 +1,14 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import CPU from "./CPU";
 
 describe("CPU", () => {
   it("matches snapshot", () => {
-    const aCPU = shallow(<CPU />);
-    expect(aCPU).toMatchSnapshot();
+    const { asFragment } = render(
+      <svg>
+        <CPU />
+      </svg>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

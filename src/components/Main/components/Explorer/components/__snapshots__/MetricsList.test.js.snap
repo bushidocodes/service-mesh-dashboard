@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MetricsList matches snapshot 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   border-right: 1px solid hsl(0,0%,92%);
   -webkit-flex: 0 0 300px;
   -ms-flex: 0 0 300px;
@@ -22,6 +23,7 @@ exports[`MetricsList matches snapshot 1`] = `
 }
 
 <div
-  className="c0"
-/>
+    class="c0"
+  />
+</DocumentFragment>
 `;

@@ -1,9 +1,8 @@
 import React from "react";
+import { fireEvent, screen } from "@testing-library/react";
 import { mountWithIntl, renderWithIntl } from "utils/i18nTesting";
 
 import Inspector from "./Inspector";
-import InspectorItem from "./components/InspectorItem";
-import InspectorSearch from "./components/InspectorSearch";
 
 const mockData = [
   "finagle/build/revision",
@@ -30,57 +29,91 @@ const mockProps = {
   selectedMetric: null
 };
 
+// The list (InspectorData) renders a <ul> and each InspectorItem renders a
+// focusable <div tabIndex="0"> whose text content is the metric key. RTL is
+// DOM-based, so we count/inspect those rendered nodes directly.
+const getItems = (container) => {
+  const list = container.querySelector("ul");
+  return list ? Array.from(list.children) : [];
+};
+
 describe("Inspector", () => {
-  let wrapper;
+  let container;
   beforeEach(() => {
-    wrapper = mountWithIntl(<Inspector {...mockProps} />);
+    ({ container } = mountWithIntl(<Inspector {...mockProps} />));
   });
 
   test("matches snapshot", () => {
-    const tree = renderWithIntl(<Inspector {...mockProps} />);
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = renderWithIntl(<Inspector {...mockProps} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test("renders data", () => {
-    expect(wrapper.find(InspectorItem)).toHaveLength(14);
-    wrapper.find(InspectorItem).forEach((item, idx) => {
-      expect(item.text()).toBe(mockData[idx]);
+    const items = getItems(container);
+    expect(items).toHaveLength(14);
+    items.forEach((item, idx) => {
+      expect(item).toHaveTextContent(mockData[idx]);
     });
   });
 
   test("does not render a ul when there is no data", () => {
-    expect(wrapper.find("ul")).toHaveLength(1);
-    wrapper.setProps({ data: [] });
-    expect(wrapper.find("ul")).toHaveLength(0);
+    expect(container.querySelectorAll("ul")).toHaveLength(1);
+    const { container: emptyContainer } = renderWithIntl(
+      <Inspector {...mockProps} data={[]} />
+    );
+    expect(emptyContainer.querySelectorAll("ul")).toHaveLength(0);
   });
 
   test("calls onSearch when user inputs search query", () => {
-    wrapper.find(InspectorSearch).simulate("change");
-    expect(wrapper.props().onSearch).toHaveBeenCalled();
+    // InspectorSearch renders the <input type="search"> exposed as a searchbox.
+    const searchInput = screen.getByRole("searchbox");
+    fireEvent.change(searchInput, { target: { value: "http" } });
+    expect(mockProps.onSearch).toHaveBeenCalled();
   });
 
   test("calls onClick when user selects a metric", () => {
-    wrapper.find(InspectorItem).first().simulate("click");
-    expect(wrapper.props().onClick).toHaveBeenCalled();
+    const items = getItems(container);
+    fireEvent.click(items[0]);
+    expect(mockProps.onClick).toHaveBeenCalled();
   });
 
   test("passes active prop to the selected metric's styled-component", () => {
-    // Function that returns the ReactWrapper of any element(s) with an "active" prop
-    const findActiveItem = () =>
-      wrapper.findWhere((item) => item.props().active);
-    expect(findActiveItem()).toHaveLength(0);
+    // The `active` prop on InspectorItem manifests as a styled-component branch
+    // that, among other rules, sets `z-index: 999999` (unique to the active
+    // state). Inactive items have no items carrying that rule.
+    // NOTE: the original `findWhere(item => item.props().active)` inspected the
+    // React `active` prop directly; RTL cannot read props, so we assert the
+    // observable style the prop produces instead.
+    getItems(container).forEach((item) => {
+      expect(item).not.toHaveStyleRule("z-index", "999999");
+    });
 
-    // Set a selected metric and search for item with active prop again
-    wrapper.setProps({ selectedMetric: "http/closes" });
-    expect(findActiveItem()).toHaveLength(1);
-    expect(findActiveItem().text()).toBe("http/closes");
+    // Set a selected metric and look for the item carrying the active style.
+    const { container: activeContainer } = renderWithIntl(
+      <Inspector {...mockProps} selectedMetric="http/closes" />
+    );
+    const activeItems = getItems(activeContainer).filter(
+      (item) => item.textContent === "http/closes"
+    );
+    expect(activeItems).toHaveLength(1);
+    expect(activeItems[0]).toHaveTextContent("http/closes");
+    expect(activeItems[0]).toHaveStyleRule("z-index", "999999");
+    // No other item carries the active style.
+    getItems(activeContainer)
+      .filter((item) => item.textContent !== "http/closes")
+      .forEach((item) => {
+        expect(item).not.toHaveStyleRule("z-index", "999999");
+      });
   });
 
   test("filters data by searchQuery", () => {
-    wrapper.setProps({ searchQuery: "finagle" });
-    expect(wrapper.find(InspectorItem)).toHaveLength(7);
-    wrapper.find(InspectorItem).forEach((item, idx) => {
-      expect(item.text()).toBe(mockData[idx]);
+    const { container: filteredContainer } = renderWithIntl(
+      <Inspector {...mockProps} searchQuery="finagle" />
+    );
+    const items = getItems(filteredContainer);
+    expect(items).toHaveLength(7);
+    items.forEach((item, idx) => {
+      expect(item).toHaveTextContent(mockData[idx]);
     });
   });
 });

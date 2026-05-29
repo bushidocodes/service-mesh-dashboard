@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import MessageIconContainer from "./MessageIconContainer";
 
 describe("MessageIconContainer", () => {
   it("matches snapshot", () => {
-    const aMessageIconContainer = shallow(<MessageIconContainer />);
-    expect(aMessageIconContainer).toMatchSnapshot();
+    const { asFragment } = render(<MessageIconContainer />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

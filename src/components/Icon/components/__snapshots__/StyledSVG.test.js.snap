@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`StyledSVG matches snapshot 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   z-index: 1;
   height: NaNpx;
   width: NaNpx;
@@ -14,10 +15,11 @@ exports[`StyledSVG matches snapshot 1`] = `
 }
 
 <svg
-  className="c0"
-  version="1.1"
-  viewBox="0 0 24 24"
-  xmlns="http://www.w3.org/2000/svg"
-  xmlnsXlink="http://www.w3.org/1999/xlink"
-/>
+    class="c0"
+    version="1.1"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+  />
+</DocumentFragment>
 `;

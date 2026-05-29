@@ -1,23 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button Snapshots matches active snapshot 1`] = `
-<Button
-  active={true}
-  clickAction={[Function]}
-  label="Button"
-/>
-`;
-
-exports[`Button Snapshots matches disabled snapshot 1`] = `
-<Button
-  clickAction={[Function]}
-  disabled={true}
-  label="Button"
-/>
-`;
-
-exports[`Button Snapshots matches orientation snapshots 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   box-sizing: border-box;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -45,18 +30,17 @@ exports[`Button Snapshots matches orientation snapshots 1`] = `
   cursor: pointer;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  background-color: rgb(255,255,255);
-  border-color: hsl(0,0%,94%);
-  border-top-color: hsl(0,0%,100%);
-  border-bottom-color: hsl(0,0%,82%);
-  color: rgb(0,0,0);
+  background-color: rgb(10,171,42);
+  border-color: rgb(0,147,23);
+  border-top-color: rgb(2,154,30);
+  border-bottom-color: rgb(0,136,15);
+  color: rgb(255,255,255);
   font-size: 14px;
   border-radius: 3px;
   padding: 1.4px 4px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding-top: 4px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
 }
 
 .c0:hover {
@@ -77,21 +61,19 @@ exports[`Button Snapshots matches orientation snapshots 1`] = `
 }
 
 .c0:active {
-  -webkit-transition-duration: 0s;
-  transition-duration: 0s;
-  background-color: hsl(0,0%,92.5%);
-  border-color: hsl(0,0%,87%);
-  border-top-color: hsl(0,0%,95.3%);
-  border-bottom-color: hsl(0,0%,75.8%);
-  color: hsl(0,0%,0%);
+  background-color: rgb(10,171,42);
+  border-color: rgb(5,165,37);
+  border-top-color: rgb(13,174,45);
+  border-bottom-color: rgb(0,152,27);
+  color: rgb(255,255,255);
 }
 
 .c0:hover {
-  background-color: hsl(0,0%,98.5%);
-  border-color: hsl(0,0%,92.6%);
-  border-top-color: hsl(0,0%,100%);
-  border-bottom-color: hsl(0,0%,80.8%);
-  color: hsl(0,0%,0%);
+  background-color: rgb(10,171,42);
+  border-color: rgb(0,147,23);
+  border-top-color: rgb(2,154,30);
+  border-bottom-color: rgb(0,136,15);
+  color: rgb(255,255,255);
 }
 
 .c0:focus {
@@ -117,22 +99,26 @@ exports[`Button Snapshots matches orientation snapshots 1`] = `
 }
 
 .c0 > :not(:first-child) {
-  margin-top: 0.25px;
+  margin-left: 4px;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
 }
 
 <button
-  class="c0"
-  orientation="vertical"
-  title="vertical"
->
-  <span>
-    vertical
-  </span>
-</button>
+    class="c0"
+    title="Button"
+  >
+    <span>
+      Button
+    </span>
+  </button>
+</DocumentFragment>
 `;
 
-exports[`Button Snapshots matches orientation snapshots 2`] = `
-.c0 {
+exports[`Button Snapshots matches disabled snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
   box-sizing: border-box;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -238,18 +224,256 @@ exports[`Button Snapshots matches orientation snapshots 2`] = `
 }
 
 <button
-  class="c0"
-  orientation="horizontal"
-  title="horizontal"
->
-  <span>
-    horizontal
-  </span>
-</button>
+    class="c0"
+    disabled=""
+    title="Button"
+  >
+    <span>
+      Button
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Button Snapshots matches orientation snapshots 1`] = `
+<DocumentFragment>
+  .c0 {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 600;
+  border-width: 1px;
+  line-height: 1.4;
+  border-style: solid;
+  text-transform: none;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: rgb(255,255,255);
+  border-color: hsl(0,0%,94%);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,82%);
+  color: rgb(0,0,0);
+  font-size: 14px;
+  border-radius: 3px;
+  padding: 1.4px 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-top: 4px;
+}
+
+.c0:hover {
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c0:focus,
+.c0:active {
+  -webkit-transition: all 0 ease;
+  transition: all 0 ease;
+}
+
+.c0 > * {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c0:active {
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+  background-color: hsl(0,0%,92.5%);
+  border-color: hsl(0,0%,87%);
+  border-top-color: hsl(0,0%,95.3%);
+  border-bottom-color: hsl(0,0%,75.8%);
+  color: hsl(0,0%,0%);
+}
+
+.c0:hover {
+  background-color: hsl(0,0%,98.5%);
+  border-color: hsl(0,0%,92.6%);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,80.8%);
+  color: hsl(0,0%,0%);
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0aab2a;
+  z-index: 1;
+}
+
+.c0[disabled],
+.c0[disabled]:hover,
+.c0[disabled]:focus,
+.c0[disabled]:active {
+  cursor: default;
+  opacity: 0.8;
+  background-color: hsl(0,0%,94%);
+  border-color: hsl(0,0%,94%);
+  color: hsl(0,0%,0%);
+}
+
+.c0 > svg {
+  width: 24px;
+  height: 24px;
+}
+
+.c0 > :not(:first-child) {
+  margin-top: 0.25px;
+}
+
+<button
+    class="c0"
+    orientation="vertical"
+    title="vertical"
+  >
+    <span>
+      vertical
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Button Snapshots matches orientation snapshots 2`] = `
+<DocumentFragment>
+  .c0 {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 600;
+  border-width: 1px;
+  line-height: 1.4;
+  border-style: solid;
+  text-transform: none;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: rgb(255,255,255);
+  border-color: hsl(0,0%,94%);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,82%);
+  color: rgb(0,0,0);
+  font-size: 14px;
+  border-radius: 3px;
+  padding: 1.4px 4px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0:hover {
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c0:focus,
+.c0:active {
+  -webkit-transition: all 0 ease;
+  transition: all 0 ease;
+}
+
+.c0 > * {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c0:active {
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+  background-color: hsl(0,0%,92.5%);
+  border-color: hsl(0,0%,87%);
+  border-top-color: hsl(0,0%,95.3%);
+  border-bottom-color: hsl(0,0%,75.8%);
+  color: hsl(0,0%,0%);
+}
+
+.c0:hover {
+  background-color: hsl(0,0%,98.5%);
+  border-color: hsl(0,0%,92.6%);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,80.8%);
+  color: hsl(0,0%,0%);
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0aab2a;
+  z-index: 1;
+}
+
+.c0[disabled],
+.c0[disabled]:hover,
+.c0[disabled]:focus,
+.c0[disabled]:active {
+  cursor: default;
+  opacity: 0.8;
+  background-color: hsl(0,0%,94%);
+  border-color: hsl(0,0%,94%);
+  color: hsl(0,0%,0%);
+}
+
+.c0 > svg {
+  width: 24px;
+  height: 24px;
+}
+
+.c0 > :not(:first-child) {
+  margin-left: 4px;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+}
+
+<button
+    class="c0"
+    orientation="horizontal"
+    title="horizontal"
+  >
+    <span>
+      horizontal
+    </span>
+  </button>
+</DocumentFragment>
 `;
 
 exports[`Button Snapshots matches outline snapshots 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   box-sizing: border-box;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -355,17 +579,19 @@ exports[`Button Snapshots matches outline snapshots 1`] = `
 }
 
 <button
-  class="c0"
-  title="raised"
->
-  <span>
-    raised
-  </span>
-</button>
+    class="c0"
+    title="raised"
+  >
+    <span>
+      raised
+    </span>
+  </button>
+</DocumentFragment>
 `;
 
 exports[`Button Snapshots matches outline snapshots 2`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   box-sizing: border-box;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -465,17 +691,19 @@ exports[`Button Snapshots matches outline snapshots 2`] = `
 }
 
 <button
-  class="c0"
-  title="outline"
->
-  <span>
-    outline
-  </span>
-</button>
+    class="c0"
+    title="outline"
+  >
+    <span>
+      outline
+    </span>
+  </button>
+</DocumentFragment>
 `;
 
 exports[`Button Snapshots matches outline snapshots 3`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   box-sizing: border-box;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -578,17 +806,19 @@ exports[`Button Snapshots matches outline snapshots 3`] = `
 }
 
 <button
-  class="c0"
-  title="shadow"
->
-  <span>
-    shadow
-  </span>
-</button>
+    class="c0"
+    title="shadow"
+  >
+    <span>
+      shadow
+    </span>
+  </button>
+</DocumentFragment>
 `;
 
 exports[`Button Snapshots matches outline snapshots 4`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   box-sizing: border-box;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -688,17 +918,19 @@ exports[`Button Snapshots matches outline snapshots 4`] = `
 }
 
 <button
-  class="c0"
-  title="none"
->
-  <span>
-    none
-  </span>
-</button>
+    class="c0"
+    title="none"
+  >
+    <span>
+      none
+    </span>
+  </button>
+</DocumentFragment>
 `;
 
 exports[`Button Snapshots matches outline snapshots 5`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   box-sizing: border-box;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -804,26 +1036,157 @@ exports[`Button Snapshots matches outline snapshots 5`] = `
 }
 
 <button
-  class="c0"
-  title="raised-outline"
->
-  <span>
-    raised-outline
-  </span>
-</button>
+    class="c0"
+    title="raised-outline"
+  >
+    <span>
+      raised-outline
+    </span>
+  </button>
+</DocumentFragment>
 `;
 
 exports[`Button Snapshots matches prefix/suffix snapshot 1`] = `
-<Button
-  clickAction={[Function]}
-  label="Button"
-  prefix="Prefix"
-  suffix="Suffix"
-/>
+<DocumentFragment>
+  .c0 {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 600;
+  border-width: 1px;
+  line-height: 1.4;
+  border-style: solid;
+  text-transform: none;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: rgb(255,255,255);
+  border-color: hsl(0,0%,94%);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,82%);
+  color: rgb(0,0,0);
+  font-size: 14px;
+  border-radius: 3px;
+  padding: 1.4px 4px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0:hover {
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c0:focus,
+.c0:active {
+  -webkit-transition: all 0 ease;
+  transition: all 0 ease;
+}
+
+.c0 > * {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c0:active {
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+  background-color: hsl(0,0%,92.5%);
+  border-color: hsl(0,0%,87%);
+  border-top-color: hsl(0,0%,95.3%);
+  border-bottom-color: hsl(0,0%,75.8%);
+  color: hsl(0,0%,0%);
+}
+
+.c0:hover {
+  background-color: hsl(0,0%,98.5%);
+  border-color: hsl(0,0%,92.6%);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,80.8%);
+  color: hsl(0,0%,0%);
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0aab2a;
+  z-index: 1;
+}
+
+.c0[disabled],
+.c0[disabled]:hover,
+.c0[disabled]:focus,
+.c0[disabled]:active {
+  cursor: default;
+  opacity: 0.8;
+  background-color: hsl(0,0%,94%);
+  border-color: hsl(0,0%,94%);
+  color: hsl(0,0%,0%);
+}
+
+.c0 > svg {
+  width: 24px;
+  height: 24px;
+}
+
+.c0 > :not(:first-child) {
+  margin-left: 4px;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+}
+
+.c1 {
+  opacity: 0.5;
+  margin-right: 8px;
+}
+
+.c2 {
+  opacity: 0.5;
+  margin-left: 8px;
+}
+
+<button
+    class="c0"
+    title="Button"
+  >
+    <span>
+      <span
+        class="c1"
+      >
+        Prefix
+      </span>
+      Button
+      <span
+        class="c2"
+      >
+        Suffix
+      </span>
+    </span>
+  </button>
+</DocumentFragment>
 `;
 
 exports[`Button Snapshots matches size snapshots 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   box-sizing: border-box;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -929,17 +1292,19 @@ exports[`Button Snapshots matches size snapshots 1`] = `
 }
 
 <button
-  class="c0"
-  title="normal"
->
-  <span>
-    normal
-  </span>
-</button>
+    class="c0"
+    title="normal"
+  >
+    <span>
+      normal
+    </span>
+  </button>
+</DocumentFragment>
 `;
 
 exports[`Button Snapshots matches size snapshots 2`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   box-sizing: border-box;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1046,17 +1411,19 @@ exports[`Button Snapshots matches size snapshots 2`] = `
 }
 
 <button
-  class="c0"
-  title="xs"
->
-  <span>
-    xs
-  </span>
-</button>
+    class="c0"
+    title="xs"
+  >
+    <span>
+      xs
+    </span>
+  </button>
+</DocumentFragment>
 `;
 
 exports[`Button Snapshots matches size snapshots 3`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   box-sizing: border-box;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1163,17 +1530,19 @@ exports[`Button Snapshots matches size snapshots 3`] = `
 }
 
 <button
-  class="c0"
-  title="sm"
->
-  <span>
-    sm
-  </span>
-</button>
+    class="c0"
+    title="sm"
+  >
+    <span>
+      sm
+    </span>
+  </button>
+</DocumentFragment>
 `;
 
 exports[`Button Snapshots matches size snapshots 4`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   box-sizing: border-box;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1279,17 +1648,19 @@ exports[`Button Snapshots matches size snapshots 4`] = `
 }
 
 <button
-  class="c0"
-  title="lg"
->
-  <span>
-    lg
-  </span>
-</button>
+    class="c0"
+    title="lg"
+  >
+    <span>
+      lg
+    </span>
+  </button>
+</DocumentFragment>
 `;
 
 exports[`Button Snapshots matches size snapshots 5`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   box-sizing: border-box;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1395,17 +1766,19 @@ exports[`Button Snapshots matches size snapshots 5`] = `
 }
 
 <button
-  class="c0"
-  title="xl"
->
-  <span>
-    xl
-  </span>
-</button>
+    class="c0"
+    title="xl"
+  >
+    <span>
+      xl
+    </span>
+  </button>
+</DocumentFragment>
 `;
 
 exports[`Button Snapshots matches type snapshots 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   box-sizing: border-box;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1511,18 +1884,20 @@ exports[`Button Snapshots matches type snapshots 1`] = `
 }
 
 <button
-  class="c0"
-  title="danger"
-  type="danger"
->
-  <span>
-    danger
-  </span>
-</button>
+    class="c0"
+    title="danger"
+    type="danger"
+  >
+    <span>
+      danger
+    </span>
+  </button>
+</DocumentFragment>
 `;
 
 exports[`Button Snapshots matches type snapshots 2`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   box-sizing: border-box;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1628,18 +2003,20 @@ exports[`Button Snapshots matches type snapshots 2`] = `
 }
 
 <button
-  class="c0"
-  title="info"
-  type="info"
->
-  <span>
-    info
-  </span>
-</button>
+    class="c0"
+    title="info"
+    type="info"
+  >
+    <span>
+      info
+    </span>
+  </button>
+</DocumentFragment>
 `;
 
 exports[`Button Snapshots matches type snapshots 3`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   box-sizing: border-box;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1745,18 +2122,20 @@ exports[`Button Snapshots matches type snapshots 3`] = `
 }
 
 <button
-  class="c0"
-  title="primary"
-  type="primary"
->
-  <span>
-    primary
-  </span>
-</button>
+    class="c0"
+    title="primary"
+    type="primary"
+  >
+    <span>
+      primary
+    </span>
+  </button>
+</DocumentFragment>
 `;
 
 exports[`Button Snapshots matches type snapshots 4`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   box-sizing: border-box;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1862,18 +2241,20 @@ exports[`Button Snapshots matches type snapshots 4`] = `
 }
 
 <button
-  class="c0"
-  title="warning"
-  type="warning"
->
-  <span>
-    warning
-  </span>
-</button>
+    class="c0"
+    title="warning"
+    type="warning"
+  >
+    <span>
+      warning
+    </span>
+  </button>
+</DocumentFragment>
 `;
 
 exports[`Button Snapshots matches type snapshots 5`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   box-sizing: border-box;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1979,12 +2360,13 @@ exports[`Button Snapshots matches type snapshots 5`] = `
 }
 
 <button
-  class="c0"
-  title="polling"
-  type="polling"
->
-  <span>
-    polling
-  </span>
-</button>
+    class="c0"
+    title="polling"
+    type="polling"
+  >
+    <span>
+      polling
+    </span>
+  </button>
+</DocumentFragment>
 `;

@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import Badge from "./Badge";
 
 describe("Badge", () => {
   it("matches snapshot", () => {
-    const aBadge = shallow(<Badge />);
-    expect(aBadge).toMatchSnapshot();
+    const { asFragment } = render(<Badge />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

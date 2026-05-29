@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import AppToolBarHeader from "./AppToolBarHeader";
 
 describe("AppToolBarHeader", () => {
   it("matches snapshot", () => {
-    const aAppToolBarHeader = shallow(<AppToolBarHeader />);
-    expect(aAppToolBarHeader).toMatchSnapshot();
+    const { asFragment } = render(<AppToolBarHeader />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

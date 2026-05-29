@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import BrandContainer from "./BrandContainer";
 
 describe("BrandContainer", () => {
   it("matches snapshot", () => {
-    const aBrandContainer = shallow(<BrandContainer />);
-    expect(aBrandContainer).toMatchSnapshot();
+    const { asFragment } = render(<BrandContainer />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

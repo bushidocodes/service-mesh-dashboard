@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import Extra from "./Extra";
 
 describe("Extra", () => {
   it("matches snapshot", () => {
-    const aExtra = shallow(<Extra />);
-    expect(aExtra).toMatchSnapshot();
+    const { asFragment } = render(<Extra />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

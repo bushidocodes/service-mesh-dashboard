@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import ReadoutGroup from "./ReadoutGroup";
 
 describe("ReadoutGroup", () => {
   it("matches snapshot", () => {
-    const aReadoutGroup = shallow(<ReadoutGroup />);
-    expect(aReadoutGroup).toMatchSnapshot();
+    const { asFragment } = render(<ReadoutGroup />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

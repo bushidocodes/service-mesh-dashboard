@@ -1,10 +1,14 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import Pause from "./Pause";
 
 describe("Pause", () => {
   it("matches snapshot", () => {
-    const aPause = shallow(<Pause />);
-    expect(aPause).toMatchSnapshot();
+    const { asFragment } = render(
+      <svg>
+        <Pause />
+      </svg>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

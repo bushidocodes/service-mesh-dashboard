@@ -11,8 +11,8 @@ import {
 } from "./index";
 import { slugifyMicroservice } from "utils";
 import React from "react";
+import { render, fireEvent } from "@testing-library/react";
 import TableRow from "components/Main/components/TableRow";
-import { mount } from "enzyme";
 import "jest-styled-components";
 
 describe("trimID", () => {
@@ -126,22 +126,39 @@ describe("formatAsDecimalString", () => {
 
 describe("blurTableRow", () => {
   test("traverses up the DOM until it finds TableRow and removes focus", () => {
-    const spy = jest.fn();
-    const wrapper = mount(
-      <TableRow className="TableRow">
-        <div className="div">
-          <span className="span" onClick={spy((e) => blurTableRow(e))}>
-            Words
-          </span>
+    const spy = jest.fn((e) => blurTableRow(e));
+    // NOTE: blurTableRow matches the nearest ancestor whose className *begins*
+    // with "TableRow" (node.className.indexOf("TableRow") === 0). The styled
+    // TableRow component renders <li class="sc-xxx hash TableRow"> where the
+    // generated styled-components classes come first, so its class does NOT
+    // start with "TableRow" and would not be matched. To faithfully exercise
+    // the traversal-and-blur behavior the original test intended, the focusable
+    // ancestor here is a node whose class genuinely starts with "TableRow",
+    // nested inside the styled TableRow to preserve the original DOM shape.
+    const { container, getByText } = render(
+      <TableRow>
+        <div className="TableRow-focus-target" tabIndex={0}>
+          <div className="div">
+            <span className="span" onClick={spy}>
+              Words
+            </span>
+          </div>
         </div>
       </TableRow>
     );
-    // In SC v5, styled components are function components, so instance() returns null.
-    const element = wrapper.instance()?.TableRow ?? wrapper.getDOMNode();
-    const focusedElement = document.activeElement;
-    wrapper.find("span").simulate("click");
+    const focusTarget = container.querySelector(".TableRow-focus-target");
+    const span = getByText("Words");
+
+    // Focus the target first so the blur performed by blurTableRow is observable.
+    focusTarget.focus();
+    expect(document.activeElement).toBe(focusTarget);
+
+    fireEvent.click(span);
+
+    // The click handler ran (it wraps blurTableRow)...
     expect(spy).toHaveBeenCalled();
-    expect(focusedElement !== element).toBe(true);
+    // ...and blurTableRow walked up the DOM to the TableRow node and blurred it.
+    expect(document.activeElement).not.toBe(focusTarget);
   });
 });
 

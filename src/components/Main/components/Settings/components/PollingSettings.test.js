@@ -1,8 +1,8 @@
 import React from "react";
-import { mountWithIntl, renderWithIntl } from "utils/i18nTesting";
+import { screen, fireEvent } from "@testing-library/react";
+import { renderWithIntl, withIntl } from "utils/i18nTesting";
 import PollingSettings from "./PollingSettings";
 
-let wrapper;
 const mockChangePollingInterval = jest.fn();
 const mockStartPolling = jest.fn();
 const mockStopPolling = jest.fn();
@@ -23,57 +23,75 @@ describe("PollingSettings component", () => {
   beforeEach(function () {
     mockStartPolling.mockClear();
     mockStopPolling.mockClear();
-    wrapper = mountWithIntl(<PollingSettings {...mockProps} />);
   });
 
   test("Matches the snapshot", () => {
-    const PollingSettingsComponent = renderWithIntl(
-      <PollingSettings {...mockProps} />
-    );
-    expect(PollingSettingsComponent).toMatchSnapshot();
+    const { asFragment } = renderWithIntl(<PollingSettings {...mockProps} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test("Resume / Pause button component is rendered", () => {
-    expect(wrapper.find("button").length).toBe(1);
+    renderWithIntl(<PollingSettings {...mockProps} />);
+    expect(screen.getAllByRole("button")).toHaveLength(1);
   });
 
   test("If isPolling prop is set to 'true', button displays 'Pause Polling'", () => {
-    wrapper.setProps({ isPolling: true });
-    expect(wrapper.find("button").props().title).toBe("Pause Polling");
+    const { rerender } = renderWithIntl(<PollingSettings {...mockProps} />);
+    rerender(withIntl(<PollingSettings {...mockProps} isPolling={true} />));
+    expect(screen.getByRole("button")).toHaveAttribute(
+      "title",
+      "Pause Polling"
+    );
   });
 
   test("If isPolling prop is set to 'true', and button is clicked, the function that is called is Stop Polling", () => {
-    wrapper.setProps({ isPolling: true });
-    wrapper.find("button").simulate("click", { preventDefault() {} });
+    const { rerender } = renderWithIntl(<PollingSettings {...mockProps} />);
+    rerender(withIntl(<PollingSettings {...mockProps} isPolling={true} />));
+    fireEvent.click(screen.getByRole("button"));
     expect(mockStopPolling).toBeCalled();
   });
 
   test("If isPolling prop is set to 'false', the PollingSettings Button displays 'Resume Polling'", () => {
-    wrapper.setProps({ isPolling: false });
-    expect(wrapper.find("button").props().title).toBe("Resume Polling");
+    const { rerender } = renderWithIntl(<PollingSettings {...mockProps} />);
+    rerender(withIntl(<PollingSettings {...mockProps} isPolling={false} />));
+    expect(screen.getByRole("button")).toHaveAttribute(
+      "title",
+      "Resume Polling"
+    );
   });
 
   test("If isPolling prop is set to 'false', and button is clicked, the function that is called is Start Polling", () => {
-    wrapper.setProps({ isPolling: false });
-    wrapper.find("button").simulate("click", { preventDefault() {} });
+    const { rerender } = renderWithIntl(<PollingSettings {...mockProps} />);
+    rerender(withIntl(<PollingSettings {...mockProps} isPolling={false} />));
+    fireEvent.click(screen.getByRole("button"));
     expect(mockStartPolling).toBeCalled();
   });
 
   test("Glyph is rendered as part of the resume/ pause button", () => {
-    expect(wrapper.find("button").find("g").at(1).hasClass("glyph")).toBe(true);
+    renderWithIntl(<PollingSettings {...mockProps} />);
+    // NOTE: enzyme asserted the 2nd <g> inside the button had class "glyph".
+    // Querying observable DOM: the button contains a <g class="glyph"> rendered
+    // by the Glyph component.
+    const button = screen.getByRole("button");
+    expect(button.querySelector("g.glyph")).toBeInTheDocument();
   });
 
   test("LayoutSection component is rendered by making sure header tag contains 'Instance Polling' text", () => {
-    expect(wrapper.find("LayoutSection")).toHaveLength(1);
+    renderWithIntl(<PollingSettings {...mockProps} />);
+    // NOTE: enzyme matched the LayoutSection component by name; RTL is DOM-based,
+    // so we assert the observable header text it renders from the title prop.
+    expect(screen.getByText("Instance Polling")).toBeInTheDocument();
   });
 
   test("InputRange component is getting rendered", () => {
-    expect(wrapper.find("input[type='range']").length).toBe(1);
+    const { container } = renderWithIntl(<PollingSettings {...mockProps} />);
+    expect(container.querySelectorAll("input[type='range']")).toHaveLength(1);
   });
 
   test("InputRange value depends on the initial state of the Polling Settings component", () => {
     mockProps.interval = 99000;
-    const wrapper = mountWithIntl(<PollingSettings {...mockProps} />);
-    expect(wrapper.find("input[type='range']").props().value).toBe(99);
+    const { container } = renderWithIntl(<PollingSettings {...mockProps} />);
+    const range = container.querySelector("input[type='range']");
+    expect(range).toHaveValue("99");
   });
 });

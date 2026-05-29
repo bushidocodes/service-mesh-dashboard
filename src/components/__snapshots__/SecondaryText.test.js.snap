@@ -1,13 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SecondaryText matches snapshot 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   margin-left: 4px;
   opacity: 0.6;
   font-size: 11px;
 }
 
 <span
-  className="c0"
-/>
+    class="c0"
+  />
+</DocumentFragment>
 `;

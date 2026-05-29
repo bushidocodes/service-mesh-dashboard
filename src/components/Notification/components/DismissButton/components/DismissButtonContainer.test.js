@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import DismissButtonContainer from "./DismissButtonContainer";
 
 describe("DismissButtonContainer", () => {
   it("matches snapshot", () => {
-    const aDismissButtonContainer = shallow(<DismissButtonContainer />);
-    expect(aDismissButtonContainer).toMatchSnapshot();
+    const { asFragment } = render(<DismissButtonContainer />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

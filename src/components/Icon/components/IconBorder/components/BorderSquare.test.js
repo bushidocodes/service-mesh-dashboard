@@ -1,10 +1,14 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import BorderSquare from "./BorderSquare";
 
 describe("BorderSquare", () => {
   it("matches snapshot", () => {
-    const aBorderSquare = shallow(<BorderSquare />);
-    expect(aBorderSquare).toMatchSnapshot();
+    const { asFragment } = render(
+      <svg>
+        <BorderSquare />
+      </svg>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

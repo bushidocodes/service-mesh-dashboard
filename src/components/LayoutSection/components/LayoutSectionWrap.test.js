@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import LayoutSectionWrap from "./LayoutSectionWrap";
 
 describe("LayoutSectionWrap", () => {
   it("matches snapshot", () => {
-    const aLayoutSectionWrap = shallow(<LayoutSectionWrap />);
-    expect(aLayoutSectionWrap).toMatchSnapshot();
+    const { asFragment } = render(<LayoutSectionWrap />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

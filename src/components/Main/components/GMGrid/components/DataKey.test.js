@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import DataKey from "./DataKey";
 
 describe("DataKey", () => {
   it("matches snapshot", () => {
-    const aDataKey = shallow(<DataKey />);
-    expect(aDataKey).toMatchSnapshot();
+    const { asFragment } = render(<DataKey />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

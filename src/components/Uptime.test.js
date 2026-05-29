@@ -1,5 +1,5 @@
 import React, { act } from "react";
-import { mount } from "enzyme";
+import { render } from "@testing-library/react";
 import _ from "lodash";
 
 import Uptime from "./UpTime";
@@ -28,18 +28,23 @@ const referenceNow = 1511164339200;
 jest.useFakeTimers();
 
 describe("Uptime component", () => {
-  let UptimeWrapper;
+  let container;
+  let unmount;
   beforeEach(() => {
     jest.setSystemTime(referenceNow - 1000);
-    UptimeWrapper = mount(<Uptime startTime={startTime} render={renderFunc} />);
+    ({ container, unmount } = render(
+      <Uptime startTime={startTime} render={renderFunc} />
+    ));
   });
 
   afterEach(() => {
-    UptimeWrapper.unmount();
+    unmount();
   });
 
   test("renders via the function passed as the render prop", () => {
-    expect(UptimeWrapper.find(ArrayValue)).toHaveLength(1);
+    // The render prop produces a single ArrayValue (a styled.div). Counting the
+    // rendered divs is the observable proxy for `.find(ArrayValue).toHaveLength(1)`.
+    expect(container.querySelectorAll("div")).toHaveLength(1);
   });
 
   test("renders the correct value", () => {
@@ -49,8 +54,7 @@ describe("Uptime component", () => {
     act(() => {
       jest.advanceTimersByTime(1000);
     });
-    UptimeWrapper.update();
-    const html = UptimeWrapper.html();
+    const html = container.innerHTML;
     expect(html).toContain("1273d");
     expect(html).toContain("03h");
     expect(html).toContain("33m");

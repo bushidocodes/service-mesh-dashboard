@@ -1,10 +1,14 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import Scale from "./Scale";
 
 describe("Scale", () => {
   it("matches snapshot", () => {
-    const aScale = shallow(<Scale />);
-    expect(aScale).toMatchSnapshot();
+    const { asFragment } = render(
+      <svg>
+        <Scale />
+      </svg>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -1,10 +1,14 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import LinkedIn from "./LinkedIn";
 
 describe("LinkedIn", () => {
   it("matches snapshot", () => {
-    const aLinkedIn = shallow(<LinkedIn />);
-    expect(aLinkedIn).toMatchSnapshot();
+    const { asFragment } = render(
+      <svg>
+        <LinkedIn />
+      </svg>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

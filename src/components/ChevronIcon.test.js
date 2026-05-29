@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import ChevronIcon from "./ChevronIcon";
 
 describe("ChevronIcon", () => {
   it("matches snapshot with no props", () => {
-    const aChevronIcon = shallow(<ChevronIcon />);
-    expect(aChevronIcon).toMatchSnapshot();
+    const { asFragment } = render(<ChevronIcon />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

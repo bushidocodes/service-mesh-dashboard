@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ThreadsGrid View matches snapshot 1`] = `
-[
+<DocumentFragment>
   .c2 {
   background-image: url(magnifier.svg);
   background-repeat: no-repeat;
@@ -214,7 +214,7 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
       >
         <span
           class="css-1f43avz-a11yText-A11yText"
-          id="react-select-4-live-region"
+          id="react-select-2-live-region"
         />
         <span
           aria-atomic="false"
@@ -256,10 +256,10 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
                 autocomplete="off"
                 autocorrect="off"
                 class="gm-select__input"
-                id="react-select-4-input"
+                id="react-select-2-input"
                 role="combobox"
                 spellcheck="false"
-                style="label:input;color:inherit;background:0;opacity:1;width:100%;grid-area:1 / 2;font:inherit;min-width:2px;border:0;margin:0;outline:0;padding:0"
+                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
                 tabindex="0"
                 type="text"
                 value=""
@@ -302,7 +302,7 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
       >
         <span
           class="css-1f43avz-a11yText-A11yText"
-          id="react-select-5-live-region"
+          id="react-select-3-live-region"
         />
         <span
           aria-atomic="false"
@@ -344,10 +344,10 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
                 autocomplete="off"
                 autocorrect="off"
                 class="gm-select__input"
-                id="react-select-5-input"
+                id="react-select-3-input"
                 role="combobox"
                 spellcheck="false"
-                style="label:input;color:inherit;background:0;opacity:1;width:100%;grid-area:1 / 2;font:inherit;min-width:2px;border:0;margin:0;outline:0;padding:0"
+                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
                 tabindex="0"
                 type="text"
                 value=""
@@ -386,7 +386,7 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
         />
       </div>
     </div>
-  </div>,
+  </div>
   .c1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -557,13 +557,13 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
     >
       <div
         class="c2 c3 c4"
-        style="text-align:center"
+        style="text-align: center;"
       >
         State
       </div>
       <div
         class="c2 c3 c4"
-        style="text-align:center"
+        style="text-align: center;"
       >
         ID
       </div>
@@ -574,13 +574,13 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
       </div>
       <div
         class="c2 c3 c4"
-        style="text-align:right;flex:0 1 7em"
+        style="text-align: right; flex: 0 1 7em;"
       >
         Daemon
       </div>
       <div
         class="c2 c3 c4"
-        style="text-align:right;flex:0 1 7em"
+        style="text-align: right; flex: 0 1 7em;"
       >
         Priority
       </div>
@@ -605,8 +605,8 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
             focusable="false"
             version="1.1"
             viewBox="0 0 24 24"
-            xlink="http://www.w3.org/1999/xlink"
             xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
           >
             <g
               class="iconBackground"
@@ -662,8 +662,8 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
             focusable="false"
             version="1.1"
             viewBox="0 0 24 24"
-            xlink="http://www.w3.org/1999/xlink"
             xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
           >
             <g
               class="c9"
@@ -686,6 +686,6 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
         </div>
       </li>
     </ol>
-  </div>,
-]
+  </div>
+</DocumentFragment>
 `;

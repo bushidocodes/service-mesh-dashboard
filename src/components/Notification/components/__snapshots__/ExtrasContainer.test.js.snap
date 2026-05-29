@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ExtrasContainer matches snapshot 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   position: absolute;
   top: 0;
   right: 0;
@@ -16,6 +17,7 @@ exports[`ExtrasContainer matches snapshot 1`] = `
 }
 
 <div
-  className="c0"
-/>
+    class="c0"
+  />
+</DocumentFragment>
 `;

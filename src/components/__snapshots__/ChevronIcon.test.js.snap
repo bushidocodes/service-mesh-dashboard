@@ -1,35 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ChevronIcon matches snapshot with no props 1`] = `
-<svg
-  aria-labelledby="chevron icon"
-  height={26}
-  version="1.1"
-  viewBox="0 0 26 26"
-  width={26}
-  xmlns="http://www.w3.org/2000/svg"
-  xmlnsXlink="http://www.w3.org/1999/xlink"
->
-  <title>
-    chevron icon
-  </title>
-  <g
-    fill="none"
-    fillRule="evenodd"
-    id="Glyphs"
-    stroke="none"
-    strokeWidth={1}
+<DocumentFragment>
+  <svg
+    aria-labelledby="chevron icon"
+    height="26"
+    version="1.1"
+    viewBox="0 0 26 26"
+    width="26"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
   >
+    <title>
+      chevron icon
+    </title>
     <g
-      id="chevron-down"
-      stroke="#000"
-      strokeWidth="2"
+      fill="none"
+      fill-rule="evenodd"
+      id="Glyphs"
+      stroke="none"
+      stroke-width="1"
     >
-      <polyline
-        id="Arrow"
-        points="18.1 11 13.0407259 16 8 11"
-      />
+      <g
+        id="chevron-down"
+        stroke="#000"
+        stroke-width="2"
+      >
+        <polyline
+          id="Arrow"
+          points="18.1 11 13.0407259 16 8 11"
+        />
+      </g>
     </g>
-  </g>
-</svg>
+  </svg>
+</DocumentFragment>
 `;

@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import SparklineCol from "./SparklineCol";
 
 describe("SparklineCol", () => {
   it("matches snapshot", () => {
-    const aSparklineCol = shallow(<SparklineCol />);
-    expect(aSparklineCol).toMatchSnapshot();
+    const { asFragment } = render(<SparklineCol />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

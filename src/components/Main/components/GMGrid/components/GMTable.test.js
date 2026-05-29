@@ -1,8 +1,8 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import GMTable from "./GMTable";
 
-let wrapper;
+let asFragment;
 const props = {
   title: "Requests",
   headers: ["Requests", "Success"],
@@ -13,10 +13,10 @@ const props = {
 };
 describe("<GMTable> stateless child component of GMGrid", () => {
   beforeEach(() => {
-    wrapper = shallow(<GMTable {...props} />);
+    ({ asFragment } = render(<GMTable {...props} />));
   });
 
   test("matches snapshot", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

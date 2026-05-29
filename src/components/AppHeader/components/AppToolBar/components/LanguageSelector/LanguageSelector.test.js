@@ -4,6 +4,7 @@ import LanguageSelector from "./LanguageSelector";
 
 describe("LanguageSelector", () => {
   test("matches snapshot", () => {
-    expect(renderWithIntl(<LanguageSelector />)).toMatchSnapshot();
+    const { asFragment } = renderWithIntl(<LanguageSelector />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

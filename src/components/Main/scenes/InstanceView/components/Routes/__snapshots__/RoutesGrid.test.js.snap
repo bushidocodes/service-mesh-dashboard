@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RoutesGrid View matches snapshot 1`] = `
-[
+<DocumentFragment>
   .c2 {
   background-image: url(magnifier.svg);
   background-repeat: no-repeat;
@@ -259,7 +259,7 @@ exports[`RoutesGrid View matches snapshot 1`] = `
                 id="react-select-3-input"
                 role="combobox"
                 spellcheck="false"
-                style="label:input;color:inherit;background:0;opacity:1;width:100%;grid-area:1 / 2;font:inherit;min-width:2px;border:0;margin:0;outline:0;padding:0"
+                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
                 tabindex="0"
                 type="text"
                 value=""
@@ -298,7 +298,7 @@ exports[`RoutesGrid View matches snapshot 1`] = `
         />
       </div>
     </div>
-  </div>,
+  </div>
   .c16 {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
@@ -600,7 +600,7 @@ exports[`RoutesGrid View matches snapshot 1`] = `
     >
       <div
         class="c2 c3"
-        style="flex:1 1 20%"
+        style="flex: 1 1 20%;"
       >
         Route
       </div>
@@ -611,13 +611,13 @@ exports[`RoutesGrid View matches snapshot 1`] = `
       </div>
       <div
         class="c2 c3"
-        style="text-align:right"
+        style="text-align: right;"
       >
         Requests
       </div>
       <div
         class="c2 c3"
-        style="text-align:right"
+        style="text-align: right;"
       >
         Error %
       </div>
@@ -677,8 +677,8 @@ exports[`RoutesGrid View matches snapshot 1`] = `
                 focusable="false"
                 version="1.1"
                 viewBox="0 0 24 24"
-                xlink="http://www.w3.org/1999/xlink"
                 xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
               >
                 <g
                   class="c16"
@@ -717,6 +717,7 @@ exports[`RoutesGrid View matches snapshot 1`] = `
           class="c2 c19"
         >
           <svg
+            focusable="false"
             preserveAspectRatio="xMaxYMin"
             viewBox="0 0 240 32"
           >
@@ -725,61 +726,61 @@ exports[`RoutesGrid View matches snapshot 1`] = `
                 cx="2"
                 cy="16"
                 r="2"
-                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
               />
               <circle
                 cx="35.714285714285715"
                 cy="16"
                 r="2"
-                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
               />
               <circle
                 cx="69.42857142857143"
                 cy="16"
                 r="2"
-                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
               />
               <circle
                 cx="103.14285714285714"
                 cy="16"
                 r="2"
-                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
               />
               <circle
                 cx="136.85714285714286"
                 cy="16"
                 r="2"
-                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
               />
               <circle
                 cx="170.57142857142858"
                 cy="16"
                 r="2"
-                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
               />
               <circle
                 cx="204.28571428571428"
                 cy="16"
                 r="2"
-                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
               />
               <circle
                 cx="238"
                 cy="16"
                 r="2"
-                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
               />
               <polyline
                 points="2 16 35.714285714285715 16 69.42857142857143 16 103.14285714285714 16 136.85714285714286 16 170.57142857142858 16 204.28571428571428 16 238 16 238 30 2 30 2 16"
-                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
               />
               <polyline
                 points="2 16 35.714285714285715 16 69.42857142857143 16 103.14285714285714 16 136.85714285714286 16 170.57142857142858 16 204.28571428571428 16 238 16"
-                style="stroke:currentColor;stroke-width:1;stroke-linejoin:round;stroke-linecap:round;fill:none"
+                style="stroke: currentColor; stroke-width: 1; stroke-linejoin: round; stroke-linecap: round; fill: none;"
               />
             </g>
             <line
-              style="stroke:grey;opacity:0.4"
+              style="stroke: grey; opacity: 0.4;"
               x1="2"
               x2="238"
               y1="18"
@@ -789,19 +790,19 @@ exports[`RoutesGrid View matches snapshot 1`] = `
         </div>
         <div
           class="c2"
-          style="text-align:right"
+          style="text-align: right;"
         >
           17,725
         </div>
         <div
           class="c20"
-          style="text-align:right"
+          style="text-align: right;"
         >
           0%
         </div>
         <div
           class="c2"
-          style="text-align:right;display:flex;flex-direction:column"
+          style="text-align: right; display: flex; flex-direction: column;"
         >
           <div>
             0 ms
@@ -831,8 +832,8 @@ exports[`RoutesGrid View matches snapshot 1`] = `
                 focusable="false"
                 version="1.1"
                 viewBox="0 0 24 24"
-                xlink="http://www.w3.org/1999/xlink"
                 xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
               >
                 <g
                   class="c16"
@@ -871,6 +872,7 @@ exports[`RoutesGrid View matches snapshot 1`] = `
           class="c2 c19"
         >
           <svg
+            focusable="false"
             preserveAspectRatio="xMaxYMin"
             viewBox="0 0 240 32"
           >
@@ -879,61 +881,61 @@ exports[`RoutesGrid View matches snapshot 1`] = `
                 cx="2"
                 cy="16"
                 r="2"
-                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
               />
               <circle
                 cx="35.714285714285715"
                 cy="16"
                 r="2"
-                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
               />
               <circle
                 cx="69.42857142857143"
                 cy="16"
                 r="2"
-                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
               />
               <circle
                 cx="103.14285714285714"
                 cy="16"
                 r="2"
-                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
               />
               <circle
                 cx="136.85714285714286"
                 cy="16"
                 r="2"
-                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
               />
               <circle
                 cx="170.57142857142858"
                 cy="16"
                 r="2"
-                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
               />
               <circle
                 cx="204.28571428571428"
                 cy="16"
                 r="2"
-                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
               />
               <circle
                 cx="238"
                 cy="16"
                 r="2"
-                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
               />
               <polyline
                 points="2 16 35.714285714285715 16 69.42857142857143 16 103.14285714285714 16 136.85714285714286 16 170.57142857142858 16 204.28571428571428 16 238 16 238 30 2 30 2 16"
-                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
               />
               <polyline
                 points="2 16 35.714285714285715 16 69.42857142857143 16 103.14285714285714 16 136.85714285714286 16 170.57142857142858 16 204.28571428571428 16 238 16"
-                style="stroke:currentColor;stroke-width:1;stroke-linejoin:round;stroke-linecap:round;fill:none"
+                style="stroke: currentColor; stroke-width: 1; stroke-linejoin: round; stroke-linecap: round; fill: none;"
               />
             </g>
             <line
-              style="stroke:grey;opacity:0.4"
+              style="stroke: grey; opacity: 0.4;"
               x1="2"
               x2="238"
               y1="18"
@@ -943,19 +945,19 @@ exports[`RoutesGrid View matches snapshot 1`] = `
         </div>
         <div
           class="c2"
-          style="text-align:right"
+          style="text-align: right;"
         >
           1
         </div>
         <div
           class="c20"
-          style="text-align:right"
+          style="text-align: right;"
         >
           0%
         </div>
         <div
           class="c2"
-          style="text-align:right;display:flex;flex-direction:column"
+          style="text-align: right; display: flex; flex-direction: column;"
         >
           <div>
             0 ms
@@ -966,6 +968,6 @@ exports[`RoutesGrid View matches snapshot 1`] = `
         </div>
       </li>
     </ol>
-  </div>,
-]
+  </div>
+</DocumentFragment>
 `;

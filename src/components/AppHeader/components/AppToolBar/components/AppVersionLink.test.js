@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import AppVersionLink from "./AppVersionLink";
 
 describe("AppVersionLink", () => {
   it("matches snapshot", () => {
-    const aAppVersionLink = shallow(<AppVersionLink />);
-    expect(aAppVersionLink).toMatchSnapshot();
+    const { asFragment } = render(<AppVersionLink />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

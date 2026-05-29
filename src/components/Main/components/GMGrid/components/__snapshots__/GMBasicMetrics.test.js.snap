@@ -1,360 +1,677 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1`] = `
-<styled.div>
-  <styled.h3>
-    Response Status Codes
-  </styled.h3>
-  <styled.div
-    key="2XX-3468388"
-    priority="primary"
+<DocumentFragment>
+  .c0 {
+  background-color: rgb(245,245,245);
+  border-radius: 3px;
+  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-size: 18px;
+  height: 100%;
+  padding: 8px;
+  padding-top: 48px;
+}
+
+.c1 {
+  text-align: center;
+  margin: 0;
+  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding-right: 15%;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.c2:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 4em;
+  right: 4em;
+  border-top: 1px solid hsl(0,0%,92%);
+  border-left: 8em solid transparent;
+  border-right: 8em solid transparent;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  font-size: 0.8em;
+  padding-right: 15%;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  position: relative;
+}
+
+.c3 {
+  -webkit-flex: 1 1 33%;
+  -ms-flex: 1 1 33%;
+  flex: 1 1 33%;
+  opacity: 0.65;
+  text-align: right;
+}
+
+.c4 {
+  -webkit-flex: 1 1 33%;
+  -ms-flex: 1 1 33%;
+  flex: 1 1 33%;
+  opacity: 0.65;
+  padding-left: 8px;
+}
+
+.c5 {
+  opacity: 0.7;
+  text-align: left;
+  display: inline-block;
+  width: 6em;
+  padding-left: 8px;
+  height: 24px;
+}
+
+<div
+    class="c0"
   >
-    <styled.div>
-      2XX
-    </styled.div>
-    <styled.div>
-      3,468,388
-      <styled.div>
-        <Sparklines
-          data={
-            [
-              3468388,
-              3468388,
-              3468388,
-              3468388,
-              3468388,
-              3468388,
-              3468388,
-            ]
-          }
-          height={32}
-          margin={2}
-          preserveAspectRatio="xMaxYMin"
-          width={240}
+    <h3
+      class="c1"
+    >
+      Response Status Codes
+    </h3>
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        2XX
+      </div>
+      <div
+        class="c4"
+      >
+        3,468,388
+        <div
+          class="c5"
         >
-          <SparklinesLine
-            onMouseMove={[Function]}
-            style={
-              {
-                "fill": "none",
-                "stroke": "currentColor",
-                "strokeWidth": 1,
-              }
-            }
-          />
-          <SparklinesReferenceLine
-            style={
-              {
-                "opacity": "0.4",
-                "stroke": "grey",
-              }
-            }
-            type="mean"
-          />
-        </Sparklines>
-      </styled.div>
-    </styled.div>
-  </styled.div>
-  <styled.div
-    key="200-3468388"
-    priority="primary"
-  >
-    <styled.div>
-      200
-    </styled.div>
-    <styled.div>
-      3,468,388
-      <styled.div>
-        <Sparklines
-          data={
-            [
-              3468388,
-              3468388,
-              3468388,
-              3468388,
-              3468388,
-              3468388,
-              3468388,
-            ]
-          }
-          height={32}
-          margin={2}
-          preserveAspectRatio="xMaxYMin"
-          width={240}
+          <svg
+            preserveAspectRatio="xMaxYMin"
+            viewBox="0 0 240 32"
+          >
+            <g>
+              <circle
+                cx="2"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="41.333333333333336"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="80.66666666666667"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="120"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="159.33333333333334"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="198.66666666666669"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="238"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <polyline
+                points="2 16 41.333333333333336 16 80.66666666666667 16 120 16 159.33333333333334 16 198.66666666666669 16 238 16 238 30 2 30 2 16"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <polyline
+                points="2 16 41.333333333333336 16 80.66666666666667 16 120 16 159.33333333333334 16 198.66666666666669 16 238 16"
+                style="stroke: currentColor; stroke-width: 1; stroke-linejoin: round; stroke-linecap: round; fill: none;"
+              />
+            </g>
+            <line
+              style="stroke: grey; opacity: 0.4;"
+              x1="2"
+              x2="238"
+              y1="18"
+              y2="18"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        200
+      </div>
+      <div
+        class="c4"
+      >
+        3,468,388
+        <div
+          class="c5"
         >
-          <SparklinesLine
-            onMouseMove={[Function]}
-            style={
-              {
-                "fill": "none",
-                "stroke": "currentColor",
-                "strokeWidth": 1,
-              }
-            }
-          />
-          <SparklinesReferenceLine
-            style={
-              {
-                "opacity": "0.4",
-                "stroke": "grey",
-              }
-            }
-            type="mean"
-          />
-        </Sparklines>
-      </styled.div>
-    </styled.div>
-  </styled.div>
-  <styled.div
-    key="4XX-12"
-    priority="normal"
-  >
-    <styled.div>
-      4XX
-    </styled.div>
-    <styled.div>
-      12
-      <styled.div>
-        <Sparklines
-          data={
-            [
-              12,
-              12,
-              12,
-              12,
-              12,
-              12,
-              12,
-            ]
-          }
-          height={32}
-          margin={2}
-          preserveAspectRatio="xMaxYMin"
-          width={240}
+          <svg
+            preserveAspectRatio="xMaxYMin"
+            viewBox="0 0 240 32"
+          >
+            <g>
+              <circle
+                cx="2"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="41.333333333333336"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="80.66666666666667"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="120"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="159.33333333333334"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="198.66666666666669"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="238"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <polyline
+                points="2 16 41.333333333333336 16 80.66666666666667 16 120 16 159.33333333333334 16 198.66666666666669 16 238 16 238 30 2 30 2 16"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <polyline
+                points="2 16 41.333333333333336 16 80.66666666666667 16 120 16 159.33333333333334 16 198.66666666666669 16 238 16"
+                style="stroke: currentColor; stroke-width: 1; stroke-linejoin: round; stroke-linecap: round; fill: none;"
+              />
+            </g>
+            <line
+              style="stroke: grey; opacity: 0.4;"
+              x1="2"
+              x2="238"
+              y1="18"
+              y2="18"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      class="c6"
+    >
+      <div
+        class="c3"
+      >
+        4XX
+      </div>
+      <div
+        class="c4"
+      >
+        12
+        <div
+          class="c5"
         >
-          <SparklinesLine
-            onMouseMove={[Function]}
-            style={
-              {
-                "fill": "none",
-                "stroke": "currentColor",
-                "strokeWidth": 1,
-              }
-            }
-          />
-          <SparklinesReferenceLine
-            style={
-              {
-                "opacity": "0.4",
-                "stroke": "grey",
-              }
-            }
-            type="mean"
-          />
-        </Sparklines>
-      </styled.div>
-    </styled.div>
-  </styled.div>
-  <styled.div
-    key="400-8"
-    priority="normal"
-  >
-    <styled.div>
-      400
-    </styled.div>
-    <styled.div>
-      8
-      <styled.div>
-        <Sparklines
-          data={
-            [
-              8,
-              8,
-              8,
-              8,
-              8,
-              8,
-              8,
-            ]
-          }
-          height={32}
-          margin={2}
-          preserveAspectRatio="xMaxYMin"
-          width={240}
+          <svg
+            preserveAspectRatio="xMaxYMin"
+            viewBox="0 0 240 32"
+          >
+            <g>
+              <circle
+                cx="2"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="41.333333333333336"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="80.66666666666667"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="120"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="159.33333333333334"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="198.66666666666669"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="238"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <polyline
+                points="2 16 41.333333333333336 16 80.66666666666667 16 120 16 159.33333333333334 16 198.66666666666669 16 238 16 238 30 2 30 2 16"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <polyline
+                points="2 16 41.333333333333336 16 80.66666666666667 16 120 16 159.33333333333334 16 198.66666666666669 16 238 16"
+                style="stroke: currentColor; stroke-width: 1; stroke-linejoin: round; stroke-linecap: round; fill: none;"
+              />
+            </g>
+            <line
+              style="stroke: grey; opacity: 0.4;"
+              x1="2"
+              x2="238"
+              y1="18"
+              y2="18"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      class="c6"
+    >
+      <div
+        class="c3"
+      >
+        400
+      </div>
+      <div
+        class="c4"
+      >
+        8
+        <div
+          class="c5"
         >
-          <SparklinesLine
-            onMouseMove={[Function]}
-            style={
-              {
-                "fill": "none",
-                "stroke": "currentColor",
-                "strokeWidth": 1,
-              }
-            }
-          />
-          <SparklinesReferenceLine
-            style={
-              {
-                "opacity": "0.4",
-                "stroke": "grey",
-              }
-            }
-            type="mean"
-          />
-        </Sparklines>
-      </styled.div>
-    </styled.div>
-  </styled.div>
-  <styled.div
-    key="499-4"
-    priority="normal"
-  >
-    <styled.div>
-      499
-    </styled.div>
-    <styled.div>
-      4
-      <styled.div>
-        <Sparklines
-          data={
-            [
-              4,
-              4,
-              4,
-              4,
-              4,
-              4,
-              4,
-              4,
-            ]
-          }
-          height={32}
-          margin={2}
-          preserveAspectRatio="xMaxYMin"
-          width={240}
+          <svg
+            preserveAspectRatio="xMaxYMin"
+            viewBox="0 0 240 32"
+          >
+            <g>
+              <circle
+                cx="2"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="41.333333333333336"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="80.66666666666667"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="120"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="159.33333333333334"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="198.66666666666669"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="238"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <polyline
+                points="2 16 41.333333333333336 16 80.66666666666667 16 120 16 159.33333333333334 16 198.66666666666669 16 238 16 238 30 2 30 2 16"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <polyline
+                points="2 16 41.333333333333336 16 80.66666666666667 16 120 16 159.33333333333334 16 198.66666666666669 16 238 16"
+                style="stroke: currentColor; stroke-width: 1; stroke-linejoin: round; stroke-linecap: round; fill: none;"
+              />
+            </g>
+            <line
+              style="stroke: grey; opacity: 0.4;"
+              x1="2"
+              x2="238"
+              y1="18"
+              y2="18"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      class="c6"
+    >
+      <div
+        class="c3"
+      >
+        499
+      </div>
+      <div
+        class="c4"
+      >
+        4
+        <div
+          class="c5"
         >
-          <SparklinesLine
-            onMouseMove={[Function]}
-            style={
-              {
-                "fill": "none",
-                "stroke": "currentColor",
-                "strokeWidth": 1,
-              }
-            }
-          />
-          <SparklinesReferenceLine
-            style={
-              {
-                "opacity": "0.4",
-                "stroke": "grey",
-              }
-            }
-            type="mean"
-          />
-        </Sparklines>
-      </styled.div>
-    </styled.div>
-  </styled.div>
-  <styled.div
-    key="5XX-16"
-    priority="normal"
-  >
-    <styled.div>
-      5XX
-    </styled.div>
-    <styled.div>
-      16
-      <styled.div>
-        <Sparklines
-          data={
-            [
-              16,
-              16,
-              16,
-              16,
-              16,
-              16,
-              16,
-            ]
-          }
-          height={32}
-          margin={2}
-          preserveAspectRatio="xMaxYMin"
-          width={240}
+          <svg
+            preserveAspectRatio="xMaxYMin"
+            viewBox="0 0 240 32"
+          >
+            <g>
+              <circle
+                cx="2"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="35.714285714285715"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="69.42857142857143"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="103.14285714285714"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="136.85714285714286"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="170.57142857142858"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="204.28571428571428"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="238"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <polyline
+                points="2 16 35.714285714285715 16 69.42857142857143 16 103.14285714285714 16 136.85714285714286 16 170.57142857142858 16 204.28571428571428 16 238 16 238 30 2 30 2 16"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <polyline
+                points="2 16 35.714285714285715 16 69.42857142857143 16 103.14285714285714 16 136.85714285714286 16 170.57142857142858 16 204.28571428571428 16 238 16"
+                style="stroke: currentColor; stroke-width: 1; stroke-linejoin: round; stroke-linecap: round; fill: none;"
+              />
+            </g>
+            <line
+              style="stroke: grey; opacity: 0.4;"
+              x1="2"
+              x2="238"
+              y1="18"
+              y2="18"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      class="c6"
+    >
+      <div
+        class="c3"
+      >
+        5XX
+      </div>
+      <div
+        class="c4"
+      >
+        16
+        <div
+          class="c5"
         >
-          <SparklinesLine
-            onMouseMove={[Function]}
-            style={
-              {
-                "fill": "none",
-                "stroke": "currentColor",
-                "strokeWidth": 1,
-              }
-            }
-          />
-          <SparklinesReferenceLine
-            style={
-              {
-                "opacity": "0.4",
-                "stroke": "grey",
-              }
-            }
-            type="mean"
-          />
-        </Sparklines>
-      </styled.div>
-    </styled.div>
-  </styled.div>
-  <styled.div
-    key="500-16"
-    priority="normal"
-  >
-    <styled.div>
-      500
-    </styled.div>
-    <styled.div>
-      16
-      <styled.div>
-        <Sparklines
-          data={
-            [
-              16,
-              16,
-              16,
-              16,
-              16,
-              16,
-              16,
-            ]
-          }
-          height={32}
-          margin={2}
-          preserveAspectRatio="xMaxYMin"
-          width={240}
+          <svg
+            preserveAspectRatio="xMaxYMin"
+            viewBox="0 0 240 32"
+          >
+            <g>
+              <circle
+                cx="2"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="41.333333333333336"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="80.66666666666667"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="120"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="159.33333333333334"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="198.66666666666669"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="238"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <polyline
+                points="2 16 41.333333333333336 16 80.66666666666667 16 120 16 159.33333333333334 16 198.66666666666669 16 238 16 238 30 2 30 2 16"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <polyline
+                points="2 16 41.333333333333336 16 80.66666666666667 16 120 16 159.33333333333334 16 198.66666666666669 16 238 16"
+                style="stroke: currentColor; stroke-width: 1; stroke-linejoin: round; stroke-linecap: round; fill: none;"
+              />
+            </g>
+            <line
+              style="stroke: grey; opacity: 0.4;"
+              x1="2"
+              x2="238"
+              y1="18"
+              y2="18"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      class="c6"
+    >
+      <div
+        class="c3"
+      >
+        500
+      </div>
+      <div
+        class="c4"
+      >
+        16
+        <div
+          class="c5"
         >
-          <SparklinesLine
-            onMouseMove={[Function]}
-            style={
-              {
-                "fill": "none",
-                "stroke": "currentColor",
-                "strokeWidth": 1,
-              }
-            }
-          />
-          <SparklinesReferenceLine
-            style={
-              {
-                "opacity": "0.4",
-                "stroke": "grey",
-              }
-            }
-            type="mean"
-          />
-        </Sparklines>
-      </styled.div>
-    </styled.div>
-  </styled.div>
-</styled.div>
+          <svg
+            preserveAspectRatio="xMaxYMin"
+            viewBox="0 0 240 32"
+          >
+            <g>
+              <circle
+                cx="2"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="41.333333333333336"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="80.66666666666667"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="120"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="159.33333333333334"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="198.66666666666669"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <circle
+                cx="238"
+                cy="16"
+                r="2"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <polyline
+                points="2 16 41.333333333333336 16 80.66666666666667 16 120 16 159.33333333333334 16 198.66666666666669 16 238 16 238 30 2 30 2 16"
+                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              />
+              <polyline
+                points="2 16 41.333333333333336 16 80.66666666666667 16 120 16 159.33333333333334 16 198.66666666666669 16 238 16"
+                style="stroke: currentColor; stroke-width: 1; stroke-linejoin: round; stroke-linecap: round; fill: none;"
+              />
+            </g>
+            <line
+              style="stroke: grey; opacity: 0.4;"
+              x1="2"
+              x2="238"
+              y1="18"
+              y2="18"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
 `;

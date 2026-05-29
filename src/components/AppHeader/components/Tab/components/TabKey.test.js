@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import TabKey from "./TabKey";
 
 describe("TabKey", () => {
   it("matches snapshot", () => {
-    const aTabKey = shallow(<TabKey />);
-    expect(aTabKey).toMatchSnapshot();
+    const { asFragment } = render(<TabKey />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

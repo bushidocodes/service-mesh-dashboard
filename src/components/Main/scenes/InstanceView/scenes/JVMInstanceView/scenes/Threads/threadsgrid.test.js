@@ -1,12 +1,13 @@
 import React from "react";
 import { MemoryRouter } from "react-router-dom";
+import { screen, within } from "@testing-library/react";
 import { Actions } from "jumpstate";
 import configureMockStore from "redux-mock-store";
 import { CreateJumpstateMiddleware } from "jumpstate";
 
 // Utilities
 import mockState from "json/mockReduxState";
-import { mountWithIntl, renderWithIntl } from "utils/i18nTesting";
+import { renderWithIntl } from "utils/i18nTesting";
 
 // Components
 import ThreadsGrid from "./index";
@@ -17,76 +18,89 @@ Actions.fetchAndStoreInstanceThreads = jest.fn();
 // Create a mock store and initialize with mock data
 const store = configureMockStore([CreateJumpstateMiddleware()])(mockState);
 
-const threadsTableProps = {
-  filteredThreadData: [
-    {
-      daemon: true,
-      id: "2",
-      name: "Test Runnable",
-      priority: 8,
-      stack: [
-        "java.lang.Object.wait(Native Method)",
-        "java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)",
-        "java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:164)",
-        "java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:209)"
-      ],
-      state: "RUNNABLE"
-    }
-  ]
-};
-
-// Wrap ThreadsGrid in Memory Router
+// react-redux v8 requires the store to come from <Provider> (the legacy `store`
+// prop is ignored), and withUrlState relies on react-router, so the connected
+// ThreadsGrid is rendered inside a <MemoryRouter> with the store supplied via
+// renderWithIntl's second argument.
 const RouterWrap = (
   <MemoryRouter>
-    <ThreadsGrid store={store} />
+    <ThreadsGrid />
   </MemoryRouter>
 );
 
-let wrapper;
-
 describe("ThreadsGrid View", () => {
-  beforeEach(() => {
-    wrapper = mountWithIntl(RouterWrap);
-  });
-
   test("matches snapshot", () => {
-    const tree = renderWithIntl(RouterWrap);
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = renderWithIntl(RouterWrap, store);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test("renders correct components", () => {
-    expect(wrapper.find("TableToolbar")).toHaveLength(1);
-    expect(wrapper.find("ThreadsTable")).toHaveLength(1);
-    expect(wrapper.find("ErrorBoundary")).toHaveLength(1);
+    // NOTE: enzyme asserted on the presence of the TableToolbar, ThreadsTable,
+    // and ErrorBoundary component instances. RTL is DOM-based, so we assert on
+    // the observable DOM each renders:
+    //   - TableToolbar renders the "Search Threads" searchbox and the group-by /
+    //     sort-by dropdowns (react-select hidden inputs).
+    //   - ThreadsTable renders the thread rows (role="link").
+    //   - ErrorBoundary renders its children with no error fallback, which is
+    //     evidenced by the table content being present.
+    renderWithIntl(RouterWrap, store);
+    expect(
+      screen.getByRole("searchbox", { name: "Search Threads" })
+    ).toBeInTheDocument();
+    expect(
+      document.querySelector('input[name="form-field-group-by"]')
+    ).toBeInTheDocument();
+    expect(
+      document.querySelector('input[name="form-field-sort-by"]')
+    ).toBeInTheDocument();
+    expect(screen.getAllByRole("link").length).toBeGreaterThan(0);
   });
 
   test("passes the correct props down to TableToolbar", () => {
-    expect(wrapper.find("TableToolbar").props()).toMatchObject({
-      groupByProps: {
-        groupByAttribute: "none",
-        groupByOptions: [
-          { label: "State", value: "state" },
-          { label: "None", value: "none" }
-        ]
-      },
-      searchInputProps: {
-        filterString: "",
-        searchPlaceholder: "Search Threads"
-      },
-      sortByProps: {
-        sortByAttribute: "id",
-        sortByOptions: [
-          { label: "State", value: "state" },
-          { label: "Name", value: "name" },
-          { label: "ID", value: "id" }
-        ]
-      }
+    // NOTE: enzyme read TableToolbar's props object directly. RTL cannot inspect
+    // props, so we assert on the DOM those props produce:
+    //   - searchInputProps.searchPlaceholder ("Search Threads") -> searchbox
+    //     placeholder/aria-label.
+    //   - searchInputProps.filterString ("") -> searchbox value.
+    //   - groupByProps.groupByAttribute ("none") -> value of the group-by
+    //     react-select hidden input.
+    //   - sortByProps.sortByAttribute ("id") -> value of the sort-by react-select
+    //     hidden input.
+    // The option lists (groupByOptions / sortByOptions) are not rendered into the
+    // DOM until the dropdown is opened; their selected value is the observable
+    // proxy asserted here.
+    renderWithIntl(RouterWrap, store);
+
+    const searchInput = screen.getByRole("searchbox", {
+      name: "Search Threads"
     });
+    expect(searchInput).toHaveAttribute("placeholder", "Search Threads");
+    expect(searchInput).toHaveValue("");
+
+    const groupByInput = document.querySelector(
+      'input[name="form-field-group-by"]'
+    );
+    expect(groupByInput).toHaveValue("none");
+
+    const sortByInput = document.querySelector(
+      'input[name="form-field-sort-by"]'
+    );
+    expect(sortByInput).toHaveValue("id");
   });
 
   test("passes the correct props down to ThreadsTable", () => {
-    expect(wrapper.find("ThreadsTable").props()).toMatchObject(
-      threadsTableProps
-    );
+    // NOTE: enzyme read ThreadsTable's `filteredThreadData` prop and matched it
+    // against the single RUNNABLE thread (id "2", "Test Runnable") that
+    // getVisibleThreads derives from the mock store (threadsFilter "active").
+    // RTL cannot inspect props, so we assert on the rendered row: exactly one
+    // thread row (role="link") containing the id and name of that thread.
+    renderWithIntl(RouterWrap, store);
+
+    const rows = screen.getAllByRole("link");
+    expect(rows).toHaveLength(1);
+
+    const row = rows[0];
+    expect(within(row).getByText("2")).toBeInTheDocument();
+    expect(within(row).getByText("Test Runnable")).toBeInTheDocument();
   });
 });

@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TabGraph matches snapshot 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   height: 24px;
   color: rgb(213,213,213);
   margin: 0 2px;
@@ -13,6 +14,7 @@ exports[`TabGraph matches snapshot 1`] = `
 }
 
 <div
-  className="c0"
-/>
+    class="c0"
+  />
+</DocumentFragment>
 `;

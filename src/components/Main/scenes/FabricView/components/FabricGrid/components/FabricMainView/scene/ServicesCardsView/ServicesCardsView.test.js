@@ -1,15 +1,42 @@
+/* eslint-disable react/no-multi-comp, react/prop-types -- lightweight jest.mock stubs */
 import React from "react";
-import { mount, shallow } from "enzyme";
+import { render, screen } from "@testing-library/react";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
 
 import mockMappedServices from "json/mockMappedServices";
 
 import ServicesCardsView from "./ServicesCardsView";
-import GMServiceCardCollection from "./components/GMServiceCardCollection";
-import GMServiceCardsView from "./components/GMServiceCardsView";
-import GMServiceViewContainer from "./components/GMServiceViewContainer";
-
 import GMServiceHeader from "components/Main/scenes/FabricView/components/FabricGrid/components/FabricMainView/components/GMServiceHeader";
+
+// ServicesCardsView groups services and renders a tree of presentational
+// components. Enzyme counted those components by type (.find(Comp)) and read
+// their props; RTL is DOM-based, so each child is replaced with an identifiable
+// stub. Container/section stubs pass children through so the nested counts stay
+// observable; GMServiceHeader is a jest.fn so we can inspect the props it
+// received (the original .find(GMServiceHeader).props() check).
+jest.mock("./components/GMServiceViewContainer", () => {
+  const React = require("react");
+  return ({ children }) =>
+    React.createElement("div", { "data-testid": "view-container" }, children);
+});
+jest.mock("./components/GMServiceCardsView", () => {
+  const React = require("react");
+  return ({ children }) =>
+    React.createElement("div", { "data-testid": "cards-view" }, children);
+});
+jest.mock("./components/GMServiceCardCollection", () => {
+  const React = require("react");
+  return () => React.createElement("div", { "data-testid": "card-collection" });
+});
+jest.mock(
+  "components/Main/scenes/FabricView/components/FabricGrid/components/FabricMainView/components/GMServiceHeader",
+  () => {
+    const React = require("react");
+    return jest.fn(() =>
+      React.createElement("div", { "data-testid": "service-header" })
+    );
+  }
+);
 
 const RouterWrap = (
   route,
@@ -41,55 +68,63 @@ const filterServicesByStatus = (filter) => {
   });
 };
 
-let wrapper;
-
 describe("ServicesCardsView component rendering", () => {
-  beforeEach(function () {
-    wrapper = mount(RouterWrap(["/"]));
+  beforeEach(() => {
+    GMServiceHeader.mockClear();
   });
 
   // Card keys are now derived from the (deterministic) group header rather than
-  // a random value, so the shallow snapshot is stable across runs.
+  // a random value, so the snapshot is stable across runs.
   test("Has a snapshot", () => {
-    wrapper = shallow(RouterWrap(["/"]));
-    expect(wrapper).toMatchSnapshot();
+    const { asFragment } = render(RouterWrap(["/"]));
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test("Has a GMServicesViewContainer", () => {
-    expect(wrapper.find(GMServiceViewContainer).length).toBe(1);
+    render(RouterWrap(["/"]));
+    expect(screen.getAllByTestId("view-container")).toHaveLength(1);
   });
 
   test("Has a GMServicesViewContainer wrapper", () => {
-    expect(wrapper.find(GMServiceViewContainer).length).toBe(1);
+    render(RouterWrap(["/"]));
+    expect(screen.getAllByTestId("view-container")).toHaveLength(1);
   });
 
   test("Has a 3 GMServiceCardsView when we pass services with all statuses ", () => {
-    expect(wrapper.find(GMServiceCardsView).length).toBe(3);
+    render(RouterWrap(["/"]));
+    expect(screen.getAllByTestId("cards-view")).toHaveLength(3);
   });
 });
 
 describe("ServicesCardsView functionality", () => {
   const filteredServices = filterServicesByStatus("stable");
+
+  beforeEach(() => {
+    GMServiceHeader.mockClear();
+  });
+
   test("Has appropriate heading when group filter is applied ", () => {
-    wrapper = mount(RouterWrap(["/"], filteredServices, "Owner"));
-    expect(wrapper.find(GMServiceHeader).props().headerTitle).toBe("stable");
-    expect(wrapper.find(GMServiceHeader).props().showStatusIcon).toBe(false);
+    render(RouterWrap(["/"], filteredServices, "Owner"));
+    // The first GMServiceHeader receives headerTitle "stable" and, since the
+    // group is "Owner" (not "Status"), showStatusIcon false.
+    expect(GMServiceHeader.mock.calls[0][0].headerTitle).toBe("stable");
+    expect(GMServiceHeader.mock.calls[0][0].showStatusIcon).toBe(false);
   });
 
   test("Has only one GMServiceCardCollection when group filter is set to none", () => {
-    wrapper = mount(RouterWrap(["/"], filteredServices, "None"));
-    expect(wrapper.find(GMServiceCardCollection).length).toBe(1);
+    render(RouterWrap(["/"], filteredServices, "None"));
+    expect(screen.getAllByTestId("card-collection")).toHaveLength(1);
   });
 
   test("Has a 1 GMServiceCardsView when we only pass stable services to the component ", () => {
-    wrapper = mount(RouterWrap(["/"], filteredServices, "Status"));
-    expect(wrapper.find(GMServiceCardsView).length).toBe(1);
+    render(RouterWrap(["/"], filteredServices, "Status"));
+    expect(screen.getAllByTestId("cards-view")).toHaveLength(1);
   });
 
   test("Has a 0 GMServiceCardsView within GMServicesViewContainer when we don't pass in any services ", () => {
     const filteredServicesEmpty = filterServicesByStatus("");
-    wrapper = mount(RouterWrap(["/"], filteredServicesEmpty, "Status"));
-    expect(wrapper.find(GMServiceViewContainer).length).toBe(1);
-    expect(wrapper.find(GMServiceCardsView).length).toBe(0);
+    render(RouterWrap(["/"], filteredServicesEmpty, "Status"));
+    expect(screen.getAllByTestId("view-container")).toHaveLength(1);
+    expect(screen.queryAllByTestId("cards-view")).toHaveLength(0);
   });
 });

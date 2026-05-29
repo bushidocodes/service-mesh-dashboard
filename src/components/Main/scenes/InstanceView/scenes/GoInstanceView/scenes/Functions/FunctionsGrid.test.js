@@ -2,16 +2,15 @@ import React from "react";
 import { MemoryRouter } from "react-router-dom";
 import configureStore from "redux-mock-store";
 import _ from "lodash";
+import { render, screen, fireEvent, within } from "@testing-library/react";
 
 import * as noFuncState from "json/mockReduxState";
 import * as state from "json/mockReduxStateMetrics";
 import FunctionsGrid from "./index";
-import NotFoundError from "components/Main/components/NotFoundError";
-import { mountWithIntl, renderWithIntl } from "utils/i18nTesting";
+import { renderWithIntl } from "utils/i18nTesting";
 
 //import Action effects
 import "services";
-import Table from "components/Main/components/Table";
 
 const mockStore = configureStore();
 const mockState = state.default,
@@ -22,7 +21,6 @@ noMetricsState.instance.metrics = _.omitBy(
   noFuncState.default.instance.metrics,
   (value, key) => key.substr(0, 8) === "function"
 );
-let wrapper;
 
 const FunctionsGridWithMockStore = (
   <MemoryRouter>
@@ -60,81 +58,67 @@ const sortByOptions = [
 
 describe("Go Instance Functions View: <FunctionsGrid/>", () => {
   test("Matches snapshot", () => {
-    const tree = renderWithIntl(FunctionsGridWithMockStore);
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = renderWithIntl(FunctionsGridWithMockStore);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   // FunctionsGridWithMissingMetricsStore does not contain any functions data
   test("returns NotFoundError if no functions are found ", () => {
-    wrapper = mountWithIntl(FunctionsGridWithMissingMetricsStore);
-    expect(wrapper.find(NotFoundError).length).toBe(1);
+    // NotFoundError renders the "No Functions Found" message; assert that
+    // observable text rather than the (RTL-unqueryable) component type.
+    renderWithIntl(FunctionsGridWithMissingMetricsStore);
+    expect(screen.getByText("No Functions Found")).toBeInTheDocument();
   });
 
   test("returns correct number of <Table> and does not render <NotFoundError> when functions are found ", () => {
-    wrapper = mountWithIntl(FunctionsGridWithMockStore);
-    expect(wrapper.find(Table).length).toBe(1);
-    expect(wrapper.find(NotFoundError).length).toBe(0);
+    renderWithIntl(FunctionsGridWithMockStore);
+    // NOTE: RTL cannot count component instances. The single <Table> renders
+    // the function rows (role="link"); their presence is the observable proxy
+    // for "one Table rendered", and the absence of the "No Functions Found"
+    // message stands in for "zero <NotFoundError>".
+    expect(screen.getAllByRole("link").length).toBeGreaterThan(0);
+    expect(screen.queryByText("No Functions Found")).not.toBeInTheDocument();
   });
 });
 
 describe("FunctionsGrid Child Components", () => {
   beforeEach(() => {
-    wrapper = mountWithIntl(FunctionsGridWithMockStore);
+    renderWithIntl(FunctionsGridWithMockStore);
   });
 
   test("passes props to TableToolbar", () => {
-    expect(wrapper.find("TableToolbar").props()).toMatchObject({
-      searchInputProps: {
-        filterString: "",
-        searchPlaceholder: "Search Functions"
-      },
-      sortByProps: {
-        sortByOptions,
-        sortByAttribute: "func"
-      }
+    // searchInputProps.searchPlaceholder + filterString: the search input is
+    // rendered with the placeholder/aria-label "Search Functions" and an empty
+    // value (filterString === "").
+    const searchInput = screen.getByRole("searchbox", {
+      name: "Search Functions"
     });
+    expect(searchInput).toHaveAttribute("placeholder", "Search Functions");
+    expect(searchInput).toHaveValue("");
+
+    // sortByProps.sortByAttribute "func" maps to the option labelled
+    // "Function", which the sort dropdown displays as its selected value.
+    const sortSelect = screen.getByRole("combobox");
+    const toolbarRight = sortSelect.closest(".gm-select__control");
+    expect(within(toolbarRight).getByText("Function")).toBeInTheDocument();
+
+    // sortByProps.sortByOptions: open the sort dropdown and assert every option
+    // label is rendered, in order.
+    fireEvent.focus(sortSelect);
+    fireEvent.keyDown(sortSelect, { key: "ArrowDown", code: "ArrowDown" });
+    const options = screen.getAllByRole("option");
+    expect(options.map((opt) => opt.textContent)).toEqual(
+      sortByOptions.map((opt) => opt.label)
+    );
   });
 
   test("passes functions as props to Table", () => {
-    expect(wrapper.find(Table).props()).toMatchObject({
-      items: [
-        {
-          errorPercent: "0",
-          errorsCount: 0,
-          func: "CatalogStream",
-          inThroughput: 227,
-          latency50: 1956,
-          latency90: 3469,
-          latency95: 3484,
-          latency99: 3484,
-          latency9990: 3484,
-          latency9999: 3484,
-          latencyAvg: 1942.692308,
-          latencyCount: 13,
-          latencyMax: 3484,
-          latencyMin: 600,
-          outThroughput: 2889,
-          requests: 13
-        },
-        {
-          errorPercent: "0",
-          errorsCount: 0,
-          func: "OrderItem",
-          inThroughput: 225,
-          latency50: 2339,
-          latency90: 3476,
-          latency95: 3565,
-          latency99: 3565,
-          latency9990: 3565,
-          latency9999: 3565,
-          latencyAvg: 2398.615385,
-          latencyCount: 13,
-          latencyMax: 3565,
-          latencyMin: 1345,
-          outThroughput: 143,
-          requests: 13
-        }
-      ]
-    });
+    // The Table maps each function in its `items` prop to a row (role="link").
+    // Assert the two expected functions render, in order, as the observable
+    // proxy for the items array passed to <Table>.
+    const rows = screen.getAllByRole("link");
+    expect(rows).toHaveLength(2);
+    expect(rows[0]).toHaveTextContent("CatalogStream");
+    expect(rows[1]).toHaveTextContent("OrderItem");
   });
 });

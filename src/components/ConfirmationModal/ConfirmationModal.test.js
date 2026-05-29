@@ -1,10 +1,15 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
+import Modal from "react-modal";
 import ConfirmationModal from "./ConfirmationModal";
 
 describe("ConfirmationModal", () => {
+  beforeAll(() => {
+    Modal.setAppElement(document.body);
+  });
+
   it("matches snapshot when closed", () => {
-    const aConfirmationModal = shallow(
+    const { asFragment } = render(
       <ConfirmationModal
         isOpen={false}
         onCancel={() => {}}
@@ -13,10 +18,10 @@ describe("ConfirmationModal", () => {
         secondary="Only time will tell"
       />
     );
-    expect(aConfirmationModal).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
   it("matches snapshot when open", () => {
-    const aConfirmationModal = shallow(
+    const { asFragment } = render(
       <ConfirmationModal
         isOpen={true}
         onCancel={() => {}}
@@ -25,6 +30,6 @@ describe("ConfirmationModal", () => {
         secondary="Only time will tell"
       />
     );
-    expect(aConfirmationModal).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -1,8 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Play matches snapshot 1`] = `
-<polygon
-  id="Triangle-6"
-  points="19 12 7 20 7 4"
-/>
+<DocumentFragment>
+  <svg>
+    <polygon
+      id="Triangle-6"
+      points="19 12 7 20 7 4"
+    />
+  </svg>
+</DocumentFragment>
 `;

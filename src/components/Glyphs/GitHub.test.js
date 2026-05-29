@@ -1,10 +1,14 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import GitHub from "./GitHub";
 
 describe("GitHub", () => {
   it("matches snapshot", () => {
-    const aGitHub = shallow(<GitHub />);
-    expect(aGitHub).toMatchSnapshot();
+    const { asFragment } = render(
+      <svg>
+        <GitHub />
+      </svg>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

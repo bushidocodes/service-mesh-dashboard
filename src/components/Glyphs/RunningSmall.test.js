@@ -1,10 +1,14 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import RunningSmall from "./RunningSmall";
 
 describe("RunningSmall", () => {
   it("matches snapshot", () => {
-    const aRunningSmall = shallow(<RunningSmall />);
-    expect(aRunningSmall).toMatchSnapshot();
+    const { asFragment } = render(
+      <svg>
+        <RunningSmall />
+      </svg>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -1,10 +1,14 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import Memory from "./Memory";
 
 describe("Memory", () => {
   it("matches snapshot", () => {
-    const aMemory = shallow(<Memory />);
-    expect(aMemory).toMatchSnapshot();
+    const { asFragment } = render(
+      <svg>
+        <Memory />
+      </svg>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

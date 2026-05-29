@@ -1,61 +1,118 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<GMTable> stateless child component of GMGrid matches snapshot 1`] = `
-<styled.div
-  table={true}
->
-  <styled.h3>
-    Requests
-  </styled.h3>
-  <styled.div>
-    <Styled(styled.div)
-      key="header-0"
+<DocumentFragment>
+  .c0 {
+  background-color: rgb(245,245,245);
+  border-radius: 3px;
+  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-size: 18px;
+  height: 100%;
+  padding: 8px;
+  padding-top: 48px;
+  text-align: right;
+}
+
+.c1 {
+  text-align: center;
+  margin: 0;
+  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding-right: 15%;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  position: relative;
+}
+
+.c3 {
+  -webkit-flex: 1 1 33%;
+  -ms-flex: 1 1 33%;
+  flex: 1 1 33%;
+  opacity: 0.65;
+  text-align: right;
+}
+
+.c5 {
+  -webkit-flex: 1 1 33%;
+  -ms-flex: 1 1 33%;
+  flex: 1 1 33%;
+  opacity: 0.65;
+  padding-left: 8px;
+}
+
+.c4:first-child {
+  margin-left: 33%;
+}
+
+<div
+    class="c0"
+  >
+    <h3
+      class="c1"
     >
       Requests
-    </Styled(styled.div)>
-    <Styled(styled.div)
-      key="header-1"
+    </h3>
+    <div
+      class="c2"
     >
-      Success
-    </Styled(styled.div)>
-  </styled.div>
-  <styled.div
-    key="row-0"
-  >
-    <styled.div
-      key="row-0-cell-0"
+      <div
+        class="c3 c4"
+      >
+        Requests
+      </div>
+      <div
+        class="c3 c4"
+      >
+        Success
+      </div>
+    </div>
+    <div
+      class="c2"
     >
-      http
-    </styled.div>
-    <styled.div
-      key="row-0-cell-1"
+      <div
+        class="c3"
+      >
+        http
+      </div>
+      <div
+        class="c5"
+      >
+        0
+      </div>
+      <div
+        class="c5"
+      >
+        0
+      </div>
+    </div>
+    <div
+      class="c2"
     >
-      0
-    </styled.div>
-    <styled.div
-      key="row-0-cell-2"
-    >
-      0
-    </styled.div>
-  </styled.div>
-  <styled.div
-    key="row-1"
-  >
-    <styled.div
-      key="row-1-cell-0"
-    >
-      https
-    </styled.div>
-    <styled.div
-      key="row-1-cell-1"
-    >
-      1,743
-    </styled.div>
-    <styled.div
-      key="row-1-cell-2"
-    >
-      4,324
-    </styled.div>
-  </styled.div>
-</styled.div>
+      <div
+        class="c3"
+      >
+        https
+      </div>
+      <div
+        class="c5"
+      >
+        1,743
+      </div>
+      <div
+        class="c5"
+      >
+        4,324
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
 `;

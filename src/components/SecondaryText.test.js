@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import SecondaryText from "./SecondaryText";
 
 describe("SecondaryText", () => {
   it("matches snapshot", () => {
-    const aSecondaryText = shallow(<SecondaryText />);
-    expect(aSecondaryText).toMatchSnapshot();
+    const { asFragment } = render(<SecondaryText />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

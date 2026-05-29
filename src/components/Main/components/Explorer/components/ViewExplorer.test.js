@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import ViewExplorer from "./ViewExplorer";
 
 describe("ViewExplorer", () => {
   it("matches snapshot", () => {
-    const aViewExplorer = shallow(<ViewExplorer />);
-    expect(aViewExplorer).toMatchSnapshot();
+    const { asFragment } = render(<ViewExplorer />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

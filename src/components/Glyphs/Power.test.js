@@ -1,10 +1,14 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import Power from "./Power";
 
 describe("Power", () => {
   it("matches snapshot", () => {
-    const aPower = shallow(<Power />);
-    expect(aPower).toMatchSnapshot();
+    const { asFragment } = render(
+      <svg>
+        <Power />
+      </svg>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

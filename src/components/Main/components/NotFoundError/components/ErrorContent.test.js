@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import ErrorContent from "./ErrorContent";
 
 describe("ErrorContent", () => {
   it("matches snapshot", () => {
-    const aErrorContent = shallow(<ErrorContent />);
-    expect(aErrorContent).toMatchSnapshot();
+    const { asFragment } = render(<ErrorContent />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

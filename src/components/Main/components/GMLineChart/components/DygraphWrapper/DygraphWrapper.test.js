@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "enzyme";
+import { render } from "@testing-library/react";
 import DygraphWrapper from "./DygraphWrapper";
 
 const dygraph = {
@@ -14,7 +14,7 @@ const dygraph = {
 
 describe("DygraphWrapper", () => {
   it("matches default snapshot", () => {
-    const aDygraphWrapper = render(<DygraphWrapper dygraph={dygraph} />);
-    expect(aDygraphWrapper).toMatchSnapshot();
+    const { asFragment } = render(<DygraphWrapper dygraph={dygraph} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

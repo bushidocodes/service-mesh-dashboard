@@ -1,8 +1,8 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import GMBasicMetrics from "./GMBasicMetrics";
 
-let wrapper;
+let asFragment;
 const props = {
   detailLines: [
     [
@@ -27,10 +27,10 @@ const props = {
 };
 describe("<GMBasicMetrics> stateless child component of GMGrid", () => {
   beforeEach(() => {
-    wrapper = shallow(<GMBasicMetrics {...props} />);
+    ({ asFragment } = render(<GMBasicMetrics {...props} />));
   });
 
   test("matches snapshot", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

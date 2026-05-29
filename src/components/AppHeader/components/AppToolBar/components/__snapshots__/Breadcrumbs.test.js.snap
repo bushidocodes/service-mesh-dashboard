@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Breadcrumbs matches snapshot when hiding root 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   -webkit-align-items: stretch;
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
@@ -28,12 +29,14 @@ exports[`Breadcrumbs matches snapshot when hiding root 1`] = `
 }
 
 <ol
-  className="c0"
-/>
+    class="c0"
+  />
+</DocumentFragment>
 `;
 
 exports[`Breadcrumbs matches snapshot when showing root 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   -webkit-align-items: stretch;
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
@@ -54,6 +57,7 @@ exports[`Breadcrumbs matches snapshot when showing root 1`] = `
 }
 
 <ol
-  className="c0"
-/>
+    class="c0"
+  />
+</DocumentFragment>
 `;

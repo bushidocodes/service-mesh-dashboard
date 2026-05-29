@@ -1,10 +1,14 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import Finagle from "./Finagle";
 
 describe("Finagle", () => {
   it("matches snapshot", () => {
-    const aFinagle = shallow(<Finagle />);
-    expect(aFinagle).toMatchSnapshot();
+    const { asFragment } = render(
+      <svg>
+        <Finagle />
+      </svg>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -1,10 +1,14 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import Tape from "./Tape";
 
 describe("Tape", () => {
   it("matches snapshot", () => {
-    const aTape = shallow(<Tape />);
-    expect(aTape).toMatchSnapshot();
+    const { asFragment } = render(
+      <svg>
+        <Tape />
+      </svg>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

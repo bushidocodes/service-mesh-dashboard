@@ -1,16 +1,93 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MessageIcon matches snapshot 1`] = `
-<styled.div
-  className="notification-dismiss"
->
-  <Icon
-    borderOpacity="1"
-    borderStyle="BorderTriangleSmall"
-    borderWidth="2"
-    iconRatio="5"
+<DocumentFragment>
+  .c0 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.c0 svg {
+  height: 56px;
+  width: 56px;
+  opacity: 0.05;
+}
+
+.c2 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.c1 {
+  z-index: 1;
+  height: 120px;
+  width: 120px;
+  color: currentColor;
+  word-spacing: 0;
+  vertical-align: middle;
+}
+
+.c1:not(:root) {
+  overflow: visible;
+}
+
+<div
+    class="c0 notification-dismiss"
   >
-    <Exclamation />
-  </Icon>
-</styled.div>
+    <svg
+      aria-labelledby="ariaLabelledby"
+      class="c1"
+      focusable="false"
+      version="1.1"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <g
+        class="iconBorder"
+        fill="transparent"
+        id="BorderTriangleSmall"
+        stroke="currentColor"
+        stroke-opacity="1"
+        stroke-width="0.4"
+      >
+        <path
+          d="M12.8582232,4.46378268 L20.8520757,17.3321581 C21.1381526,17.7926802 20.9967369,18.3979184 20.5362148,18.6839954 C20.3807105,18.7805948 20.2012922,18.8317858 20.0182266,18.8317858 L3.98163949,18.8317858 C3.43949497,18.8317858 3,18.3922908 3,17.8501463 C3,17.6661677 3.05170241,17.4858919 3.14921087,17.3298784 L11.1919455,4.461503 C11.4792815,4.00176536 12.0849044,3.86200624 12.544642,4.14934226 C12.671816,4.22882603 12.7790877,4.33639165 12.8582232,4.46378268 Z"
+        />
+      </g>
+      <g
+        class="c2"
+        fill="currentColor"
+        title=""
+      >
+        <title />
+        <path
+          d="M11,14 L13,14 L13,16 L11,16 L11,14 Z M11,9 L13,9 L13,11.0070282 L12.5,13 L11.5,13 L11,11.0070282 L11,9 Z"
+          id="Exclamation"
+        />
+      </g>
+    </svg>
+  </div>
+</DocumentFragment>
 `;

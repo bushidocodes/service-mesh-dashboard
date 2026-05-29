@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TabLink matches snapshot 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   background-color: rgb(45,45,45);
   font-weight: 400;
   -webkit-flex: 1 1 1%;
@@ -60,8 +61,10 @@ exports[`TabLink matches snapshot 1`] = `
   outline: rgb(10,171,42) auto 3px;
 }
 
-<NavLinkWrapper
-  className="c0"
-  to="/"
-/>
+<a
+    aria-current="page"
+    class="c0 active"
+    href="/"
+  />
+</DocumentFragment>
 `;

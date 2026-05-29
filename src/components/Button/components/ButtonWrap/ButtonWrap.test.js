@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import ButtonWrap from "./ButtonWrap";
 
 describe("ButtonWrap", () => {
   it("should match snapshot", () => {
-    const aButtonWrap = shallow(<ButtonWrap />);
-    expect(aButtonWrap).toMatchSnapshot();
+    const { asFragment } = render(<ButtonWrap />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

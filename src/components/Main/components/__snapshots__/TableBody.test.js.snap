@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TableBody matches snapshot 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   display: block;
   list-style: none;
   margin: 0;
@@ -9,6 +10,7 @@ exports[`TableBody matches snapshot 1`] = `
 }
 
 <ol
-  className="c0"
-/>
+    class="c0"
+  />
+</DocumentFragment>
 `;

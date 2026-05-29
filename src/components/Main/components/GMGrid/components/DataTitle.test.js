@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import DataTitle from "./DataTitle";
 
 describe("DataTitle", () => {
   it("matches snapshot", () => {
-    const aDataTitle = shallow(<DataTitle />);
-    expect(aDataTitle).toMatchSnapshot();
+    const { asFragment } = render(<DataTitle />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

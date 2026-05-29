@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Badge matches snapshot 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   font-size: 11px;
   font-weight: 600;
   text-align: center;
@@ -24,6 +25,7 @@ exports[`Badge matches snapshot 1`] = `
 }
 
 <span
-  className="c0"
-/>
+    class="c0"
+  />
+</DocumentFragment>
 `;

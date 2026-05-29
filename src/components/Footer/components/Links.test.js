@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import Links from "./Links";
 
 describe("Link", () => {
   it("should render", () => {
-    const aLinks = shallow(<Links />);
-    expect(aLinks).toMatchSnapshot();
+    const { asFragment } = render(<Links />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
