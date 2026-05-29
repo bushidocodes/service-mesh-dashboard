@@ -6,7 +6,7 @@ import TooltipWrap from "./components/TooltipWrap";
 export default function Tooltip({
   children,
   content,
-  position,
+  position = "bottom",
   disabled,
   contentStyle = {},
   containerStyle = {}
@@ -33,8 +33,4 @@ Tooltip.propTypes = {
   contentStyle: PropTypes.object,
   disabled: PropTypes.bool,
   position: PropTypes.oneOf(["top", "bottom", "left", "right"])
-};
-
-Tooltip.defaultProps = {
-  position: "bottom"
 };

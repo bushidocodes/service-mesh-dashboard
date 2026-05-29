@@ -1,48 +1,25 @@
 import PropTypes from "prop-types";
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import { convertMS } from "utils";
 
-export default class UpTime extends React.Component {
-  static propTypes = {
-    render: PropTypes.func.isRequired,
-    startTime: PropTypes.number.isRequired
-  };
+export default function UpTime({ render, startTime }) {
+  const [uptime, setUptime] = useState([]);
 
-  state = {
-    startTime: this.props.startTime,
-    uptime: []
-  };
+  useEffect(() => {
+    const update = () => {
+      const elapsed = startTime > 0 ? Date.now() - startTime : 0;
+      setUptime(convertMS(elapsed));
+    };
+    update();
+    const timer = setInterval(update, 1000);
+    return () => clearInterval(timer);
+  }, [startTime]);
 
-  // start timer in componentDidMount
-  // in setInterval, call setState which triggers re-render
-  componentDidMount() {
-    this.timer = setInterval(() => this.onChangeUptime(), 1000);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.startTime !== this.props.startTime) {
-      this.setState({
-        startTime: nextProps.startTime
-      });
-    }
-  }
-
-  // call clearInterval() to cancel the timer
-  componentWillUnmount() {
-    clearInterval(this.timer);
-  }
-
-  onChangeUptime() {
-    const uptime =
-      this.state.startTime > 0 ? Date.now() - this.state.startTime : 0;
-
-    this.setState({
-      uptime: convertMS(uptime)
-    });
-  }
-
-  render() {
-    return this.props.render(this.state.uptime);
-  }
+  return render(uptime);
 }
+
+UpTime.propTypes = {
+  render: PropTypes.func.isRequired,
+  startTime: PropTypes.number.isRequired
+};
