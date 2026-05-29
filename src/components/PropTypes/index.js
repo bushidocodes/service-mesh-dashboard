@@ -83,34 +83,42 @@ export const serviceShape = PropTypes.shape({
 // status: string equal to "Stable", "Warning", or "Down"
 
 // Dashboard Chart
+const intlMessageShape = PropTypes.shape({
+  id: PropTypes.string.isRequired,
+  defaultMessage: PropTypes.string,
+  description: PropTypes.string
+});
 const dychartTimeseriesPointShape = PropTypes.shape({
   attribute: PropTypes.string.isRequired,
   baseUnit: PropTypes.string,
-  label: PropTypes.string.isRequired,
+  label: PropTypes.oneOfType([PropTypes.string, intlMessageShape]).isRequired,
   precision: PropTypes.number,
   resultUnit: PropTypes.string,
   type: PropTypes.string.isRequired,
   value: PropTypes.string
 });
 const gmLineChartShape = PropTypes.shape({
+  key: PropTypes.string.isRequired,
   data: PropTypes.shape({
     timeseries: PropTypes.arrayOf(dychartTimeseriesPointShape)
   }),
-  title: PropTypes.string,
+  title: PropTypes.oneOfType([PropTypes.string, intlMessageShape]),
   type: PropTypes.string.isRequired
 });
 const gmBasicMetricsChartShape = PropTypes.shape({
+  key: PropTypes.string.isRequired,
   data: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)),
-  title: PropTypes.string,
+  title: PropTypes.oneOfType([PropTypes.string, intlMessageShape]),
   type: PropTypes.string.isRequired
 });
 
 const gmTableChartShape = PropTypes.shape({
-  data: {
+  key: PropTypes.string.isRequired,
+  data: PropTypes.shape({
     headers: PropTypes.arrayOf(PropTypes.string),
     rows: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string))
-  },
-  title: PropTypes.string,
+  }),
+  title: PropTypes.oneOfType([PropTypes.string, intlMessageShape]),
   type: PropTypes.string.isRequired
 });
 
