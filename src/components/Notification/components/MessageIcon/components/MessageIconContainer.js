@@ -14,6 +14,10 @@ const MessageIconContainer = styled.div`
   z-index: 0;
 
   svg {
+    /* Icon renders at iconRatio * 24px (= 120px), which overflows the toast.
+       Scale it down to a subtle accent that fits the card height. */
+    height: 56px;
+    width: 56px;
     opacity: 0.05;
   }
 `;
