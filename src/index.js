@@ -22,7 +22,9 @@ const root = createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
     <ConnectedIntlProvider>
-      <HashRouter>
+      <HashRouter
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
         <AppContainer>
           <GlobalFontStyles />
           <Notification />
