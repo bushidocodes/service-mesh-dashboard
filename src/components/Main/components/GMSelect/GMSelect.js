@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Select from "react-select";
 
 import {
@@ -107,3 +108,19 @@ export default function GMSelect({
     />
   );
 }
+
+GMSelect.propTypes = {
+  clearable: PropTypes.bool,
+  data: PropTypes.object,
+  isClearable: PropTypes.bool,
+  isSearchable: PropTypes.bool,
+  onChange: PropTypes.func,
+  options: PropTypes.arrayOf(PropTypes.object),
+  searchable: PropTypes.bool,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.object
+  ]),
+  valueRenderer: PropTypes.func
+};

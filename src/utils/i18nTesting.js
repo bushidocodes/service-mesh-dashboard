@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { flushSync } from "react-dom";
 import { IntlProvider, createIntl, createIntlCache } from "react-intl";
 import { Provider } from "react-redux";
@@ -82,6 +83,12 @@ class IntlTestHost extends React.Component {
     return store ? <Provider store={store}>{node}</Provider> : node;
   }
 }
+
+IntlTestHost.propTypes = {
+  Inner: PropTypes.elementType.isRequired,
+  initialProps: PropTypes.object,
+  store: PropTypes.object
+};
 
 function mountWithHost(node, store) {
   const Inner = node.type;
