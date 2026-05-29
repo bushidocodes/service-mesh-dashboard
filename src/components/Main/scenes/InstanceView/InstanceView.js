@@ -1,6 +1,6 @@
 import { Actions } from "jumpstate";
 import { PropTypes } from "prop-types";
-import React, { Component, Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
 import { connect } from "react-redux";
 
 import { LazyLoader } from "components/LazyLoader";
@@ -25,75 +25,50 @@ const JVMRouter = LazyLoader({
  * @param {Object} props - see propTypes
  * @returns JSX.Element
  */
-class InstanceView extends Component {
-  static propTypes = {
-    instanceID: PropTypes.string.isRequired, // Route param passed from Fabric Router
-    runtime: PropTypes.string.isRequired,
-    selectedInstanceID: PropTypes.string,
-    selectedServiceSlug: PropTypes.string,
-    serviceName: PropTypes.string, // Route param passed from Fabric Router
-    serviceVersion: PropTypes.string // Route param passed from Fabric Router
-  };
-
-  componentWillMount() {
-    this.selectInstanceIfNeeded(this.props);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    this.selectInstanceIfNeeded(nextProps);
-  }
-
-  /**
-   * Helper function that checks if the service specified by the router params
-   * differs from the current selected service instance and invokes the
-   * selectInstance JumpState action if required
-   *
-   * @param {any} {
-   *     selectedServiceSlug,
-   *     selectedInstanceID,
-   *     serviceSlug,
-   *     instanceID
-   *   }
-   * @memberof InstanceView
-   */
-  selectInstanceIfNeeded({
-    selectedServiceSlug,
-    selectedInstanceID,
-    serviceSlug,
-    instanceID
-  }) {
+function InstanceView({
+  instanceID,
+  runtime,
+  selectedInstanceID,
+  selectedServiceSlug,
+  serviceSlug
+}) {
+  useEffect(() => {
     if (
       serviceSlug &&
       instanceID &&
       (serviceSlug !== selectedServiceSlug || instanceID !== selectedInstanceID)
     ) {
-      Actions.selectInstance({
-        instanceID,
-        serviceSlug
-      });
+      Actions.selectInstance({ instanceID, serviceSlug });
     }
+  }, [instanceID, serviceSlug, selectedInstanceID, selectedServiceSlug]);
+
+  let RuntimeRouter;
+  switch (runtime) {
+    case "JVM":
+      RuntimeRouter = JVMRouter;
+      break;
+    case "GO":
+      RuntimeRouter = GoRouter;
+      break;
+    default:
+      RuntimeRouter = DefaultRouter;
   }
 
-  render() {
-    const { runtime } = this.props;
-    let RuntimeRouter;
-    switch (runtime) {
-      case "JVM":
-        RuntimeRouter = JVMRouter;
-        break;
-      case "GO":
-        RuntimeRouter = GoRouter;
-        break;
-      default:
-        RuntimeRouter = DefaultRouter;
-    }
-    return (
-      <Suspense fallback={<Loading />}>
-        <RuntimeRouter />
-      </Suspense>
-    );
-  }
+  return (
+    <Suspense fallback={<Loading />}>
+      <RuntimeRouter />
+    </Suspense>
+  );
 }
+
+InstanceView.propTypes = {
+  instanceID: PropTypes.string.isRequired,
+  runtime: PropTypes.string.isRequired,
+  selectedInstanceID: PropTypes.string,
+  selectedServiceSlug: PropTypes.string,
+  serviceName: PropTypes.string,
+  serviceVersion: PropTypes.string
+};
 
 function mapStateToProps(state) {
   return {
