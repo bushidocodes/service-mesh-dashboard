@@ -84,19 +84,6 @@ jobs:
       - run:
           name: Draft GitHub Release
           command: npm run draft-github-release
-          
-  test:e2e: 
-    <<: *defaults
-    steps:
-      - checkout
-      - attach_workspace:
-          at: ~/repo
-      - run:
-          name: Run end to end tests
-          command: npm run test:e2e
-          no_output_timeout: 20m
-      - store_test_results:
-          path: browserstack-results
 
   test:unit:
     <<: *defaults
@@ -193,18 +180,9 @@ workflows:
               ignore: /.*/
             tags:
               only: /^v.*/
-      # - test:e2e:
-      #     requires:
-      #       - setup
-      #     filters:
-      #       tags:
-      #         only: /^v.*/
-      #       branches:
-      #         ignore: /.*/
       - build:
-          requires: 
+          requires:
             - setup
-            # - test:e2e
           filters:
             branches:
               ignore: /.*/
@@ -212,7 +190,6 @@ workflows:
               only: /^v.*/
       - draft-github-release:
           requires:
-            # - test:e2e
             - build
           filters:
             branches:

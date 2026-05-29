@@ -385,13 +385,13 @@ exports[`Service View matches snapshot 1`] = `
           role="log"
         />
         <div
-          class="css-ubbmdq-control"
+          class="gm-select__control css-ubbmdq-control"
         >
           <div
-            class="css-u0cu49"
+            class="gm-select__value-container gm-select__value-container--has-value css-u0cu49"
           >
             <div
-              class="css-bf9bcf-singleValue"
+              class="gm-select__single-value css-bf9bcf-singleValue"
             >
               <span>
                 <span>
@@ -405,7 +405,7 @@ exports[`Service View matches snapshot 1`] = `
               </span>
             </div>
             <div
-              class="css-1lx7dxn"
+              class="gm-select__input-container css-1lx7dxn"
               data-value=""
             >
               <input
@@ -416,7 +416,7 @@ exports[`Service View matches snapshot 1`] = `
                 autocapitalize="none"
                 autocomplete="off"
                 autocorrect="off"
-                class=""
+                class="gm-select__input"
                 id="react-select-3-input"
                 role="combobox"
                 spellcheck="false"
@@ -428,14 +428,14 @@ exports[`Service View matches snapshot 1`] = `
             </div>
           </div>
           <div
-            class="css-1wy0on6"
+            class="gm-select__indicators css-1wy0on6"
           >
             <span
-              class="css-1u9des2-indicatorSeparator"
+              class="gm-select__indicator-separator css-1u9des2-indicatorSeparator"
             />
             <div
               aria-hidden="true"
-              class="css-1qajzci-indicatorContainer"
+              class="gm-select__indicator gm-select__dropdown-indicator css-1qajzci-indicatorContainer"
             >
               <svg
                 aria-hidden="true"

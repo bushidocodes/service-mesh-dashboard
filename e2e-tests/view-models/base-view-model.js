@@ -1,4 +1,4 @@
-import ReactSelector from "testcafe-react-selectors";
+import { ReactSelector } from "testcafe-react-selectors";
 import { Selector } from "testcafe";
 
 export default class BaseViewModel {

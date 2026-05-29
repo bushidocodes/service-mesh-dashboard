@@ -1,4 +1,4 @@
-import ReactSelector from "testcafe-react-selectors";
+import { ReactSelector } from "testcafe-react-selectors";
 import { Selector } from "testcafe";
 import BaseViewModel from "./base-view-model";
 import messages from "../../src/messages";
@@ -17,15 +17,15 @@ export default class ServiceViewModel extends BaseViewModel {
 
     // Toolbar
     this.inputSearchInstances = ReactSelector("ToolbarLeft").find("input");
-    this.selectSort = Selector(".Select-control").withText(
+    this.selectSort = Selector(".gm-select__control").withText(
       messages[locale]["tableToolbar"]["sort"]
     );
     // this.selectSort needs to be selected first
     // so that the following options are created in the DOM
-    this.optionSortName = Selector(".Select-option").withText(
+    this.optionSortName = Selector(".gm-select__option").withText(
       messages[locale]["serviceView"]["name"]
     );
-    this.optionSortStatus = Selector(".Select-option").withText(
+    this.optionSortStatus = Selector(".gm-select__option").withText(
       messages[locale]["serviceView"]["uptime"]
     );
 

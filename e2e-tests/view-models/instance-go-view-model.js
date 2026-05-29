@@ -1,4 +1,4 @@
-import ReactSelector from "testcafe-react-selectors";
+import { ReactSelector } from "testcafe-react-selectors";
 import { Selector } from "testcafe";
 import BaseInstanceViewModel from "./base-instance-view-model";
 import messages from "../../src/messages";
@@ -22,9 +22,7 @@ export default class InstanceGoViewModel extends BaseInstanceViewModel {
       .withText(messages[locale]["goHeaderContent"]["functions"])
       .find("dd");
     this.linkGo = ReactSelector("TabLink").withText("Go");
-    this.textDetailGo = ReactSelector("TabLink")
-      .withText("Go")
-      .find("dd");
+    this.textDetailGo = ReactSelector("TabLink").withText("Go").find("dd");
 
     // Go
     this.allGrids = Selector(".react-grid-item");

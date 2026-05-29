@@ -1,3 +1,5 @@
+import { waitForReact } from "testcafe-react-selectors";
+
 import BaseInstanceViewModel from "../view-models/base-instance-view-model";
 import FabricViewModel from "../view-models/fabric-view-model";
 import ServiceViewModel from "../view-models/service-view-model";
@@ -10,20 +12,20 @@ const serviceViewModel = new ServiceViewModel();
 const defaultTimeout = 30;
 
 // The following test all views common to both JVM and GO instance views
-fixture`Instance View`.page`http://localhost:3000/`.beforeEach(
-  async t =>
-    await t
-      .click(fabricViewModel.linkStable)
-      .click(fabricViewModel.servicesCards.nth(0))
-      .click(serviceViewModel.instanceIDs.nth(0))
-);
+fixture`Instance View`.page`http://localhost:3000/`.beforeEach(async (t) => {
+  await waitForReact();
+  await t
+    .click(fabricViewModel.linkStable)
+    .click(fabricViewModel.servicesCards.nth(0))
+    .click(serviceViewModel.instanceIDs.nth(0));
+});
 
-test("Verify Summary View Layout", async t => {
+test("Verify Summary View Layout", async (t) => {
   //  Expect the 2 layout sections to be present
   await t
-    .expect(instanceViewModel.summaryVitalsSection)
+    .expect(instanceViewModel.summaryVitalsSection.exists)
     .ok()
-    .expect(instanceViewModel.summaryStatisticsSection)
+    .expect(instanceViewModel.summaryStatisticsSection.exists)
     .ok();
 
   let attempts = 0,
@@ -38,47 +40,46 @@ test("Verify Summary View Layout", async t => {
   // Expect that there are 3 readout cards
   await t.expect(allReadoutsCount).eql(3);
 
-  let summaryUptimeReadoutText = await instanceViewModel.summaryUptimeReadout
-    .innerText;
+  let summaryUptimeReadoutText =
+    await instanceViewModel.summaryUptimeReadout.innerText;
 
   await t
     .expect(summaryUptimeReadoutText)
     .match(/(\d{2,}d)\s+(\d{2}h)\s(\d{2}m)\s(\d{2}s)/g); // match format `000d 00h 00m 00s` https://regexr.com/3l5d8
 
   // Average Response Time readout
-  const summaryAvgResponseTimeReadoutText = await instanceViewModel.summaryAvgResponseTimeReadout.find(
-    "span"
-  ).innerText;
+  const summaryAvgResponseTimeReadoutText =
+    await instanceViewModel.summaryAvgResponseTimeReadout.find("span")
+      .innerText;
 
   await t
-    .expect(instanceViewModel.summaryAvgResponseTimeReadout)
+    .expect(instanceViewModel.summaryAvgResponseTimeReadout.exists)
     .ok()
     .expect(summaryAvgResponseTimeReadoutText)
     .match(/[+-]?([0-9]*[.])?[0-9]+\s(ms)|-/g); // match `<float> ms` or a dash - https://regexr.com/3l5d5
 
   // Error Rate Readout
-  const summaryErrorRateReadoutText = await instanceViewModel.summaryErrorRateReadout.find(
-    "span"
-  ).innerText;
+  const summaryErrorRateReadoutText =
+    await instanceViewModel.summaryErrorRateReadout.find("span").innerText;
 
   await t
-    .expect(instanceViewModel.summaryErrorRateReadout)
+    .expect(instanceViewModel.summaryErrorRateReadout.exists)
     .ok()
     .expect(summaryErrorRateReadoutText)
     .match(/[+-]?([0-9]*[.])?[0-9]+%/g); // match`<float>%` https://regexr.com/3l5db
 
   // Requests per second chart
-  const summaryRequestPerSecChartText = await instanceViewModel
-    .summaryRequestPerSecChart.innerText;
+  const summaryRequestPerSecChartText =
+    await instanceViewModel.summaryRequestPerSecChart.innerText;
 
   await t
-    .expect(instanceViewModel.summaryRequestPerSecChart)
+    .expect(instanceViewModel.summaryRequestPerSecChart.exists)
     .ok()
     .expect(summaryRequestPerSecChartText)
     .contains("Requests Per Second");
 });
 
-test("Verify Routes/Functions Table Functionality", async t => {
+test("Verify Routes/Functions Table Functionality", async (t) => {
   // Navigate to Routes
   await t.click(instanceViewModel.linkRoutes);
 
@@ -168,7 +169,7 @@ test("Verify Routes/Functions Table Functionality", async t => {
   await assertSorted(t, instanceViewModel.routesTableColsLatency99);
 });
 
-test("Verify Explorer View Functionality", async t => {
+test("Verify Explorer View Functionality", async (t) => {
   // Navigate to Explorer
   let attempts = 0,
     isExplorerLinkVisible = 0;
@@ -187,12 +188,12 @@ test("Verify Explorer View Functionality", async t => {
 
   // Click the first inspector item
   const firstItem = await instanceViewModel.inspectorItems.nth(0);
-  const firstItemTitle = await instanceViewModel.inspectorItems.nth(0)
-    .innerText;
+  const firstItemTitle =
+    await instanceViewModel.inspectorItems.nth(0).innerText;
   await t.click(firstItem);
 
-  const firstItemGraphTitle = await instanceViewModel.inspectorGraphTitleText
-    .innerText;
+  const firstItemGraphTitle =
+    await instanceViewModel.inspectorGraphTitleText.innerText;
 
   // Expect that a graph is rendered with the correct title
   inspectorGraphCount = await instanceViewModel.inspectorGraph.count;
@@ -217,7 +218,7 @@ test("Verify Explorer View Functionality", async t => {
       .expect(
         await instanceViewModel.inspectorItems
           .nth(i)
-          .innerText.then(text => text.toLowerCase())
+          .innerText.then((text) => text.toLowerCase())
       )
       .contains(
         searchString.toLowerCase(),

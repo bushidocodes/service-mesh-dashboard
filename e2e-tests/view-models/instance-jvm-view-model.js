@@ -1,4 +1,4 @@
-import ReactSelector from "testcafe-react-selectors";
+import { ReactSelector } from "testcafe-react-selectors";
 import { Selector } from "testcafe";
 import BaseInstanceView from "./base-instance-view-model";
 import messages from "../../src/messages";
@@ -19,13 +19,9 @@ export default class InstanceJvmViewModel extends BaseInstanceView {
       .withText(messages[locale]["jvmHeaderContent"]["threads"])
       .find("dd");
     this.linkHTTP = ReactSelector("TabLink").withText("HTTP");
-    this.textDetailHTTP = ReactSelector("TabLink")
-      .withText("HTTP")
-      .find("dd");
+    this.textDetailHTTP = ReactSelector("TabLink").withText("HTTP").find("dd");
     this.linkJVM = ReactSelector("TabLink").withText("JVM");
-    this.textDetailJVM = ReactSelector("TabLink")
-      .withText("JVM")
-      .find("dd");
+    this.textDetailJVM = ReactSelector("TabLink").withText("JVM").find("dd");
     this.linkFinagle = ReactSelector("TabLink").withText("Finagle");
     this.textDetailFinagle = ReactSelector("TabLink")
       .withText("Finagle")
@@ -33,30 +29,30 @@ export default class InstanceJvmViewModel extends BaseInstanceView {
 
     // Threads Table Toolbar
     this.inputSearchThreads = ReactSelector("ToolbarLeft input");
-    this.selectGroupThreads = Selector(".Select-control").withText(
+    this.selectGroupThreads = Selector(".gm-select__control").withText(
       messages[locale]["tableToolbar"]["group"]
     );
     // this.selectGroupThreads needs to be selected first
     // so that the following options are created in the DOM
-    this.optionGroupThreadsState = Selector(".Select-option").withText(
+    this.optionGroupThreadsState = Selector(".gm-select__option").withText(
       messages[locale]["threadsGrid"]["state"]
     );
-    this.optionGroupThreadsNone = Selector(".Select-option").withText(
+    this.optionGroupThreadsNone = Selector(".gm-select__option").withText(
       messages[locale]["threadsGrid"]["none"]
     );
 
-    this.selectSortThreads = Selector(".Select-control").withText(
+    this.selectSortThreads = Selector(".gm-select__control").withText(
       messages[locale]["tableToolbar"]["sort"]
     );
     // this.selectSortThreads needs to be selected first
     // so that the following options are created in the DOM
-    this.optionSortThreadsState = Selector(".Select-option").withText(
+    this.optionSortThreadsState = Selector(".gm-select__option").withText(
       messages[locale]["threadsGrid"]["state"]
     );
-    this.optionSortThreadsID = Selector(".Select-option").withText(
+    this.optionSortThreadsID = Selector(".gm-select__option").withText(
       messages[locale]["threadsGrid"]["id"]
     );
-    this.optionSortThreadsName = Selector(".Select-option").withText(
+    this.optionSortThreadsName = Selector(".gm-select__option").withText(
       messages[locale]["threadsGrid"]["name"]
     );
 

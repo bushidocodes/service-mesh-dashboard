@@ -1,3 +1,5 @@
+import { waitForReact } from "testcafe-react-selectors";
+
 import FabricViewModel from "../view-models/fabric-view-model";
 import ServiceViewModel from "../view-models/service-view-model";
 import BaseInstanceViewModel from "../view-models/base-instance-view-model";
@@ -16,14 +18,16 @@ const instanceJvmView = new InstanceJvmViewModel(spanishLocale);
 const settingsView = new SettingsViewModel(spanishLocale);
 
 fixture`Internationalization: Spanish`.page`http://localhost:3000/`.beforeEach(
-  async t =>
+  async (t) => {
+    await waitForReact();
     await t
       .wait(5000)
       .click(fabricViewEnglish.linkLanguages)
-      .click(fabricViewEnglish.linkLanguagesEs)
+      .click(fabricViewEnglish.linkLanguagesEs);
+  }
 );
 
-test("Verify Fabric View", async t => {
+test("Verify Fabric View", async (t) => {
   // Verify the tabs are present
   await t.expect(fabricView.linkAllServices.exists).ok();
   await t.expect(fabricView.linkDown.exists).ok();
@@ -49,7 +53,7 @@ test("Verify Fabric View", async t => {
   await t.expect(fabricView.optionSortStatus.exists).ok();
 });
 
-test("Verify Service View", async t => {
+test("Verify Service View", async (t) => {
   // Navigate to the service view
   await t.click(fabricView.linkStable);
   await t.click(fabricView.servicesCards.nth(0));
@@ -64,7 +68,7 @@ test("Verify Service View", async t => {
   await t.expect(serviceView.optionSortStatus.exists).ok();
 });
 
-test("Verify Instance View: Common", async t => {
+test("Verify Instance View: Common", async (t) => {
   // Navigate to the service view
   await t.click(fabricView.linkStable);
   await t.click(fabricView.servicesCards.nth(0));
@@ -99,7 +103,7 @@ test("Verify Instance View: Common", async t => {
   await t.expect(baseInstanceView.optionSortRoutesLatency99.exists).ok();
 });
 
-test("Validate Instance View: Go", async t => {
+test("Validate Instance View: Go", async (t) => {
   // Navigate to the service view
   await t.click(fabricView.linkStable);
   // Click the first Go Service
@@ -113,7 +117,7 @@ test("Validate Instance View: Go", async t => {
   await t.expect(instanceGoView.linkGo.exists).ok();
 });
 
-test("Validate Instance View: JVM", async t => {
+test("Validate Instance View: JVM", async (t) => {
   // Navigate back to the stable tab of the fabric view
   await t.click(fabricView.linkStable);
 
@@ -146,7 +150,7 @@ test("Validate Instance View: JVM", async t => {
   await t.expect(instanceJvmView.optionSortThreadsName.exists).ok();
 });
 
-test("Validate Settings View", async t => {
+test("Validate Settings View", async (t) => {
   // Navigate to the settings view
   await t.click(fabricView.linkSettings);
 

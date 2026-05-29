@@ -1,8 +1,12 @@
+import { waitForReact } from "testcafe-react-selectors";
+
 import FabricViewModel from "../view-models/fabric-view-model";
 import ServiceViewModel from "../view-models/service-view-model";
 import parseUptimeSeconds from "../helpers/uptime-parser";
 
-fixture`Service View`.page`http://localhost:3000/`;
+fixture`Service View`.page`http://localhost:3000/`.beforeEach(async () => {
+  await waitForReact();
+});
 
 const fabricView = new FabricViewModel();
 const serviceView = new ServiceViewModel();
@@ -10,7 +14,7 @@ const serviceView = new ServiceViewModel();
 const defaultTimeout = 30;
 const dummyInstanceId = "bananagrams";
 
-test("Service View Sorting and Filtering", async t => {
+test("Service View Sorting and Filtering", async (t) => {
   // Navigate to the Stable tab
   await t.click(fabricView.linkStable);
 

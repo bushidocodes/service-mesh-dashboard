@@ -2,6 +2,7 @@
 
 exports[`GMSelect matches snapshot 1`] = `
 <ForwardRef
+  classNamePrefix="gm-select"
   components={{}}
   isClearable={false}
   isSearchable={true}
