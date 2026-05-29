@@ -1,5 +1,5 @@
 import React from "react";
-import Select, { components } from "react-select";
+import Select from "react-select";
 
 import {
   ZINDEX_DROPDOWN,
@@ -7,6 +7,8 @@ import {
   FONT_STACK_BASE,
   FONT_SIZE_BASE
 } from "style/styleVariables";
+
+import GMSelectSingleValue from "./GMSelectSingleValue";
 
 // react-select v5 uses a CSS-in-JS styles object instead of global CSS classes.
 const selectStyles = {
@@ -86,15 +88,9 @@ export default function GMSelect({
       ? ((options || []).find((opt) => opt.value === value) ?? null)
       : (value ?? null);
 
-  // Map the legacy valueRenderer prop to a custom SingleValue component.
-  const customComponents = {};
-  if (valueRenderer) {
-    customComponents.SingleValue = ({ data, ...svProps }) => (
-      <components.SingleValue {...svProps}>
-        {valueRenderer(data)}
-      </components.SingleValue>
-    );
-  }
+  const customComponents = valueRenderer
+    ? { SingleValue: GMSelectSingleValue }
+    : {};
 
   return (
     <Select
@@ -106,6 +102,7 @@ export default function GMSelect({
       onChange={onChange}
       styles={selectStyles}
       components={customComponents}
+      valueRenderer={valueRenderer}
       {...rest}
     />
   );
