@@ -43,21 +43,17 @@ describe("Uptime component", () => {
   });
 
   test("renders the correct value", () => {
-    // Advance past the 1s interval so onChangeUptime() runs and sets state.
+    // Advance past the 1s interval so the useEffect timer fires and updates state.
     // Wrap in act() so React 18 flushes the resulting setState synchronously
-    // before we read the instance state.
+    // before we read the rendered output.
     act(() => {
       jest.advanceTimersByTime(1000);
     });
     UptimeWrapper.update();
-    expect(UptimeWrapper.state().uptime).toMatchObject([
-      "1273d",
-      "03h",
-      "33m",
-      "20s"
-    ]);
-    expect(UptimeWrapper.html().includes("1273d", "03h", "33m", "20s")).toBe(
-      true
-    );
+    const html = UptimeWrapper.html();
+    expect(html).toContain("1273d");
+    expect(html).toContain("03h");
+    expect(html).toContain("33m");
+    expect(html).toContain("20s");
   });
 });
