@@ -22,6 +22,7 @@ class SettingsGrid extends Component {
     fabricPollingInterval: PropTypes.number,
     fabricServer: PropTypes.string,
     instanceMetricsPollingInterval: PropTypes.number,
+    intl: PropTypes.object.isRequired,
     isPollingFabric: PropTypes.bool,
     isPollingInstanceMetrics: PropTypes.bool,
     metricsCacheSize: PropTypes.string,

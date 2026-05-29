@@ -1,4 +1,5 @@
 import React from "react";
+import { PropTypes } from "prop-types";
 import styled from "styled-components";
 
 import { FONT_SIZE_SM, COLOR_CONTENT_MUTED } from "style/styleVariables";
@@ -59,6 +60,8 @@ function TableColLatencyHeader({ intl }) {
   );
 }
 
-TableColLatencyHeader.propTypes = {};
+TableColLatencyHeader.propTypes = {
+  intl: PropTypes.object.isRequired
+};
 
 export default injectIntl(TableColLatencyHeader);

@@ -16,6 +16,7 @@ class Inspector extends Component {
     data: PropTypes.array.isRequired,
     hideStaticMetric: PropTypes.bool,
     hideZeroMetric: PropTypes.bool,
+    intl: PropTypes.object.isRequired,
     onChange: PropTypes.func,
     onClick: PropTypes.func.isRequired,
     onSearch: PropTypes.func,

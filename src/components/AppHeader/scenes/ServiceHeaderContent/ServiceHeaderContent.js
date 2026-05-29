@@ -9,6 +9,7 @@ import TabNav from "components/AppHeader/components/TabNav";
 
 ServiceHeaderContent.propTypes = {
   instanceCount: PropTypes.number,
+  intl: PropTypes.object.isRequired,
   pathname: PropTypes.string
 };
 

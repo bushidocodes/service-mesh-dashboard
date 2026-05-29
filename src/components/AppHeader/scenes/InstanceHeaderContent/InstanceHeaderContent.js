@@ -33,6 +33,7 @@ export class InstanceHeaderContent extends Component {
     dashboards: PropTypes.object.isRequired,
     headerTabs: PropTypes.arrayOf(PropTypes.element),
     history: routerHistoryShape,
+    intl: PropTypes.object.isRequired,
     location: routerLocationShape,
     match: routerMatchShape,
     metrics: PropTypes.object.isRequired,
