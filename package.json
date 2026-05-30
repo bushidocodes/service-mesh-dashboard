@@ -3,8 +3,16 @@
   "version": "1.0.6",
   "private": true,
   "engines": {
-    "node": ">=20.0.0",
-    "npm": ">=10.0.0"
+    "node": ">=22.13.0",
+    "pnpm": ">=11.0.0"
+  },
+  "packageManager": "pnpm@11.5.0",
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "22.22.3",
+      "onFail": "download"
+    }
   },
   "dependencies": {
     "axios": "^1.12.0",
@@ -108,9 +116,9 @@
     "start-ui": "vite",
     "storybook": "storybook dev -p 6006",
     "test": "cross-env TZ=America/New_York node scripts/test.js",
-    "test:e2e:local": "testcafe chrome:headless ./e2e-tests/tests/*.js -a 'npm start' --app-init-delay 5000",
+    "test:e2e:local": "testcafe chrome:headless ./e2e-tests/tests/*.js -a 'pnpm start' --app-init-delay 5000",
     "update-deps": "npm-check . --skip-unused -u",
-    "update-snapshots": "CI=true npm run test -- --updateSnapshot",
+    "update-snapshots": "CI=true pnpm run test -- --updateSnapshot",
     "version": "npm-run-all --print-label changelog update-snapshots && git add -A"
   },
   "lint-staged": {

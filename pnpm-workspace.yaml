@@ -1,0 +1,24 @@
+# pnpm project settings (issue #108).
+#
+# As of pnpm 11, pnpm reads all non-auth/registry settings from this file —
+# NOT from package.json's "pnpm" field, and NOT from pnpm-specific keys in
+# .npmrc (which now only carries auth/registry config).
+
+# NOTE: the project's Node.js version is pinned in package.json via
+# "devEngines.runtime" (pnpm 11's mechanism — it auto-downloads/pins the runtime
+# on install and records it in pnpm-lock.yaml). Keep that in sync with .nvmrc
+# (which CI's actions/setup-node reads).
+
+# The old npm workflow relied on `--legacy-peer-deps`. Don't fail installs on
+# peer-dependency mismatches.
+strictPeerDependencies: false
+
+# pnpm blocks dependency build scripts by default and (as of pnpm 11) fails the
+# install until every package with a build script is explicitly allowed/denied.
+#   - esbuild: Vite's dev server + production build need its postinstall to link
+#     the platform-specific binary.  -> allow
+#   - core-js@2: its postinstall only prints a funding/ads console message.  -> deny
+# Replaces the deprecated onlyBuiltDependencies setting.
+allowBuilds:
+  core-js: false
+  esbuild: true
