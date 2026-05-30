@@ -45,7 +45,16 @@ const STATIC_RESIZE_CONFIG = { enabled: false };
  * Native-v2 replacement for the legacy `WidthProvider(Responsive)` HOC: measures
  * the container with the `useContainerWidth` hook and feeds the resulting width
  * to `ResponsiveGridLayout`, which (unlike the auto-sizing legacy HOC) requires
- * `width` as an explicit prop. All other grid props are forwarded unchanged.
+ * `width` as an explicit prop.
+ *
+ * The hook's ref is attached via `innerRef` to the grid's OWN root element (the
+ * one carrying the `react-grid-layout` class), NOT to a separate wrapper. That
+ * element is capped by the injected `.react-grid-layout` CSS (max-width 1300px,
+ * margin auto). Measuring it — rather than an unconstrained wrapper — means the
+ * width handed back to the grid honors that cap, so items lay out within and the
+ * dashboard stays centered, exactly as the legacy WidthProvider did (which also
+ * measured the grid element itself). Measuring a full-width wrapper instead made
+ * items lay out for the whole viewport and overflow the cap (issue #60).
  *
  * @param {Object} props
  * @param {React.ReactNode} props.children
@@ -53,11 +62,9 @@ const STATIC_RESIZE_CONFIG = { enabled: false };
 function ResponsiveReactGridLayout({ children, ...rest }) {
   const { width, containerRef } = useContainerWidth();
   return (
-    <div ref={containerRef}>
-      <ResponsiveGridLayout width={width} {...rest}>
-        {children}
-      </ResponsiveGridLayout>
-    </div>
+    <ResponsiveGridLayout width={width} innerRef={containerRef} {...rest}>
+      {children}
+    </ResponsiveGridLayout>
   );
 }
 
