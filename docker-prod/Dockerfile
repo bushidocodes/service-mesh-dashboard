@@ -1,4 +1,4 @@
-FROM node:20-alpine
+FROM node:22-alpine
 ENV NODE_ENV=production
 # Let corepack fetch the pnpm version pinned in package.json non-interactively.
 ENV COREPACK_ENABLE_DOWNLOAD_PROMPT=0

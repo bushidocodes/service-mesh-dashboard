@@ -3,14 +3,14 @@
   "version": "1.0.6",
   "private": true,
   "engines": {
-    "node": ">=20.0.0",
+    "node": ">=22.13.0",
     "pnpm": ">=11.0.0"
   },
   "packageManager": "pnpm@11.5.0",
   "devEngines": {
     "runtime": {
       "name": "node",
-      "version": "20.20.2",
+      "version": "22.22.3",
       "onFail": "download"
     }
   },
