@@ -30,6 +30,27 @@ pnpm start-ui      # Vite only (no mock service)
 pnpm test          # full Jest suite
 ```
 
+## State management (the `store/jumpstate` shim)
+
+The Redux store is built on plain `redux@4`. The `State`/`Effect`/`Actions`/
+`getState`/`CreateJumpstateMiddleware` API the store and services use is **not**
+the npm `jumpstate` package — it's a local, dependency-free reimplementation at
+[`src/store/jumpstate.js`](src/store/jumpstate.js). `jumpstate@~2.2.2`
+(unmaintained since 2018) was removed in issue #39; the shim is a faithful
+drop-in so the ~90 `Actions.*` / `getState()` call sites stayed unchanged.
+
+- Import it as `from "store/jumpstate"` (the `store` alias resolves it in both
+  Vite and Jest). **Do not** re-add the `jumpstate` dependency.
+- Semantics match jumpstate@2.2.2: each `State` method is both an action-creator
+  (`Actions.method`) and that action's reducer case; `Effect(name, fn)` is fired
+  by the middleware after `next(action)` and invoked as
+  `fn(payload, getState, dispatch)`; `getState`/`dispatch` are global singletons.
+- The global-`Actions` singleton pattern is intentionally kept. Migrating to
+  idiomatic Redux Toolkit (Option C in #39) is deliberately deferred to separate,
+  larger follow-up work.
+- Tests that mock the layer must target the shim, e.g.
+  `jest.mock("store/jumpstate", ...)` — not `"jumpstate"`.
+
 ## Working in a git worktree (.claude/worktrees/*)
 
 Claude Code creates worktrees under `.claude/worktrees/` for parallel agentic
