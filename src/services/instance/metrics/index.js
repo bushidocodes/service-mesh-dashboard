@@ -1,5 +1,5 @@
 import React from "react";
-import { Effect, Actions, getState } from "jumpstate";
+import { Effect, Actions, getState } from "store/jumpstate";
 import { FormattedMessage } from "react-intl";
 
 import { reportError } from "../../notification";

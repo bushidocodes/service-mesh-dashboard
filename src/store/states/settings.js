@@ -1,4 +1,4 @@
-import { State } from "jumpstate";
+import { State } from "store/jumpstate";
 
 import { getFabricServer } from "utils/head";
 import { getLocale } from "utils/i18n";

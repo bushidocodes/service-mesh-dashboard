@@ -1,5 +1,5 @@
 import React from "react";
-import { Actions } from "jumpstate";
+import { Actions } from "store/jumpstate";
 import { FormattedMessage } from "react-intl";
 
 import LanguageSelectorWrap from "./components/LanguageSelectorWrap";

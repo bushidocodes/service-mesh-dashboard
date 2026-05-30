@@ -1,4 +1,4 @@
-import { Effect } from "jumpstate";
+import { Effect } from "store/jumpstate";
 import {
   fetchFabricMicroservicesFailureEffect,
   fetchAndStoreFabricMicroservicesEffect,

@@ -1,6 +1,6 @@
 import React from "react";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
-import { Actions } from "jumpstate";
+import { Actions } from "store/jumpstate";
 import _ from "lodash";
 
 import { fireEvent, screen } from "@testing-library/react";

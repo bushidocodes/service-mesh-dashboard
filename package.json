@@ -21,7 +21,6 @@
     "dygraphs": "~2.1.0",
     "filesize": "~3.5.11",
     "js-quantities": "^1.7.0",
-    "jumpstate": "~2.2.2",
     "lodash": "~4.17.4",
     "object-sizeof": "^1.2.0",
     "prop-types": "^15.6.0",

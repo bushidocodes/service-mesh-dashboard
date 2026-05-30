@@ -1,4 +1,4 @@
-import { State } from "jumpstate";
+import { State } from "store/jumpstate";
 import "services/fabricMicroservices";
 
 const fabric = State({

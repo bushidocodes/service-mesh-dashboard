@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { Actions, getState } from "jumpstate";
+import { Actions, getState } from "store/jumpstate";
 import { FormattedMessage } from "react-intl";
 
 import { clearFabricIntervalIfNeeded, slugifyMicroservice } from "utils";

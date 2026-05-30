@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { PropTypes } from "prop-types";
-import { Actions } from "jumpstate";
+import { Actions } from "store/jumpstate";
 import _ from "lodash";
 import { withRouter } from "utils/withRouter";
 import { injectIntl } from "react-intl";

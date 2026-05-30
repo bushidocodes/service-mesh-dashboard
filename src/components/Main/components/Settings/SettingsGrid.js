@@ -1,5 +1,5 @@
 import filesize from "filesize";
-import { Actions } from "jumpstate";
+import { Actions } from "store/jumpstate";
 import objectSizeOf from "object-sizeof";
 import { PropTypes } from "prop-types";
 import React, { Component, Fragment } from "react";

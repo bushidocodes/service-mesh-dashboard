@@ -1,4 +1,4 @@
-import { Actions, Effect } from "jumpstate";
+import { Actions, Effect } from "store/jumpstate";
 import defaultJVMDashboards from "../../json/jvm/dashboards.json";
 import defaultGoDashboards from "../../json/go/dashboards.json";
 
