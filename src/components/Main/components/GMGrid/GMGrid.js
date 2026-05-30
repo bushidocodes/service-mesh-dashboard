@@ -1,11 +1,13 @@
 // import { Actions } from "jumpstate";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
-// react-grid-layout v2 moved the flat v1-style props (breakpoints/cols/layouts,
-// the WidthProvider HOC, and the onLayoutChange(layout, layouts) signature) to
-// the "/legacy" entrypoint. The native v2 API is hooks-based; the legacy layer
-// keeps this static, read-only grid working without a rewrite. See issue #42.
-import { Responsive, WidthProvider } from "react-grid-layout/legacy";
+// react-grid-layout v2 is hooks-based. The legacy WidthProvider(Responsive) HOC
+// (from the "/legacy" compat entrypoint) is replaced by the native
+// ResponsiveGridLayout — which now requires an explicit `width` — together with
+// the useContainerWidth hook that measures the container. The flat
+// isDraggable/isResizable props likewise became the dragConfig/resizeConfig
+// objects. See issues #42 and #60.
+import { ResponsiveGridLayout, useContainerWidth } from "react-grid-layout";
 import { connect } from "react-redux";
 import { createGlobalStyle } from "styled-components";
 import { injectIntl } from "react-intl";
@@ -33,7 +35,42 @@ ${ReactGridLayout};
 ${ReactResizable};
 `;
 
-const ResponsiveReactGridLayout = WidthProvider(Responsive);
+// In v2, disabling drag/resize moved from the flat isDraggable/isResizable props
+// to the dragConfig/resizeConfig objects. Hoisted so the objects stay stable
+// across renders.
+const STATIC_DRAG_CONFIG = { enabled: false };
+const STATIC_RESIZE_CONFIG = { enabled: false };
+
+/**
+ * Native-v2 replacement for the legacy `WidthProvider(Responsive)` HOC: measures
+ * the container with the `useContainerWidth` hook and feeds the resulting width
+ * to `ResponsiveGridLayout`, which (unlike the auto-sizing legacy HOC) requires
+ * `width` as an explicit prop.
+ *
+ * The hook's ref is attached via `innerRef` to the grid's OWN root element (the
+ * one carrying the `react-grid-layout` class), NOT to a separate wrapper. That
+ * element is capped by the injected `.react-grid-layout` CSS (max-width 1300px,
+ * margin auto). Measuring it — rather than an unconstrained wrapper — means the
+ * width handed back to the grid honors that cap, so items lay out within and the
+ * dashboard stays centered, exactly as the legacy WidthProvider did (which also
+ * measured the grid element itself). Measuring a full-width wrapper instead made
+ * items lay out for the whole viewport and overflow the cap (issue #60).
+ *
+ * @param {Object} props
+ * @param {React.ReactNode} props.children
+ */
+function ResponsiveReactGridLayout({ children, ...rest }) {
+  const { width, containerRef } = useContainerWidth();
+  return (
+    <ResponsiveGridLayout width={width} innerRef={containerRef} {...rest}>
+      {children}
+    </ResponsiveGridLayout>
+  );
+}
+
+ResponsiveReactGridLayout.propTypes = {
+  children: PropTypes.node
+};
 
 /**
  * Retrieves the dynamic JSON-based state from Redux for the dashboard matching the
@@ -41,6 +78,7 @@ const ResponsiveReactGridLayout = WidthProvider(Responsive);
  */
 
 // named export for unconnected component {GMGrid} for unit tests
+// eslint-disable-next-line react/no-multi-comp -- colocated with the small ResponsiveReactGridLayout width-plumbing wrapper above
 export class GMGrid extends Component {
   static propTypes = {
     dashboard: dashboardShape,
@@ -185,8 +223,8 @@ export class GMGrid extends Component {
         <ResponsiveReactGridLayout
           breakpoints={dashboard.grid.breakpoints}
           cols={dashboard.grid.cols}
-          isDraggable={false}
-          isResizable={false}
+          dragConfig={STATIC_DRAG_CONFIG}
+          resizeConfig={STATIC_RESIZE_CONFIG}
           layouts={dashboard.grid.layouts}
           onLayoutChange={(currentLayout, allLayouts) =>
             this.updateDashboardLayout(allLayouts)
