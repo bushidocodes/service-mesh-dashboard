@@ -2,9 +2,17 @@ name: Test
 
 on:
   push:
-    branches: ["**"]
+    branches: [master]
   pull_request:
     branches: [master]
+
+# Avoid duplicate runs. A push to a feature branch that has an open PR would
+# otherwise fire both `push` and `pull_request`. Limiting `push` to master means
+# feature branches are covered by `pull_request` only, and master (post-merge)
+# by `push`. The concurrency group also cancels superseded in-progress runs.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   test:
