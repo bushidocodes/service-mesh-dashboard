@@ -32,8 +32,13 @@ fi
 
 mkdir -p "$WORKTREE/node_modules"
 
-echo "Copying .vite dep-optimizer cache..."
-cp -r "$ROOT/node_modules/.vite" "$WORKTREE/node_modules/.vite"
+if [ -d "$ROOT/node_modules/.vite" ]; then
+  echo "Copying .vite dep-optimizer cache..."
+  cp -r "$ROOT/node_modules/.vite" "$WORKTREE/node_modules/.vite"
+else
+  echo "Note: .vite cache not found in main repo — Vite will rebuild on first start."
+  echo "      (Run 'npm run start-ui' in the main repo once to populate it.)"
+fi
 
 echo "Copying dygraphs package..."
 cp -r "$ROOT/node_modules/dygraphs" "$WORKTREE/node_modules/dygraphs"
