@@ -4,9 +4,13 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const src = p => path.resolve(__dirname, "src", p);
+const src = (p) => path.resolve(__dirname, "src", p);
 
 export default defineConfig({
+  // Pin the project root to this config file's directory so that Vite never
+  // follows a node_modules junction/symlink via realpathSync and ends up
+  // treating the parent repo as the root. Required for git worktree support.
+  root: __dirname,
   plugins: [
     // MUST be listed first: transform JSX in every src .js file to plain JS
     // before `vite:import-analysis` tries to parse it with acorn.  The project

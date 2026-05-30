@@ -133,8 +133,8 @@
       "<rootDir>/config/jest/jestTestFrameworkSetup.js"
     ],
     "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.{js,jsx}",
-      "<rootDir>/src/**/*.{spec,test}.{js,jsx}"
+      "**/src/**/__tests__/**/*.{js,jsx}",
+      "**/src/**/*.{spec,test}.{js,jsx}"
     ],
     "testPathIgnorePatterns": [
       "/node_modules/",
@@ -151,7 +151,7 @@
       ]
     },
     "transform": {
-      "^.+\\.(js|jsx)$": "<rootDir>/node_modules/babel-jest",
+      "^.+\\.(js|jsx)$": "babel-jest",
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
       "^(?!.*\\.(js|jsx|css|json|cjs|mjs)$)": "<rootDir>/config/jest/fileTransform.js"
     },
