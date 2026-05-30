@@ -66,3 +66,35 @@ globs are **independently correct** and stay regardless of package manager:
   `node_modules/dygraphs/src-es5/dygraph.js`. This resolves fine through pnpm's
   symlinked `node_modules`. `dygraphs` is pinned to `~2.1.0` (issue #67 — 2.2.x
   breaks the Summary tests); the pnpm lockfile keeps it at 2.1.0.
+
+## Git hooks in worktrees (gotcha)
+
+Hooks are husky v9. `core.hooksPath` **should be the relative value `.husky/_`**
+(set in the shared `.git/config`), which git resolves against each worktree's
+own root — so every worktree and the main repo runs its **own** hooks.
+
+Two failure modes to know about:
+
+1. **Per-worktree absolute override → runs the *main* repo's hooks.** A worktree
+   may carry a per-worktree `core.hooksPath` pointing at the *main* checkout's
+   `.husky/_` (absolute). Then the worktree runs the **main checkout's** hook
+   files, not its own. That's harmless for pre-migration branches, but this
+   branch pins Node via `devEngines.runtime`, and if the main checkout's hooks
+   still call `npx`, the commit dies with `EBADDEVENGINES` (npm/npx enforces
+   `devEngines` against the running Node). Fix one worktree:
+
+   ```bash
+   git config --worktree --unset core.hooksPath   # fall back to shared .husky/_
+   git config core.hooksPath .husky/_             # (shared) ensure it's relative
+   ```
+
+   The structural fix is this migration itself: its hooks call the local bins
+   directly (`lint-staged`, `commitlint`) instead of `npx`, so once the npx-free
+   hooks are on the branch the main checkout uses, the whole class of failure
+   goes away regardless of who sets `hooksPath`.
+
+2. **Never run `husky` with an argument** (e.g. `husky --version`). husky v9 has
+   no flags — it treats the arg as the hooks dir and runs
+   `git config core.hooksPath <arg>/_`, silently corrupting it (e.g. to
+   `--version/_`). To check the version use `pnpm why husky` or read
+   `package.json`.
