@@ -5,36 +5,38 @@ exports[`Service Instance View: JVM/GO/HTTP <GMGrid> matches snapshot 1`] = `
   <div
     data-testid="error-boundary"
   >
-    <div
-      data-testid="grid"
-    >
+    <div>
       <div
-        style="overflow: hidden;"
+        data-testid="grid"
       >
         <div
-          data-testid="gm-table"
-        />
-      </div>
-      <div
-        style="overflow: hidden;"
-      >
+          style="overflow: hidden;"
+        >
+          <div
+            data-testid="gm-table"
+          />
+        </div>
         <div
-          data-testid="gm-basic-metrics"
-        />
-      </div>
-      <div
-        style="overflow: hidden;"
-      >
+          style="overflow: hidden;"
+        >
+          <div
+            data-testid="gm-basic-metrics"
+          />
+        </div>
         <div
-          data-testid="gm-line-chart"
-        />
-      </div>
-      <div
-        style="overflow: hidden;"
-      >
+          style="overflow: hidden;"
+        >
+          <div
+            data-testid="gm-line-chart"
+          />
+        </div>
         <div
-          data-testid="gm-line-chart"
-        />
+          style="overflow: hidden;"
+        >
+          <div
+            data-testid="gm-line-chart"
+          />
+        </div>
       </div>
     </div>
   </div>

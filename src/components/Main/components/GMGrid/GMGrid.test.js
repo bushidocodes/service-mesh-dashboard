@@ -40,16 +40,23 @@ jest.mock("components/ErrorBoundary", () => {
   return ({ children }) =>
     React.createElement("div", { "data-testid": "error-boundary" }, children);
 });
-// react-grid-layout/legacy measures the DOM (WidthProvider) and cannot mount in
-// jsdom — the original shallow render never reached it. Stub it to a plain
-// container that renders its children so the chart stubs inside stay countable.
-jest.mock("react-grid-layout/legacy", () => {
+// react-grid-layout v2's ResponsiveGridLayout + useContainerWidth measure the DOM
+// via ResizeObserver, which jsdom does not implement. Stub the grid to a plain
+// container that renders its children, and the width hook to a fixed width, so
+// the chart stubs inside stay countable without real measurement (the original
+// shallow render never reached the grid either).
+jest.mock("react-grid-layout", () => {
   const React = require("react");
   return {
     __esModule: true,
-    Responsive: ({ children }) =>
+    ResponsiveGridLayout: ({ children }) =>
       React.createElement("div", { "data-testid": "grid" }, children),
-    WidthProvider: (Comp) => Comp
+    useContainerWidth: () => ({
+      width: 1280,
+      mounted: true,
+      containerRef: { current: null },
+      measureWidth: () => {}
+    })
   };
 });
 
