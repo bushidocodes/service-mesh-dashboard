@@ -5,7 +5,7 @@ import {
 
 import mockstate from "json/mockReduxState";
 
-jest.mock("jumpstate", () => {
+jest.mock("store/jumpstate", () => {
   return {
     getState: () => mockstate
   };

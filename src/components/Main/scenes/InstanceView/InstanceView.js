@@ -1,4 +1,4 @@
-import { Actions } from "jumpstate";
+import { Actions } from "store/jumpstate";
 import { PropTypes } from "prop-types";
 import React, { Suspense, useEffect } from "react";
 import { connect } from "react-redux";

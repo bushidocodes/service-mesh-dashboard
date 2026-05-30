@@ -1,4 +1,4 @@
-import { Actions, getState } from "jumpstate";
+import { Actions, getState } from "store/jumpstate";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { connect } from "react-redux";

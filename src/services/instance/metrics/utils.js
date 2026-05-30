@@ -1,4 +1,4 @@
-import { getState } from "jumpstate";
+import { getState } from "store/jumpstate";
 import { getFabricServer } from "utils/head";
 
 export function buildDiscoveryServiceInstanceMetricsEndpoint() {

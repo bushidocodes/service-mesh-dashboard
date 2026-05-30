@@ -1,4 +1,4 @@
-import { State } from "jumpstate";
+import { State } from "store/jumpstate";
 
 const threadsTable = State({
   initial: [],

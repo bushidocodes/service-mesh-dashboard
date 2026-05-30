@@ -1,4 +1,4 @@
-// import { Actions } from "jumpstate";
+// import { Actions } from "store/jumpstate";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 // react-grid-layout v2 is hooks-based. The legacy WidthProvider(Responsive) HOC

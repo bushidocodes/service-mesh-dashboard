@@ -1,5 +1,5 @@
 // Commented out imports are used by currently disabled local storage functionality
-import { CreateJumpstateMiddleware } from "jumpstate";
+import { CreateJumpstateMiddleware } from "./jumpstate";
 import { createStore, applyMiddleware, combineReducers } from "redux";
 import logger from "redux-logger";
 
