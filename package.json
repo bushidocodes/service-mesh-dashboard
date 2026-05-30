@@ -133,8 +133,8 @@
       "<rootDir>/config/jest/jestTestFrameworkSetup.js"
     ],
     "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.{js,jsx}",
-      "<rootDir>/src/**/*.{spec,test}.{js,jsx}"
+      "**/src/**/__tests__/**/*.{js,jsx}",
+      "**/src/**/*.{spec,test}.{js,jsx}"
     ],
     "testPathIgnorePatterns": [
       "/node_modules/",

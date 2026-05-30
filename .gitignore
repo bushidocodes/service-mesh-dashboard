@@ -27,6 +27,9 @@
 # audit / migration workspace (see CLAUDE.md)
 .issue-review/
 
+# Claude Code worktree directories (managed by Claude Code, not tracked)
+.claude/worktrees/
+
 # misc
 .vscode/chrome
 .playwright-mcp
