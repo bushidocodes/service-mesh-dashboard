@@ -14,7 +14,7 @@ import {
   Sparklines,
   SparklinesLine,
   SparklinesReferenceLine
-} from "react-sparklines";
+} from "components/Sparklines";
 
 Tab.propTypes = {
   chartData: PropTypes.array,
