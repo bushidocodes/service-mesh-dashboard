@@ -4,7 +4,7 @@ import {
   Sparklines,
   SparklinesLine,
   SparklinesReferenceLine
-} from "react-sparklines";
+} from "components/Sparklines";
 
 import Glyph from "components/Glyphs/index";
 import ItemDisplay from "./components/ItemDisplay";

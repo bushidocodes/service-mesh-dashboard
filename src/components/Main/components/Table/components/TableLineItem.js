@@ -5,7 +5,7 @@ import {
   Sparklines,
   SparklinesLine,
   SparklinesReferenceLine
-} from "react-sparklines";
+} from "components/Sparklines";
 import styled from "styled-components";
 import { injectIntl } from "react-intl";
 

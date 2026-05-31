@@ -4,7 +4,7 @@ import {
   Sparklines,
   SparklinesLine,
   SparklinesReferenceLine
-} from "react-sparklines";
+} from "components/Sparklines";
 
 import DataDisplay from "./DataDisplay";
 import DataTitle from "./DataTitle";
