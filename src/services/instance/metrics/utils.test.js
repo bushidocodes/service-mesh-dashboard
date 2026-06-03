@@ -5,21 +5,44 @@ import {
 
 import mockstate from "json/mockReduxState";
 
-jest.mock("store/jumpstate", () => {
-  return {
-    getState: () => mockstate
-  };
-});
+const mockGetState = jest.fn(() => mockstate);
+
+jest.mock("store/jumpstate", () => ({
+  getState: (...args) => mockGetState(...args)
+}));
 
 jest.mock("utils/head", () => {
   return { getFabricServer: () => "http://localhost:1337" };
 });
 
 describe("buildDiscoveryServiceInstanceMetricsEndpoint", () => {
+  beforeEach(() => {
+    mockGetState.mockReturnValue(mockstate);
+  });
+
   test("builds a discovery service instance metrics endpoint", () => {
     expect(buildDiscoveryServiceInstanceMetricsEndpoint()).toBe(
       "http://localhost:1337/metrics/Authentication Statistics File Resource Network Export ICPF Mail Domain End/4.3/2smao7xwboy0000000000"
     );
+  });
+
+  test("returns null when selectedServiceSlug is null", () => {
+    mockGetState.mockReturnValue({
+      ...mockstate,
+      fabric: { ...mockstate.fabric, selectedServiceSlug: null }
+    });
+    expect(buildDiscoveryServiceInstanceMetricsEndpoint()).toBeNull();
+  });
+
+  test("returns null when selectedServiceSlug is not in services", () => {
+    mockGetState.mockReturnValue({
+      ...mockstate,
+      fabric: {
+        ...mockstate.fabric,
+        selectedServiceSlug: "slug-not-yet-in-services"
+      }
+    });
+    expect(buildDiscoveryServiceInstanceMetricsEndpoint()).toBeNull();
   });
 });
 
