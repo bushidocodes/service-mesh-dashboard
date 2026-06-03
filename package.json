@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "axios": "^1.12.0",
-    "color": "^2.0.1",
+    "color": "^5.0.3",
     "dateformat": "^3.0.2",
     "dygraphs": "~2.1.0",
     "filesize": "~3.5.11",
@@ -162,7 +162,7 @@
       "^(?!.*\\.(js|jsx|css|json|cjs|mjs)$)": "<rootDir>/config/jest/fileTransform.js"
     },
     "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
+      "^(?!.*[/\\\\]node_modules[/\\\\](color|color-string|color-convert|color-name)[/\\\\]).*[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
     ],
     "moduleNameMapper": {
       "^react-native$": "react-native-web"
