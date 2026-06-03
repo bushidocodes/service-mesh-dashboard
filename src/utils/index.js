@@ -175,13 +175,16 @@ export function formatMetricString(rawValue, baseUnit, resultUnit, precision) {
  */
 export function blurTableRow(e) {
   let node = e.target;
-  while (
-    typeof node.className !== "string" ||
-    node.className.indexOf("TableRow") !== 0
-  ) {
+  while (node && node !== document.body) {
+    if (
+      typeof node.className === "string" &&
+      node.className.includes("TableRow")
+    ) {
+      node.blur();
+      return;
+    }
     node = node.parentNode;
   }
-  node.blur();
 }
 
 /**
