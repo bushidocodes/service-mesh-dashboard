@@ -10,7 +10,9 @@ export function buildDiscoveryServiceInstanceMetricsEndpoint() {
       services
     }
   } = getState();
-  const { name, version } = services[selectedServiceSlug];
+  const service = services[selectedServiceSlug];
+  if (!service) return null;
+  const { name, version } = service;
   return `${fabricServer}/metrics/${name}/${version}/${selectedInstanceID}`;
 }
 
