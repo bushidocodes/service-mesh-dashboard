@@ -125,40 +125,40 @@ describe("formatAsDecimalString", () => {
 });
 
 describe("blurTableRow", () => {
-  test("traverses up the DOM until it finds TableRow and removes focus", () => {
+  test("traverses up the DOM until it finds a TableRow ancestor and removes focus", () => {
     const spy = jest.fn((e) => blurTableRow(e));
-    // NOTE: blurTableRow matches the nearest ancestor whose className *begins*
-    // with "TableRow" (node.className.indexOf("TableRow") === 0). The styled
-    // TableRow component renders <li class="sc-xxx hash TableRow"> where the
-    // generated styled-components classes come first, so its class does NOT
-    // start with "TableRow" and would not be matched. To faithfully exercise
-    // the traversal-and-blur behavior the original test intended, the focusable
-    // ancestor here is a node whose class genuinely starts with "TableRow",
-    // nested inside the styled TableRow to preserve the original DOM shape.
+    // In production, babel-plugin-styled-components makes the TableRow <li>
+    // render with class "sc-xxx hash TableRow" — the component name appears
+    // after the hash, not at position 0. This div mimics that pattern so we
+    // can verify that includes("TableRow") finds it regardless of position.
     const { container, getByText } = render(
-      <TableRow>
-        <div className="TableRow-focus-target" tabIndex={0}>
-          <div className="div">
-            <span className="span" onClick={spy}>
-              Words
-            </span>
-          </div>
+      <div className="sc-fake hash123 TableRow" tabIndex={0}>
+        <div>
+          <span onClick={spy}>Words</span>
         </div>
-      </TableRow>
+      </div>
     );
-    const focusTarget = container.querySelector(".TableRow-focus-target");
+    const tableRowEl = container.firstChild;
     const span = getByText("Words");
 
-    // Focus the target first so the blur performed by blurTableRow is observable.
-    focusTarget.focus();
-    expect(document.activeElement).toBe(focusTarget);
+    tableRowEl.focus();
+    expect(document.activeElement).toBe(tableRowEl);
 
     fireEvent.click(span);
 
-    // The click handler ran (it wraps blurTableRow)...
     expect(spy).toHaveBeenCalled();
-    // ...and blurTableRow walked up the DOM to the TableRow node and blurred it.
-    expect(document.activeElement).not.toBe(focusTarget);
+    expect(document.activeElement).not.toBe(tableRowEl);
+  });
+
+  test("does not crash when no ancestor has a TableRow class", () => {
+    const spy = jest.fn((e) => blurTableRow(e));
+    const { getByText } = render(
+      <div>
+        <span onClick={spy}>Words</span>
+      </div>
+    );
+    expect(() => fireEvent.click(getByText("Words"))).not.toThrow();
+    expect(spy).toHaveBeenCalled();
   });
 });
 
