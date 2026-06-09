@@ -217,5 +217,5 @@ export function slugifyMicroservice(
   serviceVersion,
   slugifyFunc = slugify
 ) {
-  return slugifyFunc(`${serviceName}-v${serviceVersion.replace(".", "-")}`);
+  return slugifyFunc(`${serviceName}-v${serviceVersion.replace(/\./g, "-")}`);
 }
