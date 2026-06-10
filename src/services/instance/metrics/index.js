@@ -49,7 +49,7 @@ Effect("fetchMetricsSuccess", fetchMetricsSuccessEffect);
 function fetchMetricsFailureEffect(err) {
   const metricsPollingFailures = getState().instance.metricsPollingFailures;
   let errorMsg;
-  if (metricsPollingFailures > 3) {
+  if (metricsPollingFailures >= 3) {
     errorMsg = (
       <FormattedMessage
         id="instanceMetricsUtils.disableFetchError"
