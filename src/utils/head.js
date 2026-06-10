@@ -7,11 +7,10 @@
  * @returns {String}
  */
 export function getFabricServer() {
-  const fabricServer = document.head.querySelector(
-    "[property=fabricServer]"
-  ).content;
+  const metaTag = document.head.querySelector("[property=fabricServer]");
+  const fabricServer = metaTag ? metaTag.content : null;
   // Return the metatag if set
-  if (fabricServer !== "__FABRIC_SERVER__") {
+  if (fabricServer && fabricServer !== "__FABRIC_SERVER__") {
     return fabricServer;
   } else if (process.env.NODE_ENV === "development") {
     return "http://localhost:9000";
