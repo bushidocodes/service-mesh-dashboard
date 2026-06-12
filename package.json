@@ -74,7 +74,7 @@
     "jest-junit": "^16.0.0",
     "jest-styled-components": "^7.0.0",
     "junit-merge": "^1.2.3",
-    "lint-staged": "^15.0.0",
+    "lint-staged": "^17.0.7",
     "node-glob": "^1.2.0",
     "npm-check": "^5.5.2",
     "npm-run-all": "^4.1.2",
