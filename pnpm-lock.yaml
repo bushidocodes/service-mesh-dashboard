@@ -226,8 +226,8 @@ importers:
         specifier: ^2.0.0
         version: 2.0.0(stylelint@8.4.0)
       stylelint-processor-styled-components:
-        specifier: ^1.2.2
-        version: 1.2.2(typescript@4.7.4)
+        specifier: ^1.10.0
+        version: 1.10.0
       testcafe:
         specifier: ^3.7.4
         version: 3.7.4
@@ -5571,9 +5571,6 @@ packages:
   lodash.toarray@4.4.0:
     resolution: {integrity: sha512-QyffEA3i5dma5q2490+SgCvDN0pXLmRGSyAANuVi0HQ01Pkfr9fuoKQW8wm1wGBnJITs/mS7wQvS6VshUEBFCw==}
 
-  lodash.unescape@4.0.1:
-    resolution: {integrity: sha512-DhhGRshNS1aX6s5YdBE3njCCouPgnG29ebyHvImlZzXZf2SHgt+J08DHgytTPnpywNbO1Y8mNUFyQuIDBq2JZg==}
-
   lodash.uniq@4.5.0:
     resolution: {integrity: sha512-xfBaXQd9ryd9dlSDvnvI0lvxfLJlYAZzXomUYzLKtUeOQvOP5piqAWuGtrhWeqaXK9hhoM/iyJc5AV+XfsX3HQ==}
 
@@ -6483,6 +6480,9 @@ packages:
   performance-now@2.1.0:
     resolution: {integrity: sha512-7EAHlyLHI56VEIdK57uwHdHKIaAGbnXPiw0yWbarQZOKaKpvUIgW0jWRVLiatnM+XXlSwsanIBH/hzGMJulMow==}
 
+  picocolors@0.2.1:
+    resolution: {integrity: sha512-cMlDqaLEqfSaW8Z7N5Jw+lyIW869EzT73/F5lhtY9cLGoVxSXznfgfXMO0Z5K0o0Q2TkTXq+0KFsdnSe3jDViA==}
+
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
 
@@ -6609,6 +6609,10 @@ packages:
   postcss@6.0.23:
     resolution: {integrity: sha512-soOk1h6J3VMTZtVeVpv15/Hpdl2cBLX3CAw4TAbkpTJiNPk9YP/zWcD1ND+xEtvyuuvKzbxliTOIyvkSeSJ6ag==}
     engines: {node: '>=4.0.0'}
+
+  postcss@7.0.39:
+    resolution: {integrity: sha512-yioayjNbHn6z1/Bywyb2Y4s3yvDAeXGOyxqD+LnVOinq6Mdmd++SW2wUNVzavyyHxd6+DxzWGIuosg6P1Rj8uA==}
+    engines: {node: '>=6.0.0'}
 
   postcss@8.5.15:
     resolution: {integrity: sha512-FfR8sjd4em2T6fb3I2MwAJU7HWVMr9zba+enmQeeWFfCbm+UOC/0X4DS8XtpUTMwWMGbjKYP7xjfNekzyGmB3A==}
@@ -7258,10 +7262,6 @@ packages:
     resolution: {integrity: sha512-gL8F8L4ORwsS0+iQ34yCYv///jsOq0ZL7WP55d1HnJ32o7tyFYEFQZQA22mrLIacZdU6xecaBBZ+uEiffGNyXw==}
     engines: {node: '>=0.10.0'}
 
-  semver@5.4.1:
-    resolution: {integrity: sha512-WfG/X9+oATh81XtllIo/I8gOiY9EXRdv1cQdyykeXK17YcUW3EXUAi2To4pcH6nZtJPr7ZOpM5OMyWJZm+8Rsg==}
-    hasBin: true
-
   semver@5.7.2:
     resolution: {integrity: sha512-cBznnQ9KjJqU67B52RMC65CMarK2600WFnbkcaiwWq3xy/5haFJlshgnpjovMVJ+Hff49d8GEn0b87C5pDQ10g==}
     hasBin: true
@@ -7691,8 +7691,8 @@ packages:
     peerDependencies:
       stylelint: '>=5.0.0'
 
-  stylelint-processor-styled-components@1.2.2:
-    resolution: {integrity: sha512-BncQjbplEaoIT5Pqr9llIBRoO72duNojBpsxG6nYfkMMCHnJVWrLgSM83qsvbB7tYD4RkaS/gZhHuP0sLBuCRg==}
+  stylelint-processor-styled-components@1.10.0:
+    resolution: {integrity: sha512-g4HpN9rm0JD0LoHuIOcd/FIjTZCJ0ErQ+dC3VTxp+dSvnkV+MklKCCmCQEdz5K5WxF4vPuzfVgdbSDuPYGZhoA==}
 
   stylelint@8.4.0:
     resolution: {integrity: sha512-56hPH5mTFnk8LzlEuTWq0epa34fHuS54UFYQidBOFt563RJBNi1nz1F2HK2MoT1X1waq47milvRsRahFCCJs/Q==}
@@ -7999,12 +7999,6 @@ packages:
 
   typedarray@0.0.6:
     resolution: {integrity: sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==}
-
-  typescript-eslint-parser@10.0.0:
-    resolution: {integrity: sha512-/0U5FF3uHJCh8qTo6RmH2ooq0HgOaT3yNx3bRURF4Iv7/43l0ERY8LwbP5Be7b/QLkJKX5So9tVDU/PvYxgu3A==}
-    engines: {node: '>=4'}
-    peerDependencies:
-      typescript: '*'
 
   typescript@4.7.4:
     resolution: {integrity: sha512-C0WQT0gezHuw6AdY1M2jxUO83Rjf0HP7Sk1DtXj6j1EwkQNZrHAg2XPWlq62oqEhYvONq5pkC2Y9oPljWToLmQ==}
@@ -14962,8 +14956,6 @@ snapshots:
 
   lodash.toarray@4.4.0: {}
 
-  lodash.unescape@4.0.1: {}
-
   lodash.uniq@4.5.0: {}
 
   lodash.upperfirst@4.3.1: {}
@@ -15830,6 +15822,8 @@ snapshots:
 
   performance-now@2.1.0: {}
 
+  picocolors@0.2.1: {}
+
   picocolors@1.1.1: {}
 
   picomatch@2.3.2: {}
@@ -15940,6 +15934,11 @@ snapshots:
       chalk: 2.4.2
       source-map: 0.6.1
       supports-color: 5.5.0
+
+  postcss@7.0.39:
+    dependencies:
+      picocolors: 0.2.1
+      source-map: 0.6.1
 
   postcss@8.5.15:
     dependencies:
@@ -16732,8 +16731,6 @@ snapshots:
     dependencies:
       semver: 5.7.2
 
-  semver@5.4.1: {}
-
   semver@5.7.2: {}
 
   semver@6.3.1: {}
@@ -17240,15 +17237,14 @@ snapshots:
       postcss: 6.0.23
       stylelint: 8.4.0
 
-  stylelint-processor-styled-components@1.2.2(typescript@4.7.4):
+  stylelint-processor-styled-components@1.10.0:
     dependencies:
-      babel-traverse: 6.26.0
-      babylon: 6.18.0
-      postcss: 6.0.23
-      typescript-eslint-parser: 10.0.0(typescript@4.7.4)
+      '@babel/parser': 7.29.7
+      '@babel/traverse': 7.29.7(supports-color@5.5.0)
+      micromatch: 4.0.8
+      postcss: 7.0.39
     transitivePeerDependencies:
       - supports-color
-      - typescript
 
   stylelint@8.4.0:
     dependencies:
@@ -17749,12 +17745,6 @@ snapshots:
       reflect.getprototypeof: 1.0.10
 
   typedarray@0.0.6: {}
-
-  typescript-eslint-parser@10.0.0(typescript@4.7.4):
-    dependencies:
-      lodash.unescape: 4.0.1
-      semver: 5.4.1
-      typescript: 4.7.4
 
   typescript@4.7.4: {}
 
