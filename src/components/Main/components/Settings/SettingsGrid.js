@@ -1,4 +1,4 @@
-import filesize from "filesize";
+import { filesize } from "filesize";
 import { Actions } from "store/jumpstate";
 import objectSizeOf from "object-sizeof";
 import { PropTypes } from "prop-types";
@@ -175,7 +175,7 @@ function mapStateToProps({
     isPollingFabric,
     isPollingInstanceMetrics,
     selectedInstanceID,
-    metricsCacheSize: filesize(objectSizeOf(metrics))
+    metricsCacheSize: filesize(objectSizeOf(metrics), { standard: "jedec" })
   };
 }
 
