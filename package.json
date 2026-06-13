@@ -21,7 +21,7 @@
     "dygraphs": "~2.1.0",
     "filesize": "~11.0.17",
     "js-quantities": "^1.7.0",
-    "lodash": "~4.17.4",
+    "lodash": "~4.17.23",
     "object-sizeof": "^1.2.0",
     "prop-types": "^15.6.0",
     "react": "^18.0.0",
