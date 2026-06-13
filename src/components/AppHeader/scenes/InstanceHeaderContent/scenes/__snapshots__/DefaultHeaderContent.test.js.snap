@@ -145,6 +145,7 @@ exports[`DefaultHeaderContent matches snapshot 1`] = `
   >
     <a
       class="c1"
+      data-discover="true"
       href="/explorer"
     >
       <div

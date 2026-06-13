@@ -466,6 +466,7 @@ exports[`AppHeader snapshots matches snapshot with fabric view tabs 1`] = `
           class="c5"
         >
           <a
+            data-discover="true"
             href="/"
           >
             Fabric
@@ -479,6 +480,7 @@ exports[`AppHeader snapshots matches snapshot with fabric view tabs 1`] = `
           class="c7"
         >
           <a
+            data-discover="true"
             href="/"
           >
             fabric
@@ -488,6 +490,7 @@ exports[`AppHeader snapshots matches snapshot with fabric view tabs 1`] = `
           class="c7"
         >
           <a
+            data-discover="true"
             href="/Down"
           >
             Down
@@ -529,6 +532,7 @@ exports[`AppHeader snapshots matches snapshot with fabric view tabs 1`] = `
       >
         <a
           class=""
+          data-discover="true"
           href="/settings"
           title="Settings"
         >
@@ -580,6 +584,7 @@ exports[`AppHeader snapshots matches snapshot with fabric view tabs 1`] = `
     >
       <a
         class="c19"
+        data-discover="true"
         href="/"
       >
         <div
@@ -638,6 +643,7 @@ exports[`AppHeader snapshots matches snapshot with fabric view tabs 1`] = `
       <a
         aria-current="page"
         class="c19 active"
+        data-discover="true"
         href="/Down"
       >
         <div
@@ -699,6 +705,7 @@ exports[`AppHeader snapshots matches snapshot with fabric view tabs 1`] = `
       </a>
       <a
         class="c19"
+        data-discover="true"
         href="/Warning"
       >
         <div
@@ -762,6 +769,7 @@ exports[`AppHeader snapshots matches snapshot with fabric view tabs 1`] = `
       </a>
       <a
         class="c19"
+        data-discover="true"
         href="/Stable"
       >
         <div
@@ -1292,6 +1300,7 @@ exports[`AppHeader snapshots matches snapshot with instance view tabs 1`] = `
           class="c5"
         >
           <a
+            data-discover="true"
             href="/"
           >
             Fabric
@@ -1305,6 +1314,7 @@ exports[`AppHeader snapshots matches snapshot with instance view tabs 1`] = `
           class="c7"
         >
           <a
+            data-discover="true"
             href="/"
           >
             fabric
@@ -1314,6 +1324,7 @@ exports[`AppHeader snapshots matches snapshot with instance view tabs 1`] = `
           class="c7"
         >
           <a
+            data-discover="true"
             href="/Down"
           >
             Down
@@ -1355,6 +1366,7 @@ exports[`AppHeader snapshots matches snapshot with instance view tabs 1`] = `
       >
         <a
           class=""
+          data-discover="true"
           href="/settings"
           title="Settings"
         >
@@ -1406,6 +1418,7 @@ exports[`AppHeader snapshots matches snapshot with instance view tabs 1`] = `
     >
       <a
         class="c19"
+        data-discover="true"
         href="/"
       >
         <div
@@ -1464,6 +1477,7 @@ exports[`AppHeader snapshots matches snapshot with instance view tabs 1`] = `
       <a
         aria-current="page"
         class="c19 active"
+        data-discover="true"
         href="/Down"
       >
         <div
@@ -1525,6 +1539,7 @@ exports[`AppHeader snapshots matches snapshot with instance view tabs 1`] = `
       </a>
       <a
         class="c19"
+        data-discover="true"
         href="/Warning"
       >
         <div
@@ -1588,6 +1603,7 @@ exports[`AppHeader snapshots matches snapshot with instance view tabs 1`] = `
       </a>
       <a
         class="c19"
+        data-discover="true"
         href="/Stable"
       >
         <div
