@@ -144,6 +144,7 @@
     ],
     "testPathIgnorePatterns": [
       "/node_modules/",
+      "/.claude/worktrees/",
       "<rootDir>/src/Storyshots.test.js"
     ],
     "testEnvironment": "jsdom",
