@@ -21,8 +21,8 @@ importers:
         specifier: ~2.1.0
         version: 2.1.0
       filesize:
-        specifier: ~3.5.11
-        version: 3.5.11
+        specifier: ~11.0.17
+        version: 11.0.17
       js-quantities:
         specifier: ^1.7.0
         version: 1.7.0
@@ -4069,9 +4069,9 @@ packages:
     resolution: {integrity: sha512-BTCqyBaWBTsauvnHiE8i562+EdJj+oUpkqWp2R1iCoR8f6oo8STRu3of7WJJ0TqWtxN50a5YFpzYK4Jj9esYfQ==}
     engines: {node: '>=0.10.0'}
 
-  filesize@3.5.11:
-    resolution: {integrity: sha512-ZH7loueKBoDb7yG9esn1U+fgq7BzlzW6NRi5/rMdxIZ05dj7GFD/Xc5rq2CDt5Yq86CyfSYVyx4242QQNZbx1g==}
-    engines: {node: '>= 0.4.0'}
+  filesize@11.0.17:
+    resolution: {integrity: sha512-oHLTvMLw6imZUl1se/RBQrFlyy50nXce4sU7yGR6Qc0JgCwqnfiFsAnEwotdGmfKLD7SArGUk2/5STU0k8LOBQ==}
+    engines: {node: '>= 10.8.0'}
 
   fill-range@2.2.4:
     resolution: {integrity: sha512-cnrcCbj01+j2gTG921VZPnHbjmdAf8oQV/iGeV2kZxGSyfYjjTyY79ErsK1WJWMpw6DaApEX72binqJE+/d+5Q==}
@@ -13179,7 +13179,7 @@ snapshots:
 
   filename-regex@2.0.1: {}
 
-  filesize@3.5.11: {}
+  filesize@11.0.17: {}
 
   fill-range@2.2.4:
     dependencies:

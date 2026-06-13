@@ -19,7 +19,7 @@
     "color": "^5.0.3",
     "dateformat": "^3.0.2",
     "dygraphs": "~2.1.0",
-    "filesize": "~3.5.11",
+    "filesize": "~11.0.17",
     "js-quantities": "^1.7.0",
     "lodash": "~4.17.4",
     "object-sizeof": "^1.2.0",
