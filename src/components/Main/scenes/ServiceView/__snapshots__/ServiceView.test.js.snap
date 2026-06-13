@@ -497,6 +497,7 @@ exports[`Service View matches snapshot 1`] = `
             >
               <a
                 class="c13"
+                data-discover="true"
                 href="/cool-service-v1-0/serviceID1"
               >
                 serviceID1
@@ -543,6 +544,7 @@ exports[`Service View matches snapshot 1`] = `
             >
               <a
                 class="c13"
+                data-discover="true"
                 href="/cool-service-v1-0/serviceID2"
               >
                 serviceID2
@@ -589,6 +591,7 @@ exports[`Service View matches snapshot 1`] = `
             >
               <a
                 class="c13"
+                data-discover="true"
                 href="/cool-service-v1-0/serviceID3"
               >
                 serviceID3

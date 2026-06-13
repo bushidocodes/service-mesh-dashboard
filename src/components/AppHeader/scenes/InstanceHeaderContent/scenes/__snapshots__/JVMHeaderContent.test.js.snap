@@ -178,6 +178,7 @@ exports[`JVMHeaderContent matches snapshot 1`] = `
   >
     <a
       class="c1"
+      data-discover="true"
       href="/undefined/summary"
     >
       <div
@@ -250,6 +251,7 @@ exports[`JVMHeaderContent matches snapshot 1`] = `
     </a>
     <a
       class="c1"
+      data-discover="true"
       href="/undefined/routes"
     >
       <div
@@ -307,6 +309,7 @@ exports[`JVMHeaderContent matches snapshot 1`] = `
     </a>
     <a
       class="c1"
+      data-discover="true"
       href="/undefined/threads"
     >
       <div
@@ -444,6 +447,7 @@ exports[`JVMHeaderContent matches snapshot 1`] = `
     </a>
     <a
       class="c1"
+      data-discover="true"
       href="/undefined/explorer"
     >
       <div

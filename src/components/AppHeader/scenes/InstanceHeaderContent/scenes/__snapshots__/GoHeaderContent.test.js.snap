@@ -167,6 +167,7 @@ exports[`GoHeaderContent matches snapshot 1`] = `
   >
     <a
       class="c1"
+      data-discover="true"
       href="/undefined/summary"
     >
       <div
@@ -226,6 +227,7 @@ exports[`GoHeaderContent matches snapshot 1`] = `
     </a>
     <a
       class="c1"
+      data-discover="true"
       href="/undefined/routes"
     >
       <div
@@ -283,6 +285,7 @@ exports[`GoHeaderContent matches snapshot 1`] = `
     </a>
     <a
       class="c1"
+      data-discover="true"
       href="/undefined/functions"
     >
       <div
@@ -340,6 +343,7 @@ exports[`GoHeaderContent matches snapshot 1`] = `
     </a>
     <a
       class="c1"
+      data-discover="true"
       href="/undefined/explorer"
     >
       <div
