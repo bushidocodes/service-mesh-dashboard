@@ -143,11 +143,10 @@ class RoutesGrid extends Component {
             <Table
               type={"Route"}
               items={this.sort(
-                this.props.routes.filter(
-                  (routeObj) =>
-                    routeObj.route
-                      .toLowerCase()
-                      .indexOf(filterString.trim().toLowerCase()) !== -1
+                this.props.routes.filter((routeObj) =>
+                  routeObj.route
+                    .toLowerCase()
+                    .includes(filterString.trim().toLowerCase())
                 )
               )}
             />

@@ -79,7 +79,7 @@ export function modes(array) {
     }
 
     for (i in count)
-      if (count.hasOwnProperty(i)) {
+      if (Object.hasOwn(count, i)) {
         if (count[i] === maxIndex) {
           modes.push(Number(i));
         }
@@ -114,7 +114,7 @@ export function screenReaderGraphDescription(timeSeries, title, intl) {
       median: median(numericalTimeSeries).toFixed(2),
       average: average(numericalTimeSeries).toFixed(2),
       mode: modes(numericalTimeSeries),
-      max: numericalTimeSeries.sort()[numericalTimeSeries.length - 1],
+      max: numericalTimeSeries.sort().at(-1),
       min: numericalTimeSeries.sort()[0],
       dataPoints: numericalTimeSeries.length,
       // react-intl v3+ formatMessage returns an array when a `values` entry
@@ -129,11 +129,12 @@ export function screenReaderGraphDescription(timeSeries, title, intl) {
       typeof screenReaderGraphData.mode !== "string" &&
       screenReaderGraphData.mode.length > 1
     ) {
-      screenReaderGraphData = Object.assign({}, screenReaderGraphData, {
+      screenReaderGraphData = {
+        ...screenReaderGraphData,
         mode: `Mode has frequency of ${
           screenReaderGraphData.mode.pop().frequency
         } and values of ${screenReaderGraphData.mode}`
-      });
+      };
     }
 
     return intl.formatMessage(

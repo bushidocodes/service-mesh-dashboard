@@ -36,8 +36,8 @@ export function getLocale() {
   );
 
   // return the first locale that matches one of our supported locales
-  const preferredLocale = locales.find(
-    (locale) => SUPPORTED_LOCALES.indexOf(locale) !== -1
+  const preferredLocale = locales.find((locale) =>
+    SUPPORTED_LOCALES.includes(locale)
   );
 
   return preferredLocale || DEFAULT_LOCALE;

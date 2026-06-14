@@ -85,8 +85,8 @@ export default defineConfig({
   },
 
   server: {
-    port: 3000,
-    open: true,
+    port: parseInt(process.env.PORT, 10) || 3000,
+    open: false,
     // Proxy API requests to the mock discovery service so the browser
     // never makes cross-origin calls (avoids the CORS issue with absolute URLs).
     proxy: {

@@ -142,11 +142,10 @@ class FunctionsGrid extends Component {
             <Table
               type={"Function"}
               items={this.sort(
-                this.props.funcs.filter(
-                  (funcObj) =>
-                    funcObj.func
-                      .toLowerCase()
-                      .indexOf(filterString.trim().toLowerCase()) !== -1
+                this.props.funcs.filter((funcObj) =>
+                  funcObj.func
+                    .toLowerCase()
+                    .includes(filterString.trim().toLowerCase())
                 )
               )}
             />

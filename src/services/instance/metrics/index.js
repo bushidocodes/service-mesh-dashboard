@@ -14,15 +14,18 @@ import {
  * @param {string} endpoint - a string containing the target URL of the metrics endpoint
  * @returns
  */
-function fetchAndStoreInstanceMetricsEffect(
+async function fetchAndStoreInstanceMetricsEffect(
   endpoint = buildDiscoveryServiceInstanceMetricsEndpoint()
 ) {
   if (!endpoint) {
     console.log("Fetching metrics failed because metrics endpoint was missing");
-  } else {
-    fetchInstanceMetrics(endpoint)
-      .then((json) => Actions.fetchMetricsSuccess(json))
-      .catch((err) => Actions.fetchMetricsFailure(err));
+    return;
+  }
+  try {
+    const json = await fetchInstanceMetrics(endpoint);
+    Actions.fetchMetricsSuccess(json);
+  } catch (err) {
+    Actions.fetchMetricsFailure(err);
   }
 }
 Effect("fetchAndStoreInstanceMetrics", fetchAndStoreInstanceMetricsEffect);

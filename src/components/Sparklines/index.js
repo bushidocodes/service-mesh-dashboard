@@ -106,7 +106,7 @@ export function SparklinesLine({
   // Close the area polygon: drop to the baseline under the last point, run
   // along the baseline to the left margin, then back up to the first point.
   const closePolyPoints = [
-    points[points.length - 1].x,
+    points.at(-1).x,
     height - margin,
     margin,
     height - margin,
@@ -194,7 +194,7 @@ export function SparklinesReferenceLine({
     <line
       x1={points[0].x}
       y1={y + margin}
-      x2={points[points.length - 1].x}
+      x2={points.at(-1).x}
       y2={y + margin}
       style={style}
     />

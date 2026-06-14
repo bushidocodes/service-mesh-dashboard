@@ -120,9 +120,8 @@ class ServiceView extends Component {
             selectedServiceSlug={selectedServiceSlug}
             serviceIsMetered={serviceIsMetered}
             items={_.orderBy(
-              instances.filter(
-                ({ name }) =>
-                  name.toLowerCase().indexOf(filterString.toLowerCase()) !== -1
+              instances.filter(({ name }) =>
+                name.toLowerCase().includes(filterString.toLowerCase())
               ),
               [sortByAttribute.toLowerCase()],
               sortOrder

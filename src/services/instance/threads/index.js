@@ -7,11 +7,14 @@ import { fetchInstanceThreads } from "./apis";
  * @param {string}
  * @returns
  */
-function fetchAndStoreInstanceThreadsEffect(endpoint) {
+async function fetchAndStoreInstanceThreadsEffect(endpoint) {
   if (!endpoint) return;
-  fetchInstanceThreads(endpoint)
-    .then((json) => Actions.fetchThreadsSuccess(json))
-    .catch((err) => Actions.fetchThreadsFailure(err));
+  try {
+    const json = await fetchInstanceThreads(endpoint);
+    Actions.fetchThreadsSuccess(json);
+  } catch (err) {
+    Actions.fetchThreadsFailure(err);
+  }
 }
 Effect("fetchAndStoreInstanceThreads", fetchAndStoreInstanceThreadsEffect);
 

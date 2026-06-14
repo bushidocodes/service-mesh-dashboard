@@ -42,7 +42,7 @@ export default function ThreadsTable({
 
     // Create an object with keys matching headers
     // and values being an array of corresponding thread objects
-    const dataGroupedByHeader = _.groupBy(
+    const dataGroupedByHeader = Object.groupBy(
       mappedThreads,
       (thread) => thread.header
     );
