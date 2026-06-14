@@ -37,9 +37,7 @@ class Inspector extends Component {
     let { hideZeroMetric, hideStaticMetric } = this.props;
     // Filter out keys that don't match the searchQuery
     const filteredData = searchQuery
-      ? data.filter(
-          (i) => i.toLowerCase().indexOf(searchQuery.toLowerCase()) !== -1
-        )
+      ? data.filter((i) => i.toLowerCase().includes(searchQuery.toLowerCase()))
       : data;
 
     // ticking checkbox to hide all static metrics automatically

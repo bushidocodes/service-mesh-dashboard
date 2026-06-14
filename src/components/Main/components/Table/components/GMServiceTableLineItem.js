@@ -32,7 +32,7 @@ function GMServiceTableLineItem({
     let node = e.target;
     while (
       typeof node.className !== "string" ||
-      node.className.indexOf("TableRow") !== 0
+      !node.className.startsWith("TableRow")
     ) {
       node = node.parentNode;
     }

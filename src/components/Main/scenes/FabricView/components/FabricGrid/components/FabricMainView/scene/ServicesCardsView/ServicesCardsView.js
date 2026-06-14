@@ -23,7 +23,7 @@ CardsView.propTypes = {
 
 function CardsView({ ascending, groupByAttribute, sortByAttribute, services }) {
   if (groupByAttribute !== "None") {
-    const dataGroupedByHeader = _.groupBy(services, (item) =>
+    const dataGroupedByHeader = Object.groupBy(services, (item) =>
       item.headerTitle.toLowerCase()
     );
     const headerTitles = Object.keys(dataGroupedByHeader);
@@ -63,7 +63,7 @@ function CardsView({ ascending, groupByAttribute, sortByAttribute, services }) {
                   [
                     (item) =>
                       sortByAttribute === "Status"
-                        ? _.indexOf(microserviceStatuses, item.status)
+                        ? microserviceStatuses.indexOf(item.status)
                         : item.name,
                     "name"
                   ],
@@ -86,7 +86,7 @@ function CardsView({ ascending, groupByAttribute, sortByAttribute, services }) {
                 [
                   (item) =>
                     sortByAttribute === "Status"
-                      ? _.indexOf(microserviceStatuses, item.status)
+                      ? microserviceStatuses.indexOf(item.status)
                       : item.name,
                   "name"
                 ],

@@ -82,11 +82,9 @@ class FabricGrid extends Component {
       intl
     } = this.props;
     const filteredServices = services.filter((service) => {
-      return (
-        service.name
-          .toLowerCase()
-          .indexOf(searchQuery && searchQuery.toLowerCase()) !== -1
-      );
+      return service.name
+        .toLowerCase()
+        .includes(searchQuery?.toLowerCase() ?? "");
     });
 
     // If we're not rendering a statusView,

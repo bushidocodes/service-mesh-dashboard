@@ -156,7 +156,7 @@ function generatelegendFormatter(dygraphMetadata = {}, labels, colors) {
     }
     const xAxisLabel = labels[0];
     const xAxisValue = data.xHTML;
-    var html = `${xAxisLabel}: ${xAxisValue}<br>`;
+    let html = `${xAxisLabel}: ${xAxisValue}<br>`;
     html += data.series
       .map((ts, idx) => {
         const match =

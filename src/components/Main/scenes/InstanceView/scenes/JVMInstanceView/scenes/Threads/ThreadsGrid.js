@@ -99,10 +99,8 @@ class ThreadsGrid extends Component {
       },
       intl
     } = this.props;
-    const filteredThreads = threads.filter(
-      (thread) =>
-        thread.name.toLowerCase().indexOf(filterString.trim().toLowerCase()) !==
-        -1
+    const filteredThreads = threads.filter((thread) =>
+      thread.name.toLowerCase().includes(filterString.trim().toLowerCase())
     );
 
     if (threads && threads.length > 0) {

@@ -21,7 +21,7 @@ export const getSelectedServiceSlug = (state) =>
 export const getSelectedService = createSelector(
   [getSelectedServiceSlug, getServices],
   (slug, services) => {
-    if (Object.keys(services).indexOf(slug) !== -1) {
+    if (Object.hasOwn(services, slug)) {
       return services[slug];
     } else {
       return null;
@@ -68,7 +68,7 @@ export const getBaseInstanceRoute = createSelector(
 export function metricsKeySelectorGenerator(keyQuery, isPrefix = true) {
   const filterFunc = isPrefix
     ? (key) => key.substr(0, keyQuery.length) === keyQuery
-    : (key) => key.indexOf(keyQuery) !== -1;
+    : (key) => key.includes(keyQuery);
   return createSelector([getMetrics], (metrics) =>
     _.pick(metrics, Object.keys(metrics).filter(filterFunc))
   );
@@ -104,7 +104,7 @@ function _buildRoutesTree(routeMetrics) {
         }
         if (!acc[path]) {
           acc[path] = [verb];
-        } else if (acc[path].indexOf(verb) === -1) {
+        } else if (!acc[path].includes(verb)) {
           acc[path] = [...acc[path], verb];
         }
       }

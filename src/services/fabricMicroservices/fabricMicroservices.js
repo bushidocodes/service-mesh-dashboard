@@ -10,26 +10,19 @@ import _ from "lodash";
 
 const memoizedSlugifyMicroservice = _.memoize(slugifyMicroservice);
 
-export function fetchFabricMicroservices(fabricServer) {
-  if (fabricServer) {
-    return axios
-      .get(`${fabricServer}/services`, { responseType: "json" })
-      .then((response) => response.data)
-      .then((arrayOfServices) =>
-        arrayOfServices.map((service) => ({
-          ...service,
-          slug: memoizedSlugifyMicroservice(service.name, service.version)
-        }))
-      )
-      .then((arrayOfServices) =>
-        arrayOfServices.reduce((result, service) => {
-          result[service.slug] = service;
-          return result;
-        }, {})
-      );
-  } else {
-    return Promise.reject("Invalid endpoint");
-  }
+export async function fetchFabricMicroservices(fabricServer) {
+  if (!fabricServer) return Promise.reject("Invalid endpoint");
+  const response = await axios.get(`${fabricServer}/services`, {
+    responseType: "json"
+  });
+  const withSlugs = response.data.map((service) => ({
+    ...service,
+    slug: memoizedSlugifyMicroservice(service.name, service.version)
+  }));
+  return withSlugs.reduce((result, service) => {
+    result[service.slug] = service;
+    return result;
+  }, {});
 }
 
 /**
@@ -38,17 +31,20 @@ export function fetchFabricMicroservices(fabricServer) {
  * @param {any} [fabricServer=getState().settings.fabricServer]
  * @returns
  */
-export function fetchAndStoreFabricMicroservicesEffect(
+export async function fetchAndStoreFabricMicroservicesEffect(
   fabricServer = getFabricServer()
 ) {
   if (!fabricServer) {
     console.log(
       "Fetching microservices failed because Discovery Service endpoint was missing"
     );
-  } else {
-    fetchFabricMicroservices(fabricServer)
-      .then((results) => Actions.fetchFabricMicroservicesSuccess(results))
-      .catch((err) => Actions.fetchFabricMicroservicesFailure(err));
+    return;
+  }
+  try {
+    const results = await fetchFabricMicroservices(fabricServer);
+    Actions.fetchFabricMicroservicesSuccess(results);
+  } catch (err) {
+    Actions.fetchFabricMicroservicesFailure(err);
   }
 }
 
@@ -175,10 +171,7 @@ export function selectInstanceEffect({ instanceID, serviceSlug }) {
     // and then start polling
     Actions.startPollingInstanceMetrics();
     // and then load dashboards
-    const runtime =
-      fabric && fabric.services && fabric.services[serviceSlug]
-        ? fabric.services[serviceSlug].runtime
-        : "";
+    const runtime = fabric?.services?.[serviceSlug]?.runtime ?? "";
     // Note: If we don't know the runtime we ran this function before getting a response from the Fabric server
     // so we don't know what type of runtime the microservice is
     // The current workaround for this issue is in componentWillReceiveProps in App
