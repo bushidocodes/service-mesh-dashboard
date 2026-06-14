@@ -92,8 +92,7 @@
     "stylelint-processor-styled-components": "^1.10.0",
     "testcafe": "^3.7.4",
     "testcafe-react-selectors": "^5.0.3",
-    "vite": "^5.4.21",
-    "whatwg-fetch": "^3.6.20"
+    "vite": "^5.4.21"
   },
   "scripts": {
     "build": "vite build",
