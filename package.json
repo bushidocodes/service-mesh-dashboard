@@ -70,9 +70,7 @@
     "husky": "^9.1.7",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
-    "jest-junit": "^16.0.0",
     "jest-styled-components": "^7.0.0",
-    "junit-merge": "^1.2.3",
     "lint-staged": "^17.0.7",
     "npm-check": "^5.5.2",
     "npm-run-all": "^4.1.2",
@@ -97,7 +95,6 @@
     "draft-github-release": "node scripts/generateGitHubDraft.js",
     "docs": "cross-env NODE_ENV=production node ./node_modules/documentation/bin/documentation.js build src/index.js -f md -o docs.md",
     "format": "prettier --write 'src/**/*.{js,jsx}'",
-    "junit-merge": "junit-merge",
     "lint-css": "stylelint --formatter string 'src/**/*.{js,jsx}'",
     "lint-js": "node ./node_modules/eslint/bin/eslint src/",
     "mock-sds": "node json-mock/discovery-service/sds.js",
@@ -116,13 +113,6 @@
   },
   "lint-staged": {
     "*.js": "prettier --write"
-  },
-  "jest-junit": {
-    "suiteName": "GM Fabric",
-    "classNameTemplate": "{classname}",
-    "titleTemplate": "{title}",
-    "ancestorSeparator": " › ",
-    "usePathForSuiteName": "true"
   },
   "jest": {
     "setupFiles": [
