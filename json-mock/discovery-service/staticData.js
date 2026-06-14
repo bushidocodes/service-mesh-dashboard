@@ -82,6 +82,4 @@ const staticServices = [
   }
 ];
 
-module.exports = {
-  staticServices
-};
+export { staticServices };
