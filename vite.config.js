@@ -71,9 +71,7 @@ export default defineConfig({
       dygraphs: path.resolve(
         __dirname,
         "node_modules/dygraphs/src-es5/dygraph.js"
-      ),
-      // Some older deps reference react-native — shim to react-native-web
-      "react-native": "react-native-web"
+      )
     }
   },
 
