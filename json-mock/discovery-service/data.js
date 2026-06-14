@@ -1,4 +1,4 @@
-var _ = require("lodash");
+import _ from "lodash";
 
 const serviceNamePrefix = [
   "AAC",
@@ -164,6 +164,4 @@ const getRandomService = (quantity = 150) => {
 
 const services = getRandomService();
 
-module.exports = {
-  services
-};
+export { services };

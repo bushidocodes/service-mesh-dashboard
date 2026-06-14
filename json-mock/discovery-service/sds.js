@@ -1,11 +1,15 @@
-const { services } = require("./data");
-const express = require("express");
-const cors = require("cors");
+import { services } from "./data.js";
+import express from "express";
+import cors from "cors";
+import { createRequire } from "module";
+import _ from "lodash";
+import { PORT } from "../constants.js";
+
+// JSON imports use createRequire for broad Node.js compatibility
+const require = createRequire(import.meta.url);
 const jvmMetrics = require("../jvm/metrics.json");
 const jvmThreads = require("../jvm/threads.json");
 const goMetrics = require("../go/metricsWithFunctions.json");
-const _ = require("lodash");
-const { PORT } = require("../constants");
 
 const app = express();
 app.use(cors());
@@ -30,7 +34,7 @@ app.listen(PORT, () =>
 app.get("/services", cors(), (req, res, next) => {
   if (req.query.group) {
     return res.json(
-      _.filter(services, service => service.group === req.query.group)
+      _.filter(services, (service) => service.group === req.query.group)
     );
   } else {
     return res.json(services);
@@ -40,12 +44,15 @@ app.get("/services", cors(), (req, res, next) => {
 app.get("/metrics/:service/:version/:instance", cors(), (req, res, next) => {
   const { service, version, instance } = req.params;
   const selectedService = services.find(
-    serviceObj => serviceObj.name === service && serviceObj.version === version
+    (serviceObj) =>
+      serviceObj.name === service && serviceObj.version === version
   );
   if (
     selectedService &&
     selectedService.runtime &&
-    selectedService.instances.map(instance => instance.name).includes(instance)
+    selectedService.instances
+      .map((instance) => instance.name)
+      .includes(instance)
   ) {
     if (selectedService.runtime === "JVM") {
       return res.json(incrementJVMMetrics(jvmMetrics));
@@ -60,12 +67,15 @@ app.get("/metrics/:service/:version/:instance", cors(), (req, res, next) => {
 app.get("/threads/:service/:version/:instance", cors(), (req, res, next) => {
   const { service, version, instance } = req.params;
   const selectedService = services.find(
-    serviceObj => serviceObj.name === service && serviceObj.version === version
+    (serviceObj) =>
+      serviceObj.name === service && serviceObj.version === version
   );
   if (
     selectedService &&
     selectedService.runtime &&
-    selectedService.instances.map(instance => instance.name).includes(instance)
+    selectedService.instances
+      .map((instance) => instance.name)
+      .includes(instance)
   ) {
     if (selectedService.runtime === "JVM") {
       return res.json(jvmThreads);
@@ -80,23 +90,19 @@ app.get("/threads/:service/:version/:instance", cors(), (req, res, next) => {
 function incrementJVMMetrics(metricsObj) {
   const requestsESS = Math.floor(Math.random() * 10) + 1;
   const successesESS = Math.floor(Math.random() * requestsESS);
-  metricsObj[
-    "route/images_MicroserviceEssOverviewpng/GET/requests"
-  ] += requestsESS;
+  metricsObj["route/images_MicroserviceEssOverviewpng/GET/requests"] +=
+    requestsESS;
   metricsObj["https/requests"] += requestsESS;
-  metricsObj[
-    "route/images_MicroserviceEssOverviewpng/GET/status/2XX"
-  ] += successesESS;
+  metricsObj["route/images_MicroserviceEssOverviewpng/GET/status/2XX"] +=
+    successesESS;
 
   const requestsESSDot = Math.floor(Math.random() * 10) + 1;
   const successesESSDot = Math.floor(Math.random() * requestsESS);
-  metricsObj[
-    "route/images/MicroserviceEssOverview.png/GET/requests"
-  ] += requestsESSDot;
+  metricsObj["route/images/MicroserviceEssOverview.png/GET/requests"] +=
+    requestsESSDot;
   metricsObj["https/requests"] += requestsESSDot;
-  metricsObj[
-    "route/images/MicroserviceEssOverview.png/GET/status/2XX"
-  ] += successesESSDot;
+  metricsObj["route/images/MicroserviceEssOverview.png/GET/status/2XX"] +=
+    successesESSDot;
 
   const requestsSearchPost = Math.floor(Math.random() * 10) + 1;
   const successesSearchPost = Math.floor(Math.random() * requestsSearchPost);

@@ -2,6 +2,7 @@
   "name": "gm-fabric-dashboard",
   "version": "1.0.6",
   "private": true,
+  "type": "module",
   "engines": {
     "node": ">=22.13.0",
     "pnpm": ">=11.0.0"
@@ -144,7 +145,7 @@
     ],
     "testPathIgnorePatterns": [
       "/node_modules/",
-      "/.claude/worktrees/",
+      "<rootDir>/.claude/worktrees/",
       "<rootDir>/src/Storyshots.test.js"
     ],
     "testEnvironment": "jsdom",
@@ -159,8 +160,8 @@
     },
     "transform": {
       "^.+\\.(js|jsx)$": "babel-jest",
-      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-      "^(?!.*\\.(js|jsx|css|json|cjs|mjs)$)": "<rootDir>/config/jest/fileTransform.js"
+      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.cjs",
+      "^(?!.*\\.(js|jsx|css|json|cjs|mjs)$)": "<rootDir>/config/jest/fileTransform.cjs"
     },
     "transformIgnorePatterns": [
       "^(?!.*[/\\\\]node_modules[/\\\\](color|color-string|color-convert|color-name)[/\\\\]).*[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"

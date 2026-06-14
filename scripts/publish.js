@@ -1,9 +1,12 @@
-const util = require("util");
-const exec = util.promisify(require("child_process").exec);
-const program = require("commander");
-const prompt = require("prompt");
+import { promisify } from "util";
+import { exec as execCallback } from "child_process";
+import commander from "commander";
+import prompt from "prompt";
+
+const exec = promisify(execCallback);
+const program = commander;
 prompt.start();
-const promptGet = util.promisify(prompt.get);
+const promptGet = promisify(prompt.get);
 
 function execWrapper(...args) {
   if (dryRun) {
@@ -150,7 +153,7 @@ async function publish({
       releaseTags = [
         ..._generateSemVerStrings(major, minor, patch, releaseCandidate),
         ...tags
-      ].map(tag => `deciphernow/gm-fabric-dashboard:${tag}`);
+      ].map((tag) => `deciphernow/gm-fabric-dashboard:${tag}`);
     } else if (process.env.npm_package_version) {
       console.log(
         `Detected the following version from npm package.json: ${
@@ -163,11 +166,11 @@ async function publish({
           releaseCandidate
         ),
         ...tags
-      ].map(tag => `deciphernow/gm-fabric-dashboard:${tag}`);
+      ].map((tag) => `deciphernow/gm-fabric-dashboard:${tag}`);
     } else {
-      releaseTags = tags.map(tag => `deciphernow/gm-fabric-dashboard:${tag}`);
+      releaseTags = tags.map((tag) => `deciphernow/gm-fabric-dashboard:${tag}`);
     }
-    releaseTags.forEach(tag => console.log(tag));
+    releaseTags.forEach((tag) => console.log(tag));
     await _confirm("Is that correct?", confirm);
     console.log(`Building the project`);
     let build = await execWrapper("npm run build");
@@ -192,7 +195,7 @@ async function publish({
     if (releaseTags.length > 0) {
       console.log("Tagging Docker image");
       releaseTags.forEach(
-        async releaseTag =>
+        async (releaseTag) =>
           await execWrapper(`docker tag ${imageID} ${releaseTag}`)
       );
     }
@@ -204,7 +207,7 @@ async function publish({
       ? [...releaseTags, "deciphernow/gm-fabric-dashboard:latest"]
       : JSON.parse(imageDetailsRaw)[0]["RepoTags"];
     console.log(`${imageID} has been tagged with:`);
-    actualTags.forEach(tag => console.log(`${tag}`));
+    actualTags.forEach((tag) => console.log(`${tag}`));
     // Add a final confirmation here unless --confirm was passed in
     await _confirm("Are you sure that you want to push to DockerHub?", confirm);
     console.log("Pushing to Docker Hub");
