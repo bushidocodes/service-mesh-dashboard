@@ -50,10 +50,4 @@ const ItemVersion = styled(LineItemStyle)`
   text-align: right;
 `;
 
-const ItemInfo = styled(GMLink.withComponent("div"))`
-  &:hover {
-    color: inherit;
-  }
-`;
-
-export { ItemName, ItemVersion, ItemIcon, ItemRuntime, ItemInfo };
+export { ItemName, ItemVersion, ItemIcon, ItemRuntime };

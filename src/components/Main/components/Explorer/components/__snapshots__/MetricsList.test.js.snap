@@ -3,18 +3,14 @@
 exports[`MetricsList matches snapshot 1`] = `
 <DocumentFragment>
   .c0 {
-  border-right: 1px solid hsl(0,0%,92%);
-  -webkit-flex: 0 0 300px;
-  -ms-flex: 0 0 300px;
+  border-right: 1px solid hsl(0, 0%, 92%);
   flex: 0 0 300px;
   margin-bottom: 16px;
   position: relative;
 }
 
-@media all and (min-width:800px) {
+@media all and (min-width: 800px) {
   .c0 {
-    -webkit-flex: 0 0 40%;
-    -ms-flex: 0 0 40%;
     flex: 0 0 40%;
     margin-bottom: 0;
     margin-right: 16px;

@@ -12,18 +12,10 @@ exports[`Table component matches snapshot 1`] = `
 }
 
 .c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  background-color: rgb(255,255,255);
-  box-shadow: inset 0 -1px hsl(0,0%,92%);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+  background-color: rgb(255, 255, 255);
+  box-shadow: inset 0 -1px hsl(0, 0%, 92%);
   display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   font-weight: 400;
   overflow: visible;
@@ -38,8 +30,6 @@ exports[`Table component matches snapshot 1`] = `
 }
 
 .c2 {
-  -webkit-flex: 1 1 12%;
-  -ms-flex: 1 1 12%;
   flex: 1 1 12%;
   text-align: left;
 }
@@ -58,16 +48,15 @@ exports[`Table component matches snapshot 1`] = `
 }
 
 .c7 {
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0, 0, 0, 0.8);
   border-radius: 6px;
-  color: rgb(255,255,255);
+  color: rgb(255, 255, 255);
   font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-size: 11px;
   opacity: 0;
   padding: 10px;
   position: absolute;
   text-align: left;
-  -webkit-transition: opacity 1s;
   transition: opacity 1s;
   visibility: hidden;
   white-space: normal;
@@ -78,55 +67,35 @@ exports[`Table component matches snapshot 1`] = `
 }
 
 .c6 {
-  border-bottom: 1px solid rgb(217,217,217);
+  border-bottom: 1px solid rgb(217, 217, 217);
   cursor: help;
   display: inline-block;
   position: relative;
 }
 
-.c6:hover > :last-child {
+.c6 :hover>:last-child {
   opacity: 1;
   visibility: visible;
   z-index: 1070;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
   justify-content: flex-end;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   overflow: visible;
 }
 
 .c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
   justify-content: flex-end;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c9 {
   font-size: 11px;
-  color: rgb(77,77,77);
+  color: rgb(77, 77, 77);
 }
 
 .c5 {

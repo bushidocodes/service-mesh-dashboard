@@ -12,7 +12,7 @@ exports[`ExtrasContainer matches snapshot 1`] = `
   pointer-events: none;
 }
 
-.c0 > * {
+.c0 >* {
   pointer-events: auto;
 }
 

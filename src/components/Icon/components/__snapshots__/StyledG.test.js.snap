@@ -3,8 +3,6 @@
 exports[`StyledG matches snapshot 1`] = `
 <DocumentFragment>
   .c0 {
-  -webkit-transform: scale();
-  -ms-transform: scale();
   transform: scale();
 }
 

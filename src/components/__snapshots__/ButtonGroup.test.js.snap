@@ -3,16 +3,11 @@
 exports[`ButtonGroup matches snapshot when toolbar props is not passed 1`] = `
 <DocumentFragment>
   .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
 }
 
-.c0 * + * {
+.c0 *+* {
   margin-left: 4px;
 }
 
@@ -25,17 +20,12 @@ exports[`ButtonGroup matches snapshot when toolbar props is not passed 1`] = `
 exports[`ButtonGroup matches snapshot when toolbar props is passed 1`] = `
 <DocumentFragment>
   .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   padding: 0px 8px;
 }
 
-.c0 * + * {
+.c0 *+* {
   margin-left: 4px;
 }
 

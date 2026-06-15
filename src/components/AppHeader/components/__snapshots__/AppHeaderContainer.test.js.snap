@@ -3,25 +3,15 @@
 exports[`AppHeaderContainer matches snapshot 1`] = `
 <DocumentFragment>
   .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
   align-items: stretch;
-  background-image: linear-gradient( to right, rgba(0,0,0,0.7), rgba(0,0,0,0), rgba(0,0,0,0) ), url(mesh-long.png);
-  background-size: 100% 100%, auto auto;
+  background-image: linear-gradient(       to right,       rgba(0, 0, 0, 0.7),       rgba(0, 0, 0, 0),       rgba(0, 0, 0, 0)     ),url(mesh-long.png);
+  background-size: 100% 100%,auto auto;
   background-repeat: no-repeat,no-repeat;
-  background-position: top left, top -30px right 20%;
-  background-color: rgb(0,0,0);
+  background-position: top left,top -30px right 20%;
+  background-color: rgb(0, 0, 0);
 }
 
 <div

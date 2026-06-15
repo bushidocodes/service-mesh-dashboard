@@ -3,18 +3,10 @@
 exports[`TableHeader matches snapshot 1`] = `
 <DocumentFragment>
   .c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  background-color: rgb(255,255,255);
-  box-shadow: inset 0 -1px hsl(0,0%,92%);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+  background-color: rgb(255, 255, 255);
+  box-shadow: inset 0 -1px hsl(0, 0%, 92%);
   display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   font-weight: 400;
   overflow: visible;

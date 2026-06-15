@@ -3,25 +3,12 @@
 exports[`PollingSliderContainer matches snapshot 1`] = `
 <DocumentFragment>
   .c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  border: 1px solid rgb(230,230,230);
+  border: 1px solid rgb(230, 230, 230);
   border-radius: 3px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 0 1 50%;
-  -ms-flex: 0 1 50%;
   flex: 0 1 50%;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   margin-left: 16px;
   padding: 32px;

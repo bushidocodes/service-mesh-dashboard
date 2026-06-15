@@ -39,5 +39,3 @@ ServiceLink.propTypes = {
   cardHighlightColor: PropTypes.string,
   cursor: PropTypes.string
 };
-
-export const ServiceInfo = ServiceLink.withComponent("div");

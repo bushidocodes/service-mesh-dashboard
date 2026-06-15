@@ -2,6 +2,8 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import { HashRouter } from "react-router-dom";
+import { StyleSheetManager } from "styled-components";
+import isPropValid from "@emotion/is-prop-valid";
 
 import AppContainer from "./components/AppContainer";
 import AppHeader from "./components/AppHeader";
@@ -22,17 +24,23 @@ const root = createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
     <ConnectedIntlProvider>
-      <HashRouter
-        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      <StyleSheetManager
+        shouldForwardProp={(prop, target) =>
+          typeof target === "string" ? isPropValid(prop) : true
+        }
       >
-        <AppContainer>
-          <GlobalFontStyles />
-          <Notification />
-          <AppHeader />
-          <Main />
-          <AppFooter />
-        </AppContainer>
-      </HashRouter>
+        <HashRouter
+          future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+        >
+          <AppContainer>
+            <GlobalFontStyles />
+            <Notification />
+            <AppHeader />
+            <Main />
+            <AppFooter />
+          </AppContainer>
+        </HashRouter>
+      </StyleSheetManager>
     </ConnectedIntlProvider>
   </Provider>
 );

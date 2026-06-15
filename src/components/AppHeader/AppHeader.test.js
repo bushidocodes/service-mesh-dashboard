@@ -1,7 +1,6 @@
 import React from "react";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
-import { StyleSheetManager } from "styled-components";
 import configureMockStore from "redux-mock-store";
 import { screen } from "@testing-library/react";
 
@@ -25,14 +24,6 @@ const anAppHeader = (
   </Provider>
 );
 
-// stylis emits vendor prefixes (e.g. -moz-user-select, -moz-letter-spacing)
-// differently across platforms, so a raw styled-components snapshot diverges
-// between Linux CI and a Windows dev box. Rendering inside a StyleSheetManager
-// with disableVendorPrefixes strips them, yielding a platform-stable snapshot.
-const withoutVendorPrefixes = (node) => (
-  <StyleSheetManager disableVendorPrefixes>{node}</StyleSheetManager>
-);
-
 // mock getFabricServer
 jest.mock("../../utils/head");
 
@@ -42,14 +33,14 @@ jest.mock("../../utils/head");
 // and reintroduce the -moz- cross-platform drift we are avoiding here.
 describe("AppHeader snapshots", () => {
   test("matches snapshot with instance view tabs", () => {
-    const { asFragment } = renderWithIntl(withoutVendorPrefixes(anAppHeader));
+    const { asFragment } = renderWithIntl(anAppHeader);
     expect(asFragment()).toMatchSnapshot();
   });
 
   test("matches snapshot with fabric view tabs", () => {
     // set a return value for getFabricServer() util func so that AppHeader renders <UseSDS /> and remount
     getFabricServer.mockImplementation(() => "http://localhost:1337");
-    const { asFragment } = renderWithIntl(withoutVendorPrefixes(anAppHeader));
+    const { asFragment } = renderWithIntl(anAppHeader);
     expect(asFragment()).toMatchSnapshot();
   });
 });

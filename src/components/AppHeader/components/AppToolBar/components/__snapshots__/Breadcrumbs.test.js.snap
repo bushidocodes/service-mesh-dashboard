@@ -3,26 +3,16 @@
 exports[`Breadcrumbs matches snapshot when hiding root 1`] = `
 <DocumentFragment>
   .c0 {
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
   align-items: stretch;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
   flex: 1 1 auto;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   height: inherit;
   margin: 0;
   padding: 0;
 }
 
-.c0 > li:first-child {
+.c0 >li:first-child {
   position: absolute;
   visibility: hidden;
   pointer-events: none;
@@ -37,19 +27,9 @@ exports[`Breadcrumbs matches snapshot when hiding root 1`] = `
 exports[`Breadcrumbs matches snapshot when showing root 1`] = `
 <DocumentFragment>
   .c0 {
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
   align-items: stretch;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
   flex: 1 1 auto;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   height: inherit;
   margin: 0;

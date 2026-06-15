@@ -12,59 +12,47 @@ exports[`<GMLineChart> stateless child component matches snapshot 1`] = `
   background-color: inherit;
 }
 
-.c3 > * {
+.c3 >* {
   background-color: inherit;
 }
 
 .c3 .dygraph-legend {
-  background-color: rgba(255,255,255,0.9);
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 3px;
-  color: hsl(0,0%,12.5%);
+  color: hsl(0, 0%, 12.5%);
   display: inline-block;
-  left: auto !important;
+  left: auto!important;
   min-width: 18em;
   opacity: 0;
   padding: 8px 16px 8px;
   position: absolute;
-  right: 0 !important;
+  right: 0!important;
   text-align: right;
-  -webkit-transition: all 0.2s ease, color 0.2s ease;
-  transition: all 0.2s ease, color 0.2s ease;
+  transition: all 0.2s ease,color 0.2s ease;
   z-index: 10000;
 }
 
 .c3 .dygraph-legend [style*="bold"] {
-  font-weight: 600 !important;
+  font-weight: 600!important;
 }
 
 .c3:hover .dygraph-legend {
-  color: hsl(0,0%,12.5%);
+  color: hsl(0, 0%, 12.5%);
   opacity: 1;
-  -webkit-transition: all 0.2s ease, color 1s ease;
-  transition: all 0.2s ease, color 1s ease;
+  transition: all 0.2s ease,color 1s ease;
 }
 
 .c3 .dygraph-label {
-  color: rgb(32,32,32);
+  color: rgb(32, 32, 32);
   opacity: 0.8;
 }
 
 .c0 {
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
   align-items: stretch;
   background-color: transparent;
   border: 1px solid transparent;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 1 1 100%;
-  -ms-flex: 1 1 100%;
   flex: 1 1 100%;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   height: 125px;
@@ -75,23 +63,17 @@ exports[`<GMLineChart> stateless child component matches snapshot 1`] = `
   font-size: 18px;
   margin: 0;
   padding: 8px 16px;
-  -webkit-flex: 1 0 40px;
-  -ms-flex: 1 0 40px;
   flex: 1 0 40px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c2 {
-  -webkit-flex: 1 1 100%;
-  -ms-flex: 1 1 100%;
   flex: 1 1 100%;
   position: relative;
   min-height: 250px;
 }
 
-.c2 > * {
+.c2 >* {
   margin: 8px;
 }
 

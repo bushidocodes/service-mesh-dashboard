@@ -3,19 +3,12 @@
 exports[`TableColThread matches snapshot 1`] = `
 <DocumentFragment>
   .c0 {
-  -webkit-flex: 1 1 12%;
-  -ms-flex: 1 1 12%;
   flex: 1 1 12%;
   text-align: left;
 }
 
 .c1 {
-  -webkit-flex: 0 1 5em;
-  -ms-flex: 0 1 5em;
   flex: 0 1 5em;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   text-align: center;
 }

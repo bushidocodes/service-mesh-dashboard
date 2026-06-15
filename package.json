@@ -38,7 +38,7 @@
     "redux": "^5.0.1",
     "redux-logger": "~3.0.6",
     "reselect": "~5.2.0",
-    "styled-components": "^5.0.0"
+    "styled-components": "^6.4.2"
   },
   "devDependencies": {
     "@babel/core": "^7.24.0",
@@ -142,6 +142,9 @@
     "transformIgnorePatterns": [
       "^(?!.*[/\\\\]node_modules[/\\\\](color|color-string|color-convert|color-name)[/\\\\]).*[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
     ],
+    "moduleNameMapper": {
+      "^@testing-library/react$": "<rootDir>/config/jest/rtlWrapper.cjs"
+    },
     "moduleDirectories": [
       "node_modules",
       "<rootDir>/src"

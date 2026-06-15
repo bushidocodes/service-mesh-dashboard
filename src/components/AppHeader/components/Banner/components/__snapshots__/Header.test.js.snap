@@ -16,10 +16,9 @@ exports[`Header matches snapshot 1`] = `
 }
 
 .c0:after {
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   bottom: 0.25em;
   content: "";
-  -webkit-filter: blur(10px);
   filter: blur(10px);
   left: 0.25em;
   position: absolute;

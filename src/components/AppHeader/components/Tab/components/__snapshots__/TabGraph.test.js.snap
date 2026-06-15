@@ -4,11 +4,11 @@ exports[`TabGraph matches snapshot 1`] = `
 <DocumentFragment>
   .c0 {
   height: 24px;
-  color: rgb(213,213,213);
+  color: rgb(213, 213, 213);
   margin: 0 2px;
 }
 
-.c0 > * {
+.c0 >* {
   width: 100%;
   height: 100%;
 }

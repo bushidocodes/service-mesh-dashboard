@@ -3,8 +3,6 @@
 exports[`TableColHeader matches snapshot 1`] = `
 <DocumentFragment>
   .c0 {
-  -webkit-flex: 1 1 12%;
-  -ms-flex: 1 1 12%;
   flex: 1 1 12%;
   text-align: left;
 }

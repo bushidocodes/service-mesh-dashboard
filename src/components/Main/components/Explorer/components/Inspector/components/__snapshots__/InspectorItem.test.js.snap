@@ -5,12 +5,8 @@ exports[`InspectorItem matches snapshot 1`] = `
   .c0 {
   border-radius: 3px;
   cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   padding: 4px 8px;
-  -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
   will-change: transform;
   word-wrap: break-word;
@@ -25,15 +21,12 @@ exports[`InspectorItem matches snapshot 1`] = `
 }
 
 .c0:hover {
-  color: rgb(10,171,42);
+  color: rgb(10, 171, 42);
 }
 
 .c0:active {
-  color: rgb(10,171,42);
-  -webkit-transform: scale(0.9875);
-  -ms-transform: scale(0.9875);
+  color: rgb(10, 171, 42);
   transform: scale(0.9875);
-  -webkit-transition-duration: 0;
   transition-duration: 0;
 }
 

@@ -3,24 +3,19 @@
 exports[`BrandText matches snapshot 1`] = `
 <DocumentFragment>
   .c0 {
-  color: rgb(255,255,255);
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
+  color: rgb(255, 255, 255);
   flex: 0 0 auto;
   font-size: 14px;
   font-weight: 600;
-  -webkit-letter-spacing: 0.03em;
-  -moz-letter-spacing: 0.03em;
-  -ms-letter-spacing: 0.03em;
   letter-spacing: 0.03em;
 }
 
-.c0 > a {
-  color: rgb(217,217,217);
+.c0 >a {
+  color: rgb(217, 217, 217);
 }
 
-.c0 > a:hover {
-  color: rgb(255,255,255);
+.c0 >a:hover {
+  color: rgb(255, 255, 255);
 }
 
 <span

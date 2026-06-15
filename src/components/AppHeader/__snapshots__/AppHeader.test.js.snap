@@ -7,11 +7,11 @@ exports[`AppHeader snapshots matches snapshot with fabric view tabs 1`] = `
   flex: 0 0 auto;
   flex-direction: column;
   align-items: stretch;
-  background-image: linear-gradient( to right, rgba(0,0,0,0.7), rgba(0,0,0,0), rgba(0,0,0,0) ), url(mesh-long.png);
-  background-size: 100% 100%, auto auto;
+  background-image: linear-gradient(       to right,       rgba(0, 0, 0, 0.7),       rgba(0, 0, 0, 0),       rgba(0, 0, 0, 0)     ),url(mesh-long.png);
+  background-size: 100% 100%,auto auto;
   background-repeat: no-repeat,no-repeat;
-  background-position: top left, top -30px right 20%;
-  background-color: rgb(0,0,0);
+  background-position: top left,top -30px right 20%;
+  background-color: rgb(0, 0, 0);
 }
 
 .c15 {
@@ -46,9 +46,9 @@ exports[`AppHeader snapshots matches snapshot with fabric view tabs 1`] = `
   align-items: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  background-color: rgb(255,255,255);
-  border-color: rgb(255,255,255);
-  color: rgb(0,0,0);
+  background-color: rgb(255, 255, 255);
+  border-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   font-size: 14px;
   border-radius: 3px;
   padding: 1.4px 4px;
@@ -64,21 +64,21 @@ exports[`AppHeader snapshots matches snapshot with fabric view tabs 1`] = `
   transition: all 0 ease;
 }
 
-.c13 > * {
+.c13 >* {
   flex: 0 1 auto;
 }
 
 .c13:active {
   transition-duration: 0s;
-  background-color: hsl(0,0%,92.5%);
-  border-color: hsl(0,0%,92.5%);
-  color: hsl(0,0%,0%);
+  background-color: hsl(0, 0%, 92.5%);
+  border-color: hsl(0, 0%, 92.5%);
+  color: hsl(0, 0%, 0%);
 }
 
 .c13:hover {
-  background-color: hsl(0,0%,98.5%);
-  border-color: hsl(0,0%,98.5%);
-  color: hsl(0,0%,0%);
+  background-color: hsl(0, 0%, 98.5%);
+  border-color: hsl(0, 0%, 98.5%);
+  color: hsl(0, 0%, 0%);
 }
 
 .c13:focus {
@@ -93,17 +93,17 @@ exports[`AppHeader snapshots matches snapshot with fabric view tabs 1`] = `
 .c13[disabled]:active {
   cursor: default;
   opacity: 0.8;
-  background-color: hsl(0,0%,94%);
-  border-color: hsl(0,0%,94%);
-  color: hsl(0,0%,0%);
+  background-color: hsl(0, 0%, 94%);
+  border-color: hsl(0, 0%, 94%);
+  color: hsl(0, 0%, 0%);
 }
 
-.c13 > svg {
+.c13 >svg {
   width: 24px;
   height: 24px;
 }
 
-.c13 > :not(:first-child) {
+.c13 >:not(:first-child) {
   margin-left: 4px;
   flex-basis: auto;
 }
@@ -114,14 +114,14 @@ exports[`AppHeader snapshots matches snapshot with fabric view tabs 1`] = `
   padding: 0px 8px;
 }
 
-.c12 * + * {
+.c12 *+* {
   margin-left: 4px;
 }
 
 .c1 {
   align-items: center;
   background-color: transparent;
-  color: rgb(128,128,128);
+  color: rgb(128, 128, 128);
   display: flex;
   flex: 0 0 34px;
   flex-direction: row;
@@ -142,19 +142,19 @@ exports[`AppHeader snapshots matches snapshot with fabric view tabs 1`] = `
 }
 
 .c5 {
-  color: rgb(255,255,255);
+  color: rgb(255, 255, 255);
   flex: 0 0 auto;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.03em;
 }
 
-.c5 > a {
-  color: rgb(217,217,217);
+.c5 >a {
+  color: rgb(217, 217, 217);
 }
 
-.c5 > a:hover {
-  color: rgb(255,255,255);
+.c5 >a:hover {
+  color: rgb(255, 255, 255);
 }
 
 .c11 {
@@ -172,9 +172,9 @@ exports[`AppHeader snapshots matches snapshot with fabric view tabs 1`] = `
 }
 
 .c2 {
-  background-color: rgb(10,171,42);
+  background-color: rgb(10, 171, 42);
   border: none;
-  color: rgb(255,255,255);
+  color: rgb(255, 255, 255);
   font-size: 11px;
   left: 0;
   position: absolute;
@@ -198,7 +198,7 @@ exports[`AppHeader snapshots matches snapshot with fabric view tabs 1`] = `
   padding: 0;
 }
 
-.c6 > li:first-child {
+.c6 >li:first-child {
   position: absolute;
   visibility: hidden;
   pointer-events: none;
@@ -212,7 +212,7 @@ exports[`AppHeader snapshots matches snapshot with fabric view tabs 1`] = `
 }
 
 .c7:before {
-  color: rgb(204,204,204);
+  color: rgb(204, 204, 204);
   content: ">";
   display: flex;
   padding: 0 4px;
@@ -220,7 +220,7 @@ exports[`AppHeader snapshots matches snapshot with fabric view tabs 1`] = `
 }
 
 .c7 a {
-  color: rgb(217,217,217);
+  color: rgb(217, 217, 217);
   display: flex;
   max-width: auto;
   padding: 8px 0;
@@ -229,7 +229,7 @@ exports[`AppHeader snapshots matches snapshot with fabric view tabs 1`] = `
 }
 
 .c7 a:hover {
-  color: rgb(255,255,255);
+  color: rgb(255, 255, 255);
 }
 
 .c7:first-child:before {
@@ -241,24 +241,24 @@ exports[`AppHeader snapshots matches snapshot with fabric view tabs 1`] = `
 }
 
 .c8 {
-  color: rgb(255,255,255);
+  color: rgb(255, 255, 255);
   font-weight: 700;
   cursor: pointer;
 }
 
-.c8 > :first-child {
+.c8 >:first-child {
   opacity: 0.8;
 }
 
-.c8 > :first-child:hover {
+.c8 >:first-child :hover {
   opacity: 1;
 }
 
 .c9 {
   position: absolute;
-  background-color: rgb(255,255,255);
+  background-color: rgb(255, 255, 255);
   border-radius: 6px;
-  color: rgb(0,0,0);
+  color: rgb(0, 0, 0);
   font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-weight: 700;
   opacity: 0;
@@ -279,13 +279,13 @@ exports[`AppHeader snapshots matches snapshot with fabric view tabs 1`] = `
   list-style-type: none;
 }
 
-.c10:hover {
-  color: rgb(10,171,42);
+.c10 :hover {
+  color: rgb(10, 171, 42);
 }
 
 .c16 {
   background: transparent;
-  color: rgb(255,255,255);
+  color: rgb(255, 255, 255);
   padding: 12px 16px 12px;
   transition: all 0.1s ease;
 }
@@ -304,7 +304,7 @@ exports[`AppHeader snapshots matches snapshot with fabric view tabs 1`] = `
 }
 
 .c17:after {
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   bottom: 0.25em;
   content: "";
   filter: blur(10px);
@@ -316,7 +316,7 @@ exports[`AppHeader snapshots matches snapshot with fabric view tabs 1`] = `
 }
 
 .c20 {
-  color: rgb(255,255,255);
+  color: rgb(255, 255, 255);
   white-space: nowrap;
   max-width: 100%;
   overflow: hidden;
@@ -340,11 +340,11 @@ exports[`AppHeader snapshots matches snapshot with fabric view tabs 1`] = `
 .c22 {
   margin: 0 0 4px 24px;
   font-size: 11px;
-  color: rgb(255,255,255);
+  color: rgb(255, 255, 255);
 }
 
 .c23 {
-  color: rgb(213,213,213);
+  color: rgb(213, 213, 213);
   padding-right: 4px;
   display: inline-block;
 }
@@ -361,7 +361,7 @@ exports[`AppHeader snapshots matches snapshot with fabric view tabs 1`] = `
 }
 
 .c19 {
-  background-color: rgb(45,45,45);
+  background-color: rgb(45, 45, 45);
   font-weight: 400;
   flex: 1 1 1%;
   margin: 1px 1px 0 0;
@@ -373,7 +373,7 @@ exports[`AppHeader snapshots matches snapshot with fabric view tabs 1`] = `
 
 .c19::after {
   border-radius: 1px;
-  box-shadow: 0 0 1em 1px rgb(10,171,42);
+  box-shadow: 0 0 1em 1px rgb(10, 171, 42);
   color: inherit;
   content: "";
   height: 1px;
@@ -387,7 +387,7 @@ exports[`AppHeader snapshots matches snapshot with fabric view tabs 1`] = `
 }
 
 .c19:hover {
-  background-color: rgb(54,54,54);
+  background-color: rgb(54, 54, 54);
 }
 
 .c19:hover:after {
@@ -395,48 +395,48 @@ exports[`AppHeader snapshots matches snapshot with fabric view tabs 1`] = `
 }
 
 .c19.active {
-  background-color: rgb(77,77,77);
+  background-color: rgb(77, 77, 77);
 }
 
 .c19.active:after {
-  background-color: rgb(84,196,106);
+  background-color: rgb(84, 196, 106);
   opacity: 1;
   transition: 0.1s;
 }
 
 .c19:active:after {
-  background-color: rgb(84,196,106);
+  background-color: rgb(84, 196, 106);
   opacity: 1;
   transition: 0.1s;
 }
 
 .c19:focus {
-  outline: rgb(10,171,42) auto 3px;
+  outline: rgb(10, 171, 42) auto 3px;
 }
 
 .c18 {
   display: flex;
   flex-flow: row wrap;
-  color: rgb(150,150,150);
-  background-color: rgba(0,0,0,0.30000000000000004);
+  color: rgb(150, 150, 150);
+  background-color: rgba(0, 0, 0, 0.30000000000000004);
   padding: 0 1px 1px 1px;
 }
 
-@media (max-width:800px) {
+@media (max-width: 800px) {
   .c7 {
     max-width: calc(100vw/4);
     overflow: hidden;
   }
 }
 
-@media (max-width:567px) {
+@media (max-width: 567px) {
   .c7 {
     max-width: calc(100vw/9);
     overflow: hidden;
   }
 }
 
-@media all and (min-width:1000px) {
+@media all and (min-width: 1000px) {
   .c16 {
     padding: 16px 32px 24px;
   }
@@ -841,11 +841,11 @@ exports[`AppHeader snapshots matches snapshot with instance view tabs 1`] = `
   flex: 0 0 auto;
   flex-direction: column;
   align-items: stretch;
-  background-image: linear-gradient( to right, rgba(0,0,0,0.7), rgba(0,0,0,0), rgba(0,0,0,0) ), url(mesh-long.png);
-  background-size: 100% 100%, auto auto;
+  background-image: linear-gradient(       to right,       rgba(0, 0, 0, 0.7),       rgba(0, 0, 0, 0),       rgba(0, 0, 0, 0)     ),url(mesh-long.png);
+  background-size: 100% 100%,auto auto;
   background-repeat: no-repeat,no-repeat;
-  background-position: top left, top -30px right 20%;
-  background-color: rgb(0,0,0);
+  background-position: top left,top -30px right 20%;
+  background-color: rgb(0, 0, 0);
 }
 
 .c15 {
@@ -880,9 +880,9 @@ exports[`AppHeader snapshots matches snapshot with instance view tabs 1`] = `
   align-items: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  background-color: rgb(255,255,255);
-  border-color: rgb(255,255,255);
-  color: rgb(0,0,0);
+  background-color: rgb(255, 255, 255);
+  border-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   font-size: 14px;
   border-radius: 3px;
   padding: 1.4px 4px;
@@ -898,21 +898,21 @@ exports[`AppHeader snapshots matches snapshot with instance view tabs 1`] = `
   transition: all 0 ease;
 }
 
-.c13 > * {
+.c13 >* {
   flex: 0 1 auto;
 }
 
 .c13:active {
   transition-duration: 0s;
-  background-color: hsl(0,0%,92.5%);
-  border-color: hsl(0,0%,92.5%);
-  color: hsl(0,0%,0%);
+  background-color: hsl(0, 0%, 92.5%);
+  border-color: hsl(0, 0%, 92.5%);
+  color: hsl(0, 0%, 0%);
 }
 
 .c13:hover {
-  background-color: hsl(0,0%,98.5%);
-  border-color: hsl(0,0%,98.5%);
-  color: hsl(0,0%,0%);
+  background-color: hsl(0, 0%, 98.5%);
+  border-color: hsl(0, 0%, 98.5%);
+  color: hsl(0, 0%, 0%);
 }
 
 .c13:focus {
@@ -927,17 +927,17 @@ exports[`AppHeader snapshots matches snapshot with instance view tabs 1`] = `
 .c13[disabled]:active {
   cursor: default;
   opacity: 0.8;
-  background-color: hsl(0,0%,94%);
-  border-color: hsl(0,0%,94%);
-  color: hsl(0,0%,0%);
+  background-color: hsl(0, 0%, 94%);
+  border-color: hsl(0, 0%, 94%);
+  color: hsl(0, 0%, 0%);
 }
 
-.c13 > svg {
+.c13 >svg {
   width: 24px;
   height: 24px;
 }
 
-.c13 > :not(:first-child) {
+.c13 >:not(:first-child) {
   margin-left: 4px;
   flex-basis: auto;
 }
@@ -948,14 +948,14 @@ exports[`AppHeader snapshots matches snapshot with instance view tabs 1`] = `
   padding: 0px 8px;
 }
 
-.c12 * + * {
+.c12 *+* {
   margin-left: 4px;
 }
 
 .c1 {
   align-items: center;
   background-color: transparent;
-  color: rgb(128,128,128);
+  color: rgb(128, 128, 128);
   display: flex;
   flex: 0 0 34px;
   flex-direction: row;
@@ -976,19 +976,19 @@ exports[`AppHeader snapshots matches snapshot with instance view tabs 1`] = `
 }
 
 .c5 {
-  color: rgb(255,255,255);
+  color: rgb(255, 255, 255);
   flex: 0 0 auto;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.03em;
 }
 
-.c5 > a {
-  color: rgb(217,217,217);
+.c5 >a {
+  color: rgb(217, 217, 217);
 }
 
-.c5 > a:hover {
-  color: rgb(255,255,255);
+.c5 >a:hover {
+  color: rgb(255, 255, 255);
 }
 
 .c11 {
@@ -1006,9 +1006,9 @@ exports[`AppHeader snapshots matches snapshot with instance view tabs 1`] = `
 }
 
 .c2 {
-  background-color: rgb(10,171,42);
+  background-color: rgb(10, 171, 42);
   border: none;
-  color: rgb(255,255,255);
+  color: rgb(255, 255, 255);
   font-size: 11px;
   left: 0;
   position: absolute;
@@ -1032,7 +1032,7 @@ exports[`AppHeader snapshots matches snapshot with instance view tabs 1`] = `
   padding: 0;
 }
 
-.c6 > li:first-child {
+.c6 >li:first-child {
   position: absolute;
   visibility: hidden;
   pointer-events: none;
@@ -1046,7 +1046,7 @@ exports[`AppHeader snapshots matches snapshot with instance view tabs 1`] = `
 }
 
 .c7:before {
-  color: rgb(204,204,204);
+  color: rgb(204, 204, 204);
   content: ">";
   display: flex;
   padding: 0 4px;
@@ -1054,7 +1054,7 @@ exports[`AppHeader snapshots matches snapshot with instance view tabs 1`] = `
 }
 
 .c7 a {
-  color: rgb(217,217,217);
+  color: rgb(217, 217, 217);
   display: flex;
   max-width: auto;
   padding: 8px 0;
@@ -1063,7 +1063,7 @@ exports[`AppHeader snapshots matches snapshot with instance view tabs 1`] = `
 }
 
 .c7 a:hover {
-  color: rgb(255,255,255);
+  color: rgb(255, 255, 255);
 }
 
 .c7:first-child:before {
@@ -1075,24 +1075,24 @@ exports[`AppHeader snapshots matches snapshot with instance view tabs 1`] = `
 }
 
 .c8 {
-  color: rgb(255,255,255);
+  color: rgb(255, 255, 255);
   font-weight: 700;
   cursor: pointer;
 }
 
-.c8 > :first-child {
+.c8 >:first-child {
   opacity: 0.8;
 }
 
-.c8 > :first-child:hover {
+.c8 >:first-child :hover {
   opacity: 1;
 }
 
 .c9 {
   position: absolute;
-  background-color: rgb(255,255,255);
+  background-color: rgb(255, 255, 255);
   border-radius: 6px;
-  color: rgb(0,0,0);
+  color: rgb(0, 0, 0);
   font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-weight: 700;
   opacity: 0;
@@ -1113,13 +1113,13 @@ exports[`AppHeader snapshots matches snapshot with instance view tabs 1`] = `
   list-style-type: none;
 }
 
-.c10:hover {
-  color: rgb(10,171,42);
+.c10 :hover {
+  color: rgb(10, 171, 42);
 }
 
 .c16 {
   background: transparent;
-  color: rgb(255,255,255);
+  color: rgb(255, 255, 255);
   padding: 12px 16px 12px;
   transition: all 0.1s ease;
 }
@@ -1138,7 +1138,7 @@ exports[`AppHeader snapshots matches snapshot with instance view tabs 1`] = `
 }
 
 .c17:after {
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   bottom: 0.25em;
   content: "";
   filter: blur(10px);
@@ -1150,7 +1150,7 @@ exports[`AppHeader snapshots matches snapshot with instance view tabs 1`] = `
 }
 
 .c20 {
-  color: rgb(255,255,255);
+  color: rgb(255, 255, 255);
   white-space: nowrap;
   max-width: 100%;
   overflow: hidden;
@@ -1174,11 +1174,11 @@ exports[`AppHeader snapshots matches snapshot with instance view tabs 1`] = `
 .c22 {
   margin: 0 0 4px 24px;
   font-size: 11px;
-  color: rgb(255,255,255);
+  color: rgb(255, 255, 255);
 }
 
 .c23 {
-  color: rgb(213,213,213);
+  color: rgb(213, 213, 213);
   padding-right: 4px;
   display: inline-block;
 }
@@ -1195,7 +1195,7 @@ exports[`AppHeader snapshots matches snapshot with instance view tabs 1`] = `
 }
 
 .c19 {
-  background-color: rgb(45,45,45);
+  background-color: rgb(45, 45, 45);
   font-weight: 400;
   flex: 1 1 1%;
   margin: 1px 1px 0 0;
@@ -1207,7 +1207,7 @@ exports[`AppHeader snapshots matches snapshot with instance view tabs 1`] = `
 
 .c19::after {
   border-radius: 1px;
-  box-shadow: 0 0 1em 1px rgb(10,171,42);
+  box-shadow: 0 0 1em 1px rgb(10, 171, 42);
   color: inherit;
   content: "";
   height: 1px;
@@ -1221,7 +1221,7 @@ exports[`AppHeader snapshots matches snapshot with instance view tabs 1`] = `
 }
 
 .c19:hover {
-  background-color: rgb(54,54,54);
+  background-color: rgb(54, 54, 54);
 }
 
 .c19:hover:after {
@@ -1229,48 +1229,48 @@ exports[`AppHeader snapshots matches snapshot with instance view tabs 1`] = `
 }
 
 .c19.active {
-  background-color: rgb(77,77,77);
+  background-color: rgb(77, 77, 77);
 }
 
 .c19.active:after {
-  background-color: rgb(84,196,106);
+  background-color: rgb(84, 196, 106);
   opacity: 1;
   transition: 0.1s;
 }
 
 .c19:active:after {
-  background-color: rgb(84,196,106);
+  background-color: rgb(84, 196, 106);
   opacity: 1;
   transition: 0.1s;
 }
 
 .c19:focus {
-  outline: rgb(10,171,42) auto 3px;
+  outline: rgb(10, 171, 42) auto 3px;
 }
 
 .c18 {
   display: flex;
   flex-flow: row wrap;
-  color: rgb(150,150,150);
-  background-color: rgba(0,0,0,0.30000000000000004);
+  color: rgb(150, 150, 150);
+  background-color: rgba(0, 0, 0, 0.30000000000000004);
   padding: 0 1px 1px 1px;
 }
 
-@media (max-width:800px) {
+@media (max-width: 800px) {
   .c7 {
     max-width: calc(100vw/4);
     overflow: hidden;
   }
 }
 
-@media (max-width:567px) {
+@media (max-width: 567px) {
   .c7 {
     max-width: calc(100vw/9);
     overflow: hidden;
   }
 }
 
-@media all and (min-width:1000px) {
+@media all and (min-width: 1000px) {
   .c16 {
     padding: 16px 32px 24px;
   }
