@@ -58,10 +58,9 @@ describe("<TableLineItem/>", () => {
     expect(screen.getByText("445 ms")).toBeInTheDocument();
     expect(screen.getByText("35 ms")).toBeInTheDocument();
 
-    // NOTE: TableDrawerCollapse (react-collapse UnmountClosed) renders nothing
-    // while closed, so we assert on its observable closed state (no rendered
-    // collapse element) as the proxy for "drawer present but collapsed".
-    expect(container.querySelector(".ReactCollapse--collapse")).toBeNull();
+    // NOTE: TableDrawerCollapse renders nothing while closed (lazy-mount), so we
+    // assert on its absence as the proxy for "drawer present but collapsed".
+    expect(container.querySelector(".drawer-collapse")).toBeNull();
   });
 
   test("should toggle row's open/closed state when row is clicked", () => {
@@ -69,20 +68,20 @@ describe("<TableLineItem/>", () => {
     const row = screen.getByRole("link");
 
     // NOTE: state().isOpen is React-internal; we assert the observable result of
-    // the toggle instead. react-collapse renders nothing while initially
+    // the toggle instead. TableDrawerCollapse renders nothing while initially
     // collapsed, expands with aria-hidden="false" when opened, and (in jsdom,
     // where the close transition never fires) keeps the element mounted but sets
     // aria-hidden="true" when closed again — so aria-hidden tracks isOpen.
-    expect(container.querySelector(".ReactCollapse--collapse")).toBeNull();
+    expect(container.querySelector(".drawer-collapse")).toBeNull();
 
     clickRow(row);
-    expect(container.querySelector(".ReactCollapse--collapse")).toHaveAttribute(
+    expect(container.querySelector(".drawer-collapse")).toHaveAttribute(
       "aria-hidden",
       "false"
     );
 
     clickRow(row);
-    expect(container.querySelector(".ReactCollapse--collapse")).toHaveAttribute(
+    expect(container.querySelector(".drawer-collapse")).toHaveAttribute(
       "aria-hidden",
       "true"
     );
@@ -95,8 +94,8 @@ describe("<TableLineItem/>", () => {
     clickRow(row);
 
     // NOTE: drawer.props().isOpened is not observable; assert the drawer's
-    // rendered, expanded DOM (react-collapse marks it aria-hidden="false").
-    const drawer = container.querySelector(".ReactCollapse--collapse");
+    // rendered, expanded DOM (TableDrawerCollapse marks it aria-hidden="false").
+    const drawer = container.querySelector(".drawer-collapse");
     expect(drawer).toBeInTheDocument();
     expect(drawer).toHaveAttribute("aria-hidden", "false");
   });
