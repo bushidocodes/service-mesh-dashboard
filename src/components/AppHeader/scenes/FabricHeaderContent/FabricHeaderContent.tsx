@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import type { RootState } from "types";
 import { withRouter } from "utils/withRouter";
 import { injectIntl } from "react-intl";
 
@@ -72,7 +73,7 @@ function FabricAppHeaderContent({
   );
 }
 
-function mapStateToProps(state: any) {
+function mapStateToProps(state: RootState) {
   return {
     statusCount: getStatusCount(state)
   };

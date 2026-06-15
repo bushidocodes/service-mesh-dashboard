@@ -19,21 +19,13 @@
       "*": ["./src/*", "./*"]
     },
 
-    // Incremental, pragmatic migration: `strict` is being ratcheted on one flag
-    // at a time. allowJs lets the remaining .js test files coexist.
-    //
-    // All strict sub-flags are now on; once verified clean this block can be
-    // collapsed to `strict: true` wholesale.
+    // The strict-mode ratchet is complete: every strict sub-flag was enabled
+    // and its errors fixed across phases, so `strict: true` is now a no-op
+    // tightening that locks them all on. allowJs lets the remaining .js test
+    // files coexist (checkJs stays off — tests are not type-checked yet).
     "allowJs": true,
     "checkJs": false,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "strictBindCallApply": true,
-    "strictPropertyInitialization": true,
-    "noImplicitThis": true,
-    "useUnknownInCatchVariables": true,
-    "alwaysStrict": true,
+    "strict": true,
 
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,

@@ -1,6 +1,7 @@
 import { Actions, getState } from "store/jumpstate";
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import type { RootState } from "types";
 import _ from "lodash";
 import { injectIntl } from "react-intl";
 
@@ -200,7 +201,7 @@ class ThreadsGrid extends Component<ThreadsGridProps> {
   }
 }
 
-function mapStateToProps(state: any) {
+function mapStateToProps(state: RootState) {
   const {
     fabric: { selectedServiceSlug, selectedInstanceID },
     instance: { threadsError },

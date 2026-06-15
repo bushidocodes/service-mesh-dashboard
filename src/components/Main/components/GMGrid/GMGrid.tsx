@@ -23,7 +23,7 @@ import { getSparkLineOfValue, getSparkLineOfNetChange } from "utils/sparklines";
 import NotFoundError from "components/Main/components/NotFoundError";
 import { ReactGridLayout, ReactResizable } from "./style";
 
-import type { Dashboard, Metrics, RouterMatch } from "types";
+import type { Dashboard, Metrics, RootState, RouterMatch } from "types";
 
 // Inject react-grid-layout.css and react-resizable.css into the global stylesheet
 const GridGlobalStyle = createGlobalStyle`
@@ -274,7 +274,7 @@ export class GMGrid extends Component<GMGridProps> {
 }
 
 function mapStateToProps(
-  { dashboards, instance: { metrics } }: any,
+  { dashboards, instance: { metrics } }: RootState,
   ownProps: any
 ) {
   return {

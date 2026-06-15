@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
+import type { RootState } from "types";
 import _ from "lodash";
 import { injectIntl } from "react-intl";
 
@@ -167,7 +168,7 @@ class FunctionsGrid extends Component<FunctionsGridProps> {
   }
 }
 
-function mapStateToProps(state: any) {
+function mapStateToProps(state: RootState) {
   return {
     funcs: getFunctionsTable(state)
   };

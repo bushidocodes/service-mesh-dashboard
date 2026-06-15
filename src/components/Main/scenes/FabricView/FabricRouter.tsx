@@ -10,7 +10,7 @@ import ServiceRouteElement from "./ServiceRouteElement";
 import { LazyLoader } from "components/LazyLoader";
 import { Loading } from "components/Loading";
 
-import type { Service } from "types";
+import type { RootState, Service } from "types";
 
 const SettingsGrid = LazyLoader({
   loader: () => import("components/Main/components/Settings")
@@ -57,7 +57,7 @@ function FabricRouter({ services }: FabricRouterProps) {
   );
 }
 
-function mapStateToProps(state: any) {
+function mapStateToProps(state: RootState) {
   return { services: state.fabric.services };
 }
 

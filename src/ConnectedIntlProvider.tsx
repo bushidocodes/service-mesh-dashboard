@@ -1,6 +1,7 @@
 import React from "react";
 import { IntlProvider } from "react-intl";
 import { connect } from "react-redux";
+import type { RootState } from "types";
 
 import { flattenMessages } from "./utils/i18n";
 import messages from "./messages";
@@ -25,7 +26,7 @@ function ConnectedIntlProvider({
   );
 }
 
-function mapStateToProps(state: any) {
+function mapStateToProps(state: RootState) {
   return {
     locale: state.settings.locale
   };

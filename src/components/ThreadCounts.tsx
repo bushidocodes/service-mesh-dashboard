@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 import { getThreadCounts } from "utils/jvm/selectors";
-import type { ThreadCounts as ThreadCountsData } from "types";
+import type { RootState, ThreadCounts as ThreadCountsData } from "types";
 
 interface ThreadCountsProps {
   render: (threadCounts: ThreadCountsData) => React.ReactNode;
@@ -16,7 +16,7 @@ class ThreadCounts extends React.Component<ThreadCountsProps> {
   }
 }
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: RootState) => {
   return {
     threadCounts: getThreadCounts(state)
   };

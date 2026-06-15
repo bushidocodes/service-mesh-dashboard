@@ -14,7 +14,7 @@ import MetricsGraphDisplay from "./components/MetricsGraphDisplay";
 import ErrorBoundary from "components/ErrorBoundary";
 import withUrlState from "components/withUrlState";
 
-import type { Metrics } from "types";
+import type { Metrics, RootState } from "types";
 
 interface ExplorerProps {
   keys?: string[]; // Metrics keys
@@ -155,7 +155,7 @@ class Explorer extends Component<ExplorerProps> {
   }
 }
 
-function mapStateToProps({ instance: { metrics } }: any) {
+function mapStateToProps({ instance: { metrics } }: RootState) {
   return {
     metrics,
     keys: Object.keys(metrics).sort()
