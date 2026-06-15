@@ -27,13 +27,11 @@ describe("ThreadsTableLineItem component", () => {
 
   // The enzyme test read the component's private `isOpen` state directly. RTL is
   // DOM-based, so we assert on isOpen's visible manifestation instead: the drawer
-  // is rendered through TableDrawerCollapse -> react-collapse's UnmountClosed.
-  // While closed-from-the-start it renders nothing, so the collapse wrapper
-  // (.ReactCollapse--collapse) is absent. Opening mounts that wrapper with
-  // aria-hidden="false"; closing again flips it to aria-hidden="true". (The wrapper
-  // and its stack-trace content are NOT removed on close in jsdom, because
-  // UnmountClosed only unmounts after a CSS transition that never fires here, but
-  // aria-hidden flips synchronously with isOpen, so it is the reliable proxy.)
+  // is rendered through TableDrawerCollapse. While closed-from-the-start it renders
+  // nothing (lazy-mount), so .drawer-collapse is absent. Opening mounts the wrapper
+  // with aria-hidden="false"; closing again flips it to aria-hidden="true". (The
+  // wrapper and its stack-trace content are NOT removed on close in jsdom, because
+  // there are no CSS transitions, but aria-hidden flips synchronously with isOpen.)
   test("should toggle row's open/closed state when row is clicked", () => {
     const { container } = render(<ThreadsTableLineItem {...mockProps} />);
 
@@ -48,19 +46,19 @@ describe("ThreadsTableLineItem component", () => {
 
     const row = screen.getByRole("link");
 
-    // Drawer starts closed: UnmountClosed has not mounted the collapse wrapper.
-    expect(container.querySelector(".ReactCollapse--collapse")).toBeNull();
+    // Drawer starts closed: TableDrawerCollapse has not mounted the wrapper yet.
+    expect(container.querySelector(".drawer-collapse")).toBeNull();
 
     fireEvent.click(row);
     // Drawer open.
-    expect(container.querySelector(".ReactCollapse--collapse")).toHaveAttribute(
+    expect(container.querySelector(".drawer-collapse")).toHaveAttribute(
       "aria-hidden",
       "false"
     );
 
     fireEvent.click(row);
     // Drawer closed again.
-    expect(container.querySelector(".ReactCollapse--collapse")).toHaveAttribute(
+    expect(container.querySelector(".drawer-collapse")).toHaveAttribute(
       "aria-hidden",
       "true"
     );
