@@ -9,7 +9,7 @@ const ItemDisplay = styled.div`
   align-items: center;
   display: flex;
   flex: ${(props) => (props.flex ? props.flex : "0 1 100%")};
-  -webkit-flex: 1 1 0; /* stylelint-disable-line */
+  -webkit-flex: 1 1 0;
   flex-direction: row;
   justify-content: center;
   min-height: ${(props) => (props.cacheCard ? "125px" : "75px")};
