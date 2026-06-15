@@ -27,7 +27,6 @@ const InputRange = styled.input.attrs({ type: "range" })`
   cursor: pointer;
 
   &::-webkit-slider-thumb {
-    /* stylelint-disable-next-line property-no-vendor-prefix */
     -webkit-appearance: none;
     appearance: none;
     width: 16px;
