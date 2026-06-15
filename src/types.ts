@@ -214,3 +214,48 @@ export interface ThreadCounts {
   stopped?: number;
   all?: number;
 }
+
+// ---------------------------------------------------------------------------
+// Redux store shape
+//
+// One interface per slice (see src/store/states/*), composed into RootState.
+// Field types mirror each slice's `initial` value. `selected*` slugs and
+// `fabricServer` are `string | null` because the store initializes them to
+// null. mapStateToProps functions annotate their argument as RootState.
+// ---------------------------------------------------------------------------
+
+/** `state.fabric` — discovered services and polling/selection state. */
+export interface FabricState {
+  fabricPollingInterval: number;
+  isPollingFabric: boolean;
+  selectedInstanceID: string | null;
+  servicesPollingFailures: number;
+  selectedServiceSlug: string | null;
+  /** Services indexed by service slug. */
+  services: Record<string, Service>;
+}
+
+/** `state.instance` — the selected instance's metrics and polling state. */
+export interface InstanceState {
+  instanceMetricsPollingInterval: number;
+  isPollingInstanceMetrics: boolean;
+  metricsPollingFailures: number;
+  metrics: Metrics;
+  threadsError: Record<string, unknown>;
+}
+
+/** `state.settings` — app configuration. */
+export interface SettingsState {
+  fabricServer: string | null;
+  threadsFilter: string;
+  locale: string;
+}
+
+/** The complete Redux state tree (see src/store/index). */
+export interface RootState {
+  dashboards: Record<string, Dashboard>;
+  fabric: FabricState;
+  instance: InstanceState;
+  settings: SettingsState;
+  threadsTable: ThreadsTableItem[];
+}

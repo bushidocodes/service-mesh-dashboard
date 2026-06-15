@@ -13,7 +13,12 @@ import { getBaseInstanceRoute, getDashboards } from "utils/selectors";
 import { parseJSONString } from "utils/latestAttribute";
 import { getSparkLineOfValue, getSparkLineOfNetChange } from "utils/sparklines";
 
-import type { RouterHistory, RouterLocation, RouterMatch } from "types";
+import type {
+  RootState,
+  RouterHistory,
+  RouterLocation,
+  RouterMatch
+} from "types";
 
 interface InstanceHeaderContentProps {
   basePath?: string;
@@ -113,7 +118,7 @@ export class InstanceHeaderContent extends Component<InstanceHeaderContentProps>
   }
 }
 
-function mapStateToProps(state: any, ownProps: any) {
+function mapStateToProps(state: RootState, ownProps: any) {
   const {
     instance: { metrics },
     fabric: { services, selectedServiceSlug }

@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
+import type { RootState } from "types";
 import _ from "lodash";
 import { injectIntl } from "react-intl";
 import Table from "components/Main/components/Table";
@@ -167,7 +168,7 @@ class RoutesGrid extends Component<RoutesGridProps> {
   }
 }
 
-function mapStateToProps(state: any) {
+function mapStateToProps(state: RootState) {
   return {
     routes: getRoutesTable(state)
   };

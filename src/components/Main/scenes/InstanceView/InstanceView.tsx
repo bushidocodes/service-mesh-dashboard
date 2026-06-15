@@ -1,6 +1,7 @@
 import { Actions } from "store/jumpstate";
 import React, { Suspense, useEffect } from "react";
 import { connect } from "react-redux";
+import type { RootState } from "types";
 
 import { LazyLoader } from "components/LazyLoader";
 import { Loading } from "components/Loading";
@@ -8,8 +9,9 @@ import { Loading } from "components/Loading";
 interface InstanceViewProps {
   instanceID: string;
   runtime: string;
-  selectedInstanceID?: string;
-  selectedServiceSlug?: string;
+  // string | null mirrors the fabric store slice (selected* default to null).
+  selectedInstanceID?: string | null;
+  selectedServiceSlug?: string | null;
   serviceName?: string;
   serviceVersion?: string;
   serviceSlug?: string;
@@ -70,7 +72,7 @@ function InstanceView({
   );
 }
 
-function mapStateToProps(state: any) {
+function mapStateToProps(state: RootState) {
   return {
     selectedServiceSlug: state.fabric.selectedServiceSlug,
     selectedInstanceID: state.fabric.selectedInstanceID

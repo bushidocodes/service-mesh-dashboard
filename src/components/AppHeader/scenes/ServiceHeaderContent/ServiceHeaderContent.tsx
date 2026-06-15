@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import type { RootState } from "types";
 import { withRouter } from "utils/withRouter";
 import { injectIntl } from "react-intl";
 
@@ -42,7 +43,7 @@ function ServiceHeaderContent({
   );
 }
 
-function mapStateToProps(state: any, ownProps: any) {
+function mapStateToProps(state: RootState, ownProps: any) {
   const {
     fabric: { services }
   } = state;

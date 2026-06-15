@@ -3,6 +3,7 @@ import { Actions } from "store/jumpstate";
 import objectSizeOf from "object-sizeof";
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
+import type { RootState } from "types";
 import { injectIntl } from "react-intl";
 
 import PollingSettings from "./components/PollingSettings";
@@ -18,13 +19,14 @@ interface SettingsGridProps {
   // are never undefined at render. This component is connect()-ed, so external
   // callers never pass them directly.
   fabricPollingInterval: number;
-  fabricServer?: string;
+  // string | null mirrors the settings/fabric store slices (default to null).
+  fabricServer?: string | null;
   instanceMetricsPollingInterval: number;
   intl: any;
   isPollingFabric: boolean;
   isPollingInstanceMetrics: boolean;
   metricsCacheSize?: string;
-  selectedInstanceID?: string;
+  selectedInstanceID?: string | null;
 }
 
 interface SettingsGridState {
@@ -174,7 +176,7 @@ function mapStateToProps({
     instanceMetricsPollingInterval,
     isPollingInstanceMetrics
   }
-}: any) {
+}: RootState) {
   return {
     fabricPollingInterval,
     fabricServer,

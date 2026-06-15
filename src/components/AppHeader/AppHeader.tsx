@@ -8,7 +8,7 @@ import Banner from "./components/Banner";
 import AppHeaderContent from "./scenes";
 
 import { trimID } from "utils";
-import type { RouterLocation } from "types";
+import type { RootState, RouterLocation } from "types";
 
 interface AppHeaderProps {
   location: RouterLocation;
@@ -57,7 +57,7 @@ function getTitle(pathArray: string[], services: Record<string, any>) {
   }
 }
 
-function mapStateToProps(state: any, ownProps: any) {
+function mapStateToProps(state: RootState, ownProps: any) {
   let pathArray = ownProps.location.pathname.replace(/^\/|\/$/g, "").split("/");
   return {
     title: getTitle(pathArray, state.fabric.services),

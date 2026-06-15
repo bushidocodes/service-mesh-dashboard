@@ -9,7 +9,7 @@ import { LazyLoader } from "components/LazyLoader";
 import { Loading } from "components/Loading";
 
 import { getFabricServer } from "utils/head";
-import type { Dashboard } from "types";
+import type { Dashboard, RootState } from "types";
 
 interface MainProps {
   dashboards?: Record<string, Dashboard>;
@@ -64,7 +64,7 @@ class Main extends Component<MainProps> {
   }
 }
 
-function mapStateToProps(state: any) {
+function mapStateToProps(state: RootState) {
   const { dashboards } = state;
   return {
     dashboards

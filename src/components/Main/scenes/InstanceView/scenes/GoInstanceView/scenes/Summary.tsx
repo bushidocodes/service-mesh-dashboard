@@ -13,13 +13,14 @@ import { calculateErrorPercent, formatAsDecimalString } from "utils";
 import { getDygraphOfValue, mapDygraphKeysToNetChange } from "utils/dygraphs";
 import { getLatestAttribute } from "utils/latestAttribute";
 import ArrayValue from "components/ArrayValue";
-import type { Metrics } from "types";
+import type { Metrics, RootState } from "types";
 
 interface SummaryGridProps {
   intl: any;
   metrics?: Metrics;
-  selectedInstanceID?: string;
-  selectedServiceSlug?: string;
+  // string | null mirrors the fabric store slice (selected* default to null).
+  selectedInstanceID?: string | null;
+  selectedServiceSlug?: string | null;
 }
 
 /**
@@ -212,7 +213,7 @@ function SummaryGrid({
   );
 }
 
-function mapStateToProps(state: any) {
+function mapStateToProps(state: RootState) {
   return {
     metrics: state.instance.metrics,
     selectedServiceSlug: state.fabric.selectedServiceSlug,
