@@ -44,7 +44,7 @@ class Main extends Component<MainProps> {
     const { dashboards, runtime } = this.props;
     // If the app initially loads before we've gotten a response from the Fabric Server, load the dynamic dashboards
     // once we figure out the runtime
-    if (Object.keys(dashboards).length === 0 && runtime) {
+    if (Object.keys(dashboards || {}).length === 0 && runtime) {
       console.log(`Loading dashboards for ${runtime}`);
       Actions.loadDashboardsFromJSON(runtime);
     }

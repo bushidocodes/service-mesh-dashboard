@@ -27,7 +27,7 @@ interface TableProps {
  * @returns
  */
 function Table({
-  items,
+  items = [],
   type,
   selectedServiceSlug,
   serviceIsMetered,

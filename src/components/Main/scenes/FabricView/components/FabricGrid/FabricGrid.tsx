@@ -17,12 +17,15 @@ import type {
 } from "types";
 
 interface FabricGridProps {
-  history?: RouterHistory;
+  // history/location/setUrlState/urlState are always supplied by the withRouter
+  // and withUrlState HOCs that wrap this component on export, so they are
+  // required here even though external callers never pass them directly.
+  history: RouterHistory;
   intl: any;
-  location?: RouterLocation;
+  location: RouterLocation;
   match?: RouterMatch;
   services?: Service[];
-  setUrlState?: (...args: any[]) => any;
+  setUrlState: (...args: any[]) => any;
   statusView?: boolean;
   urlState?: any;
 }
@@ -70,7 +73,7 @@ class FabricGrid extends Component<FabricGridProps> {
 
   render() {
     const {
-      services,
+      services = [],
       setUrlState,
       statusView,
       urlState: {
@@ -91,7 +94,7 @@ class FabricGrid extends Component<FabricGridProps> {
     // If we're not rendering a statusView,
     // then pass down sortBy props to render the sortBy dropdown
     const sortByProps = statusView
-      ? null
+      ? undefined
       : {
           sortByOptions: [
             {

@@ -14,9 +14,9 @@ interface InspectorProps {
   hideStaticMetric?: boolean;
   hideZeroMetric?: boolean;
   intl: any;
-  onChange?: (...args: any[]) => any;
+  onChange: (...args: any[]) => any;
   onClick: (...args: any[]) => any;
-  onSearch?: (...args: any[]) => any;
+  onSearch: (...args: any[]) => any;
   searchQuery?: string;
   selectedMetric?: string;
   tabIndex?: number;

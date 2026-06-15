@@ -12,7 +12,7 @@ import { cloneDeep, uniq } from "lodash";
  * @returns {Array}
  */
 export function getDygraphOfValue(metrics, keys) {
-  const results = {
+  const results: { data: any[]; attributes: any[] } = {
     data: [],
     attributes: []
   };
@@ -24,7 +24,9 @@ export function getDygraphOfValue(metrics, keys) {
   // Or set as the keys of the results object
   // Accumulate all unique timestamps and sort
   const timestamps = validKeys.reduce((acc, key) => {
-    return uniq([...acc, ...Object.keys(metrics[key])]).sort((a, b) => a - b);
+    return uniq([...acc, ...Object.keys(metrics[key])]).sort(
+      (a, b) => Number(a) - Number(b)
+    );
   }, []);
   // Map over the timestamps and generate the dygraph format
   results.data = timestamps.map((ts) => {

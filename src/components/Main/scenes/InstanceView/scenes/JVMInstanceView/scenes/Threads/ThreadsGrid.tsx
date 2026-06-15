@@ -34,7 +34,7 @@ class ThreadsGrid extends Component<ThreadsGridProps> {
 
     // If fabricServer is truthy, we are running with a "Fabric Server" discovery service,
     // so we need to dynamically build the endpoint for the threads API.
-    if (fabricServer) {
+    if (fabricServer && selectedServiceSlug) {
       const services = getState().fabric.services;
       // On a deep link or page refresh of the threads route, the fabric
       // services map may not be populated yet: it is fetched asynchronously by
@@ -74,7 +74,7 @@ class ThreadsGrid extends Component<ThreadsGridProps> {
    * are set in the local state object.
    * @param {Array} threads
    */
-  sort(threads = []) {
+  sort(threads: any[] = []) {
     const { ascending, sortByAttribute = "id" } = this.props.urlState;
     let sortOrder: ("asc" | "desc")[] =
       ascending === "true" ? ["asc"] : ["desc"];
@@ -90,7 +90,7 @@ class ThreadsGrid extends Component<ThreadsGridProps> {
   render() {
     const {
       setUrlState,
-      threads,
+      threads = [],
       threadsError,
       urlState: {
         filterString = "",

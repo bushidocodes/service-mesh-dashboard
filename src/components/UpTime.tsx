@@ -10,7 +10,7 @@ interface UpTimeProps {
 }
 
 export default function UpTime({ render, startTime }: UpTimeProps) {
-  const [uptime, setUptime] = useState([]);
+  const [uptime, setUptime] = useState<any[]>([]);
 
   useEffect(() => {
     const update = () => {

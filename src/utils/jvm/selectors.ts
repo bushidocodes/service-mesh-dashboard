@@ -37,7 +37,7 @@ export const getRoutesTable = createSelector(
   [getRoutesTree, getRoutesMetrics],
   (routesTree, routesMetrics) => {
     // Now build the table
-    const routesTable = [];
+    const routesTable: any[] = [];
     const routesPaths = Object.keys(routesTree);
     routesPaths.forEach((routePath) => {
       let baseObj = { route: routePath };

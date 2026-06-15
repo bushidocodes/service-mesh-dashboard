@@ -68,7 +68,7 @@ function CardsView({
                   [
                     (item) =>
                       sortByAttribute === "Status"
-                        ? microserviceStatuses.indexOf(item.status)
+                        ? microserviceStatuses.indexOf(item.status ?? "")
                         : item.name,
                     "name"
                   ],
@@ -91,7 +91,7 @@ function CardsView({
                 [
                   (item) =>
                     sortByAttribute === "Status"
-                      ? microserviceStatuses.indexOf(item.status)
+                      ? microserviceStatuses.indexOf(item.status ?? "")
                       : item.name,
                   "name"
                 ],

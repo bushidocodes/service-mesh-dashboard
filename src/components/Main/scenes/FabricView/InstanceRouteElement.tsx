@@ -34,7 +34,7 @@ function InstanceRouteElementInner({
   const runtime = service ? service.runtime : "";
 
   // Check if our services object has been passed to the router
-  const servicesAreNotLoaded = !Object.keys(services).length;
+  const servicesAreNotLoaded = !Object.keys(services || {}).length;
 
   // Set a message to pass to location state if one of the following checks fail
   let message,

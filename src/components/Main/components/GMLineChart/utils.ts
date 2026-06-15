@@ -65,7 +65,7 @@ export function median(array) {
 export function modes(array): any {
   if (array instanceof Array === true && !isEmpty(array)) {
     let modes: any = [];
-    let count = [];
+    let count: number[] = [];
     let i;
     let number;
     let maxIndex = 0;

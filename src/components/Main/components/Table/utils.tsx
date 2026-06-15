@@ -9,7 +9,7 @@ import { FormattedMessage } from "react-intl";
  * @returns {React.element}
  */
 export const getTableHeaders = (type) => {
-  let headerNames = [];
+  let headerNames: React.ReactElement[] = [];
   if (type === "Instance") {
     headerNames = [
       <FormattedMessage
