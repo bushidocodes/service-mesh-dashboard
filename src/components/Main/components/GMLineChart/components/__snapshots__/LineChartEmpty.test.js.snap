@@ -3,8 +3,6 @@
 exports[`LineChartEmpty matches snapshot 1`] = `
 <DocumentFragment>
   .c0 {
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
   flex: 1 0 auto;
   padding: 8px;
 }
@@ -17,8 +15,8 @@ exports[`LineChartEmpty matches snapshot 1`] = `
 }
 
 .c0 h1 {
-  border-bottom: 1px solid hsla(0,0%,0%,0);
-  color: rgba(NaN,NaN,NaN,NaN);
+  border-bottom: 1px solid hsla(0, 0%, 0%, 0);
+  color: rgba(NaN, NaN, NaN, NaN);
   font-weight: bold;
   font-size: 18px;
   margin-bottom: 16px;
@@ -27,7 +25,7 @@ exports[`LineChartEmpty matches snapshot 1`] = `
 
 .c0 p,
 .c0 ul {
-  color: rgb(77,77,77);
+  color: rgb(77, 77, 77);
 }
 
 .c0 ul {

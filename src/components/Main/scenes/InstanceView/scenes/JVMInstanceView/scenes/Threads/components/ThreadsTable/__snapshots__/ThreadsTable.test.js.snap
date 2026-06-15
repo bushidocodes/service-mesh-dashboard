@@ -3,18 +3,10 @@
 exports[`ThreadsTable component matches the snapshot 1`] = `
 <DocumentFragment>
   .c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  background-color: rgb(255,255,255);
-  box-shadow: inset 0 -1px hsl(0,0%,92%);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+  background-color: rgb(255, 255, 255);
+  box-shadow: inset 0 -1px hsl(0, 0%, 92%);
   display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   font-weight: 400;
   overflow: visible;
@@ -22,8 +14,6 @@ exports[`ThreadsTable component matches the snapshot 1`] = `
 }
 
 .c2 {
-  -webkit-flex: 1 1 12%;
-  -ms-flex: 1 1 12%;
   flex: 1 1 12%;
   text-align: left;
 }
@@ -42,8 +32,6 @@ exports[`ThreadsTable component matches the snapshot 1`] = `
 }
 
 .c4 {
-  -webkit-flex: 0 1 5em;
-  -ms-flex: 0 1 5em;
   flex: 0 1 5em;
 }
 

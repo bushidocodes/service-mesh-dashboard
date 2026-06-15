@@ -3,10 +3,8 @@
 exports[`SectionIcon matches snapshot 1`] = `
 <DocumentFragment>
   .c0 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding-right: 8px !important;
+  padding-right: 8px!important;
 }
 
 <span

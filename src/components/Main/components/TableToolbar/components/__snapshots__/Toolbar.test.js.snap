@@ -3,17 +3,9 @@
 exports[`Toolbar matches snapshot 1`] = `
 <DocumentFragment>
   .c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  background-color: hsl(0,0%,96%);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+  background-color: hsl(0, 0%, 96%);
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   height: 36px;
   margin-left: auto;
@@ -23,7 +15,7 @@ exports[`Toolbar matches snapshot 1`] = `
   padding: 2px 16px;
 }
 
-@media all and (min-width:1300px) {
+@media all and (min-width: 1300px) {
   .c0:after {
     background-color: inherit;
     content: "";
@@ -36,7 +28,7 @@ exports[`Toolbar matches snapshot 1`] = `
     z-index: 1;
   }
 
-  .c0 > * {
+  .c0 >* {
     position: relative;
     z-index: 2;
   }

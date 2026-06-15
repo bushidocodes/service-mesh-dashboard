@@ -3,14 +3,12 @@
 exports[`LineChartContent matches snapshot 1`] = `
 <DocumentFragment>
   .c0 {
-  -webkit-flex: 1 1 100%;
-  -ms-flex: 1 1 100%;
   flex: 1 1 100%;
   position: relative;
   min-height: 250px;
 }
 
-.c0 > * {
+.c0 >* {
   margin: 8px;
 }
 

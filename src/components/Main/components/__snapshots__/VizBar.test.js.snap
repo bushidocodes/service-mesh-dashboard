@@ -3,7 +3,7 @@
 exports[`VizBar matches snapshot 1`] = `
 <DocumentFragment>
   .c0 {
-  background-color: rgb(230,230,230);
+  background-color: rgb(230, 230, 230);
   border-radius: 1px 4px 4px 1px;
   bottom: 0;
   height: 3px;

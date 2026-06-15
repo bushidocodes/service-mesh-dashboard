@@ -2,7 +2,7 @@
 
 exports[`ArrayValue matches snapshot 1`] = `
 <DocumentFragment>
-  .c0 span + span {
+  .c0 span+span {
   font-size: 80%;
   opacity: 0.8;
 }

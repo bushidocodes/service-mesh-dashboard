@@ -2,32 +2,19 @@
 
 exports[`ItemDisplay matches snapshot 1`] = `
 <DocumentFragment>
-  .c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
+  .c0 {
   align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 0 1 100%;
-  -ms-flex: 0 1 100%;
   flex: 0 1 100%;
   -webkit-flex: 1 1 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   min-height: 75px;
   padding: 8px 4px;
   position: relative;
 }
 
-.c0 + .c0:before {
+.c0+.c0:before {
   border-top: 1px solid currentColor;
   content: "";
   left: 0;
@@ -37,15 +24,13 @@ exports[`ItemDisplay matches snapshot 1`] = `
   top: 0;
 }
 
-.c1 button {
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
+.c0 button {
   align-self: center;
   margin: 8px 0;
 }
 
 <div
-    class="c0 c1"
+    class="c0"
   />
 </DocumentFragment>
 `;

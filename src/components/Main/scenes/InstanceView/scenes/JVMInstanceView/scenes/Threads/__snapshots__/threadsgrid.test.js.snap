@@ -8,12 +8,7 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
   background-size: contain;
   position: relative;
   text-indent: 20px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   color: black;
   font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
@@ -23,24 +18,14 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
   text-align: left;
   text-transform: none;
   padding: 1.4px 4px;
-  background-color: rgb(255,255,255);
+  background-color: rgb(255, 255, 255);
   border-radius: 3px;
-  border: 1px solid rgb(242,242,242);
-  border-bottom-color: rgb(230,230,230);
-  -webkit-user-select: auto;
-  -moz-user-select: auto;
-  -ms-user-select: auto;
+  border: 1px solid rgb(242, 242, 242);
+  border-bottom-color: rgb(230, 230, 230);
   user-select: auto;
   box-shadow: inset 0 0 0 transparent,0 0 0 transparent,0 0 0 transparent;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
@@ -48,37 +33,18 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
   cursor: pointer;
 }
 
-.c2:hover {
-  background-color: rgb(250,250,250);
-  border-color: rgb(237,237,237);
-  -webkit-transition: all 0.1s ease;
+.c2 :hover {
+  background-color: rgb(250, 250, 250);
+  border-color: rgb(237, 237, 237);
   transition: all 0.1s ease;
-  border-bottom-color: rgb(217,217,217);
+  border-bottom-color: rgb(217, 217, 217);
   color: black;
 }
 
-.c2:focus {
+.c2 :focus {
   outline: none;
-  box-shadow: 0 0 0 2px rgb(10,171,42);
+  box-shadow: 0 0 0 2px rgb(10, 171, 42);
   z-index: 1;
-}
-
-.c2::-webkit-input-placeholder {
-  color: currentColor;
-  opacity: 1;
-  text-align: center;
-}
-
-.c2::-moz-placeholder {
-  color: currentColor;
-  opacity: 1;
-  text-align: center;
-}
-
-.c2:-ms-input-placeholder {
-  color: currentColor;
-  opacity: 1;
-  text-align: center;
 }
 
 .c2::placeholder {
@@ -99,17 +65,9 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
 }
 
 .c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  background-color: hsl(0,0%,96%);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+  background-color: hsl(0, 0%, 96%);
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   height: 36px;
   margin-left: auto;
@@ -120,55 +78,26 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
 }
 
 .c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 1 1 33%;
-  -ms-flex: 1 1 33%;
   flex: 1 1 33%;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 1 1 33%;
-  -ms-flex: 1 1 33%;
   flex: 1 1 33%;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
   justify-content: flex-end;
 }
 
 .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 1 1 33%;
-  -ms-flex: 1 1 33%;
   flex: 1 1 33%;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
-@media all and (min-width:1300px) {
+@media all and (min-width: 1300px) {
   .c0:after {
     background-color: inherit;
     content: "";
@@ -181,7 +110,7 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
     z-index: 1;
   }
 
-  .c0 > * {
+  .c0 >* {
     position: relative;
     z-index: 2;
   }
@@ -388,18 +317,10 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
     </div>
   </div>
   .c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  background-color: rgb(255,255,255);
-  box-shadow: inset 0 -1px hsl(0,0%,92%);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+  background-color: rgb(255, 255, 255);
+  box-shadow: inset 0 -1px hsl(0, 0%, 92%);
   display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   font-weight: 400;
   overflow: visible;
@@ -407,8 +328,6 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
 }
 
 .c2 {
-  -webkit-flex: 1 1 12%;
-  -ms-flex: 1 1 12%;
   flex: 1 1 12%;
   text-align: left;
 }
@@ -427,8 +346,6 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
 }
 
 .c4 {
-  -webkit-flex: 0 1 5em;
-  -ms-flex: 0 1 5em;
   flex: 0 1 5em;
 }
 
@@ -440,43 +357,23 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
 }
 
 .c7 {
-  -webkit-flex: 0 1 5em;
-  -ms-flex: 0 1 5em;
   flex: 0 1 5em;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   text-align: center;
 }
 
 .c10 {
-  -webkit-flex: 0 1 5em;
-  -ms-flex: 0 1 5em;
   flex: 0 1 5em;
-  -webkit-flex: 0 1 7em;
-  -ms-flex: 0 1 7em;
   flex: 0 1 7em;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
   justify-content: flex-end;
   text-align: right;
 }
 
 .c6 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  background-color: rgb(255,255,255);
-  box-shadow: inset 0 -1px hsl(0,0%,92%);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+  background-color: rgb(255, 255, 255);
+  box-shadow: inset 0 -1px hsl(0, 0%, 92%);
   display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   min-height: 36px;
   width: 100%;
@@ -484,7 +381,7 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
 }
 
 .c6:hover {
-  background-color: hsl(0,0%,98%);
+  background-color: hsl(0, 0%, 98%);
 }
 
 .c6:focus {
@@ -495,7 +392,7 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
   outline: 0;
 }
 
-.c6 > * {
+.c6 >* {
   padding-right: 16px;
   padding-top: 7px;
   padding-bottom: 7px;
@@ -504,13 +401,11 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
   white-space: nowrap;
 }
 
-.c6 > *:first-child {
+.c6 >*:first-child {
   padding-left: 16px;
 }
 
 .c9 {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
   transform: scale(1);
 }
 
@@ -518,7 +413,7 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
   z-index: 1;
   height: 24px;
   width: 24px;
-  color: rgb(10,171,42);
+  color: rgb(10, 171, 42);
   word-spacing: 0;
   vertical-align: middle;
 }

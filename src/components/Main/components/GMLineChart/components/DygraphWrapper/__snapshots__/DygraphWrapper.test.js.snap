@@ -12,40 +12,38 @@ exports[`DygraphWrapper matches default snapshot 1`] = `
   background-color: inherit;
 }
 
-.c0 > * {
+.c0 >* {
   background-color: inherit;
 }
 
 .c0 .dygraph-legend {
-  background-color: rgba(255,255,255,0.9);
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 3px;
-  color: hsl(0,0%,12.5%);
+  color: hsl(0, 0%, 12.5%);
   display: inline-block;
-  left: auto !important;
+  left: auto!important;
   min-width: 18em;
   opacity: 0;
   padding: 8px 16px 8px;
   position: absolute;
-  right: 0 !important;
+  right: 0!important;
   text-align: right;
-  -webkit-transition: all 0.2s ease, color 0.2s ease;
-  transition: all 0.2s ease, color 0.2s ease;
+  transition: all 0.2s ease,color 0.2s ease;
   z-index: 10000;
 }
 
 .c0 .dygraph-legend [style*="bold"] {
-  font-weight: 600 !important;
+  font-weight: 600!important;
 }
 
 .c0:hover .dygraph-legend {
-  color: hsl(0,0%,12.5%);
+  color: hsl(0, 0%, 12.5%);
   opacity: 1;
-  -webkit-transition: all 0.2s ease, color 1s ease;
-  transition: all 0.2s ease, color 1s ease;
+  transition: all 0.2s ease,color 1s ease;
 }
 
 .c0 .dygraph-label {
-  color: rgb(32,32,32);
+  color: rgb(32, 32, 32);
   opacity: 0.8;
 }
 

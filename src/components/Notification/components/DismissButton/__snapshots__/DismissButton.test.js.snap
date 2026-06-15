@@ -2,13 +2,11 @@
 
 exports[`DismissButton matches snapshot 1`] = `
 <DocumentFragment>
-  .c3 {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
+  .c2 {
   transform: scale(1);
 }
 
-.c2 {
+.c1 {
   z-index: 1;
   height: 24px;
   width: 24px;
@@ -17,38 +15,31 @@ exports[`DismissButton matches snapshot 1`] = `
   vertical-align: middle;
 }
 
-.c2:not(:root) {
+.c1:not(:root) {
   overflow: visible;
 }
 
-.c1 {
+.c0 {
   position: absolute;
   cursor: pointer;
   top: 8px;
   right: 8px;
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   pointer-events: auto;
   z-index: 100;
   opacity: 0.125;
 }
 
-.c1:hover,
-.c1:focus {
+.c0:hover,
+.c0:focus {
   opacity: 1;
-  -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
-  -webkit-transform: scale(1.25);
-  -ms-transform: scale(1.25);
   transform: scale(1.25);
 }
 
-.c1:active {
+.c0:active {
   opacity: 1;
-  -webkit-transition: all 0s ease;
   transition: all 0s ease;
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
   transform: scale(1.1);
 }
 
@@ -57,11 +48,11 @@ exports[`DismissButton matches snapshot 1`] = `
 }
 
 <div
-    class="c0 c1"
+    class="c0"
   >
     <svg
       aria-labelledby="ariaLabelledby"
-      class="c2"
+      class="c1"
       focusable="false"
       version="1.1"
       viewBox="0 0 24 24"
@@ -69,7 +60,7 @@ exports[`DismissButton matches snapshot 1`] = `
       xmlns:xlink="http://www.w3.org/1999/xlink"
     >
       <g
-        class="c3"
+        class="c2"
         fill="currentColor"
         title=""
       >

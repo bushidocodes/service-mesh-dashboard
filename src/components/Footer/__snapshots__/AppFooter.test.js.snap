@@ -5,68 +5,43 @@ exports[`A Footer container should render 1`] = `
   .c2 {
   font-size: 9px;
   margin: 0;
-  -webkit-flex: 0 0 100%;
-  -ms-flex: 0 0 100%;
   flex: 0 0 100%;
   text-align: center;
-  -webkit-transition: opacity 0.2s ease;
   transition: opacity 0.2s ease;
   cursor: default;
-  color: rgb(32,32,32);
-  border-top: 1px solid rgb(230,230,230);
+  color: rgb(32, 32, 32);
+  border-top: 1px solid rgb(230, 230, 230);
   margin-top: 8px;
   padding: 8px;
-  -webkit-order: 3;
-  -ms-flex-order: 3;
   order: 3;
 }
 
 .c0 {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   overflow: hidden;
   padding: 4px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: row wrap;
-  -ms-flex-flow: row wrap;
   flex-flow: row wrap;
-  color: rgb(51,51,51);
-  background-color: rgb(255,255,255);
+  color: rgb(51, 51, 51);
+  background-color: rgb(255, 255, 255);
   font-size: 11px;
   height: auto;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
   align-items: stretch;
-  -webkit-box-pack: stretch;
-  -webkit-justify-content: stretch;
-  -ms-flex-pack: stretch;
   justify-content: stretch;
 }
 
 .c1 {
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
   flex: 0 1 auto;
   text-align: left;
   padding: 0 8px;
-  -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
   opacity: 0.8;
-  -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
 }
 
 .c1:hover {
   opacity: 1;
-  -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
-  -webkit-filter: grayscale(0%);
   filter: grayscale(0%);
 }
 
@@ -75,25 +50,21 @@ exports[`A Footer container should render 1`] = `
 }
 
 .c3 {
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
   flex: 1 0 auto;
   text-align: right;
   padding: 0 0 0 8px;
 }
 
 .c4 {
-  color: rgb(153,153,153);
+  color: rgb(153, 153, 153);
   padding: 0 8px;
 }
 
 .c4:hover {
-  color: rgb(10,171,42);
+  color: rgb(10, 171, 42);
 }
 
 .c6 {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
   transform: scale(1);
 }
 
@@ -110,13 +81,9 @@ exports[`A Footer container should render 1`] = `
   overflow: visible;
 }
 
-@media all and (min-width:800px) {
+@media all and (min-width: 800px) {
   .c2 {
-    -webkit-order: initial;
-    -ms-flex-order: initial;
     order: initial;
-    -webkit-flex: 1 1 auto;
-    -ms-flex: 1 1 auto;
     flex: 1 1 auto;
     padding: 0;
     margin: 0;
@@ -124,19 +91,11 @@ exports[`A Footer container should render 1`] = `
   }
 }
 
-@media all and (min-width:800px) {
+@media all and (min-width: 800px) {
   .c0 {
     height: 32px;
-    -webkit-flex-wrap: no-wrap;
-    -ms-flex-wrap: no-wrap;
     flex-wrap: no-wrap;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
-    -webkit-box-pack: start;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
     justify-content: flex-start;
     position: fixed;
     bottom: 0;
@@ -145,15 +104,13 @@ exports[`A Footer container should render 1`] = `
     z-index: 1010;
   }
 
-  .c0 + * {
+  .c0+* {
     padding-bottom: 32px;
   }
 }
 
-@media all and (min-width:800px) {
+@media all and (min-width: 800px) {
   .c3 {
-    -webkit-flex: 0 0 auto;
-    -ms-flex: 0 0 auto;
     flex: 0 0 auto;
   }
 }

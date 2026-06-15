@@ -3,8 +3,6 @@
 exports[`TableColArray matches snapshot 1`] = `
 <DocumentFragment>
   .c0 {
-  -webkit-flex: 1 1 12%;
-  -ms-flex: 1 1 12%;
   flex: 1 1 12%;
   text-align: left;
 }
@@ -13,7 +11,7 @@ exports[`TableColArray matches snapshot 1`] = `
   text-align: right;
 }
 
-.c1 span + span {
+.c1 span+span {
   font-size: 80%;
   opacity: 0.8;
 }

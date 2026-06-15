@@ -3,7 +3,7 @@
 exports[`TabKey matches snapshot 1`] = `
 <DocumentFragment>
   .c0 {
-  color: rgb(213,213,213);
+  color: rgb(213, 213, 213);
   padding-right: 4px;
   display: inline-block;
 }

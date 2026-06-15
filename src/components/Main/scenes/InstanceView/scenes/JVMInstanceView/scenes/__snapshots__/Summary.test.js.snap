@@ -3,40 +3,22 @@
 exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
 <DocumentFragment>
   .c0 {
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
   align-items: stretch;
-  color: rgb(32,32,32);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+  color: rgb(32, 32, 32);
   display: flex;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   margin-bottom: 32px;
 }
 
-.c0:first-of-type > * {
+.c0:first-of-type >* {
   border-top: 0;
 }
 
 .c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  border-top: 1px solid rgb(217,217,217);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+  border-top: 1px solid rgb(217, 217, 217);
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   margin: 0 auto;
   max-width: 1300px;
@@ -52,10 +34,8 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
 }
 
 .c2 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding-right: 8px !important;
+  padding-right: 8px!important;
 }
 
 .c5 {
@@ -65,8 +45,6 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
 }
 
 .c4 {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
   transform: scale(1);
 }
 
@@ -83,7 +61,7 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
   overflow: visible;
 }
 
-.c12 {
+.c11 {
   z-index: 1;
   height: 48px;
   width: 48px;
@@ -92,110 +70,71 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
   vertical-align: middle;
 }
 
-.c12:not(:root) {
+.c11:not(:root) {
   overflow: visible;
 }
 
 .c8 {
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
   align-items: stretch;
-  background-color: rgb(230,230,230);
+  background-color: rgb(230, 230, 230);
   border-radius: 3px;
-  color: rgb(0,0,0);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+  color: rgb(0, 0, 0);
   display: flex;
-  -webkit-flex: 1 1 300px;
-  -ms-flex: 1 1 300px;
   flex: 1 1 300px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   margin: 4px;
 }
 
 .c8:first-child:last-child {
-  -webkit-box-flex: 0;
-  -webkit-flex-grow: 0;
-  -ms-flex-positive: 0;
   flex-grow: 0;
 }
 
-.c8:first-child:last-child > * {
+.c8:first-child:last-child >* {
   text-align: center;
 }
 
-.c8:first-child:last-child > * > :first-child {
+.c8:first-child:last-child >* >:first-child {
   padding-left: 0;
 }
 
-.c18 {
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
+.c17 {
   align-items: stretch;
-  background-color: rgb(51,51,51);
+  background-color: rgb(51, 51, 51);
   border-radius: 3px;
-  color: rgb(255,255,255);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+  color: rgb(255, 255, 255);
   display: flex;
-  -webkit-flex: 1 1 300px;
-  -ms-flex: 1 1 300px;
   flex: 1 1 300px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   margin: 0;
 }
 
-.c18:first-child:last-child {
-  -webkit-box-flex: 0;
-  -webkit-flex-grow: 0;
-  -ms-flex-positive: 0;
+.c17:first-child:last-child {
   flex-grow: 0;
 }
 
-.c18:first-child:last-child > * {
+.c17:first-child:last-child >* {
   text-align: center;
 }
 
-.c18:first-child:last-child > * > :first-child {
+.c17:first-child:last-child >* >:first-child {
   padding-left: 0;
 }
 
-.c10 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
+.c9 {
   align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 0 1 100%;
-  -ms-flex: 0 1 100%;
   flex: 0 1 100%;
   -webkit-flex: 1 1 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   min-height: 75px;
   padding: 8px 4px;
   position: relative;
 }
 
-.c9 + .c9:before {
+.c9+.c9:before {
   border-top: 1px solid currentColor;
   content: "";
   left: 0;
@@ -205,55 +144,33 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
   top: 0;
 }
 
-.c10 button {
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
+.c9 button {
   align-self: center;
   margin: 8px 0;
 }
 
-.c13 {
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
+.c12 {
   align-items: stretch;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 1 1 100%;
-  -ms-flex: 1 1 100%;
   flex: 1 1 100%;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   padding: 8px 0;
 }
 
-.c13:first-child {
+.c12:first-child {
   padding-left: 16px;
 }
 
-.c11 {
-  -webkit-flex: 0 0 80px;
-  -ms-flex: 0 0 80px;
+.c10 {
   flex: 0 0 80px;
   height: 48px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   text-align: center;
 }
 
-.c14 {
+.c13 {
   font-size: 11px;
   margin: 0;
   padding: 0;
@@ -261,7 +178,7 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
   min-height: 1em;
 }
 
-.c15 {
+.c14 {
   font-size: 32px;
   word-break: break-all;
   margin: 0;
@@ -269,7 +186,7 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
   min-height: 1em;
 }
 
-.c17 {
+.c16 {
   font-size: 11px;
   font-weight: 600;
   margin: 0;
@@ -278,44 +195,28 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
 }
 
 .c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: row wrap;
-  -ms-flex-flow: row wrap;
   flex-flow: row wrap;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   orphans: 2;
   width: 100%;
 }
 
-.c16 span + span {
+.c15 span+span {
   font-size: 80%;
   opacity: 0.8;
 }
 
-@media all and (max-width:1000px) {
+@media all and (max-width: 1000px) {
   .c8 {
-    -webkit-flex: 0 0 100%;
-    -ms-flex: 0 0 100%;
     flex: 0 0 100%;
-    -webkit-order: 1;
-    -ms-flex-order: 1;
     order: 1;
   }
 }
 
-@media all and (max-width:1000px) {
-  .c18 {
-    -webkit-flex: 0 0 100%;
-    -ms-flex: 0 0 100%;
+@media all and (max-width: 1000px) {
+  .c17 {
     flex: 0 0 100%;
-    -webkit-order: 0;
-    -ms-flex-order: 0;
     order: 0;
   }
 }
@@ -373,14 +274,14 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
           class="c8"
         >
           <div
-            class="c9 c10"
+            class="c9"
           >
             <div
-              class="c11"
+              class="c10"
             >
               <svg
                 aria-labelledby="ariaLabelledby"
-                class="c12"
+                class="c11"
                 focusable="false"
                 version="1.1"
                 viewBox="0 0 24 24"
@@ -407,18 +308,18 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
               </svg>
             </div>
             <div
-              class="c13"
+              class="c12"
             >
               <h2
-                class="c14"
+                class="c13"
               >
                 Uptime
               </h2>
               <span
-                class="c15"
+                class="c14"
               >
                 <div
-                  class="c16"
+                  class="c15"
                 >
                   <span>
                     3236d 
@@ -435,7 +336,7 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
                 </div>
               </span>
               <p
-                class="c17"
+                class="c16"
               >
                 Jul 18, 2017, 12:53:01 PM
               </p>
@@ -443,17 +344,17 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
           </div>
         </div>
         <div
-          class="c18"
+          class="c17"
         >
           <div
-            class="c9 c10"
+            class="c9"
           >
             <div
-              class="c11"
+              class="c10"
             >
               <svg
                 aria-labelledby="ariaLabelledby"
-                class="c12"
+                class="c11"
                 focusable="false"
                 version="1.1"
                 viewBox="0 0 24 24"
@@ -480,29 +381,29 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
               </svg>
             </div>
             <div
-              class="c13"
+              class="c12"
             >
               <h2
-                class="c14"
+                class="c13"
               >
                 Avg. Response Time
               </h2>
               <span
-                class="c15"
+                class="c14"
               >
                 —
               </span>
             </div>
           </div>
           <div
-            class="c9 c10"
+            class="c9"
           >
             <div
-              class="c11"
+              class="c10"
             >
               <svg
                 aria-labelledby="ariaLabelledby"
-                class="c12"
+                class="c11"
                 focusable="false"
                 version="1.1"
                 viewBox="0 0 24 24"
@@ -541,15 +442,15 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
               </svg>
             </div>
             <div
-              class="c13"
+              class="c12"
             >
               <h2
-                class="c14"
+                class="c13"
               >
                 Error Rate
               </h2>
               <span
-                class="c15"
+                class="c14"
               >
                 0%
               </span>
@@ -560,14 +461,14 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
           class="c8"
         >
           <div
-            class="c9 c10"
+            class="c9"
           >
             <div
-              class="c11"
+              class="c10"
             >
               <svg
                 aria-labelledby="ariaLabelledby"
-                class="c12"
+                class="c11"
                 focusable="false"
                 version="1.1"
                 viewBox="0 0 24 24"
@@ -594,15 +495,15 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
               </svg>
             </div>
             <div
-              class="c13"
+              class="c12"
             >
               <h2
-                class="c14"
+                class="c13"
               >
                 Host CPU Cores
               </h2>
               <span
-                class="c15"
+                class="c14"
               >
                 8
               </span>
@@ -613,40 +514,22 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
     </div>
   </section>
   .c0 {
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
   align-items: stretch;
-  color: rgb(32,32,32);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+  color: rgb(32, 32, 32);
   display: flex;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   margin-bottom: 32px;
 }
 
-.c0:first-of-type > * {
+.c0:first-of-type >* {
   border-top: 0;
 }
 
 .c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  border-top: 1px solid rgb(217,217,217);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+  border-top: 1px solid rgb(217, 217, 217);
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   margin: 0 auto;
   max-width: 1300px;
@@ -662,10 +545,8 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
 }
 
 .c2 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding-right: 8px !important;
+  padding-right: 8px!important;
 }
 
 .c5 {
@@ -675,8 +556,6 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
 }
 
 .c4 {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
   transform: scale(1);
 }
 
@@ -703,59 +582,47 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
   background-color: inherit;
 }
 
-.c10 > * {
+.c10 >* {
   background-color: inherit;
 }
 
 .c10 .dygraph-legend {
-  background-color: rgba(255,255,255,0.9);
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 3px;
-  color: hsl(0,0%,12.5%);
+  color: hsl(0, 0%, 12.5%);
   display: inline-block;
-  left: auto !important;
+  left: auto!important;
   min-width: 18em;
   opacity: 0;
   padding: 8px 16px 8px;
   position: absolute;
-  right: 0 !important;
+  right: 0!important;
   text-align: right;
-  -webkit-transition: all 0.2s ease, color 0.2s ease;
-  transition: all 0.2s ease, color 0.2s ease;
+  transition: all 0.2s ease,color 0.2s ease;
   z-index: 10000;
 }
 
 .c10 .dygraph-legend [style*="bold"] {
-  font-weight: 600 !important;
+  font-weight: 600!important;
 }
 
 .c10:hover .dygraph-legend {
-  color: hsl(0,0%,12.5%);
+  color: hsl(0, 0%, 12.5%);
   opacity: 1;
-  -webkit-transition: all 0.2s ease, color 1s ease;
-  transition: all 0.2s ease, color 1s ease;
+  transition: all 0.2s ease,color 1s ease;
 }
 
 .c10 .dygraph-label {
-  color: rgb(32,32,32);
+  color: rgb(32, 32, 32);
   opacity: 0.8;
 }
 
 .c7 {
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
   align-items: stretch;
   background-color: transparent;
   border: 1px solid transparent;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 1 1 100%;
-  -ms-flex: 1 1 100%;
   flex: 1 1 100%;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   height: auto;
@@ -766,23 +633,17 @@ exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
   font-size: 18px;
   margin: 0;
   padding: 8px 16px;
-  -webkit-flex: 1 0 40px;
-  -ms-flex: 1 0 40px;
   flex: 1 0 40px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c9 {
-  -webkit-flex: 1 1 100%;
-  -ms-flex: 1 1 100%;
   flex: 1 1 100%;
   position: relative;
   min-height: 250px;
 }
 
-.c9 > * {
+.c9 >* {
   margin: 8px;
 }
 

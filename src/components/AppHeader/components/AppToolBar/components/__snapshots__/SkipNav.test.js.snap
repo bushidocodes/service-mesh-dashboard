@@ -3,16 +3,15 @@
 exports[`SkipNav matches snapshot 1`] = `
 <DocumentFragment>
   .c0 {
-  background-color: rgb(10,171,42);
+  background-color: rgb(10, 171, 42);
   border: none;
-  color: rgb(255,255,255);
+  color: rgb(255, 255, 255);
   font-size: 11px;
   left: 0;
   position: absolute;
   padding: 0.6em;
   text-transform: uppercase;
   top: -10em;
-  -webkit-transition: top 0.5s ease;
   transition: top 0.5s ease;
 }
 

@@ -3,9 +3,6 @@
 exports[`ServicesCardsView component rendering Has a snapshot 1`] = `
 <DocumentFragment>
   .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   padding: 0 16px 24px;
   max-width: 1300px;
@@ -15,16 +12,12 @@ exports[`ServicesCardsView component rendering Has a snapshot 1`] = `
 }
 
 .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   padding: 8px 16px 0;
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 1010;
-  background-color: rgb(255,255,255);
+  background-color: rgb(255, 255, 255);
   max-width: 1300px;
   width: 100%;
   margin-left: auto;

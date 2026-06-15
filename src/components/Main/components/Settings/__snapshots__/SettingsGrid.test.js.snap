@@ -3,31 +3,25 @@
 exports[`SettingsGrid component Matches snapshot 1`] = `
 <DocumentFragment>
   .c12 {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   width: 100%;
   height: 6px;
   margin: 12px 0;
   border-radius: 20px;
-  background: rgb(230,230,230);
+  background: rgb(230, 230, 230);
   outline: none;
   cursor: pointer;
 }
 
 .c12::-webkit-slider-thumb {
   -webkit-appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   width: 16px;
   height: 16px;
   border: none;
   border-radius: 0;
-  background: rgb(10,171,42);
+  background: rgb(10, 171, 42);
   cursor: pointer;
-  -webkit-transition: -webkit-transform 0.3s ease;
-  -webkit-transition: transform 0.3s ease;
   transition: transform 0.3s ease;
 }
 
@@ -36,10 +30,8 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   height: 16px;
   border: none;
   border-radius: 0;
-  background: rgb(10,171,42);
+  background: rgb(10, 171, 42);
   cursor: pointer;
-  -webkit-transition: -webkit-transform 0.3s ease;
-  -webkit-transition: transform 0.3s ease;
   transition: transform 0.3s ease;
 }
 
@@ -49,37 +41,27 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
 
 .c12:hover::-webkit-slider-thumb,
 .c12:focus::-webkit-slider-thumb {
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
   transform: scale(1.1);
 }
 
 .c12:hover::-moz-range-thumb,
 .c12:focus::-moz-range-thumb {
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
   transform: scale(1.1);
 }
 
 .c12:disabled::-webkit-slider-thumb {
-  background: rgb(102,102,102);
+  background: rgb(102, 102, 102);
   cursor: default;
-  -webkit-transform: none;
-  -ms-transform: none;
   transform: none;
 }
 
 .c12:disabled::-moz-range-thumb {
-  background: rgb(102,102,102);
+  background: rgb(102, 102, 102);
   cursor: default;
-  -webkit-transform: none;
-  -ms-transform: none;
   transform: none;
 }
 
 .c4 {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
   transform: scale(1);
 }
 
@@ -98,9 +80,6 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
 
 .c9 {
   box-sizing: border-box;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-weight: 600;
@@ -109,68 +88,51 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   border-style: solid;
   text-transform: none;
   text-align: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   cursor: pointer;
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  background-color: rgb(255,255,255);
-  border-color: rgb(255,255,255);
-  border-top-color: hsl(0,0%,100%);
-  border-bottom-color: hsl(0,0%,94%);
-  color: rgb(0,0,0);
+  background-color: rgb(255, 255, 255);
+  border-color: rgb(255, 255, 255);
+  border-top-color: hsl(0, 0%, 100%);
+  border-bottom-color: hsl(0, 0%, 94%);
+  color: rgb(0, 0, 0);
   font-size: 21px;
   border-radius: 3px;
   padding: 2px 4px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   padding-top: 4px;
 }
 
 .c9:hover {
-  -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
 
 .c9:focus,
 .c9:active {
-  -webkit-transition: all 0 ease;
   transition: all 0 ease;
 }
 
-.c9 > * {
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
+.c9 >* {
   flex: 0 1 auto;
 }
 
 .c9:active {
-  -webkit-transition-duration: 0s;
   transition-duration: 0s;
-  background-color: hsl(0,0%,92.5%);
-  border-color: hsl(0,0%,92.5%);
-  border-top-color: hsl(0,0%,98%);
-  border-bottom-color: hsl(0,0%,87%);
-  color: hsl(0,0%,0%);
+  background-color: hsl(0, 0%, 92.5%);
+  border-color: hsl(0, 0%, 92.5%);
+  border-top-color: hsl(0, 0%, 98%);
+  border-bottom-color: hsl(0, 0%, 87%);
+  color: hsl(0, 0%, 0%);
 }
 
 .c9:hover {
-  background-color: hsl(0,0%,98.5%);
-  border-color: hsl(0,0%,98.5%);
-  border-top-color: hsl(0,0%,100%);
-  border-bottom-color: hsl(0,0%,92.6%);
-  color: hsl(0,0%,0%);
+  background-color: hsl(0, 0%, 98.5%);
+  border-color: hsl(0, 0%, 98.5%);
+  border-top-color: hsl(0, 0%, 100%);
+  border-bottom-color: hsl(0, 0%, 92.6%);
+  color: hsl(0, 0%, 0%);
 }
 
 .c9:focus {
@@ -185,55 +147,37 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
 .c9[disabled]:active {
   cursor: default;
   opacity: 0.8;
-  background-color: hsl(0,0%,94%);
-  border-color: hsl(0,0%,94%);
-  color: hsl(0,0%,0%);
+  background-color: hsl(0, 0%, 94%);
+  border-color: hsl(0, 0%, 94%);
+  color: hsl(0, 0%, 0%);
 }
 
-.c9 > svg {
+.c9 >svg {
   width: 24px;
   height: 24px;
 }
 
-.c9 > :not(:first-child) {
+.c9 >:not(:first-child) {
   margin-top: 0.25px;
 }
 
 .c0 {
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
   align-items: stretch;
-  color: rgb(32,32,32);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+  color: rgb(32, 32, 32);
   display: flex;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   margin-bottom: 32px;
 }
 
-.c0:first-of-type > * {
+.c0:first-of-type >* {
   border-top: 0;
 }
 
 .c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  border-top: 1px solid rgb(217,217,217);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+  border-top: 1px solid rgb(217, 217, 217);
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   margin: 0 auto;
   max-width: 1300px;
@@ -246,24 +190,14 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   max-width: 1300px;
   padding: 8px;
   width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
 }
 
 .c2 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding-right: 8px !important;
+  padding-right: 8px!important;
 }
 
 .c5 {
@@ -273,29 +207,14 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
 }
 
 .c8 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
-  border: 1px solid rgb(230,230,230);
+  border: 1px solid rgb(230, 230, 230);
   border-radius: 3px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 0 0 160px;
-  -ms-flex: 0 0 160px;
   flex: 0 0 160px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 140px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   width: 160px;
 }
@@ -307,55 +226,35 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   width: 100%;
 }
 
-.c8 > svg {
-  color: rgb(10,171,42);
-  -webkit-transition: all 0.3s ease;
+.c8 >svg {
+  color: rgb(10, 171, 42);
   transition: all 0.3s ease;
   will-change: transform;
 }
 
-.c8 .btn-type-polling > svg {
+.c8 .btn-type-polling>svg {
   height: 100%;
 }
 
 .c8:hover svg,
 .c8:active svg,
 .c8:focus svg {
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
   transform: scale(1.1);
-  -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
 
 .c8:active svg {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
   transform: scale(1);
-  -webkit-transition: all 0;
   transition: all 0;
 }
 
 .c11 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  border: 1px solid rgb(230,230,230);
+  border: 1px solid rgb(230, 230, 230);
   border-radius: 3px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 0 1 50%;
-  -ms-flex: 0 1 50%;
   flex: 0 1 50%;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   margin-left: 16px;
   padding: 32px;
@@ -369,16 +268,15 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
 }
 
 .c10 {
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0, 0, 0, 0.8);
   border-radius: 6px;
-  color: rgb(255,255,255);
+  color: rgb(255, 255, 255);
   font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-size: 11px;
   opacity: 0;
   padding: 10px;
   position: absolute;
   text-align: left;
-  -webkit-transition: opacity 1s;
   transition: opacity 1s;
   visibility: hidden;
   white-space: normal;
@@ -389,7 +287,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
 }
 
 .c7 {
-  border-bottom: 1px solid rgb(217,217,217);
+  border-bottom: 1px solid rgb(217, 217, 217);
   cursor: default;
   display: inline-block;
   position: relative;
@@ -517,31 +415,25 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
     </div>
   </section>
   .c12 {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   width: 100%;
   height: 6px;
   margin: 12px 0;
   border-radius: 20px;
-  background: rgb(230,230,230);
+  background: rgb(230, 230, 230);
   outline: none;
   cursor: pointer;
 }
 
 .c12::-webkit-slider-thumb {
   -webkit-appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   width: 16px;
   height: 16px;
   border: none;
   border-radius: 0;
-  background: rgb(10,171,42);
+  background: rgb(10, 171, 42);
   cursor: pointer;
-  -webkit-transition: -webkit-transform 0.3s ease;
-  -webkit-transition: transform 0.3s ease;
   transition: transform 0.3s ease;
 }
 
@@ -550,10 +442,8 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   height: 16px;
   border: none;
   border-radius: 0;
-  background: rgb(10,171,42);
+  background: rgb(10, 171, 42);
   cursor: pointer;
-  -webkit-transition: -webkit-transform 0.3s ease;
-  -webkit-transition: transform 0.3s ease;
   transition: transform 0.3s ease;
 }
 
@@ -563,37 +453,27 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
 
 .c12:hover::-webkit-slider-thumb,
 .c12:focus::-webkit-slider-thumb {
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
   transform: scale(1.1);
 }
 
 .c12:hover::-moz-range-thumb,
 .c12:focus::-moz-range-thumb {
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
   transform: scale(1.1);
 }
 
 .c12:disabled::-webkit-slider-thumb {
-  background: rgb(102,102,102);
+  background: rgb(102, 102, 102);
   cursor: default;
-  -webkit-transform: none;
-  -ms-transform: none;
   transform: none;
 }
 
 .c12:disabled::-moz-range-thumb {
-  background: rgb(102,102,102);
+  background: rgb(102, 102, 102);
   cursor: default;
-  -webkit-transform: none;
-  -ms-transform: none;
   transform: none;
 }
 
 .c4 {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
   transform: scale(1);
 }
 
@@ -612,9 +492,6 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
 
 .c9 {
   box-sizing: border-box;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-weight: 600;
@@ -623,68 +500,51 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   border-style: solid;
   text-transform: none;
   text-align: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   cursor: pointer;
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  background-color: rgb(255,255,255);
-  border-color: rgb(255,255,255);
-  border-top-color: hsl(0,0%,100%);
-  border-bottom-color: hsl(0,0%,94%);
-  color: rgb(0,0,0);
+  background-color: rgb(255, 255, 255);
+  border-color: rgb(255, 255, 255);
+  border-top-color: hsl(0, 0%, 100%);
+  border-bottom-color: hsl(0, 0%, 94%);
+  color: rgb(0, 0, 0);
   font-size: 21px;
   border-radius: 3px;
   padding: 2px 4px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   padding-top: 4px;
 }
 
 .c9:hover {
-  -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
 
 .c9:focus,
 .c9:active {
-  -webkit-transition: all 0 ease;
   transition: all 0 ease;
 }
 
-.c9 > * {
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
+.c9 >* {
   flex: 0 1 auto;
 }
 
 .c9:active {
-  -webkit-transition-duration: 0s;
   transition-duration: 0s;
-  background-color: hsl(0,0%,92.5%);
-  border-color: hsl(0,0%,92.5%);
-  border-top-color: hsl(0,0%,98%);
-  border-bottom-color: hsl(0,0%,87%);
-  color: hsl(0,0%,0%);
+  background-color: hsl(0, 0%, 92.5%);
+  border-color: hsl(0, 0%, 92.5%);
+  border-top-color: hsl(0, 0%, 98%);
+  border-bottom-color: hsl(0, 0%, 87%);
+  color: hsl(0, 0%, 0%);
 }
 
 .c9:hover {
-  background-color: hsl(0,0%,98.5%);
-  border-color: hsl(0,0%,98.5%);
-  border-top-color: hsl(0,0%,100%);
-  border-bottom-color: hsl(0,0%,92.6%);
-  color: hsl(0,0%,0%);
+  background-color: hsl(0, 0%, 98.5%);
+  border-color: hsl(0, 0%, 98.5%);
+  border-top-color: hsl(0, 0%, 100%);
+  border-bottom-color: hsl(0, 0%, 92.6%);
+  color: hsl(0, 0%, 0%);
 }
 
 .c9:focus {
@@ -699,55 +559,37 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
 .c9[disabled]:active {
   cursor: default;
   opacity: 0.8;
-  background-color: hsl(0,0%,94%);
-  border-color: hsl(0,0%,94%);
-  color: hsl(0,0%,0%);
+  background-color: hsl(0, 0%, 94%);
+  border-color: hsl(0, 0%, 94%);
+  color: hsl(0, 0%, 0%);
 }
 
-.c9 > svg {
+.c9 >svg {
   width: 24px;
   height: 24px;
 }
 
-.c9 > :not(:first-child) {
+.c9 >:not(:first-child) {
   margin-top: 0.25px;
 }
 
 .c0 {
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
   align-items: stretch;
-  color: rgb(32,32,32);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+  color: rgb(32, 32, 32);
   display: flex;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   margin-bottom: 32px;
 }
 
-.c0:first-of-type > * {
+.c0:first-of-type >* {
   border-top: 0;
 }
 
 .c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  border-top: 1px solid rgb(217,217,217);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+  border-top: 1px solid rgb(217, 217, 217);
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   margin: 0 auto;
   max-width: 1300px;
@@ -760,24 +602,14 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   max-width: 1300px;
   padding: 8px;
   width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
 }
 
 .c2 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding-right: 8px !important;
+  padding-right: 8px!important;
 }
 
 .c5 {
@@ -787,29 +619,14 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
 }
 
 .c8 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
-  border: 1px solid rgb(230,230,230);
+  border: 1px solid rgb(230, 230, 230);
   border-radius: 3px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 0 0 160px;
-  -ms-flex: 0 0 160px;
   flex: 0 0 160px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 140px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   width: 160px;
 }
@@ -821,55 +638,35 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   width: 100%;
 }
 
-.c8 > svg {
-  color: rgb(10,171,42);
-  -webkit-transition: all 0.3s ease;
+.c8 >svg {
+  color: rgb(10, 171, 42);
   transition: all 0.3s ease;
   will-change: transform;
 }
 
-.c8 .btn-type-polling > svg {
+.c8 .btn-type-polling>svg {
   height: 100%;
 }
 
 .c8:hover svg,
 .c8:active svg,
 .c8:focus svg {
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
   transform: scale(1.1);
-  -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
 
 .c8:active svg {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
   transform: scale(1);
-  -webkit-transition: all 0;
   transition: all 0;
 }
 
 .c11 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  border: 1px solid rgb(230,230,230);
+  border: 1px solid rgb(230, 230, 230);
   border-radius: 3px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 0 1 50%;
-  -ms-flex: 0 1 50%;
   flex: 0 1 50%;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   margin-left: 16px;
   padding: 32px;
@@ -883,16 +680,15 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
 }
 
 .c10 {
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0, 0, 0, 0.8);
   border-radius: 6px;
-  color: rgb(255,255,255);
+  color: rgb(255, 255, 255);
   font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-size: 11px;
   opacity: 0;
   padding: 10px;
   position: absolute;
   text-align: left;
-  -webkit-transition: opacity 1s;
   transition: opacity 1s;
   visibility: hidden;
   white-space: normal;
@@ -903,7 +699,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
 }
 
 .c7 {
-  border-bottom: 1px solid rgb(217,217,217);
+  border-bottom: 1px solid rgb(217, 217, 217);
   cursor: default;
   display: inline-block;
   position: relative;
@@ -1033,8 +829,6 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
     </div>
   </section>
   .c4 {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
   transform: scale(1);
 }
 
@@ -1051,11 +845,8 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   overflow: visible;
 }
 
-.c13 {
+.c12 {
   box-sizing: border-box;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-weight: 600;
@@ -1064,133 +855,96 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   border-style: solid;
   text-transform: none;
   text-align: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   cursor: pointer;
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  background-color: rgb(255,255,255);
-  border-color: hsl(0,0%,94%);
-  border-top-color: hsl(0,0%,100%);
-  border-bottom-color: hsl(0,0%,82%);
-  color: rgb(0,0,0);
+  background-color: rgb(255, 255, 255);
+  border-color: hsl(0, 0%, 94%);
+  border-top-color: hsl(0, 0%, 100%);
+  border-bottom-color: hsl(0, 0%, 82%);
+  color: rgb(0, 0, 0);
   font-size: 14px;
   border-radius: 3px;
   padding: 1.4px 4px;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
 }
 
-.c13:hover {
-  -webkit-transition: all 0.1s ease;
+.c12:hover {
   transition: all 0.1s ease;
 }
 
-.c13:focus,
-.c13:active {
-  -webkit-transition: all 0 ease;
+.c12:focus,
+.c12:active {
   transition: all 0 ease;
 }
 
-.c13 > * {
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
+.c12 >* {
   flex: 0 1 auto;
 }
 
-.c13:active {
-  -webkit-transition-duration: 0s;
+.c12:active {
   transition-duration: 0s;
-  background-color: hsl(0,0%,92.5%);
-  border-color: hsl(0,0%,87%);
-  border-top-color: hsl(0,0%,95.3%);
-  border-bottom-color: hsl(0,0%,75.8%);
-  color: hsl(0,0%,0%);
+  background-color: hsl(0, 0%, 92.5%);
+  border-color: hsl(0, 0%, 87%);
+  border-top-color: hsl(0, 0%, 95.3%);
+  border-bottom-color: hsl(0, 0%, 75.8%);
+  color: hsl(0, 0%, 0%);
 }
 
-.c13:hover {
-  background-color: hsl(0,0%,98.5%);
-  border-color: hsl(0,0%,92.6%);
-  border-top-color: hsl(0,0%,100%);
-  border-bottom-color: hsl(0,0%,80.8%);
-  color: hsl(0,0%,0%);
+.c12:hover {
+  background-color: hsl(0, 0%, 98.5%);
+  border-color: hsl(0, 0%, 92.6%);
+  border-top-color: hsl(0, 0%, 100%);
+  border-bottom-color: hsl(0, 0%, 80.8%);
+  color: hsl(0, 0%, 0%);
 }
 
-.c13:focus {
+.c12:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
-.c13[disabled],
-.c13[disabled]:hover,
-.c13[disabled]:focus,
-.c13[disabled]:active {
+.c12[disabled],
+.c12[disabled]:hover,
+.c12[disabled]:focus,
+.c12[disabled]:active {
   cursor: default;
   opacity: 0.8;
-  background-color: hsl(0,0%,94%);
-  border-color: hsl(0,0%,94%);
-  color: hsl(0,0%,0%);
+  background-color: hsl(0, 0%, 94%);
+  border-color: hsl(0, 0%, 94%);
+  color: hsl(0, 0%, 0%);
 }
 
-.c13 > svg {
+.c12 >svg {
   width: 24px;
   height: 24px;
 }
 
-.c13 > :not(:first-child) {
+.c12 >:not(:first-child) {
   margin-left: 4px;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
 .c0 {
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
   align-items: stretch;
-  color: rgb(32,32,32);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+  color: rgb(32, 32, 32);
   display: flex;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   margin-bottom: 32px;
 }
 
-.c0:first-of-type > * {
+.c0:first-of-type >* {
   border-top: 0;
 }
 
 .c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  border-top: 1px solid rgb(217,217,217);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+  border-top: 1px solid rgb(217, 217, 217);
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   margin: 0 auto;
   max-width: 1300px;
@@ -1203,24 +957,14 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   max-width: 1300px;
   padding: 8px;
   width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
 }
 
 .c2 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding-right: 8px !important;
+  padding-right: 8px!important;
 }
 
 .c5 {
@@ -1230,68 +974,42 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
 }
 
 .c7 {
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
   align-items: stretch;
-  background-color: rgb(230,230,230);
+  background-color: rgb(230, 230, 230);
   border-radius: 3px;
-  color: rgb(0,0,0);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+  color: rgb(0, 0, 0);
   display: flex;
-  -webkit-flex: 1 1 300px;
-  -ms-flex: 1 1 300px;
   flex: 1 1 300px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   margin: 4px;
 }
 
 .c7:first-child:last-child {
-  -webkit-box-flex: 0;
-  -webkit-flex-grow: 0;
-  -ms-flex-positive: 0;
   flex-grow: 0;
 }
 
-.c7:first-child:last-child > * {
+.c7:first-child:last-child >* {
   text-align: center;
 }
 
-.c7:first-child:last-child > * > :first-child {
+.c7:first-child:last-child >* >:first-child {
   padding-left: 0;
 }
 
-.c9 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
+.c8 {
   align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 0 1 100%;
-  -ms-flex: 0 1 100%;
   flex: 0 1 100%;
   -webkit-flex: 1 1 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   min-height: 125px;
   padding: 8px 4px;
   position: relative;
 }
 
-.c8 + .c8:before {
+.c8+.c8:before {
   border-top: 1px solid currentColor;
   content: "";
   left: 0;
@@ -1301,36 +1019,24 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   top: 0;
 }
 
-.c9 button {
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
+.c8 button {
   align-self: center;
   margin: 8px 0;
 }
 
-.c10 {
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
+.c9 {
   align-items: stretch;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 1 1 100%;
-  -ms-flex: 1 1 100%;
   flex: 1 1 100%;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   padding: 8px 0;
 }
 
-.c10:first-child {
+.c9:first-child {
   padding-left: 16px;
 }
 
-.c11 {
+.c10 {
   font-size: 11px;
   margin: 0;
   padding: 0;
@@ -1338,7 +1044,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   min-height: 1em;
 }
 
-.c12 {
+.c11 {
   font-size: 32px;
   word-break: break-all;
   margin: 0;
@@ -1346,13 +1052,9 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   min-height: 1em;
 }
 
-@media all and (max-width:1000px) {
+@media all and (max-width: 1000px) {
   .c7 {
-    -webkit-flex: 0 0 300px;
-    -ms-flex: 0 0 300px;
     flex: 0 0 300px;
-    -webkit-order: 1;
-    -ms-flex-order: 1;
     order: 1;
   }
 }
@@ -1407,23 +1109,23 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
         class="c7"
       >
         <div
-          class="c8 c9"
+          class="c8"
         >
           <div
-            class="c10"
+            class="c9"
           >
             <h2
-              class="c11"
+              class="c10"
             >
               Cache Size
             </h2>
             <span
-              class="c12"
+              class="c11"
             >
               67.48 KB
             </span>
             <button
-              class="c13"
+              class="c12"
               tabindex="0"
               title="Clear Cache"
             >
