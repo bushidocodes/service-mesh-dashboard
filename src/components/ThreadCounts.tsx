@@ -16,7 +16,7 @@ class ThreadCounts extends React.Component<ThreadCountsProps> {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: any) => {
   return {
     threadCounts: getThreadCounts(state)
   };

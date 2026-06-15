@@ -9,7 +9,7 @@ import defaultGoDashboards from "../../json/go/dashboards.json";
  * @param {string}
  * @returns
  */
-function loadDashboardsFromJSONEffect(runtime) {
+function loadDashboardsFromJSONEffect(runtime: string) {
   // Check runtime and pass the runtime appropriate JSON file to Actions.updateDashboardsRedux
   switch (runtime) {
     case "JVM":

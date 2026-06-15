@@ -373,7 +373,9 @@ function generateButtonStyle({
 
   // Distribute generated outline styles based on the input
   // by overwriting default generated outline styles
-  const outlineOptionsTypes = buttonOutlineStyles[buttonOutlineStyle];
+  const outlineOptionsTypes = (buttonOutlineStyles as Record<string, any>)[
+    buttonOutlineStyle
+  ];
   const outlineOptionTypesKeys = Object.keys(outlineOptionsTypes);
   // Loop through generated buttonOutlineStyles that correspond to the input outline Style (raised, raisedOutline, none, shadow, etc.)
   for (let x = 0, len = outlineOptionTypesKeys.length; x < len; x++) {

@@ -9,7 +9,7 @@ export const INSTANCE_ID_LENGTH = 8;
  * @param {string} id
  * @param {number} desiredLength
  */
-export const trimID = (id, desiredLength = INSTANCE_ID_LENGTH) => {
+export const trimID = (id: any, desiredLength = INSTANCE_ID_LENGTH) => {
   if (!id) return "";
   const strID = String(id);
   if (!desiredLength || desiredLength >= strID.length) return strID;
@@ -98,7 +98,7 @@ export const relativeReqPercent = (
  * @param {number} errors
  * @returns string
  */
-export function calculateErrorPercent(requests, errors) {
+export function calculateErrorPercent(requests: any, errors: any) {
   const errorPercent = requests ? (errors / requests) * 100 : 0;
   return formatAsDecimalString(errorPercent);
 }
@@ -112,7 +112,7 @@ export function calculateErrorPercent(requests, errors) {
  * @param {number} numberOfDecimals
  * @returns string
  */
-export function formatAsDecimalString(source, numberOfDecimals = 3) {
+export function formatAsDecimalString(source: any, numberOfDecimals = 3) {
   if (source === "") return source;
   const sourceAsNumber = _.toNumber(source);
   if (_.isNaN(sourceAsNumber) || typeof sourceAsNumber !== "number")
@@ -131,7 +131,7 @@ export function formatAsDecimalString(source, numberOfDecimals = 3) {
  * @returns
  */
 function formatAsDecimalStringFormatter(maxDecimals = 3) {
-  return function (scalar, units) {
+  return function (scalar: any, units: any) {
     if (scalar === "") return;
     const scalarAsNumber = _.toNumber(scalar);
     return `${scalarAsNumber.toLocaleString(undefined, {
@@ -151,7 +151,12 @@ function formatAsDecimalStringFormatter(maxDecimals = 3) {
  * @param {number} precision
  * @returns string
  */
-export function formatMetricString(rawValue, baseUnit, resultUnit, precision) {
+export function formatMetricString(
+  rawValue: any,
+  baseUnit: any,
+  resultUnit: any,
+  precision: any
+) {
   if (baseUnit && resultUnit && (precision || precision === 0)) {
     const qty = Qty(rawValue, baseUnit);
     const result = qty
@@ -176,7 +181,7 @@ export function formatMetricString(rawValue, baseUnit, resultUnit, precision) {
  * @export
  * @param {Object} e
  */
-export function blurTableRow(e) {
+export function blurTableRow(e: any) {
   let node = e.target;
   while (node && node !== document.body) {
     if (
@@ -196,7 +201,7 @@ export function blurTableRow(e) {
  * @param {any} string
  * @returns string
  */
-export function slugify(string) {
+export function slugify(string: string) {
   return string
     .replace(/\s/g, "-")
     .replace(/[()=:.,!#$@"'/|?*+&[\]]/g, "")
@@ -216,8 +221,8 @@ export function slugify(string) {
  * @returns
  */
 export function slugifyMicroservice(
-  serviceName,
-  serviceVersion,
+  serviceName: any,
+  serviceVersion: string,
   slugifyFunc = slugify
 ) {
   return slugifyFunc(`${serviceName}-v${serviceVersion.replace(/\./g, "-")}`);

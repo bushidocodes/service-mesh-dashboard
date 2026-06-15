@@ -13,9 +13,9 @@ import { computeStatus } from "utils/selectors";
  * @returns JSX.Element
  **/
 
-function generateStatusRoutes(services) {
-  return microserviceStatuses.map((route) => {
-    const filtered = _.values(services).filter((service) => {
+function generateStatusRoutes(services: any) {
+  return microserviceStatuses.map((route: string) => {
+    const filtered = _.values(services).filter((service: any) => {
       let status = computeStatus(
         service.instances.length,
         service.minimum,

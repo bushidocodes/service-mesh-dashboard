@@ -64,7 +64,7 @@ class Main extends Component<MainProps> {
   }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state: any) {
   const { dashboards } = state;
   return {
     dashboards

@@ -85,7 +85,15 @@ export default DygraphWrapper;
 /**
  * Generates a valid Dygraph options object
  */
-function generateOptions({ baseOptions = {}, attributes, dygraphMetadata }) {
+function generateOptions({
+  baseOptions = {},
+  attributes,
+  dygraphMetadata
+}: {
+  baseOptions?: any;
+  attributes?: any;
+  dygraphMetadata?: any;
+}) {
   let options: any = { ...DEFAULT_DYGRAPH_OPTIONS, ...baseOptions };
   if (!_.has(baseOptions, "labels")) {
     options = {
@@ -115,7 +123,7 @@ function generateOptions({ baseOptions = {}, attributes, dygraphMetadata }) {
     options.axes = {
       y: {
         axisLabelWidth: width,
-        axisLabelFormatter: (y) =>
+        axisLabelFormatter: (y: any) =>
           formatMetricString(y, baseUnits[0], resultUnits[0], 0)
       }
     };
@@ -126,7 +134,7 @@ function generateOptions({ baseOptions = {}, attributes, dygraphMetadata }) {
 /**
  * Generates an array of labels for use in a Dygraph options object
  */
-function generateLabels(rawAttributes, dygraphMetadata) {
+function generateLabels(rawAttributes: any, dygraphMetadata: any) {
   if (!rawAttributes || rawAttributes.length === 0) return {};
   const attributes = [...rawAttributes];
   if (attributes[0] !== "Time") {
@@ -150,8 +158,12 @@ function generateLabels(rawAttributes, dygraphMetadata) {
  * Function factory for a dygraph legend formatter, which is used to customize
  * the text rendered in the pop over that appears when a user hovers over the graph
  */
-function generatelegendFormatter(dygraphMetadata = {}, labels, colors) {
-  return function legendFormatter(data) {
+function generatelegendFormatter(
+  dygraphMetadata: any = {},
+  labels: any,
+  colors: any
+) {
+  return function legendFormatter(data: any) {
     if (data.x == null) {
       // This happens when there's no selection and {legend: 'always'} is set.
       // We set to an empty string to override the default behavior
@@ -161,7 +173,7 @@ function generatelegendFormatter(dygraphMetadata = {}, labels, colors) {
     const xAxisValue = data.xHTML;
     let html = `${xAxisLabel}: ${xAxisValue}<br>`;
     html += data.series
-      .map((ts, idx) => {
+      .map((ts: any, idx: number) => {
         const match: any =
           _.find(_.values(dygraphMetadata), ["label", ts.label]) ||
           DEFAULT_LEGEND_FORMATTING;

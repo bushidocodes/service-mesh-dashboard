@@ -24,7 +24,11 @@ import {
  * Defaults to black or white depending on the luminosity of backgroundColor
  * @returns {Object} - A color library object
  */
-export function contrastColor(backgroundColor, contrast?, intentColor?) {
+export function contrastColor(
+  backgroundColor: any,
+  contrast?: any,
+  intentColor?: any
+) {
   if (!backgroundColor) {
     throw new Error("contrastColor requires a backgroundColor");
   }
@@ -57,7 +61,7 @@ export function contrastColor(backgroundColor, contrast?, intentColor?) {
  * @param {number} factor
  * @returns {string} A string in the format "10px"
  */
-export function spacingScale(factor) {
+export function spacingScale(factor: number) {
   return `${Math.round(parseInt(PADDING_BASE, 10) * factor)}px`;
 }
 
@@ -68,7 +72,7 @@ export function spacingScale(factor) {
  * @param {number} contrast - a number between 0 and 1
  * @returns {Object} - A color library object
  */
-export function edgeColor(backgroundColor, contrast = 0.08) {
+export function edgeColor(backgroundColor: any, contrast = 0.08) {
   if (typeof backgroundColor === "string") {
     backgroundColor = Color(backgroundColor);
   }
@@ -154,7 +158,7 @@ export function errorColor(errorPercent: string | number = 1) {
  * @param {string} height ("xs", "sm", "normal", "lg", "xl", "max")
  * @returns {string} - height attribute
  */
-export const chartHeight = (height) => {
+export const chartHeight = (height: string) => {
   let factor;
   switch (height) {
     case "normal":
@@ -179,7 +183,7 @@ export const chartHeight = (height) => {
 };
 
 // Darken the color, but add a touch of saturation for a more natural shadow look
-export function darkenColor(color, percent) {
+export function darkenColor(color: any, percent: number) {
   if (color.saturationl() > 10) {
     // If the element has any substantial color to it, then you can mess with the saturation
     return color.darken(percent).saturate(percent).rgb();
@@ -192,7 +196,7 @@ export function darkenColor(color, percent) {
 }
 
 // Darken the color, but wash out the color a bit, for a more natural highlighted look
-export function lightenColor(color, percent) {
+export function lightenColor(color: any, percent: number) {
   if (color.saturationl() > 10) {
     return color.lighten(percent).desaturate(percent).rgb();
   } else {

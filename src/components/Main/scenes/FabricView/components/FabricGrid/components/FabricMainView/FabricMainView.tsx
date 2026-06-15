@@ -62,7 +62,7 @@ export default function FabricMainView({
   }
 }
 
-function computeHeaderTitle(groupByAttribute, service) {
+function computeHeaderTitle(groupByAttribute: string, service: any) {
   switch (groupByAttribute) {
     case "Status":
       return computeStatus(

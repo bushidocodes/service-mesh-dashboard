@@ -103,14 +103,26 @@ export class GMGrid extends Component<GMGridProps> {
    * @param {Object[][]} chart.data.detailLines - Array of array of objects. The elements of the top level array are in the format expected by the parseJSONString utility function
    * @param {Object[]} chart.data.timeseries - Array of complex timeseries objects. Has a "type" attribute with a string signifying the type of timeseries (e.g. netChange)
    */
-  renderChart(chart) {
+  renderChart(chart: any) {
     const { intl, metrics } = this.props;
     switch (chart.type) {
       case "GMLineChart":
         // Build out a metadata object keys by attribute
-        const dygraphMetadata = {};
+        const dygraphMetadata: Record<string, any> = {};
         chart.data.timeseries.forEach(
-          ({ attribute, label, precision, baseUnit, resultUnit }) => {
+          ({
+            attribute,
+            label,
+            precision,
+            baseUnit,
+            resultUnit
+          }: {
+            attribute: string;
+            label: any;
+            precision?: number;
+            baseUnit?: string;
+            resultUnit?: string;
+          }) => {
             dygraphMetadata[attribute] = {
               label: intl.formatMessage(label),
               precision,
@@ -122,17 +134,17 @@ export class GMGrid extends Component<GMGridProps> {
         const dygraph = mapDygraphKeysToNetChange(
           getDygraphOfValue(
             metrics,
-            chart.data.timeseries.map((ts) => ts.attribute)
+            chart.data.timeseries.map((ts: any) => ts.attribute)
           ),
           chart.data.timeseries
-            .filter((ts) => ts.type === "netChange")
-            .map((ts) => ts.attribute)
+            .filter((ts: any) => ts.type === "netChange")
+            .map((ts: any) => ts.attribute)
         );
         return (
           <GMLineChart
             detailLines={
               chart.data.detailLines &&
-              chart.data.detailLines.map((line) =>
+              chart.data.detailLines.map((line: any) =>
                 parseJSONString(line, metrics, intl.formatMessage)
               )
             }
@@ -145,11 +157,11 @@ export class GMGrid extends Component<GMGridProps> {
       case "GMTable":
         return (
           <GMTable
-            headers={chart.data.headers.map((header) =>
+            headers={chart.data.headers.map((header: any) =>
               intl.formatMessage(header)
             )}
-            rows={chart.data.rows.map((row, outerIdx) => {
-              return row.map((cell, innerIdx) => {
+            rows={chart.data.rows.map((row: any, outerIdx: number) => {
+              return row.map((cell: any, innerIdx: number) => {
                 // The first item in a row is a i18n label of what's in the label
                 return innerIdx > 0
                   ? getLatestAttribute(metrics, cell)
@@ -169,7 +181,7 @@ export class GMGrid extends Component<GMGridProps> {
                 priority,
                 sparklineKey = null,
                 sparklineType = null
-              ]) => {
+              ]: any[]) => {
                 const results = [
                   intl.formatMessage(heading),
                   getLatestAttribute(metrics, key),
@@ -200,7 +212,7 @@ export class GMGrid extends Component<GMGridProps> {
    * Note that this also seems to always be called on inital render
    * @param {Object} allLayouts
    */
-  updateDashboardLayout(allLayouts) {
+  updateDashboardLayout(allLayouts: any) {
     return;
     // Disabled for initial release
     // const updatedDashboard = Object.assign({}, this.props.dashboard, {
@@ -219,7 +231,7 @@ export class GMGrid extends Component<GMGridProps> {
    * Renders a dashboard as a responsive grid
    * @param {Object} dashboard
    */
-  renderDashboard(dashboard) {
+  renderDashboard(dashboard: any) {
     // While this parent div looks superfluous, it is needed to ensure the proper vertical heigh of the dashboard
     return (
       <ErrorBoundary>
@@ -230,12 +242,12 @@ export class GMGrid extends Component<GMGridProps> {
           dragConfig={STATIC_DRAG_CONFIG}
           resizeConfig={STATIC_RESIZE_CONFIG}
           layouts={dashboard.grid.layouts}
-          onLayoutChange={(currentLayout, allLayouts) =>
+          onLayoutChange={(currentLayout: any, allLayouts: any) =>
             this.updateDashboardLayout(allLayouts)
           }
           rowHeight={dashboard.grid.rowHeight}
         >
-          {dashboard.charts.map((chart) => (
+          {dashboard.charts.map((chart: any) => (
             <div
               data-grid={chart.position}
               key={chart.key}
@@ -261,7 +273,10 @@ export class GMGrid extends Component<GMGridProps> {
   }
 }
 
-function mapStateToProps({ dashboards, instance: { metrics } }, ownProps) {
+function mapStateToProps(
+  { dashboards, instance: { metrics } }: any,
+  ownProps: any
+) {
   return {
     metrics,
     dashboard: dashboards[ownProps.match.params.dashboardName]

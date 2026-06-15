@@ -4,6 +4,8 @@ import { injectIntl } from "react-intl";
 
 import { LazyLoader } from "components/LazyLoader";
 
+import type { ServiceInstance } from "types";
+
 const InstanceRouter = LazyLoader({
   loader: () => import("components/Main/scenes/InstanceView")
 });
@@ -68,7 +70,7 @@ function InstanceRouteElementInner({
     } else if (
       // Check our instanceID against this services' instances
       service &&
-      !service.instances.some((obj) => {
+      !service.instances.some((obj: ServiceInstance) => {
         return obj.name === instanceID;
       })
     ) {

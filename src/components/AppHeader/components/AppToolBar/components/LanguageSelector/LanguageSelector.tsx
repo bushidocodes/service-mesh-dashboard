@@ -15,7 +15,7 @@ class LanguageSelector extends React.Component<{}, LanguageSelectorState> {
     visible: false
   };
 
-  onSelectLanguage = (newLocale) => {
+  onSelectLanguage = (newLocale: string) => {
     Actions.setUserLocale(newLocale);
     this.setState({ visible: !this.state.visible });
   };

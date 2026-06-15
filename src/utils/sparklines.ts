@@ -7,7 +7,7 @@ import { floatRound } from "./dygraphs";
  * @param {String} key - A string representation of the path to the desired key
  * @returns {Array}
  */
-export function getSparkLineOfValue(metrics, key) {
+export function getSparkLineOfValue(metrics: any, key: string) {
   if (!metrics || !key) return [0, 0];
   const values = _.toPairs(metrics[key]).map(([, val]) => val); //ignore value at index 0
   if (!values || values.length < 2) return [0, 0];
@@ -21,7 +21,7 @@ export function getSparkLineOfValue(metrics, key) {
  * @param {String} key - A string representation of the path to the desired key
  * @returns {Array}
  */
-export function getSparkLineOfNetChange(metrics, key) {
+export function getSparkLineOfNetChange(metrics: any, key: string) {
   if (!metrics || !key) return [0, 0];
   const values = _.toPairs(metrics[key]).map(([, val]) => val); // Ignoring the keys
   const timestamps = _.toPairs(metrics[key]).map(([timestamp]) => timestamp); // Ignoring the keys

@@ -99,12 +99,12 @@ export const NOTIFICATION_BACKGROUND_COLOR = COLOR_WHITE;
 export const NOTIFICATION_TRANSITION = 0.3;
 
 export const media = {
-  breadcrumbsBreakpoint200: (...args) => css`
+  breadcrumbsBreakpoint200: (...args: any[]) => css`
     @media (max-width: 800px) {
       ${(css as any)(...args)};
     }
   `,
-  breadcrumbsBreakpointHandheld: (...args) => css`
+  breadcrumbsBreakpointHandheld: (...args: any[]) => css`
     @media (max-width: 567px) {
       ${(css as any)(...args)};
     }

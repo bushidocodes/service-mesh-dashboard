@@ -13,13 +13,13 @@ import { metricsKeySelectorGenerator } from "utils/selectors";
  */
 export const getRoutesTable = createSelector(
   [getRoutesTree, getRoutesMetrics],
-  (routesTree, routesMetrics) => {
+  (routesTree: Record<string, any>, routesMetrics: any) => {
     // Now build the table
     const routesTable: any[] = [];
     const routesPaths = Object.keys(routesTree);
-    routesPaths.forEach((routePath) => {
+    routesPaths.forEach((routePath: string) => {
       let baseObj = { route: routePath };
-      routesTree[routePath].forEach((routeVerb) => {
+      routesTree[routePath].forEach((routeVerb: string) => {
         const errorsCountKey = `route${routePath}/${routeVerb}/errors.count`;
         const inThroughputKey = `route${routePath}/${routeVerb}/in_throughput`;
         const outThroughputKey = `route${routePath}/${routeVerb}/out_throughput`;
@@ -85,7 +85,7 @@ export const getFunctionsList = createSelector(
  * @param {any} functionsMetrics
  * @returns
  */
-function _getFunctionsList(functionsMetrics) {
+function _getFunctionsList(functionsMetrics: Record<string, any>) {
   const keys = Object.keys(functionsMetrics);
   if (keys.length > 0) {
     // Grab the function name from the key, filter for uniqueness, and exclude "all" (the rollup metrics key)
@@ -104,7 +104,7 @@ export const getFunctionsTable = createSelector(
     _getFunctionsTable(functions, functionsMetrics)
 );
 
-function _getFunctionsTable(funcs, funcMetrics) {
+function _getFunctionsTable(funcs: any[], funcMetrics: any) {
   const labelKeyPairs = [
     ["errorsCount", "errors.count"],
     ["inThroughput", "in_throughput"],

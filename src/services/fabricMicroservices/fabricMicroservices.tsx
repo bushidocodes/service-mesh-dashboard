@@ -10,16 +10,16 @@ import _ from "lodash";
 
 const memoizedSlugifyMicroservice = _.memoize(slugifyMicroservice);
 
-export async function fetchFabricMicroservices(fabricServer) {
+export async function fetchFabricMicroservices(fabricServer: string) {
   if (!fabricServer) return Promise.reject("Invalid endpoint");
   const response = await axios.get(`${fabricServer}/services`, {
     responseType: "json"
   });
-  const withSlugs = response.data.map((service) => ({
+  const withSlugs = response.data.map((service: any) => ({
     ...service,
     slug: memoizedSlugifyMicroservice(service.name, service.version)
   }));
-  return withSlugs.reduce((result, service) => {
+  return withSlugs.reduce((result: Record<string, any>, service: any) => {
     result[service.slug] = service;
     return result;
   }, {});
@@ -55,7 +55,7 @@ export async function fetchAndStoreFabricMicroservicesEffect(
  * @param {number} [servicesPollingFailures=getState().fabric.servicesPollingFailures]
  */
 export function fetchFabricMicroservicesSuccessEffect(
-  services,
+  services: any,
   servicesPollingFailures = getState().fabric.servicesPollingFailures
 ) {
   if (servicesPollingFailures > 0) {
@@ -69,7 +69,7 @@ export function fetchFabricMicroservicesSuccessEffect(
  * and incrementing a counter that disables the polling interval on repeat failures.
  * @param {Object} err - Error object
  */
-export function fetchFabricMicroservicesFailureEffect(err) {
+export function fetchFabricMicroservicesFailureEffect(err: any) {
   const servicesPollingFailures = getState().fabric.servicesPollingFailures;
   console.log("Failed: ", servicesPollingFailures);
   // If there have already been four failures (0, 1, 2, 3, 4), this is the third failure,
@@ -105,7 +105,9 @@ export function fetchFabricMicroservicesFailureEffect(err) {
  * data from the Fabric Server
  * @param {number} interval - fabric polling interval
  */
-export function changeFabricMicroservicesPollingIntervalEffect(interval) {
+export function changeFabricMicroservicesPollingIntervalEffect(
+  interval: number
+) {
   Actions.stopPollingFabricMicroservices();
   Actions.setFabricPollingInterval(interval);
   Actions.startPollingFabricMicroservices();
@@ -156,7 +158,13 @@ export function stopPollingFabricMicroservicesEffect() {
  * @param {string} jumpstateObject.serviceSlug
  */
 
-export function selectInstanceEffect({ instanceID, serviceSlug }) {
+export function selectInstanceEffect({
+  instanceID,
+  serviceSlug
+}: {
+  instanceID: string;
+  serviceSlug: string;
+}) {
   const { fabric } = getState();
   if (instanceID !== fabric.selectedInstanceID) {
     // Check if the new instance is a different microservice and update as needed

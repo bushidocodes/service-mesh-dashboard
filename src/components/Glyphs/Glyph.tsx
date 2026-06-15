@@ -140,11 +140,11 @@ export default class Glyph extends Component<GlyphProps> {
     name = _.upperFirst(name);
 
     // if glyph name is not found, return empty glyph and console log an error message
-    if (!glyphs[name]) {
+    if (!(glyphs as Record<string, any>)[name]) {
       return <g />;
     }
     // dynamically render glyph component by name
-    const GlyphComponent = glyphs[name];
+    const GlyphComponent = (glyphs as Record<string, any>)[name];
 
     const viewBoxSize = ICON_VIEWBOX_SIZE;
     const glyphTranslateDist = (Number(ratio) - 1) * (0.5 * viewBoxSize) * -1;

@@ -8,6 +8,8 @@ import TableColHeader from "components/Main/components/TableColHeader";
 import TableDisplay from "components/Main/components/TableDisplay";
 import { threadStates } from "utils/constants";
 
+import type { ThreadsTableItem } from "types";
+
 interface ThreadsTableProps {
   filteredThreadData?: any[];
   groupByAttribute?: string;
@@ -45,7 +47,7 @@ export default function ThreadsTable({
     // through any (the runtime targets — modern browsers/Node — support it).
     const dataGroupedByHeader = (Object as any).groupBy(
       mappedThreads,
-      (thread) => thread.header
+      (thread: ThreadsTableItem) => thread.header
     );
 
     // Loop through thread states to preserve the order stopped, idle, active
@@ -78,7 +80,7 @@ export default function ThreadsTable({
   }
 }
 
-function getHeader(thread, groupByAttribute) {
+function getHeader(thread: ThreadsTableItem, groupByAttribute: string) {
   switch (thread.state) {
     case "RUNNABLE":
       return "Active";

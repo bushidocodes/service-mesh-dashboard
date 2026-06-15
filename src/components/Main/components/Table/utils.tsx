@@ -8,7 +8,7 @@ import { FormattedMessage } from "react-intl";
  * @param {object} items
  * @returns {React.element}
  */
-export const getTableHeaders = (type) => {
+export const getTableHeaders = (type = "") => {
   let headerNames: React.ReactElement[] = [];
   if (type === "Instance") {
     headerNames = [
@@ -77,7 +77,7 @@ export const getTableHeaders = (type) => {
 };
 
 // simple helper that evaluates and returns route or func props
-export const getItem = (route, func) => {
+export const getItem = (route: any, func: any) => {
   if (route !== undefined) return route;
   if (func !== undefined) return func;
 };

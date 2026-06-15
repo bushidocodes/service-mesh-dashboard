@@ -1,4 +1,4 @@
-import { lazy } from "react";
+import { lazy, type ComponentType } from "react";
 
 /**
  * Thin wrapper around React.lazy() that preserves the call signature used
@@ -17,5 +17,9 @@ import { lazy } from "react";
  * somewhere up the tree. Wrap that boundary in an <ErrorBoundary> to
  * surface load failures gracefully.
  */
-export const LazyLoader = (opts) =>
-  lazy(() => opts.loader().then((m) => ({ default: m.default ?? m })));
+export const LazyLoader = (opts: { loader: () => Promise<any> }) =>
+  // Type the lazy component as ComponentType<any> so call sites can still pass
+  // props (the lazy targets are real components with their own prop types).
+  lazy<ComponentType<any>>(() =>
+    opts.loader().then((m: any) => ({ default: m.default ?? m }))
+  );

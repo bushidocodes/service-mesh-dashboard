@@ -27,7 +27,7 @@ interface GMSelectProps {
 
 // react-select v5 uses a CSS-in-JS styles object instead of global CSS classes.
 const selectStyles = {
-  container: (base) => ({
+  container: (base: any) => ({
     ...base,
     fontFamily: FONT_STACK_BASE,
     flexGrow: 1,
@@ -39,35 +39,35 @@ const selectStyles = {
     width: "100%",
     zIndex: ZINDEX_DROPDOWN
   }),
-  control: (base) => ({
+  control: (base: any) => ({
     ...base,
     height: "28px",
     minHeight: "28px",
     cursor: "pointer"
   }),
-  valueContainer: (base) => ({
+  valueContainer: (base: any) => ({
     ...base,
     height: "28px",
     padding: "0 8px"
   }),
-  input: (base) => ({
+  input: (base: any) => ({
     ...base,
     margin: "0",
     padding: "0"
   }),
-  singleValue: (base) => ({
+  singleValue: (base: any) => ({
     ...base,
     lineHeight: "28px"
   }),
-  placeholder: (base) => ({
+  placeholder: (base: any) => ({
     ...base,
     lineHeight: "28px"
   }),
-  dropdownIndicator: (base) => ({
+  dropdownIndicator: (base: any) => ({
     ...base,
     padding: "4px"
   }),
-  clearIndicator: (base) => ({
+  clearIndicator: (base: any) => ({
     ...base,
     padding: "4px"
   })

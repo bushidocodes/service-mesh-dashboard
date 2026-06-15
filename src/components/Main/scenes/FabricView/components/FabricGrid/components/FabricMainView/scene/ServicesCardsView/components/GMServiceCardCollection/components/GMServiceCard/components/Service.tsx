@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 // Wrap Link in a plain function component so styled-components v2 can wrap it.
 // React Router v6 exports Link as a forwardRef object (typeof === "object").
-function LinkWrapper(props) {
+function LinkWrapper(props: any) {
   return <Link {...props} />;
 }
 
