@@ -25,11 +25,11 @@ import { formatMetricString } from "./index";
  */
 
 export function getLatestAttribute(
-  metrics,
-  key,
-  precision?,
-  baseUnit?,
-  resultUnit?
+  metrics: any,
+  key: any,
+  precision?: any,
+  baseUnit?: any,
+  resultUnit?: any
 ) {
   if (!metrics || !key) return 0;
   // _.has is not suitable because some object become arrays and auto insert
@@ -55,7 +55,7 @@ export function getLatestAttribute(
  * @param {String[]|String} line
  * @param {Object} metrics
  */
-export function parseJSONString(line, metrics, formatMessage?) {
+export function parseJSONString(line: any, metrics: any, formatMessage?: any) {
   if (Array.isArray(line)) {
     return line
       .map((element) => {

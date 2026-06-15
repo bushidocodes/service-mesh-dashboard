@@ -61,7 +61,7 @@ function FabricAppHeaderContent({
                   defaultMessage: "Services",
                   description: "Fabric view tab detail"
                 }),
-                value: statusCount[status]
+                value: statusCount[status as keyof typeof statusCount]
               }
             ]}
             key={status}
@@ -72,7 +72,7 @@ function FabricAppHeaderContent({
   );
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state: any) {
   return {
     statusCount: getStatusCount(state)
   };

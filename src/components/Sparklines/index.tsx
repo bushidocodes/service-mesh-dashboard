@@ -64,12 +64,20 @@ const dataToPoints = ({
   margin = 0,
   max = Math.max(...data),
   min = Math.min(...data)
+}: {
+  data: number[];
+  limit?: number;
+  width?: number;
+  height?: number;
+  margin?: number;
+  max?: number;
+  min?: number;
 }) => {
   const len = data.length;
   const vfactor = (height - margin * 2) / (max - min || 2);
   const hfactor =
     (width - margin * 2) / ((limit || len) - (len > 1 ? 1 : 0) || 1);
-  return data.map((d, i) => ({
+  return data.map((d: number, i: number) => ({
     x: i * hfactor + margin,
     y: (max === min ? (height - margin * 2) / 2 : (max - d) * vfactor) + margin
   }));
@@ -183,12 +191,14 @@ export function SparklinesLine({
 
 // Reference-line y is computed from the (already margin-offset) point y-values,
 // matching react-sparklines, which then offsets by `margin` again.
-const referenceValue = {
-  max: (ys) => Math.max(...ys),
-  min: (ys) => Math.min(...ys),
-  mean: (ys) => ys.reduce((a, b) => a + b, 0) / ys.length,
-  avg: (ys) => ys.reduce((a, b) => a + b, 0) / ys.length,
-  median: (ys) => {
+const referenceValue: Record<string, (ys: number[]) => number> = {
+  max: (ys: number[]) => Math.max(...ys),
+  min: (ys: number[]) => Math.min(...ys),
+  mean: (ys: number[]) =>
+    ys.reduce((a: number, b: number) => a + b, 0) / ys.length,
+  avg: (ys: number[]) =>
+    ys.reduce((a: number, b: number) => a + b, 0) / ys.length,
+  median: (ys: number[]) => {
     const sorted = [...ys].sort((a, b) => a - b);
     const mid = Math.floor(sorted.length / 2);
     return sorted.length % 2 === 0
@@ -206,7 +216,7 @@ export function SparklinesReferenceLine({
 }: SparklinesReferenceLineProps) {
   const ypoints = points.map((p) => p.y);
   const compute = referenceValue[type] || referenceValue.mean;
-  const y = type === "custom" ? value : compute(ypoints);
+  const y: any = type === "custom" ? value : compute(ypoints);
 
   return (
     <line

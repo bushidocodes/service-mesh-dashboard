@@ -94,7 +94,10 @@ export const CardContainer = styled.div<{
 export const CardFooter = styled.footer<{ cardFontWeight?: string }>`
   display: flex;
   align-items: center;
-  font-weight: ${parseInt(((props) => props.cardFontWeight) as any, 10)};
+  font-weight: ${parseInt(
+    ((props: { cardFontWeight?: string }) => props.cardFontWeight) as any,
+    10
+  )};
   justify-content: space-between;
   z-index: 10;
   position: relative;

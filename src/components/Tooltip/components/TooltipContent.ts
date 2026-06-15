@@ -26,7 +26,7 @@ const TooltipContent = styled.div<{ position?: string }>`
   ${(props) => getPosition(props.position)};
 `;
 
-function getPosition(position) {
+function getPosition(position?: string) {
   switch (position) {
     case "top":
       return `

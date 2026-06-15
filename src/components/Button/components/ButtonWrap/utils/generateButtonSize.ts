@@ -38,7 +38,7 @@ function _buttonSizeStyleBlockGenerator({
  * @param {string} size
  * @returns
  */
-function generateButtonSize(size?) {
+function generateButtonSize(size?: string) {
   switch (size) {
     case "xs": {
       return _buttonSizeStyleBlockGenerator({

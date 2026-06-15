@@ -34,7 +34,7 @@ Effect("fetchAndStoreInstanceMetrics", fetchAndStoreInstanceMetricsEffect);
  * Async Jumpstate Effect that handles successful fetches of metrics from the Fabric Server
  * @param {Object} metrics
  */
-function fetchMetricsSuccessEffect(metrics) {
+function fetchMetricsSuccessEffect(metrics: any) {
   // Reset the failure counter
   if (getState().instance.metricsPollingFailures > 0) {
     Actions.setMetricsPollingFailures(0);
@@ -49,7 +49,7 @@ Effect("fetchMetricsSuccess", fetchMetricsSuccessEffect);
  * and incrementing a counter that disables the polling interval on repeat failures.
  * @param {Object} err
  */
-function fetchMetricsFailureEffect(err) {
+function fetchMetricsFailureEffect(err: any) {
   const metricsPollingFailures = getState().instance.metricsPollingFailures;
   let errorMsg;
   if (metricsPollingFailures >= 3) {
@@ -143,7 +143,7 @@ Effect(
  * Async Jumpstate effect used to change the polling interval
  * @param {number} interval
  */
-function changeInstanceMetricsPollingIntervalEffect(interval) {
+function changeInstanceMetricsPollingIntervalEffect(interval: number) {
   Actions.stopPollingInstanceMetrics();
   Actions.setInstanceMetricsPollingInterval(interval);
   Actions.startPollingInstanceMetrics();

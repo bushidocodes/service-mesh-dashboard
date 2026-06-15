@@ -4,7 +4,7 @@
  * @param {string} size
  * @returns number
  */
-function mapSizeToButtonIconRatio(size) {
+function mapSizeToButtonIconRatio(size?: string) {
   switch (size) {
     case "xs":
       return 0.5;
@@ -26,7 +26,7 @@ function mapSizeToButtonIconRatio(size) {
  * @param {string} size
  * @returns string
  */
-function generateButtonIconRatio(size?) {
+function generateButtonIconRatio(size?: string) {
   const viewboxSize = 24; // default viewbox size 24px
   const ratio = mapSizeToButtonIconRatio(size); // default ratio 1
   const viewboxDimensions = viewboxSize * ratio;

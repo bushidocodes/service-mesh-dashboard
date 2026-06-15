@@ -7,7 +7,7 @@ import { fetchInstanceThreads } from "./apis";
  * @param {string}
  * @returns
  */
-async function fetchAndStoreInstanceThreadsEffect(endpoint) {
+async function fetchAndStoreInstanceThreadsEffect(endpoint: string) {
   if (!endpoint) return;
   try {
     const json = await fetchInstanceThreads(endpoint);
@@ -22,7 +22,7 @@ Effect("fetchAndStoreInstanceThreads", fetchAndStoreInstanceThreadsEffect);
  * Action that handles fetch thread errors, notifying the user via a popup and the console and setting state
  * @param {Object} err
  */
-function fetchThreadsFailureEffect(err) {
+function fetchThreadsFailureEffect(err: any) {
   reportError("Fetching Threads Data failed.", false, err);
   Actions.setThreadsError(err);
 }

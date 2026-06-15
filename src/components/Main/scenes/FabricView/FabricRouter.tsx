@@ -57,7 +57,7 @@ function FabricRouter({ services }: FabricRouterProps) {
   );
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state: any) {
   return { services: state.fabric.services };
 }
 

@@ -4,7 +4,7 @@ const SUPPORTED_LOCALES = ["de-DE", "en-US", "es-ES"];
 
 const DEFAULT_LOCALE = "en-US";
 
-const LOCALE_ALIASES = {
+const LOCALE_ALIASES: Record<string, string> = {
   en: "en-US",
   "en-GB": "en-US",
   es: "es-ES",
@@ -57,17 +57,23 @@ export function getLocale() {
  * @param {any} prefix
  * @returns
  */
-export function flattenMessages(nestedMessages, prefix = "") {
-  return Object.keys(nestedMessages).reduce((messages, key) => {
-    let value = nestedMessages[key];
-    let prefixedKey = prefix ? `${prefix}.${key}` : key;
+export function flattenMessages(
+  nestedMessages: Record<string, any>,
+  prefix = ""
+) {
+  return Object.keys(nestedMessages).reduce(
+    (messages: Record<string, any>, key: string) => {
+      let value = nestedMessages[key];
+      let prefixedKey = prefix ? `${prefix}.${key}` : key;
 
-    if (typeof value === "string") {
-      messages[prefixedKey] = value;
-    } else {
-      Object.assign(messages, flattenMessages(value, prefixedKey));
-    }
+      if (typeof value === "string") {
+        messages[prefixedKey] = value;
+      } else {
+        Object.assign(messages, flattenMessages(value, prefixedKey));
+      }
 
-    return messages;
-  }, {});
+      return messages;
+    },
+    {}
+  );
 }

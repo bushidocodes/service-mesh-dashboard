@@ -13,19 +13,19 @@ const instance = State({
     metrics: {},
     threadsError: {}
   },
-  setInstanceMetricsPollingInterval(state, payload) {
+  setInstanceMetricsPollingInterval(state: any, payload: any) {
     return { ...state, instanceMetricsPollingInterval: payload };
   },
-  setIsPollingInstanceMetrics(state, payload) {
+  setIsPollingInstanceMetrics(state: any, payload: any) {
     return { ...state, isPollingInstanceMetrics: payload };
   },
-  setMetricsPollingFailures(state, payload) {
+  setMetricsPollingFailures(state: any, payload: any) {
     return { ...state, metricsPollingFailures: payload };
   },
-  setThreadsError(state, payload) {
+  setThreadsError(state: any, payload: any) {
     return { ...state, threadsError: payload };
   },
-  appendToMetrics(state, payload) {
+  appendToMetrics(state: any, payload: any) {
     // Check the size of the state
     // If the size of the state exceeds the max capacity,
     // find the earliest timestamp wipe all associated metrics from all known keys
@@ -47,7 +47,7 @@ const instance = State({
     });
     return { ...state, metrics: result };
   },
-  clearMetrics(state, payload) {
+  clearMetrics(state: any, payload: any) {
     return { ...state, metrics: {} };
   }
 });

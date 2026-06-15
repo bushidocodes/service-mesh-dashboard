@@ -23,8 +23,8 @@ import { useLocation, useNavigate, useParams } from "react-router-dom";
  *   path    – current pathname
  *   url     – current pathname
  */
-export function withRouter(Component) {
-  function Wrapped(props) {
+export function withRouter(Component: any) {
+  function Wrapped(props: any) {
     const location = useLocation();
     const navigate = useNavigate();
     const params = useParams();
@@ -40,8 +40,8 @@ export function withRouter(Component) {
     // replace() accepts either a string path or a location descriptor object
     // { pathname?, search?, hash?, state? } – the same shapes the app uses.
     const history = {
-      push: (path) => navigate(path),
-      replace: (pathOrLocation) => {
+      push: (path: any) => navigate(path),
+      replace: (pathOrLocation: any) => {
         if (typeof pathOrLocation === "string") {
           navigate(pathOrLocation, { replace: true });
         } else {
@@ -52,7 +52,7 @@ export function withRouter(Component) {
           });
         }
       },
-      go: (n) => navigate(n),
+      go: (n: any) => navigate(n),
       goBack: () => navigate(-1),
       goForward: () => navigate(1),
       location

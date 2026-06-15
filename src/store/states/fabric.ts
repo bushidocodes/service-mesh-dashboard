@@ -10,22 +10,22 @@ const fabric = State({
     selectedServiceSlug: null,
     services: {} //indexed by service ID
   },
-  setFabricPollingInterval(state, payload) {
+  setFabricPollingInterval(state: any, payload: any) {
     return { ...state, fabricPollingInterval: payload };
   },
-  setIsPollingFabric(state, payload) {
+  setIsPollingFabric(state: any, payload: any) {
     return { ...state, isPollingFabric: payload };
   },
-  setSelectedInstanceID(state, payload) {
+  setSelectedInstanceID(state: any, payload: any) {
     return { ...state, selectedInstanceID: payload };
   },
-  setServicesPollingFailures(state, payload) {
+  setServicesPollingFailures(state: any, payload: any) {
     return { ...state, servicesPollingFailures: payload };
   },
-  setSelectedServiceSlug(state, payload) {
+  setSelectedServiceSlug(state: any, payload: any) {
     return { ...state, selectedServiceSlug: payload };
   },
-  setFabricMicroservices(state, services) {
+  setFabricMicroservices(state: any, services: any) {
     return { ...state, services };
   }
 });

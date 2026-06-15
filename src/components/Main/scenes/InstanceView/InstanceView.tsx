@@ -70,7 +70,7 @@ function InstanceView({
   );
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state: any) {
   return {
     selectedServiceSlug: state.fabric.selectedServiceSlug,
     selectedInstanceID: state.fabric.selectedInstanceID

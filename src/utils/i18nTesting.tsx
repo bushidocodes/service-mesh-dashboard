@@ -36,7 +36,7 @@ export const intl = createIntl(intlConfig, cache);
  * @param {object} [store] optional redux store
  * @returns {React.ReactElement}
  */
-export function withIntl(node, store = null) {
+export function withIntl(node: React.ReactNode, store: any = null) {
   const tree = <IntlProvider {...intlConfig}>{node}</IntlProvider>;
   return store ? <Provider store={store}>{tree}</Provider> : tree;
 }
@@ -49,7 +49,7 @@ export function withIntl(node, store = null) {
  * @param {object} [store] optional redux store
  * @returns {import("@testing-library/react").RenderResult}
  */
-export function renderWithIntl(node, store = null) {
+export function renderWithIntl(node: React.ReactNode, store: any = null) {
   return render(withIntl(node, store));
 }
 

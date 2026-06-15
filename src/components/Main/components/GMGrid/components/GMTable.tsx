@@ -29,7 +29,7 @@ export default function GMTable({ title, headers, rows = [] }: GMTableProps) {
       {rows.map((row, rowIndex) => (
         <DataPair key={`row-${rowIndex}`}>
           {row &&
-            row.map((cell, cellIndex) =>
+            row.map((cell: any, cellIndex: number) =>
               cellIndex === 0 ? (
                 <DataKey key={`row-${rowIndex}-cell-${cellIndex}`}>
                   {cell.toLocaleString()}

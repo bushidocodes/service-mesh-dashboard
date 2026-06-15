@@ -18,14 +18,14 @@ function ConnectedIntlProvider({
     <IntlProvider
       locale={locale}
       key={locale} // this key is important because forces React to create a new instance and re-render the whole DOM tree when the locale changes
-      messages={flattenMessages(messages[locale])}
+      messages={flattenMessages((messages as Record<string, any>)[locale])}
     >
       {children}
     </IntlProvider>
   );
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state: any) {
   return {
     locale: state.settings.locale
   };

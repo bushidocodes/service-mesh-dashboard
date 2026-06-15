@@ -45,7 +45,7 @@ class ServiceView extends Component<ServiceViewProps> {
     }
   }
 
-  setSortByAttribute = (newSortByAttribute) => {
+  setSortByAttribute = (newSortByAttribute: string) => {
     const {
       urlState: { ascending = "true", sortByAttribute = "name" },
       setUrlState

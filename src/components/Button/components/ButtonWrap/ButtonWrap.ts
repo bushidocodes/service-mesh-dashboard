@@ -17,7 +17,7 @@ import {
 } from "style/styleVariables";
 
 // Maps button types to a particular color
-function generateButtonTypeColor(type) {
+function generateButtonTypeColor(type?: string) {
   switch (type) {
     case "danger":
       return COLOR_DANGER.rgb();
@@ -33,9 +33,9 @@ function generateButtonTypeColor(type) {
   }
 }
 
-const camelCaseConverter = (stringInput) => {
+const camelCaseConverter = (stringInput?: string) => {
   if (stringInput) {
-    return stringInput.replace(/-([a-z])/g, function (g) {
+    return stringInput.replace(/-([a-z])/g, function (g: string) {
       return g[1].toUpperCase();
     });
   }

@@ -5,7 +5,11 @@ import ExtrasContainer from "components/Notification/components/ExtrasContainer"
 import MessageIcon from "components/Notification/components/MessageIcon";
 import DismissButton from "components/Notification/components/DismissButton";
 
-export function reportError(errorLabel, shouldTimeout?, errorObject = "") {
+export function reportError(
+  errorLabel: React.ReactNode,
+  shouldTimeout?: boolean,
+  errorObject: any = ""
+) {
   // react-toastify injects `closeToast` when the toast content is a render
   // function, which lets our custom DismissButton dismiss the toast. The
   // library's built-in icon/close button are disabled on the <ToastContainer>

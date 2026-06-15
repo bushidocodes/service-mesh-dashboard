@@ -7,7 +7,7 @@ import isEmpty from "lodash/isEmpty";
  * @param {array} array a timeseries array with time stamps
  * @returns {array}     an array of values
  */
-export function numericalTimeSeriesFunc(array): any {
+export function numericalTimeSeriesFunc(array: any): any {
   if (array instanceof Array === true && !isEmpty(array)) {
     return array.map((cell) => cell[1]);
   } else {
@@ -21,7 +21,7 @@ export function numericalTimeSeriesFunc(array): any {
  * @param {array} array an array of values
  * @returns {number}
  */
-export function average(array) {
+export function average(array: any) {
   if (array instanceof Array === true && !isEmpty(array)) {
     return array.reduce((a, b) => a + b) / array.length;
   } else {
@@ -36,7 +36,7 @@ export function average(array) {
  * @param {array} array an array of values
  * @returns {number}
  */
-export function median(array) {
+export function median(array: any) {
   if (array instanceof Array === true && !isEmpty(array)) {
     const len = array.length;
     let median = 0;
@@ -62,7 +62,7 @@ export function median(array) {
  * @param {array} array an array of values
  * @returns {array}     an array that contains mode(s) and frequency value
  */
-export function modes(array): any {
+export function modes(array: any): any {
   if (array instanceof Array === true && !isEmpty(array)) {
     let modes: any = [];
     let count: number[] = [];
@@ -105,7 +105,11 @@ export function modes(array): any {
  * @param {string} title chart title
  * @returns {string}     returns a string with summary chart statistics
  */
-export function screenReaderGraphDescription(timeSeries, title, intl) {
+export function screenReaderGraphDescription(
+  timeSeries: any,
+  title: any,
+  intl: any
+) {
   const numericalTimeSeries = numericalTimeSeriesFunc(timeSeries);
 
   // We don't have negative values in our charts, thus average of 0 means that all values are 0, aka no meaningful data

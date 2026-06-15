@@ -19,7 +19,7 @@ const COLOR_TAB_HIGHLIGHT = COLOR_HIGHLIGHT;
 // React Router v6 exports NavLink as a forwardRef object, which styled-components v2
 // rejects because it checks typeof target === "function".
 // In v6, NavLink is always exact by default — the "exact" attr is no longer needed.
-function NavLinkWrapper(props) {
+function NavLinkWrapper(props: any) {
   return <NavLink {...props} />;
 }
 

@@ -103,7 +103,9 @@ export default function GMServiceCard({
     >
       <ServiceLink
         disabled={isAccessible ? null : true}
-        onClick={isAccessible ? null : (e) => e.preventDefault()}
+        onClick={
+          isAccessible ? null : (e: React.MouseEvent) => e.preventDefault()
+        }
         title={titleNameAttribute}
         to={`/${slug}`}
       >

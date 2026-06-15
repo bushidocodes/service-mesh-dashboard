@@ -35,7 +35,7 @@ function AppHeader({
   );
 }
 
-function getTitle(pathArray, services) {
+function getTitle(pathArray: string[], services: Record<string, any>) {
   // an instance ID will always be the second item in this array,
   // however the root can be a number of different things, including a service name slug
   const [root = "", selectedInstance = ""] = pathArray;
@@ -57,7 +57,7 @@ function getTitle(pathArray, services) {
   }
 }
 
-function mapStateToProps(state, ownProps) {
+function mapStateToProps(state: any, ownProps: any) {
   let pathArray = ownProps.location.pathname.replace(/^\/|\/$/g, "").split("/");
   return {
     title: getTitle(pathArray, state.fabric.services),

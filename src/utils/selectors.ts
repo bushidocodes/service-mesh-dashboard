@@ -5,13 +5,14 @@ import { microserviceStatuses } from "utils/constants";
 
 // Reselect Input Selectors
 
-export const getMetrics = (state) => state.instance.metrics;
-export const getDashboards = (state) => state.dashboards;
-export const getServices = (state) => state.fabric.services;
+export const getMetrics = (state: any) => state.instance.metrics;
+export const getDashboards = (state: any) => state.dashboards;
+export const getServices = (state: any) => state.fabric.services;
 
-export const getFabricServer = (state) => state.settings.fabricServer;
-export const getSelectedInstanceID = (state) => state.fabric.selectedInstanceID;
-export const getSelectedServiceSlug = (state) =>
+export const getFabricServer = (state: any) => state.settings.fabricServer;
+export const getSelectedInstanceID = (state: any) =>
+  state.fabric.selectedInstanceID;
+export const getSelectedServiceSlug = (state: any) =>
   state.fabric.selectedServiceSlug;
 
 /**
@@ -65,10 +66,10 @@ export const getBaseInstanceRoute = createSelector(
  * @param {boolean} [isPrefix=true]
  * @returns function
  */
-export function metricsKeySelectorGenerator(keyQuery, isPrefix = true) {
+export function metricsKeySelectorGenerator(keyQuery: string, isPrefix = true) {
   const filterFunc = isPrefix
-    ? (key) => key.substr(0, keyQuery.length) === keyQuery
-    : (key) => key.includes(keyQuery);
+    ? (key: string) => key.substr(0, keyQuery.length) === keyQuery
+    : (key: string) => key.includes(keyQuery);
   return createSelector(getMetrics, (metrics) =>
     _.pick(metrics, Object.keys(metrics).filter(filterFunc))
   );
@@ -88,10 +89,10 @@ export const getRoutesTree = createSelector(getRoutesMetrics, (routesMetrics) =>
   _buildRoutesTree(routesMetrics)
 );
 
-function _buildRoutesTree(routeMetrics) {
+function _buildRoutesTree(routeMetrics: Record<string, any>) {
   const keys = Object.keys(routeMetrics);
   if (keys.length > 0) {
-    return keys.reduce((acc, key) => {
+    return keys.reduce((acc: Record<string, string[]>, key: string) => {
       const matchSet = key.match(
         /route(.*)\/(GET|HEAD|POST|PUT|DELETE|CONNECT|OPTIONS|TRACE|PATCH)\/.*/
       );
@@ -144,7 +145,7 @@ export const getStatusCount = createSelector(getServices, (services) => {
  * @param {number} max - service.maximum
  * @returns {string} - "Down" || "Stable" || "Warning"
  */
-export function computeStatus(count, min, max) {
+export function computeStatus(count: number, min: number, max: number) {
   if (count === 0) {
     return "Down";
   } else if (count >= min && count <= max) {

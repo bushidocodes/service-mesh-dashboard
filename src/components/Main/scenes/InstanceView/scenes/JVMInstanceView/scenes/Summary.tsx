@@ -163,7 +163,7 @@ function SummaryGrid({
   );
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state: any) {
   return {
     metrics: state.instance.metrics,
     selectedServiceSlug: state.fabric.selectedServiceSlug,

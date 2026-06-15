@@ -44,7 +44,7 @@ export const getState = (...args: any[]): any => resolvedGetState(...args);
  * @param {Object} config - `initial` plus one or more `(state, payload)` methods
  * @returns {Function} a redux reducer
  */
-export function State(config) {
+export function State(config: Record<string, any>) {
   const { initial, ...methods } = config;
 
   const reducer = (state = initial, action: any = {}) => {
@@ -80,7 +80,7 @@ const effectResults: Record<number, any> = {};
  * @param {Function} fn - `(payload, getState, dispatch) => any`
  * @returns {Function} the `Actions.<name>` dispatcher
  */
-export function Effect(name, fn) {
+export function Effect(name: string, fn: (...args: any[]) => any) {
   if (typeof name !== "string") {
     throw new Error(
       'Effect requires a string name, e.g. Effect("myEffect", fn).'
@@ -116,10 +116,10 @@ export function Effect(name, fn) {
  * reducers. Mirrors jumpstate's middleware (minus the unused Hook registry).
  */
 export function CreateJumpstateMiddleware() {
-  return (store) => {
+  return (store: any) => {
     resolvedDispatch = store.dispatch;
     resolvedGetState = store.getState;
-    return (next) => (action) => {
+    return (next: (action: any) => any) => (action: any) => {
       const result = next(action);
       const effect = effectRegistry[action.type];
       if (effect) {

@@ -43,7 +43,9 @@ export default class IconBackground extends Component<IconBackgroundProps> {
     } = this.props;
 
     // dynamically render glyph component by name
-    const IconBackgroundComponent = backgroundStyles[name];
+    const IconBackgroundComponent = (backgroundStyles as Record<string, any>)[
+      name
+    ];
     return (
       <IconBackgroundComponent
         name={name}

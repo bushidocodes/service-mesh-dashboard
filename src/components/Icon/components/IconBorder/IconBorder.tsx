@@ -36,7 +36,7 @@ export default class IconBorder extends Component<IconBorderProps> {
     } = this.props;
 
     // dynamically render glyph component by name
-    const IconBorderComponent = borderStyles[name];
+    const IconBorderComponent = (borderStyles as Record<string, any>)[name];
     return (
       <g
         id={name}

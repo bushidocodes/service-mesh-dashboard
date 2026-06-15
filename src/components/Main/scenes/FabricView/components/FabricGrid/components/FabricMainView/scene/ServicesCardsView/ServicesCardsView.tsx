@@ -28,7 +28,7 @@ function CardsView({
   services
 }: CardsViewProps) {
   if (groupByAttribute !== "None") {
-    const dataGroupedByHeader = (Object as any).groupBy(services, (item) =>
+    const dataGroupedByHeader = (Object as any).groupBy(services, (item: any) =>
       item.headerTitle.toLowerCase()
     );
     const headerTitles = Object.keys(dataGroupedByHeader);

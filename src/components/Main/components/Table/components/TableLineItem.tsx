@@ -73,7 +73,7 @@ class TableLineItem extends Component<TableLineItemProps, TableLineItemState> {
       _.forEach(SparklineSVG, (svg) => svg.setAttribute("focusable", "false"));
   }
 
-  toggleDrawer = (e?) => {
+  toggleDrawer = (e?: any) => {
     if (e) {
       blurTableRow(e);
     }

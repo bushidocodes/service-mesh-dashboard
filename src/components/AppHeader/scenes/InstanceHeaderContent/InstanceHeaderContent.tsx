@@ -35,14 +35,18 @@ interface InstanceHeaderContentProps {
 
 // named export for the unconnected component {InstanceHeaderContent} for unit tests
 export class InstanceHeaderContent extends Component<InstanceHeaderContentProps> {
-  renderTabs(dashboards, metrics, intl) {
+  renderTabs(
+    dashboards: Record<string, any>,
+    metrics: Record<string, unknown>,
+    intl: any
+  ) {
     const { basePath } = this.props;
     if (Object.keys(dashboards).length > 0) {
       return _.toPairs(dashboards).map(([key, value]: [string, any]) => {
         let chartData, lines;
         // Render lines of text if present
         if (_.has(value, "summaryCard.lines")) {
-          lines = value.summaryCard.lines.map((line) => {
+          lines = value.summaryCard.lines.map((line: any) => {
             return {
               name: intl.formatMessage(line.name),
               value: parseJSONString(line.value, metrics, intl.formatMessage)
@@ -109,7 +113,7 @@ export class InstanceHeaderContent extends Component<InstanceHeaderContentProps>
   }
 }
 
-function mapStateToProps(state, ownProps) {
+function mapStateToProps(state: any, ownProps: any) {
   const {
     instance: { metrics },
     fabric: { services, selectedServiceSlug }

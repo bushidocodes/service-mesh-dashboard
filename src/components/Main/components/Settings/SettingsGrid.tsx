@@ -174,7 +174,7 @@ function mapStateToProps({
     instanceMetricsPollingInterval,
     isPollingInstanceMetrics
   }
-}) {
+}: any) {
   return {
     fabricPollingInterval,
     fabricServer,

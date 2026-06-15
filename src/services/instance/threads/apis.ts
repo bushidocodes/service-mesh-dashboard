@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export async function fetchInstanceThreads(endpoint) {
+export async function fetchInstanceThreads(endpoint: string) {
   const response = await axios.get(endpoint, { responseType: "json" });
   // The response should have provided JSON, which Axios unpacks auto-magically
   // to an object. We need to manually reject the promise if this didn't happen

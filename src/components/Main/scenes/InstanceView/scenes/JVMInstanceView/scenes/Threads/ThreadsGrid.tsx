@@ -51,7 +51,7 @@ class ThreadsGrid extends Component<ThreadsGridProps> {
     }
   }
 
-  setSortByAttribute = (newSortByAttribute) => {
+  setSortByAttribute = (newSortByAttribute: string) => {
     const {
       urlState: { ascending = "true", sortByAttribute = "id" },
       setUrlState
@@ -79,7 +79,7 @@ class ThreadsGrid extends Component<ThreadsGridProps> {
     let sortOrder: ("asc" | "desc")[] =
       ascending === "true" ? ["asc"] : ["desc"];
     // thread["id"] is a string, so we need to convert to an int to sort properly
-    const sortFunc = (thread) => {
+    const sortFunc = (thread: any) => {
       return sortByAttribute === "id"
         ? parseInt(thread["id"], 10)
         : thread[sortByAttribute].toLowerCase();
@@ -200,7 +200,7 @@ class ThreadsGrid extends Component<ThreadsGridProps> {
   }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state: any) {
   const {
     fabric: { selectedServiceSlug, selectedInstanceID },
     instance: { threadsError },

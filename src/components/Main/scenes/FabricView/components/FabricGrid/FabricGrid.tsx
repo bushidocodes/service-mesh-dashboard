@@ -61,7 +61,7 @@ class FabricGrid extends Component<FabricGridProps> {
     }
   }
 
-  setSortByAttribute = (sortByAttribute) => {
+  setSortByAttribute = (sortByAttribute: string) => {
     if (this.props.urlState.sortByAttribute === sortByAttribute) {
       this.props.setUrlState({
         ascending: !JSON.parse(this.props.urlState.ascending)

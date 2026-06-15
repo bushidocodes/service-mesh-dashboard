@@ -91,7 +91,7 @@ export default {
   }
 };
 
-const Wrapped = (args) => (
+const Wrapped = (args: any) => (
   <div style={wrapperStyle}>
     <Button {...args} />
   </div>

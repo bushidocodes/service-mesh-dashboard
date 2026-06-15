@@ -31,7 +31,7 @@ class RoutesGrid extends Component<RoutesGridProps> {
    * in the url bar.
    * @param {Array} routes
    */
-  sort = (routes) => {
+  sort = (routes: any) => {
     const { ascending = "true", sortByAttribute = "route" } =
       this.props.urlState;
     const sortOrder: ("asc" | "desc")[] =
@@ -46,7 +46,7 @@ class RoutesGrid extends Component<RoutesGridProps> {
    * When sorting by latency and error percent and the sortKey is new, set the initial sort order to descending
    * @param {String} newSortByAttribute
    */
-  setSortByAttribute = (newSortByAttribute) => {
+  setSortByAttribute = (newSortByAttribute: string) => {
     const {
       urlState: { ascending = "true", sortByAttribute = "route" },
       setUrlState
@@ -167,7 +167,7 @@ class RoutesGrid extends Component<RoutesGridProps> {
   }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state: any) {
   return {
     routes: getRoutesTable(state)
   };

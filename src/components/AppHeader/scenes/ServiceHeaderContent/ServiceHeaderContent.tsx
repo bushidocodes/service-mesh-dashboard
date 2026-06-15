@@ -42,7 +42,7 @@ function ServiceHeaderContent({
   );
 }
 
-function mapStateToProps(state, ownProps) {
+function mapStateToProps(state: any, ownProps: any) {
   const {
     fabric: { services }
   } = state;

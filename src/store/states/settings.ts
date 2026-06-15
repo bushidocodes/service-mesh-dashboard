@@ -15,10 +15,10 @@ const settings = State({
     locale: getLocale()
   },
 
-  setThreadsFilter(state, payload) {
+  setThreadsFilter(state: any, payload: any) {
     return { ...state, threadsFilter: payload };
   },
-  setUserLocale(state, payload) {
+  setUserLocale(state: any, payload: any) {
     return { ...state, locale: payload };
   }
 });

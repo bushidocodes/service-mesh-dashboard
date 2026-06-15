@@ -11,26 +11,31 @@ import { cloneDeep, uniq } from "lodash";
  * @param {String[]} keys - keys that we want to pluck from metrics
  * @returns {Array}
  */
-export function getDygraphOfValue(metrics, keys) {
+export function getDygraphOfValue(metrics: any, keys: string[]) {
   const results: { data: any[]; attributes: any[] } = {
     data: [],
     attributes: []
   };
   if (!metrics || !keys) return results;
   // Not all keys will be present at all times in the metrics object
-  const validKeys = keys.filter((key) => Object.keys(metrics).includes(key));
+  const validKeys = keys.filter((key: string) =>
+    Object.keys(metrics).includes(key)
+  );
   // Exit with dummy output if none of the keys were in the metrics object
   if (validKeys.length === 0) return results;
   // Or set as the keys of the results object
   // Accumulate all unique timestamps and sort
-  const timestamps = validKeys.reduce((acc, key) => {
+  const timestamps = validKeys.reduce((acc: string[], key: string) => {
     return uniq([...acc, ...Object.keys(metrics[key])]).sort(
       (a, b) => Number(a) - Number(b)
     );
-  }, []);
+  }, [] as string[]);
   // Map over the timestamps and generate the dygraph format
-  results.data = timestamps.map((ts) => {
-    return [new Date(Number(ts)), ...validKeys.map((key) => metrics[key][ts])];
+  results.data = timestamps.map((ts: string) => {
+    return [
+      new Date(Number(ts)),
+      ...validKeys.map((key: string) => metrics[key][ts])
+    ];
   });
   results.attributes = ["Time", ...validKeys];
   return results;
@@ -46,28 +51,28 @@ export function getDygraphOfValue(metrics, keys) {
  * @returns {Object[]}
  */
 export function mapDygraphKeysToNetChange(
-  dygraph,
-  attributesToMap = dygraph.attributes.filter(
-    (arr) => arr !== "Time" && arr !== "time"
+  dygraph: any,
+  attributesToMap: any[] = dygraph.attributes.filter(
+    (arr: any) => arr !== "Time" && arr !== "time"
   )
 ) {
   return _mapOverDygraphKeys(dygraph, attributesToMap, _netChangeMapper);
 }
 
 function _mapOverDygraphKeys(
-  outputOfDygraphByValue,
-  attributesToMap,
-  mapperFunc
+  outputOfDygraphByValue: any,
+  attributesToMap: any[],
+  mapperFunc: (val: any[], i: number, a: any[], pos: number) => any[]
 ) {
   if (!attributesToMap || attributesToMap.length === 0) {
     return outputOfDygraphByValue;
   } else {
     let dygraph = cloneDeep(outputOfDygraphByValue);
     let { data, attributes } = dygraph;
-    attributesToMap.forEach((attributeToMap, idx, arr) => {
+    attributesToMap.forEach((attributeToMap: any) => {
       const positionOfAttributeToMap = attributes.indexOf(attributeToMap);
       if (positionOfAttributeToMap !== -1) {
-        data = data.map((val, i, a) =>
+        data = data.map((val: any[], i: number, a: any[]) =>
           mapperFunc(val, i, a, positionOfAttributeToMap)
         );
       }
@@ -76,7 +81,12 @@ function _mapOverDygraphKeys(
   }
 }
 
-function _netChangeMapper(val, idx, arr, positionOfLabelToMap) {
+function _netChangeMapper(
+  val: any[],
+  idx: number,
+  arr: any[],
+  positionOfLabelToMap: number
+) {
   if (idx === 0) {
     const result = [...val];
     result[positionOfLabelToMap] = 0;
@@ -107,7 +117,7 @@ function _netChangeMapper(val, idx, arr, positionOfLabelToMap) {
  * @param {number} numberOfDecimalsPlaces
  * @returns
  */
-export function floatRound(val, numberOfDecimalsPlaces) {
+export function floatRound(val: number, numberOfDecimalsPlaces: number) {
   const multiplier = Math.pow(10, numberOfDecimalsPlaces);
   return Math.round(val * multiplier) / multiplier;
 }

@@ -22,13 +22,11 @@
     // Incremental, pragmatic migration: `strict` is being ratcheted on one flag
     // at a time. allowJs lets the remaining .js test files coexist.
     //
-    // Phase 0 — the strict sub-flags that the codebase already satisfies are on.
-    // The two expensive flags (`noImplicitAny` ~345 errors, `strictNullChecks`
-    // ~62) stay off until their dedicated burn-down phases land, after which
-    // `strict: true` replaces this block wholesale.
+    // All strict sub-flags are now on; once verified clean this block can be
+    // collapsed to `strict: true` wholesale.
     "allowJs": true,
     "checkJs": false,
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "strictNullChecks": true,
     "strictFunctionTypes": true,
     "strictBindCallApply": true,

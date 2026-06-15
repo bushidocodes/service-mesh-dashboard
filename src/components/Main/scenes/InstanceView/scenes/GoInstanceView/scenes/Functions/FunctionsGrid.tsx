@@ -31,7 +31,7 @@ class FunctionsGrid extends Component<FunctionsGridProps> {
    * in the url bar.
    * @param {Array} funcs
    */
-  sort = (routes) => {
+  sort = (routes: any) => {
     const { ascending = "true", sortByAttribute = "func" } =
       this.props.urlState;
     const sortOrder: ("asc" | "desc")[] =
@@ -46,7 +46,7 @@ class FunctionsGrid extends Component<FunctionsGridProps> {
    *  When sorting by latency and error percent and the sortKey is new, set the initial sort order to descending
    * @param {String} newSortByAttribute
    */
-  setSortByAttribute = (newSortByAttribute) => {
+  setSortByAttribute = (newSortByAttribute: string) => {
     const {
       urlState: { ascending = "true", sortByAttribute = "func" },
       setUrlState
@@ -167,7 +167,7 @@ class FunctionsGrid extends Component<FunctionsGridProps> {
   }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state: any) {
   return {
     funcs: getFunctionsTable(state)
   };

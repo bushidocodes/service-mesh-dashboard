@@ -46,7 +46,7 @@ export default class ThreadsTableLineItem extends Component<
    * @returns string
    * @memberof ThreadsTableLineItem
    */
-  getStatus(state) {
+  getStatus(state?: string) {
     switch (state) {
       case "RUNNABLE":
         return "stable";
@@ -65,7 +65,7 @@ export default class ThreadsTableLineItem extends Component<
    * Toggles the stacktrace drawer open or closed
    * @memberof ThreadsTableLineItem
    */
-  toggleStack = (e?) => {
+  toggleStack = (e?: any) => {
     if (e) {
       blurTableRow(e);
     }
