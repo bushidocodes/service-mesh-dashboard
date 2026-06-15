@@ -3,11 +3,11 @@
 exports[`Tooltip correctly positions tooltip content based on position prop 1`] = `
 <DocumentFragment>
   <div
-    class="dPlizA"
+    class="gBXDCU"
   >
     Hover over me
     <div
-      class="ChCTQ"
+      class="eZUjNY"
     >
       Hello!
     </div>

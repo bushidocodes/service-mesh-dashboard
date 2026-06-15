@@ -2,7 +2,7 @@ import React from "react";
 import { screen } from "@testing-library/react";
 import { renderWithIntl } from "utils/i18nTesting";
 
-import Table from "./index.js";
+import Table from "./index";
 import TableLineItem from "./components/TableLineItem";
 import GMServiceTableLineItem from "./components/GMServiceTableLineItem";
 

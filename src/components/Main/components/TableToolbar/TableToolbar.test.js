@@ -2,7 +2,7 @@ import React from "react";
 import { screen, fireEvent, within } from "@testing-library/react";
 import { renderWithIntl, withIntl } from "utils/i18nTesting";
 
-import TableToolbar from "./index.js";
+import TableToolbar from "./index";
 
 const sortByOptions = [
   {

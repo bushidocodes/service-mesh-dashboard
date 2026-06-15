@@ -8,7 +8,7 @@
 // that produces an array of props objects, but doesn't actually pass them into
 // <SidebarCard>
 
-import { getFabricServer } from "./head.js";
+import { getFabricServer } from "./head";
 
 const documentHead = `
   <meta charset="utf-8">

@@ -1,4 +1,4 @@
-/* eslint-disable react/no-multi-comp, react/prop-types -- lightweight jest.mock stubs */
+/* eslint-disable react/no-multi-comp -- lightweight jest.mock stubs */
 import React from "react";
 import { render, screen } from "@testing-library/react";
 

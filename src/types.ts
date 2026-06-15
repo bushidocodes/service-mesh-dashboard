@@ -26,7 +26,9 @@ export interface RouterLocation {
   key?: string;
   pathname: string;
   search: string;
-  state?: unknown;
+  // Navigation state is an opaque, caller-defined bag (e.g. ServiceView reads
+  // `state.message`); `any` keeps those reads ergonomic under the loose config.
+  state?: any;
 }
 
 /**
@@ -39,8 +41,10 @@ export interface RouterHistory {
   goBack: () => void;
   goForward: () => void;
   location: RouterLocation;
-  push: (path: string) => void;
-  replace: (path: string) => void;
+  // Accept a path string or a location-descriptor object ({ state }, etc.),
+  // matching how the withRouter shim forwards to React Router's navigate().
+  push: (path: string | object) => void;
+  replace: (path: string | object) => void;
 }
 
 /** React Router match object. */

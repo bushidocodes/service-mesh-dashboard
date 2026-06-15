@@ -9,7 +9,7 @@ import { renderWithIntl } from "utils/i18nTesting";
 import mockState from "json/mockReduxState";
 
 // Components
-import Explorer from "./index.js";
+import Explorer from "./index";
 
 // Create a mock store and initialize with mock data
 const store = configureStore()(mockState);
