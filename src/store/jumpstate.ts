@@ -12,6 +12,8 @@
 // (`dispatch` is exported too for completeness — jumpstate exported it — even
 // though no call site imports it directly.)
 
+import type { RootState } from "types";
+
 // `Actions` is a shared singleton object. State methods and Effects both attach
 // themselves here, and the services layer references it directly. Keeping it a
 // single mutable module export preserves jumpstate's global-singleton pattern.
@@ -33,7 +35,9 @@ let resolvedDispatch: (...args: any[]) => any = warn;
 let resolvedGetState: (...args: any[]) => any = warn;
 
 export const dispatch = (...args: any[]): any => resolvedDispatch(...args);
-export const getState = (...args: any[]): any => resolvedGetState(...args);
+// getState returns the full Redux tree; typing it as RootState gives the
+// services/components that read `getState().slice.field` real type safety.
+export const getState = (): RootState => resolvedGetState();
 
 /**
  * Turn a `{ initial, methodName(state, payload) {...} }` config into a redux
