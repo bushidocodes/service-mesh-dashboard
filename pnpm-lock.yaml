@@ -72,8 +72,8 @@ importers:
         specifier: ~3.0.6
         version: 3.0.6
       reselect:
-        specifier: ~3.0.1
-        version: 3.0.1
+        specifier: ~5.2.0
+        version: 5.2.0
       styled-components:
         specifier: ^5.0.0
         version: 5.3.11(@babel/core@7.29.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)
@@ -5588,9 +5588,6 @@ packages:
 
   requires-port@1.0.0:
     resolution: {integrity: sha512-KigOCHcocU3XODJxsu8i/j8T9tzT4adHiecwORRQ0ZZFcp7ahwXuRU1m+yuO90C5ZUyGeGfocHDI14M3L3yDAQ==}
-
-  reselect@3.0.1:
-    resolution: {integrity: sha512-b/6tFZCmRhtBMa4xGqiiRp9jh9Aqi2A687Lo265cN0/QohJQEBPiQ52f4QB6i0eF3yp3hmLL21LSGBcML2dlxA==}
 
   reselect@4.1.8:
     resolution: {integrity: sha512-ab9EmR80F/zQTMNeneUr4cv+jSwPJgIlvEmVwLerwrWVbpLlBuls9XHzIeTFy4cegU2NHBp3va0LKOzU5qFEYQ==}
@@ -12585,8 +12582,6 @@ snapshots:
   require-package-name@2.0.1: {}
 
   requires-port@1.0.0: {}
-
-  reselect@3.0.1: {}
 
   reselect@4.1.8: {}
 
