@@ -19,14 +19,22 @@
       "*": ["./src/*", "./*"]
     },
 
-    // This is an incremental, pragmatic first-stage migration. allowJs lets the
-    // remaining .js source coexist while files are converted; strictness is
-    // intentionally relaxed for stage one and can be ratcheted up later.
+    // Incremental, pragmatic migration: `strict` is being ratcheted on one flag
+    // at a time. allowJs lets the remaining .js test files coexist.
+    //
+    // Phase 0 — the strict sub-flags that the codebase already satisfies are on.
+    // The two expensive flags (`noImplicitAny` ~345 errors, `strictNullChecks`
+    // ~62) stay off until their dedicated burn-down phases land, after which
+    // `strict: true` replaces this block wholesale.
     "allowJs": true,
     "checkJs": false,
-    "strict": false,
     "noImplicitAny": false,
     "strictNullChecks": false,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "noImplicitThis": true,
+    "useUnknownInCatchVariables": true,
+    "alwaysStrict": true,
 
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,

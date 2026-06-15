@@ -182,10 +182,13 @@ export interface Dashboard {
 /** A row in the JVM threads table. */
 export interface ThreadsTableItem {
   daemon?: boolean;
+  id?: number;
   name?: string;
   priority?: number;
   stack?: string[];
   state?: string;
+  /** Added by ThreadsTable when grouping rows by state bucket. */
+  header?: string;
 }
 
 /**

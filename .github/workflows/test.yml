@@ -40,6 +40,30 @@ jobs:
           CI: true
           TZ: America/New_York
 
+  typecheck:
+    name: Typecheck
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6
+
+      - name: Use Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: ".nvmrc"
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # Gate against type regressions. As `strict` is ratcheted on one flag at a
+      # time, this floor rises; it must stay green at every step.
+      - name: Run tsc
+        run: pnpm run typecheck
+
   lint:
     name: Lint
     runs-on: ubuntu-latest
