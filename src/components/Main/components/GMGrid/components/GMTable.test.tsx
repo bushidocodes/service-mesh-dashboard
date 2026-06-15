@@ -2,7 +2,7 @@ import React from "react";
 import { render } from "@testing-library/react";
 import GMTable from "./GMTable";
 
-let asFragment;
+let asFragment: () => DocumentFragment;
 const props = {
   title: "Requests",
   headers: ["Requests", "Success"],

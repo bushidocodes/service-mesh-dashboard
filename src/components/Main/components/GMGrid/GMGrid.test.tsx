@@ -19,25 +19,25 @@ import { GMGrid } from "./GMGrid";
 // "renders N of chart type X" assertions observable without mounting the real
 // (canvas/dygraph-heavy) charts — mirroring the original shallow render.
 jest.mock("../GMLineChart", () => {
-  const React = require("react");
+  const React = jest.requireActual("react");
   return () => React.createElement("div", { "data-testid": "gm-line-chart" });
 });
 jest.mock("./components/GMTable", () => {
-  const React = require("react");
+  const React = jest.requireActual("react");
   return () => React.createElement("div", { "data-testid": "gm-table" });
 });
 jest.mock("./components/GMBasicMetrics", () => {
-  const React = require("react");
+  const React = jest.requireActual("react");
   return () =>
     React.createElement("div", { "data-testid": "gm-basic-metrics" });
 });
 jest.mock("components/Main/components/NotFoundError", () => {
-  const React = require("react");
+  const React = jest.requireActual("react");
   return () => React.createElement("div", { "data-testid": "not-found-error" });
 });
 jest.mock("components/ErrorBoundary", () => {
-  const React = require("react");
-  return ({ children }) =>
+  const React = jest.requireActual("react");
+  return ({ children }: { children?: React.ReactNode }) =>
     React.createElement("div", { "data-testid": "error-boundary" }, children);
 });
 // react-grid-layout v2's ResponsiveGridLayout + useContainerWidth measure the DOM
@@ -46,10 +46,10 @@ jest.mock("components/ErrorBoundary", () => {
 // the chart stubs inside stay countable without real measurement (the original
 // shallow render never reached the grid either).
 jest.mock("react-grid-layout", () => {
-  const React = require("react");
+  const React = jest.requireActual("react");
   return {
     __esModule: true,
-    ResponsiveGridLayout: ({ children }) =>
+    ResponsiveGridLayout: ({ children }: { children?: React.ReactNode }) =>
       React.createElement("div", { "data-testid": "grid" }, children),
     useContainerWidth: () => ({
       width: 1280,
@@ -221,7 +221,7 @@ let props = {
 // (not react-intl message descriptors) as labels/titles, so formatMessage just
 // echoes strings back; descriptors are handled defensively for completeness.
 const intl = {
-  formatMessage: (message) =>
+  formatMessage: (message: any) =>
     typeof message === "string"
       ? message
       : (message && (message.defaultMessage || message.id)) || ""

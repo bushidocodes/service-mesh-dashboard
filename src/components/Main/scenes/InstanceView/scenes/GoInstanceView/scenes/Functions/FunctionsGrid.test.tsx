@@ -20,7 +20,7 @@ const mockState = state.default,
 noMetricsState.instance.metrics = _.omitBy(
   noFuncState.default.instance.metrics,
   (value, key) => key.substr(0, 8) === "function"
-);
+) as typeof noMetricsState.instance.metrics;
 
 const FunctionsGridWithMockStore = (
   <MemoryRouter>
@@ -100,7 +100,9 @@ describe("FunctionsGrid Child Components", () => {
     // "Function", which the sort dropdown displays as its selected value.
     const sortSelect = screen.getByRole("combobox");
     const toolbarRight = sortSelect.closest(".gm-select__control");
-    expect(within(toolbarRight).getByText("Function")).toBeInTheDocument();
+    expect(
+      within(toolbarRight as HTMLElement).getByText("Function")
+    ).toBeInTheDocument();
 
     // sortByProps.sortByOptions: open the sort dropdown and assert every option
     // label is rendered, in order.

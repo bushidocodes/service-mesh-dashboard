@@ -17,19 +17,19 @@ import DefaultHeaderContent from "./scenes/DefaultHeaderContent";
 // we assert which stub mounts — and, for the prop-passing test, inspect the
 // props the active stub received. This mirrors the original shallow intent.
 jest.mock("./scenes/JVMHeaderContent", () => {
-  const React = require("react");
+  const React = jest.requireActual("react");
   return jest.fn(() =>
     React.createElement("div", { "data-testid": "jvm-header" })
   );
 });
 jest.mock("./scenes/GoHeaderContent", () => {
-  const React = require("react");
+  const React = jest.requireActual("react");
   return jest.fn(() =>
     React.createElement("div", { "data-testid": "go-header" })
   );
 });
 jest.mock("./scenes/DefaultHeaderContent", () => {
-  const React = require("react");
+  const React = jest.requireActual("react");
   return jest.fn(() =>
     React.createElement("div", { "data-testid": "default-header" })
   );
@@ -39,7 +39,7 @@ jest.mock("./scenes/DefaultHeaderContent", () => {
 // ({ id, defaultMessage }) drawn from the dashboards fixture; this mock echoes
 // the default message (and tolerates plain strings).
 const intl = {
-  formatMessage: (message) =>
+  formatMessage: (message: any) =>
     typeof message === "string"
       ? message
       : (message && (message.defaultMessage || message.id)) || ""
@@ -54,9 +54,9 @@ const baseProps = {
 
 describe("InstanceHeaderContent", () => {
   beforeEach(() => {
-    JVMHeaderContent.mockClear();
-    GoHeaderContent.mockClear();
-    DefaultHeaderContent.mockClear();
+    jest.mocked(JVMHeaderContent).mockClear();
+    jest.mocked(GoHeaderContent).mockClear();
+    jest.mocked(DefaultHeaderContent).mockClear();
   });
 
   test("returns JVMHeaderContent when runtime prop is JVM", () => {
@@ -83,7 +83,7 @@ describe("InstanceHeaderContent", () => {
   test("passes basePath, metrics, and a tab per dashboard to the active runtime view", () => {
     render(<InstanceHeaderContent {...baseProps} runtime="GO" />);
     // The active scene receives basePath, metrics, and the renderTabs() output.
-    const props = GoHeaderContent.mock.calls[0][0];
+    const props = jest.mocked(GoHeaderContent).mock.calls[0][0];
 
     expect(props.basePath).toBe(baseProps.basePath);
     expect(props.metrics).toBe(state.instance.metrics);

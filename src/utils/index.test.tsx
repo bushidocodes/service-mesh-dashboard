@@ -17,7 +17,7 @@ import "jest-styled-components";
 
 describe("trimID", () => {
   test("returns an empty string if not provided an ID", () => {
-    expect(trimID()).toEqual("");
+    expect(trimID(undefined as any)).toEqual("");
   });
   test("returns the rightmost possible substring", () => {
     expect(trimID("Decipher", 3)).toEqual("her");
@@ -55,11 +55,11 @@ describe("convertMS", () => {
     expect(convertMS(0)).toEqual([]);
   });
   test("returns undefined when invalid prop is passed", () => {
-    expect(convertMS("not a number")).toEqual([]);
-    expect(convertMS("")).toEqual([]);
+    expect(convertMS("not a number" as any)).toEqual([]);
+    expect(convertMS("" as any)).toEqual([]);
   });
   test('works on string number such as "0.477112"', () => {
-    expect(convertMS("342342451")).toEqual(["03d", "23h", "05m", "42s"]);
+    expect(convertMS("342342451" as any)).toEqual(["03d", "23h", "05m", "42s"]);
   });
 });
 describe("relativeReqPercent", () => {
@@ -138,7 +138,7 @@ describe("blurTableRow", () => {
         </div>
       </div>
     );
-    const tableRowEl = container.firstChild;
+    const tableRowEl = container.firstChild as HTMLElement;
     const span = getByText("Words");
 
     tableRowEl.focus();

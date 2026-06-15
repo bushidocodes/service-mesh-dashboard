@@ -4,7 +4,7 @@ import { render } from "@testing-library/react";
 import Glyph from "./index";
 
 describe("Glyph", () => {
-  let container;
+  let container: HTMLElement;
 
   beforeEach(() => {
     // SVG-fragment component: root is a <g>, so wrap in <svg> to avoid
@@ -45,7 +45,7 @@ describe("Glyph", () => {
     const g = container.querySelector("g");
     // Empty fallback <g /> has no child glyph and none of the styling attrs.
     expect(g).toBeInTheDocument();
-    expect(g.children).toHaveLength(0);
+    expect(g!.children).toHaveLength(0);
     expect(g).not.toHaveAttribute("class");
     expect(g).not.toHaveAttribute("fill");
     expect(g).not.toHaveAttribute("transform");

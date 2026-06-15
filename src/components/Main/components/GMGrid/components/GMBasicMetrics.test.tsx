@@ -2,7 +2,7 @@ import React from "react";
 import { render } from "@testing-library/react";
 import GMBasicMetrics from "./GMBasicMetrics";
 
-let asFragment;
+let asFragment: () => DocumentFragment;
 const props = {
   detailLines: [
     [

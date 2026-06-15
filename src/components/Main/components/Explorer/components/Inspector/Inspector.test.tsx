@@ -24,21 +24,22 @@ const mockData = [
 const mockProps = {
   data: mockData,
   onClick: jest.fn(),
+  onChange: () => {},
   onSearch: jest.fn(),
   searchQuery: "",
-  selectedMetric: null
+  selectedMetric: null as unknown as string | undefined
 };
 
 // The list (InspectorData) renders a <ul> and each InspectorItem renders a
 // focusable <div tabIndex="0"> whose text content is the metric key. RTL is
 // DOM-based, so we count/inspect those rendered nodes directly.
-const getItems = (container) => {
+const getItems = (container: HTMLElement): Element[] => {
   const list = container.querySelector("ul");
   return list ? Array.from(list.children) : [];
 };
 
 describe("Inspector", () => {
-  let container;
+  let container: HTMLElement;
   beforeEach(() => {
     ({ container } = mountWithIntl(<Inspector {...mockProps} />));
   });

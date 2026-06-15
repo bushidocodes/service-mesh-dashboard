@@ -3,7 +3,7 @@ import { render } from "@testing-library/react";
 
 import Tooltip from "./Tooltip";
 
-function renderTooltip(position) {
+function renderTooltip(position: any) {
   return render(
     <Tooltip content="Hello!" position={position}>
       Hover over me

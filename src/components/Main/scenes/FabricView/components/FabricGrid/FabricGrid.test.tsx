@@ -79,7 +79,7 @@ const RouterWrap = (route = ["/"], services = mockServices) => {
 };
 
 // A helper function that takes in a filter string and returns only services that match
-const filterServicesByStatus = (filter) => {
+const filterServicesByStatus = (filter: string) => {
   return mockServices.filter((service) => {
     let status = computeStatus(
       service.instances.length,
@@ -99,10 +99,11 @@ const filterServicesByStatus = (filter) => {
 // - Group headers (GMServiceHeader) for the Owner/Capability groupings render an
 //   <img alt=""> services icon, which is header-exclusive, so counting those
 //   distinguishes a grouped view from the ungrouped ("None") view.
-const headingCount = (container) => container.querySelectorAll("h1").length;
-const serviceLinkCount = (container) =>
+const headingCount = (container: HTMLElement) =>
+  container.querySelectorAll("h1").length;
+const serviceLinkCount = (container: HTMLElement) =>
   container.querySelectorAll('a[href^="/"]').length;
-const groupHeaderCount = (container) =>
+const groupHeaderCount = (container: HTMLElement) =>
   container.querySelectorAll('img[alt=""]').length;
 
 describe("Fabric Grid Main View", () => {

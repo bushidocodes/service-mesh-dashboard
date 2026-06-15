@@ -19,7 +19,7 @@ describe("Fabric Microservices Module ", () => {
 
   // test with static array of mock services
   it("fetches services from the discovery service and maps them with a key of name", () => {
-    axios.get.mockResolvedValue({ data: staticServices });
+    jest.mocked(axios.get).mockResolvedValue({ data: staticServices });
     return fetchFabricMicroservices("server").then((result) => {
       expect(axios.get).toHaveBeenCalledWith("server/services", {
         responseType: "json"

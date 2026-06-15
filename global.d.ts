@@ -97,3 +97,10 @@ declare module "js-quantities" {
   const Qty: any;
   export default Qty;
 }
+
+// `redux-mock-store` (used only by tests) ships no type declarations and has no
+// @types package. Declare its default export — a configureMockStore factory.
+declare module "redux-mock-store" {
+  const configureMockStore: (...args: any[]) => (...args: any[]) => any;
+  export default configureMockStore;
+}
