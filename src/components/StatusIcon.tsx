@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import {
   COLOR_SUCCESS,
@@ -13,17 +12,17 @@ import Negation from "components/Glyphs/Negation";
 import RunningSmall from "components/Glyphs/RunningSmall";
 import Exclamation from "components/Glyphs/Exclamation";
 
-StatusIcon.propTypes = {
-  backgroundColor: PropTypes.string,
-  iconRatio: PropTypes.string,
-  status: PropTypes.string
-};
+interface StatusIconProps {
+  backgroundColor?: string;
+  iconRatio?: string;
+  status?: string;
+}
 
 export default function StatusIcon({
   status = "down",
   backgroundColor,
   iconRatio
-}) {
+}: StatusIconProps) {
   if (status.toLowerCase() === "down") {
     const downBackgroundColor = backgroundColor || COLOR_DANGER.string();
     const downGlyphColor = backgroundColor || COLOR_DANGER.string();
