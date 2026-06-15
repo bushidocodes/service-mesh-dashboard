@@ -1,10 +1,10 @@
 import { promisify } from "util";
 import { exec as execCallback } from "child_process";
-import commander from "commander";
+import { Command } from "commander";
 import prompt from "prompt";
 
 const exec = promisify(execCallback);
-const program = commander;
+const program = new Command();
 prompt.start();
 const promptGet = promisify(prompt.get);
 
@@ -230,7 +230,7 @@ function collect(val, memo = []) {
 }
 
 // Capture CLI options and pass them into the publish utility function
-const { major, minor, patch, releaseCandidate, tag, dryRun, confirm } = program
+program
   .option(
     "-d, --dryRun",
     "Dry run of command, outputting docker commands to be used"
@@ -249,7 +249,10 @@ const { major, minor, patch, releaseCandidate, tag, dryRun, confirm } = program
     collect,
     []
   )
-  .parse(process.argv);
+  .parse();
+
+const { major, minor, patch, releaseCandidate, tag, dryRun, confirm } =
+  program.opts();
 
 publish({
   major,
