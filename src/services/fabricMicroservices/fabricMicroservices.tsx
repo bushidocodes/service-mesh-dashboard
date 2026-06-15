@@ -118,11 +118,7 @@ export function changeFabricMicroservicesPollingIntervalEffect(
  * @param {number} [interval=getState().fabric.fabricPollingInterval] - fabric polling interval
  */
 export async function startPollingFabricMicroservicesEffect(
-  {
-    endpoint = getState().fabric.endpoint,
-    interval = getState().fabric.fabricPollingInterval
-  } = {
-    endpoint: getState().fabric.endpoint,
+  { interval = getState().fabric.fabricPollingInterval } = {
     interval: getState().fabric.fabricPollingInterval
   }
 ) {

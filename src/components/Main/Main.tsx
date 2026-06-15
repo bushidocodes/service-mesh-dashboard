@@ -33,8 +33,10 @@ class Main extends Component<MainProps> {
     const fabricServer = getFabricServer();
     if (fabricServer) {
       console.log("Fabric Server Detected");
-      // Begin polling Fabric-wide metrics from the Fabric Server
-      Actions.startPollingFabricMicroservices({ endpoint: fabricServer });
+      // Begin polling Fabric-wide metrics from the Fabric Server. The effect
+      // resolves the discovery-service endpoint itself (via getFabricServer),
+      // so no argument is needed here.
+      Actions.startPollingFabricMicroservices();
     } else {
       console.log("Fabric Server Not Defined!");
     }

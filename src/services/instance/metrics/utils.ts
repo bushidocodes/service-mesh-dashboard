@@ -3,13 +3,14 @@ import { getFabricServer } from "utils/head";
 
 export function buildDiscoveryServiceInstanceMetricsEndpoint() {
   const {
-    fabric: {
-      fabricServer = getFabricServer(),
-      selectedServiceSlug,
-      selectedInstanceID,
-      services
-    }
+    // fabricServer lives on the settings slice (not fabric); the previous
+    // `fabric.fabricServer` read was always undefined and silently fell back to
+    // the getFabricServer() default. settings.fabricServer is initialized to
+    // that same value, so this is behaviour-preserving but reads the real field.
+    settings: { fabricServer = getFabricServer() },
+    fabric: { selectedServiceSlug, selectedInstanceID, services }
   } = getState();
+  if (!selectedServiceSlug) return null;
   const service = services[selectedServiceSlug];
   if (!service) return null;
   const { name, version } = service;
