@@ -11,7 +11,11 @@ module.exports = {
     test: {
       presets: [
         ["@babel/preset-env", { targets: { node: "current" } }],
-        ["@babel/preset-react", { runtime: "classic" }]
+        ["@babel/preset-react", { runtime: "classic" }],
+        // Strip TypeScript types so babel-jest can transpile .ts/.tsx test
+        // imports. `allExtensions` + `isTSX` lets the preset parse JSX in every
+        // file regardless of extension (the project's .js files contain JSX too).
+        ["@babel/preset-typescript", { allExtensions: true, isTSX: true }]
       ]
     }
   }

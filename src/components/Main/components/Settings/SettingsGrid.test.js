@@ -7,8 +7,8 @@ import SettingsGrid from "./index";
 import { mountWithIntl } from "utils/i18nTesting";
 
 //import all necessary Action effect so the Actions object is set within this test harness
-import "services/fabricMicroservices/index.js";
-import "services/instance/metrics/index.js";
+import "services/fabricMicroservices/index";
+import "services/instance/metrics/index";
 
 const mockStore = configureStore();
 

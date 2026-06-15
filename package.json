@@ -24,7 +24,6 @@
     "js-quantities": "^1.7.0",
     "lodash": "~4.17.23",
     "object-sizeof": "^1.2.0",
-    "prop-types": "^15.6.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-grid-layout": "^2.2.3",
@@ -43,6 +42,7 @@
     "@babel/core": "^7.24.0",
     "@babel/preset-env": "^7.24.0",
     "@babel/preset-react": "^7.24.0",
+    "@babel/preset-typescript": "^7.29.7",
     "@commitlint/cli": "^19.0.0",
     "@commitlint/config-conventional": "^19.0.0",
     "@eslint/js": "^9.0.0",
@@ -51,6 +51,13 @@
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",
+    "@types/dygraphs": "^2.1.11",
+    "@types/lodash": "^4.17.24",
+    "@types/node": "^25.9.3",
+    "@types/react": "^18.3.29",
+    "@types/react-dom": "^18.3.7",
+    "@types/react-modal": "^3.16.3",
+    "@types/redux-logger": "^3.0.13",
     "@vitejs/plugin-react": "^4.7.0",
     "babel-jest": "^29.7.0",
     "babel-plugin-styled-components": "^1.4.0",
@@ -79,6 +86,8 @@
     "storybook": "^10.0.0",
     "testcafe": "^3.7.4",
     "testcafe-react-selectors": "^5.0.3",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.61.0",
     "vite": "^5.4.21"
   },
   "scripts": {
@@ -87,8 +96,9 @@
     "build-storybook": "storybook build",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "draft-github-release": "node scripts/generateGitHubDraft.js",
-    "format": "prettier --write 'src/**/*.{js,jsx}'",
+    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'",
     "lint-js": "node ./node_modules/eslint/bin/eslint src/",
+    "typecheck": "tsc --noEmit",
     "mock-sds": "node json-mock/discovery-service/sds.js",
     "prepare": "husky",
     "preview": "vite preview",
@@ -104,7 +114,7 @@
     "version": "npm-run-all --print-label changelog update-snapshots && git add -A"
   },
   "lint-staged": {
-    "*.js": "prettier --write"
+    "*.{js,jsx,ts,tsx}": "prettier --write"
   },
   "jest": {
     "setupFiles": [
@@ -115,8 +125,8 @@
       "<rootDir>/config/jest/jestTestFrameworkSetup.js"
     ],
     "testMatch": [
-      "**/src/**/__tests__/**/*.{js,jsx}",
-      "**/src/**/*.{spec,test}.{js,jsx}"
+      "**/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
+      "**/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
     ],
     "testPathIgnorePatterns": [
       "/node_modules/",
@@ -134,9 +144,9 @@
       ]
     },
     "transform": {
-      "^.+\\.(js|jsx)$": "babel-jest",
+      "^.+\\.(js|jsx|ts|tsx)$": "babel-jest",
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.cjs",
-      "^(?!.*\\.(js|jsx|css|json|cjs|mjs)$)": "<rootDir>/config/jest/fileTransform.cjs"
+      "^(?!.*\\.(js|jsx|ts|tsx|css|json|cjs|mjs)$)": "<rootDir>/config/jest/fileTransform.cjs"
     },
     "transformIgnorePatterns": [
       "^(?!.*[/\\\\]node_modules[/\\\\](color|color-string|color-convert|color-name)[/\\\\]).*[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
@@ -153,7 +163,9 @@
       "js",
       "json",
       "web.jsx",
-      "jsx"
+      "jsx",
+      "ts",
+      "tsx"
     ]
   },
   "prettier": {

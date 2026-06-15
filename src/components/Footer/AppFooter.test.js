@@ -1,6 +1,6 @@
 import React from "react";
 import { renderWithIntl } from "utils/i18nTesting";
-import FooterContainer from "./index.js";
+import FooterContainer from "./index";
 
 describe("A Footer container", () => {
   it("should render", () => {
