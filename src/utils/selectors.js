@@ -69,7 +69,7 @@ export function metricsKeySelectorGenerator(keyQuery, isPrefix = true) {
   const filterFunc = isPrefix
     ? (key) => key.substr(0, keyQuery.length) === keyQuery
     : (key) => key.includes(keyQuery);
-  return createSelector([getMetrics], (metrics) =>
+  return createSelector(getMetrics, (metrics) =>
     _.pick(metrics, Object.keys(metrics).filter(filterFunc))
   );
 }
