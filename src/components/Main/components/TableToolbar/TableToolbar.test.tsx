@@ -28,7 +28,7 @@ const groupByOptions = [
 
 const mockFabricViewProps = {
   displayTypeProps: {
-    displayType: "Cards",
+    displayType: "Cards" as const,
     setDisplayType: jest.fn()
   },
   searchInputProps: {
@@ -74,14 +74,14 @@ describe("Table Toolbar", () => {
         }}
       />
     );
-    const searchInput = document.querySelector('input[type="search"]');
+    const searchInput = document.querySelector('input[type="search"]')!;
     fireEvent.change(searchInput, { target: { value: "foo" } });
     expect(setFilterString).toHaveBeenCalled();
   });
 
   test("does not render search box if searchInputProps is not provided", () => {
     const { container } = renderWithIntl(
-      <TableToolbar {...mockFabricViewProps} searchInputProps={null} />
+      <TableToolbar {...mockFabricViewProps} searchInputProps={null as any} />
     );
     expect(container.querySelectorAll('input[type="search"]')).toHaveLength(0);
   });
@@ -106,7 +106,7 @@ describe("Table Toolbar", () => {
 
   test("does not render display type buttons if displayTypeProps is not provided", () => {
     renderWithIntl(
-      <TableToolbar {...mockFabricViewProps} displayTypeProps={null} />
+      <TableToolbar {...mockFabricViewProps} displayTypeProps={null as any} />
     );
     expect(screen.queryByRole("button", { name: "Cards" })).toBeNull();
     expect(screen.queryByRole("button", { name: "List" })).toBeNull();
@@ -157,7 +157,7 @@ describe("Table Toolbar", () => {
 
   test("does not render a group by dropdown if groupByProps is not provided", () => {
     renderWithIntl(
-      <TableToolbar {...mockFabricViewProps} groupByProps={null} />
+      <TableToolbar {...mockFabricViewProps} groupByProps={null as any} />
     );
     expect(
       document.querySelector('input[name="form-field-group-by"]')
@@ -175,7 +175,7 @@ describe("Table Toolbar", () => {
 
   test("does not render a group by dropdown if sortByProps is not provided", () => {
     renderWithIntl(
-      <TableToolbar {...mockFabricViewProps} sortByProps={null} />
+      <TableToolbar {...mockFabricViewProps} sortByProps={null as any} />
     );
     expect(
       document.querySelector('input[name="form-field-sort-by"]')

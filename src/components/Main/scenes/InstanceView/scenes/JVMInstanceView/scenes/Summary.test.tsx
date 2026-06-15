@@ -16,7 +16,7 @@ const mockStore = configureStore()(mockState);
 function getReadoutDisplays() {
   const titles = screen.getAllByRole("heading", { level: 2 });
   const displays = titles.map(
-    (title) => title.parentElement.parentElement.parentElement
+    (title) => title.parentElement!.parentElement!.parentElement!
   );
   return Array.from(new Set(displays));
 }

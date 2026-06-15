@@ -4,26 +4,26 @@ import { renderWithIntl } from "utils/i18nTesting";
 
 import TableLineItem from "./TableLineItem";
 
-const TableLineItemWithProps = (
-  <TableLineItem
-    errorPercent={"10.000"}
-    errorsCount={32}
-    item={"CatalogStream"}
-    latency50={445}
-    latency99={35}
-    relativeReqPercent={20}
-    requests={14333}
-    requestsPerSecond_dygraph={{
-      data: [
-        [1193388, 1518054619229],
-        [1193388, 1518054624225],
-        [1193388, 1518054629230]
-      ],
-      attributes: ["http/requests"]
-    }}
-    requestsPerSecond_sparkline={[0, 25, 430, 1256]}
-  />
-);
+const tableLineItemProps = {
+  errorPercent: "10.000",
+  errorsCount: 32,
+  item: "CatalogStream",
+  latency50: 445,
+  latency99: 35,
+  relativeReqPercent: 20,
+  requests: 14333,
+  requestsPerSecond_dygraph: {
+    data: [
+      [1193388, 1518054619229],
+      [1193388, 1518054624225],
+      [1193388, 1518054629230]
+    ],
+    attributes: ["http/requests"]
+  },
+  requestsPerSecond_sparkline: [0, 25, 430, 1256]
+} as any;
+
+const TableLineItemWithProps = <TableLineItem {...tableLineItemProps} />;
 
 // The TableRow handler calls blurTableRow(e), which walks up from e.target
 // looking for a node whose className starts with "TableRow". With styled-
@@ -32,7 +32,7 @@ const TableLineItemWithProps = (
 // simulating with a mock event whose target.className was "TableRow". Here we
 // reproduce that by prefixing the live <li>'s className before each click.
 // Each render/re-render resets the className, so it must be re-applied.
-const clickRow = (row) => {
+const clickRow = (row: HTMLElement) => {
   row.className = `TableRow ${row.className}`;
   fireEvent.click(row);
 };

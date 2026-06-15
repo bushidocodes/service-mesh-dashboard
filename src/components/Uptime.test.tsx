@@ -5,7 +5,7 @@ import _ from "lodash";
 import Uptime from "./UpTime";
 import ArrayValue from "components/ArrayValue";
 
-const renderFunc = (uptime) => (
+const renderFunc = (uptime: any) => (
   <ArrayValue>
     {_.map(uptime, (el) => (
       <span key={el}>{el} </span>
@@ -28,8 +28,8 @@ const referenceNow = 1511164339200;
 jest.useFakeTimers();
 
 describe("Uptime component", () => {
-  let container;
-  let unmount;
+  let container: HTMLElement;
+  let unmount: () => void;
   beforeEach(() => {
     jest.setSystemTime(referenceNow - 1000);
     ({ container, unmount } = render(

@@ -33,7 +33,12 @@ describe("Button", () => {
     test("matches type snapshots", () => {
       types.forEach((type) => {
         const { asFragment } = render(
-          <Button type={type} label={type} key={type} clickAction={() => {}} />
+          <Button
+            type={type as any}
+            label={type}
+            key={type}
+            clickAction={() => {}}
+          />
         );
         expect(asFragment()).toMatchSnapshot();
       });
@@ -43,7 +48,7 @@ describe("Button", () => {
       outlines.forEach((outline) => {
         const { asFragment } = render(
           <Button
-            outline={outline}
+            outline={outline as any}
             label={outline}
             key={outline}
             clickAction={() => {}}
@@ -56,7 +61,12 @@ describe("Button", () => {
     test("matches size snapshots", () => {
       sizes.forEach((size) => {
         const { asFragment } = render(
-          <Button size={size} label={size} key={size} clickAction={() => {}} />
+          <Button
+            size={size as any}
+            label={size}
+            key={size}
+            clickAction={() => {}}
+          />
         );
         expect(asFragment()).toMatchSnapshot();
       });
@@ -66,7 +76,7 @@ describe("Button", () => {
       orientations.forEach((orientation) => {
         const { asFragment } = render(
           <Button
-            orientation={orientation}
+            orientation={orientation as any}
             label={orientation}
             key={orientation}
             clickAction={() => {}}
@@ -107,7 +117,7 @@ describe("Button", () => {
     test("passes correct props to ButtonWrap", () => {
       const clickAction = jest.fn();
       render(
-        <Button {...props} clickAction={clickAction}>
+        <Button {...(props as any)} clickAction={clickAction}>
           {["Hello World"]}
         </Button>
       );
@@ -131,7 +141,7 @@ describe("Button", () => {
 
     test("passes correct props to Glyph", () => {
       const { container } = render(
-        <Button {...props}>{["Hello World"]}</Button>
+        <Button {...(props as any)}>{["Hello World"]}</Button>
       );
       // Glyph renders <g className="glyph" fill={glyphColor} transform=...>
       // with the named glyph (Bell) inside it.
@@ -142,12 +152,12 @@ describe("Button", () => {
       // ratio=1 -> translate(0 0) scale(1)
       expect(glyph).toHaveAttribute("transform", "translate(0 0) scale(1)");
       // name="Bell" -> Bell glyph renders a <path id="Shape">
-      expect(glyph.querySelector("path#Shape")).toBeInTheDocument();
+      expect(glyph!.querySelector("path#Shape")).toBeInTheDocument();
     });
 
     test("renders children", () => {
       const { container } = render(
-        <Button {...props}>{["Hello World"]}</Button>
+        <Button {...(props as any)}>{["Hello World"]}</Button>
       );
       expect(container).toHaveTextContent("Hello World");
     });

@@ -39,7 +39,9 @@ describe("AppHeader snapshots", () => {
 
   test("matches snapshot with fabric view tabs", () => {
     // set a return value for getFabricServer() util func so that AppHeader renders <UseSDS /> and remount
-    getFabricServer.mockImplementation(() => "http://localhost:1337");
+    jest
+      .mocked(getFabricServer)
+      .mockImplementation(() => "http://localhost:1337");
     const { asFragment } = renderWithIntl(anAppHeader);
     expect(asFragment()).toMatchSnapshot();
   });
@@ -68,9 +70,9 @@ describe("AppHeader component", () => {
     expect(bannerHeading).toBeInTheDocument();
     // AppHeaderContainer is the styled.div root that wraps both the toolbar nav
     // and the banner; assert the nav lives in a <div> that also holds the banner.
-    const container = nav.parentElement;
+    const container = nav.parentElement!;
     expect(container.tagName).toBe("DIV");
-    expect(container).toContainElement(bannerHeading);
+    expect(container).toContainElement(bannerHeading!);
   });
 
   test("passes the correct title to Banner", () => {

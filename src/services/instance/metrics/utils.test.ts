@@ -8,7 +8,8 @@ import mockstate from "json/mockReduxState";
 const mockGetState = jest.fn(() => mockstate);
 
 jest.mock("store/jumpstate", () => ({
-  getState: (...args) => mockGetState(...args)
+  getState: (...args: unknown[]) =>
+    (mockGetState as (...a: unknown[]) => unknown)(...args)
 }));
 
 jest.mock("utils/head", () => {
@@ -29,7 +30,10 @@ describe("buildDiscoveryServiceInstanceMetricsEndpoint", () => {
   test("returns null when selectedServiceSlug is null", () => {
     mockGetState.mockReturnValue({
       ...mockstate,
-      fabric: { ...mockstate.fabric, selectedServiceSlug: null }
+      fabric: {
+        ...mockstate.fabric,
+        selectedServiceSlug: null as unknown as string
+      }
     });
     expect(buildDiscoveryServiceInstanceMetricsEndpoint()).toBeNull();
   });

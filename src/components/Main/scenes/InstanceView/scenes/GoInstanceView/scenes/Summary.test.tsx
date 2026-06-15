@@ -13,7 +13,7 @@ const mockStore = configureStore()(mockState);
 // a frozen clock the rendered output (and thus the snapshot) drifts second to
 // second. Pin `Date.now` to a fixed instant for deterministic, repeatable runs.
 const FIXED_NOW = 1507230248562;
-let nowSpy;
+let nowSpy: jest.SpyInstance;
 
 describe("GO > SummaryGrid component", () => {
   beforeEach(() => {
@@ -50,16 +50,18 @@ describe("GO > SummaryGrid component", () => {
     // direct children of the single ReadoutGroup. Walk up from a known readout
     // title (h2) to the ReadoutGroup and count its child cards.
     const uptimeTitle = screen.getByRole("heading", { name: "Uptime" });
-    const readoutCard = uptimeTitle.parentElement.parentElement.parentElement;
-    const readoutGroup = readoutCard.parentElement;
+    const readoutCard =
+      uptimeTitle.parentElement!.parentElement!.parentElement!;
+    const readoutGroup = readoutCard!.parentElement!;
     expect(readoutGroup.children).toHaveLength(3);
   });
 
   test("Has an 'uptime' dashboard in first position", () => {
     renderWithIntl(<SummaryGrid />, mockStore);
     const uptimeTitle = screen.getByRole("heading", { name: "Uptime" });
-    const readoutCard = uptimeTitle.parentElement.parentElement.parentElement;
-    const readoutGroup = readoutCard.parentElement;
+    const readoutCard =
+      uptimeTitle.parentElement!.parentElement!.parentElement!;
+    const readoutGroup = readoutCard!.parentElement!;
     expect(readoutGroup.children[0]).toHaveTextContent("Uptime");
   });
 
@@ -68,9 +70,10 @@ describe("GO > SummaryGrid component", () => {
     const responseTitle = screen.getByRole("heading", {
       name: "Avg. Response Time"
     });
-    const readoutCard = responseTitle.parentElement.parentElement.parentElement;
-    const readoutGroup = readoutCard.parentElement;
-    const secondReadout = within(readoutGroup.children[1]);
+    const readoutCard =
+      responseTitle.parentElement!.parentElement!.parentElement!;
+    const readoutGroup = readoutCard!.parentElement!;
+    const secondReadout = within(readoutGroup.children[1] as HTMLElement);
     expect(
       secondReadout.getByRole("heading", { name: "Avg. Response Time" })
     ).toBeInTheDocument();
@@ -82,8 +85,8 @@ describe("GO > SummaryGrid component", () => {
   test("Has a 'host CPU utilized' dashboard in third position", () => {
     renderWithIntl(<SummaryGrid />, mockStore);
     const cpuTitle = screen.getByRole("heading", { name: "Host CPU Utilized" });
-    const readoutCard = cpuTitle.parentElement.parentElement.parentElement;
-    const readoutGroup = readoutCard.parentElement;
+    const readoutCard = cpuTitle.parentElement!.parentElement!.parentElement!;
+    const readoutGroup = readoutCard!.parentElement!;
     expect(readoutGroup.children[2]).toHaveTextContent("Host CPU Utilized");
   });
 

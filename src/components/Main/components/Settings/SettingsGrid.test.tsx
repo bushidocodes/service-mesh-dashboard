@@ -12,7 +12,7 @@ import "services/instance/metrics/index";
 
 const mockStore = configureStore();
 
-let SettingGridWrap,
+let SettingGridWrap: ReturnType<typeof mountWithIntl>,
   mockState = state.default;
 
 describe("SettingsGrid component", () => {

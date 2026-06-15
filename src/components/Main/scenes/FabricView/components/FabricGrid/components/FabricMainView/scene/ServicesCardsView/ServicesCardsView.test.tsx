@@ -15,23 +15,23 @@ import GMServiceHeader from "components/Main/scenes/FabricView/components/Fabric
 // observable; GMServiceHeader is a jest.fn so we can inspect the props it
 // received (the original .find(GMServiceHeader).props() check).
 jest.mock("./components/GMServiceViewContainer", () => {
-  const React = require("react");
-  return ({ children }) =>
+  const React = jest.requireActual("react");
+  return ({ children }: { children?: React.ReactNode }) =>
     React.createElement("div", { "data-testid": "view-container" }, children);
 });
 jest.mock("./components/GMServiceCardsView", () => {
-  const React = require("react");
-  return ({ children }) =>
+  const React = jest.requireActual("react");
+  return ({ children }: { children?: React.ReactNode }) =>
     React.createElement("div", { "data-testid": "cards-view" }, children);
 });
 jest.mock("./components/GMServiceCardCollection", () => {
-  const React = require("react");
+  const React = jest.requireActual("react");
   return () => React.createElement("div", { "data-testid": "card-collection" });
 });
 jest.mock(
   "components/Main/scenes/FabricView/components/FabricGrid/components/FabricMainView/components/GMServiceHeader",
   () => {
-    const React = require("react");
+    const React = jest.requireActual("react");
     return jest.fn(() =>
       React.createElement("div", { "data-testid": "service-header" })
     );
@@ -39,7 +39,7 @@ jest.mock(
 );
 
 const RouterWrap = (
-  route,
+  route: string[],
   services = mockMappedServices,
   groupByAttribute = "Status"
 ) => {
@@ -62,7 +62,7 @@ const RouterWrap = (
 };
 
 // used to filter mockMappedServices and return filtered array of mock mapped services
-const filterServicesByStatus = (filter) => {
+const filterServicesByStatus = (filter: string) => {
   return mockMappedServices.filter((service) => {
     return service.status.toLowerCase() === filter;
   });
@@ -70,7 +70,7 @@ const filterServicesByStatus = (filter) => {
 
 describe("ServicesCardsView component rendering", () => {
   beforeEach(() => {
-    GMServiceHeader.mockClear();
+    jest.mocked(GMServiceHeader).mockClear();
   });
 
   // Card keys are now derived from the (deterministic) group header rather than
@@ -100,15 +100,19 @@ describe("ServicesCardsView functionality", () => {
   const filteredServices = filterServicesByStatus("stable");
 
   beforeEach(() => {
-    GMServiceHeader.mockClear();
+    jest.mocked(GMServiceHeader).mockClear();
   });
 
   test("Has appropriate heading when group filter is applied ", () => {
     render(RouterWrap(["/"], filteredServices, "Owner"));
     // The first GMServiceHeader receives headerTitle "stable" and, since the
     // group is "Owner" (not "Status"), showStatusIcon false.
-    expect(GMServiceHeader.mock.calls[0][0].headerTitle).toBe("stable");
-    expect(GMServiceHeader.mock.calls[0][0].showStatusIcon).toBe(false);
+    expect(jest.mocked(GMServiceHeader).mock.calls[0][0].headerTitle).toBe(
+      "stable"
+    );
+    expect(jest.mocked(GMServiceHeader).mock.calls[0][0].showStatusIcon).toBe(
+      false
+    );
   });
 
   test("Has only one GMServiceCardCollection when group filter is set to none", () => {

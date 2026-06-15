@@ -14,7 +14,7 @@ const props = {
     attributes: ["jvm/classes/current_loaded"]
   },
   expectedAttributes: ["jvm/classes/current_loaded"],
-  height: "xs"
+  height: "xs" as const
 };
 
 describe("<GMLineChart> stateless child component", () => {

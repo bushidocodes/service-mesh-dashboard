@@ -14,13 +14,13 @@ import GMServiceTableLineItem from "./components/GMServiceTableLineItem";
 // (preserving the prop-assertions) and a data-testid lets us count instances.
 // The header components are left real so we can assert their rendered text.
 jest.mock("./components/TableLineItem", () => {
-  const React = require("react");
+  const React = jest.requireActual("react");
   return jest.fn(() =>
     React.createElement("div", { "data-testid": "table-line-item" })
   );
 });
 jest.mock("./components/GMServiceTableLineItem", () => {
-  const React = require("react");
+  const React = jest.requireActual("react");
   return jest.fn(() =>
     React.createElement("div", { "data-testid": "gm-service-table-line-item" })
   );
@@ -87,8 +87,8 @@ let instancesProps = {
 
 describe("Table component", () => {
   beforeEach(() => {
-    TableLineItem.mockClear();
-    GMServiceTableLineItem.mockClear();
+    jest.mocked(TableLineItem).mockClear();
+    jest.mocked(GMServiceTableLineItem).mockClear();
     renderWithIntl(<Table {...routesProps} />);
   });
 
@@ -113,7 +113,7 @@ describe("Table component", () => {
 
   test("passes correct data to <TableLineItem />", () => {
     // mock.calls[i][0] is the exact props object Table passed the i-th line item.
-    expect(TableLineItem.mock.calls[0][0]).toEqual({
+    expect(jest.mocked(TableLineItem).mock.calls[0][0]).toEqual({
       item: "/categories",
       errorPercent: "0.000",
       latency50: 0,
@@ -131,7 +131,7 @@ describe("Table component", () => {
       requestsPerSecond_sparkline: [0, 25, 430, 1256],
       verb: "GET"
     });
-    expect(TableLineItem.mock.calls[1][0]).toEqual({
+    expect(jest.mocked(TableLineItem).mock.calls[1][0]).toEqual({
       item: "/topics",
       errorPercent: "0.000",
       latency50: 0,
@@ -154,8 +154,8 @@ describe("Table component", () => {
 
 describe("Table component with instances prop", () => {
   beforeEach(() => {
-    TableLineItem.mockClear();
-    GMServiceTableLineItem.mockClear();
+    jest.mocked(TableLineItem).mockClear();
+    jest.mocked(GMServiceTableLineItem).mockClear();
     renderWithIntl(<Table {...instancesProps} />);
   });
 
@@ -165,7 +165,7 @@ describe("Table component with instances prop", () => {
   });
 
   test("passes correct props to <GMServiceTableLineItem />", () => {
-    expect(GMServiceTableLineItem.mock.calls[0][0]).toHaveProperty(
+    expect(jest.mocked(GMServiceTableLineItem).mock.calls[0][0]).toHaveProperty(
       "path",
       "/authentication-management-transfer-odrive-gateway-statistics-up2-channel/26d7cmoduw8w000000000"
     );
