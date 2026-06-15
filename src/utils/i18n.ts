@@ -24,14 +24,17 @@ export function getLocale() {
   // Create array of all possible user languages and filter out duplicates
   // Lookup the locale name if it is aliased
   const locales = _.uniq(
-    []
+    ([] as (string | undefined)[])
       .concat(
-        navigator.languages,
+        navigator.languages as string[],
         navigator.language,
         navigator.userLanguage,
         navigator.browserLanguage,
         navigator.systemLanguage
       )
+      // The legacy vendor-prefixed navigator.* properties may be undefined;
+      // drop those before aliasing/matching.
+      .filter((locale): locale is string => Boolean(locale))
       .map((locale) => LOCALE_ALIASES[locale] || locale)
   );
 

@@ -77,7 +77,10 @@ export const convertMS = (ms = 0) => {
  * @param {string} key - The key that we want to use to compare the objects
  * @returns {Object[]} - The array of objects, where each object now contains the relativeReqPercent key
  */
-export const relativeReqPercent = (arrObj = [], key = "") => {
+export const relativeReqPercent = (
+  arrObj: Record<string, any>[] = [],
+  key = ""
+) => {
   if (_.isEmpty(arrObj) || key === "") return arrObj;
   let max = _.max(_.map(arrObj, key));
   // If we can't find a max value, just return the original array of objects

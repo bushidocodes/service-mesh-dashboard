@@ -10,7 +10,8 @@ import TabNav from "components/AppHeader/components/TabNav";
 
 interface FabricAppHeaderContentProps {
   intl: any;
-  statusCount?: {
+  // Always supplied by the getStatusCount selector via connect().
+  statusCount: {
     Down?: number;
     Stable?: number;
     Warning?: number;

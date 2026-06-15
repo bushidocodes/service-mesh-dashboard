@@ -20,7 +20,8 @@ import { GlobalFontStyles } from "./style/styleVariables";
 // were required in v2 have been removed. The browser/runtime now ships
 // the locale data this app needs.
 
-const root = createRoot(document.getElementById("root"));
+// The #root element is statically present in index.html, so this is never null.
+const root = createRoot(document.getElementById("root")!);
 root.render(
   <Provider store={store}>
     <ConnectedIntlProvider>

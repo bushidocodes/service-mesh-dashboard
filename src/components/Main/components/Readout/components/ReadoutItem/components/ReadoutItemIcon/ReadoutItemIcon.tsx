@@ -19,7 +19,7 @@ interface ReadoutItemIconProps {
  */
 export default function ReadoutItemIcon({
   children,
-  iconBorderStyle = null,
+  iconBorderStyle,
   iconBorderWidth = "1"
 }: ReadoutItemIconProps) {
   return (

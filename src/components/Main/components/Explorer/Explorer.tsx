@@ -135,7 +135,7 @@ class Explorer extends Component<ExplorerProps> {
             />
           </MetricsList>
           <MetricsGraphDisplay>
-            {selectedMetric && this.props.keys.includes(selectedMetric) ? (
+            {selectedMetric && this.props.keys?.includes(selectedMetric) ? (
               <GMLineChart
                 height={"normal"}
                 dygraph={getDygraphOfValue(metrics, [selectedMetric])}

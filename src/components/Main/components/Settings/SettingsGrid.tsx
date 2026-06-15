@@ -13,12 +13,16 @@ import ConfirmationModal from "components/ConfirmationModal";
 import Readout from "components/Main/components/Readout";
 
 interface SettingsGridProps {
-  fabricPollingInterval?: number;
+  // The polling interval/flag props always come from the fabric and instance
+  // store slices, which initialize them (intervals 5000, flags false), so they
+  // are never undefined at render. This component is connect()-ed, so external
+  // callers never pass them directly.
+  fabricPollingInterval: number;
   fabricServer?: string;
-  instanceMetricsPollingInterval?: number;
+  instanceMetricsPollingInterval: number;
   intl: any;
-  isPollingFabric?: boolean;
-  isPollingInstanceMetrics?: boolean;
+  isPollingFabric: boolean;
+  isPollingInstanceMetrics: boolean;
   metricsCacheSize?: string;
   selectedInstanceID?: string;
 }

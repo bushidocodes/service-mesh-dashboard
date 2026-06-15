@@ -14,7 +14,7 @@ interface GMServiceTableLineItemProps {
   name: string;
   path: string;
   serviceIsMetered?: boolean;
-  status: string;
+  status?: string;
   uptime?: React.ReactNode;
 }
 

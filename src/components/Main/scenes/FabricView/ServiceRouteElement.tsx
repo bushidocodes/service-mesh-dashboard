@@ -38,12 +38,15 @@ function ServiceRouteElementInner({
     service.maximum
   );
   // Check if our services object has been passed to the router
-  const servicesAreNotLoaded = !Object.keys(services).length;
+  const servicesAreNotLoaded = !Object.keys(services || {}).length;
 
   // Set our authorization booleans
   const userIsAuthorized = service.authorized;
   const serviceIsMetered = service.metered;
-  const serviceIsValid = _.includes(Object.keys(services), selectedServiceSlug);
+  const serviceIsValid = _.includes(
+    Object.keys(services || {}),
+    selectedServiceSlug
+  );
   // Set a message to pass to location state if one of the following checks fail
   let message;
   // Checks are ordered by priority of the message

@@ -15,7 +15,7 @@ export const getRoutesTable = createSelector(
   [getRoutesTree, getRoutesMetrics],
   (routesTree, routesMetrics) => {
     // Now build the table
-    const routesTable = [];
+    const routesTable: any[] = [];
     const routesPaths = Object.keys(routesTree);
     routesPaths.forEach((routePath) => {
       let baseObj = { route: routePath };
@@ -90,7 +90,7 @@ function _getFunctionsList(functionsMetrics) {
   if (keys.length > 0) {
     // Grab the function name from the key, filter for uniqueness, and exclude "all" (the rollup metrics key)
     return _.without(
-      _.uniq(keys.map((key) => key.match(/function\/(.*)\/.*/)[1])),
+      _.uniq(keys.map((key) => key.match(/function\/(.*)\/.*/)?.[1])),
       "all"
     );
   } else {

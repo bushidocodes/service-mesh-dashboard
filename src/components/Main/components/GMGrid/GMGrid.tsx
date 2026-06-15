@@ -66,7 +66,11 @@ function ResponsiveReactGridLayout({
 }: ResponsiveReactGridLayoutProps) {
   const { width, containerRef } = useContainerWidth();
   return (
-    <ResponsiveGridLayout width={width} innerRef={containerRef} {...rest}>
+    <ResponsiveGridLayout
+      width={width}
+      innerRef={containerRef as React.Ref<HTMLDivElement>}
+      {...rest}
+    >
       {children}
     </ResponsiveGridLayout>
   );

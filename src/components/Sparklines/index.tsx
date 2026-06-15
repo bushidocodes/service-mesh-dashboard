@@ -98,8 +98,8 @@ export function Sparklines({
     viewBox: `0 0 ${width} ${height}`,
     preserveAspectRatio
   };
-  if (svgWidth > 0) svgOpts.width = svgWidth;
-  if (svgHeight > 0) svgOpts.height = svgHeight;
+  if (svgWidth != null && svgWidth > 0) svgOpts.width = svgWidth;
+  if (svgHeight != null && svgHeight > 0) svgOpts.height = svgHeight;
 
   return (
     <svg {...svgOpts}>

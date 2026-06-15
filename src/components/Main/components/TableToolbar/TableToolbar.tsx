@@ -128,7 +128,7 @@ function TableToolbar({
             options={sortByProps.sortByOptions}
             value={sortByProps.sortByAttribute}
             onChange={(val) => {
-              val && sortByProps.setSortByAttribute(val.value);
+              val && sortByProps.setSortByAttribute?.(val.value);
             }}
             clearable={false}
             searchable={true}
