@@ -5,6 +5,12 @@ on:
     tags:
       - "v*"
 
+# Least-privilege GITHUB_TOKEN. The release job drafts a GitHub release
+# (POST /repos/.../releases via scripts/generateGitHubDraft.js), which needs
+# write access to repository contents; nothing else is required.
+permissions:
+  contents: write
+
 jobs:
   release:
     name: Build and draft GitHub release
