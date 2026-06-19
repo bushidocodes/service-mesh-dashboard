@@ -3,9 +3,9 @@ import { screen, fireEvent } from "@testing-library/react";
 import { renderWithIntl, withIntl } from "utils/i18nTesting";
 import PollingSettings from "./PollingSettings";
 
-const mockChangePollingInterval = jest.fn();
-const mockStartPolling = jest.fn();
-const mockStopPolling = jest.fn();
+const mockChangePollingInterval = vi.fn();
+const mockStartPolling = vi.fn();
+const mockStopPolling = vi.fn();
 mockStartPolling.mockReturnValue("Start Polling Function");
 mockStopPolling.mockReturnValue("Stop Polling Function");
 

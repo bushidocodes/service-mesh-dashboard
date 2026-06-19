@@ -115,7 +115,7 @@ describe("Button", () => {
 
   describe("Props", () => {
     test("passes correct props to ButtonWrap", () => {
-      const clickAction = jest.fn();
+      const clickAction = vi.fn();
       render(
         <Button {...(props as any)} clickAction={clickAction}>
           {["Hello World"]}

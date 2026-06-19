@@ -1,4 +1,3 @@
-/* eslint-disable react/no-multi-comp -- lightweight jest.mock stubs */
 import React from "react";
 import { render, screen } from "@testing-library/react";
 
@@ -18,35 +17,49 @@ import { GMGrid } from "./GMGrid";
 // identifiable stub and ErrorBoundary with a pass-through stub. This keeps the
 // "renders N of chart type X" assertions observable without mounting the real
 // (canvas/dygraph-heavy) charts — mirroring the original shallow render.
-jest.mock("../GMLineChart", () => {
-  const React = jest.requireActual("react");
-  return () => React.createElement("div", { "data-testid": "gm-line-chart" });
+// Vitest mock factories are hoisted and ESM-shaped: default-imported stubs go
+// on `default`, and real React comes from the async `vi.importActual`.
+vi.mock("../GMLineChart", async () => {
+  const React = await vi.importActual<typeof import("react")>("react");
+  return {
+    default: () =>
+      React.createElement("div", { "data-testid": "gm-line-chart" })
+  };
 });
-jest.mock("./components/GMTable", () => {
-  const React = jest.requireActual("react");
-  return () => React.createElement("div", { "data-testid": "gm-table" });
+vi.mock("./components/GMTable", async () => {
+  const React = await vi.importActual<typeof import("react")>("react");
+  return {
+    default: () => React.createElement("div", { "data-testid": "gm-table" })
+  };
 });
-jest.mock("./components/GMBasicMetrics", () => {
-  const React = jest.requireActual("react");
-  return () =>
-    React.createElement("div", { "data-testid": "gm-basic-metrics" });
+vi.mock("./components/GMBasicMetrics", async () => {
+  const React = await vi.importActual<typeof import("react")>("react");
+  return {
+    default: () =>
+      React.createElement("div", { "data-testid": "gm-basic-metrics" })
+  };
 });
-jest.mock("components/Main/components/NotFoundError", () => {
-  const React = jest.requireActual("react");
-  return () => React.createElement("div", { "data-testid": "not-found-error" });
+vi.mock("components/Main/components/NotFoundError", async () => {
+  const React = await vi.importActual<typeof import("react")>("react");
+  return {
+    default: () =>
+      React.createElement("div", { "data-testid": "not-found-error" })
+  };
 });
-jest.mock("components/ErrorBoundary", () => {
-  const React = jest.requireActual("react");
-  return ({ children }: { children?: React.ReactNode }) =>
-    React.createElement("div", { "data-testid": "error-boundary" }, children);
+vi.mock("components/ErrorBoundary", async () => {
+  const React = await vi.importActual<typeof import("react")>("react");
+  return {
+    default: ({ children }: { children?: React.ReactNode }) =>
+      React.createElement("div", { "data-testid": "error-boundary" }, children)
+  };
 });
 // react-grid-layout v2's ResponsiveGridLayout + useContainerWidth measure the DOM
 // via ResizeObserver, which jsdom does not implement. Stub the grid to a plain
 // container that renders its children, and the width hook to a fixed width, so
 // the chart stubs inside stay countable without real measurement (the original
 // shallow render never reached the grid either).
-jest.mock("react-grid-layout", () => {
-  const React = jest.requireActual("react");
+vi.mock("react-grid-layout", async () => {
+  const React = await vi.importActual<typeof import("react")>("react");
   return {
     __esModule: true,
     ResponsiveGridLayout: ({ children }: { children?: React.ReactNode }) =>

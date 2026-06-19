@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`SkipNav matches snapshot 1`] = `
+exports[`SkipNav > matches snapshot 1`] = `
 <DocumentFragment>
   .c0 {
   background-color: rgb(10, 171, 42);

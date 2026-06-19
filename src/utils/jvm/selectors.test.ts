@@ -1,7 +1,6 @@
 import state from "../../json/mockReduxState";
 
-const { getVisibleThreads, getThreadCounts } =
-  jest.requireActual("./selectors");
+import { getVisibleThreads, getThreadCounts } from "./selectors";
 
 describe("Reselect selector getVisibleThreads", () =>
   test("returns an array of thread objects matching state.settings.threadsFilter ", () => {

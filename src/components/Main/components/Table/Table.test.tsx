@@ -10,20 +10,28 @@ import GMServiceTableLineItem from "./components/GMServiceTableLineItem";
 // GMServiceTableLineItem instances and read the props Table passed them
 // (.find(Comp).at(i).props()). RTL is DOM-based and cannot query by component
 // type or read React props, so both line-item components are replaced with
-// jest.fn stubs: jest.fn().mock.calls captures the exact props each received
+// vi.fn stubs: vi.fn().mock.calls captures the exact props each received
 // (preserving the prop-assertions) and a data-testid lets us count instances.
 // The header components are left real so we can assert their rendered text.
-jest.mock("./components/TableLineItem", () => {
-  const React = jest.requireActual("react");
-  return jest.fn(() =>
-    React.createElement("div", { "data-testid": "table-line-item" })
-  );
+// Vitest mock factories are hoisted and ESM-shaped: the vi.fn stub goes on
+// `default`, and real React comes from the async `vi.importActual`.
+vi.mock("./components/TableLineItem", async () => {
+  const React = await vi.importActual<typeof import("react")>("react");
+  return {
+    default: vi.fn(() =>
+      React.createElement("div", { "data-testid": "table-line-item" })
+    )
+  };
 });
-jest.mock("./components/GMServiceTableLineItem", () => {
-  const React = jest.requireActual("react");
-  return jest.fn(() =>
-    React.createElement("div", { "data-testid": "gm-service-table-line-item" })
-  );
+vi.mock("./components/GMServiceTableLineItem", async () => {
+  const React = await vi.importActual<typeof import("react")>("react");
+  return {
+    default: vi.fn(() =>
+      React.createElement("div", {
+        "data-testid": "gm-service-table-line-item"
+      })
+    )
+  };
 });
 
 let routesProps = {
@@ -87,8 +95,8 @@ let instancesProps = {
 
 describe("Table component", () => {
   beforeEach(() => {
-    jest.mocked(TableLineItem).mockClear();
-    jest.mocked(GMServiceTableLineItem).mockClear();
+    vi.mocked(TableLineItem).mockClear();
+    vi.mocked(GMServiceTableLineItem).mockClear();
     renderWithIntl(<Table {...routesProps} />);
   });
 
@@ -113,7 +121,7 @@ describe("Table component", () => {
 
   test("passes correct data to <TableLineItem />", () => {
     // mock.calls[i][0] is the exact props object Table passed the i-th line item.
-    expect(jest.mocked(TableLineItem).mock.calls[0][0]).toEqual({
+    expect(vi.mocked(TableLineItem).mock.calls[0][0]).toEqual({
       item: "/categories",
       errorPercent: "0.000",
       latency50: 0,
@@ -131,7 +139,7 @@ describe("Table component", () => {
       requestsPerSecond_sparkline: [0, 25, 430, 1256],
       verb: "GET"
     });
-    expect(jest.mocked(TableLineItem).mock.calls[1][0]).toEqual({
+    expect(vi.mocked(TableLineItem).mock.calls[1][0]).toEqual({
       item: "/topics",
       errorPercent: "0.000",
       latency50: 0,
@@ -154,8 +162,8 @@ describe("Table component", () => {
 
 describe("Table component with instances prop", () => {
   beforeEach(() => {
-    jest.mocked(TableLineItem).mockClear();
-    jest.mocked(GMServiceTableLineItem).mockClear();
+    vi.mocked(TableLineItem).mockClear();
+    vi.mocked(GMServiceTableLineItem).mockClear();
     renderWithIntl(<Table {...instancesProps} />);
   });
 
@@ -165,7 +173,7 @@ describe("Table component with instances prop", () => {
   });
 
   test("passes correct props to <GMServiceTableLineItem />", () => {
-    expect(jest.mocked(GMServiceTableLineItem).mock.calls[0][0]).toHaveProperty(
+    expect(vi.mocked(GMServiceTableLineItem).mock.calls[0][0]).toHaveProperty(
       "path",
       "/authentication-management-transfer-odrive-gateway-statistics-up2-channel/26d7cmoduw8w000000000"
     );

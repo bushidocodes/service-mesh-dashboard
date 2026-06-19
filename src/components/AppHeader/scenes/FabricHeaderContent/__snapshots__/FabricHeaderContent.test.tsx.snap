@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`FabricHeaderContent matches snapshot 1`] = `
+exports[`FabricHeaderContent > matches snapshot 1`] = `
 <DocumentFragment>
   .c2 {
   color: rgb(255, 255, 255);

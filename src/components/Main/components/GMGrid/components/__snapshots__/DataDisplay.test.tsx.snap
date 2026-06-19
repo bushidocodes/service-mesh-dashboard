@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`DataDisplay matches snapshot when table is false 1`] = `
+exports[`DataDisplay > matches snapshot when table is false 1`] = `
 <DocumentFragment>
   .c0 {
   background-color: rgb(245, 245, 245);
@@ -18,7 +18,7 @@ exports[`DataDisplay matches snapshot when table is false 1`] = `
 </DocumentFragment>
 `;
 
-exports[`DataDisplay matches snapshot when table is true 1`] = `
+exports[`DataDisplay > matches snapshot when table is true 1`] = `
 <DocumentFragment>
   .c0 {
   background-color: rgb(245, 245, 245);

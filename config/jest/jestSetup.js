@@ -1,3 +1,5 @@
+import { vi } from "vitest";
+
 // Freeze the wall clock so components that derive values from the current time
 // produce deterministic output. <UpTime/> renders `Date.now() - startTime`, so
 // under React Testing Library's full-tree render its snapshot would otherwise
@@ -13,7 +15,7 @@ Date.now = () => FIXED_NOW;
 // Providing a no-op 2D context prevents the crash without affecting assertions
 // that only inspect props/DOM structure (never the actual pixel output).
 if (typeof HTMLCanvasElement !== "undefined") {
-  HTMLCanvasElement.prototype.getContext = jest.fn(() => ({
+  HTMLCanvasElement.prototype.getContext = vi.fn(() => ({
     fillStyle: "",
     strokeStyle: "",
     lineWidth: 1,
@@ -22,54 +24,54 @@ if (typeof HTMLCanvasElement !== "undefined") {
     textBaseline: "alphabetic",
     globalAlpha: 1,
     canvas: { width: 0, height: 0 },
-    fillRect: jest.fn(),
-    clearRect: jest.fn(),
-    strokeRect: jest.fn(),
-    beginPath: jest.fn(),
-    moveTo: jest.fn(),
-    lineTo: jest.fn(),
-    closePath: jest.fn(),
-    stroke: jest.fn(),
-    fill: jest.fn(),
-    arc: jest.fn(),
-    arcTo: jest.fn(),
-    bezierCurveTo: jest.fn(),
-    quadraticCurveTo: jest.fn(),
-    rect: jest.fn(),
-    ellipse: jest.fn(),
-    clip: jest.fn(),
-    rotate: jest.fn(),
-    scale: jest.fn(),
-    translate: jest.fn(),
-    transform: jest.fn(),
-    setTransform: jest.fn(),
-    resetTransform: jest.fn(),
-    save: jest.fn(),
-    restore: jest.fn(),
-    createLinearGradient: jest.fn(() => ({ addColorStop: jest.fn() })),
-    createRadialGradient: jest.fn(() => ({ addColorStop: jest.fn() })),
-    createPattern: jest.fn(() => null),
-    drawImage: jest.fn(),
-    fillText: jest.fn(),
-    strokeText: jest.fn(),
-    measureText: jest.fn(() => ({
+    fillRect: vi.fn(),
+    clearRect: vi.fn(),
+    strokeRect: vi.fn(),
+    beginPath: vi.fn(),
+    moveTo: vi.fn(),
+    lineTo: vi.fn(),
+    closePath: vi.fn(),
+    stroke: vi.fn(),
+    fill: vi.fn(),
+    arc: vi.fn(),
+    arcTo: vi.fn(),
+    bezierCurveTo: vi.fn(),
+    quadraticCurveTo: vi.fn(),
+    rect: vi.fn(),
+    ellipse: vi.fn(),
+    clip: vi.fn(),
+    rotate: vi.fn(),
+    scale: vi.fn(),
+    translate: vi.fn(),
+    transform: vi.fn(),
+    setTransform: vi.fn(),
+    resetTransform: vi.fn(),
+    save: vi.fn(),
+    restore: vi.fn(),
+    createLinearGradient: vi.fn(() => ({ addColorStop: vi.fn() })),
+    createRadialGradient: vi.fn(() => ({ addColorStop: vi.fn() })),
+    createPattern: vi.fn(() => null),
+    drawImage: vi.fn(),
+    fillText: vi.fn(),
+    strokeText: vi.fn(),
+    measureText: vi.fn(() => ({
       width: 0,
       actualBoundingBoxAscent: 0,
       actualBoundingBoxDescent: 0,
       actualBoundingBoxLeft: 0,
       actualBoundingBoxRight: 0
     })),
-    getImageData: jest.fn(() => ({
+    getImageData: vi.fn(() => ({
       data: new Uint8ClampedArray(0),
       width: 0,
       height: 0
     })),
-    putImageData: jest.fn(),
-    createImageData: jest.fn(() => ({ data: new Uint8ClampedArray(0) })),
-    setLineDash: jest.fn(),
-    getLineDash: jest.fn(() => []),
-    isPointInPath: jest.fn(() => false),
-    isPointInStroke: jest.fn(() => false)
+    putImageData: vi.fn(),
+    createImageData: vi.fn(() => ({ data: new Uint8ClampedArray(0) })),
+    setLineDash: vi.fn(),
+    getLineDash: vi.fn(() => []),
+    isPointInPath: vi.fn(() => false),
+    isPointInStroke: vi.fn(() => false)
   }));
 }
 // Fail tests on any warning

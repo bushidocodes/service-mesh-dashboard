@@ -13,7 +13,7 @@ import { renderWithIntl } from "utils/i18nTesting";
 import ThreadsGrid from "./index";
 
 // Mock the jumpstate effect used in ThreadsGrid
-Actions.fetchAndStoreInstanceThreads = jest.fn();
+Actions.fetchAndStoreInstanceThreads = vi.fn();
 
 // Create a mock store and initialize with mock data
 const store = configureMockStore([CreateJumpstateMiddleware()])(mockState);

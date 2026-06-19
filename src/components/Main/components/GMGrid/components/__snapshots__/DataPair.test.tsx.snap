@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`DataPair matches snapshot when priority is normal 1`] = `
+exports[`DataPair > matches snapshot when priority is normal 1`] = `
 <DocumentFragment>
   .c0 {
   display: flex;
@@ -18,7 +18,7 @@ exports[`DataPair matches snapshot when priority is normal 1`] = `
 </DocumentFragment>
 `;
 
-exports[`DataPair matches snapshot when priority is primary 1`] = `
+exports[`DataPair > matches snapshot when priority is primary 1`] = `
 <DocumentFragment>
   .c0 {
   display: flex;

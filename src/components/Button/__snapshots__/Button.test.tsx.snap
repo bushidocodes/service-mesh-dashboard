@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Button Snapshots matches active snapshot 1`] = `
+exports[`Button > Snapshots > matches active snapshot 1`] = `
 <DocumentFragment>
   .c0 {
   box-sizing: border-box;
@@ -95,7 +95,7 @@ exports[`Button Snapshots matches active snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Button Snapshots matches disabled snapshot 1`] = `
+exports[`Button > Snapshots > matches disabled snapshot 1`] = `
 <DocumentFragment>
   .c0 {
   box-sizing: border-box;
@@ -192,7 +192,7 @@ exports[`Button Snapshots matches disabled snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Button Snapshots matches orientation snapshots 1`] = `
+exports[`Button > Snapshots > matches orientation snapshots 1`] = `
 <DocumentFragment>
   .c0 {
   box-sizing: border-box;
@@ -289,7 +289,7 @@ exports[`Button Snapshots matches orientation snapshots 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Button Snapshots matches orientation snapshots 2`] = `
+exports[`Button > Snapshots > matches orientation snapshots 2`] = `
 <DocumentFragment>
   .c0 {
   box-sizing: border-box;
@@ -386,7 +386,7 @@ exports[`Button Snapshots matches orientation snapshots 2`] = `
 </DocumentFragment>
 `;
 
-exports[`Button Snapshots matches outline snapshots 1`] = `
+exports[`Button > Snapshots > matches outline snapshots 1`] = `
 <DocumentFragment>
   .c0 {
   box-sizing: border-box;
@@ -482,7 +482,7 @@ exports[`Button Snapshots matches outline snapshots 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Button Snapshots matches outline snapshots 2`] = `
+exports[`Button > Snapshots > matches outline snapshots 2`] = `
 <DocumentFragment>
   .c0 {
   box-sizing: border-box;
@@ -572,7 +572,7 @@ exports[`Button Snapshots matches outline snapshots 2`] = `
 </DocumentFragment>
 `;
 
-exports[`Button Snapshots matches outline snapshots 3`] = `
+exports[`Button > Snapshots > matches outline snapshots 3`] = `
 <DocumentFragment>
   .c0 {
   box-sizing: border-box;
@@ -665,7 +665,7 @@ exports[`Button Snapshots matches outline snapshots 3`] = `
 </DocumentFragment>
 `;
 
-exports[`Button Snapshots matches outline snapshots 4`] = `
+exports[`Button > Snapshots > matches outline snapshots 4`] = `
 <DocumentFragment>
   .c0 {
   box-sizing: border-box;
@@ -755,7 +755,7 @@ exports[`Button Snapshots matches outline snapshots 4`] = `
 </DocumentFragment>
 `;
 
-exports[`Button Snapshots matches outline snapshots 5`] = `
+exports[`Button > Snapshots > matches outline snapshots 5`] = `
 <DocumentFragment>
   .c0 {
   box-sizing: border-box;
@@ -851,7 +851,7 @@ exports[`Button Snapshots matches outline snapshots 5`] = `
 </DocumentFragment>
 `;
 
-exports[`Button Snapshots matches prefix/suffix snapshot 1`] = `
+exports[`Button > Snapshots > matches prefix/suffix snapshot 1`] = `
 <DocumentFragment>
   .c0 {
   box-sizing: border-box;
@@ -967,7 +967,7 @@ exports[`Button Snapshots matches prefix/suffix snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Button Snapshots matches size snapshots 1`] = `
+exports[`Button > Snapshots > matches size snapshots 1`] = `
 <DocumentFragment>
   .c0 {
   box-sizing: border-box;
@@ -1063,7 +1063,7 @@ exports[`Button Snapshots matches size snapshots 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Button Snapshots matches size snapshots 2`] = `
+exports[`Button > Snapshots > matches size snapshots 2`] = `
 <DocumentFragment>
   .c0 {
   box-sizing: border-box;
@@ -1160,7 +1160,7 @@ exports[`Button Snapshots matches size snapshots 2`] = `
 </DocumentFragment>
 `;
 
-exports[`Button Snapshots matches size snapshots 3`] = `
+exports[`Button > Snapshots > matches size snapshots 3`] = `
 <DocumentFragment>
   .c0 {
   box-sizing: border-box;
@@ -1257,7 +1257,7 @@ exports[`Button Snapshots matches size snapshots 3`] = `
 </DocumentFragment>
 `;
 
-exports[`Button Snapshots matches size snapshots 4`] = `
+exports[`Button > Snapshots > matches size snapshots 4`] = `
 <DocumentFragment>
   .c0 {
   box-sizing: border-box;
@@ -1353,7 +1353,7 @@ exports[`Button Snapshots matches size snapshots 4`] = `
 </DocumentFragment>
 `;
 
-exports[`Button Snapshots matches size snapshots 5`] = `
+exports[`Button > Snapshots > matches size snapshots 5`] = `
 <DocumentFragment>
   .c0 {
   box-sizing: border-box;
@@ -1449,7 +1449,7 @@ exports[`Button Snapshots matches size snapshots 5`] = `
 </DocumentFragment>
 `;
 
-exports[`Button Snapshots matches type snapshots 1`] = `
+exports[`Button > Snapshots > matches type snapshots 1`] = `
 <DocumentFragment>
   .c0 {
   box-sizing: border-box;
@@ -1546,7 +1546,7 @@ exports[`Button Snapshots matches type snapshots 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Button Snapshots matches type snapshots 2`] = `
+exports[`Button > Snapshots > matches type snapshots 2`] = `
 <DocumentFragment>
   .c0 {
   box-sizing: border-box;
@@ -1643,7 +1643,7 @@ exports[`Button Snapshots matches type snapshots 2`] = `
 </DocumentFragment>
 `;
 
-exports[`Button Snapshots matches type snapshots 3`] = `
+exports[`Button > Snapshots > matches type snapshots 3`] = `
 <DocumentFragment>
   .c0 {
   box-sizing: border-box;
@@ -1740,7 +1740,7 @@ exports[`Button Snapshots matches type snapshots 3`] = `
 </DocumentFragment>
 `;
 
-exports[`Button Snapshots matches type snapshots 4`] = `
+exports[`Button > Snapshots > matches type snapshots 4`] = `
 <DocumentFragment>
   .c0 {
   box-sizing: border-box;
@@ -1837,7 +1837,7 @@ exports[`Button Snapshots matches type snapshots 4`] = `
 </DocumentFragment>
 `;
 
-exports[`Button Snapshots matches type snapshots 5`] = `
+exports[`Button > Snapshots > matches type snapshots 5`] = `
 <DocumentFragment>
   .c0 {
   box-sizing: border-box;

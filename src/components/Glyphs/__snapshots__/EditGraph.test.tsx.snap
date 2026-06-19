@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`EditGraph matches snapshot 1`] = `
+exports[`EditGraph > matches snapshot 1`] = `
 <DocumentFragment>
   <svg>
     <g

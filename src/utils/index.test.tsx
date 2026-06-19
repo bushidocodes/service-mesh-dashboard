@@ -39,8 +39,12 @@ describe("clearFabricIntervalIfNeeded", () => {
       3000
     );
     // The exact interval ID depends on how many timers have been created
-    // before this test runs; just assert that an ID was assigned.
-    expect(typeof window.refreshFabricIntervalID).toBe("number");
+    // before this test runs; just assert that an ID was assigned. (Its type is
+    // environment-specific: a number under a browser/jsdom setInterval, a
+    // Timeout object under Node's — Vitest uses the latter — so assert presence
+    // rather than the type.)
+    expect(window.refreshFabricIntervalID).toBeDefined();
+    expect(window.refreshFabricIntervalID).not.toBeNull();
   });
   test("clears an interval with ID equal to window.refreshFabricIntervalID", () => {
     clearFabricIntervalIfNeeded();
@@ -126,7 +130,7 @@ describe("formatAsDecimalString", () => {
 
 describe("blurTableRow", () => {
   test("traverses up the DOM until it finds a TableRow ancestor and removes focus", () => {
-    const spy = jest.fn((e) => blurTableRow(e));
+    const spy = vi.fn((e) => blurTableRow(e));
     // In production, babel-plugin-styled-components makes the TableRow <li>
     // render with class "sc-xxx hash TableRow" — the component name appears
     // after the hash, not at position 0. This div mimics that pattern so we
@@ -151,7 +155,7 @@ describe("blurTableRow", () => {
   });
 
   test("does not crash when no ancestor has a TableRow class", () => {
-    const spy = jest.fn((e) => blurTableRow(e));
+    const spy = vi.fn((e) => blurTableRow(e));
     const { getByText } = render(
       <div>
         <span onClick={spy}>Words</span>
@@ -182,7 +186,7 @@ describe("slugify", () => {
 
 describe("slugifyMicroservice", () => {
   test("combines a service name and version into a param passed to slugify", () => {
-    const slugify = jest.fn();
+    const slugify = vi.fn();
     slugifyMicroservice("Awesome Service", "1.0", slugify);
     expect(slugify.mock.calls[0]).toEqual(["Awesome Service-v1-0"]);
   });

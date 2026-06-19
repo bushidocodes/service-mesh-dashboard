@@ -1,4 +1,3 @@
-/* eslint-disable react/no-multi-comp -- lightweight jest.mock stubs */
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
@@ -12,29 +11,40 @@ import GMServiceHeader from "components/Main/scenes/FabricView/components/Fabric
 // components. Enzyme counted those components by type (.find(Comp)) and read
 // their props; RTL is DOM-based, so each child is replaced with an identifiable
 // stub. Container/section stubs pass children through so the nested counts stay
-// observable; GMServiceHeader is a jest.fn so we can inspect the props it
+// observable; GMServiceHeader is a vi.fn so we can inspect the props it
 // received (the original .find(GMServiceHeader).props() check).
-jest.mock("./components/GMServiceViewContainer", () => {
-  const React = jest.requireActual("react");
-  return ({ children }: { children?: React.ReactNode }) =>
-    React.createElement("div", { "data-testid": "view-container" }, children);
+// Vitest mock factories are hoisted and ESM-shaped: default-imported stubs go
+// on `default`, and real React comes from the async `vi.importActual`.
+vi.mock("./components/GMServiceViewContainer", async () => {
+  const React = await vi.importActual<typeof import("react")>("react");
+  return {
+    default: ({ children }: { children?: React.ReactNode }) =>
+      React.createElement("div", { "data-testid": "view-container" }, children)
+  };
 });
-jest.mock("./components/GMServiceCardsView", () => {
-  const React = jest.requireActual("react");
-  return ({ children }: { children?: React.ReactNode }) =>
-    React.createElement("div", { "data-testid": "cards-view" }, children);
+vi.mock("./components/GMServiceCardsView", async () => {
+  const React = await vi.importActual<typeof import("react")>("react");
+  return {
+    default: ({ children }: { children?: React.ReactNode }) =>
+      React.createElement("div", { "data-testid": "cards-view" }, children)
+  };
 });
-jest.mock("./components/GMServiceCardCollection", () => {
-  const React = jest.requireActual("react");
-  return () => React.createElement("div", { "data-testid": "card-collection" });
+vi.mock("./components/GMServiceCardCollection", async () => {
+  const React = await vi.importActual<typeof import("react")>("react");
+  return {
+    default: () =>
+      React.createElement("div", { "data-testid": "card-collection" })
+  };
 });
-jest.mock(
+vi.mock(
   "components/Main/scenes/FabricView/components/FabricGrid/components/FabricMainView/components/GMServiceHeader",
-  () => {
-    const React = jest.requireActual("react");
-    return jest.fn(() =>
-      React.createElement("div", { "data-testid": "service-header" })
-    );
+  async () => {
+    const React = await vi.importActual<typeof import("react")>("react");
+    return {
+      default: vi.fn(() =>
+        React.createElement("div", { "data-testid": "service-header" })
+      )
+    };
   }
 );
 
@@ -70,7 +80,7 @@ const filterServicesByStatus = (filter: string) => {
 
 describe("ServicesCardsView component rendering", () => {
   beforeEach(() => {
-    jest.mocked(GMServiceHeader).mockClear();
+    vi.mocked(GMServiceHeader).mockClear();
   });
 
   // Card keys are now derived from the (deterministic) group header rather than
@@ -100,17 +110,17 @@ describe("ServicesCardsView functionality", () => {
   const filteredServices = filterServicesByStatus("stable");
 
   beforeEach(() => {
-    jest.mocked(GMServiceHeader).mockClear();
+    vi.mocked(GMServiceHeader).mockClear();
   });
 
   test("Has appropriate heading when group filter is applied ", () => {
     render(RouterWrap(["/"], filteredServices, "Owner"));
     // The first GMServiceHeader receives headerTitle "stable" and, since the
     // group is "Owner" (not "Status"), showStatusIcon false.
-    expect(jest.mocked(GMServiceHeader).mock.calls[0][0].headerTitle).toBe(
+    expect(vi.mocked(GMServiceHeader).mock.calls[0][0].headerTitle).toBe(
       "stable"
     );
-    expect(jest.mocked(GMServiceHeader).mock.calls[0][0].showStatusIcon).toBe(
+    expect(vi.mocked(GMServiceHeader).mock.calls[0][0].showStatusIcon).toBe(
       false
     );
   });

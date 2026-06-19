@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ReadoutDisplay matches snapshot when primary is false 1`] = `
+exports[`ReadoutDisplay > matches snapshot when primary is false 1`] = `
 <DocumentFragment>
   .c0 {
   align-items: stretch;
@@ -39,7 +39,7 @@ exports[`ReadoutDisplay matches snapshot when primary is false 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ReadoutDisplay matches snapshot when primary is true 1`] = `
+exports[`ReadoutDisplay > matches snapshot when primary is true 1`] = `
 <DocumentFragment>
   .c0 {
   align-items: stretch;
