@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`InspectorSearch matches snapshot 1`] = `
+exports[`InspectorSearch > matches snapshot 1`] = `
 <DocumentFragment>
   .c0 {
   appearance: none;

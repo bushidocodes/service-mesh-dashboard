@@ -1,4 +1,5 @@
 import React from "react";
+import type { MockInstance } from "vitest";
 import configureStore from "redux-mock-store";
 import { screen, within } from "@testing-library/react";
 
@@ -13,11 +14,11 @@ const mockStore = configureStore()(mockState);
 // a frozen clock the rendered output (and thus the snapshot) drifts second to
 // second. Pin `Date.now` to a fixed instant for deterministic, repeatable runs.
 const FIXED_NOW = 1507230248562;
-let nowSpy: jest.SpyInstance;
+let nowSpy: MockInstance;
 
 describe("GO > SummaryGrid component", () => {
   beforeEach(() => {
-    nowSpy = jest.spyOn(Date, "now").mockReturnValue(FIXED_NOW);
+    nowSpy = vi.spyOn(Date, "now").mockReturnValue(FIXED_NOW);
   });
 
   afterEach(() => {

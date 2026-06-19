@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
+exports[`Go Instance Functions View: <FunctionsGrid/> > Matches snapshot 1`] = `
 <DocumentFragment>
   .c2 {
   background-image: url(magnifier.svg);
@@ -188,7 +188,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
                 id="react-select-2-input"
                 role="combobox"
                 spellcheck="false"
-                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                style="color: inherit; background: 0px center; opacity: 1; width: 100%; grid-area: 1 / 2; font: inherit; min-width: 2px; border: 0px; margin: 0px; outline: 0px; padding: 0px;"
                 tabindex="0"
                 type="text"
                 value=""
@@ -521,39 +521,39 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
                 cx="2"
                 cy="16"
                 r="2"
-                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+                style="stroke: currentcolor; stroke-width: 0; fill-opacity: 0.1; fill: none; pointer-events: auto;"
               />
               <circle
                 cx="61"
                 cy="16"
                 r="2"
-                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+                style="stroke: currentcolor; stroke-width: 0; fill-opacity: 0.1; fill: none; pointer-events: auto;"
               />
               <circle
                 cx="120"
                 cy="16"
                 r="2"
-                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+                style="stroke: currentcolor; stroke-width: 0; fill-opacity: 0.1; fill: none; pointer-events: auto;"
               />
               <circle
                 cx="179"
                 cy="16"
                 r="2"
-                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+                style="stroke: currentcolor; stroke-width: 0; fill-opacity: 0.1; fill: none; pointer-events: auto;"
               />
               <circle
                 cx="238"
                 cy="16"
                 r="2"
-                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+                style="stroke: currentcolor; stroke-width: 0; fill-opacity: 0.1; fill: none; pointer-events: auto;"
               />
               <polyline
                 points="2 16 61 16 120 16 179 16 238 16 238 30 2 30 2 16"
-                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+                style="stroke: currentcolor; stroke-width: 0; fill-opacity: 0.1; fill: none; pointer-events: auto;"
               />
               <polyline
                 points="2 16 61 16 120 16 179 16 238 16"
-                style="stroke: currentColor; stroke-width: 1; stroke-linejoin: round; stroke-linecap: round; fill: none;"
+                style="stroke: currentcolor; stroke-width: 1; stroke-linejoin: round; stroke-linecap: round; fill: none;"
               />
             </g>
             <line
@@ -626,33 +626,33 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
                 cx="2"
                 cy="16"
                 r="2"
-                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+                style="stroke: currentcolor; stroke-width: 0; fill-opacity: 0.1; fill: none; pointer-events: auto;"
               />
               <circle
                 cx="80.66666666666667"
                 cy="16"
                 r="2"
-                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+                style="stroke: currentcolor; stroke-width: 0; fill-opacity: 0.1; fill: none; pointer-events: auto;"
               />
               <circle
                 cx="159.33333333333334"
                 cy="16"
                 r="2"
-                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+                style="stroke: currentcolor; stroke-width: 0; fill-opacity: 0.1; fill: none; pointer-events: auto;"
               />
               <circle
                 cx="238"
                 cy="16"
                 r="2"
-                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+                style="stroke: currentcolor; stroke-width: 0; fill-opacity: 0.1; fill: none; pointer-events: auto;"
               />
               <polyline
                 points="2 16 80.66666666666667 16 159.33333333333334 16 238 16 238 30 2 30 2 16"
-                style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+                style="stroke: currentcolor; stroke-width: 0; fill-opacity: 0.1; fill: none; pointer-events: auto;"
               />
               <polyline
                 points="2 16 80.66666666666667 16 159.33333333333334 16 238 16"
-                style="stroke: currentColor; stroke-width: 1; stroke-linejoin: round; stroke-linecap: round; fill: none;"
+                style="stroke: currentcolor; stroke-width: 1; stroke-linejoin: round; stroke-linecap: round; fill: none;"
               />
             </g>
             <line

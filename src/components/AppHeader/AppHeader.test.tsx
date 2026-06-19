@@ -25,7 +25,7 @@ const anAppHeader = (
 );
 
 // mock getFabricServer
-jest.mock("../../utils/head");
+vi.mock("../../utils/head");
 
 // The snapshot cases live in their own block without the mountWithIntl
 // beforeEach: that mount renders styled-components *with* vendor prefixes into
@@ -39,9 +39,9 @@ describe("AppHeader snapshots", () => {
 
   test("matches snapshot with fabric view tabs", () => {
     // set a return value for getFabricServer() util func so that AppHeader renders <UseSDS /> and remount
-    jest
-      .mocked(getFabricServer)
-      .mockImplementation(() => "http://localhost:1337");
+    vi.mocked(getFabricServer).mockImplementation(
+      () => "http://localhost:1337"
+    );
     const { asFragment } = renderWithIntl(anAppHeader);
     expect(asFragment()).toMatchSnapshot();
   });

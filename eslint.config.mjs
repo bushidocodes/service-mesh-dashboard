@@ -2,7 +2,7 @@ import globals from "globals";
 import reactPlugin from "eslint-plugin-react";
 import reactHooksPlugin from "eslint-plugin-react-hooks";
 import jsxA11y from "eslint-plugin-jsx-a11y";
-import jestPlugin from "eslint-plugin-jest";
+import vitestPlugin from "@vitest/eslint-plugin";
 import prettierConfig from "eslint-config-prettier";
 import tseslint from "typescript-eslint";
 
@@ -80,14 +80,16 @@ export default [
   {
     files: ["src/**/*.test.{js,jsx,ts,tsx}", "src/**/__tests__/**/*.{js,jsx,ts,tsx}"],
     plugins: {
-      jest: jestPlugin
+      vitest: vitestPlugin
     },
     languageOptions: {
-      globals: globals.jest
+      // Vitest's implicit globals (describe/it/expect/vi/beforeEach/…) — the
+      // suite runs with `globals: true`, so these are not imported per file.
+      globals: vitestPlugin.environments.env.globals
     },
     rules: {
-      "jest/no-disabled-tests": "error",
-      "jest/no-focused-tests": "error"
+      "vitest/no-disabled-tests": "error",
+      "vitest/no-focused-tests": "error"
     }
   },
 

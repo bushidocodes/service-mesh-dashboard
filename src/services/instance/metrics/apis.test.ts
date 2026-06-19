@@ -6,18 +6,18 @@ import metrics from "../../../../json-mock/jvm/metrics.json";
 
 // axios v1 dropped moxios support; mock axios.get directly. fetchInstanceMetrics
 // only reads response.data, so resolving { data } reproduces moxios's stub.
-jest.mock("axios", () => ({
+vi.mock("axios", () => ({
   __esModule: true,
-  default: { get: jest.fn() }
+  default: { get: vi.fn() }
 }));
 
 describe("fetchInstanceMetrics", () => {
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it("fetches a metrics endpoint and returns a promise which resolves to the result", () => {
-    jest.mocked(axios.get).mockResolvedValue({ data: metrics });
+    vi.mocked(axios.get).mockResolvedValue({ data: metrics });
     return fetchInstanceMetrics("/admin/metrics.json").then((json) => {
       expect(axios.get).toHaveBeenCalledWith("/admin/metrics.json", {
         responseType: "json"

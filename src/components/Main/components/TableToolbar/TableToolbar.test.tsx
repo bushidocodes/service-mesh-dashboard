@@ -29,22 +29,22 @@ const groupByOptions = [
 const mockFabricViewProps = {
   displayTypeProps: {
     displayType: "Cards" as const,
-    setDisplayType: jest.fn()
+    setDisplayType: vi.fn()
   },
   searchInputProps: {
     filterString: "",
-    setFilterString: jest.fn(),
+    setFilterString: vi.fn(),
     searchPlaceholder: "Search Services"
   },
   groupByProps: {
     groupByOptions,
     groupByAttribute: "Status",
-    setGroupByAttribute: jest.fn()
+    setGroupByAttribute: vi.fn()
   },
   sortByProps: {
     sortByOptions,
     sortByAttribute: "Name",
-    setSortByAttribute: jest.fn()
+    setSortByAttribute: vi.fn()
   }
 };
 
@@ -64,7 +64,7 @@ describe("Table Toolbar", () => {
   });
 
   test("calls setFilterString when search input field changes", () => {
-    const setFilterString = jest.fn();
+    const setFilterString = vi.fn();
     renderWithIntl(
       <TableToolbar
         {...mockFabricViewProps}
@@ -93,7 +93,7 @@ describe("Table Toolbar", () => {
   });
 
   test("calls setDisplayType when a display type button is clicked", () => {
-    const setDisplayType = jest.fn();
+    const setDisplayType = vi.fn();
     renderWithIntl(
       <TableToolbar
         {...mockFabricViewProps}
@@ -132,7 +132,7 @@ describe("Table Toolbar", () => {
       withIntl(
         <TableToolbar
           {...mockFabricViewProps}
-          displayTypeProps={{ displayType: "List", setDisplayType: jest.fn() }}
+          displayTypeProps={{ displayType: "List", setDisplayType: vi.fn() }}
         />
       )
     );

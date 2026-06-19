@@ -12,7 +12,7 @@ import { mountWithIntl } from "utils/i18nTesting";
 import FabricGrid from "./FabricGrid";
 
 // Mock the jumpstate effect used in FabricGrid
-Actions.fetchAndStoreFabricMicroservices = jest.fn();
+Actions.fetchAndStoreFabricMicroservices = vi.fn();
 
 const mockServices = _.values({
   "aac-remote-information-v1-0": {

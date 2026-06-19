@@ -5,14 +5,14 @@ import {
 
 import mockstate from "json/mockReduxState";
 
-const mockGetState = jest.fn(() => mockstate);
+const mockGetState = vi.fn(() => mockstate);
 
-jest.mock("store/jumpstate", () => ({
+vi.mock("store/jumpstate", () => ({
   getState: (...args: unknown[]) =>
     (mockGetState as (...a: unknown[]) => unknown)(...args)
 }));
 
-jest.mock("utils/head", () => {
+vi.mock("utils/head", () => {
   return { getFabricServer: () => "http://localhost:1337" };
 });
 

@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Tooltip correctly positions tooltip content based on position prop 1`] = `
+exports[`Tooltip > correctly positions tooltip content based on position prop 1`] = `
 <DocumentFragment>
   <div
     class="gBXDCU"
@@ -15,7 +15,7 @@ exports[`Tooltip correctly positions tooltip content based on position prop 1`] 
 </DocumentFragment>
 `;
 
-exports[`Tooltip correctly positions tooltip content based on position prop 2`] = `
+exports[`Tooltip > correctly positions tooltip content based on position prop 2`] = `
 <DocumentFragment>
   .c1 {
   background-color: rgba(0, 0, 0, 0.8);
@@ -63,7 +63,7 @@ exports[`Tooltip correctly positions tooltip content based on position prop 2`] 
 </DocumentFragment>
 `;
 
-exports[`Tooltip correctly positions tooltip content based on position prop 3`] = `
+exports[`Tooltip > correctly positions tooltip content based on position prop 3`] = `
 <DocumentFragment>
   .c1 {
   background-color: rgba(0, 0, 0, 0.8);
@@ -110,7 +110,7 @@ exports[`Tooltip correctly positions tooltip content based on position prop 3`] 
 </DocumentFragment>
 `;
 
-exports[`Tooltip correctly positions tooltip content based on position prop 4`] = `
+exports[`Tooltip > correctly positions tooltip content based on position prop 4`] = `
 <DocumentFragment>
   .c1 {
   background-color: rgba(0, 0, 0, 0.8);

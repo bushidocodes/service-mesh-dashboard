@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ButtonGroup matches snapshot when toolbar props is not passed 1`] = `
+exports[`ButtonGroup > matches snapshot when toolbar props is not passed 1`] = `
 <DocumentFragment>
   .c0 {
   display: flex;
@@ -17,7 +17,7 @@ exports[`ButtonGroup matches snapshot when toolbar props is not passed 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ButtonGroup matches snapshot when toolbar props is passed 1`] = `
+exports[`ButtonGroup > matches snapshot when toolbar props is passed 1`] = `
 <DocumentFragment>
   .c0 {
   display: flex;

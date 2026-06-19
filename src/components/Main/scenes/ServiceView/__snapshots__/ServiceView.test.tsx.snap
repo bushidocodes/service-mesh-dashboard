@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Service View matches snapshot 1`] = `
+exports[`Service View > matches snapshot 1`] = `
 <DocumentFragment>
   .c11 {
   align-items: center;
@@ -327,7 +327,7 @@ exports[`Service View matches snapshot 1`] = `
                   id="react-select-2-input"
                   role="combobox"
                   spellcheck="false"
-                  style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                  style="color: inherit; background: 0px center; opacity: 1; width: 100%; grid-area: 1 / 2; font: inherit; min-width: 2px; border: 0px; margin: 0px; outline: 0px; padding: 0px;"
                   tabindex="0"
                   type="text"
                   value=""
@@ -400,6 +400,7 @@ exports[`Service View matches snapshot 1`] = `
             <div
               class="c12"
               disabled=""
+              style="border: medium;"
             >
               <a
                 class="c13"
@@ -447,6 +448,7 @@ exports[`Service View matches snapshot 1`] = `
             <div
               class="c12"
               disabled=""
+              style="border: medium;"
             >
               <a
                 class="c13"
@@ -494,6 +496,7 @@ exports[`Service View matches snapshot 1`] = `
             <div
               class="c12"
               disabled=""
+              style="border: medium;"
             >
               <a
                 class="c13"

@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`JVMHeaderContent matches snapshot 1`] = `
+exports[`JVMHeaderContent > matches snapshot 1`] = `
 <DocumentFragment>
   .c2 {
   color: rgb(255, 255, 255);
@@ -345,67 +345,67 @@ exports[`JVMHeaderContent matches snapshot 1`] = `
               cx="2"
               cy="12"
               r="2"
-              style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              style="stroke: currentcolor; stroke-width: 0; fill-opacity: 0.1; fill: none; pointer-events: auto;"
             />
             <circle
               cx="31.5"
               cy="12"
               r="2"
-              style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              style="stroke: currentcolor; stroke-width: 0; fill-opacity: 0.1; fill: none; pointer-events: auto;"
             />
             <circle
               cx="61"
               cy="12"
               r="2"
-              style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              style="stroke: currentcolor; stroke-width: 0; fill-opacity: 0.1; fill: none; pointer-events: auto;"
             />
             <circle
               cx="90.5"
               cy="12"
               r="2"
-              style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              style="stroke: currentcolor; stroke-width: 0; fill-opacity: 0.1; fill: none; pointer-events: auto;"
             />
             <circle
               cx="120"
               cy="12"
               r="2"
-              style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              style="stroke: currentcolor; stroke-width: 0; fill-opacity: 0.1; fill: none; pointer-events: auto;"
             />
             <circle
               cx="149.5"
               cy="12"
               r="2"
-              style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              style="stroke: currentcolor; stroke-width: 0; fill-opacity: 0.1; fill: none; pointer-events: auto;"
             />
             <circle
               cx="179"
               cy="12"
               r="2"
-              style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              style="stroke: currentcolor; stroke-width: 0; fill-opacity: 0.1; fill: none; pointer-events: auto;"
             />
             <circle
               cx="208.5"
               cy="12"
               r="2"
-              style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              style="stroke: currentcolor; stroke-width: 0; fill-opacity: 0.1; fill: none; pointer-events: auto;"
             />
             <circle
               cx="238"
               cy="12"
               r="2"
-              style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              style="stroke: currentcolor; stroke-width: 0; fill-opacity: 0.1; fill: none; pointer-events: auto;"
             />
             <polyline
               points="2 12 31.5 12 61 12 90.5 12 120 12 149.5 12 179 12 208.5 12 238 12 238 22 2 22 2 12"
-              style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+              style="stroke: currentcolor; stroke-width: 0; fill-opacity: 0.1; fill: none; pointer-events: auto;"
             />
             <polyline
               points="2 12 31.5 12 61 12 90.5 12 120 12 149.5 12 179 12 208.5 12 238 12"
-              style="stroke: currentColor; stroke-width: 1; stroke-linejoin: round; stroke-linecap: round; fill: none;"
+              style="stroke: currentcolor; stroke-width: 1; stroke-linejoin: round; stroke-linecap: round; fill: none;"
             />
           </g>
           <line
-            style="stroke: currentColor; opacity: 0.5;"
+            style="stroke: currentcolor; opacity: 0.5;"
             x1="2"
             x2="238"
             y1="14"

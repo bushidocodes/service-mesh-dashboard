@@ -1,6 +1,6 @@
 import state from "../json/mockReduxState";
 
-const {
+import {
   getRoutesMetrics,
   getRoutesTree,
   metricsKeySelectorGenerator,
@@ -13,7 +13,7 @@ const {
   getSelectedServiceSlug,
   getStatusCount,
   getRuntime
-} = jest.requireActual("./selectors");
+} from "./selectors";
 
 const simpleState = {
   instance: {
@@ -113,9 +113,17 @@ describe("getRuntime", () => {
 
 describe("metricsKeySelectorGenerator", () => {
   test("returns a Reselect selector", () => {
-    expect(metricsKeySelectorGenerator()).toHaveProperty("resultFunc");
-    expect(metricsKeySelectorGenerator()).toHaveProperty("recomputations");
-    expect(metricsKeySelectorGenerator()).toHaveProperty("resetRecomputations");
+    // keyQuery is irrelevant here — we only assert the shape of the returned
+    // selector. (Previously this called with no args; that compiled only because
+    // jest.requireActual typed the module as `any`. The real signature requires
+    // keyQuery, so pass one.)
+    expect(metricsKeySelectorGenerator("system")).toHaveProperty("resultFunc");
+    expect(metricsKeySelectorGenerator("system")).toHaveProperty(
+      "recomputations"
+    );
+    expect(metricsKeySelectorGenerator("system")).toHaveProperty(
+      "resetRecomputations"
+    );
   });
   test("returns all keys strictly matching a prefix when isPrefix is true", () => {
     expect(metricsKeySelectorGenerator("system")(simpleState)).toEqual({

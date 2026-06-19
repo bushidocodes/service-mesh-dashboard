@@ -1,5 +1,5 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ConfirmationModal matches snapshot when closed 1`] = `<DocumentFragment />`;
+exports[`ConfirmationModal > matches snapshot when closed 1`] = `<DocumentFragment />`;
 
-exports[`ConfirmationModal matches snapshot when open 1`] = `<DocumentFragment />`;
+exports[`ConfirmationModal > matches snapshot when open 1`] = `<DocumentFragment />`;

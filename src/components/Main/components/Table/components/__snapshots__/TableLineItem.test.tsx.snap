@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<TableLineItem/> matches snapshot 1`] = `
+exports[`<TableLineItem/> > matches snapshot 1`] = `
 <DocumentFragment>
   .c0 {
   align-items: center;
@@ -135,33 +135,33 @@ exports[`<TableLineItem/> matches snapshot 1`] = `
             cx="2"
             cy="29.999999999999996"
             r="2"
-            style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+            style="stroke: currentcolor; stroke-width: 0; fill-opacity: 0.1; fill: none; pointer-events: auto;"
           />
           <circle
             cx="80.66666666666667"
             cy="29.442675159235666"
             r="2"
-            style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+            style="stroke: currentcolor; stroke-width: 0; fill-opacity: 0.1; fill: none; pointer-events: auto;"
           />
           <circle
             cx="159.33333333333334"
             cy="20.4140127388535"
             r="2"
-            style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+            style="stroke: currentcolor; stroke-width: 0; fill-opacity: 0.1; fill: none; pointer-events: auto;"
           />
           <circle
             cx="238"
             cy="2"
             r="2"
-            style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+            style="stroke: currentcolor; stroke-width: 0; fill-opacity: 0.1; fill: none; pointer-events: auto;"
           />
           <polyline
             points="2 29.999999999999996 80.66666666666667 29.442675159235666 159.33333333333334 20.4140127388535 238 2 238 30 2 30 2 29.999999999999996"
-            style="stroke: currentColor; stroke-width: 0; fill-opacity: .1; fill: none; pointer-events: auto;"
+            style="stroke: currentcolor; stroke-width: 0; fill-opacity: 0.1; fill: none; pointer-events: auto;"
           />
           <polyline
             points="2 29.999999999999996 80.66666666666667 29.442675159235666 159.33333333333334 20.4140127388535 238 2"
-            style="stroke: currentColor; stroke-width: 1; stroke-linejoin: round; stroke-linecap: round; fill: none;"
+            style="stroke: currentcolor; stroke-width: 1; stroke-linejoin: round; stroke-linecap: round; fill: none;"
           />
         </g>
         <line

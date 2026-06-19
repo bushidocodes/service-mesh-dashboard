@@ -27,8 +27,31 @@ pnpm start-ui      # Vite only (no mock service)
 ## Running tests
 
 ```bash
-pnpm test          # full Jest suite
+pnpm test            # Vitest — watches locally, runs once under CI
+pnpm exec vitest run # one-shot run (what CI does)
+pnpm run update-snapshots
 ```
+
+The test runner is **Vitest** (issue #197 replaced Jest + Babel with it). Vitest
+reuses [`vite.config.js`](vite.config.js) — same JSX-in-`.js` pre-pass, `src`
+path aliases, and styled-components plugin as the build — so there is no second
+transform pipeline. Key points:
+
+- `globals: true`, so `describe`/`it`/`expect`/`vi` are implicit (no per-file
+  imports). Use `vi.*`, never `jest.*`. `vi.importActual` is **async** (Jest's
+  `requireActual` was sync), and `vi.mock` factories for default-imported
+  modules must return `{ default: … }`.
+- Test-only behaviour in `vite.config.js` is gated on `process.env.VITEST` (set
+  by Vitest), **not** `NODE_ENV` — the e2e suite runs the real dev server with
+  `NODE_ENV=test` and must not get the test stubs.
+- `config/jest/jestSetup.js` + `jestTestFrameworkSetup.js` are the setup files
+  (dir name kept for now); `config/jest/rtlWrapper.js` is the ESM
+  StyleSheetManager render wrapper, aliased over `@testing-library/react`.
+- `jest-styled-components` is still used (snapshot CSS serializer +
+  `toHaveStyleRule`). For its `toHaveStyleRule` matcher to work it needs the
+  `sc-` component-id class, so `babel-plugin-styled-components` runs with
+  `displayName: false` (and `minify: false`) in tests; it is inlined via
+  `server.deps.inline` so it shares the one styled-components instance.
 
 ## State management (the `store/jumpstate` shim)
 
@@ -40,7 +63,7 @@ the npm `jumpstate` package — it's a local, dependency-free reimplementation a
 drop-in so the ~90 `Actions.*` / `getState()` call sites stayed unchanged.
 
 - Import it as `from "store/jumpstate"` (the `store` alias resolves it in both
-  Vite and Jest). **Do not** re-add the `jumpstate` dependency.
+  Vite and Vitest). **Do not** re-add the `jumpstate` dependency.
 - Semantics match jumpstate@2.2.2: each `State` method is both an action-creator
   (`Actions.method`) and that action's reducer case; `Effect(name, fn)` is fired
   by the middleware after `next(action)` and invoked as
@@ -49,7 +72,7 @@ drop-in so the ~90 `Actions.*` / `getState()` call sites stayed unchanged.
   idiomatic Redux Toolkit (Option C in #39) is deliberately deferred to separate,
   larger follow-up work.
 - Tests that mock the layer must target the shim, e.g.
-  `jest.mock("store/jumpstate", ...)` — not `"jumpstate"`.
+  `vi.mock("store/jumpstate", ...)` — not `"jumpstate"`.
 
 ## Working in a git worktree (.claude/worktrees/*)
 
@@ -69,19 +92,19 @@ issue #108.)
 
 ### Why pnpm fixes worktrees (and why the old hacks are still needed elsewhere)
 
-The `vite.config.js` `root: __dirname` pin and the relative Jest `testMatch`
-globs are **independently correct** and stay regardless of package manager:
+The `vite.config.js` `root: __dirname` pin is **independently correct** and
+stays regardless of package manager:
 
 - **Vite root pin.** Vite calls `fs.realpathSync()` on resolved paths. With a
   junctioned `node_modules` that would make Vite treat the *main* repo as the
   project root and ignore worktree edits. `vite.config.js` pins
   `root: __dirname` (derived from `import.meta.url`, not `realpathSync`) so the
   worktree is always the root. pnpm's `node_modules` is real (not a junction to
-  the main repo), so this is belt-and-suspenders, but keep it.
-
-- **Jest testMatch globs.** They use `**` prefixes rather than `<rootDir>` to
-  avoid a micromatch backslash-escape bug that made Jest find 0 tests when run
-  from a worktree path containing `\.claude\` on Windows.
+  the main repo), so this is belt-and-suspenders, but keep it. Vitest's
+  `test.include`/`exclude` globs are relative (`src/**`, `**/.claude/worktrees/**`)
+  and resolve against this root. (The old Jest `testMatch` `**`-prefix hack —
+  which dodged a micromatch backslash bug on `\.claude\` worktree paths — went
+  away with Jest in issue #197.)
 
 - **dygraphs alias.** `vite.config.js` aliases `dygraphs` to
   `node_modules/dygraphs/src-es5/dygraph.js`. This resolves fine through pnpm's
@@ -89,7 +112,7 @@ globs are **independently correct** and stay regardless of package manager:
   (issue #67) was because 2.2.x added a `getComputedStyle(maindiv).padding*`
   check that logs `"Main div contains padding; graph will misbehave"` unless
   every padding longhand is exactly `"0px"`. jsdom returns `""` (not `"0px"`)
-  for an unstyled div, so the check tripped the `console.error`-as-throw jest
+  for an unstyled div, so the check tripped the `console.error`-as-throw test
   setup and broke every dygraph-mounting test. Fixed by declaring an explicit
   `padding: 0` on `DygraphContainer` (a visual no-op — default was already
   zero — that makes jsdom resolve the longhands to `"0px"`).

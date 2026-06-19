@@ -25,13 +25,13 @@ const referenceNow = 1511164339200;
 // Date.now() via setSystemTime() rather than monkey-patching it — a manual
 // `Date.now = () => ...` is overridden once useFakeTimers() installs its own
 // Date implementation.
-jest.useFakeTimers();
+vi.useFakeTimers();
 
 describe("Uptime component", () => {
   let container: HTMLElement;
   let unmount: () => void;
   beforeEach(() => {
-    jest.setSystemTime(referenceNow - 1000);
+    vi.setSystemTime(referenceNow - 1000);
     ({ container, unmount } = render(
       <Uptime startTime={startTime} render={renderFunc} />
     ));
@@ -52,7 +52,7 @@ describe("Uptime component", () => {
     // Wrap in act() so React 18 flushes the resulting setState synchronously
     // before we read the rendered output.
     act(() => {
-      jest.advanceTimersByTime(1000);
+      vi.advanceTimersByTime(1000);
     });
     const html = container.innerHTML;
     expect(html).toContain("1273d");

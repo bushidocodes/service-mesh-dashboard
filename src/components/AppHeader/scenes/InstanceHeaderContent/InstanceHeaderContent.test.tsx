@@ -13,26 +13,35 @@ import DefaultHeaderContent from "./scenes/DefaultHeaderContent";
 
 // InstanceHeaderContent is a runtime switch that renders exactly ONE of three
 // child scenes. Enzyme asserted this via .find(Component)/.props(); RTL is
-// DOM-based, so each scene is replaced with an identifiable stub (jest.fn) and
+// DOM-based, so each scene is replaced with an identifiable stub (vi.fn) and
 // we assert which stub mounts — and, for the prop-passing test, inspect the
 // props the active stub received. This mirrors the original shallow intent.
-jest.mock("./scenes/JVMHeaderContent", () => {
-  const React = jest.requireActual("react");
-  return jest.fn(() =>
-    React.createElement("div", { "data-testid": "jvm-header" })
-  );
+// Vitest mock factories are hoisted and ESM-shaped: the stub goes on `default`
+// (these modules are default-imported) and the real React is pulled in via the
+// async `vi.importActual` rather than Jest's synchronous `requireActual`.
+vi.mock("./scenes/JVMHeaderContent", async () => {
+  const React = await vi.importActual<typeof import("react")>("react");
+  return {
+    default: vi.fn(() =>
+      React.createElement("div", { "data-testid": "jvm-header" })
+    )
+  };
 });
-jest.mock("./scenes/GoHeaderContent", () => {
-  const React = jest.requireActual("react");
-  return jest.fn(() =>
-    React.createElement("div", { "data-testid": "go-header" })
-  );
+vi.mock("./scenes/GoHeaderContent", async () => {
+  const React = await vi.importActual<typeof import("react")>("react");
+  return {
+    default: vi.fn(() =>
+      React.createElement("div", { "data-testid": "go-header" })
+    )
+  };
 });
-jest.mock("./scenes/DefaultHeaderContent", () => {
-  const React = jest.requireActual("react");
-  return jest.fn(() =>
-    React.createElement("div", { "data-testid": "default-header" })
-  );
+vi.mock("./scenes/DefaultHeaderContent", async () => {
+  const React = await vi.importActual<typeof import("react")>("react");
+  return {
+    default: vi.fn(() =>
+      React.createElement("div", { "data-testid": "default-header" })
+    )
+  };
 });
 
 // renderTabs() calls intl.formatMessage() on message descriptors
@@ -54,9 +63,9 @@ const baseProps = {
 
 describe("InstanceHeaderContent", () => {
   beforeEach(() => {
-    jest.mocked(JVMHeaderContent).mockClear();
-    jest.mocked(GoHeaderContent).mockClear();
-    jest.mocked(DefaultHeaderContent).mockClear();
+    vi.mocked(JVMHeaderContent).mockClear();
+    vi.mocked(GoHeaderContent).mockClear();
+    vi.mocked(DefaultHeaderContent).mockClear();
   });
 
   test("returns JVMHeaderContent when runtime prop is JVM", () => {
@@ -83,7 +92,7 @@ describe("InstanceHeaderContent", () => {
   test("passes basePath, metrics, and a tab per dashboard to the active runtime view", () => {
     render(<InstanceHeaderContent {...baseProps} runtime="GO" />);
     // The active scene receives basePath, metrics, and the renderTabs() output.
-    const props = jest.mocked(GoHeaderContent).mock.calls[0][0];
+    const props = vi.mocked(GoHeaderContent).mock.calls[0][0];
 
     expect(props.basePath).toBe(baseProps.basePath);
     expect(props.metrics).toBe(state.instance.metrics);

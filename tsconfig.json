@@ -29,11 +29,11 @@
 
     // Auto-inclusion of node_modules/@types doesn't resolve in this setup, and
     // the source uses no ambient @types globals (process/window/navigator come
-    // from global.d.ts + lib DOM). Tests, however, rely on Jest's globals
-    // (describe/it/expect/jest) and jest-dom's matchers, so list them
+    // from global.d.ts + lib DOM). Tests, however, rely on Vitest's globals
+    // (describe/it/expect/vi) and jest-dom's matchers, so list them
     // explicitly. `node` is intentionally omitted to avoid clashing with the
     // hand-rolled `process` declaration in global.d.ts.
-    "types": ["jest", "@testing-library/jest-dom"],
+    "types": ["vitest/globals", "@testing-library/jest-dom"],
 
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,

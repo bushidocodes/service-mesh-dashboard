@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<GMTable> stateless child component of GMGrid matches snapshot 1`] = `
+exports[`<GMTable> stateless child component of GMGrid > matches snapshot 1`] = `
 <DocumentFragment>
   .c0 {
   background-color: rgb(245, 245, 245);

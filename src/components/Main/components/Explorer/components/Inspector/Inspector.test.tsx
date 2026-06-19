@@ -23,9 +23,9 @@ const mockData = [
 
 const mockProps = {
   data: mockData,
-  onClick: jest.fn(),
+  onClick: vi.fn(),
   onChange: () => {},
-  onSearch: jest.fn(),
+  onSearch: vi.fn(),
   searchQuery: "",
   selectedMetric: null as unknown as string | undefined
 };

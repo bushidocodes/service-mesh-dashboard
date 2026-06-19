@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`AppHeader snapshots matches snapshot with fabric view tabs 1`] = `
+exports[`AppHeader snapshots > matches snapshot with fabric view tabs 1`] = `
 <DocumentFragment>
   .c0 {
   display: flex;
@@ -834,7 +834,7 @@ exports[`AppHeader snapshots matches snapshot with fabric view tabs 1`] = `
 </DocumentFragment>
 `;
 
-exports[`AppHeader snapshots matches snapshot with instance view tabs 1`] = `
+exports[`AppHeader snapshots > matches snapshot with instance view tabs 1`] = `
 <DocumentFragment>
   .c0 {
   display: flex;

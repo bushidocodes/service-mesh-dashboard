@@ -7,19 +7,19 @@ import { staticServices } from "../../../json-mock/discovery-service/staticData"
 // axios v1 dropped support for moxios (an unmaintained axios-0.x adapter
 // shim). Mock axios.get directly instead — the function under test only
 // reads response.data, so resolving { data } reproduces moxios's stub.
-jest.mock("axios", () => ({
+vi.mock("axios", () => ({
   __esModule: true,
-  default: { get: jest.fn() }
+  default: { get: vi.fn() }
 }));
 
 describe("Fabric Microservices Module ", () => {
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   // test with static array of mock services
   it("fetches services from the discovery service and maps them with a key of name", () => {
-    jest.mocked(axios.get).mockResolvedValue({ data: staticServices });
+    vi.mocked(axios.get).mockResolvedValue({ data: staticServices });
     return fetchFabricMicroservices("server").then((result) => {
       expect(axios.get).toHaveBeenCalledWith("server/services", {
         responseType: "json"
