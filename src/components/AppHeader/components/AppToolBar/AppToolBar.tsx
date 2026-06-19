@@ -68,7 +68,11 @@ function AppToolBar({
           //strip out leading slashes to get route as array
           pathname
             .replace(/^\/|\/$/g, "")
-            .replace("%2F", "/") // String out escaped slashes if found
+            // Decode ALL escaped slashes, not just the first. A string-argument
+            // .replace() only swaps the first match, so a path with multiple
+            // encoded slashes (e.g. "a%2Fb%2Fc") split into the wrong segments.
+            // The /gi flag covers every occurrence and both %2F and %2f.
+            .replace(/%2F/gi, "/")
             .split("/")
             .map((val, idx) => {
               let breadcrumbName;
