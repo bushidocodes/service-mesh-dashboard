@@ -635,6 +635,7 @@ exports[`GO > SummaryGrid component Matched the snapshot 1`] = `
   right: 0;
   left: 0;
   bottom: 0;
+  padding: 0;
   background-color: inherit;
 }
 
@@ -794,12 +795,12 @@ exports[`GO > SummaryGrid component Matched the snapshot 1`] = `
               >
                 <canvas
                   height="0"
-                  style="position: absolute; width: 0px; height: 0px;"
+                  style="position: absolute; top: 0px; left: 0px; width: 0px; height: 0px;"
                   width="0"
                 />
                 <canvas
                   height="0"
-                  style="position: absolute; width: 0px; height: 0px;"
+                  style="position: absolute; top: 0px; left: 0px; width: 0px; height: 0px;"
                   width="0"
                 />
                 <input
