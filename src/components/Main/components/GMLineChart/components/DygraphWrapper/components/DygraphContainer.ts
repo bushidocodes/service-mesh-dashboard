@@ -15,6 +15,13 @@ const DygraphContainer = styled.div`
   right: 0;
   left: 0;
   bottom: 0;
+  /* dygraphs (>=2.2) reads getComputedStyle(maindiv).padding* and logs
+     "Main div contains padding; graph will misbehave" unless every padding
+     longhand resolves to exactly "0px". This is already the visual default, so
+     declaring it is a no-op for appearance — but it (a) satisfies that check in
+     real browsers and (b) makes jsdom's getComputedStyle return "0px" instead
+     of "" in tests, which otherwise trips the console.error-as-throw setup. */
+  padding: 0;
   background-color: inherit;
 
   > * {

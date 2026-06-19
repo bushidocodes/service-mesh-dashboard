@@ -85,8 +85,14 @@ globs are **independently correct** and stay regardless of package manager:
 
 - **dygraphs alias.** `vite.config.js` aliases `dygraphs` to
   `node_modules/dygraphs/src-es5/dygraph.js`. This resolves fine through pnpm's
-  symlinked `node_modules`. `dygraphs` is pinned to `~2.1.0` (issue #67 — 2.2.x
-  breaks the Summary tests); the pnpm lockfile keeps it at 2.1.0.
+  symlinked `node_modules`. `dygraphs` is on `~2.2.1`. The earlier `~2.1.0` pin
+  (issue #67) was because 2.2.x added a `getComputedStyle(maindiv).padding*`
+  check that logs `"Main div contains padding; graph will misbehave"` unless
+  every padding longhand is exactly `"0px"`. jsdom returns `""` (not `"0px"`)
+  for an unstyled div, so the check tripped the `console.error`-as-throw jest
+  setup and broke every dygraph-mounting test. Fixed by declaring an explicit
+  `padding: 0` on `DygraphContainer` (a visual no-op — default was already
+  zero — that makes jsdom resolve the longhands to `"0px"`).
 
 ## Git hooks in worktrees (gotcha)
 
