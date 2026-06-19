@@ -6,6 +6,12 @@ on:
   pull_request:
     branches: [master]
 
+# Least-privilege GITHUB_TOKEN. Every job here only checks out the code and
+# runs tests/tsc/eslint — none write back to the repo — so read-only contents
+# is sufficient. Applied at the workflow level so all jobs inherit it.
+permissions:
+  contents: read
+
 # Avoid duplicate runs. A push to a feature branch that has an open PR would
 # otherwise fire both `push` and `pull_request`. Limiting `push` to master means
 # feature branches are covered by `pull_request` only, and master (post-merge)
