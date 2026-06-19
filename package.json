@@ -22,7 +22,7 @@
     "color": "^5.0.3",
     "dygraphs": "~2.1.0",
     "filesize": "~11.0.17",
-    "js-quantities": "^1.7.0",
+    "js-quantities": "^1.8.0",
     "lodash": "~4.17.23",
     "object-sizeof": "^1.2.0",
     "react": "^18.0.0",
