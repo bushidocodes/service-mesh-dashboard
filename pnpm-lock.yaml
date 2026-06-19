@@ -21,8 +21,8 @@ importers:
         specifier: ^5.0.3
         version: 5.0.3
       dygraphs:
-        specifier: ~2.1.0
-        version: 2.1.0
+        specifier: ~2.2.1
+        version: 2.2.1
       filesize:
         specifier: ~11.0.17
         version: 11.0.17
@@ -3191,8 +3191,8 @@ packages:
   duplexer@0.1.1:
     resolution: {integrity: sha512-sxNZ+ljy+RA1maXoUReeqBBpBC6RLKmg5ewzV+x+mSETmWNoKdZN6vcQjpFROemza23hGFskJtFNoUWUaQ+R4Q==}
 
-  dygraphs@2.1.0:
-    resolution: {integrity: sha512-9HolkIiAwqymYen/kqIVVtE5bkRVoyCNnStbczLL+Xr/OuZlO0tc/8K7PiVkEob3212uLNmnzWC57TSSwpuvdw==}
+  dygraphs@2.2.1:
+    resolution: {integrity: sha512-xnuvsvh2H/FKvJjTSlXgJpwCOhLOi3u0sHw1gsJg/Bmf29y6bnO14PbTz8MwHOa3GIbKqqgKVBMSOi+Z1gI2Gg==}
 
   ee-first@1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
@@ -9984,7 +9984,7 @@ snapshots:
 
   duplexer@0.1.1: {}
 
-  dygraphs@2.1.0: {}
+  dygraphs@2.2.1: {}
 
   ee-first@1.1.1: {}
 
