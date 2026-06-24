@@ -1,6 +1,14 @@
 {
   "compilerOptions": {
-    "target": "ES2025",
+    // `lib` (not `target`) is what surfaces the ES2025 library APIs the source
+    // now uses (Object.groupBy, Object.hasOwn, …), so it is pinned to ES2025.
+    // `target` stays "ESNext" rather than "ES2025": esbuild — which does the
+    // actual transform under Vite/Vitest — reads this `target` and only knows
+    // keywords up to es2023, so a literal "ES2025" makes it log "Unrecognized
+    // target environment" on every file before falling back to esnext anyway.
+    // "ESNext" is a superset esbuild accepts, and tsc runs --noEmit so target
+    // only governs which syntax it permits, not emitted output.
+    "target": "ESNext",
     "lib": ["ES2025", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "moduleResolution": "bundler",

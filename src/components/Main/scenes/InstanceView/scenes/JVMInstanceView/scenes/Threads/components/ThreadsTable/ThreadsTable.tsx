@@ -42,12 +42,10 @@ export default function ThreadsTable({
     });
 
     // Create an object with keys matching headers
-    // and values being an array of corresponding thread objects
-    // Object.groupBy is ES2024; the project's tsconfig lib is ES2020, so cast
-    // through any (the runtime targets — modern browsers/Node — support it).
-    const dataGroupedByHeader = (Object as any).groupBy(
+    // and values being an array of corresponding thread objects.
+    const dataGroupedByHeader = Object.groupBy(
       mappedThreads,
-      (thread: ThreadsTableItem) => thread.header
+      (thread: ThreadsTableItem) => thread.header ?? "none"
     );
 
     // Loop through thread states to preserve the order stopped, idle, active
@@ -64,7 +62,7 @@ export default function ThreadsTable({
             <TableColHeader>{header}</TableColHeader>
           </ThreadsTableStatusHeader>,
           <ThreadsList
-            threads={dataGroupedByHeader[header]}
+            threads={dataGroupedByHeader[header] ?? []}
             key={`list|${header}|${idx}`}
           />
         ])}

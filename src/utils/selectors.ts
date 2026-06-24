@@ -22,7 +22,7 @@ export const getSelectedServiceSlug = (state: any) =>
 export const getSelectedService = createSelector(
   [getSelectedServiceSlug, getServices],
   (slug, services) => {
-    if (Object.prototype.hasOwnProperty.call(services, slug)) {
+    if (Object.hasOwn(services, slug)) {
       return services[slug];
     } else {
       return null;

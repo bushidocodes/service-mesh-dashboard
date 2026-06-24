@@ -28,8 +28,8 @@ function CardsView({
   services
 }: CardsViewProps) {
   if (groupByAttribute !== "None") {
-    const dataGroupedByHeader = (Object as any).groupBy(services, (item: any) =>
-      item.headerTitle.toLowerCase()
+    const dataGroupedByHeader = Object.groupBy(services, (item: ServiceItem) =>
+      (item.headerTitle ?? "").toLowerCase()
     );
     const headerTitles = Object.keys(dataGroupedByHeader);
 
@@ -47,7 +47,7 @@ function CardsView({
       // checks to make sure there are microservices within the array
       return (
         !_.isEmpty(dataGroupedByHeader[header]) &&
-        !_.isEmpty(dataGroupedByHeader[header][0])
+        !_.isEmpty(dataGroupedByHeader[header]?.[0])
       );
     });
 

@@ -79,7 +79,7 @@ export function modes(array: any): any {
     }
 
     for (i in count)
-      if (Object.prototype.hasOwnProperty.call(count, i)) {
+      if (Object.hasOwn(count, i)) {
         if (count[i] === maxIndex) {
           modes.push(Number(i));
         }
