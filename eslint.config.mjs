@@ -26,7 +26,7 @@ export default [
     },
     languageOptions: {
       parser: tseslint.parser,
-      ecmaVersion: 2022,
+      ecmaVersion: 2025,
       sourceType: "module",
       parserOptions: {
         ecmaFeatures: { jsx: true }
