@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import { Actions, getState } from "store/jumpstate";
 import { FormattedMessage } from "react-intl";
 
@@ -12,10 +11,15 @@ const memoizedSlugifyMicroservice = _.memoize(slugifyMicroservice);
 
 export async function fetchFabricMicroservices(fabricServer: string) {
   if (!fabricServer) return Promise.reject("Invalid endpoint");
-  const response = await axios.get(`${fabricServer}/services`, {
-    responseType: "json"
-  });
-  const withSlugs = response.data.map((service: any) => ({
+  const response = await fetch(`${fabricServer}/services`);
+  // fetch only rejects on network errors, not on HTTP error statuses, so we
+  // reject non-2xx responses explicitly — the polling failure counter relies on
+  // rejection to back off.
+  if (!response.ok) {
+    return Promise.reject(`Request failed with status ${response.status}`);
+  }
+  const data = await response.json();
+  const withSlugs = data.map((service: any) => ({
     ...service,
     slug: memoizedSlugifyMicroservice(service.name, service.version)
   }));

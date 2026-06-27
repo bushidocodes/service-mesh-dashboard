@@ -1,7 +1,6 @@
 import { readFileSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
-import axios from "axios";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -32,29 +31,30 @@ const payload = {
   prerelease: false
 };
 
-axios
-  .post(
+try {
+  const response = await fetch(
     `https://api.github.com/repos/DecipherNow/gm-fabric-dashboard/releases`,
-    payload,
-    { headers: { Authorization: `token ${process.env.GITHUB_ACCESS_KEY}` } }
-  )
-  .then((data) => console.log(data))
-  .catch((error) => {
-    if (error.response) {
-      // The request was made and the server responded with a status code
-      // that falls out of the range of 2xx
-      console.log(error.response.data);
-      console.log(error.response.status);
-      console.log(error.response.headers);
-    } else if (error.request) {
-      // The request was made but no response was received
-      // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
-      // http.ClientRequest in node.js
-      console.log(error.request);
-    } else {
-      // Something happened in setting up the request that triggered an Error
-      console.log("Error", error.message);
+    {
+      method: "POST",
+      headers: {
+        Authorization: `token ${process.env.GITHUB_ACCESS_KEY}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload)
     }
-    console.log(error.config);
+  );
+
+  if (!response.ok) {
+    // The server responded with a status code outside the 2xx range.
+    console.log(await response.text());
+    console.log(response.status);
+    console.log(Object.fromEntries(response.headers));
     process.exit(1);
-  });
+  }
+
+  console.log(await response.json());
+} catch (error) {
+  // A network-level failure: the request was made but no response was received.
+  console.log("Error", error.message);
+  process.exit(1);
+}
