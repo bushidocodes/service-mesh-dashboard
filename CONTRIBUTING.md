@@ -56,7 +56,7 @@ Follow the steps outlined in the [README](https://github.com/DecipherNow/gm-fabr
 
 ### Commit Messages
 
-We follow [conventional commit](https://conventionalcommits.org/) standards and enforce them with [commitlint](https://github.com/marionebl/commitlint). 
+We follow [conventional commit](https://conventionalcommits.org/) standards (this keeps `pnpm run changelog` meaningful). They are a convention, not enforced by a commit hook.
 
 #### Format
 Commit messages should consist of a type and a subject:

@@ -31,7 +31,6 @@
 .claude/worktrees/
 
 # misc
-.vscode/chrome
 .playwright-mcp
 .DS_Store
 npm-debug.log*
