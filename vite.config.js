@@ -8,9 +8,9 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const src = (p) => path.resolve(__dirname, "src", p);
 
 // Vitest sets process.env.VITEST before loading this config; gate all test-only
-// behaviour on it alone. (Deliberately NOT NODE_ENV==="test": `preversion` sets
-// NODE_ENV=test while running the e2e suite against the real dev server, which
-// must NOT get the asset/CSS stubs or the no-displayName styled-components.)
+// behaviour on it alone. (Deliberately NOT NODE_ENV==="test": the e2e suite runs
+// against the real dev server and must NOT get the asset/CSS stubs or the
+// no-displayName styled-components, even if invoked with NODE_ENV=test.)
 const isTest = process.env.VITEST === "true";
 
 // Mirror the old Jest transforms (config/jest/{cssTransform,fileTransform}.cjs)
