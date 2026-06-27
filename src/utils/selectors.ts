@@ -1,7 +1,7 @@
-import _ from "lodash";
 import { createSelector } from "reselect";
 
 import { microserviceStatuses } from "utils/constants";
+import { countBy, pick } from "utils/collections";
 
 // Reselect Input Selectors
 
@@ -71,7 +71,7 @@ export function metricsKeySelectorGenerator(keyQuery: string, isPrefix = true) {
     ? (key: string) => key.substr(0, keyQuery.length) === keyQuery
     : (key: string) => key.includes(keyQuery);
   return createSelector(getMetrics, (metrics) =>
-    _.pick(metrics, Object.keys(metrics).filter(filterFunc))
+    pick(metrics, Object.keys(metrics).filter(filterFunc))
   );
 }
 
@@ -125,17 +125,17 @@ function _buildRoutesTree(routeMetrics: Record<string, any>) {
  * @returns {Object}
  */
 export const getStatusCount = createSelector(getServices, (services) => {
-  let statusCount = _.countBy(
-    _.values(services).map((service) => {
+  let statusCount = countBy(
+    Object.values(services).map((service: any) => {
       let status = computeStatus(
         service.instances.length,
         service.minimum,
         service.maximum
       );
-      return _.includes(microserviceStatuses, status) ? status : "Down";
+      return microserviceStatuses.includes(status) ? status : "Down";
     })
   );
-  return _.assign(statusCount, { total: _.values(services).length });
+  return Object.assign(statusCount, { total: Object.values(services).length });
 });
 
 /**

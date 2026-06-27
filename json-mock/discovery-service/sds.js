@@ -2,7 +2,6 @@ import { services } from "./data.js";
 import express from "express";
 import cors from "cors";
 import { createRequire } from "module";
-import _ from "lodash";
 import { PORT } from "../constants.js";
 
 // JSON imports use createRequire for broad Node.js compatibility
@@ -25,16 +24,11 @@ app.listen(PORT, () =>
 //   metricsStore[instance] = Object.assign({}, jvmMetrics);
 // });
 
-// const servicesObj = _.mapKeys(
-//   services,
-//   service => service.name + service.version
-// );
-
 // Takes a optional query string of group
 app.get("/services", cors(), (req, res, next) => {
   if (req.query.group) {
     return res.json(
-      _.filter(services, (service) => service.group === req.query.group)
+      services.filter((service) => service.group === req.query.group)
     );
   } else {
     return res.json(services);

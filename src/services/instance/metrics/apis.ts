@@ -1,4 +1,4 @@
-import _ from "lodash";
+import { mapValues, omitBy } from "utils/collections";
 
 // AJAX Calls to APIs
 export async function fetchInstanceMetrics(endpoint: string) {
@@ -10,6 +10,6 @@ export async function fetchInstanceMetrics(endpoint: string) {
   }
   const data = await response.json();
   // Cast all values to numerics and filter out NaNs
-  const numericData = _.mapValues(data, (value) => Number(value));
-  return _.omitBy(numericData, (value) => Number.isNaN(value));
+  const numericData = mapValues(data, (value) => Number(value));
+  return omitBy(numericData, (value) => Number.isNaN(value));
 }

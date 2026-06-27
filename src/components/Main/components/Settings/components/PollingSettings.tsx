@@ -1,6 +1,6 @@
-import _ from "lodash";
 import React, { Component } from "react";
 import { injectIntl } from "react-intl";
+import { debounce } from "utils/collections";
 
 import InputRange from "./components/InputRange";
 
@@ -42,7 +42,7 @@ class PollingSettings extends Component<
   // slides smoothly and changes to Redux are debounced.
   state = {
     localInterval: this.props.interval / 1000,
-    debouncedSetInterval: _.debounce(this.props.changePollingInterval, 1000)
+    debouncedSetInterval: debounce(this.props.changePollingInterval, 1000)
   };
 
   render() {

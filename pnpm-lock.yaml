@@ -26,9 +26,6 @@ importers:
       js-quantities:
         specifier: ^1.8.0
         version: 1.8.0
-      lodash:
-        specifier: ~4.17.23
-        version: 4.17.23
       object-sizeof:
         specifier: ^1.2.0
         version: 1.2.0
@@ -99,9 +96,6 @@ importers:
       '@types/dygraphs':
         specifier: ^2.1.11
         version: 2.1.11
-      '@types/lodash':
-        specifier: ^4.17.24
-        version: 4.17.24
       '@types/node':
         specifier: ^26.0.1
         version: 26.0.1
@@ -1406,9 +1400,6 @@ packages:
 
   '@types/keyv@3.1.4':
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
-
-  '@types/lodash@4.17.24':
-    resolution: {integrity: sha512-gIW7lQLZbue7lRSWEFql49QJJWThrTFFeIMJdp3eH4tKoxm1OvEPg02rm4wCCSHS0cL3/Fizimb35b7k8atwsQ==}
 
   '@types/node@26.0.1':
     resolution: {integrity: sha512-fc3KiUoBt6kie0N9bIW3E47vZsuaMf0PM2AaUpLCLT0s/LvX1nxAim6Fc049cNxODPpGm6qRAuUOB86SkRuPQw==}
@@ -5543,8 +5534,6 @@ snapshots:
   '@types/keyv@3.1.4':
     dependencies:
       '@types/node': 26.0.1
-
-  '@types/lodash@4.17.24': {}
 
   '@types/node@26.0.1':
     dependencies:

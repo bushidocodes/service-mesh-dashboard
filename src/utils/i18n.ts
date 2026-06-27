@@ -1,4 +1,4 @@
-import _ from "lodash";
+import { uniq } from "./collections";
 
 const SUPPORTED_LOCALES = ["de-DE", "en-US", "es-ES"];
 
@@ -23,7 +23,7 @@ const LOCALE_ALIASES: Record<string, string> = {
 export function getLocale() {
   // Create array of all possible user languages and filter out duplicates
   // Lookup the locale name if it is aliased
-  const locales = _.uniq(
+  const locales = uniq(
     ([] as (string | undefined)[])
       .concat(
         navigator.languages as string[],

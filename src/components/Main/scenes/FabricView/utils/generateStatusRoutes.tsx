@@ -1,6 +1,5 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import _ from "lodash";
 
 import FabricGrid from "../components/FabricGrid";
 
@@ -15,7 +14,7 @@ import { computeStatus } from "utils/selectors";
 
 function generateStatusRoutes(services: any) {
   return microserviceStatuses.map((route: string) => {
-    const filtered = _.values(services).filter((service: any) => {
+    const filtered = Object.values(services).filter((service: any) => {
       let status = computeStatus(
         service.instances.length,
         service.minimum,

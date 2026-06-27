@@ -1,5 +1,5 @@
-import _ from "lodash";
 import Qty from "js-quantities";
+import { isEmpty } from "./collections";
 
 export const INSTANCE_ID_LENGTH = 8;
 
@@ -35,8 +35,8 @@ export function clearFabricIntervalIfNeeded() {
  * @returns {string[]}
  */
 export const convertMS = (ms = 0) => {
-  ms = _.toNumber(ms);
-  if (_.isNaN(ms) || typeof ms !== "number" || ms === 0) return [];
+  ms = Number(ms);
+  if (Number.isNaN(ms) || typeof ms !== "number" || ms === 0) return [];
   let s: any = Math.floor(ms / 1000);
   let m: any = Math.floor(s / 60);
   s = s % 60;
@@ -81,13 +81,14 @@ export const relativeReqPercent = (
   arrObj: Record<string, any>[] = [],
   key = ""
 ) => {
-  if (_.isEmpty(arrObj) || key === "") return arrObj;
-  let max = _.max(_.map(arrObj, key));
+  if (isEmpty(arrObj) || key === "") return arrObj;
+  let max = Math.max(...arrObj.map((el) => el[key]));
   // If we can't find a max value, just return the original array of objects
   if (!max) return arrObj;
-  return _.map(arrObj, (el) =>
-    _.extend({}, el, { relativeReqPercent: (el[key] / max) * 100 })
-  );
+  return arrObj.map((el) => ({
+    ...el,
+    relativeReqPercent: (el[key] / max) * 100
+  }));
 };
 
 /**
@@ -114,8 +115,8 @@ export function calculateErrorPercent(requests: any, errors: any) {
  */
 export function formatAsDecimalString(source: any, numberOfDecimals = 3) {
   if (source === "") return source;
-  const sourceAsNumber = _.toNumber(source);
-  if (_.isNaN(sourceAsNumber) || typeof sourceAsNumber !== "number")
+  const sourceAsNumber = Number(source);
+  if (Number.isNaN(sourceAsNumber) || typeof sourceAsNumber !== "number")
     return source;
 
   return sourceAsNumber.toLocaleString(undefined, {
@@ -133,7 +134,7 @@ export function formatAsDecimalString(source: any, numberOfDecimals = 3) {
 function formatAsDecimalStringFormatter(maxDecimals = 3) {
   return function (scalar: any, units: any) {
     if (scalar === "") return;
-    const scalarAsNumber = _.toNumber(scalar);
+    const scalarAsNumber = Number(scalar);
     return `${scalarAsNumber.toLocaleString(undefined, {
       maximumFractionDigits: maxDecimals,
       minimumFractionDigits: 0

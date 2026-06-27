@@ -1,4 +1,3 @@
-import _ from "lodash";
 import React, { Component } from "react";
 import {
   Sparklines,
@@ -69,8 +68,7 @@ class TableLineItem extends Component<TableLineItemProps, TableLineItemState> {
   // set directly on svg.
   componentDidMount() {
     const SparklineSVG = document.querySelectorAll("svg[preserveAspectRatio]");
-    if (!_.isEmpty(SparklineSVG))
-      _.forEach(SparklineSVG, (svg) => svg.setAttribute("focusable", "false"));
+    SparklineSVG.forEach((svg) => svg.setAttribute("focusable", "false"));
   }
 
   toggleDrawer = (e?: any) => {

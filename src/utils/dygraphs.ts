@@ -1,4 +1,4 @@
-import { cloneDeep, uniq } from "lodash";
+import { uniq } from "./collections";
 
 /**
  * Returns time series data of one or more in Dygraph format
@@ -67,7 +67,7 @@ function _mapOverDygraphKeys(
   if (!attributesToMap || attributesToMap.length === 0) {
     return outputOfDygraphByValue;
   } else {
-    let dygraph = cloneDeep(outputOfDygraphByValue);
+    let dygraph = structuredClone(outputOfDygraphByValue);
     let { data, attributes } = dygraph;
     attributesToMap.forEach((attributeToMap: any) => {
       const positionOfAttributeToMap = attributes.indexOf(attributeToMap);

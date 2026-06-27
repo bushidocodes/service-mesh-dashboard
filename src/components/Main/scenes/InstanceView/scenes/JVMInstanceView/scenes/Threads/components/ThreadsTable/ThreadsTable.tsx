@@ -1,5 +1,5 @@
 import React from "react";
-import _ from "lodash";
+import { isEmpty } from "utils/collections";
 
 import ThreadsTableHeader from "./components/ThreadsTableHeader";
 import ThreadsList from "./components/ThreadsList";
@@ -51,7 +51,7 @@ export default function ThreadsTable({
     // Loop through thread states to preserve the order stopped, idle, active
     // only include headers that have corresponding threads
     let headers = threadStates.filter(
-      (header) => !_.isEmpty(dataGroupedByHeader[header])
+      (header) => !isEmpty(dataGroupedByHeader[header])
     );
 
     return (

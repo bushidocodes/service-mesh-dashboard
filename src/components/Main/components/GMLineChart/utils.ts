@@ -1,5 +1,4 @@
-// importing a single function instead of the whole _
-import isEmpty from "lodash/isEmpty";
+import { isEmpty } from "utils/collections";
 
 /**
  * Converts timeseries with time stamps to a string of values without timestamps

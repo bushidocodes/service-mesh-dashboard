@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import _ from "lodash";
+import { upperFirst } from "utils/collections";
 import { microserviceStatuses } from "utils/constants";
 
 // TODO: Refactor as either styled-component or functional component, not both
@@ -27,7 +27,7 @@ interface TabIconProps {
  * @returns JSX elements
  */
 function TabIcon({ children, name }: TabIconProps) {
-  if (_.includes(microserviceStatuses, _.upperFirst(name))) {
+  if (microserviceStatuses.includes(upperFirst(name))) {
     return (
       <TabIconContainer>
         <StatusIcon status={name} backgroundColor={"currentColor"} />

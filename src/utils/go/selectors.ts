@@ -1,6 +1,6 @@
 import { createSelector } from "reselect";
-import _ from "lodash";
 
+import { uniq, without } from "../collections";
 import { getLatestAttribute } from "../latestAttribute";
 import { getRoutesTree, getRoutesMetrics } from "../selectors";
 import { getDygraphOfValue, mapDygraphKeysToNetChange } from "../dygraphs";
@@ -89,8 +89,8 @@ function _getFunctionsList(functionsMetrics: Record<string, any>) {
   const keys = Object.keys(functionsMetrics);
   if (keys.length > 0) {
     // Grab the function name from the key, filter for uniqueness, and exclude "all" (the rollup metrics key)
-    return _.without(
-      _.uniq(keys.map((key) => key.match(/function\/(.*)\/.*/)?.[1])),
+    return without(
+      uniq(keys.map((key) => key.match(/function\/(.*)\/.*/)?.[1])),
       "all"
     );
   } else {

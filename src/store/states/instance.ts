@@ -1,6 +1,6 @@
 import { State } from "store/jumpstate";
 import objectSizeOf from "object-sizeof";
-import _ from "lodash";
+import { omit } from "utils/collections";
 
 const METRICS_CACHE_MAX_BYTES = 100000000; // ~100MB is 100000000
 
@@ -68,7 +68,7 @@ export default instance;
  */
 export function _sliceMetrics(source = {}) {
   // Deeply clone the complex object to make sure the function stays pure
-  let metrics: any = _.cloneDeep(source);
+  let metrics: any = structuredClone(source);
   // Grab the first timestamp in the ordered array and throw an error if not
   // as expected
   const oldestTimestamp =
@@ -82,7 +82,7 @@ export function _sliceMetrics(source = {}) {
   Object.keys(metrics).forEach((metric) => {
     // Ignore the ordered array of timestamps
     if (metric !== "timestamps") {
-      metrics[metric] = _.omit(metrics[metric], oldestTimestamp);
+      metrics[metric] = omit(metrics[metric], oldestTimestamp);
     }
   });
   // Finally update the array of timestamps

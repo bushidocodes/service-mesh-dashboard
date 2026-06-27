@@ -5,9 +5,9 @@ import { FormattedMessage } from "react-intl";
 import { clearFabricIntervalIfNeeded, slugifyMicroservice } from "utils";
 import { getFabricServer } from "utils/head";
 import { reportError } from "services/notification";
-import _ from "lodash";
+import { memoize } from "utils/collections";
 
-const memoizedSlugifyMicroservice = _.memoize(slugifyMicroservice);
+const memoizedSlugifyMicroservice = memoize(slugifyMicroservice);
 
 export async function fetchFabricMicroservices(fabricServer: string) {
   if (!fabricServer) return Promise.reject("Invalid endpoint");
