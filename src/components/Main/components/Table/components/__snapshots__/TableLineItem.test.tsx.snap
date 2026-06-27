@@ -100,6 +100,7 @@ exports[`<TableLineItem/> > matches snapshot 1`] = `
 
 <li
     class="c0"
+    data-testid="data-row"
     role="link"
     tabindex="0"
   >
@@ -175,6 +176,7 @@ exports[`<TableLineItem/> > matches snapshot 1`] = `
     </div>
     <div
       class="c1"
+      data-testid="route-requests"
       style="text-align: right;"
     >
       14,333

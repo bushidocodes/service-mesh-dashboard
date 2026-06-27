@@ -66,7 +66,7 @@ export default class ServicesListItem extends Component<ServicesListItemProps> {
     }
 
     return (
-      <Line>
+      <Line data-testid="service-list-item" data-status={status}>
         <LineLeft>
           <GMLink
             disabled={!isAccessible}

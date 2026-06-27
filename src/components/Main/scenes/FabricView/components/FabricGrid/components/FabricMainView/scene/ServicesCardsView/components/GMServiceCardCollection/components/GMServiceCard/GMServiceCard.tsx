@@ -100,6 +100,8 @@ export default function GMServiceCard({
       width={width}
       height={height}
       name={status}
+      data-testid="service-card"
+      data-status={status}
     >
       <ServiceLink
         disabled={isAccessible ? null : true}

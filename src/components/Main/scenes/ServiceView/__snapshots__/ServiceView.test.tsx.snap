@@ -391,6 +391,7 @@ exports[`Service View > matches snapshot 1`] = `
       >
         <li
           class="c11"
+          data-testid="instance-row"
           tabindex="0"
         >
           <div
@@ -418,6 +419,7 @@ exports[`Service View > matches snapshot 1`] = `
           </div>
           <div
             class="c8 c15"
+            data-testid="instance-uptime"
           >
             <div
               class="c16"
@@ -439,6 +441,7 @@ exports[`Service View > matches snapshot 1`] = `
         </li>
         <li
           class="c11"
+          data-testid="instance-row"
           tabindex="0"
         >
           <div
@@ -466,6 +469,7 @@ exports[`Service View > matches snapshot 1`] = `
           </div>
           <div
             class="c8 c15"
+            data-testid="instance-uptime"
           >
             <div
               class="c16"
@@ -487,6 +491,7 @@ exports[`Service View > matches snapshot 1`] = `
         </li>
         <li
           class="c11"
+          data-testid="instance-row"
           tabindex="0"
         >
           <div
@@ -514,6 +519,7 @@ exports[`Service View > matches snapshot 1`] = `
           </div>
           <div
             class="c8 c15"
+            data-testid="instance-uptime"
           >
             <div
               class="c16"

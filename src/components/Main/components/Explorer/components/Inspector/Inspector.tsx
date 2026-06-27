@@ -91,6 +91,7 @@ class Inspector extends Component<InspectorProps> {
             {filteredData.map((key) => (
               <InspectorItem
                 active={selectedMetric === key}
+                data-testid="inspector-item"
                 key={key}
                 onClick={(evt: any) => {
                   onClick(evt.target.innerText);

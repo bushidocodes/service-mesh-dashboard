@@ -133,6 +133,7 @@ exports[`FabricHeaderContent > matches snapshot 1`] = `
       aria-current="page"
       class="c1 active"
       data-discover="true"
+      data-testid="nav-tab"
       href="/"
     >
       <div
@@ -191,6 +192,7 @@ exports[`FabricHeaderContent > matches snapshot 1`] = `
     <a
       class="c1"
       data-discover="true"
+      data-testid="nav-tab"
       href="/Down"
     >
       <div
@@ -253,6 +255,7 @@ exports[`FabricHeaderContent > matches snapshot 1`] = `
     <a
       class="c1"
       data-discover="true"
+      data-testid="nav-tab"
       href="/Warning"
     >
       <div
@@ -317,6 +320,7 @@ exports[`FabricHeaderContent > matches snapshot 1`] = `
     <a
       class="c1"
       data-discover="true"
+      data-testid="nav-tab"
       href="/Stable"
     >
       <div

@@ -81,6 +81,7 @@ export default class ThreadsTableLineItem extends Component<
       <TableRow
         isOpen={this.state.isOpen}
         selectable={stack.length > 0}
+        data-testid="thread-row"
         key={id}
         onClick={(evt) => {
           stack.length > 0 ? this.toggleStack(evt) : blurTableRow(evt);
@@ -117,7 +118,7 @@ export default class ThreadsTableLineItem extends Component<
             blurTableRow(evt);
           }}
         >
-          <StackTrace>
+          <StackTrace data-testid="stack-trace">
             <div>{`java.lang.Thread.State: ${state}`}</div>
             {stack.map((value, index) => (
               <div key={index}>{`at ${value}`}</div>

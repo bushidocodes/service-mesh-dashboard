@@ -21,7 +21,7 @@ export default function GMServiceCardCollection({
   items
 }: GMServiceCardCollectionProps) {
   return (
-    <ContentItems>
+    <ContentItems data-testid="service-section">
       {items.map((item) => (
         <GMServiceCard
           authorized={item.authorized}

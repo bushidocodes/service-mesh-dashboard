@@ -31,7 +31,7 @@ interface TabProps {
  */
 function Tab({ href, icon, lines = [], title, chartData }: TabProps) {
   return (
-    <TabLink to={href}>
+    <TabLink to={href} data-testid="nav-tab">
       <TabTitle>
         <TabIcon name={icon}>
           <Glyph name={icon} />

@@ -532,6 +532,7 @@ exports[`RoutesGrid View > matches snapshot 1`] = `
     >
       <li
         class="c11"
+        data-testid="data-row"
         role="link"
         tabindex="0"
       >
@@ -663,6 +664,7 @@ exports[`RoutesGrid View > matches snapshot 1`] = `
         </div>
         <div
           class="c2"
+          data-testid="route-requests"
           style="text-align: right;"
         >
           17,725
@@ -687,6 +689,7 @@ exports[`RoutesGrid View > matches snapshot 1`] = `
       </li>
       <li
         class="c11"
+        data-testid="data-row"
         role="link"
         tabindex="0"
       >
@@ -818,6 +821,7 @@ exports[`RoutesGrid View > matches snapshot 1`] = `
         </div>
         <div
           class="c2"
+          data-testid="route-requests"
           style="text-align: right;"
         >
           1

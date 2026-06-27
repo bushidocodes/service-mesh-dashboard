@@ -25,7 +25,11 @@ class LanguageSelector extends React.Component<{}, LanguageSelectorState> {
   render() {
     const { visible } = this.state;
     return (
-      <LanguageSelectorWrap onClick={this.onClick} visible={visible}>
+      <LanguageSelectorWrap
+        onClick={this.onClick}
+        visible={visible}
+        data-testid="language-selector"
+      >
         <FormattedMessage
           id="languageSelector.languages"
           defaultMessage="Languages"

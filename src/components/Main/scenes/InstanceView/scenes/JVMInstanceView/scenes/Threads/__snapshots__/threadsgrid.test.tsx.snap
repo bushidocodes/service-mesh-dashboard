@@ -488,6 +488,7 @@ exports[`ThreadsGrid View > matches snapshot 1`] = `
     >
       <li
         class="c6"
+        data-testid="thread-row"
         role="link"
         tabindex="0"
       >
