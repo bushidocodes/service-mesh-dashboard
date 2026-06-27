@@ -42,7 +42,7 @@ export default function GMServiceHeader({
   showStatusIcon = false
 }: GMServiceHeaderProps) {
   return (
-    <Heading>
+    <Heading data-testid="service-section-header">
       {showStatusIcon ? (
         <IconWrapper>
           <StatusIcon status={headerTitle} />

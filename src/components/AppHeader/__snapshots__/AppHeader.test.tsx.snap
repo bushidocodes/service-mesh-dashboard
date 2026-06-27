@@ -499,6 +499,7 @@ exports[`AppHeader snapshots > matches snapshot with fabric view tabs 1`] = `
       </ol>
       <div
         class="c8"
+        data-testid="language-selector"
       >
         Languages
         <ul
@@ -585,6 +586,7 @@ exports[`AppHeader snapshots > matches snapshot with fabric view tabs 1`] = `
       <a
         class="c19"
         data-discover="true"
+        data-testid="nav-tab"
         href="/"
       >
         <div
@@ -644,6 +646,7 @@ exports[`AppHeader snapshots > matches snapshot with fabric view tabs 1`] = `
         aria-current="page"
         class="c19 active"
         data-discover="true"
+        data-testid="nav-tab"
         href="/Down"
       >
         <div
@@ -706,6 +709,7 @@ exports[`AppHeader snapshots > matches snapshot with fabric view tabs 1`] = `
       <a
         class="c19"
         data-discover="true"
+        data-testid="nav-tab"
         href="/Warning"
       >
         <div
@@ -770,6 +774,7 @@ exports[`AppHeader snapshots > matches snapshot with fabric view tabs 1`] = `
       <a
         class="c19"
         data-discover="true"
+        data-testid="nav-tab"
         href="/Stable"
       >
         <div
@@ -1333,6 +1338,7 @@ exports[`AppHeader snapshots > matches snapshot with instance view tabs 1`] = `
       </ol>
       <div
         class="c8"
+        data-testid="language-selector"
       >
         Languages
         <ul
@@ -1419,6 +1425,7 @@ exports[`AppHeader snapshots > matches snapshot with instance view tabs 1`] = `
       <a
         class="c19"
         data-discover="true"
+        data-testid="nav-tab"
         href="/"
       >
         <div
@@ -1478,6 +1485,7 @@ exports[`AppHeader snapshots > matches snapshot with instance view tabs 1`] = `
         aria-current="page"
         class="c19 active"
         data-discover="true"
+        data-testid="nav-tab"
         href="/Down"
       >
         <div
@@ -1540,6 +1548,7 @@ exports[`AppHeader snapshots > matches snapshot with instance view tabs 1`] = `
       <a
         class="c19"
         data-discover="true"
+        data-testid="nav-tab"
         href="/Warning"
       >
         <div
@@ -1604,6 +1613,7 @@ exports[`AppHeader snapshots > matches snapshot with instance view tabs 1`] = `
       <a
         class="c19"
         data-discover="true"
+        data-testid="nav-tab"
         href="/Stable"
       >
         <div

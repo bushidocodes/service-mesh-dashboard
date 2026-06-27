@@ -247,1140 +247,1330 @@ exports[`Explorer View > matches snapshot 1`] = `
         >
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             finagle/build/revision
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             finagle/clientregistry/initialresolution_ms
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             finagle/clientregistry/size
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             finagle/future_pool/active_tasks
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             finagle/future_pool/completed_tasks
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             finagle/future_pool/pool_size
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             finagle/timer/deviation_ms.avg
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             finagle/timer/deviation_ms.count
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             finagle/timer/deviation_ms.max
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             finagle/timer/deviation_ms.min
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             finagle/timer/deviation_ms.p50
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             finagle/timer/deviation_ms.p90
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             finagle/timer/deviation_ms.p95
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             finagle/timer/deviation_ms.p99
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             finagle/timer/deviation_ms.p9990
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             finagle/timer/deviation_ms.p9999
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             finagle/timer/deviation_ms.sum
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             finagle/timer/pending_tasks.avg
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             finagle/timer/pending_tasks.count
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             finagle/timer/pending_tasks.max
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             finagle/timer/pending_tasks.min
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             finagle/timer/pending_tasks.p50
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             finagle/timer/pending_tasks.p90
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             finagle/timer/pending_tasks.p95
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             finagle/timer/pending_tasks.p99
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             finagle/timer/pending_tasks.p9990
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             finagle/timer/pending_tasks.p9999
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             finagle/timer/pending_tasks.sum
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             function/CatalogStream/errors.count
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             function/CatalogStream/in_throughput
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             function/CatalogStream/latency_ms.avg
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             function/CatalogStream/latency_ms.count
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             function/CatalogStream/latency_ms.max
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             function/CatalogStream/latency_ms.min
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             function/CatalogStream/latency_ms.p50
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             function/CatalogStream/latency_ms.p90
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             function/CatalogStream/latency_ms.p95
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             function/CatalogStream/latency_ms.p99
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             function/CatalogStream/latency_ms.p9990
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             function/CatalogStream/latency_ms.p9999
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             function/CatalogStream/latency_ms.sum
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             function/CatalogStream/out_throughput
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             function/CatalogStream/requests
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             function/OrderItem/errors.count
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             function/OrderItem/in_throughput
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             function/OrderItem/latency_ms.avg
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             function/OrderItem/latency_ms.count
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             function/OrderItem/latency_ms.max
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             function/OrderItem/latency_ms.min
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             function/OrderItem/latency_ms.p50
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             function/OrderItem/latency_ms.p90
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             function/OrderItem/latency_ms.p95
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             function/OrderItem/latency_ms.p99
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             function/OrderItem/latency_ms.p9990
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             function/OrderItem/latency_ms.p9999
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             function/OrderItem/latency_ms.sum
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             function/OrderItem/out_throughput
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             function/OrderItem/requests
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             http/closes
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             http/connection_duration.count
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             http/connection_received_bytes.count
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             http/connection_requests.count
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             http/connection_sent_bytes.count
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             http/connections
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             http/connects
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             http/dtab/size.count
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             http/handletime_us.count
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             http/nacks
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             http/nonretryable_nacks
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             http/pending
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             http/read_timeout
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             http/received_bytes
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             http/request_latency_ms.count
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             http/request_payload_bytes.count
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             http/requests
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             http/response_payload_bytes.count
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             http/sent_bytes
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             http/socket_unwritable_ms
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             http/socket_writable_ms
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             http/success
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             http/transit_latency_ms.count
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             http/write_timeout
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/application_time_millis
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/classes/current_loaded
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/classes/total_loaded
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/classes/total_unloaded
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/compilation/time_msec
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/fd_count
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/fd_limit
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/gc/PS_MarkSweep/cycles
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/gc/PS_MarkSweep/msec
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/gc/PS_Scavenge/cycles
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/gc/PS_Scavenge/msec
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/gc/cycles
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/gc/eden/pause_msec.count
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/gc/msec
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/heap/committed
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/heap/max
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/heap/used
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/mem/allocations/eden/bytes
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/mem/buffer/direct/count
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/mem/buffer/direct/max
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/mem/buffer/direct/used
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/mem/buffer/mapped/count
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/mem/buffer/mapped/max
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/mem/buffer/mapped/used
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/mem/current/Code_Cache/max
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/mem/current/Code_Cache/used
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/mem/current/Compressed_Class_Space/max
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/mem/current/Compressed_Class_Space/used
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/mem/current/Metaspace/max
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/mem/current/Metaspace/used
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/mem/current/PS_Eden_Space/max
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/mem/current/PS_Eden_Space/used
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/mem/current/PS_Old_Gen/max
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/mem/current/PS_Old_Gen/used
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/mem/current/PS_Survivor_Space/max
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/mem/current/PS_Survivor_Space/used
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/mem/current/used
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/mem/metaspace/max_capacity
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/mem/postGC/PS_Eden_Space/max
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/mem/postGC/PS_Eden_Space/used
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/mem/postGC/PS_Old_Gen/max
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/mem/postGC/PS_Old_Gen/used
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/mem/postGC/PS_Survivor_Space/max
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/mem/postGC/PS_Survivor_Space/used
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/mem/postGC/used
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/nonheap/committed
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/nonheap/max
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/nonheap/used
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/num_cpus
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/postGC/PS_Eden_Space/max
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/postGC/PS_Eden_Space/used
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/postGC/PS_Old_Gen/max
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/postGC/PS_Old_Gen/used
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/postGC/PS_Survivor_Space/max
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/postGC/PS_Survivor_Space/used
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/postGC/used
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/safepoint/count
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/safepoint/sync_time_millis
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/safepoint/total_time_millis
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/start_time
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/tenuring_threshold
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/thread/count
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/thread/daemon_count
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/thread/peak_count
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             jvm/uptime
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             larger_than_threadlocal_out_buffer
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             response_size.count
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             route/functionalroles/GET/errors.count
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             route/functionalroles/GET/in_throughput
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             route/functionalroles/GET/latency_ms.avg
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             route/functionalroles/GET/latency_ms.count
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             route/functionalroles/GET/latency_ms.max
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             route/functionalroles/GET/latency_ms.min
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             route/functionalroles/GET/latency_ms.p50
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             route/functionalroles/GET/latency_ms.p90
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             route/functionalroles/GET/latency_ms.p95
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             route/functionalroles/GET/latency_ms.p99
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             route/functionalroles/GET/latency_ms.p9990
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             route/functionalroles/GET/latency_ms.p9999
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             route/functionalroles/GET/latency_ms.sum
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             route/functionalroles/GET/out_throughput
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             route/functionalroles/GET/requests
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             route/ping/GET/requests
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             route/ping/GET/response_size.count
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             route/ping/GET/status/200
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             route/ping/GET/status/2XX
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             route/ping/GET/time.count
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             route/ping/GET/time/200.count
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             route/ping/GET/time/2XX.count
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             scheduler/blocking_ms
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             scheduler/dispatches
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             service/failure
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             srv/thrift::non-ssl/dtab/size.count
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             srv/thrift::non-ssl/handletime_us.count
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             srv/thrift::non-ssl/pending
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             srv/thrift::non-ssl/request_latency_ms.count
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             srv/thrift::non-ssl/requests
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             srv/thrift::non-ssl/success
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             srv/thrift::non-ssl/transit_latency_ms.count
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             status/200
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             status/2XX
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             time/200.count
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             time/2XX.count
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             toggles/com.twitter.finagle.core/checksum
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             toggles/com.twitter.finagle.http/checksum
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             toggles/com.twitter.finagle.netty4/checksum
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             toggles/com.twitter.finagle.stats/checksum
           </div>
           <div
             class="c8"
+            data-testid="inspector-item"
             tabindex="0"
           >
             toggles/com.twitter.finagle.thrift/checksum

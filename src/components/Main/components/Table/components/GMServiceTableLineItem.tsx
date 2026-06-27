@@ -43,6 +43,7 @@ function GMServiceTableLineItem({
       tabIndex={-1}
       onClick={(evt) => blurTableRow(evt)}
       overflowVisible
+      data-testid="instance-row"
     >
       <TableCol style={{ flex: "1 1 20%" }}>
         {!serviceIsMetered && (
@@ -74,7 +75,7 @@ function GMServiceTableLineItem({
           </GMLink>
         </Tooltip>
       </TableCol>
-      <TableColArray>{uptime}</TableColArray>
+      <TableColArray data-testid="instance-uptime">{uptime}</TableColArray>
     </TableRow>
   );
 }

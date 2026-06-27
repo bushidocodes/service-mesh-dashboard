@@ -486,6 +486,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> > Matches snapshot 1`] = `
     >
       <li
         class="c11"
+        data-testid="data-row"
         role="link"
         tabindex="0"
       >
@@ -567,6 +568,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> > Matches snapshot 1`] = `
         </div>
         <div
           class="c2"
+          data-testid="route-requests"
           style="text-align: right;"
         >
           13
@@ -591,6 +593,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> > Matches snapshot 1`] = `
       </li>
       <li
         class="c11"
+        data-testid="data-row"
         role="link"
         tabindex="0"
       >
@@ -666,6 +669,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> > Matches snapshot 1`] = `
         </div>
         <div
           class="c2"
+          data-testid="route-requests"
           style="text-align: right;"
         >
           13

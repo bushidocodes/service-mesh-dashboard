@@ -133,6 +133,7 @@ exports[`ServiceHeaderContent > matches snapshot 1`] = `
       aria-current="page"
       class="c1 active"
       data-discover="true"
+      data-testid="nav-tab"
       href="/Authentication Statistics File Resource Network Export ICPF Mail Domain End/4.3"
     >
       <div

@@ -54,6 +54,7 @@ function GMLineChart({
     <LineChartDisplay
       height={height}
       role="presentation"
+      data-testid="line-chart"
       aria-label={
         data
           ? screenReaderGraphDescription(data, title, intl)

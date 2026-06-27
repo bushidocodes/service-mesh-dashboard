@@ -194,84 +194,98 @@ exports[`Inspector > matches snapshot 1`] = `
     >
       <div
         class="c6"
+        data-testid="inspector-item"
         tabindex="0"
       >
         finagle/build/revision
       </div>
       <div
         class="c6"
+        data-testid="inspector-item"
         tabindex="0"
       >
         finagle/clientregistry/initialresolution_ms
       </div>
       <div
         class="c6"
+        data-testid="inspector-item"
         tabindex="0"
       >
         finagle/clientregistry/size
       </div>
       <div
         class="c6"
+        data-testid="inspector-item"
         tabindex="0"
       >
         finagle/future_pool/active_tasks
       </div>
       <div
         class="c6"
+        data-testid="inspector-item"
         tabindex="0"
       >
         finagle/future_pool/completed_tasks
       </div>
       <div
         class="c6"
+        data-testid="inspector-item"
         tabindex="0"
       >
         finagle/future_pool/pool_size
       </div>
       <div
         class="c6"
+        data-testid="inspector-item"
         tabindex="0"
       >
         finagle/timer/deviation_ms.avg
       </div>
       <div
         class="c6"
+        data-testid="inspector-item"
         tabindex="0"
       >
         http/closes
       </div>
       <div
         class="c6"
+        data-testid="inspector-item"
         tabindex="0"
       >
         http/connection_duration.count
       </div>
       <div
         class="c6"
+        data-testid="inspector-item"
         tabindex="0"
       >
         http/connection_received_bytes.count
       </div>
       <div
         class="c6"
+        data-testid="inspector-item"
         tabindex="0"
       >
         http/connection_requests.count
       </div>
       <div
         class="c6"
+        data-testid="inspector-item"
         tabindex="0"
       >
         http/connection_sent_bytes.count
       </div>
       <div
         class="c6"
+        data-testid="inspector-item"
         tabindex="0"
       >
         http/connections
       </div>
       <div
         class="c6"
+        data-testid="inspector-item"
         tabindex="0"
       >
         http/connects

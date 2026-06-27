@@ -18,7 +18,7 @@ export default function Readout({
   readoutItems = []
 }: ReadoutProps) {
   return (
-    <ReadoutDisplay primary={primary} cacheCard={cacheCard}>
+    <ReadoutDisplay primary={primary} cacheCard={cacheCard} data-testid="readout">
       {readoutItems.map((item) => (
         <ReadoutItem
           key={`${item.title}|${item.value}|${item.detail}`}

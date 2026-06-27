@@ -1109,9 +1109,11 @@ exports[`SettingsGrid component > Matches snapshot 1`] = `
     >
       <div
         class="c7"
+        data-testid="readout"
       >
         <div
           class="c8"
+          data-testid="readout-item"
         >
           <div
             class="c9"

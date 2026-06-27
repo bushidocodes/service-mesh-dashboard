@@ -88,6 +88,7 @@ exports[`ThreadsTableLineItem component > Matched the snapshot 1`] = `
 
 <li
     class="c0"
+    data-testid="thread-row"
     role="link"
     tabindex="0"
   >

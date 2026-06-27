@@ -272,9 +272,11 @@ exports[`GO > SummaryGrid component > Matched the snapshot 1`] = `
       >
         <div
           class="c8"
+          data-testid="readout"
         >
           <div
             class="c9"
+            data-testid="readout-item"
           >
             <div
               class="c10"
@@ -342,9 +344,11 @@ exports[`GO > SummaryGrid component > Matched the snapshot 1`] = `
         </div>
         <div
           class="c17"
+          data-testid="readout"
         >
           <div
             class="c9"
+            data-testid="readout-item"
           >
             <div
               class="c10"
@@ -394,6 +398,7 @@ exports[`GO > SummaryGrid component > Matched the snapshot 1`] = `
           </div>
           <div
             class="c9"
+            data-testid="readout-item"
           >
             <div
               class="c10"
@@ -456,9 +461,11 @@ exports[`GO > SummaryGrid component > Matched the snapshot 1`] = `
         </div>
         <div
           class="c8"
+          data-testid="readout"
         >
           <div
             class="c9"
+            data-testid="readout-item"
           >
             <div
               class="c10"
@@ -513,6 +520,7 @@ exports[`GO > SummaryGrid component > Matched the snapshot 1`] = `
           </div>
           <div
             class="c9"
+            data-testid="readout-item"
           >
             <div
               class="c10"
@@ -772,6 +780,7 @@ exports[`GO > SummaryGrid component > Matched the snapshot 1`] = `
         <div
           aria-label="The average for currently displayed data is equal to 0."
           class="c7"
+          data-testid="line-chart"
           height="normal"
           role="presentation"
           tabindex="0"

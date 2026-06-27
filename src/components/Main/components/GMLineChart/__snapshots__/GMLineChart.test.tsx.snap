@@ -89,6 +89,7 @@ exports[`<GMLineChart> stateless child component > matches snapshot 1`] = `
 <div
     aria-label="A tabular representation of the Classes chart data: median 10181.00 average 10181.00 mode Mode has frequency of 2 and values of 10181 maximum 10181 minimum 10181 number of observations 2 complete data time series follows 10181,10181"
     class="c0"
+    data-testid="line-chart"
     height="xs"
     role="presentation"
     tabindex="0"

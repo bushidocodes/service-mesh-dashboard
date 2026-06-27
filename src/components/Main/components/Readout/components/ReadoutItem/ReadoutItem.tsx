@@ -49,7 +49,7 @@ export default function ReadoutItem({
   value
 }: ReadoutItemData) {
   return (
-    <ItemDisplay cacheCard={cacheCard}>
+    <ItemDisplay cacheCard={cacheCard} data-testid="readout-item">
       {icon && (
         <ReadoutItemIcon
           iconBackgroundStyle={iconBackgroundStyle}

@@ -84,6 +84,7 @@ class TableLineItem extends Component<TableLineItemProps, TableLineItemState> {
     return (
       <TableRow
         selectable
+        data-testid="data-row"
         isOpen={this.state.isOpen}
         onClick={(evt) => this.toggleDrawer(evt)}
         onKeyDown={(evt) => {
@@ -135,7 +136,7 @@ class TableLineItem extends Component<TableLineItemProps, TableLineItemState> {
             />
           </Sparklines>
         </SparklineCol>
-        <TableCol style={{ textAlign: "right" }}>
+        <TableCol style={{ textAlign: "right" }} data-testid="route-requests">
           {this.props.requests && this.props.requests.toLocaleString()}
         </TableCol>
         <TableCol

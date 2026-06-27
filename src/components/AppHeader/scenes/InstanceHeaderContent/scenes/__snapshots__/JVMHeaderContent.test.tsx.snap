@@ -148,6 +148,7 @@ exports[`JVMHeaderContent > matches snapshot 1`] = `
     <a
       class="c1"
       data-discover="true"
+      data-testid="nav-tab"
       href="/undefined/summary"
     >
       <div
@@ -221,6 +222,7 @@ exports[`JVMHeaderContent > matches snapshot 1`] = `
     <a
       class="c1"
       data-discover="true"
+      data-testid="nav-tab"
       href="/undefined/routes"
     >
       <div
@@ -279,6 +281,7 @@ exports[`JVMHeaderContent > matches snapshot 1`] = `
     <a
       class="c1"
       data-discover="true"
+      data-testid="nav-tab"
       href="/undefined/threads"
     >
       <div
@@ -417,6 +420,7 @@ exports[`JVMHeaderContent > matches snapshot 1`] = `
     <a
       class="c1"
       data-discover="true"
+      data-testid="nav-tab"
       href="/undefined/explorer"
     >
       <div

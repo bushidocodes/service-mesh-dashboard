@@ -53,6 +53,38 @@ transform pipeline. Key points:
   `displayName: false` (and `minify: false`) in tests; it is inlined via
   `server.deps.inline` so it shares the one styled-components instance.
 
+## End-to-end tests (Playwright)
+
+The E2E suite lives in [`e2e/`](e2e) and runs on **Playwright**
+(`@playwright/test`). It replaced the legacy TestCafe + `testcafe-react-selectors`
+suite — do **not** re-add those deps.
+
+```bash
+pnpm test:e2e          # headless run (CI runs this); boots the app itself
+pnpm test:e2e:ui       # interactive UI mode
+pnpm test:e2e:report   # open the last HTML report
+pnpm exec playwright install chromium   # one-time browser download
+```
+
+- [`playwright.config.ts`](playwright.config.ts)'s `webServer` runs `pnpm start`
+  (Vite :3000, which proxies `/services` + `/metrics` to the mock SDS on :9000).
+  Tests hit the proxied origin; locally the dev server is reused, in CI
+  (`CI=true`) Playwright owns it. The `Test` workflow runs the suite as the
+  `e2e` job — the first time the E2E tests run in CI at all.
+- **Selector strategy:** prefer user-facing/stable hooks over component
+  internals (the anti-pattern TestCafe's `ReactSelector` encouraged). Tabs are
+  selected by route `href` (hash routing → `#/…`) or the `data-testid="nav-tab"`
+  on `TabLink`; status/sort dropdowns by the `.gm-select__*` classes; everything
+  else by `data-testid`s added at component usage sites (`service-card`,
+  `instance-row`, `readout`, `line-chart`, `inspector-item`, …). styled-components
+  v6 auto-forwards `data-*`, so these are one-line, snapshot-safe additions.
+- **Test data is random per server boot** (`json-mock/discovery-service/data.js`),
+  but stable for one run. Specs that need the service set fetch it live via
+  `e2e/helpers/sds.ts` (`fetchServices`, `serviceSlug`, `pickByRuntime`) rather
+  than hard-coding — `serviceSlug`/`computeStatus`/`slugify` there mirror
+  `src/utils` and must stay in sync.
+- Use web-first assertions (`toHaveCount`, `expect.poll`) — never fixed waits.
+
 ## State management (the `store/jumpstate` shim)
 
 The Redux store is built on plain `redux@4`. The `State`/`Effect`/`Actions`/
