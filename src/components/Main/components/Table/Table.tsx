@@ -1,5 +1,4 @@
 import React from "react";
-import _ from "lodash";
 
 import TableLineItem from "./components/TableLineItem";
 import GMServiceTableLineItem from "./components/GMServiceTableLineItem";
@@ -60,7 +59,7 @@ function Table({
               <TableLineItem
                 errorPercent={errorPercent}
                 item={getItem(func, route)}
-                key={_.replace(`${func}${route}/${verb}`, "undefined", "")}
+                key={`${func}${route}/${verb}`.replace("undefined", "")}
                 latency50={latency50}
                 latency99={latency99}
                 relativeReqPercent={relativeReqPercent}
@@ -81,7 +80,7 @@ function Table({
                   startTime={instance.start_time}
                   render={(uptime: any) => (
                     <ArrayValue>
-                      {_.map(uptime, (el) => (
+                      {uptime.map((el: string) => (
                         <span key={el}>{el} </span>
                       ))}
                     </ArrayValue>

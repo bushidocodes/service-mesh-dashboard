@@ -1,4 +1,3 @@
-import _ from "lodash";
 import React from "react";
 import { Navigate, useParams } from "react-router-dom";
 import { injectIntl } from "react-intl";
@@ -43,10 +42,9 @@ function ServiceRouteElementInner({
   // Set our authorization booleans
   const userIsAuthorized = service.authorized;
   const serviceIsMetered = service.metered;
-  const serviceIsValid = _.includes(
-    Object.keys(services || {}),
-    selectedServiceSlug
-  );
+  const serviceIsValid =
+    selectedServiceSlug !== undefined &&
+    Object.keys(services || {}).includes(selectedServiceSlug);
   // Set a message to pass to location state if one of the following checks fail
   let message;
   // Checks are ordered by priority of the message

@@ -1,7 +1,6 @@
 import React from "react";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
 import { Actions } from "store/jumpstate";
-import _ from "lodash";
 
 import { fireEvent, screen } from "@testing-library/react";
 
@@ -14,7 +13,7 @@ import FabricGrid from "./FabricGrid";
 // Mock the jumpstate effect used in FabricGrid
 Actions.fetchAndStoreFabricMicroservices = vi.fn();
 
-const mockServices = _.values({
+const mockServices = Object.values({
   "aac-remote-information-v1-0": {
     authorized: true,
     capability: "Crime Fighting",

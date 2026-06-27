@@ -1,4 +1,3 @@
-import _ from "lodash";
 import { formatMetricString } from "./index";
 
 // Dashboard Utility Functions
@@ -32,13 +31,14 @@ export function getLatestAttribute(
   resultUnit?: any
 ) {
   if (!metrics || !key) return 0;
-  // _.has is not suitable because some object become arrays and auto insert
-  // keys from 0...n with values of undefined.
-  const fullPath = _.get(metrics, key);
+  // A direct property lookup is used rather than a path-aware getter because
+  // metrics is a flat object keyed by the full metric string (which itself
+  // contains "." and "/"), not a nested structure.
+  const fullPath = metrics[key];
   if (!fullPath) return 0;
   const latestAttribute =
     fullPath[
-      _.last(_.keys(fullPath).sort((a, b) => Number(a) - Number(b))) as string
+      Object.keys(fullPath).sort((a, b) => Number(a) - Number(b)).at(-1) as string
     ];
   // if baseUnit, resultUnit, and precision and falsy, we pass the value back as a
   // number and leave i18n up to the component calling this function

@@ -1,13 +1,12 @@
 import React, { act } from "react";
 import { render } from "@testing-library/react";
-import _ from "lodash";
 
 import Uptime from "./UpTime";
 import ArrayValue from "components/ArrayValue";
 
 const renderFunc = (uptime: any) => (
   <ArrayValue>
-    {_.map(uptime, (el) => (
+    {uptime.map((el: string) => (
       <span key={el}>{el} </span>
     ))}
   </ArrayValue>

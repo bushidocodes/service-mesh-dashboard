@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import _ from "lodash";
 import { injectIntl } from "react-intl";
+import { has } from "utils/collections";
 
 import Tab from "../../components/Tab";
 
@@ -47,10 +47,10 @@ export class InstanceHeaderContent extends Component<InstanceHeaderContentProps>
   ) {
     const { basePath } = this.props;
     if (Object.keys(dashboards).length > 0) {
-      return _.toPairs(dashboards).map(([key, value]: [string, any]) => {
+      return Object.entries(dashboards).map(([key, value]: [string, any]) => {
         let chartData, lines;
         // Render lines of text if present
-        if (_.has(value, "summaryCard.lines")) {
+        if (has(value, "summaryCard.lines")) {
           lines = value.summaryCard.lines.map((line: any) => {
             return {
               name: intl.formatMessage(line.name),
@@ -59,7 +59,7 @@ export class InstanceHeaderContent extends Component<InstanceHeaderContentProps>
           });
         }
         // Render a chart if present
-        if (_.has(value, "summaryCard.chart")) {
+        if (has(value, "summaryCard.chart")) {
           if (value.summaryCard.chart.type === "value") {
             chartData = getSparkLineOfValue(
               metrics,

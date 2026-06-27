@@ -1,8 +1,7 @@
 import Dygraph from "dygraphs";
-import { isEqual } from "lodash";
 import React, { useEffect, useRef } from "react";
-import _ from "lodash";
 import { formatMetricString } from "utils";
+import { has, isEqual, uniq } from "utils/collections";
 
 import DygraphContainer from "./components/DygraphContainer";
 
@@ -95,7 +94,7 @@ function generateOptions({
   dygraphMetadata?: any;
 }) {
   let options: any = { ...DEFAULT_DYGRAPH_OPTIONS, ...baseOptions };
-  if (!_.has(baseOptions, "labels")) {
+  if (!has(baseOptions, "labels")) {
     options = {
       ...options,
       ...generateLabels(attributes, dygraphMetadata)
@@ -108,14 +107,14 @@ function generateOptions({
   );
   // If a chart all uses the same units, label the Y axis with the
   // appropriate labels
-  const resultUnits = _.values(dygraphMetadata)
+  const resultUnits = Object.values(dygraphMetadata ?? {})
     .map((elem: any) => elem.resultUnit)
     .filter((elem) => elem);
-  const baseUnits = _.values(dygraphMetadata)
+  const baseUnits = Object.values(dygraphMetadata ?? {})
     .map((elem: any) => elem.baseUnit)
     .filter((elem) => elem);
   const universalUnit =
-    _.uniq(resultUnits).length === 1 && _.uniq(baseUnits).length === 1;
+    uniq(resultUnits).length === 1 && uniq(baseUnits).length === 1;
   if (universalUnit) {
     // This width is an algorithmic swag. I assume 10 pixel width per
     // character to support three digits plus a label
@@ -175,8 +174,9 @@ function generatelegendFormatter(
     html += data.series
       .map((ts: any, idx: number) => {
         const match: any =
-          _.find(_.values(dygraphMetadata), ["label", ts.label]) ||
-          DEFAULT_LEGEND_FORMATTING;
+          Object.values(dygraphMetadata).find(
+            (item: any) => item.label === ts.label
+          ) || DEFAULT_LEGEND_FORMATTING;
         const baseUnit = match.baseUnit;
         const resultUnit = match.resultUnit;
         const precision = match.precision;

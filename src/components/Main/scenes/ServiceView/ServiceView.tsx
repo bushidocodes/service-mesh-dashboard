@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Actions } from "store/jumpstate";
-import _ from "lodash";
+import { orderBy } from "utils/collections";
 import { withRouter } from "utils/withRouter";
 import { injectIntl } from "react-intl";
 
@@ -116,7 +116,7 @@ class ServiceView extends Component<ServiceViewProps> {
             type={"Instance"}
             selectedServiceSlug={selectedServiceSlug}
             serviceIsMetered={serviceIsMetered}
-            items={_.orderBy(
+            items={orderBy(
               instances.filter(({ name }) =>
                 name.toLowerCase().includes(filterString.toLowerCase())
               ),

@@ -1,4 +1,3 @@
-import _ from "lodash";
 import React from "react";
 import { injectIntl } from "react-intl";
 
@@ -48,7 +47,7 @@ function JVMHeaderContent({
                 startTime={getLatestAttribute(metrics, "jvm/start_time")}
                 render={(uptime) => (
                   <ArrayValue>
-                    {_.map(uptime, (el) => (
+                    {uptime.map((el: string) => (
                       <span key={el}>{el} </span>
                     ))}
                   </ArrayValue>

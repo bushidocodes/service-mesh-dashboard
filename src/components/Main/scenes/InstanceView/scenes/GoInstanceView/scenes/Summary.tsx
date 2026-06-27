@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import _ from "lodash";
 import { injectIntl } from "react-intl";
 
 import LayoutSection from "components/LayoutSection";
@@ -89,7 +88,7 @@ function SummaryGrid({
                     startTime={startTime}
                     render={(uptime) => (
                       <ArrayValue>
-                        {_.map(uptime, (el) => (
+                        {uptime.map((el: string) => (
                           <span key={el}>{el} </span>
                         ))}
                       </ArrayValue>

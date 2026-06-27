@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import _ from "lodash";
+import { upperFirst } from "utils/collections";
 import { ICON_VIEWBOX_SIZE } from "style/styleVariables";
 
 import Bars from "./Bars";
@@ -137,7 +137,7 @@ export default class Glyph extends Component<GlyphProps> {
   render() {
     let { name, ratio = 1, glyphColor = "currentColor" } = this.props;
     // use upperFirst instead of capitalize to respect camelCase
-    name = _.upperFirst(name);
+    name = upperFirst(name);
 
     // if glyph name is not found, return empty glyph and console log an error message
     if (!(glyphs as Record<string, any>)[name]) {

@@ -1,4 +1,11 @@
-import _ from "lodash";
+// Minimal vanilla replacements for the few lodash helpers this mock used.
+const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+const randomFloat = (min, max) => Math.random() * (max - min) + min;
+const sample = (arr) => arr[Math.floor(Math.random() * arr.length)];
+const round = (value, precision = 0) => {
+  const factor = 10 ** precision;
+  return Math.round(value * factor) / factor;
+};
 
 const serviceNamePrefix = [
   "AAC",
@@ -55,7 +62,7 @@ const serviceNamePostfix = [
 ];
 
 const generateRandomServiceName = () => {
-  let n = _.random(1, 10);
+  let n = randomInt(1, 10);
 
   // shuffle the array and get n prefixes after the shuffle
   return (
@@ -69,7 +76,7 @@ const generateRandomServiceName = () => {
 };
 
 const generateRandomInstanceArray = () => {
-  let n = _.random(0, 5);
+  let n = randomInt(0, 5);
   let arr = [];
   for (let i = 0; i < n; i++) {
     arr.push({
@@ -89,15 +96,15 @@ const getRandomService = (quantity = 150) => {
   arr.push({
     name: "Nachos",
     version: "1.0",
-    owner: _.sample(serviceNamePrefix),
+    owner: sample(serviceNamePrefix),
     capability: "Foods",
-    minimum: _.random(1, 5),
-    maximum: _.random(() => this.minimum, 7),
+    minimum: randomInt(1, 5),
+    maximum: randomInt(0, 7),
     documentation: "https://www.google.com",
     authorized: false,
     metered: true,
     threaded: true,
-    runtime: _.sample(["JVM", "GO"]),
+    runtime: sample(["JVM", "GO"]),
     instances: [
       {
         name: "ee0fa3669fea7e9a0adea649c46bca56",
@@ -108,10 +115,10 @@ const getRandomService = (quantity = 150) => {
   arr.push({
     name: "Grace Hopper Battleship Control Program",
     version: "1.0",
-    owner: _.sample(serviceNamePrefix),
+    owner: sample(serviceNamePrefix),
     capability: "System of Record",
     minimum: 1,
-    maximum: _.random(() => this.minimum, 7),
+    maximum: randomInt(0, 7),
     documentation: "https://en.wikipedia.org/wiki/Grace_Hopper",
     authorized: true,
     metered: false,
@@ -127,15 +134,15 @@ const getRandomService = (quantity = 150) => {
   arr.push({
     name: "Crashy McCrashface (USA USA)",
     version: "1.0",
-    owner: _.sample(serviceNamePrefix),
+    owner: sample(serviceNamePrefix),
     capability: "Foods",
-    minimum: _.random(1, 5),
-    maximum: _.random(() => this.minimum, 7),
+    minimum: randomInt(1, 5),
+    maximum: randomInt(0, 7),
     documentation: "https://www.google.com",
     authorized: true,
     metered: true,
     threaded: true,
-    runtime: _.sample(["JVM", "GO"]),
+    runtime: sample(["JVM", "GO"]),
     instances: [
       {
         name: "ee0fa3669fea7e9a0adea649c46bca56",
@@ -146,16 +153,16 @@ const getRandomService = (quantity = 150) => {
   for (let i = 0; i < quantity; i++) {
     arr.push({
       name: generateRandomServiceName(),
-      version: _.round(_.random(1.0, 5.1), 1).toString(),
-      owner: _.sample(serviceNamePrefix),
+      version: round(randomFloat(1.0, 5.1), 1).toString(),
+      owner: sample(serviceNamePrefix),
       capability: "Crime Fighting",
-      minimum: _.random(1, 5),
-      maximum: _.random(() => this.minimum, 7),
+      minimum: randomInt(1, 5),
+      maximum: randomInt(0, 7),
       documentation: "https://www.google.com",
       authorized: true,
       metered: true,
       threaded: true,
-      runtime: _.sample(["JVM", "GO"]),
+      runtime: sample(["JVM", "GO"]),
       instances: generateRandomInstanceArray()
     });
   }

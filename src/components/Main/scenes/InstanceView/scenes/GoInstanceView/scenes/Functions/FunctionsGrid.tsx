@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import type { RootState } from "types";
-import _ from "lodash";
+import { orderBy } from "utils/collections";
 import { injectIntl } from "react-intl";
 
 import Table from "components/Main/components/Table";
@@ -38,7 +38,7 @@ class FunctionsGrid extends Component<FunctionsGridProps> {
     const sortOrder: ("asc" | "desc")[] =
       ascending === "true" ? ["asc"] : ["desc"];
 
-    return _.orderBy(routes, sortByAttribute, sortOrder);
+    return orderBy(routes, sortByAttribute, sortOrder);
   };
 
   /**

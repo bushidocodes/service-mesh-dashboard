@@ -1,4 +1,3 @@
-import _ from "lodash";
 import React, { Suspense } from "react";
 import { connect } from "react-redux";
 import { Routes, Route } from "react-router-dom";
@@ -50,7 +49,7 @@ function FabricRouter({ services }: FabricRouterProps) {
         {/* For the root route, mount the Fabric Grid, the element used to depict an entire Fabric of microservices*/}
         <Route
           path="/"
-          element={<FabricGrid services={_.values(services)} />}
+          element={<FabricGrid services={Object.values(services || {})} />}
         />
       </Routes>
     </Suspense>

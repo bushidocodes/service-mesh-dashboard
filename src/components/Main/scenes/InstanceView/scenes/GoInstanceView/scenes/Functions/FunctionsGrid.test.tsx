@@ -1,8 +1,8 @@
 import React from "react";
 import { MemoryRouter } from "react-router-dom";
 import configureStore from "redux-mock-store";
-import _ from "lodash";
 import { render, screen, fireEvent, within } from "@testing-library/react";
+import { omitBy } from "utils/collections";
 
 import * as noFuncState from "json/mockReduxState";
 import * as state from "json/mockReduxStateMetrics";
@@ -17,7 +17,7 @@ const mockState = state.default,
   noMetricsState = noFuncState.default;
 
 // Filter out metrics starting with the key function
-noMetricsState.instance.metrics = _.omitBy(
+noMetricsState.instance.metrics = omitBy(
   noFuncState.default.instance.metrics,
   (value, key) => key.substr(0, 8) === "function"
 ) as typeof noMetricsState.instance.metrics;

@@ -1,6 +1,6 @@
-import _ from "lodash";
 import React from "react";
 import { withRouter } from "utils/withRouter";
+import { isEmpty, orderBy } from "utils/collections";
 
 import GMServiceHeader from "components/Main/scenes/FabricView/components/FabricGrid/components/FabricMainView/components/GMServiceHeader";
 import { microserviceStatuses } from "utils/constants";
@@ -46,8 +46,8 @@ function CardsView({
     let verifiedHeaders = headers.filter((header) => {
       // checks to make sure there are microservices within the array
       return (
-        !_.isEmpty(dataGroupedByHeader[header]) &&
-        !_.isEmpty(dataGroupedByHeader[header]?.[0])
+        !isEmpty(dataGroupedByHeader[header]) &&
+        !isEmpty(dataGroupedByHeader[header]?.[0])
       );
     });
 
@@ -63,7 +63,7 @@ function CardsView({
             </SectionHeader>
             <SectionContent>
               <GMServiceCardCollection
-                items={_.orderBy(
+                items={orderBy(
                   dataGroupedByHeader[header],
                   [
                     (item) =>
@@ -86,7 +86,7 @@ function CardsView({
         <GMServiceCardsView>
           <SectionContent>
             <GMServiceCardCollection
-              items={_.orderBy(
+              items={orderBy(
                 services,
                 [
                   (item) =>

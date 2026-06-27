@@ -1,6 +1,6 @@
-import _ from "lodash";
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { uniq } from "utils/collections";
 import { FormattedMessage } from "react-intl";
 
 import GMLineChart from "../GMLineChart";
@@ -88,12 +88,12 @@ class Explorer extends Component<ExplorerProps> {
       return keys.filter((key: string) => {
         // Get the values associated with a key and only return if
         // there is more than one unique value
-        const valuesOfKey = _.values(metrics[key]);
-        return _.uniq(valuesOfKey).length > 1;
+        const valuesOfKey = Object.values(metrics[key]);
+        return uniq(valuesOfKey).length > 1;
       });
     } else if (hideZeroMetric) {
       return keys.filter((key: string) => {
-        return !_.values(metrics[key]).every((val) => val === 0);
+        return !Object.values(metrics[key]).every((val) => val === 0);
       });
     } else return null;
   };

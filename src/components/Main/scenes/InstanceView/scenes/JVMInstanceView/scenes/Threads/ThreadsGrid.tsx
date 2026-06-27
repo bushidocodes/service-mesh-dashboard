@@ -2,7 +2,7 @@ import { Actions, getState } from "store/jumpstate";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import type { RootState } from "types";
-import _ from "lodash";
+import { isEmpty, orderBy } from "utils/collections";
 import { injectIntl } from "react-intl";
 
 import ThreadsTable from "./components/ThreadsTable";
@@ -85,7 +85,7 @@ class ThreadsGrid extends Component<ThreadsGridProps> {
         ? parseInt(thread["id"], 10)
         : thread[sortByAttribute].toLowerCase();
     };
-    return _.orderBy(threads, sortFunc, sortOrder);
+    return orderBy(threads, sortFunc, sortOrder);
   }
 
   render() {
@@ -177,7 +177,7 @@ class ThreadsGrid extends Component<ThreadsGridProps> {
           />
         </ErrorBoundary>
       );
-    } else if (_.isEmpty(threadsError)) {
+    } else if (isEmpty(threadsError)) {
       return (
         <NotFoundError
           errorMsg={intl.formatMessage({
