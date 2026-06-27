@@ -1,29 +1,27 @@
-import axios from "axios";
 import { fetchFabricMicroservices } from "./fabricMicroservices";
 
 // Note: Outside of src directory, so module directory import not possible
 import { staticServices } from "../../../json-mock/discovery-service/staticData";
 
-// axios v1 dropped support for moxios (an unmaintained axios-0.x adapter
-// shim). Mock axios.get directly instead — the function under test only
-// reads response.data, so resolving { data } reproduces moxios's stub.
-vi.mock("axios", () => ({
-  __esModule: true,
-  default: { get: vi.fn() }
-}));
+// The function under test only reads response.ok and response.json(), so a stub
+// Response-shaped object is enough.
+beforeEach(() => {
+  vi.stubGlobal("fetch", vi.fn());
+});
 
 describe("Fabric Microservices Module ", () => {
   afterEach(() => {
-    vi.clearAllMocks();
+    vi.unstubAllGlobals();
   });
 
   // test with static array of mock services
   it("fetches services from the discovery service and maps them with a key of name", () => {
-    vi.mocked(axios.get).mockResolvedValue({ data: staticServices });
+    vi.mocked(fetch).mockResolvedValue({
+      ok: true,
+      json: () => Promise.resolve(staticServices)
+    } as Response);
     return fetchFabricMicroservices("server").then((result) => {
-      expect(axios.get).toHaveBeenCalledWith("server/services", {
-        responseType: "json"
-      });
+      expect(fetch).toHaveBeenCalledWith("server/services");
       return expect(result).toMatchObject({
         "export-team-gateway-up2-management-message-resource-measurement-v1": {
           authorized: true,
@@ -112,6 +110,20 @@ describe("Fabric Microservices Module ", () => {
       });
     });
   });
-  // TODO: restore this test once moxios/axios mocking is updated
-  test.todo("fetches metrics from a microservice via the discovery service");
+  it("rejects without calling fetch when no fabricServer is given", () => {
+    return expect(fetchFabricMicroservices("")).rejects.toMatch(
+      "Invalid endpoint"
+    );
+  });
+
+  it("rejects when the discovery service responds with a non-2xx status", () => {
+    vi.mocked(fetch).mockResolvedValue({
+      ok: false,
+      status: 500,
+      json: () => Promise.resolve({})
+    } as Response);
+    return expect(fetchFabricMicroservices("server")).rejects.toMatch(
+      "Request failed with status 500"
+    );
+  });
 });
