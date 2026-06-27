@@ -1,10 +1,15 @@
-import axios from "axios";
 import _ from "lodash";
 
 // AJAX Calls to APIs
 export async function fetchInstanceMetrics(endpoint: string) {
-  const response = await axios.get(endpoint, { responseType: "json" });
+  const response = await fetch(endpoint);
+  // fetch only rejects on network errors, not on HTTP error statuses, so we
+  // reject non-2xx responses explicitly.
+  if (!response.ok) {
+    return Promise.reject(`Request failed with status ${response.status}`);
+  }
+  const data = await response.json();
   // Cast all values to numerics and filter out NaNs
-  const numericData = _.mapValues(response.data, (value) => Number(value));
+  const numericData = _.mapValues(data, (value) => Number(value));
   return _.omitBy(numericData, (value) => Number.isNaN(value));
 }
