@@ -58,7 +58,7 @@
     "babel-plugin-styled-components": "^1.4.0",
     "cors": "^2.8.4",
     "cross-env": "^10.1.0",
-    "eslint": "^9.0.0",
+    "eslint": "^10.6.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-jsx-a11y": "^6.10.0",
     "eslint-plugin-react": "^7.37.0",
