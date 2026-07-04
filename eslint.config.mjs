@@ -38,7 +38,13 @@ export default [
     },
     settings: {
       react: {
-        version: "detect"
+        // Pin the React major explicitly rather than "detect". eslint-plugin-react
+        // 7.37.5 has not shipped ESLint 10 support (its peer dep still caps at
+        // eslint ^9.7); its "detect" path calls the removed context.getFilename()
+        // and crashes every rule under ESLint 10. Pinning skips that filesystem
+        // detection entirely (also the plugin's recommended, faster setting).
+        // React is pinned to ^18 in package.json — keep this in sync on a major bump.
+        version: "18"
       }
     },
     rules: {
