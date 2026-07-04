@@ -33,6 +33,17 @@ interface Point {
   y: number;
 }
 
+// Props Sparklines injects into each child (SparklinesLine / ReferenceLine) via
+// cloneElement. Declared so the cloneElement cast accepts them under React 19's
+// stricter element-props typing.
+interface InjectedChildProps {
+  data?: number[];
+  points?: Point[];
+  width?: number;
+  height?: number;
+  margin?: number;
+}
+
 interface SparklinesLineProps {
   color?: string;
   data?: number[];
@@ -113,7 +124,9 @@ export function Sparklines({
     <svg {...svgOpts}>
       {Children.map(children, (child) =>
         child
-          ? cloneElement(child as React.ReactElement, {
+          ? // React 19's @types/react defaults ReactElement props to `unknown`, so
+            // type the cast with the props Sparklines injects into its children.
+            cloneElement(child as React.ReactElement<InjectedChildProps>, {
               data,
               points,
               width,
