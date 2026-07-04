@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import type { RootState } from "types";
 import { isEmpty, orderBy } from "utils/collections";
-import { injectIntl } from "react-intl";
+import { injectIntl } from "utils/injectIntl";
 
 import ThreadsTable from "./components/ThreadsTable";
 import ErrorBoundary from "components/ErrorBoundary";

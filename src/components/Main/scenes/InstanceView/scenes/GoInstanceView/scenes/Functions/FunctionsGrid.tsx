@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import type { RootState } from "types";
 import { orderBy } from "utils/collections";
-import { injectIntl } from "react-intl";
+import { injectIntl } from "utils/injectIntl";
 
 import Table from "components/Main/components/Table";
 import TableToolbar from "components/Main/components/TableToolbar";

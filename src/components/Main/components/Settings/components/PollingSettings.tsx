@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { injectIntl } from "react-intl";
+import { injectIntl } from "utils/injectIntl";
 import { debounce } from "utils/collections";
 
 import InputRange from "./components/InputRange";

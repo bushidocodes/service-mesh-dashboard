@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Actions } from "store/jumpstate";
 import { orderBy } from "utils/collections";
 import { withRouter } from "utils/withRouter";
-import { injectIntl } from "react-intl";
+import { injectIntl } from "utils/injectIntl";
 
 import Table from "components/Main/components/Table";
 import TableToolbar from "components/Main/components/TableToolbar";

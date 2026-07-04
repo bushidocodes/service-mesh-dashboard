@@ -1,5 +1,5 @@
 import React from "react";
-import { injectIntl } from "react-intl";
+import { injectIntl } from "utils/injectIntl";
 
 import Tab from "components/AppHeader/components/Tab";
 import TabNav from "components/AppHeader/components/TabNav";

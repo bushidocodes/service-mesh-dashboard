@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { FormattedMessage, injectIntl } from "react-intl";
+import { FormattedMessage } from "react-intl";
+import { injectIntl } from "utils/injectIntl";
 
 import InspectorWrap from "./components/InspectorWrap";
 import InspectorToolbar from "./components/InspectorToolbar";

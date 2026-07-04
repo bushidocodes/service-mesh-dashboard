@@ -1,6 +1,6 @@
 import React from "react";
 import { Navigate, useParams } from "react-router-dom";
-import { injectIntl } from "react-intl";
+import { injectIntl } from "utils/injectIntl";
 
 import { LazyLoader } from "components/LazyLoader";
 

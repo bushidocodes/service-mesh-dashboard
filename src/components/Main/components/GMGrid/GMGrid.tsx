@@ -9,7 +9,7 @@ import React, { Component } from "react";
 import { ResponsiveGridLayout, useContainerWidth } from "react-grid-layout";
 import { connect } from "react-redux";
 import { createGlobalStyle } from "styled-components";
-import { injectIntl } from "react-intl";
+import { injectIntl } from "utils/injectIntl";
 import withRouter from "utils/withRouter";
 
 import GMBasicMetrics from "./components/GMBasicMetrics";

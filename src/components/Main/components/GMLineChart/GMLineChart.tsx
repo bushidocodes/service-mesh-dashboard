@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
-import { injectIntl, FormattedMessage } from "react-intl";
+import { FormattedMessage } from "react-intl";
+import { injectIntl } from "utils/injectIntl";
 
 import DygraphWrapper from "./components/DygraphWrapper";
 import LineChartDisplay from "./components/LineChartDisplay";

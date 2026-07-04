@@ -1,6 +1,6 @@
 import { Actions } from "store/jumpstate";
 import React, { Component } from "react";
-import { injectIntl } from "react-intl";
+import { injectIntl } from "utils/injectIntl";
 
 import withUrlState from "components/withUrlState";
 import { withRouter } from "utils/withRouter";

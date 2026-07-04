@@ -5,7 +5,7 @@ import {
   SparklinesReferenceLine
 } from "components/Sparklines";
 import styled from "styled-components";
-import { injectIntl } from "react-intl";
+import { injectIntl } from "utils/injectIntl";
 
 import GMLineChart from "components/Main/components/GMLineChart";
 import TableRow from "components/Main/components/TableRow";
