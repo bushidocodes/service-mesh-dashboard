@@ -1,6 +1,6 @@
 // NPM Modules
 import React from "react";
-import { injectIntl } from "react-intl";
+import { injectIntl } from "utils/injectIntl";
 // Internal Components
 import SearchInput from "components/Main/components/GMSearchInput";
 import Button from "components/Button";

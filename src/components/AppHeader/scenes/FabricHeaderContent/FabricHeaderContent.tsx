@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import type { RootState } from "types";
 import { withRouter } from "utils/withRouter";
-import { injectIntl } from "react-intl";
+import { injectIntl } from "utils/injectIntl";
 
 import { microserviceStatuses } from "utils/constants";
 import { getStatusCount } from "utils/selectors";

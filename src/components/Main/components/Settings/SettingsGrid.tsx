@@ -4,7 +4,7 @@ import objectSizeOf from "object-sizeof";
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import type { RootState } from "types";
-import { injectIntl } from "react-intl";
+import { injectIntl } from "utils/injectIntl";
 
 import PollingSettings from "./components/PollingSettings";
 import Button from "components/Button";

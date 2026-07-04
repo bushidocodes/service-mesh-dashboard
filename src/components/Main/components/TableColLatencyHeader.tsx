@@ -4,7 +4,8 @@ import styled from "styled-components";
 import { FONT_SIZE_SM, COLOR_CONTENT_MUTED } from "style/styleVariables";
 import TableColHeader from "./TableColHeader";
 import Tooltip from "components/Tooltip";
-import { injectIntl, FormattedMessage } from "react-intl";
+import { FormattedMessage } from "react-intl";
+import { injectIntl } from "utils/injectIntl";
 
 const LatencyHeaderWrap = styled(TableColHeader)`
   display: flex;

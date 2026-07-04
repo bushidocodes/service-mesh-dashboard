@@ -1,5 +1,5 @@
 import React from "react";
-import { injectIntl } from "react-intl";
+import { injectIntl } from "utils/injectIntl";
 
 import TableCol from "components/Main/components/TableCol";
 import TableColArray from "components/Main/components/TableColArray";

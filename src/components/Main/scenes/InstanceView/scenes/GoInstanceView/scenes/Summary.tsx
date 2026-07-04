@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { injectIntl } from "react-intl";
+import { injectIntl } from "utils/injectIntl";
 
 import LayoutSection from "components/LayoutSection";
 import ErrorBoundary from "components/ErrorBoundary";
