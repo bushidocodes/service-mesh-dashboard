@@ -67,10 +67,11 @@ pnpm exec playwright install chromium   # one-time browser download
 ```
 
 - [`playwright.config.ts`](playwright.config.ts)'s `webServer` runs `pnpm start`
-  (Vite :3000, which proxies `/services` + `/metrics` to the mock SDS on :9000).
-  Tests hit the proxied origin; locally the dev server is reused, in CI
-  (`CI=true`) Playwright owns it. The `Test` workflow runs the suite as the
-  `e2e` job — the first time the E2E tests run in CI at all.
+  (Vite :3000 and the mock SDS on :9000). There is no dev proxy — the app
+  fetches from the mock via an absolute URL + CORS (issue #211), so tests
+  that need the mock talk to :9000 directly too. Locally the dev server is
+  reused, in CI (`CI=true`) Playwright owns it. The `Test` workflow runs the
+  suite as the `e2e` job — the first time the E2E tests run in CI at all.
 - **Selector strategy:** prefer user-facing/stable hooks over component
   internals (the anti-pattern TestCafe's `ReactSelector` encouraged). Tabs are
   selected by route `href` (hash routing → `#/…`) or the `data-testid="nav-tab"`

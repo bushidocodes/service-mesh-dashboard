@@ -4,14 +4,15 @@ import { defineConfig, devices } from "@playwright/test";
  * Playwright E2E config for the GM Fabric Dashboard.
  *
  * Replaces the legacy TestCafe runner. The `webServer` block boots the same
- * `pnpm start` the dev workflow uses — Vite on :3000 (which proxies /services
- * and /metrics to the mock discovery service on :9000). Tests run against the
- * proxied origin, so they never talk to :9000 directly.
+ * `pnpm start` the dev workflow uses — Vite on :3000 and the mock discovery
+ * service on :9000. The app fetches from the mock via an absolute URL + CORS,
+ * not a dev proxy (see issue #211), so tests that need the mock talk to
+ * :9000 directly too (see e2e/helpers/sds.ts).
  *
  * Note on test data: the mock SDS generates its service list randomly at
  * startup (json-mock/discovery-service/data.js), but it stays stable for the
  * life of the server process. Tests that need the expected service set fetch it
- * live from `/services` rather than hard-coding or importing a static fixture.
+ * live from :9000 rather than hard-coding or importing a static fixture.
  */
 export default defineConfig({
   testDir: "./e2e/tests",
