@@ -9,7 +9,9 @@ import { FormattedMessage } from "react-intl";
  * @returns {React.element}
  */
 export const getTableHeaders = (type = "") => {
-  let headerNames: React.ReactElement[] = [];
+  // React 19's @types/react types ReactElement.props as `unknown`, so parameterize
+  // the element props to keep `header.props.defaultMessage` readable below.
+  let headerNames: React.ReactElement<{ defaultMessage: string }>[] = [];
   if (type === "Instance") {
     headerNames = [
       <FormattedMessage

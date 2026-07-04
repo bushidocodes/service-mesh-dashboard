@@ -30,7 +30,7 @@ export default function AppFooter() {
           id="footer.copyright"
           defaultMessage="Copyright © 2018 Decipher Technology Studios. All rights reserved.{br}Copyright © 2018 Grey Matter, a Decipher Technology Studios product. All rights reserved."
           description="Footer copyright message"
-          values={{ br: <br /> }}
+          values={{ br: <br key="br" /> }}
         />
       </Copyright>
       <Links>
