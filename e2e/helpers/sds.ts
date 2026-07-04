@@ -14,15 +14,17 @@ export interface MockService {
 }
 
 /**
- * Fetches the live service list from the mock discovery service via the Vite
- * proxy. The mock generates this list randomly at startup but keeps it stable
- * for the life of the server process, so tests derive expectations from it at
- * runtime instead of from a static fixture (see PLAYWRIGHT_MIGRATION_PLAN §4.2).
+ * Fetches the live service list directly from the mock discovery service on
+ * :9000 (the same absolute URL the app itself uses in dev via
+ * getFabricServer() - see src/utils/head.ts and issue #211). The mock
+ * generates this list randomly at startup but keeps it stable for the life
+ * of the server process, so tests derive expectations from it at runtime
+ * instead of from a static fixture (see PLAYWRIGHT_MIGRATION_PLAN §4.2).
  */
 export async function fetchServices(
   request: APIRequestContext
 ): Promise<MockService[]> {
-  const res = await request.get("/services");
+  const res = await request.get("http://localhost:9000/services");
   if (!res.ok()) {
     throw new Error(`GET /services failed: ${res.status()}`);
   }

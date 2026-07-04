@@ -141,13 +141,11 @@ export default defineConfig({
 
   server: {
     port: parseInt(process.env.PORT, 10) || 3000,
-    open: false,
-    // Proxy API requests to the mock discovery service so the browser
-    // never makes cross-origin calls (avoids the CORS issue with absolute URLs).
-    proxy: {
-      "/services": "http://localhost:9000",
-      "/metrics": "http://localhost:9000"
-    }
+    open: false
+    // No dev proxy: getFabricServer() (src/utils/head.ts) resolves an absolute
+    // http://localhost:9000 URL in development, so API calls are cross-origin
+    // by design and rely on the mock discovery service's cors() middleware
+    // (json-mock/discovery-service/sds.js), not a same-origin proxy.
   },
 
   build: {

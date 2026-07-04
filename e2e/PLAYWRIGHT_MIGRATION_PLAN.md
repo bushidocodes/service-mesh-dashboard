@@ -161,11 +161,12 @@ Port by **deriving expected data from the live mock SDS response instead of
 React props** (`helpers/sds.ts`): the mock discovery service generates its
 service list *randomly at startup* (`json-mock/discovery-service/data.js` uses
 `Math.random()` / `_.sample`), so a static fixture import would NOT match what's
-rendered. Instead fetch the live list via the Vite proxy
-(`request.get("/services")`) — it's stable for the life of the one `webServer`
-process — compute unique owners/capabilities in the test, and assert against
-rendered `service-section-header` testids. This is effectively what `.getReact()`
-read indirectly (the same data, post-render), minus the React-internals coupling.
+rendered. Instead fetch the live list directly from the mock SDS on :9000
+(`request.get("http://localhost:9000/services")` — there is no dev proxy, see
+issue #211) — it's stable for the life of the one `webServer` process —
+compute unique owners/capabilities in the test, and assert against rendered
+`service-section-header` testids. This is effectively what `.getReact()` read
+indirectly (the same data, post-render), minus the React-internals coupling.
 
 ### 4.3 Waiting
 

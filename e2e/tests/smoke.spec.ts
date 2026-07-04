@@ -5,7 +5,8 @@ import { test, expect } from "@playwright/test";
  * specs are ported:
  *   1. the `webServer` (`pnpm start`) boots and serves the app on :3000,
  *   2. the app renders, and
- *   3. the Vite proxy to the mock discovery service (:9000) works.
+ *   3. the mock discovery service on :9000 is reachable (the app itself talks
+ *      to it via an absolute URL + CORS, not a dev proxy — see issue #211).
  * Intentionally uses no React-component / testid selectors yet.
  */
 
@@ -19,10 +20,8 @@ test("app shell renders", async ({ page }) => {
   ).toBeVisible();
 });
 
-test("mock discovery service is reachable through the Vite proxy", async ({
-  request
-}) => {
-  const res = await request.get("/services");
+test("mock discovery service is reachable", async ({ request }) => {
+  const res = await request.get("http://localhost:9000/services");
   expect(res.ok()).toBeTruthy();
 
   const services = await res.json();
