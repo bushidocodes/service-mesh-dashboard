@@ -53,7 +53,7 @@
     "@types/react-modal": "^3.16.3",
     "@types/redux-logger": "^3.0.13",
     "@vitejs/plugin-react": "^4.7.0",
-    "@vitest/coverage-v8": "^4.1.9",
+    "@vitest/coverage-v8": "^4.1.10",
     "@vitest/eslint-plugin": "^1.6.20",
     "babel-plugin-styled-components": "^1.4.0",
     "cors": "^2.8.4",
