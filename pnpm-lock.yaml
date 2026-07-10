@@ -124,8 +124,8 @@ importers:
         specifier: ^1.4.0
         version: 1.4.0
       cors:
-        specifier: ^2.8.4
-        version: 2.8.4
+        specifier: ^2.8.6
+        version: 2.8.6
       cross-env:
         specifier: ^10.1.0
         version: 10.1.0
@@ -1805,9 +1805,9 @@ packages:
     resolution: {integrity: sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ==}
     deprecated: core-js@<3.23.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Some versions have web compatibility issues. Please, upgrade your dependencies to the actual version of core-js.
 
-  cors@2.8.4:
-    resolution: {integrity: sha512-ZEDmjGp8X+Slw7pFoWntR1aGcULLoVeKzcyTdR8dfP4LcVooO6oQ2n/vElN7L2RmoJ7mpJGGiseaDr3m3g85eg==}
-    engines: {node: '>=0.10.0'}
+  cors@2.8.6:
+    resolution: {integrity: sha512-tJtZBBHA6vjIAaF6EnIaq6laBBP9aq/Y3ouVJjEfoHbRBcHBAHYcMh/w8LDrk2PvIMMq8gmopa5D4V8RmbrxGw==}
+    engines: {node: '>= 0.10'}
 
   cosmiconfig@7.1.0:
     resolution: {integrity: sha512-AdmX6xUzdNASswsFtmwSt7Vj8po9IuqXm0UXz7QKPuEUmPB4XyjGfaAr2PSuELMwkRMVH1EpIkX5bTZGRB3eCA==}
@@ -6022,7 +6022,7 @@ snapshots:
 
   core-js@2.6.12: {}
 
-  cors@2.8.4:
+  cors@2.8.6:
     dependencies:
       object-assign: 4.1.1
       vary: 1.1.2
