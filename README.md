@@ -60,9 +60,11 @@ Useful commands:
 | `pnpm start` | Vite UI + mock SDS |
 | `pnpm start-ui` | Vite only (no mock service) |
 | `pnpm test` | Vitest (watch locally; once under CI) |
+| `pnpm test:coverage` | Vitest once with coverage (60% lines floor) |
 | `pnpm run lint` | Biome check |
 | `pnpm typecheck` | TypeScript (`tsc --noEmit`) |
-| `pnpm test:e2e` | Playwright end-to-end suite |
+| `pnpm typecheck:e2e` | TypeScript for Playwright e2e project |
+| `pnpm test:e2e` | Playwright end-to-end suite (Chromium) |
 | `pnpm build` | Production Vite build |
 
 For more detail, see [docs/installation.md](docs/installation.md) and [CONTRIBUTING.md](CONTRIBUTING.md). Contributor-facing tooling notes also live in `CLAUDE.md`.

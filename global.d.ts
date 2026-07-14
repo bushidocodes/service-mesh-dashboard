@@ -1,8 +1,8 @@
 // Ambient declarations for non-code imports and untyped modules.
 //
-// Vite resolves asset imports to a URL string at build time; Jest's
-// config/jest/fileTransform.cjs returns the basename string. Either way the
-// imported value is a string, so declare these wildcard modules as such.
+// Vite resolves asset imports to a URL string at build time; Vitest stubs
+// them to the basename string (see vite.config.js testTransformStub). Either
+// way the imported value is a string, so declare these wildcard modules as such.
 
 declare module "*.svg" {
   const src: string;

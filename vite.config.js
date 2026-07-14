@@ -15,10 +15,10 @@ const src = (p) => path.resolve(__dirname, "src", p);
 // no-displayName styled-components, even if invoked with NODE_ENV=test.)
 const isTest = process.env.VITEST === "true";
 
-// Mirror the old Jest transforms (config/jest/{cssTransform,fileTransform}.cjs)
-// under Vitest so snapshots stay byte-stable: style imports become empty objects
-// and static asset imports resolve to just their basename (e.g. "logo.svg")
-// rather than the Vite-resolved URL. Only active during tests.
+// Mirror the old Jest transforms (css/asset stubs) under Vitest so snapshots
+// stay byte-stable: style imports become empty objects and static asset
+// imports resolve to just their basename (e.g. "logo.svg") rather than the
+// Vite-resolved URL. Only active during tests.
 const testTransformStub = {
   name: "test-css-and-asset-stub",
   enforce: "pre",
@@ -129,8 +129,8 @@ export default defineConfig({
     // the old setupFiles + setupFilesAfterEnv ordering closely enough.
     setupFiles: [
       "./config/polyfills.js",
-      "./config/jest/jestSetup.js",
-      "./config/jest/jestTestFrameworkSetup.js"
+      "./config/vitest/jestSetup.js",
+      "./config/vitest/jestTestFrameworkSetup.js"
     ],
     include: [
       "src/**/__tests__/**/*.{js,jsx,ts,tsx}",
@@ -142,12 +142,12 @@ export default defineConfig({
       "src/Storyshots.test.js"
     ],
     // Replicate the Jest moduleNameMapper that swapped @testing-library/react
-    // for the StyleSheetManager-wrapping render (config/jest/rtlWrapper.cjs).
+    // for the StyleSheetManager-wrapping render (config/vitest/rtlWrapper.js).
     // Exact-match regex so the wrapper's own /dist/ subpath require is untouched.
     alias: [
       {
         find: /^@testing-library\/react$/,
-        replacement: path.resolve(__dirname, "config/jest/rtlWrapper.js")
+        replacement: path.resolve(__dirname, "config/vitest/rtlWrapper.js")
       }
     ],
     environmentOptions: { jsdom: { url: "http://localhost" } },
@@ -159,6 +159,26 @@ export default defineConfig({
     server: {
       deps: {
         inline: ["jest-styled-components"]
+      }
+    },
+    // KD-13 / PR-20: 60% line coverage floor. Fail CI when under threshold.
+    // `include` forces uncovered src files into the denominator (default is
+    // only files touched by tests). Stories are not production code; Glyphs
+    // still exercise Glyph.tsx via Glyph.test.tsx and are left included.
+    coverage: {
+      provider: "v8",
+      reporter: ["text", "lcov"],
+      include: ["src/**/*.{js,jsx,ts,tsx}"],
+      exclude: [
+        "src/**/*.{spec,test}.{js,jsx,ts,tsx}",
+        "src/**/__tests__/**",
+        "src/**/__snapshots__/**",
+        "src/**/*.stories.{js,jsx,ts,tsx}",
+        "src/json/**",
+        "src/images/**"
+      ],
+      thresholds: {
+        lines: 60
       }
     }
   }

@@ -44,9 +44,12 @@ transform pipeline. Key points:
 - Test-only behaviour in `vite.config.js` is gated on `process.env.VITEST` (set
   by Vitest), **not** `NODE_ENV` — the e2e suite runs the real dev server with
   `NODE_ENV=test` and must not get the test stubs.
-- `config/jest/jestSetup.js` + `jestTestFrameworkSetup.js` are the setup files
-  (dir name kept for now); `config/jest/rtlWrapper.js` is the ESM
-  StyleSheetManager render wrapper, aliased over `@testing-library/react`.
+- `config/vitest/jestSetup.js` + `jestTestFrameworkSetup.js` are the setup
+  files; `config/vitest/rtlWrapper.js` is the ESM StyleSheetManager render
+  wrapper, aliased over `@testing-library/react`.
+- Line coverage floor is **60%** (`test.coverage.thresholds.lines` via
+  `@vitest/coverage-v8`). CI runs `pnpm test -- --coverage`. Stories and
+  test/json/image fixtures are excluded; Glyphs remain in the denominator.
 - `jest-styled-components` is still used for the **snapshot CSS serializer**
   only (style assertions use `@testing-library/jest-dom`'s `toHaveStyle`).
   `babel-plugin-styled-components` runs with `displayName: false` (and
@@ -64,6 +67,7 @@ suite — do **not** re-add those deps.
 pnpm test:e2e          # headless run (CI runs this); boots the app itself
 pnpm test:e2e:ui       # interactive UI mode
 pnpm test:e2e:report   # open the last HTML report
+pnpm typecheck:e2e     # tsc --noEmit -p e2e (Playwright specs + config)
 pnpm exec playwright install chromium   # one-time browser download
 ```
 
