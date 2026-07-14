@@ -7,7 +7,7 @@ interface BackgroundSquircleProps {
 const title = "Squircle";
 
 function BackgroundSquircle({
-  ratio = 1,
+  ratio: _ratio = 1,
   backgroundColor = "transparent",
   backgroundOpacity = "1"
 }: BackgroundSquircleProps) {

@@ -44,7 +44,7 @@ export default function Icon({
   glyphRatio = 1,
   iconRatio = "1",
   title = "",
-  transform
+  transform: _transform
 }: IconProps) {
   return (
     <StyledSVG

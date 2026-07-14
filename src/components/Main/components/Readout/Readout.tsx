@@ -13,7 +13,7 @@ interface ReadoutProps {
 
 export default function Readout({
   cacheCard,
-  children,
+  children: _children,
   primary,
   readoutItems = []
 }: ReadoutProps) {

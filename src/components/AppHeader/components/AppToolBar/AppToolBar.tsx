@@ -35,7 +35,7 @@ const defaultToolbarButtons = [
  */
 function AppToolBar({
   pathname,
-  hideRoot,
+  hideRoot = true,
   toolbarButtons = defaultToolbarButtons,
   serviceNameLookup = {}
 }: AppToolBarProps) {
@@ -58,7 +58,7 @@ function AppToolBar({
         </BrandText>
       </BrandContainer>
 
-      <Breadcrumbs hideRoot>
+      <Breadcrumbs hideRoot={hideRoot}>
         <Breadcrumb>
           <Link to="/">fabric</Link>
         </Breadcrumb>

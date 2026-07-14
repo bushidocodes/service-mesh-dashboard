@@ -15,11 +15,13 @@ export const getTableHeaders = (type = "") => {
   if (type === "Instance") {
     headerNames = [
       <FormattedMessage
+        key="table.instance"
         id="table.instance"
         defaultMessage="Instance"
         description="Service view table header title"
       />,
       <FormattedMessage
+        key="table.uptime"
         id="table.uptime"
         defaultMessage="Uptime"
         description="Service view table header title"
@@ -28,26 +30,31 @@ export const getTableHeaders = (type = "") => {
   } else {
     headerNames = [
       <FormattedMessage
+        key={`table.${type.toLowerCase()}`}
         id={`table.${type.toLowerCase()}`}
         defaultMessage={type}
         description="Metrics table header title - either 'Route' or 'Function'"
       />,
       <FormattedMessage
+        key="table.requestsSec"
         id="table.requestsSec"
         defaultMessage="Requests/sec"
         description="Metrics table header title"
       />,
       <FormattedMessage
+        key="table.requests"
         id="table.requests"
         defaultMessage="Requests"
         description="Metrics table header title"
       />,
       <FormattedMessage
+        key="table.errorPercent"
         id="table.errorPercent"
         defaultMessage="Error %"
         description="Metrics table header title"
       />,
       <FormattedMessage
+        key="table.latency"
         id="table.latency"
         defaultMessage="Latency"
         description="Metrics table header title"

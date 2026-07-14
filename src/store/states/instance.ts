@@ -47,7 +47,7 @@ const instance = State({
     });
     return { ...state, metrics: result };
   },
-  clearMetrics(state: any, payload: any) {
+  clearMetrics(state: any, _payload: any) {
     return { ...state, metrics: {} };
   }
 });

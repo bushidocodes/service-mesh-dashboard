@@ -19,7 +19,7 @@ export function reportError(
         <h4 className="notification-title">Error</h4>
         <div className="notification-message">{errorLabel}</div>
         <ExtrasContainer>
-          <MessageIcon level={"error"} />
+          <MessageIcon />
           <DismissButton onClick={closeToast} />
         </ExtrasContainer>
       </React.Fragment>

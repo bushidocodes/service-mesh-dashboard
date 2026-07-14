@@ -19,7 +19,7 @@ interface GMServiceTableLineItemProps {
 }
 
 function GMServiceTableLineItem({
-  status,
+  status: _status,
   name,
   uptime,
   path,

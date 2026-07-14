@@ -50,7 +50,7 @@ function ListView({
 
     return (
       <Fragment>
-        {verifiedHeaders.map((header, i) => (
+        {verifiedHeaders.map((header, _i) => (
           <SectionContainer key={header}>
             <SectionHeader>
               <GMServiceHeader

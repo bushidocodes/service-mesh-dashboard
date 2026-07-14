@@ -46,7 +46,7 @@ test.describe("Instance View (common)", () => {
     await expect(instance.chart("Requests Per Second")).toBeVisible();
   });
 
-  test("routes table functionality", async ({ page }) => {
+  test("routes table functionality", async () => {
     await instance.tab("Routes").click();
 
     await expect(instance.dataRows.first()).toBeVisible();

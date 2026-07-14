@@ -2,7 +2,7 @@ import { State } from "store/jumpstate";
 
 const threadsTable = State({
   initial: [],
-  fetchThreadsSuccess(state: any, payload: any) {
+  fetchThreadsSuccess(_state: any, payload: any) {
     const threads = payload.threads;
     const threadIds = threads ? Object.keys(threads) : [];
     if (threadIds.length === 0) return [];
@@ -15,7 +15,7 @@ const threadsTable = State({
       stack: threads[id].stack
     }));
   },
-  clearThreads(state: any, payload: any) {
+  clearThreads(_state: any, _payload: any) {
     return [];
   }
 });

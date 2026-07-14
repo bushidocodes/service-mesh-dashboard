@@ -7,7 +7,7 @@ interface BackgroundCircleSmallProps {
 const title = "Square";
 
 function BackgroundCircleSmall({
-  ratio = 1,
+  ratio: _ratio = 1,
   backgroundColor = "currentColor",
   backgroundOpacity = "1"
 }: BackgroundCircleSmallProps) {

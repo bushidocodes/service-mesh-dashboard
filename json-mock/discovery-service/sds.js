@@ -25,7 +25,7 @@ app.listen(PORT, () =>
 // });
 
 // Takes a optional query string of group
-app.get("/services", cors(), (req, res, next) => {
+app.get("/services", cors(), (req, res) => {
   if (req.query.group) {
     return res.json(
       services.filter((service) => service.group === req.query.group)
@@ -35,7 +35,7 @@ app.get("/services", cors(), (req, res, next) => {
   }
 });
 
-app.get("/metrics/:service/:version/:instance", cors(), (req, res, next) => {
+app.get("/metrics/:service/:version/:instance", cors(), (req, res) => {
   const { service, version, instance } = req.params;
   const selectedService = services.find(
     (serviceObj) =>
@@ -58,7 +58,7 @@ app.get("/metrics/:service/:version/:instance", cors(), (req, res, next) => {
 });
 
 // Note: Just returning the same object for all of the instances.
-app.get("/threads/:service/:version/:instance", cors(), (req, res, next) => {
+app.get("/threads/:service/:version/:instance", cors(), (req, res) => {
   const { service, version, instance } = req.params;
   const selectedService = services.find(
     (serviceObj) =>

@@ -49,7 +49,7 @@ function CardsView({
 
     return (
       <GMServiceViewContainer>
-        {verifiedHeaders.map((header, i) => (
+        {verifiedHeaders.map((header, _i) => (
           <GMServiceCardsView key={header}>
             <SectionHeader>
               <GMServiceHeader

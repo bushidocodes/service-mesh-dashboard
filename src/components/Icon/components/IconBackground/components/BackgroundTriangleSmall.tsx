@@ -7,7 +7,7 @@ interface BackgroundTriangleSmallProps {
 const title = "TriangleSmall";
 
 function BackgroundTriangleSmall({
-  ratio = 1,
+  ratio: _ratio = 1,
   backgroundColor = "transparent",
   backgroundOpacity = "1"
 }: BackgroundTriangleSmallProps) {

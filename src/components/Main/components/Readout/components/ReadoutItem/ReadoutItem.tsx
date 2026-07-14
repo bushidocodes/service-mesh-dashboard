@@ -38,12 +38,12 @@ export default function ReadoutItem({
   detail,
   graphData,
   icon,
-  iconName,
+  iconName: _iconName,
   iconBackgroundStyle,
   iconBorderStyle,
   iconBorderWidth,
-  iconShape,
-  iconColor,
+  iconShape: _iconShape,
+  iconColor: _iconColor,
   title,
   value
 }: ReadoutItemData) {

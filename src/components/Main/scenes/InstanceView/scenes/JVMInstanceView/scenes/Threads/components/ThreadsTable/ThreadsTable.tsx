@@ -34,7 +34,7 @@ export default function ThreadsTable({
     const mappedThreads = filteredThreadData.map((thread) => {
       return {
         ...thread,
-        header: getHeader(thread, groupByAttribute)
+        header: getHeader(thread)
       };
     });
 
@@ -54,13 +54,13 @@ export default function ThreadsTable({
     return (
       <TableDisplay>
         <ThreadsTableHeader />
-        {headers.map((header, idx) => [
-          <ThreadsTableStatusHeader key={`header|${header}|${idx}`}>
+        {headers.map((header) => [
+          <ThreadsTableStatusHeader key={`header|${header}`}>
             <TableColHeader>{header}</TableColHeader>
           </ThreadsTableStatusHeader>,
           <ThreadsList
             threads={dataGroupedByHeader[header] ?? []}
-            key={`list|${header}|${idx}`}
+            key={`list|${header}`}
           />
         ])}
       </TableDisplay>
@@ -75,7 +75,7 @@ export default function ThreadsTable({
   }
 }
 
-function getHeader(thread: ThreadsTableItem, groupByAttribute: string) {
+function getHeader(thread: ThreadsTableItem) {
   switch (thread.state) {
     case "RUNNABLE":
       return "Active";

@@ -168,7 +168,7 @@ class SettingsGrid extends Component<SettingsGridProps, SettingsGridState> {
 
 function mapStateToProps({
   settings: { fabricServer },
-  dashboards,
+  dashboards: _dashboards,
   fabric: { fabricPollingInterval, isPollingFabric, selectedInstanceID },
   instance: {
     metrics,

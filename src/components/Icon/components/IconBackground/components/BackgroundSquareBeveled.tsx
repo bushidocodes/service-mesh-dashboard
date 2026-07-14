@@ -7,7 +7,7 @@ interface BackgroundSquareBeveledProps {
 const title = "SquareBeveled";
 
 function BackgroundSquareBeveled({
-  ratio = 1,
+  ratio: _ratio = 1,
   backgroundColor = "currentColor",
   backgroundOpacity = "1"
 }: BackgroundSquareBeveledProps) {

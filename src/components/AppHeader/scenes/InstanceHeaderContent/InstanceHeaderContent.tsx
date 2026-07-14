@@ -114,7 +114,7 @@ export class InstanceHeaderContent extends Component<InstanceHeaderContentProps>
   }
 }
 
-function mapStateToProps(state: RootState, ownProps: any) {
+function mapStateToProps(state: RootState, _ownProps: any) {
   const {
     instance: { metrics },
     fabric: { services, selectedServiceSlug }
