@@ -7,8 +7,9 @@ on:
     branches: [master]
 
 # Least-privilege GITHUB_TOKEN. Every job here only checks out the code and
-# runs tests/tsc/biome — none write back to the repo — so read-only contents
-# is sufficient. Applied at the workflow level so all jobs inherit it.
+# runs checks that do not write back to the repo (tests/tsc/biome/e2e/storybook)
+# — so read-only contents is sufficient. Applied at the workflow level so all
+# jobs inherit it.
 permissions:
   contents: read
 
@@ -150,8 +151,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      # Static build discovers all *.stories.@(js|jsx|ts|tsx) files and
-      # compiles them with the same Vite pipeline as the app. Fails if the
-      # stories glob misses files or a story fails to build.
+      # Static build compiles Storybook preview/config plus all
+      # *.stories.@(js|jsx|ts|tsx) files through the app Vite pipeline.
+      # Fails if preview, config, or any story cannot compile.
       - name: Build Storybook
         run: pnpm build-storybook
