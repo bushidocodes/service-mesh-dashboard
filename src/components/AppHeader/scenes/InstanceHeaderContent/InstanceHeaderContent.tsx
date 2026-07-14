@@ -1,24 +1,20 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { injectIntl } from "utils/injectIntl";
-import { has } from "utils/collections";
-
-import Tab from "../../components/Tab";
-
-import JVMHeaderContent from "./scenes/JVMHeaderContent";
-import GoHeaderContent from "./scenes/GoHeaderContent";
-import DefaultHeaderContent from "./scenes/DefaultHeaderContent";
-
-import { getBaseInstanceRoute, getDashboards } from "utils/selectors";
-import { parseJSONString } from "utils/latestAttribute";
-import { getSparkLineOfValue, getSparkLineOfNetChange } from "utils/sparklines";
-
 import type {
   RootState,
   RouterHistory,
   RouterLocation,
   RouterMatch
 } from "types";
+import { has } from "utils/collections";
+import { injectIntl } from "utils/injectIntl";
+import { parseJSONString } from "utils/latestAttribute";
+import { getBaseInstanceRoute, getDashboards } from "utils/selectors";
+import { getSparkLineOfNetChange, getSparkLineOfValue } from "utils/sparklines";
+import Tab from "../../components/Tab";
+import DefaultHeaderContent from "./scenes/DefaultHeaderContent";
+import GoHeaderContent from "./scenes/GoHeaderContent";
+import JVMHeaderContent from "./scenes/JVMHeaderContent";
 
 interface InstanceHeaderContentProps {
   basePath?: string;

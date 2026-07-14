@@ -1,6 +1,5 @@
-import { PADDING_BASE, FONT_SIZE_SM } from "style/styleVariables";
-
 import Color from "color";
+import { FONT_SIZE_SM, PADDING_BASE } from "style/styleVariables";
 import styled from "styled-components";
 
 const CARD_SPACING = PADDING_BASE;

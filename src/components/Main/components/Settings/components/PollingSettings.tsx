@@ -1,16 +1,15 @@
+import Button from "components/Button";
+import LayoutSection from "components/LayoutSection";
+import Tooltip from "components/Tooltip";
 import React, { Component } from "react";
-import { injectIntl } from "utils/injectIntl";
-import { debounce } from "utils/collections";
-
-import InputRange from "./components/InputRange";
 
 import { contrastColor } from "style/styleFunctions";
 import { COLOR_SUCCESS, COLOR_WHITE } from "style/styleVariables";
-import Button from "components/Button";
-import LayoutSection from "components/LayoutSection";
+import { debounce } from "utils/collections";
+import { injectIntl } from "utils/injectIntl";
+import InputRange from "./components/InputRange";
 import PollingBtnContainer from "./components/PollingBtnContainer";
 import PollingSliderContainer from "./components/PollingSliderContainer";
-import Tooltip from "components/Tooltip";
 
 interface PollingSettingsProps {
   changePollingInterval: (...args: any[]) => any;

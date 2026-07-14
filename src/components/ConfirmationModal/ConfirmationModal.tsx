@@ -1,16 +1,14 @@
+import Button from "components/Button";
+import Glyph from "components/Glyphs";
+import Icon from "components/Icon";
 import React from "react";
 import { COLOR_DANGER } from "style/styleVariables";
-
 import Actions from "./components/Actions";
 import CancelX from "./components/CancelX";
-import Content from "./components/Content";
 import ConfirmationQuery from "./components/ConfirmationQuery";
+import Content from "./components/Content";
 import SecondaryText from "./components/SecondaryText";
 import StyledModal from "./components/StyledModal";
-
-import Icon from "components/Icon";
-import Glyph from "components/Glyphs";
-import Button from "components/Button";
 
 interface ConfirmationModalProps {
   isOpen: boolean;

@@ -1,9 +1,9 @@
-import React from "react";
-import { FormattedMessage } from "react-intl";
+import TableColHeader from "components/Main/components/TableColHeader";
+import TableColHeaderThread from "components/Main/components/TableColHeaderThread";
 
 import TableHeader from "components/Main/components/TableHeader";
-import TableColHeaderThread from "components/Main/components/TableColHeaderThread";
-import TableColHeader from "components/Main/components/TableColHeader";
+import React from "react";
+import { FormattedMessage } from "react-intl";
 
 /**
  * Stateless functional component that renders threads header columns

@@ -1,5 +1,5 @@
-import React from "react";
 import { fireEvent, screen } from "@testing-library/react";
+import React from "react";
 import { renderWithIntl } from "utils/i18nTesting";
 
 import TableLineItem from "./TableLineItem";

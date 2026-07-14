@@ -1,6 +1,5 @@
+import { CONTENT_MAX_WIDTH, FONT_STACK_DATA } from "style/styleVariables";
 import styled from "styled-components";
-
-import { FONT_STACK_DATA, CONTENT_MAX_WIDTH } from "style/styleVariables";
 
 const TableDisplay = styled.div`
   display: block;

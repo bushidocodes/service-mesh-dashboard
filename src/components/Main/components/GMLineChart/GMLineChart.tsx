@@ -1,18 +1,17 @@
+import Glyph from "components/Glyphs/index";
+import Icon from "components/Icon";
+import Span from "components/Main/components/Span";
 import React, { Fragment } from "react";
 import { FormattedMessage } from "react-intl";
 import { injectIntl } from "utils/injectIntl";
-
 import DygraphWrapper from "./components/DygraphWrapper";
-import LineChartDisplay from "./components/LineChartDisplay";
-import LineChartTitle from "./components/LineChartTitle";
 import LineChartContent from "./components/LineChartContent";
 import LineChartDetails from "./components/LineChartDetails";
+import LineChartDisplay from "./components/LineChartDisplay";
 import LineChartEmpty from "./components/LineChartEmpty";
+import LineChartTitle from "./components/LineChartTitle";
 import LineDetail from "./components/LineDetail";
 import { screenReaderGraphDescription } from "./utils";
-import Span from "components/Main/components/Span";
-import Icon from "components/Icon";
-import Glyph from "components/Glyphs/index";
 
 interface GMLineChartProps {
   detailLines?: any[];

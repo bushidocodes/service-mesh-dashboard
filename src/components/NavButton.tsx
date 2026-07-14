@@ -1,12 +1,10 @@
+import Glyph from "components/Glyphs/";
+import Icon from "components/Icon";
 import React from "react";
 import { NavLink } from "react-router-dom";
-
-import Icon from "components/Icon";
-import Glyph from "components/Glyphs/";
-
-import ButtonWrap from "./Button/components/ButtonWrap";
 import ButtonPrefix from "./Button/components/ButtonLabelPrefix";
 import ButtonSuffix from "./Button/components/ButtonLabelSuffix";
+import ButtonWrap from "./Button/components/ButtonWrap";
 
 interface NavButtonProps {
   active?: boolean;

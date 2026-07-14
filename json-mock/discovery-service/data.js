@@ -1,5 +1,6 @@
 // Minimal vanilla replacements for the few lodash helpers this mock used.
-const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+const randomInt = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1)) + min;
 const randomFloat = (min, max) => Math.random() * (max - min) + min;
 const sample = (arr) => arr[Math.floor(Math.random() * arr.length)];
 const round = (value, precision = 0) => {

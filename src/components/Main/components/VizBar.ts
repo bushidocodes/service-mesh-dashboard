@@ -1,7 +1,6 @@
-import styled from "styled-components";
-
-import { spacingScale, contrastColor } from "style/styleFunctions";
+import { contrastColor, spacingScale } from "style/styleFunctions";
 import { COLOR_CONTENT_BACKGROUND } from "style/styleVariables";
+import styled from "styled-components";
 
 const VizBar = styled.div`
   background-color: ${contrastColor(COLOR_CONTENT_BACKGROUND, 0.1).string()};

@@ -1,16 +1,16 @@
-import React from "react";
 import {
   Sparklines,
   SparklinesLine,
   SparklinesReferenceLine
 } from "components/Sparklines";
+import React from "react";
 
 import DataDisplay from "./DataDisplay";
-import DataTitle from "./DataTitle";
-import DataPair from "./DataPair";
 import DataKey from "./DataKey";
-import DataValue from "./DataValue";
+import DataPair from "./DataPair";
 import DataSparkline from "./DataSparkline";
+import DataTitle from "./DataTitle";
+import DataValue from "./DataValue";
 
 interface GMBasicMetricsProps {
   detailLines: any[];

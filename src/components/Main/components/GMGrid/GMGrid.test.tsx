@@ -1,11 +1,10 @@
-import React from "react";
 import { render, screen } from "@testing-library/react";
-
-import GMBasicMetrics from "./components/GMBasicMetrics";
-import GMLineChart from "../GMLineChart";
-import GMTable from "./components/GMTable";
 import ErrorBoundary from "components/ErrorBoundary";
 import NotFoundError from "components/Main/components/NotFoundError";
+import React from "react";
+import GMLineChart from "../GMLineChart";
+import GMBasicMetrics from "./components/GMBasicMetrics";
+import GMTable from "./components/GMTable";
 
 // Use named export {GMGrid} for unconnected component for tests
 // Connected Components section from https://redux.js.org/docs/recipes/WritingTests.html

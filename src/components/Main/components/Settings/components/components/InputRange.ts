@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import { contrastColor } from "style/styleFunctions";
 
 import { COLOR_BRAND_PRIMARY, COLOR_WHITE } from "style/styleVariables";
-import { contrastColor } from "style/styleFunctions";
+import styled from "styled-components";
 
 const BRAND = COLOR_BRAND_PRIMARY.toString();
 const TRACK = contrastColor(COLOR_WHITE, 0.1).toString();

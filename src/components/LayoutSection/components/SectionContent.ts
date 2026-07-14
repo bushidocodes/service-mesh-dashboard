@@ -1,7 +1,6 @@
-import styled from "styled-components";
-
 import { spacingScale } from "style/styleFunctions";
 import { CONTENT_MAX_WIDTH } from "style/styleVariables";
+import styled from "styled-components";
 
 //the id selectors here are a fix until view-app-settings.scss is refactored
 const SectionContent = styled.div<{ flex?: boolean }>`

@@ -1,7 +1,7 @@
-import { test, expect } from "@playwright/test";
-import ServicePage from "../pages/service.page";
-import { fetchServices, serviceSlug, type MockService } from "../helpers/sds";
+import { expect, test } from "@playwright/test";
+import { fetchServices, type MockService, serviceSlug } from "../helpers/sds";
 import parseUptimeSeconds from "../helpers/uptime";
+import ServicePage from "../pages/service.page";
 
 /**
  * Ported from e2e-tests/tests/service-view.js

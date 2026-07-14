@@ -1,11 +1,10 @@
 import React from "react";
-
-import AppToolBar from "./components/AppToolBar";
-import Tab from "./components/Tab";
-import TabNav from "./components/TabNav";
-import TabGroup from "./components/TabGroup";
 import AppHeaderContainer from "./components/AppHeaderContainer";
+import AppToolBar from "./components/AppToolBar";
 import Banner from "./components/Banner";
+import Tab from "./components/Tab";
+import TabGroup from "./components/TabGroup";
+import TabNav from "./components/TabNav";
 
 const mockTabs: any[] = [
   {

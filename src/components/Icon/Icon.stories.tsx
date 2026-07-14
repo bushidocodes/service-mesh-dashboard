@@ -1,8 +1,6 @@
 import React from "react";
-
-import Icon from "./Icon";
-
 import Glyph from "../Glyphs";
+import Icon from "./Icon";
 
 const glyphNames = [
   "Bars",

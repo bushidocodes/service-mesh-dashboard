@@ -1,20 +1,16 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { uniq } from "utils/collections";
-import { FormattedMessage } from "react-intl";
-
-import GMLineChart from "../GMLineChart";
-import { getDygraphOfValue } from "utils/dygraphs";
-
-import Inspector from "./components/Inspector";
-import ViewExplorer from "./components/ViewExplorer";
-import MetricsList from "./components/MetricsList";
-import MetricsGraphDisplay from "./components/MetricsGraphDisplay";
-
 import ErrorBoundary from "components/ErrorBoundary";
 import withUrlState from "components/withUrlState";
-
+import React, { Component } from "react";
+import { FormattedMessage } from "react-intl";
+import { connect } from "react-redux";
 import type { Metrics, RootState } from "types";
+import { uniq } from "utils/collections";
+import { getDygraphOfValue } from "utils/dygraphs";
+import GMLineChart from "../GMLineChart";
+import Inspector from "./components/Inspector";
+import MetricsGraphDisplay from "./components/MetricsGraphDisplay";
+import MetricsList from "./components/MetricsList";
+import ViewExplorer from "./components/ViewExplorer";
 
 interface ExplorerProps {
   keys?: string[]; // Metrics keys

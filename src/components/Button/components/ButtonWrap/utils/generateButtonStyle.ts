@@ -1,6 +1,5 @@
-import { contrastColor } from "style/styleFunctions";
+import { contrastColor, darkenColor, lightenColor } from "style/styleFunctions";
 import { COLOR_BRAND_PRIMARY, COLOR_WHITE } from "style/styleVariables";
-import { darkenColor, lightenColor } from "style/styleFunctions";
 
 /**
  * Utility function that transforms an object containing different attributes

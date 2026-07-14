@@ -1,10 +1,9 @@
-import React from "react";
-import Icon from "components/Icon";
 import Glyph from "components/Glyphs/";
-
-import ButtonWrap from "./components/ButtonWrap";
+import Icon from "components/Icon";
+import React from "react";
 import ButtonLabelPrefix from "./components/ButtonLabelPrefix";
 import ButtonLabelSuffix from "./components/ButtonLabelSuffix";
+import ButtonWrap from "./components/ButtonWrap";
 
 interface ButtonProps {
   active?: boolean; // If the button should be style as active or not

@@ -4,10 +4,10 @@ import ReactSelect from "react-select";
 const Select = ReactSelect as any;
 
 import {
-  ZINDEX_DROPDOWN,
-  FONT_WEIGHT_SEMIBOLD,
+  FONT_SIZE_BASE,
   FONT_STACK_BASE,
-  FONT_SIZE_BASE
+  FONT_WEIGHT_SEMIBOLD,
+  ZINDEX_DROPDOWN
 } from "style/styleVariables";
 
 import GMSelectSingleValue from "./GMSelectSingleValue";

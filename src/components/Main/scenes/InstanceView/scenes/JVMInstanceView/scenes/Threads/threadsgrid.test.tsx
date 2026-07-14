@@ -1,12 +1,10 @@
-import React from "react";
-import { MemoryRouter } from "react-router-dom";
 import { screen, within } from "@testing-library/react";
-import { Actions } from "store/jumpstate";
-import configureMockStore from "redux-mock-store";
-import { CreateJumpstateMiddleware } from "store/jumpstate";
-
 // Utilities
 import mockState from "json/mockReduxState";
+import React from "react";
+import { MemoryRouter } from "react-router-dom";
+import configureMockStore from "redux-mock-store";
+import { Actions, CreateJumpstateMiddleware } from "store/jumpstate";
 import { renderWithIntl } from "utils/i18nTesting";
 
 // Components

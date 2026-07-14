@@ -1,7 +1,7 @@
-import styled from "styled-components";
-
-import { COLOR_WHITE, COLOR_HIGHLIGHT } from "style/styleVariables";
 import { form_control } from "components/globalPatterns";
+
+import { COLOR_HIGHLIGHT, COLOR_WHITE } from "style/styleVariables";
+import styled from "styled-components";
 
 const InspectorSearch = styled.input`
   ${form_control};

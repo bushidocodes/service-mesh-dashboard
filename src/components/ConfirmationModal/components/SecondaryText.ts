@@ -1,6 +1,5 @@
-import styled from "styled-components";
-
 import { spacingScale } from "style/styleFunctions";
+import styled from "styled-components";
 
 const SecondaryText = styled.p`
   margin: ${spacingScale(1)} 0 0;

@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import { chartHeight } from "style/styleFunctions";
 
 import { CHART_BACKGROUND_COLOR, FONT_STACK_DATA } from "style/styleVariables";
-import { chartHeight } from "style/styleFunctions";
+import styled from "styled-components";
 
 const LineChartDisplay = styled.div.attrs({
   tabIndex: 0

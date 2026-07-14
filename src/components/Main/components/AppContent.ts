@@ -1,6 +1,5 @@
-import styled from "styled-components";
-
 import { COLOR_CONTENT_BACKGROUND } from "style/styleVariables";
+import styled from "styled-components";
 
 // content wrapper - display scrollbar
 // flex-basis has to be set to auto because IE has trouble interpreting flex-basis: 100% and cuts off overflow content at the bottom of the div

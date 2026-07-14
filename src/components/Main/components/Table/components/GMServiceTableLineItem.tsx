@@ -1,13 +1,13 @@
-import React from "react";
-import { injectIntl } from "utils/injectIntl";
+import NoMetrics from "components/Glyphs/NoMetrics";
+import Icon from "components/Icon";
 
 import TableCol from "components/Main/components/TableCol";
 import TableColArray from "components/Main/components/TableColArray";
 import TableRow from "components/Main/components/TableRow";
 import GMLink from "components/Main/scenes/FabricView/components/GMLink";
 import Tooltip from "components/Tooltip";
-import Icon from "components/Icon";
-import NoMetrics from "components/Glyphs/NoMetrics";
+import React from "react";
+import { injectIntl } from "utils/injectIntl";
 
 interface GMServiceTableLineItemProps {
   intl: any;

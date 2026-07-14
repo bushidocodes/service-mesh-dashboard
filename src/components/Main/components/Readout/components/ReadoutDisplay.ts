@@ -1,11 +1,11 @@
-import styled from "styled-components";
+import { contrastColor, spacingScale } from "style/styleFunctions";
 
 import {
-  COLOR_CONTENT_BACKGROUND,
   BORDER_RADIUS_BASE,
+  COLOR_CONTENT_BACKGROUND,
   FONT_STACK_BASE
 } from "style/styleVariables";
-import { contrastColor, spacingScale } from "style/styleFunctions";
+import styled from "styled-components";
 
 // TO-DO: remove cacheCard props passed to readout- styled-components after implementing reusable card component
 // for "cacheCard", overrule flex-basis of 100%

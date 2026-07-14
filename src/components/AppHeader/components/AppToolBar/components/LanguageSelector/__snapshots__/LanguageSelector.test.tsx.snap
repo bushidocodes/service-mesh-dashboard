@@ -2,18 +2,13 @@
 
 exports[`LanguageSelector > matches snapshot 1`] = `
 <DocumentFragment>
-  .c0 {
-  color: rgb(255, 255, 255);
-  font-weight: 700;
-  cursor: pointer;
+  .c2 {
+  padding: 5px 0;
+  list-style-type: none;
 }
 
-.c0 >:first-child {
-  opacity: 0.8;
-}
-
-.c0 >:first-child :hover {
-  opacity: 1;
+.c2 :hover {
+  color: rgb(10, 171, 42);
 }
 
 .c1 {
@@ -36,13 +31,18 @@ exports[`LanguageSelector > matches snapshot 1`] = `
   flex-direction: column;
 }
 
-.c2 {
-  padding: 5px 0;
-  list-style-type: none;
+.c0 {
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  cursor: pointer;
 }
 
-.c2 :hover {
-  color: rgb(10, 171, 42);
+.c0 >:first-child {
+  opacity: 0.8;
+}
+
+.c0 >:first-child :hover {
+  opacity: 1;
 }
 
 <div

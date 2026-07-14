@@ -1,15 +1,14 @@
-import React from "react";
 import { render, screen } from "@testing-library/react";
-
 import state from "json/mockReduxState";
+import React from "react";
 
 // Unconnected named export so we can drive the runtime switch directly via props
 // rather than through connect()+injectIntl(); the connected default export wires
 // `runtime` from state.fabric.services[selectedServiceSlug].runtime.
 import { InstanceHeaderContent } from "./InstanceHeaderContent";
-import JVMHeaderContent from "./scenes/JVMHeaderContent";
-import GoHeaderContent from "./scenes/GoHeaderContent";
 import DefaultHeaderContent from "./scenes/DefaultHeaderContent";
+import GoHeaderContent from "./scenes/GoHeaderContent";
+import JVMHeaderContent from "./scenes/JVMHeaderContent";
 
 // InstanceHeaderContent is a runtime switch that renders exactly ONE of three
 // child scenes. Enzyme asserted this via .find(Component)/.props(); RTL is

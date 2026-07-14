@@ -40,11 +40,9 @@ describe("collections (vanilla lodash replacements)", () => {
     });
 
     test("supports multiple iteratees (key + accessor) with per-key orders", () => {
-      const result = orderBy(
-        data,
-        [(d) => d.n, "name"],
-        ["asc", "asc"]
-      ).map((d) => `${d.n}${d.name}`);
+      const result = orderBy(data, [(d) => d.n, "name"], ["asc", "asc"]).map(
+        (d) => `${d.n}${d.name}`
+      );
       expect(result).toEqual(["1c", "2a", "2b"]);
     });
 
@@ -143,9 +141,9 @@ describe("collections (vanilla lodash replacements)", () => {
 
   describe("isEqual", () => {
     test("deep-compares plain data", () => {
-      expect(isEqual({ a: [1, 2], b: { c: 3 } }, { a: [1, 2], b: { c: 3 } })).toBe(
-        true
-      );
+      expect(
+        isEqual({ a: [1, 2], b: { c: 3 } }, { a: [1, 2], b: { c: 3 } })
+      ).toBe(true);
       expect(isEqual({ a: 1 }, { a: 2 })).toBe(false);
       expect(isEqual([1, 2], [1, 2, 3])).toBe(false);
       expect(isEqual(NaN, NaN)).toBe(true);

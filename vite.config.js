@@ -1,8 +1,9 @@
 /// <reference types="vitest/config" />
-import { defineConfig, transformWithEsbuild } from "vite";
+
 import react from "@vitejs/plugin-react";
 import path from "path";
 import { fileURLToPath } from "url";
+import { defineConfig, transformWithEsbuild } from "vite";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const src = (p) => path.resolve(__dirname, "src", p);

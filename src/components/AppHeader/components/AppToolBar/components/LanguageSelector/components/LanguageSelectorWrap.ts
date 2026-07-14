@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import { COLOR_WHITE } from "style/styleVariables";
+import styled from "styled-components";
 
 const LanguageSelectorWrap = styled.div<{ visible?: boolean }>`
   color: ${COLOR_WHITE.toString()};

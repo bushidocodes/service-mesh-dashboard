@@ -1,6 +1,6 @@
-import { test, expect } from "@playwright/test";
-import FabricPage from "../pages/fabric.page";
+import { expect, test } from "@playwright/test";
 import { fetchServices, uniqueLower } from "../helpers/sds";
+import FabricPage from "../pages/fabric.page";
 
 /**
  * Ported from e2e-tests/tests/fabric-view.js ("Validate Service Counts").
@@ -13,7 +13,9 @@ import { fetchServices, uniqueLower } from "../helpers/sds";
  *  - reading the per-tab count badge and asserting the rendered grid matches.
  */
 test.describe("Fabric View", () => {
-  test("service counts match across views and status tabs", async ({ page }) => {
+  test("service counts match across views and status tabs", async ({
+    page
+  }) => {
     const fabric = new FabricPage(page);
     await fabric.goto();
 
@@ -51,7 +53,11 @@ test.describe("Fabric View", () => {
 
     // Derive a search term from a real card's displayed name (strip the
     // truncation ellipsis, as the old test did), then lowercase it.
-    let term = await fabric.serviceCards.last().locator("a").first().innerText();
+    let term = await fabric.serviceCards
+      .last()
+      .locator("a")
+      .first()
+      .innerText();
     if (term.includes("...")) term = term.slice(0, -4);
     term = term.toLowerCase();
 
@@ -63,8 +69,7 @@ test.describe("Fabric View", () => {
       .poll(async () => {
         const texts = await fabric.serviceCards.allInnerTexts();
         return (
-          texts.length > 0 &&
-          texts.every((t) => t.toLowerCase().includes(term))
+          texts.length > 0 && texts.every((t) => t.toLowerCase().includes(term))
         );
       })
       .toBe(true);

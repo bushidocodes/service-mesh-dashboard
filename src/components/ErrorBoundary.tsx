@@ -1,6 +1,5 @@
-import React from "react";
-
 import NotFoundError from "components/Main/components/NotFoundError";
+import React from "react";
 
 interface ErrorBoundaryProps {
   children?: React.ReactNode;

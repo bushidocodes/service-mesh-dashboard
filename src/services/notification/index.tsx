@@ -1,9 +1,8 @@
-import React from "react";
-import { toast } from "react-toastify";
-
+import DismissButton from "components/Notification/components/DismissButton";
 import ExtrasContainer from "components/Notification/components/ExtrasContainer";
 import MessageIcon from "components/Notification/components/MessageIcon";
-import DismissButton from "components/Notification/components/DismissButton";
+import React from "react";
+import { toast } from "react-toastify";
 
 export function reportError(
   errorLabel: React.ReactNode,

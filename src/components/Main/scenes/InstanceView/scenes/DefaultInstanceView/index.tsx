@@ -1,9 +1,8 @@
-import React, { Suspense } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
-
 import { LazyLoader } from "components/LazyLoader";
 import { Loading } from "components/Loading";
 import NotFound from "components/Main/scenes/InstanceView/components/NotFound";
+import React, { Suspense } from "react";
+import { Navigate, Route, Routes } from "react-router-dom";
 
 const SettingsGrid = LazyLoader({
   loader: () => import("components/Main/components/Settings")

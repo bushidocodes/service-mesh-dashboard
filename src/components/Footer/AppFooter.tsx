@@ -1,14 +1,13 @@
-import { FormattedMessage } from "react-intl";
+import Glyph from "components/Glyphs";
+import Icon from "components/Icon";
 import React from "react";
+import { FormattedMessage } from "react-intl";
+import longLogo from "./assets/decipher-logo-long.png";
 import Copyright from "./components/Copyright";
 import Footer from "./components/Footer";
-import LongLogo from "./components/LongLogo";
-import Links from "./components/Links";
 import Link from "./components/Link";
-import Icon from "components/Icon";
-import Glyph from "components/Glyphs";
-
-import longLogo from "./assets/decipher-logo-long.png";
+import Links from "./components/Links";
+import LongLogo from "./components/LongLogo";
 
 /**
  * Stateless functional React component that renders company branding and social media footer content

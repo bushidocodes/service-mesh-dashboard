@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import { spacingScale } from "style/styleFunctions";
 
 import { FONT_SIZE_LG } from "style/styleVariables";
-import { spacingScale } from "style/styleFunctions";
+import styled from "styled-components";
 
 const LineChartTitle = styled.h3`
   font-size: ${FONT_SIZE_LG};

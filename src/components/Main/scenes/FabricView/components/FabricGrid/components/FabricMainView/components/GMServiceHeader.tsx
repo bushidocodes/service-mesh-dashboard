@@ -1,11 +1,9 @@
-import React from "react";
-import styled from "styled-components";
-
 import StatusIcon from "components/StatusIcon";
-import { FONT_SIZE_LG } from "style/styleVariables";
-import { spacingScale } from "style/styleFunctions";
-
 import ServicesIcon from "images/icons/services.svg";
+import React from "react";
+import { spacingScale } from "style/styleFunctions";
+import { FONT_SIZE_LG } from "style/styleVariables";
+import styled from "styled-components";
 
 const Heading = styled.div`
   font-size: ${FONT_SIZE_LG};

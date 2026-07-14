@@ -2,35 +2,7 @@
 
 exports[`Explorer View > matches snapshot 1`] = `
 <DocumentFragment>
-  .c2 {
-  border-radius: 3px;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  height: 100%;
-  left: 0;
-  line-height: 1.2;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-.c3 {
-  align-items: stretch;
-  box-shadow: 0 1px 0 0 hsl(0, 0%, 92%);
-  display: flex;
-  flex: 0 0 112px;
-  flex-direction: column;
-}
-
-.c3 >* {
-  padding: 8px;
-  display: flex;
-  flex: 1 1 auto;
-}
-
-.c7 {
+  .c7 {
   flex: 1 1 100%;
   margin: 0 auto;
   -webkit-overflow-scrolling: touch;
@@ -38,6 +10,14 @@ exports[`Explorer View > matches snapshot 1`] = `
   padding: 0 8px;
   width: 100%;
   word-break: break-all;
+}
+
+.c6 {
+  color: currentColor;
+}
+
+.c5 {
+  color: currentColor;
 }
 
 .c8 {
@@ -151,12 +131,48 @@ exports[`Explorer View > matches snapshot 1`] = `
   outline: none;
 }
 
-.c5 {
-  color: currentColor;
+.c3 {
+  align-items: stretch;
+  box-shadow: 0 1px 0 0 hsl(0, 0%, 92%);
+  display: flex;
+  flex: 0 0 112px;
+  flex-direction: column;
 }
 
-.c6 {
-  color: currentColor;
+.c3 >* {
+  padding: 8px;
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.c2 {
+  border-radius: 3px;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  height: 100%;
+  left: 0;
+  line-height: 1.2;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.c9 {
+  align-items: center;
+  display: flex;
+  flex: 1 1 100%;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.c1 {
+  border-right: 1px solid hsl(0, 0%, 92%);
+  flex: 0 0 300px;
+  margin-bottom: 16px;
+  position: relative;
 }
 
 .c0 {
@@ -169,25 +185,9 @@ exports[`Explorer View > matches snapshot 1`] = `
   padding: 0 16px 16px;
 }
 
-.c1 {
-  border-right: 1px solid hsl(0, 0%, 92%);
-  flex: 0 0 300px;
-  margin-bottom: 16px;
-  position: relative;
-}
-
-.c9 {
-  align-items: center;
-  display: flex;
-  flex: 1 1 100%;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-}
-
 @media all and (min-width: 800px) {
-  .c0 {
-    flex-direction: row;
+  .c9 {
+    flex: 1 0 60%;
   }
 }
 
@@ -201,8 +201,8 @@ exports[`Explorer View > matches snapshot 1`] = `
 }
 
 @media all and (min-width: 800px) {
-  .c9 {
-    flex: 1 0 60%;
+  .c0 {
+    flex-direction: row;
   }
 }
 

@@ -1,16 +1,14 @@
-import React from "react";
-
-import {
-  COLOR_SUCCESS,
-  COLOR_DANGER,
-  COLOR_WARNING
-} from "style/styleVariables";
-
-import ServicesIcon from "images/icons/services.svg";
-import Icon from "components/Icon";
+import Exclamation from "components/Glyphs/Exclamation";
 import Negation from "components/Glyphs/Negation";
 import RunningSmall from "components/Glyphs/RunningSmall";
-import Exclamation from "components/Glyphs/Exclamation";
+import Icon from "components/Icon";
+import ServicesIcon from "images/icons/services.svg";
+import React from "react";
+import {
+  COLOR_DANGER,
+  COLOR_SUCCESS,
+  COLOR_WARNING
+} from "style/styleVariables";
 
 interface StatusIconProps {
   backgroundColor?: string;

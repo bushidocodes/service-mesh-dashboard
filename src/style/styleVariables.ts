@@ -1,12 +1,12 @@
 import Color from "color";
-import { css, createGlobalStyle } from "styled-components";
-import { contrastColor } from "./styleFunctions";
+import { createGlobalStyle, css } from "styled-components";
 import Metropolis400 from "./fonts/metropolis/Metropolis-Regular.otf";
 import Metropolis600 from "./fonts/metropolis/Metropolis-SemiBold.otf";
-import Rubik400 from "./fonts/Rubik/Rubik-Regular.ttf";
-import Rubik500 from "./fonts/Rubik/Rubik-Medium.ttf";
 import Rubik700 from "./fonts/Rubik/Rubik-Bold.ttf";
+import Rubik500 from "./fonts/Rubik/Rubik-Medium.ttf";
+import Rubik400 from "./fonts/Rubik/Rubik-Regular.ttf";
 import SourceCodePro400 from "./fonts/Source_Code_Pro/SourceCodePro-Regular.ttf";
+import { contrastColor } from "./styleFunctions";
 
 export const COLOR_BRAND_PRIMARY = Color("#0aab2a");
 export const COLOR_BRAND_SECONDARY = Color("#002e6e");

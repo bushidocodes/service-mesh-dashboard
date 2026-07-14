@@ -1,9 +1,8 @@
+import mockstate from "json/mockReduxState";
 import {
   buildDiscoveryServiceInstanceMetricsEndpoint,
   clearInstanceMetricsPollingIntervalIfNeeded
 } from "./utils";
-
-import mockstate from "json/mockReduxState";
 
 const mockGetState = vi.fn(() => mockstate);
 

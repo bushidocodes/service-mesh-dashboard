@@ -1,16 +1,15 @@
+import isPropValid from "@emotion/is-prop-valid";
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import { HashRouter } from "react-router-dom";
 import { StyleSheetManager } from "styled-components";
-import isPropValid from "@emotion/is-prop-valid";
-
+import ConnectedIntlProvider from "./ConnectedIntlProvider";
 import AppContainer from "./components/AppContainer";
 import AppHeader from "./components/AppHeader";
 import AppFooter from "./components/Footer";
-import Notification from "./components/Notification";
-import ConnectedIntlProvider from "./ConnectedIntlProvider";
 import Main from "./components/Main";
+import Notification from "./components/Notification";
 import store from "./store";
 import "./services";
 import { GlobalFontStyles } from "./style/styleVariables";

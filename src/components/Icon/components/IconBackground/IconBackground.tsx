@@ -1,14 +1,13 @@
 import React, { Component } from "react";
-
+import BackgroundCircleSmall from "./components/BackgroundCircleSmall";
 import BackgroundSquare from "./components/BackgroundSquare";
 import BackgroundSquareBeveled from "./components/BackgroundSquareBeveled";
 import BackgroundSquareRounded from "./components/BackgroundSquareRounded";
 import BackgroundSquareRoundedSmooth from "./components/BackgroundSquareRoundedSmooth";
-import BackgroundTriangle from "./components/BackgroundTriangle";
-import BackgroundSquircle from "./components/BackgroundSquircle";
-import BackgroundCircleSmall from "./components/BackgroundCircleSmall";
-import BackgroundTriangleSmall from "./components/BackgroundTriangleSmall";
 import BackgroundSquareSmall from "./components/BackgroundSquareSmall";
+import BackgroundSquircle from "./components/BackgroundSquircle";
+import BackgroundTriangle from "./components/BackgroundTriangle";
+import BackgroundTriangleSmall from "./components/BackgroundTriangleSmall";
 
 interface IconBackgroundProps {
   backgroundColor?: string;

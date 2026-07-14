@@ -1,12 +1,12 @@
-import styled from "styled-components";
+import { contrastColor, edgeColor, spacingScale } from "style/styleFunctions";
 
 import {
   CHART_BACKGROUND_COLOR,
-  FONT_SIZE_LG,
+  COLOR_CONTENT_MUTED,
   COLOR_WARNING,
-  COLOR_CONTENT_MUTED
+  FONT_SIZE_LG
 } from "style/styleVariables";
-import { spacingScale, edgeColor, contrastColor } from "style/styleFunctions";
+import styled from "styled-components";
 
 const LineChartEmpty = styled.div`
   flex: 1 0 auto;

@@ -1,6 +1,5 @@
-import React, { Component } from "react";
-
-import StackTrace from "./components/StackTrace";
+import Glyph from "components/Glyphs/";
+import Icon from "components/Icon";
 
 import TableCol from "components/Main/components/TableCol";
 import TableColThread from "components/Main/components/TableColThread";
@@ -8,10 +7,9 @@ import TableDrawerCollapse from "components/Main/components/TableDrawerCollapse"
 import TableRow from "components/Main/components/TableRow";
 
 import StatusIcon from "components/StatusIcon";
-import Icon from "components/Icon";
-import Glyph from "components/Glyphs/";
-
+import React, { Component } from "react";
 import { blurTableRow } from "utils";
+import StackTrace from "./components/StackTrace";
 
 interface ThreadsTableLineItemProps {
   daemon?: boolean;

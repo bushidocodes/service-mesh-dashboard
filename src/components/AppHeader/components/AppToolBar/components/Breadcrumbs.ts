@@ -1,6 +1,5 @@
-import styled from "styled-components";
-
 import { hide } from "components/globalPatterns";
+import styled from "styled-components";
 
 const Breadcrumbs = styled.ol<{ hideRoot?: boolean }>`
   align-items: stretch;

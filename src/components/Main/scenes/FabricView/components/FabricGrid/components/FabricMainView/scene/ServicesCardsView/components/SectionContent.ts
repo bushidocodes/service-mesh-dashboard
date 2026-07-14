@@ -1,6 +1,5 @@
-import styled from "styled-components";
-
 import { CONTENT_MAX_WIDTH, PADDING_BASE } from "style/styleVariables";
+import styled from "styled-components";
 
 const SectionContent = styled.div`
   display: flex;

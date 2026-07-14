@@ -1,9 +1,7 @@
-import React from "react";
-
-import MessageIconContainer from "./components/MessageIconContainer";
-
-import Icon from "components/Icon";
 import Exclamation from "components/Glyphs/Exclamation";
+import Icon from "components/Icon";
+import React from "react";
+import MessageIconContainer from "./components/MessageIconContainer";
 
 interface MessageIconProps {
   level?: "info" | "error" | "warning" | "success";

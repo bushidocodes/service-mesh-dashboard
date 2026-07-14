@@ -1,11 +1,11 @@
-import styled from "styled-components";
+import { spacingScale } from "style/styleFunctions";
 
 import {
+  BORDER_RADIUS_BASE,
   COLOR_HIGHLIGHT,
-  COLOR_WHITE,
-  BORDER_RADIUS_BASE
+  COLOR_WHITE
 } from "style/styleVariables";
-import { spacingScale } from "style/styleFunctions";
+import styled from "styled-components";
 
 const InspectorItem = styled.div<{ active?: boolean }>`
   border-radius: ${BORDER_RADIUS_BASE};

@@ -1,11 +1,11 @@
-import styled from "styled-components";
+import { spacingScale } from "style/styleFunctions";
 
 import {
   COLOR_CONTENT_BACKGROUND,
-  ZINDEX_STICKY,
-  CONTENT_MAX_WIDTH
+  CONTENT_MAX_WIDTH,
+  ZINDEX_STICKY
 } from "style/styleVariables";
-import { spacingScale } from "style/styleFunctions";
+import styled from "styled-components";
 
 const SectionHeader = styled.div`
   width: 100%;

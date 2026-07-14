@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import { spacingScale } from "style/styleFunctions";
 
 import { CONTENT_MAX_WIDTH } from "style/styleVariables";
-import { spacingScale } from "style/styleFunctions";
+import styled from "styled-components";
 
 const SectionContent = styled.div`
   display: flex;

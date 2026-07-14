@@ -1,6 +1,5 @@
-import React from "react";
-
 import SecondaryText from "components/SecondaryText";
+import React from "react";
 
 interface GMSelectValueRendererProps {
   title: string;

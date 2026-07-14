@@ -1,8 +1,6 @@
-import styled from "styled-components";
-
 import { contrastColor, spacingScale } from "style/styleFunctions";
-import { COLOR_ALT_BACKGROUND } from "style/styleVariables";
-import { media } from "style/styleVariables";
+import { COLOR_ALT_BACKGROUND, media } from "style/styleVariables";
+import styled from "styled-components";
 
 const APP_TOOLBAR_BACKGROUND_COLOR = COLOR_ALT_BACKGROUND.string();
 

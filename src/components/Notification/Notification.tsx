@@ -5,9 +5,9 @@ import { createGlobalStyle } from "styled-components";
 import "react-toastify/dist/ReactToastify.css";
 
 import {
-  NotificationWrapper,
   NotificationBody,
-  NotificationTitle
+  NotificationTitle,
+  NotificationWrapper
 } from "./style";
 
 // Inject our "faux" styled-components that contain react-toastify's

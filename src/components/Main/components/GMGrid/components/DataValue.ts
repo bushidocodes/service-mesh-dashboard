@@ -1,6 +1,5 @@
-import styled from "styled-components";
-
 import { spacingScale } from "style/styleFunctions";
+import styled from "styled-components";
 
 const DataValue = styled.div`
   flex: 1 1 33%;

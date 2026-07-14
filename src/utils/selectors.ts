@@ -1,7 +1,6 @@
 import { createSelector } from "reselect";
-
-import { microserviceStatuses } from "utils/constants";
 import { countBy, pick } from "utils/collections";
+import { microserviceStatuses } from "utils/constants";
 
 // Reselect Input Selectors
 

@@ -1,8 +1,6 @@
-import React from "react";
-
-import ReadoutItemIconStyle from "./components/ReadoutItemIconStyle";
-
 import Icon from "components/Icon/index";
+import React from "react";
+import ReadoutItemIconStyle from "./components/ReadoutItemIconStyle";
 
 interface ReadoutItemIconProps {
   children?: React.ReactNode;

@@ -1,12 +1,11 @@
 import { createSelector } from "reselect";
-
-import { uniq, without } from "../collections";
-import { getLatestAttribute } from "../latestAttribute";
-import { getRoutesTree, getRoutesMetrics } from "../selectors";
-import { getDygraphOfValue, mapDygraphKeysToNetChange } from "../dygraphs";
-import { getSparkLineOfNetChange } from "../sparklines";
 import { calculateErrorPercent } from "utils";
 import { metricsKeySelectorGenerator } from "utils/selectors";
+import { uniq, without } from "../collections";
+import { getDygraphOfValue, mapDygraphKeysToNetChange } from "../dygraphs";
+import { getLatestAttribute } from "../latestAttribute";
+import { getRoutesMetrics, getRoutesTree } from "../selectors";
+import { getSparkLineOfNetChange } from "../sparklines";
 
 /**
  * A reselect selector that builds the data required to render the RoutesTable component

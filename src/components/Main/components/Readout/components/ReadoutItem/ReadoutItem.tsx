@@ -1,18 +1,17 @@
-import React from "react";
+import Glyph from "components/Glyphs/index";
 import {
   Sparklines,
   SparklinesLine,
   SparklinesReferenceLine
 } from "components/Sparklines";
-
-import Glyph from "components/Glyphs/index";
+import React from "react";
 import ItemDisplay from "./components/ItemDisplay";
 import ReadoutItemData from "./components/ReadoutItemData";
+import ReadoutItemDetail from "./components/ReadoutItemDetail";
 import ReadoutItemGraph from "./components/ReadoutItemGraph";
 import ReadoutItemIcon from "./components/ReadoutItemIcon";
 import ReadoutItemTitle from "./components/ReadoutItemTitle";
 import ReadoutItemValue from "./components/ReadoutItemValue";
-import ReadoutItemDetail from "./components/ReadoutItemDetail";
 
 export interface ReadoutItemData {
   cacheCard?: boolean;

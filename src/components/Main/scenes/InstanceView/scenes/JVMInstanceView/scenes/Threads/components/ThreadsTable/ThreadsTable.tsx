@@ -1,14 +1,12 @@
-import React from "react";
-import { isEmpty } from "utils/collections";
-
-import ThreadsTableHeader from "./components/ThreadsTableHeader";
-import ThreadsList from "./components/ThreadsList";
-import ThreadsTableStatusHeader from "./components/ThreadsTableStatusHeader";
 import TableColHeader from "components/Main/components/TableColHeader";
 import TableDisplay from "components/Main/components/TableDisplay";
-import { threadStates } from "utils/constants";
-
+import React from "react";
 import type { ThreadsTableItem } from "types";
+import { isEmpty } from "utils/collections";
+import { threadStates } from "utils/constants";
+import ThreadsList from "./components/ThreadsList";
+import ThreadsTableHeader from "./components/ThreadsTableHeader";
+import ThreadsTableStatusHeader from "./components/ThreadsTableStatusHeader";
 
 interface ThreadsTableProps {
   filteredThreadData?: any[];

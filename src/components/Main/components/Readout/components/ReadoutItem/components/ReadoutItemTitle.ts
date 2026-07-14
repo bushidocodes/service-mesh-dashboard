@@ -1,6 +1,5 @@
-import styled from "styled-components";
-
 import { FONT_SIZE_SM, FONT_WEIGHT_SEMIBOLD } from "style/styleVariables";
+import styled from "styled-components";
 
 const ReadoutItemTitle = styled.h2`
   font-size: ${FONT_SIZE_SM};

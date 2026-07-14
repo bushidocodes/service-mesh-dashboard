@@ -1,20 +1,18 @@
-import styled from "styled-components";
-
 import { contrastColor } from "style/styleFunctions";
+import {
+  COLOR_BRAND_PRIMARY,
+  COLOR_CONTENT_BACKGROUND,
+  COLOR_DANGER,
+  COLOR_INFO,
+  COLOR_WARNING,
+  FONT_STACK_BASE,
+  FONT_WEIGHT_SEMIBOLD
+} from "style/styleVariables";
+import styled from "styled-components";
 import generateButtonIconRatio from "./utils/generateButtonIconRatio";
 import generateButtonOrientation from "./utils/generateButtonOrientation";
 import generateButtonSize from "./utils/generateButtonSize";
 import generateButtonStyle from "./utils/generateButtonStyle";
-
-import {
-  FONT_STACK_BASE,
-  COLOR_BRAND_PRIMARY,
-  COLOR_DANGER,
-  COLOR_INFO,
-  COLOR_WARNING,
-  COLOR_CONTENT_BACKGROUND,
-  FONT_WEIGHT_SEMIBOLD
-} from "style/styleVariables";
 
 // Maps button types to a particular color
 function generateButtonTypeColor(type?: string) {

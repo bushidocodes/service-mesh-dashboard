@@ -1,12 +1,11 @@
+import Glyph from "components/Glyphs/";
+import Icon from "components/Icon";
 import React from "react";
-
-import LayoutSectionWrap from "./components/LayoutSectionWrap";
 import Header from "./components/Header";
+import LayoutSectionWrap from "./components/LayoutSectionWrap";
 import SectionContent from "./components/SectionContent";
 import SectionIcon from "./components/SectionIcon";
 import SectionTitle from "./components/SectionTitle";
-import Icon from "components/Icon";
-import Glyph from "components/Glyphs/";
 
 interface LayoutSectionProps {
   children?: React.ReactNode;

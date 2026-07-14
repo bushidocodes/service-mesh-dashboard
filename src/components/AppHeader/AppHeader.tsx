@@ -1,14 +1,12 @@
 import React from "react";
-import { withRouter } from "utils/withRouter";
 import { connect } from "react-redux";
-
+import type { RootState, RouterLocation } from "types";
+import { trimID } from "utils";
+import { withRouter } from "utils/withRouter";
 import AppHeaderContainer from "./components/AppHeaderContainer";
 import AppToolBar from "./components/AppToolBar";
 import Banner from "./components/Banner";
 import AppHeaderContent from "./scenes";
-
-import { trimID } from "utils";
-import type { RootState, RouterLocation } from "types";
 
 interface AppHeaderProps {
   location: RouterLocation;

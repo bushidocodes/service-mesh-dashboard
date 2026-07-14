@@ -1,7 +1,7 @@
 import { spacingScale } from "style/styleFunctions";
 import {
-  NOTIFICATION_BACKGROUND_COLOR,
-  FONT_WEIGHT_SEMIBOLD
+  FONT_WEIGHT_SEMIBOLD,
+  NOTIFICATION_BACKGROUND_COLOR
 } from "style/styleVariables";
 
 // Re-theme react-toastify's toast box to the dashboard's flat white card

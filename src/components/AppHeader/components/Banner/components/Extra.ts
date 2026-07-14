@@ -1,11 +1,11 @@
-import styled from "styled-components";
+import { contrastColor, spacingScale } from "style/styleFunctions";
 
 import {
-  FONT_SIZE_BASE,
   BORDER_RADIUS_BASE,
-  COLOR_ALT_BACKGROUND
+  COLOR_ALT_BACKGROUND,
+  FONT_SIZE_BASE
 } from "style/styleVariables";
-import { contrastColor, spacingScale } from "style/styleFunctions";
+import styled from "styled-components";
 
 // Z-index positions these above the preceding Banner Title in order to ensure they're visible above the Banner Title's shadow
 const Extra = styled.a`

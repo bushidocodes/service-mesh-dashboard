@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import { spacingScale, contrastColor } from "style/styleFunctions";
-import { COLOR_ALT_BACKGROUND } from "style/styleVariables";
 import Modal from "react-modal";
+import { contrastColor, spacingScale } from "style/styleFunctions";
+import { COLOR_ALT_BACKGROUND } from "style/styleVariables";
+import styled from "styled-components";
 
 const modalBackgroundColor = COLOR_ALT_BACKGROUND;
 const modalHeightBasis = "400px";

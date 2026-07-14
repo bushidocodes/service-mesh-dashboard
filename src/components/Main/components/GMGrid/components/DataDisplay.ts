@@ -1,12 +1,12 @@
-import styled from "styled-components";
+import { contrastColor, spacingScale } from "style/styleFunctions";
 
 import {
-  FONT_STACK_DATA,
-  FONT_SIZE_LG,
+  BORDER_RADIUS_BASE,
   COLOR_CONTENT_BACKGROUND,
-  BORDER_RADIUS_BASE
+  FONT_SIZE_LG,
+  FONT_STACK_DATA
 } from "style/styleVariables";
-import { spacingScale, contrastColor } from "style/styleFunctions";
+import styled from "styled-components";
 
 const DataDisplay = styled.div<{ table?: boolean }>`
   background-color: ${contrastColor(COLOR_CONTENT_BACKGROUND, 0.04).string()};

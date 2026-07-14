@@ -1,6 +1,6 @@
-/* eslint-disable react/no-multi-comp -- faithful single-file port of
-   react-sparklines: Sparklines + SparklinesLine + SparklinesReferenceLine
-   are tightly coupled and intentionally co-located, as in the original. */
+/* Faithful single-file port of react-sparklines: Sparklines +
+   SparklinesLine + SparklinesReferenceLine are tightly coupled and
+   intentionally co-located, as in the original. */
 import React, { Children, cloneElement } from "react";
 
 /**

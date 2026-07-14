@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import { edgeColor, spacingScale } from "style/styleFunctions";
 
 import { COLOR_CONTENT_BACKGROUND } from "style/styleVariables";
-import { edgeColor, spacingScale } from "style/styleFunctions";
+import styled from "styled-components";
 
 const SectionContainer = styled.section`
   display: flex;

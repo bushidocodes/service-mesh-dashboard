@@ -1,6 +1,6 @@
 import { Actions, Effect } from "store/jumpstate";
-import defaultJVMDashboards from "../../json/jvm/dashboards.json";
 import defaultGoDashboards from "../../json/go/dashboards.json";
+import defaultJVMDashboards from "../../json/jvm/dashboards.json";
 
 /**
  * This effect is a temporary alternative to directly load the dashboard JSON without use of the

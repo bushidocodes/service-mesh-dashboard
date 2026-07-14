@@ -1,10 +1,8 @@
+import ErrorBoundary from "components/ErrorBoundary";
 import React from "react";
-
+import { computeStatus } from "utils/selectors";
 import ServicesCardsView from "./scene/ServicesCardsView";
 import ServicesListView from "./scene/ServicesListView";
-
-import ErrorBoundary from "components/ErrorBoundary";
-import { computeStatus } from "utils/selectors";
 
 interface FabricMainViewProps {
   ascending?: boolean;

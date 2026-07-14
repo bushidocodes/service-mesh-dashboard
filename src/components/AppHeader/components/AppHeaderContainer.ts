@@ -1,8 +1,7 @@
-import styled from "styled-components";
+import BannerBackgroundImage from "images/mesh-long.png";
 
 import { COLOR_ALT_BACKGROUND } from "style/styleVariables";
-
-import BannerBackgroundImage from "images/mesh-long.png";
+import styled from "styled-components";
 
 const AppHeaderContainer = styled.div`
   display: flex;

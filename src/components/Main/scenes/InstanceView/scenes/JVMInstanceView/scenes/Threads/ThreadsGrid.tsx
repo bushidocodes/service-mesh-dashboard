@@ -1,16 +1,15 @@
-import { Actions, getState } from "store/jumpstate";
+import ErrorBoundary from "components/ErrorBoundary";
+import NotFoundError from "components/Main/components/NotFoundError";
+import TableToolbar from "components/Main/components/TableToolbar";
+import withUrlState from "components/withUrlState";
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Actions, getState } from "store/jumpstate";
 import type { RootState } from "types";
 import { isEmpty, orderBy } from "utils/collections";
 import { injectIntl } from "utils/injectIntl";
-
-import ThreadsTable from "./components/ThreadsTable";
-import ErrorBoundary from "components/ErrorBoundary";
-import TableToolbar from "components/Main/components/TableToolbar";
-import NotFoundError from "components/Main/components/NotFoundError";
-import withUrlState from "components/withUrlState";
 import { getVisibleThreads } from "utils/jvm/selectors";
+import ThreadsTable from "./components/ThreadsTable";
 
 interface ThreadsGridProps {
   fabricServer?: string;

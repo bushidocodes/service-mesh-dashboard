@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import styled from "styled-components";
+import React, { useEffect, useState } from "react";
+import { contrastColor, spacingScale } from "style/styleFunctions";
 
 import { COLOR_CONTENT_BACKGROUND } from "style/styleVariables";
-import { spacingScale, contrastColor } from "style/styleFunctions";
+import styled from "styled-components";
 
 // CSS Grid trick: animate grid-template-rows from 0fr → 1fr for a smooth
 // height transition without knowing the content height in advance. The inner

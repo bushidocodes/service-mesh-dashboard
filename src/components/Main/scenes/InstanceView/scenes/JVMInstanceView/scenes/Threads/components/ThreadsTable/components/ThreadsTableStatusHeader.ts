@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import TableHeader from "components/Main/components/TableHeader";
+import styled from "styled-components";
 
 const TableStatusHeader = styled(TableHeader)`
   text-transform: capitalize;

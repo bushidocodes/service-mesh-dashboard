@@ -1,5 +1,5 @@
-import React from "react";
 import { fireEvent, screen } from "@testing-library/react";
+import React from "react";
 import { mountWithIntl, renderWithIntl } from "utils/i18nTesting";
 
 import Inspector from "./Inspector";

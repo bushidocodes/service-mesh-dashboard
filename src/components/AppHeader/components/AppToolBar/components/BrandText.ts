@@ -1,11 +1,10 @@
-import styled from "styled-components";
-
 import { contrastColor } from "style/styleFunctions";
 import {
-  FONT_SIZE_BASE,
   COLOR_ALT_BACKGROUND,
+  FONT_SIZE_BASE,
   FONT_WEIGHT_SEMIBOLD
 } from "style/styleVariables";
+import styled from "styled-components";
 
 const APP_TOOLBAR_BACKGROUND_COLOR = COLOR_ALT_BACKGROUND.string();
 

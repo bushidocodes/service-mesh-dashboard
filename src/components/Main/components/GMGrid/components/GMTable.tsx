@@ -1,11 +1,11 @@
 import React from "react";
 
 import DataDisplay from "./DataDisplay";
-import DataTitle from "./DataTitle";
-import DataPair from "./DataPair";
 import DataKey from "./DataKey";
-import DataValue from "./DataValue";
 import DataKeyHeader from "./DataKeyHeader";
+import DataPair from "./DataPair";
+import DataTitle from "./DataTitle";
+import DataValue from "./DataValue";
 
 interface GMTableProps {
   headers: any[];

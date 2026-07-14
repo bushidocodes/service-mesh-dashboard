@@ -1,12 +1,12 @@
-import styled from "styled-components";
+import { spacingScale } from "style/styleFunctions";
 
 import {
-  FONT_SIZE_HERO,
-  COLOR_WARNING,
+  BORDER_RADIUS_BASE,
   COLOR_CONTENT,
-  BORDER_RADIUS_BASE
+  COLOR_WARNING,
+  FONT_SIZE_HERO
 } from "style/styleVariables";
-import { spacingScale } from "style/styleFunctions";
+import styled from "styled-components";
 
 const ErrorContent = styled.div`
   align-items: center;

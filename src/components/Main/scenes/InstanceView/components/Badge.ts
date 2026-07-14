@@ -1,11 +1,11 @@
-import styled from "styled-components";
+import { contrastColor, spacingScale } from "style/styleFunctions";
 import {
-  FONT_SIZE_SM,
-  COLOR_HIGHLIGHT,
   BORDER_RADIUS_BASE,
+  COLOR_HIGHLIGHT,
+  FONT_SIZE_SM,
   FONT_WEIGHT_SEMIBOLD
 } from "style/styleVariables";
-import { contrastColor, spacingScale } from "style/styleFunctions";
+import styled from "styled-components";
 
 const BADGE_COLOR = COLOR_HIGHLIGHT;
 

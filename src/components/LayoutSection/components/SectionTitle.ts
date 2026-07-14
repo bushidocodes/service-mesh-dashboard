@@ -1,6 +1,5 @@
-import styled from "styled-components";
-
 import { FONT_SIZE_LG } from "style/styleVariables";
+import styled from "styled-components";
 
 const SectionTitle = styled.h3`
   color: inherit;

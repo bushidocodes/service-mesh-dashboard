@@ -1,11 +1,9 @@
-import React from "react";
 import { render, screen } from "@testing-library/react";
-import { MemoryRouter, Routes, Route } from "react-router-dom";
-
-import mockMappedServices from "json/mockMappedServices";
-
-import ServicesCardsView from "./ServicesCardsView";
 import GMServiceHeader from "components/Main/scenes/FabricView/components/FabricGrid/components/FabricMainView/components/GMServiceHeader";
+import mockMappedServices from "json/mockMappedServices";
+import React from "react";
+import { MemoryRouter, Route, Routes } from "react-router-dom";
+import ServicesCardsView from "./ServicesCardsView";
 
 // ServicesCardsView groups services and renders a tree of presentational
 // components. Enzyme counted those components by type (.find(Comp)) and read

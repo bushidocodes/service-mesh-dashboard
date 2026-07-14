@@ -1,10 +1,9 @@
-import { Actions } from "store/jumpstate";
-import React, { Suspense, useEffect } from "react";
-import { connect } from "react-redux";
-import type { RootState } from "types";
-
 import { LazyLoader } from "components/LazyLoader";
 import { Loading } from "components/Loading";
+import React, { Suspense, useEffect } from "react";
+import { connect } from "react-redux";
+import { Actions } from "store/jumpstate";
+import type { RootState } from "types";
 
 interface InstanceViewProps {
   instanceID: string;

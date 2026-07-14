@@ -1,9 +1,9 @@
+import mock from "json/mockReduxStateMetrics";
 import {
   floatRound,
   getDygraphOfValue,
   mapDygraphKeysToNetChange
 } from "./dygraphs";
-import mock from "json/mockReduxStateMetrics";
 
 describe("getDygraphOfValue", () => {
   test("returns time series data of one or more in Dygraph format", () => {

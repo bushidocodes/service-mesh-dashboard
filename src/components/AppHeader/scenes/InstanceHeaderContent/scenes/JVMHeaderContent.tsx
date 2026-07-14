@@ -1,15 +1,13 @@
-import React from "react";
-import { injectIntl } from "utils/injectIntl";
-
 import Tab from "components/AppHeader/components/Tab";
 import TabNav from "components/AppHeader/components/TabNav";
 import ArrayValue from "components/ArrayValue";
 import ThreadCounts from "components/ThreadCounts";
 import UpTime from "components/UpTime";
+import React from "react";
+import type { Metrics } from "types";
+import { injectIntl } from "utils/injectIntl";
 import { getLatestAttribute } from "utils/latestAttribute";
 import { getSparkLineOfValue } from "utils/sparklines";
-
-import type { Metrics } from "types";
 
 interface JVMHeaderContentProps {
   basePath?: string;

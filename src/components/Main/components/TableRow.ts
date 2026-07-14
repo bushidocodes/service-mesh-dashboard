@@ -1,15 +1,14 @@
-import styled from "styled-components";
-
 import {
-  spacingScale,
   contrastColor,
-  rowChildSpacing
+  rowChildSpacing,
+  spacingScale
 } from "style/styleFunctions";
 import {
   COLOR_CONTENT_BACKGROUND,
-  TABLE_HOVER,
-  TABLE_BORDER
+  TABLE_BORDER,
+  TABLE_HOVER
 } from "style/styleVariables";
+import styled from "styled-components";
 
 const TableRow = styled.li.attrs({
   tabIndex: 0

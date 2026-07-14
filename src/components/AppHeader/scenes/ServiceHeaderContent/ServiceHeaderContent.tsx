@@ -1,11 +1,10 @@
+import Tab from "components/AppHeader/components/Tab";
+import TabNav from "components/AppHeader/components/TabNav";
 import React from "react";
 import { connect } from "react-redux";
 import type { RootState } from "types";
-import { withRouter } from "utils/withRouter";
 import { injectIntl } from "utils/injectIntl";
-
-import Tab from "components/AppHeader/components/Tab";
-import TabNav from "components/AppHeader/components/TabNav";
+import { withRouter } from "utils/withRouter";
 
 interface ServiceHeaderContentProps {
   instanceCount?: number;

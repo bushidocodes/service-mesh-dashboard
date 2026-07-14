@@ -1,18 +1,18 @@
+import { fireEvent, render } from "@testing-library/react";
+import TableRow from "components/Main/components/TableRow";
+import React from "react";
+import { slugifyMicroservice } from "utils";
 import {
-  INSTANCE_ID_LENGTH,
+  blurTableRow,
   calculateErrorPercent,
   clearFabricIntervalIfNeeded,
   convertMS,
   formatAsDecimalString,
+  INSTANCE_ID_LENGTH,
   relativeReqPercent,
-  blurTableRow,
   slugify,
   trimID
 } from "./index";
-import { slugifyMicroservice } from "utils";
-import React from "react";
-import { render, fireEvent } from "@testing-library/react";
-import TableRow from "components/Main/components/TableRow";
 import "jest-styled-components";
 
 describe("trimID", () => {

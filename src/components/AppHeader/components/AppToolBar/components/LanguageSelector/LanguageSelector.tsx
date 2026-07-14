@@ -1,10 +1,9 @@
 import React from "react";
-import { Actions } from "store/jumpstate";
 import { FormattedMessage } from "react-intl";
-
-import LanguageSelectorWrap from "./components/LanguageSelectorWrap";
-import LanguageSelectorContent from "./components/LanguageSelectorContent";
+import { Actions } from "store/jumpstate";
 import LanguageSelectorOption from "./components/LangaugeSelectorOption";
+import LanguageSelectorContent from "./components/LanguageSelectorContent";
+import LanguageSelectorWrap from "./components/LanguageSelectorWrap";
 
 interface LanguageSelectorState {
   visible: boolean;

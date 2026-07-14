@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import { form_control } from "components/globalPatterns";
 
 import Magnifier from "images/icons/magnifier.svg";
-import { form_control } from "components/globalPatterns";
+import styled from "styled-components";
 
 const SearchInput = styled.input.attrs({
   type: "search"

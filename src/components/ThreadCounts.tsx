@@ -1,8 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-
-import { getThreadCounts } from "utils/jvm/selectors";
 import type { RootState, ThreadCounts as ThreadCountsData } from "types";
+import { getThreadCounts } from "utils/jvm/selectors";
 
 interface ThreadCountsProps {
   render: (threadCounts: ThreadCountsData) => React.ReactNode;

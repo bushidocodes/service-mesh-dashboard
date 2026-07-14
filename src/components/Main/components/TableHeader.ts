@@ -1,10 +1,9 @@
-import styled from "styled-components";
-
 import {
   COLOR_CONTENT_BACKGROUND,
   FONT_WEIGHT_REGULAR,
   TABLE_BORDER
 } from "style/styleVariables";
+import styled from "styled-components";
 
 const TableHeader = styled.div`
   align-items: center;

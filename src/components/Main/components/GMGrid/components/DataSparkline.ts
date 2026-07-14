@@ -1,6 +1,5 @@
-import styled from "styled-components";
-
 import { spacingScale } from "style/styleFunctions";
+import styled from "styled-components";
 
 const DataSparkline = styled.div`
   opacity: 0.7;

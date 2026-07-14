@@ -44,7 +44,7 @@ Edit `./public/index.html` by commenting out `<meta property="fabricServer" cont
 
 This runs the app in the development mode and automatically opens [http://localhost:3000](http://localhost:3000) in your browser. You can open the source code in your editor of choice, and the page will reload if you make edits.
 
-We suggest use of [Prettier](https://github.com/prettier/prettier#editor-integration), [EditorConfig](http://editorconfig.org/#download), and [ESList](http://eslint.org/docs/user-guide/integrations) plugins in your editor to use the projects style rules.
+We suggest use of the [Biome](https://biomejs.dev/guides/editors/first-party-extensions/) editor extension and [EditorConfig](http://editorconfig.org/#download) to apply the project's style and lint rules.
 
 Additionally, if you are a VS Code user, this project supports in-editor debugging via the [Debugger for Chrome extension](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) and has a custom dictionary for the [Code Spellchecker extension](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
 

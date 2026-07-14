@@ -1,16 +1,15 @@
-import React, { Component } from "react";
-import { Actions } from "store/jumpstate";
-import { orderBy } from "utils/collections";
-import { withRouter } from "utils/withRouter";
-import { injectIntl } from "utils/injectIntl";
-
-import Table from "components/Main/components/Table";
-import TableToolbar from "components/Main/components/TableToolbar";
 import ErrorBoundary from "components/ErrorBoundary";
 import NotFoundError from "components/Main/components/NotFoundError";
-import { reportError } from "services/notification";
+import Table from "components/Main/components/Table";
+import TableToolbar from "components/Main/components/TableToolbar";
 import withUrlState from "components/withUrlState";
+import React, { Component } from "react";
+import { reportError } from "services/notification";
+import { Actions } from "store/jumpstate";
 import type { RouterHistory, RouterLocation, ServiceInstance } from "types";
+import { orderBy } from "utils/collections";
+import { injectIntl } from "utils/injectIntl";
+import { withRouter } from "utils/withRouter";
 
 interface ServiceViewProps {
   history: RouterHistory;

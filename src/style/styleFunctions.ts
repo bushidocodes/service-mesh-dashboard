@@ -1,6 +1,7 @@
 import Color from "color";
 
 import {
+  CHART_HEIGHT_BASE,
   COLOR_DANGER,
   COLOR_STOP_1,
   COLOR_STOP_2,
@@ -11,8 +12,7 @@ import {
   FONT_SIZE_BASE,
   FONT_STACK_CODE,
   LINE_HEIGHT_BASE,
-  PADDING_BASE,
-  CHART_HEIGHT_BASE
+  PADDING_BASE
 } from "./styleVariables";
 
 /**

@@ -1,11 +1,10 @@
-import styled from "styled-components";
-
 import {
   COLOR_CONTENT_BACKGROUND,
   CONTENT_MAX_WIDTH,
   PADDING_BASE,
   ZINDEX_STICKY
 } from "style/styleVariables";
+import styled from "styled-components";
 
 const SectionHeader = styled.div`
   display: flex;

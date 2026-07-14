@@ -1,16 +1,13 @@
+import GMServiceHeader from "components/Main/scenes/FabricView/components/FabricGrid/components/FabricMainView/components/GMServiceHeader";
 import React, { Fragment } from "react";
+import type { RouterLocation, ServiceItem } from "types";
 import { isEmpty, orderBy } from "utils/collections";
+import { microserviceStatuses } from "utils/constants";
 import { withRouter } from "utils/withRouter";
-
-import ServicesList from "./components/ServicesList";
 import SectionContainer from "./components/SectionContainer";
 import SectionContent from "./components/SectionContent";
 import SectionHeader from "./components/SectionHeader";
-
-import GMServiceHeader from "components/Main/scenes/FabricView/components/FabricGrid/components/FabricMainView/components/GMServiceHeader";
-import { microserviceStatuses } from "utils/constants";
-
-import type { ServiceItem, RouterLocation } from "types";
+import ServicesList from "./components/ServicesList";
 
 interface ListViewProps {
   ascending?: boolean;

@@ -1,15 +1,13 @@
-import React, { Suspense } from "react";
-import { connect } from "react-redux";
-import { Routes, Route } from "react-router-dom";
-
-import FabricGrid from "./components/FabricGrid";
-import generateStatusRoutes from "./utils/generateStatusRoutes";
-import InstanceRouteElement from "./InstanceRouteElement";
-import ServiceRouteElement from "./ServiceRouteElement";
 import { LazyLoader } from "components/LazyLoader";
 import { Loading } from "components/Loading";
-
+import React, { Suspense } from "react";
+import { connect } from "react-redux";
+import { Route, Routes } from "react-router-dom";
 import type { RootState, Service } from "types";
+import FabricGrid from "./components/FabricGrid";
+import InstanceRouteElement from "./InstanceRouteElement";
+import ServiceRouteElement from "./ServiceRouteElement";
+import generateStatusRoutes from "./utils/generateStatusRoutes";
 
 const SettingsGrid = LazyLoader({
   loader: () => import("components/Main/components/Settings")

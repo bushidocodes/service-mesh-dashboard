@@ -49,8 +49,7 @@ If you intend file a pull request with a bug fix or enhancement, we recommend fi
 
 Follow the steps outlined in the [README](https://github.com/DecipherNow/gm-fabric-dashboard/blob/master/README.md) and install the following plugins for your editor:
 
-* Prettier
-* eslint
+* Biome (formatter + linter)
 * stylelint
 * styled-components syntax highlighting
 

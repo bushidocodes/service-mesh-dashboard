@@ -1,22 +1,19 @@
-import React, { Component } from "react";
-
-import { Line, LineLeft, LineRight } from "./components/Line";
-import {
-  ItemName,
-  ItemVersion,
-  ItemIcon,
-  ItemRuntime
-} from "./components/Item";
-import IconWrapper from "./components/IconWrapper";
-import DocsLink from "./components/DocsLink";
-
-import Icon from "components/Icon";
-import NoKey from "components/Glyphs/NoKey";
 import Docs from "components/Glyphs/Docs";
+import NoKey from "components/Glyphs/NoKey";
 import NoMetrics from "components/Glyphs/NoMetrics";
-
-import StatusIcon from "components/StatusIcon";
+import Icon from "components/Icon";
 import GMLink from "components/Main/scenes/FabricView/components/GMLink";
+import StatusIcon from "components/StatusIcon";
+import React, { Component } from "react";
+import DocsLink from "./components/DocsLink";
+import IconWrapper from "./components/IconWrapper";
+import {
+  ItemIcon,
+  ItemName,
+  ItemRuntime,
+  ItemVersion
+} from "./components/Item";
+import { Line, LineLeft, LineRight } from "./components/Line";
 
 interface ServicesListItemProps {
   authorized?: boolean;

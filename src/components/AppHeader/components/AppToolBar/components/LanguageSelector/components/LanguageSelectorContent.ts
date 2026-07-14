@@ -1,10 +1,10 @@
-import styled from "styled-components";
 import {
-  COLOR_WHITE,
   COLOR_BLACK,
+  COLOR_WHITE,
   FONT_STACK_BASE,
   ZINDEX_TOOLTIP
 } from "style/styleVariables";
+import styled from "styled-components";
 
 const LanguageSelectorContent = styled.ul<{ visible?: boolean }>`
   position: absolute;

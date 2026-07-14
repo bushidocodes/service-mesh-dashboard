@@ -1,20 +1,19 @@
-import React from "react";
 import Color from "color";
-
-// Internal Sub-components
-import BackgroundIcon from "./components/BackgroundIcon";
-import DocsLink from "./components/DocsLink";
-import { CardContainer, CardFooter } from "./components/Card";
-import Icon from "components/Icon";
-import NoKey from "components/Glyphs/NoKey";
 import Docs from "components/Glyphs/Docs";
+import NoKey from "components/Glyphs/NoKey";
 import NoMetrics from "components/Glyphs/NoMetrics";
-import { ServiceLink } from "./components/Service";
-import Title from "./components/Title";
-import Runtime from "./components/Runtime";
-
+import Icon from "components/Icon";
+import React from "react";
 // External dependencies
 import { mapStatusToColor, spacingScale } from "style/styleFunctions";
+// Internal Sub-components
+import BackgroundIcon from "./components/BackgroundIcon";
+import { CardContainer, CardFooter } from "./components/Card";
+import DocsLink from "./components/DocsLink";
+import Runtime from "./components/Runtime";
+import { ServiceLink } from "./components/Service";
+import Title from "./components/Title";
+
 // import NoAuthIcon from "images/icons/no-key.svg";
 
 interface GMServiceCardProps {

@@ -1,10 +1,8 @@
+import { LazyLoader } from "components/LazyLoader";
 import React from "react";
 import { Navigate, useParams } from "react-router-dom";
-import { injectIntl } from "utils/injectIntl";
-
-import { LazyLoader } from "components/LazyLoader";
-
 import type { ServiceInstance } from "types";
+import { injectIntl } from "utils/injectIntl";
 
 const InstanceRouter = LazyLoader({
   loader: () => import("components/Main/scenes/InstanceView")

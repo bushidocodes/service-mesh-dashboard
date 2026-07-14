@@ -1,17 +1,14 @@
-import React from "react";
-import { withRouter } from "utils/withRouter";
-import { isEmpty, orderBy } from "utils/collections";
-
 import GMServiceHeader from "components/Main/scenes/FabricView/components/FabricGrid/components/FabricMainView/components/GMServiceHeader";
+import React from "react";
+import type { RouterLocation, ServiceItem } from "types";
+import { isEmpty, orderBy } from "utils/collections";
 import { microserviceStatuses } from "utils/constants";
-
+import { withRouter } from "utils/withRouter";
 import GMServiceCardCollection from "./components/GMServiceCardCollection";
 import GMServiceCardsView from "./components/GMServiceCardsView";
 import GMServiceViewContainer from "./components/GMServiceViewContainer";
 import SectionContent from "./components/SectionContent";
 import SectionHeader from "./components/SectionHeader";
-
-import type { ServiceItem, RouterLocation } from "types";
 
 interface CardsViewProps {
   ascending?: boolean;
