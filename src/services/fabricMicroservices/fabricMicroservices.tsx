@@ -1,13 +1,33 @@
 import { FormattedMessage } from "react-intl";
 import { reportError } from "services/notification";
 import { Actions, getState } from "store/jumpstate";
+import type { Service } from "types";
 import { clearFabricIntervalIfNeeded, slugifyMicroservice } from "utils";
 import { memoize } from "utils/collections";
 import { getFabricServer } from "utils/head";
 
 const memoizedSlugifyMicroservice = memoize(slugifyMicroservice);
 
-export async function fetchFabricMicroservices(fabricServer: string) {
+/** Service from SDS plus the client-side slug used as the store index key. */
+export type ServiceWithSlug = Service & { slug: string };
+
+/**
+ * Narrow an SDS list entry to {@link Service}. Requires `name` and `version`
+ * (used for slug generation); the remaining Service fields are present on real
+ * discovery payloads and are trusted after the object shape check.
+ */
+function asService(value: unknown): Service | null {
+  if (value == null || typeof value !== "object") return null;
+  const record = value as Record<string, unknown>;
+  if (typeof record.name !== "string" || typeof record.version !== "string") {
+    return null;
+  }
+  return value as Service;
+}
+
+export async function fetchFabricMicroservices(
+  fabricServer: string
+): Promise<Record<string, ServiceWithSlug>> {
   if (!fabricServer) return Promise.reject("Invalid endpoint");
   const response = await fetch(`${fabricServer}/services`);
   // fetch only rejects on network errors, not on HTTP error statuses, so we
@@ -16,21 +36,34 @@ export async function fetchFabricMicroservices(fabricServer: string) {
   if (!response.ok) {
     return Promise.reject(`Request failed with status ${response.status}`);
   }
-  const data = await response.json();
-  const withSlugs = data.map((service: any) => ({
-    ...service,
-    slug: memoizedSlugifyMicroservice(service.name, service.version)
-  }));
-  return withSlugs.reduce((result: Record<string, any>, service: any) => {
-    result[service.slug] = service;
-    return result;
-  }, {});
+  const data: unknown = await response.json();
+  if (!Array.isArray(data)) {
+    return Promise.reject("The data object didn't contain JSON as expected");
+  }
+  const withSlugs: ServiceWithSlug[] = [];
+  for (const item of data) {
+    const service = asService(item);
+    if (!service) {
+      return Promise.reject("Invalid service entry in discovery response");
+    }
+    withSlugs.push({
+      ...service,
+      slug: memoizedSlugifyMicroservice(service.name, service.version)
+    });
+  }
+  return withSlugs.reduce<Record<string, ServiceWithSlug>>(
+    (result, service) => {
+      result[service.slug] = service;
+      return result;
+    },
+    {}
+  );
 }
 
 /**
  * Async Jumpstate Effect that fetch services from the Fabric Server
  * and updates Redux based on success or error states
- * @param {any} [fabricServer=getState().settings.fabricServer]
+ * @param {string} [fabricServer=getState().settings.fabricServer]
  * @returns
  */
 export async function fetchAndStoreFabricMicroservicesEffect(
@@ -57,7 +90,7 @@ export async function fetchAndStoreFabricMicroservicesEffect(
  * @param {number} [servicesPollingFailures=getState().fabric.servicesPollingFailures]
  */
 export function fetchFabricMicroservicesSuccessEffect(
-  services: any,
+  services: Record<string, Service>,
   servicesPollingFailures = getState().fabric.servicesPollingFailures
 ) {
   if (servicesPollingFailures > 0) {
@@ -71,7 +104,7 @@ export function fetchFabricMicroservicesSuccessEffect(
  * and incrementing a counter that disables the polling interval on repeat failures.
  * @param {Object} err - Error object
  */
-export function fetchFabricMicroservicesFailureEffect(err: any) {
+export function fetchFabricMicroservicesFailureEffect(err: unknown) {
   const servicesPollingFailures = getState().fabric.servicesPollingFailures;
   console.log("Failed: ", servicesPollingFailures);
   // If there have already been four failures (0, 1, 2, 3, 4), this is the third failure,
