@@ -121,9 +121,7 @@ function mapStateToProps(state: RootState, _ownProps: any) {
   } = state;
 
   const selectedService =
-    services && selectedServiceSlug
-      ? services[selectedServiceSlug]
-      : undefined;
+    services && selectedServiceSlug ? services[selectedServiceSlug] : undefined;
   return {
     metrics,
     runtime: selectedService ? selectedService.runtime : "",

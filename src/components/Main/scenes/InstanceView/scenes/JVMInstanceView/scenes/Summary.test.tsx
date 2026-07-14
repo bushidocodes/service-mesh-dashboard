@@ -63,9 +63,7 @@ describe("JVM > SummaryGrid component", () => {
     const readouts = getReadoutDisplays();
     const second = readouts[1];
     expect(second).toBeDefined();
-    expect(
-      within(second!).getByText("Avg. Response Time")
-    ).toBeInTheDocument();
+    expect(within(second!).getByText("Avg. Response Time")).toBeInTheDocument();
     expect(within(second!).getByText("Error Rate")).toBeInTheDocument();
   });
 
