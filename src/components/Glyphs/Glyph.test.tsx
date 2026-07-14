@@ -1,6 +1,31 @@
 import { render } from "@testing-library/react";
 
-import Glyph from "./index";
+import Glyph, { GLYPH_NAMES } from "./Glyph";
+
+/**
+ * Glyphs are pure presentational SVG fragments. Prefer a registry smoke test
+ * over one snapshot per glyph (formerly 53 snaps, high churn / low signal).
+ * Prop wiring for the Glyph wrapper lives in the behavioral tests below.
+ */
+describe("Glyph registry", () => {
+  it("registers a stable non-empty set of glyphs", () => {
+    expect(GLYPH_NAMES.length).toBeGreaterThan(40);
+  });
+
+  it.each(
+    GLYPH_NAMES
+  )("renders registered glyph %s without an empty fallback", (name) => {
+    const { container } = render(
+      <svg>
+        <Glyph name={name} />
+      </svg>
+    );
+    const glyph = container.querySelector("g.glyph");
+    expect(glyph).toBeInTheDocument();
+    // Unknown names fall back to an empty <g />; registered ones mount children.
+    expect(glyph!.children.length).toBeGreaterThan(0);
+  });
+});
 
 describe("Glyph", () => {
   let container: HTMLElement;

@@ -10,33 +10,32 @@ describe("Breadcrumbs", () => {
     const { asFragment } = render(<Breadcrumbs hideRoot />);
     expect(asFragment()).toMatchSnapshot();
   });
-  // The hideRoot styling is applied via the `> li:first-child` child selector.
-  // jest-styled-components can assert on nested selectors through the `modifier`
-  // option, so we no longer need to mount real <Breadcrumb> children.
+
+  // hideRoot styles the first child via `> li:first-child { hide }`. Assert on
+  // that child's computed styles rather than jest-styled-components modifiers.
   it("hides the first child when passed the hideRoot prop", () => {
-    const { container } = render(<Breadcrumbs hideRoot />);
-    const modifier = { modifier: "> li:first-child" };
-    expect(container.firstChild).toHaveStyleRule(
-      "position",
-      "absolute",
-      modifier
+    const { container } = render(
+      <Breadcrumbs hideRoot>
+        <li>Root</li>
+        <li>Leaf</li>
+      </Breadcrumbs>
     );
-    expect(container.firstChild).toHaveStyleRule(
-      "visibility",
-      "hidden",
-      modifier
-    );
-    expect(container.firstChild).toHaveStyleRule(
-      "pointer-events",
-      "none",
-      modifier
-    );
+    const first = container.querySelector("li");
+    expect(first).toHaveStyle({
+      position: "absolute",
+      visibility: "hidden",
+      pointerEvents: "none"
+    });
   });
 
   it("does not hide the first child without the hideRoot prop", () => {
-    const { container } = render(<Breadcrumbs />);
-    expect(container.firstChild).not.toHaveStyleRule("visibility", "hidden", {
-      modifier: "> li:first-child"
-    });
+    const { container } = render(
+      <Breadcrumbs>
+        <li>Root</li>
+        <li>Leaf</li>
+      </Breadcrumbs>
+    );
+    const first = container.querySelector("li");
+    expect(first).not.toHaveStyle({ visibility: "hidden" });
   });
 });

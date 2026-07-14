@@ -8,10 +8,8 @@ describe("ReadoutItemData", () => {
   });
   it("allows padding-left of first-child to be overridden", () => {
     const { container } = render(<ReadoutItemData paddingLeft="99px" />);
-    // The override applies to padding-left under the :first-child selector;
-    // jest-styled-components targets nested rules via the `modifier` option.
-    expect(container.firstChild).toHaveStyleRule("padding-left", "99px", {
-      modifier: ":first-child"
-    });
+    // &:first-child padding-left override; the root is the first child of RTL's
+    // container, so getComputedStyle picks up the rule via toHaveStyle.
+    expect(container.firstChild).toHaveStyle({ paddingLeft: "99px" });
   });
 });

@@ -4,10 +4,9 @@
 // for custom React components (typeof target !== "string").
 //
 // ESM (not CJS): importing styled-components via `import` here resolves to the
-// SAME module instance the components under test use, so jest-styled-components'
-// toHaveStyleRule reads the populated stylesheet. A CJS `require` pulled in a
-// second styled-components build with its own (empty) sheet, which broke the
-// matcher under Vitest.
+// SAME module instance the components under test use (and that
+// jest-styled-components' snapshot serializer reads). A CJS `require` pulled
+// in a second styled-components build with its own (empty) sheet under Vitest.
 //
 // Import @testing-library/react via its /dist/ subpath so the Vitest alias
 // (exact-match /^@testing-library\/react$/) does NOT remap this back to itself.

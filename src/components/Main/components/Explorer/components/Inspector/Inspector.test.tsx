@@ -80,12 +80,12 @@ describe("Inspector", () => {
   test("passes active prop to the selected metric's styled-component", () => {
     // The `active` prop on InspectorItem manifests as a styled-component branch
     // that, among other rules, sets `z-index: 999999` (unique to the active
-    // state). Inactive items have no items carrying that rule.
+    // state). Inactive items do not carry that rule.
     // NOTE: the original `findWhere(item => item.props().active)` inspected the
     // React `active` prop directly; RTL cannot read props, so we assert the
-    // observable style the prop produces instead.
+    // observable style the prop produces instead (via computed styles).
     getItems(container).forEach((item) => {
-      expect(item).not.toHaveStyleRule("z-index", "999999");
+      expect(item).not.toHaveStyle({ zIndex: "999999" });
     });
 
     // Set a selected metric and look for the item carrying the active style.
@@ -97,12 +97,12 @@ describe("Inspector", () => {
     );
     expect(activeItems).toHaveLength(1);
     expect(activeItems[0]).toHaveTextContent("http/closes");
-    expect(activeItems[0]).toHaveStyleRule("z-index", "999999");
+    expect(activeItems[0]).toHaveStyle({ zIndex: "999999" });
     // No other item carries the active style.
     getItems(activeContainer)
       .filter((item) => item.textContent !== "http/closes")
       .forEach((item) => {
-        expect(item).not.toHaveStyleRule("z-index", "999999");
+        expect(item).not.toHaveStyle({ zIndex: "999999" });
       });
   });
 
