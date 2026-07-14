@@ -1,4 +1,4 @@
-import { createSelector } from "reselect";
+import { createSelector } from "@reduxjs/toolkit";
 import type { Metrics } from "types";
 import { calculateErrorPercent, formatAsDecimalString } from "utils";
 import { getDygraphOfValue, mapDygraphKeysToNetChange } from "../dygraphs";
@@ -38,7 +38,7 @@ export const getErrorPercent = createSelector(getMetrics, (metrics) => {
 });
 
 /**
- * A reselect selector that builds the data required to render the RoutesTable component
+ * Memoized selector (createSelector from RTK) that builds the data required to render the RoutesTable component
  */
 export const getRoutesTable = createSelector(
   [getRoutesTree, getRoutesMetrics],

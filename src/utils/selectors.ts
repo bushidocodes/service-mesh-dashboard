@@ -1,4 +1,4 @@
-import { createSelector } from "reselect";
+import { createSelector } from "@reduxjs/toolkit";
 import type { Dashboard, Metrics, Service } from "types";
 import { countBy, pick } from "utils/collections";
 import { microserviceStatuses } from "utils/constants";
@@ -7,7 +7,7 @@ import { microserviceStatuses } from "utils/constants";
 // production RootState differ in optional/extra fields (dashboard chart unions,
 // service `slug`, etc.). Selectors cast back to domain types on return.
 
-// Reselect Input Selectors
+// createSelector input selectors
 
 export const getMetrics = (state: { instance: { metrics: Metrics } }) =>
   state.instance.metrics;
@@ -27,7 +27,7 @@ export const getSelectedServiceSlug = (state: {
 }) => state.fabric.selectedServiceSlug;
 
 /**
- * Reselect selector that returns the current selected service from the Redux store
+ * Memoized selector (createSelector from RTK) that returns the current selected service from the Redux store
  * if it is found and null if not found
  */
 export const getSelectedService = createSelector(
@@ -42,7 +42,7 @@ export const getSelectedService = createSelector(
 );
 
 /**
- * Reselect selector that returns the runtime attribute of
+ * Memoized selector (createSelector from RTK) that returns the runtime attribute of
  * the currently selected service or null
  */
 export const getRuntime = createSelector(
@@ -66,7 +66,7 @@ export const getBaseInstanceRoute = createSelector(
 );
 
 /**
- * A Reselect selector factory
+ * A createSelector factory (from RTK)
  * Returns a selector that returns all metrics with a key that includes
  * the string keyQuery. By default, the string is assumed to strictly match
  * the first characters of the key. However, the search can be forced to match
@@ -87,13 +87,13 @@ export function metricsKeySelectorGenerator(keyQuery: string, isPrefix = true) {
 }
 
 /**
- * A Reselect selector that filters the metrics and only returns the timeseries
+ * Memoized selector that filters the metrics and only returns the timeseries
  * that starts with the string 'route'.
  */
 export const getRoutesMetrics = metricsKeySelectorGenerator("route");
 
 /**
- * A Reselect selector that generates a special hierarchical tree structure of route data
+ * Memoized selector that generates a special hierarchical tree structure of route data
  * from the timeseries keys. It's used to render the special Route dashboards for the JVM
  */
 export const getRoutesTree = createSelector(getRoutesMetrics, (routesMetrics) =>

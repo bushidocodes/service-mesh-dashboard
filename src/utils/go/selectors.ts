@@ -1,4 +1,4 @@
-import { createSelector } from "reselect";
+import { createSelector } from "@reduxjs/toolkit";
 import type { Metrics } from "types";
 import { calculateErrorPercent } from "utils";
 import { metricsKeySelectorGenerator } from "utils/selectors";
@@ -12,7 +12,7 @@ type RouteTableRow = Record<string, unknown>;
 type FunctionTableRow = Record<string, unknown>;
 
 /**
- * A reselect selector that builds the data required to render the RoutesTable component
+ * Memoized selector (createSelector from RTK) that builds the data required to render the RoutesTable component
  */
 export const getRoutesTable = createSelector(
   [getRoutesTree, getRoutesMetrics],
@@ -68,13 +68,13 @@ export const getRoutesTable = createSelector(
 );
 
 /**
- * A Reselect selector that filters the metrics and only returns the timeseries
+ * Memoized selector that filters the metrics and only returns the timeseries
  * that contain the string 'functions' somewhere in the key.
  */
 export const getFunctionsMetrics = metricsKeySelectorGenerator("function");
 
 /**
- * A Reselect selector that generates a special hierarchical tree structure of route data
+ * Memoized selector that generates a special hierarchical tree structure of route data
  * from the timeseries keys. It's used to render the special Route dashboards for the JVM
  */
 export const getFunctionsList = createSelector(
