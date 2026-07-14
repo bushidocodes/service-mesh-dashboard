@@ -16,48 +16,76 @@ After starting your microservice, you should see a valid JSON file [at this endp
 
 Run `docker run -it -p 1337:10001 drfogout/metricssimple`
 
-After starting your microservice, you should see a valid JSON file [at this endpoint](http://localhost:1337/metrics). If you see JSON data, you are ready to proceed.#
+After starting your microservice, you should see a valid JSON file [at this endpoint](http://localhost:1337/metrics). If you see JSON data, you are ready to proceed.
 
 ## Configuration
 
 If JVM microservice (gm-fabric-jvm) :
-Edit `./public/index.html` by replacing `__RUNTIME__` with `JVM`
+Edit `./index.html` by replacing `__RUNTIME__` with `JVM`
 
 If GO microservice (gm-fabric-go):
-Edit `./public/index.html` by replacing `__RUNTIME__` with `GO`
+Edit `./index.html` by replacing `__RUNTIME__` with `GO`
 
 If Service Discovery Service (SDS) microservice (mock-sds):
-Edit `./public/index.html` by commenting out `<meta property="fabricServer" content="__FABRIC_SERVER__">` and uncommenting `<meta property="fabricServer" content="http://localhost:1337">`
+In development, `pnpm start` already runs the mock SDS on port 9000 and the app falls back to that endpoint when `fabricServer` is the `__FABRIC_SERVER__` placeholder. For production static deploys, set the `fabricServer` meta tag in `index.html` (or inject it at serve time) to your Fabric server base URL.
 
 ## Use
 
 ### General Users trying the Dashboard
 
-1. Ensure a microservice is running on your system serving metrics.json from [http://localhost:9990/admin/metrics.json](http://localhost:9990/admin/metrics.json)
-2. From the project directory `./gm-fabric-dashboard`, run `npm start` and [http://localhost:3000](http://localhost:3000) will open automatically in your browser
+1. Ensure a microservice is running on your system serving metrics, or use the mock SDS via `pnpm start`
+2. From the project directory, run `pnpm install` once, then `pnpm start`. Open [http://localhost:3000](http://localhost:3000) in your browser
 3. Report bugs or desired enhancements on [the project's issues page](https://github.com/DecipherNow/gm-fabric-dashboard/issues)
 4. When finished, stop the local server serving your dashboard (and perhaps the local server serving your microservice) by pressing `control+c` on the respective terminals running these servers
 
 ### Developers building, testing, and integrating the Dashboard
 
-#### `npm start` to develop features and crush bugs
+#### Requirements
 
-This runs the app in the development mode and automatically opens [http://localhost:3000](http://localhost:3000) in your browser. You can open the source code in your editor of choice, and the page will reload if you make edits.
+- [pnpm](https://pnpm.io/installation) 11+
+- Node.js 22 (pinned in `.nvmrc` / `package.json`; `pnpm install` can auto-download it)
+
+#### `pnpm start` to develop features and crush bugs
+
+This runs the app in development mode: Vite on [http://localhost:3000](http://localhost:3000) and a mock discovery service on port 9000. You can open the source code in your editor of choice, and the page will reload if you make edits.
+
+Use `pnpm start-ui` if you only need the Vite UI without the mock SDS.
 
 We suggest use of the [Biome](https://biomejs.dev/guides/editors/first-party-extensions/) editor extension and [EditorConfig](http://editorconfig.org/#download) to apply the project's style and lint rules.
 
-Additionally, if you are a VS Code user, this project supports in-editor debugging via the [Debugger for Chrome extension](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) and has a custom dictionary for the [Code Spellchecker extension](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
+Additionally, if you are a VS Code user, this project has a custom dictionary for the [Code Spellchecker extension](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
 
-#### `npm test` to enhance front-end unit test coverage
+#### `pnpm test` to enhance front-end unit test coverage
 
-This launches the Jest test runner in interactive watch mode.<br>
-See the Create React App section about [running tests](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#running-tests) for more information.
+This runs the **Vitest** test runner (watch mode locally; a single run under CI).
 
-Note: If you are running on Mac OS, tests might fail with the error `Error: Error watching file for changes: EMFILE`. If you see this, install watchman via brew with the command `brew install watchman`. Read more about this workaround [on this Jest issue](https://github.com/facebook/jest/issues/1767)
+```bash
+pnpm test                 # watch (local)
+pnpm exec vitest run      # one-shot
+pnpm run update-snapshots # update snapshots under CI-like settings
+```
 
-#### `npm run build` to prepare the Dashboard for deployment to the core `gm-fabric-jvm` project
+#### `pnpm run lint` and `pnpm typecheck`
 
-This builds the app for production to the `build` folder.<br>
+```bash
+pnpm run lint      # Biome check
+pnpm run lint:fix  # Biome autofix
+pnpm typecheck     # tsc --noEmit
+```
+
+#### `pnpm test:e2e` for end-to-end coverage
+
+Playwright drives Chromium against the real dev stack (`pnpm start`). First-time setup may need `pnpm exec playwright install chromium`.
+
+```bash
+pnpm test:e2e          # headless
+pnpm test:e2e:ui       # interactive UI mode
+pnpm test:e2e:report   # open the last HTML report
+```
+
+#### `pnpm build` to prepare the Dashboard for deployment to the core `gm-fabric-jvm` project
+
+This builds the app for production with Vite to the `build` folder.<br>
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 Once built, the production bundle is minified and ready for deployment. The dashboard assumes that it is monitoring a microservice at the root path with Twitter Server metrics accessible at `/admin/metrics.json` and `/admin/threads`. The dashboard itself is served from `/gmadmin/`.

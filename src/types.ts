@@ -1,11 +1,11 @@
 // Shared domain types for the dashboard.
 //
-// These TypeScript interfaces replace the runtime `prop-types` shapes that used
-// to live in `components/PropTypes` and a few selectors (issue #172). Converted
-// .tsx components import the type they need from here, e.g.
+// These TypeScript interfaces replace the former runtime `prop-types` shapes
+// that lived in `components/PropTypes` and a few selectors (issue #172). That
+// runtime module and the `prop-types` dependency are gone; types live here.
+// Converted .tsx components import what they need, e.g.
 //   import type { Service } from "types";
-// The legacy runtime `components/PropTypes/index.js` shapes module is kept only
-// until every importer has been migrated, then removed with the prop-types dep.
+
 
 /**
  * A metrics object. The only predictable key is the `timestamps` array; every

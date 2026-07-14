@@ -45,12 +45,30 @@ If you intend file a pull request with a bug fix or enhancement, we recommend fi
 
 ## Getting Started
 
+### Setup
+
+```bash
+pnpm install       # installs deps and the pinned Node.js 22 runtime
+pnpm start         # Vite on :3000 + mock discovery service on :9000
+```
+
+Common checks before opening a PR:
+
+```bash
+pnpm test          # Vitest unit tests
+pnpm run lint      # Biome
+pnpm typecheck     # TypeScript
+pnpm test:e2e      # Playwright (optional for most UI changes; required when touching routing, polling, settings, i18n, or store)
+```
+
+See the [README](README.md) and [docs/installation.md](docs/installation.md) for more detail.
+
 ### Editor plugins
 
-Follow the steps outlined in the [README](https://github.com/DecipherNow/gm-fabric-dashboard/blob/master/README.md) and install the following plugins for your editor:
+Install the following for your editor:
 
-* Biome (formatter + linter)
-* stylelint
+* [Biome](https://biomejs.dev/guides/editors/first-party-extensions/) (formatter + linter — replaces ESLint and Prettier)
+* [EditorConfig](https://editorconfig.org/#download)
 * styled-components syntax highlighting
 
 ### Commit Messages
@@ -83,7 +101,7 @@ The subject of your commit should be less than 72 characters and should not begi
 
 ### General
 
-* All UI elements should be implemented using component-based architecture, idiomatic React, and JSX.
+* All UI elements should be implemented using component-based architecture, idiomatic React, and JSX/TSX.
 * All Stylesheets should be implemented using styled-components, not in-line styles or external stylesheets.
 * All components should be broken out into distinct files and follow a hierarchical directory structure. Please refer to [this blog post](https://medium.com/@alexmngn/how-to-better-organize-your-react-applications-2fd3ea1920f1) to better understand the technique
 * Reuse UI elements when possible. Refer to our internal `storybook` to see what is available
@@ -91,19 +109,20 @@ The subject of your commit should be less than 72 characters and should not begi
 * Stay consistent with the Decipher brand guide
 * All submissions should include function-level documentation using the JSDocs syntax
 * All PRs should strive for full test coverage.
-* Test your code locally using `npm test` prior to pushing your branch to origin. Our CI infrastructure will fail your build if any tests fail
+* Test your code locally using `pnpm test` prior to pushing your branch to origin. Our CI infrastructure will fail your build if any tests fail
+* Run `pnpm run lint` and `pnpm typecheck` before opening a PR
 * Respect our browser support matrix
 * All submissions should respect this [Web Accessibility Checklist](https://a11yproject.com/checklist.html) and allow easy navigation for keyboard-only users and screen readers.
 * Group import statements into the following types: NPM Module, Internal Import of sibling or child file, External Import of ancestor file using an absolute path from the project root
-* Add PropTypes for all props. Use Shapes for complex objects
+* Type component props with TypeScript. Shared domain types live in `src/types.ts` (e.g. `import type { Service } from "types"`). Do not add runtime PropTypes — the runtime `prop-types` shapes module has been removed.
 
 ### jsx
 
-1. Use class-based React components for stateful components and functional React components for stateless components. Avoid use of React.createClass.
+1. Prefer function components. Class components remain in legacy code; new work should use hooks where practical.
 2. When writing functional React components, use the traditional `function` syntax, not ES6 arrow functions
 3. Use camel case when naming props
 4. Omit the value of the prop if passing the boolean `true`
-5. Use React 16 fragments to avoid excessive wrapping divs.
+5. Use React fragments to avoid excessive wrapping divs.
 
 ### styled-components
 

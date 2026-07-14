@@ -33,26 +33,39 @@ _Note: This is a historical repository of GM Fabric Dashboard releases provided 
 
 ## Quick Start
 
-#### 1. If you do not already have Node.js 8.x LTS installed, <a href="https://nodejs.org/en/download/" target="_blank">download and install it</a>
+This project uses **pnpm** as its package manager and Node.js version manager. You do not need a separate global Node install for local development — pnpm downloads the pinned runtime on install.
 
-You can check your currently installed Node.js runtime by running the command `node -v`
+#### Requirements
 
-#### 2. Install and start the GM Fabric Dashboard with a mock of the backend API
+- [pnpm](https://pnpm.io/installation) 11+
+- Node.js 22 (pinned in `.nvmrc` / `package.json` `devEngines`; pnpm can auto-download it)
 
-From the command-line interface, navigate to the directory where you would like to install the dashboard and run the following commands to install the app and start the dashboard in development mode running against a mock of the server-side API running locally on your machine.
+#### Install and start with a mock backend
 
-```
+From the command-line interface, navigate to the directory where you would like to install the dashboard and run:
+
+```bash
 git clone https://github.com/DecipherNow/gm-fabric-dashboard-old.git
 cd gm-fabric-dashboard-old
-npm install
-npm start
+pnpm install
+pnpm start
 ```
 
-Once the project has compiled, the dashboard will lauch at [http://localhost:3000](http://localhost:3000) and open in your browser.
+`pnpm start` runs Vite on [http://localhost:3000](http://localhost:3000) and a mock discovery service on port 9000. The page reloads when you edit source files.
 
-You can open the source code in your editor of choice, and the page will reload if you make edits.
+Useful commands:
 
-Note: Git will notice changes to the `fabricServer` metatag in your `index.html` file. These changes are caused by npm scripts and can be safely ignored. If staged for a commit, git hooks will check to make sure that this value is pristine in the commit and then immediately revert the value back to `localhost:1337`. Additionally, you may notice the generation of an `.isRunning` placeholder file in your project root. This file is used by the `npm scripts` and is in the `.gitignore` file.
+| Command | Purpose |
+| --- | --- |
+| `pnpm start` | Vite UI + mock SDS |
+| `pnpm start-ui` | Vite only (no mock service) |
+| `pnpm test` | Vitest (watch locally; once under CI) |
+| `pnpm run lint` | Biome check |
+| `pnpm typecheck` | TypeScript (`tsc --noEmit`) |
+| `pnpm test:e2e` | Playwright end-to-end suite |
+| `pnpm build` | Production Vite build |
+
+For more detail, see [docs/installation.md](docs/installation.md) and [CONTRIBUTING.md](CONTRIBUTING.md). Contributor-facing tooling notes also live in `CLAUDE.md`.
 
 If you are a systems administrator and wish to install this software with live metrics and microservices, please refer to our externally-hosted [Grey Matter Fabric documentation site](http://www.deciphernow.com/)
 
