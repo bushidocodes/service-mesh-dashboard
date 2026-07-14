@@ -173,7 +173,6 @@ function mapStateToProps({
     isPollingInstanceMetrics
   }
 }: RootState) {
-  const timestamps = (metrics as { timestamps?: string[] })?.timestamps;
   return {
     fabricPollingInterval,
     fabricServer,
@@ -181,7 +180,7 @@ function mapStateToProps({
     isPollingFabric,
     isPollingInstanceMetrics,
     selectedInstanceID,
-    metricsSampleCount: Array.isArray(timestamps) ? timestamps.length : 0
+    metricsSampleCount: metrics.timestamps?.length ?? 0
   };
 }
 

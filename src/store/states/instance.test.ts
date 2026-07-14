@@ -1,6 +1,7 @@
+import type { InstanceState, Metrics } from "types";
 import instance, { _sliceMetrics, METRICS_CACHE_MAX_SAMPLES } from "./instance";
 
-const staticTimeseriesData = {
+const staticTimeseriesData: Metrics = {
   money: {
     1509026991398: 4,
     1509027027942: 5,
@@ -50,53 +51,54 @@ describe("METRICS_CACHE_MAX_SAMPLES / appendToMetrics ring buffer", () => {
   });
 
   test("evicts the oldest timestamp once sample count exceeds the max", () => {
-    let state = instance(undefined, { type: "@@INIT" });
+    let state = instance(undefined, { type: "@@INIT" }) as InstanceState;
 
     // Seed exactly the max number of samples.
     for (let i = 0; i < METRICS_CACHE_MAX_SAMPLES; i++) {
       state = instance(state, {
         type: "appendToMetrics",
         payload: { money: i }
-      });
+      }) as InstanceState;
     }
     expect(state.metrics.timestamps).toHaveLength(METRICS_CACHE_MAX_SAMPLES);
-    const oldestBefore = state.metrics.timestamps[0];
+    const oldestBefore = state.metrics.timestamps![0];
     const newestBefore =
-      state.metrics.timestamps[state.metrics.timestamps.length - 1];
+      state.metrics.timestamps![state.metrics.timestamps!.length - 1];
 
     // One more append should evict the oldest and keep length at the max.
     state = instance(state, {
       type: "appendToMetrics",
       payload: { money: 999 }
-    });
+    }) as InstanceState;
 
     expect(state.metrics.timestamps).toHaveLength(METRICS_CACHE_MAX_SAMPLES);
     expect(state.metrics.timestamps).not.toContain(oldestBefore);
     expect(state.metrics.timestamps).toContain(newestBefore);
     // Newest sample is present under the money series.
     const latestTs =
-      state.metrics.timestamps[state.metrics.timestamps.length - 1];
-    expect(state.metrics.money[latestTs]).toBe(999);
+      state.metrics.timestamps![state.metrics.timestamps!.length - 1];
+    const money = state.metrics.money as Record<string, unknown>;
+    expect(money[latestTs]).toBe(999);
     // Oldest sample's money value is gone.
-    expect(state.metrics.money[oldestBefore]).toBeUndefined();
+    expect(money[oldestBefore]).toBeUndefined();
   });
 
   test("never grows beyond METRICS_CACHE_MAX_SAMPLES even with many appends", () => {
-    let state = instance(undefined, { type: "@@INIT" });
+    let state = instance(undefined, { type: "@@INIT" }) as InstanceState;
 
     for (let i = 0; i < METRICS_CACHE_MAX_SAMPLES + 25; i++) {
       state = instance(state, {
         type: "appendToMetrics",
         payload: { money: i, problems: i * 2 }
-      });
+      }) as InstanceState;
     }
 
     expect(state.metrics.timestamps).toHaveLength(METRICS_CACHE_MAX_SAMPLES);
     // Only the last METRICS_CACHE_MAX_SAMPLES values should remain on each series.
-    expect(Object.keys(state.metrics.money)).toHaveLength(
+    expect(Object.keys(state.metrics.money as object)).toHaveLength(
       METRICS_CACHE_MAX_SAMPLES
     );
-    expect(Object.keys(state.metrics.problems)).toHaveLength(
+    expect(Object.keys(state.metrics.problems as object)).toHaveLength(
       METRICS_CACHE_MAX_SAMPLES
     );
   });

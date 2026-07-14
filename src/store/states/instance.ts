@@ -1,4 +1,5 @@
 import { State } from "store/jumpstate";
+import type { InstanceState, Metrics } from "types";
 import { omit } from "utils/collections";
 
 /** ~5 minutes of history at the default 5s poll interval (KD-16). */
@@ -12,23 +13,23 @@ const instance = State({
     metricsPollingFailures: 0,
     metrics: {},
     threadsError: {}
-  },
-  setInstanceMetricsPollingInterval(state: any, payload: any) {
+  } satisfies InstanceState,
+  setInstanceMetricsPollingInterval(state: InstanceState, payload: number) {
     return { ...state, instanceMetricsPollingInterval: payload };
   },
-  setIsPollingInstanceMetrics(state: any, payload: any) {
+  setIsPollingInstanceMetrics(state: InstanceState, payload: boolean) {
     return { ...state, isPollingInstanceMetrics: payload };
   },
-  setMetricsPollingFailures(state: any, payload: any) {
+  setMetricsPollingFailures(state: InstanceState, payload: number) {
     return { ...state, metricsPollingFailures: payload };
   },
-  setThreadsError(state: any, payload: any) {
+  setThreadsError(state: InstanceState, payload: Record<string, unknown>) {
     return { ...state, threadsError: payload };
   },
-  appendToMetrics(state: any, payload: any) {
+  appendToMetrics(state: InstanceState, payload: Record<string, unknown>) {
     // Ring buffer by max timestamp sample count (KD-16). After appending the
     // new sample, evict oldest timestamps until we are at or under the limit.
-    let result: any = { ...state.metrics };
+    let result: Metrics = { ...state.metrics };
     // Generate a timestamp for the new metrics poll
     const existingTimestamps = result.timestamps ? result.timestamps : [];
     const latestTimestamp = Date.now() + "";
@@ -36,17 +37,23 @@ const instance = State({
     result.timestamps = [...existingTimestamps, latestTimestamp];
     // And deep merge the new results into the keys of the existing state object
     Object.keys(payload).forEach((metric) => {
+      const existing = result[metric];
       result[metric] = {
-        ...result[metric],
+        ...(typeof existing === "object" && existing !== null
+          ? (existing as Record<string, unknown>)
+          : {}),
         [latestTimestamp]: payload[metric]
       };
     });
-    while (result.timestamps.length > METRICS_CACHE_MAX_SAMPLES) {
+    while (
+      result.timestamps != null &&
+      result.timestamps.length > METRICS_CACHE_MAX_SAMPLES
+    ) {
       result = _sliceMetrics(result);
     }
     return { ...state, metrics: result };
   },
-  clearMetrics(state: any, _payload: any) {
+  clearMetrics(state: InstanceState, _payload?: unknown) {
     return { ...state, metrics: {} };
   }
 });
@@ -62,17 +69,17 @@ export default instance;
  * of each metric. The value of each of those keys is another object that contains
  * keys of UNIX timestamps and values of the value of the metric at that timestamp.
  *
- * @param {any} [source={}]
+ * @param source - metrics bag (defaults to empty)
  * @returns Object containing timeseries with all but the oldest timestamp
  */
-export function _sliceMetrics(source = {}) {
+export function _sliceMetrics(source: Metrics = {}): Metrics {
   // Deeply clone the complex object to make sure the function stays pure
-  let metrics: any = structuredClone(source);
+  let metrics: Metrics = structuredClone(source);
   // Grab the first timestamp in the ordered array and throw an error if not
   // as expected
   const oldestTimestamp =
     metrics.timestamps && metrics.timestamps[0] ? metrics.timestamps[0] : null;
-  if (!oldestTimestamp) {
+  if (!oldestTimestamp || !metrics.timestamps) {
     throw new Error(
       "Metrics Object did not contain an ordered array of timestamps"
     );
@@ -81,7 +88,14 @@ export function _sliceMetrics(source = {}) {
   Object.keys(metrics).forEach((metric) => {
     // Ignore the ordered array of timestamps
     if (metric !== "timestamps") {
-      metrics[metric] = omit(metrics[metric], oldestTimestamp);
+      const series = metrics[metric];
+      metrics[metric] = omit(
+        (typeof series === "object" && series !== null ? series : {}) as Record<
+          string,
+          unknown
+        >,
+        oldestTimestamp
+      );
     }
   });
   // Finally update the array of timestamps
