@@ -9,15 +9,15 @@
  *
  * `typescript.reactDocgen: false` disables Storybook's PropType / TS-type
  * auto-extraction step. The default extractor (react-docgen) parses
- * .stories.js files with babel-parser but doesn't enable preset-react,
+ * .stories files with babel-parser but doesn't enable preset-react,
  * so the JSX in our stories trips a "Support for the experimental syntax
  * 'jsx' isn't currently enabled" error during `storybook build`. We don't
  * rely on auto-generated argTypes (the stories specify their controls
- * explicitly — see Button.stories.js), so disabling docgen is the
+ * explicitly — see Button.stories.tsx), so disabling docgen is the
  * cleanest fix.
  */
 const config = {
-  stories: ["../src/**/*.stories.@(js|jsx)"],
+  stories: ["../src/**/*.stories.@(js|jsx|ts|tsx)"],
   framework: {
     name: "@storybook/react-vite",
     options: {}

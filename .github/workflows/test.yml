@@ -7,8 +7,9 @@ on:
     branches: [master]
 
 # Least-privilege GITHUB_TOKEN. Every job here only checks out the code and
-# runs tests/tsc/biome — none write back to the repo — so read-only contents
-# is sufficient. Applied at the workflow level so all jobs inherit it.
+# runs checks that do not write back to the repo (tests/tsc/biome/e2e/storybook)
+# — so read-only contents is sufficient. Applied at the workflow level so all
+# jobs inherit it.
 permissions:
   contents: read
 
@@ -130,3 +131,28 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 7
+
+  storybook:
+    name: Storybook
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6
+
+      - name: Use Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: ".nvmrc"
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # Static build compiles Storybook preview/config plus all
+      # *.stories.@(js|jsx|ts|tsx) files through the app Vite pipeline.
+      # Fails if preview, config, or any story cannot compile.
+      - name: Build Storybook
+        run: pnpm build-storybook
