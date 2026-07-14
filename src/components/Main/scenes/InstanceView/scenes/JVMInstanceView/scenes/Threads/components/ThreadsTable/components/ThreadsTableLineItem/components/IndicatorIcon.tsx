@@ -16,7 +16,6 @@ function IndicatorIcon({
   return (
     <span>
       <svg height={diameter} width={diameter} role="img" aria-label={alt}>
-        <title>{alt}</title>
         <circle
           cx={diameter * 0.5}
           cy={diameter * 0.5}

@@ -12,7 +12,7 @@ interface DismissButtonProps {
 
 function DismissButton({ onClick }: DismissButtonProps) {
   return (
-    <DismissButtonContainer onClick={onClick}>
+    <DismissButtonContainer onClick={onClick} aria-label="Dismiss">
       <Icon>
         <Close />
       </Icon>

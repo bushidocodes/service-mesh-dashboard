@@ -28,6 +28,12 @@ exports[`DismissButton > matches snapshot 1`] = `
   pointer-events: auto;
   z-index: 100;
   opacity: 0.125;
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  line-height: 0;
 }
 
 .c0:hover,
@@ -47,8 +53,10 @@ exports[`DismissButton > matches snapshot 1`] = `
   opacity: 1;
 }
 
-<div
+<button
+    aria-label="Dismiss"
     class="c0"
+    type="button"
   >
     <svg
       aria-hidden="true"
@@ -70,6 +78,6 @@ exports[`DismissButton > matches snapshot 1`] = `
         />
       </g>
     </svg>
-  </div>
+  </button>
 </DocumentFragment>
 `;

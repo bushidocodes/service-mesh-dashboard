@@ -6,6 +6,7 @@ import StyledG from "./components/StyledG";
 import StyledSVG from "./components/StyledSVG";
 
 interface IconProps {
+  /** Real DOM id of a labeling element; only set when that id exists. */
   ariaLabelledby?: string;
   backgroundColor?: string;
   className?: string;
@@ -20,6 +21,7 @@ interface IconProps {
   glyphName?: string;
   glyphRatio?: string | number;
   iconRatio?: string | number;
+  /** Accessible name when the icon is the sole label for a control. */
   title?: string;
   transform?: string;
 }
@@ -30,7 +32,7 @@ interface IconProps {
  * @returns JSX elements
  */
 export default function Icon({
-  ariaLabelledby = "ariaLabelledby",
+  ariaLabelledby,
   backgroundColor = "currentColor",
   backgroundOpacity = "1",
   backgroundStyle,
@@ -48,14 +50,19 @@ export default function Icon({
 }: IconProps) {
   // Decorative by default (status/glyph marks next to text). Pass `title` when
   // the icon is the sole accessible name for a control. See CONTRIBUTING.md.
-  const accessibleTitle = title || "";
-  const isDecorative = !accessibleTitle;
+  const isDecorative = !title;
+
+  // Labeled icons use aria-label (or a real aria-labelledby id). Never emit a
+  // bogus aria-labelledby pointing at a non-existent id.
+  const a11yProps = isDecorative
+    ? ({ "aria-hidden": true } as const)
+    : ariaLabelledby
+      ? ({ role: "img", "aria-labelledby": ariaLabelledby } as const)
+      : ({ role: "img", "aria-label": title } as const);
 
   return (
     <StyledSVG
-      {...(isDecorative
-        ? { "aria-hidden": true as const }
-        : { "aria-labelledby": ariaLabelledby })}
+      {...a11yProps}
       iconRatio={iconRatio}
       glyphColor={glyphColor}
       focusable="false"
@@ -78,7 +85,9 @@ export default function Icon({
         />
       )}
       <StyledG title={glyphName} ratio={glyphRatio}>
-        {!isDecorative && <title>{accessibleTitle}</title>}
+        {!isDecorative && (
+          <title id={ariaLabelledby || undefined}>{title}</title>
+        )}
         {children}
       </StyledG>
     </StyledSVG>
