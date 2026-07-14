@@ -157,14 +157,19 @@ export function SparklinesLine({
 
   // Close the area polygon: drop to the baseline under the last point, run
   // along the baseline to the left margin, then back up to the first point.
-  const closePolyPoints = [
-    points[points.length - 1].x,
-    height - margin,
-    margin,
-    height - margin,
-    margin,
-    points[0].y
-  ];
+  const firstPoint = points[0];
+  const lastPoint = points[points.length - 1];
+  const closePolyPoints =
+    firstPoint && lastPoint
+      ? [
+          lastPoint.x,
+          height - margin,
+          margin,
+          height - margin,
+          margin,
+          firstPoint.y
+        ]
+      : [];
   const fillPoints = linePoints.concat(closePolyPoints);
 
   const lineStyle = {
@@ -223,11 +228,25 @@ const referenceValue: Record<string, (ys: number[]) => number> = {
   median: (ys: number[]) => {
     const sorted = [...ys].sort((a, b) => a - b);
     const mid = Math.floor(sorted.length / 2);
-    return sorted.length % 2 === 0
-      ? (sorted[mid - 1] + sorted[mid]) / 2
-      : sorted[mid];
+    if (sorted.length % 2 === 0) {
+      const left = sorted[mid - 1] ?? 0;
+      const right = sorted[mid] ?? 0;
+      return (left + right) / 2;
+    }
+    return sorted[mid] ?? 0;
   }
 };
+
+function computeReferenceY(
+  type: string,
+  ys: number[],
+  customValue?: number
+): number {
+  if (type === "custom") return customValue ?? 0;
+  const compute = referenceValue[type] ?? referenceValue.mean;
+  // mean always exists on the map; fall back to 0 only if empty/absent.
+  return compute ? compute(ys) : 0;
+}
 
 export function SparklinesReferenceLine({
   points = [],
@@ -237,14 +256,16 @@ export function SparklinesReferenceLine({
   style = { stroke: "red", strokeOpacity: 0.75, strokeDasharray: "2, 2" }
 }: SparklinesReferenceLineProps) {
   const ypoints = points.map((p) => p.y);
-  const compute = referenceValue[type] || referenceValue.mean;
-  const y: any = type === "custom" ? value : compute(ypoints);
+  const y = computeReferenceY(type, ypoints, value);
+  const firstPoint = points[0];
+  const lastPoint = points[points.length - 1];
+  if (!firstPoint || !lastPoint) return null;
 
   return (
     <line
-      x1={points[0].x}
+      x1={firstPoint.x}
       y1={y + margin}
-      x2={points[points.length - 1].x}
+      x2={lastPoint.x}
       y2={y + margin}
       style={style}
     />

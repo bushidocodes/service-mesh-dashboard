@@ -109,15 +109,18 @@ function _buildRoutesTree(routeMetrics: Metrics): Record<string, string[]> {
       );
       // Array.prototype.match returns null if RegExp didn't match
       if (matchSet) {
-        let [, path, verb] = matchSet;
+        let path = matchSet[1];
+        const verb = matchSet[2];
+        if (path == null || verb == null) return acc;
         // Finagle represents a GET on the root routes as "/route/GET"
         if (path === "") {
           path = "/";
         }
-        if (!acc[path]) {
+        const existing = acc[path];
+        if (!existing) {
           acc[path] = [verb];
-        } else if (!acc[path].includes(verb)) {
-          acc[path] = [...acc[path], verb];
+        } else if (!existing.includes(verb)) {
+          acc[path] = [...existing, verb];
         }
       }
       return acc;

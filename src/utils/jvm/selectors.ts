@@ -48,7 +48,9 @@ export const getRoutesTable = createSelector(
     const routesPaths = Object.keys(routesTree);
     routesPaths.forEach((routePath: string) => {
       let baseObj = { route: routePath };
-      routesTree[routePath].forEach((routeVerb: string) => {
+      const verbs = routesTree[routePath];
+      if (!verbs) return;
+      verbs.forEach((routeVerb: string) => {
         const requestsKey =
           routePath === "/"
             ? `route/${routeVerb}/requests`

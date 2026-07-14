@@ -52,7 +52,10 @@ describe("Inspector", () => {
     const items = getItems(container);
     expect(items).toHaveLength(14);
     items.forEach((item, idx) => {
-      expect(item).toHaveTextContent(mockData[idx]);
+      const expected = mockData[idx];
+      if (expected != null) {
+        expect(item).toHaveTextContent(expected);
+      }
     });
   });
 
@@ -73,7 +76,9 @@ describe("Inspector", () => {
 
   test("calls onClick when user selects a metric", () => {
     const items = getItems(container);
-    fireEvent.click(items[0]);
+    const first = items[0];
+    expect(first).toBeDefined();
+    fireEvent.click(first!);
     expect(mockProps.onClick).toHaveBeenCalled();
   });
 
@@ -113,7 +118,10 @@ describe("Inspector", () => {
     const items = getItems(filteredContainer);
     expect(items).toHaveLength(7);
     items.forEach((item, idx) => {
-      expect(item).toHaveTextContent(mockData[idx]);
+      const expected = mockData[idx];
+      if (expected != null) {
+        expect(item).toHaveTextContent(expected);
+      }
     });
   });
 });

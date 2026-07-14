@@ -22,7 +22,9 @@ export const getRoutesTable = createSelector(
     const routesPaths = Object.keys(routesTree);
     routesPaths.forEach((routePath: string) => {
       let baseObj = { route: routePath };
-      routesTree[routePath].forEach((routeVerb: string) => {
+      const verbs = routesTree[routePath];
+      if (!verbs) return;
+      verbs.forEach((routeVerb: string) => {
         const errorsCountKey = `route${routePath}/${routeVerb}/errors.count`;
         const inThroughputKey = `route${routePath}/${routeVerb}/in_throughput`;
         const outThroughputKey = `route${routePath}/${routeVerb}/out_throughput`;
@@ -134,7 +136,10 @@ function _getFunctionsTable(
   ];
   return funcs.map((func) => {
     const res: FunctionTableRow = { func: func };
-    labelKeyPairs.forEach(([label, key]) => {
+    labelKeyPairs.forEach((pair) => {
+      const label = pair[0];
+      const key = pair[1];
+      if (label == null || key == null) return;
       res[label] = getLatestAttribute(funcMetrics, `function/${func}/${key}`);
     });
     res["requestsPerSecond_dygraph"] = mapDygraphKeysToNetChange(

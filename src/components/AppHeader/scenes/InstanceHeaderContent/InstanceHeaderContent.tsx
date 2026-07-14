@@ -120,12 +120,13 @@ function mapStateToProps(state: RootState, _ownProps: any) {
     fabric: { services, selectedServiceSlug }
   } = state;
 
+  const selectedService =
+    services && selectedServiceSlug
+      ? services[selectedServiceSlug]
+      : undefined;
   return {
     metrics,
-    runtime:
-      services && selectedServiceSlug && services[selectedServiceSlug]
-        ? state.fabric.services[selectedServiceSlug].runtime
-        : "",
+    runtime: selectedService ? selectedService.runtime : "",
     basePath: getBaseInstanceRoute(state),
     dashboards: getDashboards(state)
   };

@@ -71,9 +71,10 @@ export function modes(array: any): any {
 
     for (let i = 0; i < array.length; i++) {
       number = array[i];
-      count[number] = (count[number] || 0) + 1;
-      if (count[number] > maxIndex) {
-        maxIndex = count[number];
+      const next = (count[number] ?? 0) + 1;
+      count[number] = next;
+      if (next > maxIndex) {
+        maxIndex = next;
       }
     }
 

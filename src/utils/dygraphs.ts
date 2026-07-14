@@ -124,8 +124,14 @@ function _netChangeMapper(
     result[positionOfLabelToMap] = 0;
     return result;
   } else {
-    const lastVal = Number(arr[idx - 1][positionOfLabelToMap]);
-    const lastTime = arr[idx - 1][0] as Date;
+    const prev = arr[idx - 1];
+    if (prev == null) {
+      const result = [...val];
+      result[positionOfLabelToMap] = 0;
+      return result;
+    }
+    const lastVal = Number(prev[positionOfLabelToMap]);
+    const lastTime = prev[0] as Date;
     const currentVal = Number(val[positionOfLabelToMap]);
     const currentTime = val[0] as Date;
     const result = [...val];

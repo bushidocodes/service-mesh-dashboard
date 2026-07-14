@@ -22,15 +22,81 @@ export type JumpstateAction = {
   _token?: number;
 };
 
-type ActionCreator = (payload?: unknown) => unknown;
+export type ActionCreator = (payload?: unknown) => unknown;
 type EffectHandler = (action: JumpstateAction) => void;
 type DispatchFn = (...args: unknown[]) => unknown;
 type GetStateFn = () => RootState;
 
+/**
+ * Explicit registry of every State method and Effect name the app registers.
+ * Under `noUncheckedIndexedAccess`, a bare `Record<string, ActionCreator>`
+ * makes `Actions.foo` into `ActionCreator | undefined` at every call site.
+ * Naming the keys keeps property access definite once modules have loaded
+ * (State/Effect registration runs at import time, before any UI/services).
+ * Dynamic registration still uses `registerAction` below.
+ */
+export type KnownActions = {
+  // store/states/dashboards
+  setDashboards: ActionCreator;
+  // store/states/fabric
+  setFabricPollingInterval: ActionCreator;
+  setIsPollingFabric: ActionCreator;
+  setSelectedInstanceID: ActionCreator;
+  setServicesPollingFailures: ActionCreator;
+  setSelectedServiceSlug: ActionCreator;
+  setFabricMicroservices: ActionCreator;
+  // store/states/instance
+  setInstanceMetricsPollingInterval: ActionCreator;
+  setIsPollingInstanceMetrics: ActionCreator;
+  setMetricsPollingFailures: ActionCreator;
+  setThreadsError: ActionCreator;
+  appendToMetrics: ActionCreator;
+  clearMetrics: ActionCreator;
+  // store/states/settings
+  setThreadsFilter: ActionCreator;
+  setUserLocale: ActionCreator;
+  // store/states/threadsTable
+  fetchThreadsSuccess: ActionCreator;
+  clearThreads: ActionCreator;
+  // services/dashboards
+  loadDashboardsFromJSON: ActionCreator;
+  // services/fabricMicroservices
+  fetchFabricMicroservicesFailure: ActionCreator;
+  fetchAndStoreFabricMicroservices: ActionCreator;
+  fetchFabricMicroservicesSuccess: ActionCreator;
+  changeFabricMicroservicesPollingInterval: ActionCreator;
+  startPollingFabricMicroservices: ActionCreator;
+  stopPollingFabricMicroservices: ActionCreator;
+  selectInstance: ActionCreator;
+  // services/instance/metrics
+  fetchAndStoreInstanceMetrics: ActionCreator;
+  fetchMetricsSuccess: ActionCreator;
+  fetchMetricsFailure: ActionCreator;
+  startPollingInstanceMetrics: ActionCreator;
+  stopPollingInstanceMetrics: ActionCreator;
+  stopPollingAndPurgeInstanceMetrics: ActionCreator;
+  changeInstanceMetricsPollingInterval: ActionCreator;
+  // services/instance/threads
+  fetchAndStoreInstanceThreads: ActionCreator;
+  fetchThreadsFailure: ActionCreator;
+};
+
 // `Actions` is a shared singleton object. State methods and Effects both attach
 // themselves here, and the services layer references it directly. Keeping it a
 // single mutable module export preserves jumpstate's global-singleton pattern.
-export const Actions: Record<string, ActionCreator> = {};
+// Cast from empty: keys are filled by State/Effect during module evaluation.
+export const Actions = {} as KnownActions;
+
+/** Mutable view used only by State/Effect registration (dynamic string keys). */
+const actionRegistry = Actions as Record<string, ActionCreator | undefined>;
+
+function registerAction(name: string, creator: ActionCreator): void {
+  actionRegistry[name] = creator;
+}
+
+function hasAction(name: string): boolean {
+  return actionRegistry[name] != null;
+}
 
 // Effect handlers, keyed by action type. The middleware invokes the matching
 // handler after an action of that type passes through the reducers.
@@ -80,8 +146,8 @@ export function State(config: {
     // First registration of a given name wins (jumpstate skips re-registration
     // rather than overwriting). All method/effect names in this app are unique,
     // so this is just defensive parity.
-    if (Actions[name]) return;
-    Actions[name] = (payload) => dispatch({ type: name, payload });
+    if (hasAction(name)) return;
+    registerAction(name, (payload) => dispatch({ type: name, payload }));
   });
 
   return reducer;
@@ -115,7 +181,7 @@ export function Effect(name: string, fn: (...args: never[]) => unknown) {
       'Effect requires a string name, e.g. Effect("myEffect", fn).'
     );
   }
-  if (Actions[name]) {
+  if (hasAction(name)) {
     throw new Error(
       `jumpstate shim: an action or effect named "${name}" already exists.`
     );
@@ -132,15 +198,16 @@ export function Effect(name: string, fn: (...args: never[]) => unknown) {
     }
   };
 
-  Actions[name] = (payload) => {
+  const creator: ActionCreator = (payload) => {
     const token = effectToken++;
     dispatch({ type: name, payload, _token: token });
     const result = effectResults[token];
     delete effectResults[token];
     return Promise.resolve(result);
   };
+  registerAction(name, creator);
 
-  return Actions[name];
+  return creator;
 }
 
 /**

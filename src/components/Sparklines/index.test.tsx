@@ -36,8 +36,9 @@ describe("Sparklines", () => {
   it("places the stroke polyline through the scaled data points", () => {
     const { container } = renderChart();
     const stroke = container.querySelectorAll("polyline")[1];
+    expect(stroke).toBeDefined();
     // The largest value maps to the top of the viewBox (y = margin = 2).
-    expect(stroke.getAttribute("points")).toContain("238 2");
+    expect(stroke!.getAttribute("points")).toContain("238 2");
   });
 
   it("renders nothing when data is empty", () => {
