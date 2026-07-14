@@ -24,17 +24,19 @@ import {
  * RTK thunk (PR-18a) — replaces the jumpstate Effect of the same name.
  */
 export function fetchAndStoreInstanceMetrics(
-  endpoint = buildDiscoveryServiceInstanceMetricsEndpoint()
+  endpoint?: string | null
 ): AppThunk<Promise<void>> {
-  return async (dispatch) => {
-    if (!endpoint) {
+  return async (dispatch, getState) => {
+    const resolvedEndpoint =
+      endpoint ?? buildDiscoveryServiceInstanceMetricsEndpoint(getState());
+    if (!resolvedEndpoint) {
       console.log(
         "Fetching metrics failed because metrics endpoint was missing"
       );
       return;
     }
     try {
-      const json = await fetchInstanceMetrics(endpoint);
+      const json = await fetchInstanceMetrics(resolvedEndpoint);
       dispatch(fetchMetricsSuccess(json));
     } catch (err) {
       dispatch(fetchMetricsFailure(err));
@@ -106,7 +108,7 @@ export function startPollingInstanceMetrics({
 } = {}): AppThunk {
   return (dispatch, getState) => {
     const pollEndpoint =
-      endpoint ?? buildDiscoveryServiceInstanceMetricsEndpoint();
+      endpoint ?? buildDiscoveryServiceInstanceMetricsEndpoint(getState());
     const pollInterval =
       interval ?? getState().instance.instanceMetricsPollingInterval;
     // We need to make sure we clear any existing

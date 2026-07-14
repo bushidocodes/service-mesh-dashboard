@@ -1,5 +1,3 @@
-// import { Actions } from "store/jumpstate";
-
 import ErrorBoundary from "components/ErrorBoundary";
 import NotFoundError from "components/Main/components/NotFoundError";
 import type React from "react";
@@ -202,11 +200,11 @@ function updateDashboardLayout(_allLayouts: any) {
   //     layouts: allLayouts
   //   }
   // });
-  // Namespace the dashboard properly and dispatch Jumpstate Effect to update Redux
+  // Namespace the dashboard properly and dispatch setDashboards to update Redux
   // We need to cast to lowercase to avoid duplicate entries
-  // Actions.setDashboard({
-  //   [this.props.dashboard.name.toLowerCase()]: updatedDashboard
-  // });
+  // dispatch(setDashboards({
+  //   [dashboard.name.toLowerCase()]: updatedDashboard
+  // }));
 }
 
 /**
