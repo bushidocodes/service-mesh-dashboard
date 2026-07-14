@@ -1,4 +1,4 @@
-import { createSelector } from "reselect";
+import { createSelector } from "@reduxjs/toolkit";
 import { calculateErrorPercent } from "utils";
 import { metricsKeySelectorGenerator } from "utils/selectors";
 import { uniq, without } from "../collections";

@@ -1,4 +1,4 @@
-import { createSelector } from "reselect";
+import { createSelector } from "@reduxjs/toolkit";
 import { countBy, pick } from "utils/collections";
 import { microserviceStatuses } from "utils/constants";
 
