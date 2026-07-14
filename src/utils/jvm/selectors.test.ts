@@ -2,7 +2,7 @@ import state from "../../json/mockReduxState";
 
 import { getThreadCounts, getVisibleThreads } from "./selectors";
 
-describe("Reselect selector getVisibleThreads", () =>
+describe("createSelector getVisibleThreads", () =>
   test("returns an array of thread objects matching state.settings.threadsFilter ", () => {
     expect(getVisibleThreads(state)).toEqual([
       {
@@ -21,7 +21,7 @@ describe("Reselect selector getVisibleThreads", () =>
     ]);
   }));
 
-describe("Reselect selector getThreadCounts", () =>
+describe("createSelector getThreadCounts", () =>
   test("returns an array of totals for each thread type ", () => {
     expect(getThreadCounts(state)).toEqual({
       active: 1,

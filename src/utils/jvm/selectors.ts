@@ -30,7 +30,7 @@ export const getErrorPercent = createSelector(getMetrics, (metrics) => {
 });
 
 /**
- * A reselect selector that builds the data required to render the RoutesTable component
+ * Memoized selector (createSelector from RTK) that builds the data required to render the RoutesTable component
  */
 export const getRoutesTable = createSelector(
   [getRoutesTree, getRoutesMetrics],

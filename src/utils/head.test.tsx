@@ -1,7 +1,7 @@
 // Stub out different index.html configurations containing different meta tag combinations
 // const dom = new JSDOM(`<!DOCTYPE html><p>Hello world</p>`)
 
-// TODO: Mock out a state object for the Reselect selectors
+// TODO: Mock out a state object for the createSelector (RTK) selectors
 
 // Note: You'll need to refactor generateSidebarCards to make this easier to test
 // The goal should be to refactor out an intermediate selector
