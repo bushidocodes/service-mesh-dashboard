@@ -1,34 +1,51 @@
-import React from "react";
+import type { ComponentType } from "react";
 import { useSearchParams } from "react-router-dom";
 
 /**
- * withUrlState is a HOC that syncs component state to the URL query string.
+ * Syncs component state to the URL query string (React Router v6).
  *
- * This is a React Router v6 replacement for the deprecated `with-url-state`
- * package. Usage:
- *
- *   withUrlState()(Component)
- *
- * The wrapped component receives two extra props:
+ * Returns:
  *   urlState   – current query-string params parsed as a plain object
  *   setUrlState(patch) – shallowly merges `patch` into the current params
  *
- * @returns {function} HOC factory – call with Component to get the wrapped version
+ * Prefer this hook in new function components. The `withUrlState` HOC below
+ * remains for class components that have not yet been converted.
+ */
+export function useUrlState(): {
+  urlState: Record<string, string>;
+  setUrlState: (patch: Record<string, string | boolean | number>) => void;
+} {
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const urlState = Object.fromEntries(searchParams.entries());
+
+  const setUrlState = (patch: Record<string, string | boolean | number>) =>
+    setSearchParams((prev) => {
+      const next: Record<string, string> = {
+        ...Object.fromEntries(prev.entries())
+      };
+      for (const [key, value] of Object.entries(patch)) {
+        next[key] = String(value);
+      }
+      return next;
+    });
+
+  return { urlState, setUrlState };
+}
+
+/**
+ * HOC factory wrapping {@link useUrlState} for class components still on
+ * the legacy stack. Prefer `useUrlState` in function components.
+ *
+ *   withUrlState()(Component)
+ *
+ * Intentionally loosely typed so existing class HOC stacks (connect +
+ * withUrlState + injectIntl) keep compiling until each site is converted.
  */
 export default function withUrlState() {
-  return function (Component: React.ComponentType<any>) {
+  return function (Component: ComponentType<any>) {
     function WithUrlState(props: any) {
-      const [searchParams, setSearchParams] = useSearchParams();
-
-      // Parse current query string into a plain object
-      const urlState = Object.fromEntries(searchParams.entries());
-
-      // Shallow-merge helper – preserves existing params not in the patch
-      const setUrlState = (patch: Record<string, any>) =>
-        setSearchParams((prev) => ({
-          ...Object.fromEntries(prev.entries()),
-          ...patch
-        }));
+      const { urlState, setUrlState } = useUrlState();
 
       return (
         <Component {...props} urlState={urlState} setUrlState={setUrlState} />
