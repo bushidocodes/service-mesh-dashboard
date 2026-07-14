@@ -33,17 +33,17 @@
     "rules": {
       "preset": "recommended",
       "a11y": {
-        "noLabelWithoutControl": "off",
-        "noNoninteractiveTabindex": "off",
-        "noPositiveTabindex": "off",
-        "noStaticElementInteractions": "off",
-        "noSvgWithoutTitle": "off",
-        "useAltText": "off",
-        "useButtonType": "off",
-        "useFocusableInteractive": "off",
-        "useKeyWithClickEvents": "off",
-        "useSemanticElements": "off",
-        "useValidAnchor": "off"
+        "noLabelWithoutControl": "warn",
+        "noNoninteractiveTabindex": "warn",
+        "noPositiveTabindex": "error",
+        "noStaticElementInteractions": "warn",
+        "noSvgWithoutTitle": "warn",
+        "useAltText": "error",
+        "useButtonType": "error",
+        "useFocusableInteractive": "warn",
+        "useKeyWithClickEvents": "warn",
+        "useSemanticElements": "warn",
+        "useValidAnchor": "error"
       },
       "complexity": {
         "noBannedTypes": "off",
@@ -70,7 +70,7 @@
         "noAccumulatingSpread": "off"
       },
       "security": {
-        "noDangerouslySetInnerHtml": "warn"
+        "noDangerouslySetInnerHtml": "error"
       },
       "style": {
         "noNonNullAssertion": "off",
@@ -144,11 +144,11 @@
       }
     },
     {
-      "includes": ["src/store/**/*.{ts,tsx}", "!src/store/**/*.test.{ts,tsx}"],
+      "includes": ["src/components/Glyphs/**", "src/components/Icon/**"],
       "linter": {
         "rules": {
-          "suspicious": {
-            "noExplicitAny": "error"
+          "a11y": {
+            "noSvgWithoutTitle": "off"
           }
         }
       }

@@ -116,6 +116,15 @@ The subject of your commit should be less than 72 characters and should not begi
 * Group import statements into the following types: NPM Module, Internal Import of sibling or child file, External Import of ancestor file using an absolute path from the project root
 * Type component props with TypeScript. Shared domain types live in `src/types.ts` (e.g. `import type { Service } from "types"`). Do not add runtime PropTypes — the runtime `prop-types` shapes module has been removed.
 
+### Accessibility: Glyph / Icon SVGs (KD-20)
+
+Status glyphs and the shared `Icon` host are **decorative marks**, not standalone images:
+
+* `src/components/Glyphs/**` and `src/components/Icon/**` permanently turn off Biome `a11y/noSvgWithoutTitle` (path override in `biome.json`). Do **not** add empty `<title>` elements to every glyph path just to silence the rule.
+* Decorative icons use `aria-hidden={true}` (the default when `Icon` has no `title` prop). Sparklines and other pure chart marks should also set `aria-hidden`.
+* When an icon is the **sole** accessible name for a control (for example a docs link with no visible text), pass a meaningful `title` to `Icon` (or an equivalent `aria-label` on the control). Interactive controls must always have an accessible name via label text, `aria-label`, or a non-empty title—not via glyph path titles alone.
+* Prefer native semantics (`button`/`a` with visible text) over unlabeled icon-only hit targets.
+
 ### jsx
 
 1. Prefer function components. Class components remain in legacy code; new work should use hooks where practical.

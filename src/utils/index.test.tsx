@@ -134,8 +134,11 @@ describe("blurTableRow", () => {
     // after the hash, not at position 0. This div mimics that pattern so we
     // can verify that includes("TableRow") finds it regardless of position.
     const { container, getByText } = render(
+      // biome-ignore lint/a11y/noNoninteractiveTabindex: fixture mimics focusable TableRow
       <div className="sc-fake hash123 TableRow" tabIndex={0}>
         <div>
+          {/* biome-ignore lint/a11y/useKeyWithClickEvents: click-only fixture for blurTableRow */}
+          {/* biome-ignore lint/a11y/noStaticElementInteractions: click-only fixture for blurTableRow */}
           <span onClick={spy}>Words</span>
         </div>
       </div>
@@ -156,6 +159,8 @@ describe("blurTableRow", () => {
     const spy = vi.fn((e) => blurTableRow(e));
     const { getByText } = render(
       <div>
+        {/* biome-ignore lint/a11y/useKeyWithClickEvents: click-only fixture for blurTableRow */}
+        {/* biome-ignore lint/a11y/noStaticElementInteractions: click-only fixture for blurTableRow */}
         <span onClick={spy}>Words</span>
       </div>
     );

@@ -125,7 +125,7 @@ exports[`DefaultHeaderContent > matches snapshot 1`] = `
           class="c3"
         >
           <svg
-            aria-labelledby="ariaLabelledby"
+            aria-hidden="true"
             class="c4"
             focusable="false"
             version="1.1"
@@ -138,7 +138,6 @@ exports[`DefaultHeaderContent > matches snapshot 1`] = `
               fill="currentColor"
               title=""
             >
-              <title />
               <g
                 class="glyph"
                 fill="currentColor"

@@ -541,7 +541,7 @@ exports[`AppHeader snapshots > matches snapshot with fabric view tabs 1`] = `
             class="c13"
           >
             <svg
-              aria-labelledby="ariaLabelledby"
+              aria-hidden="true"
               class="c14"
               focusable="false"
               version="1.1"
@@ -554,7 +554,6 @@ exports[`AppHeader snapshots > matches snapshot with fabric view tabs 1`] = `
                 fill="currentColor"
                 title=""
               >
-                <title />
                 <g
                   class="glyph"
                   fill="currentColor"
@@ -596,7 +595,7 @@ exports[`AppHeader snapshots > matches snapshot with fabric view tabs 1`] = `
             class="c21"
           >
             <svg
-              aria-labelledby="ariaLabelledby"
+              aria-hidden="true"
               class="c14"
               focusable="false"
               version="1.1"
@@ -609,7 +608,6 @@ exports[`AppHeader snapshots > matches snapshot with fabric view tabs 1`] = `
                 fill="currentColor"
                 title=""
               >
-                <title />
                 <g
                   class="glyph"
                   fill="currentColor"
@@ -656,7 +654,7 @@ exports[`AppHeader snapshots > matches snapshot with fabric view tabs 1`] = `
             class="c21"
           >
             <svg
-              aria-labelledby="ariaLabelledby"
+              aria-hidden="true"
               class="c14"
               focusable="false"
               version="1.1"
@@ -681,7 +679,6 @@ exports[`AppHeader snapshots > matches snapshot with fabric view tabs 1`] = `
                 fill="currentColor"
                 title=""
               >
-                <title />
                 <path
                   d="M7.14644661,7.85355339 L16.1464466,16.8535534 C16.3417088,17.0488155 16.6582912,17.0488155 16.8535534,16.8535534 C17.0488155,16.6582912 17.0488155,16.3417088 16.8535534,16.1464466 L7.85355339,7.14644661 C7.65829124,6.95118446 7.34170876,6.95118446 7.14644661,7.14644661 C6.95118446,7.34170876 6.95118446,7.65829124 7.14644661,7.85355339 Z"
                   id="Negation"
@@ -719,7 +716,7 @@ exports[`AppHeader snapshots > matches snapshot with fabric view tabs 1`] = `
             class="c21"
           >
             <svg
-              aria-labelledby="ariaLabelledby"
+              aria-hidden="true"
               class="c14"
               focusable="false"
               version="1.1"
@@ -744,7 +741,6 @@ exports[`AppHeader snapshots > matches snapshot with fabric view tabs 1`] = `
                 fill="currentColor"
                 title=""
               >
-                <title />
                 <path
                   d="M11,14 L13,14 L13,16 L11,16 L11,14 Z M11,9 L13,9 L13,11.0070282 L12.5,13 L11.5,13 L11,11.0070282 L11,9 Z"
                   id="Exclamation"
@@ -784,7 +780,7 @@ exports[`AppHeader snapshots > matches snapshot with fabric view tabs 1`] = `
             class="c21"
           >
             <svg
-              aria-labelledby="ariaLabelledby"
+              aria-hidden="true"
               class="c14"
               focusable="false"
               version="1.1"
@@ -809,7 +805,6 @@ exports[`AppHeader snapshots > matches snapshot with fabric view tabs 1`] = `
                 fill="currentColor"
                 title=""
               >
-                <title />
                 <path
                   d="M11,9.86851709 L11,14.1314829 L14.1972244,12 L11,9.86851709 Z M16,12 L10,16 L10,8 L16,12 Z"
                   id="GlyphRunningSmall"
@@ -1380,7 +1375,7 @@ exports[`AppHeader snapshots > matches snapshot with instance view tabs 1`] = `
             class="c13"
           >
             <svg
-              aria-labelledby="ariaLabelledby"
+              aria-hidden="true"
               class="c14"
               focusable="false"
               version="1.1"
@@ -1393,7 +1388,6 @@ exports[`AppHeader snapshots > matches snapshot with instance view tabs 1`] = `
                 fill="currentColor"
                 title=""
               >
-                <title />
                 <g
                   class="glyph"
                   fill="currentColor"
@@ -1435,7 +1429,7 @@ exports[`AppHeader snapshots > matches snapshot with instance view tabs 1`] = `
             class="c21"
           >
             <svg
-              aria-labelledby="ariaLabelledby"
+              aria-hidden="true"
               class="c14"
               focusable="false"
               version="1.1"
@@ -1448,7 +1442,6 @@ exports[`AppHeader snapshots > matches snapshot with instance view tabs 1`] = `
                 fill="currentColor"
                 title=""
               >
-                <title />
                 <g
                   class="glyph"
                   fill="currentColor"
@@ -1495,7 +1488,7 @@ exports[`AppHeader snapshots > matches snapshot with instance view tabs 1`] = `
             class="c21"
           >
             <svg
-              aria-labelledby="ariaLabelledby"
+              aria-hidden="true"
               class="c14"
               focusable="false"
               version="1.1"
@@ -1520,7 +1513,6 @@ exports[`AppHeader snapshots > matches snapshot with instance view tabs 1`] = `
                 fill="currentColor"
                 title=""
               >
-                <title />
                 <path
                   d="M7.14644661,7.85355339 L16.1464466,16.8535534 C16.3417088,17.0488155 16.6582912,17.0488155 16.8535534,16.8535534 C17.0488155,16.6582912 17.0488155,16.3417088 16.8535534,16.1464466 L7.85355339,7.14644661 C7.65829124,6.95118446 7.34170876,6.95118446 7.14644661,7.14644661 C6.95118446,7.34170876 6.95118446,7.65829124 7.14644661,7.85355339 Z"
                   id="Negation"
@@ -1558,7 +1550,7 @@ exports[`AppHeader snapshots > matches snapshot with instance view tabs 1`] = `
             class="c21"
           >
             <svg
-              aria-labelledby="ariaLabelledby"
+              aria-hidden="true"
               class="c14"
               focusable="false"
               version="1.1"
@@ -1583,7 +1575,6 @@ exports[`AppHeader snapshots > matches snapshot with instance view tabs 1`] = `
                 fill="currentColor"
                 title=""
               >
-                <title />
                 <path
                   d="M11,14 L13,14 L13,16 L11,16 L11,14 Z M11,9 L13,9 L13,11.0070282 L12.5,13 L11.5,13 L11,11.0070282 L11,9 Z"
                   id="Exclamation"
@@ -1623,7 +1614,7 @@ exports[`AppHeader snapshots > matches snapshot with instance view tabs 1`] = `
             class="c21"
           >
             <svg
-              aria-labelledby="ariaLabelledby"
+              aria-hidden="true"
               class="c14"
               focusable="false"
               version="1.1"
@@ -1648,7 +1639,6 @@ exports[`AppHeader snapshots > matches snapshot with instance view tabs 1`] = `
                 fill="currentColor"
                 title=""
               >
-                <title />
                 <path
                   d="M11,9.86851709 L11,14.1314829 L14.1972244,12 L11,9.86851709 Z M16,12 L10,16 L10,8 L16,12 Z"
                   id="GlyphRunningSmall"

@@ -127,6 +127,7 @@ exports[`<TableLineItem/> > matches snapshot 1`] = `
       class="c1 c6"
     >
       <svg
+        aria-hidden="true"
         focusable="false"
         preserveAspectRatio="xMaxYMin"
         viewBox="0 0 240 32"

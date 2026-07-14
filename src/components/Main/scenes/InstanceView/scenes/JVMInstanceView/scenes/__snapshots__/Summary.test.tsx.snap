@@ -231,7 +231,7 @@ exports[`JVM > SummaryGrid component > Matched the snapshot 1`] = `
         class="c2"
       >
         <svg
-          aria-labelledby="ariaLabelledby"
+          aria-hidden="true"
           class="c3"
           focusable="false"
           version="1.1"
@@ -244,7 +244,6 @@ exports[`JVM > SummaryGrid component > Matched the snapshot 1`] = `
             fill="currentColor"
             title=""
           >
-            <title />
             <g
               class="glyph"
               fill="currentColor"
@@ -282,7 +281,7 @@ exports[`JVM > SummaryGrid component > Matched the snapshot 1`] = `
               class="c10"
             >
               <svg
-                aria-labelledby="ariaLabelledby"
+                aria-hidden="true"
                 class="c11"
                 focusable="false"
                 version="1.1"
@@ -295,7 +294,6 @@ exports[`JVM > SummaryGrid component > Matched the snapshot 1`] = `
                   fill="currentColor"
                   title=""
                 >
-                  <title />
                   <g
                     class="glyph"
                     fill="currentColor"
@@ -357,7 +355,7 @@ exports[`JVM > SummaryGrid component > Matched the snapshot 1`] = `
               class="c10"
             >
               <svg
-                aria-labelledby="ariaLabelledby"
+                aria-hidden="true"
                 class="c11"
                 focusable="false"
                 version="1.1"
@@ -370,7 +368,6 @@ exports[`JVM > SummaryGrid component > Matched the snapshot 1`] = `
                   fill="currentColor"
                   title=""
                 >
-                  <title />
                   <g
                     class="glyph"
                     fill="currentColor"
@@ -407,7 +404,7 @@ exports[`JVM > SummaryGrid component > Matched the snapshot 1`] = `
               class="c10"
             >
               <svg
-                aria-labelledby="ariaLabelledby"
+                aria-hidden="true"
                 class="c11"
                 focusable="false"
                 version="1.1"
@@ -432,7 +429,6 @@ exports[`JVM > SummaryGrid component > Matched the snapshot 1`] = `
                   fill="currentColor"
                   title=""
                 >
-                  <title />
                   <g
                     class="glyph"
                     fill="currentColor"
@@ -474,7 +470,7 @@ exports[`JVM > SummaryGrid component > Matched the snapshot 1`] = `
               class="c10"
             >
               <svg
-                aria-labelledby="ariaLabelledby"
+                aria-hidden="true"
                 class="c11"
                 focusable="false"
                 version="1.1"
@@ -487,7 +483,6 @@ exports[`JVM > SummaryGrid component > Matched the snapshot 1`] = `
                   fill="currentColor"
                   title=""
                 >
-                  <title />
                   <g
                     class="glyph"
                     fill="currentColor"
@@ -669,7 +664,7 @@ exports[`JVM > SummaryGrid component > Matched the snapshot 1`] = `
         class="c2"
       >
         <svg
-          aria-labelledby="ariaLabelledby"
+          aria-hidden="true"
           class="c3"
           focusable="false"
           version="1.1"
@@ -682,7 +677,6 @@ exports[`JVM > SummaryGrid component > Matched the snapshot 1`] = `
             fill="currentColor"
             title=""
           >
-            <title />
             <g
               class="glyph"
               fill="currentColor"

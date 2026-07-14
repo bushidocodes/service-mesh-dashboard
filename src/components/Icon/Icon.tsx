@@ -46,9 +46,16 @@ export default function Icon({
   title = "",
   transform: _transform
 }: IconProps) {
+  // Decorative by default (status/glyph marks next to text). Pass `title` when
+  // the icon is the sole accessible name for a control. See CONTRIBUTING.md.
+  const accessibleTitle = title || "";
+  const isDecorative = !accessibleTitle;
+
   return (
     <StyledSVG
-      aria-labelledby={ariaLabelledby}
+      {...(isDecorative
+        ? { "aria-hidden": true as const }
+        : { "aria-labelledby": ariaLabelledby })}
       iconRatio={iconRatio}
       glyphColor={glyphColor}
       focusable="false"
@@ -71,7 +78,7 @@ export default function Icon({
         />
       )}
       <StyledG title={glyphName} ratio={glyphRatio}>
-        <title>{title ? title : glyphName}</title>
+        {!isDecorative && <title>{accessibleTitle}</title>}
         {children}
       </StyledG>
     </StyledSVG>
