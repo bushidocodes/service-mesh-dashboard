@@ -1,6 +1,5 @@
 import Readout from "components/Main/components/Readout";
 import ReadoutGroup from "components/Main/components/ReadoutGroup";
-import React from "react";
 import LayoutSection from "./LayoutSection";
 
 export default {

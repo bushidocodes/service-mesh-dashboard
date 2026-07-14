@@ -1,5 +1,4 @@
 import { LazyLoader } from "components/LazyLoader";
-import React from "react";
 import { Navigate, useParams } from "react-router-dom";
 import type { ServiceInstance } from "types";
 import { injectIntl } from "utils/injectIntl";

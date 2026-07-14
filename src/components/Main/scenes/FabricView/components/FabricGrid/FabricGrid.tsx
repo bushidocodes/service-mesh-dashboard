@@ -1,7 +1,7 @@
 import NotFoundError from "components/Main/components/NotFoundError";
 import TableToolbar from "components/Main/components/TableToolbar";
 import withUrlState from "components/withUrlState";
-import React, { Component } from "react";
+import { Component } from "react";
 import { reportError } from "services/notification";
 import { Actions } from "store/jumpstate";
 import type {

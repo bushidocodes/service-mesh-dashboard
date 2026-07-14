@@ -1,5 +1,3 @@
-import React from "react";
-
 import GMServiceHeader from "./GMServiceHeader";
 
 export default {

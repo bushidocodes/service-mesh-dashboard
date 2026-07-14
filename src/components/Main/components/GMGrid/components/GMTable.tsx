@@ -1,5 +1,3 @@
-import React from "react";
-
 import DataDisplay from "./DataDisplay";
 import DataKey from "./DataKey";
 import DataKeyHeader from "./DataKeyHeader";

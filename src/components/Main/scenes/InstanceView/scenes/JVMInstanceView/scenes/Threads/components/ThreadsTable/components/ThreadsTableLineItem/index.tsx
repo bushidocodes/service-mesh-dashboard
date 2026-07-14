@@ -7,7 +7,7 @@ import TableDrawerCollapse from "components/Main/components/TableDrawerCollapse"
 import TableRow from "components/Main/components/TableRow";
 
 import StatusIcon from "components/StatusIcon";
-import React, { Component } from "react";
+import { Component } from "react";
 import { blurTableRow } from "utils";
 import StackTrace from "./components/StackTrace";
 

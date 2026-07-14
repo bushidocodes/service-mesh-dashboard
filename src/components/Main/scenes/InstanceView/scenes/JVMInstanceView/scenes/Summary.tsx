@@ -5,7 +5,6 @@ import GMLineChart from "components/Main/components/GMLineChart";
 import Readout from "components/Main/components/Readout";
 import ReadoutGroup from "components/Main/components/ReadoutGroup";
 import UpTime from "components/UpTime";
-import React from "react";
 import { connect } from "react-redux";
 import type { Metrics, RootState } from "types";
 import { getDygraphOfValue, mapDygraphKeysToNetChange } from "utils/dygraphs";

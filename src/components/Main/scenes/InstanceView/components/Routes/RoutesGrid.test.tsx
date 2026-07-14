@@ -1,7 +1,6 @@
 import { fireEvent, screen, within } from "@testing-library/react";
 // Utilities
 import mockState from "json/mockReduxState";
-import React from "react";
 import { MemoryRouter } from "react-router-dom";
 import configureMockStore from "redux-mock-store";
 import { renderWithIntl } from "utils/i18nTesting";

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import BackgroundCircleSmall from "./components/BackgroundCircleSmall";
 import BackgroundSquare from "./components/BackgroundSquare";
 import BackgroundSquareBeveled from "./components/BackgroundSquareBeveled";

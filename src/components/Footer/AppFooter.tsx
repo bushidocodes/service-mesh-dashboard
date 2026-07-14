@@ -1,6 +1,5 @@
 import Glyph from "components/Glyphs";
 import Icon from "components/Icon";
-import React from "react";
 import { FormattedMessage } from "react-intl";
 import longLogo from "./assets/decipher-logo-long.png";
 import Copyright from "./components/Copyright";

@@ -3,7 +3,6 @@ import Negation from "components/Glyphs/Negation";
 import RunningSmall from "components/Glyphs/RunningSmall";
 import Icon from "components/Icon";
 import ServicesIcon from "images/icons/services.svg";
-import React from "react";
 import {
   COLOR_DANGER,
   COLOR_SUCCESS,

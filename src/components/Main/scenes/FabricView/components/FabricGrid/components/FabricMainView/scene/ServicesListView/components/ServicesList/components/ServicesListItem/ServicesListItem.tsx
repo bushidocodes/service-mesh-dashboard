@@ -4,7 +4,7 @@ import NoMetrics from "components/Glyphs/NoMetrics";
 import Icon from "components/Icon";
 import GMLink from "components/Main/scenes/FabricView/components/GMLink";
 import StatusIcon from "components/StatusIcon";
-import React, { Component } from "react";
+import { Component } from "react";
 import DocsLink from "./components/DocsLink";
 import IconWrapper from "./components/IconWrapper";
 import {

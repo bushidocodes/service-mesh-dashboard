@@ -1,7 +1,6 @@
 import { screen, within } from "@testing-library/react";
 // Utilities
 import mockState from "json/mockReduxState";
-import React from "react";
 import { Provider } from "react-redux";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import configureStore from "redux-mock-store";

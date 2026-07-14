@@ -1,5 +1,3 @@
-import React from "react";
-
 /** Default component shown when React Router doesn't match anything else */
 const NotFound = () => (
   <div>

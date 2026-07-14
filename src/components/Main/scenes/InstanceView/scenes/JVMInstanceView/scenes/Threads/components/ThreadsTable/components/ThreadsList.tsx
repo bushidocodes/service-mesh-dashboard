@@ -1,5 +1,4 @@
 import TableBody from "components/Main/components/TableBody";
-import React from "react";
 import type { ThreadsTableItem } from "types";
 import ThreadsTableLineItem from "./ThreadsTableLineItem";
 

@@ -2,7 +2,6 @@ import TableColHeader from "components/Main/components/TableColHeader";
 import TableColHeaderThread from "components/Main/components/TableColHeaderThread";
 
 import TableHeader from "components/Main/components/TableHeader";
-import React from "react";
 import { FormattedMessage } from "react-intl";
 
 /**

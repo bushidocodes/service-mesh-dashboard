@@ -3,7 +3,7 @@ import HTTPGet from "components/Glyphs/HttpGet";
 import HTTPPatch from "components/Glyphs/HttpPatch";
 import HTTPPost from "components/Glyphs/HttpPost";
 import HTTPPut from "components/Glyphs/HttpPut";
-import React, { Component } from "react";
+import { Component } from "react";
 import { ICON_VIEWBOX_SIZE } from "style/styleVariables";
 import { upperFirst } from "utils/collections";
 import Bars from "./Bars";

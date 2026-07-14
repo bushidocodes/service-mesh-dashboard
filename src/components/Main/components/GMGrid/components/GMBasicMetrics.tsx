@@ -3,7 +3,6 @@ import {
   SparklinesLine,
   SparklinesReferenceLine
 } from "components/Sparklines";
-import React from "react";
 
 import DataDisplay from "./DataDisplay";
 import DataKey from "./DataKey";

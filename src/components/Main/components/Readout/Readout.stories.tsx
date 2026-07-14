@@ -1,5 +1,3 @@
-import React from "react";
-
 import ReadoutGroup from "../ReadoutGroup";
 import Readout from "./Readout";
 

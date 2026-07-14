@@ -5,7 +5,7 @@ import LayoutSection from "components/LayoutSection";
 import Readout from "components/Main/components/Readout";
 import { filesize } from "filesize";
 import objectSizeOf from "object-sizeof";
-import React, { Component, Fragment } from "react";
+import { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { Actions } from "store/jumpstate";
 import type { RootState } from "types";

@@ -1,4 +1,3 @@
-import React from "react";
 import SectionItems from "./components/SectionItems";
 import ServicesListItem from "./components/ServicesListItem";
 

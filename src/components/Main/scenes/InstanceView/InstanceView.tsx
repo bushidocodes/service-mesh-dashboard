@@ -1,6 +1,6 @@
 import { LazyLoader } from "components/LazyLoader";
 import { Loading } from "components/Loading";
-import React, { Suspense, useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { connect } from "react-redux";
 import { Actions } from "store/jumpstate";
 import type { RootState } from "types";

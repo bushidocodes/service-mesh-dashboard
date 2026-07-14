@@ -1,6 +1,4 @@
 import { fireEvent, render } from "@testing-library/react";
-import TableRow from "components/Main/components/TableRow";
-import React from "react";
 import { slugifyMicroservice } from "utils";
 import {
   blurTableRow,

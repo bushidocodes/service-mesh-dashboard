@@ -1,6 +1,5 @@
 import StatusIcon from "components/StatusIcon";
 import ServicesIcon from "images/icons/services.svg";
-import React from "react";
 import { spacingScale } from "style/styleFunctions";
 import { FONT_SIZE_LG } from "style/styleVariables";
 import styled from "styled-components";

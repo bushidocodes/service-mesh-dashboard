@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 import Extra from "./components/Extra";
 import Header from "./components/Header";
 import HeaderContainer from "./components/HeaderContainer";

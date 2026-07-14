@@ -60,7 +60,7 @@
       "correctness": {
         "noSwitchDeclarations": "off",
         "noUnusedFunctionParameters": "off",
-        "noUnusedImports": "off",
+        "noUnusedImports": "error",
         "noUnusedVariables": "off",
         "useExhaustiveDependencies": "warn",
         "useHookAtTopLevel": "error",

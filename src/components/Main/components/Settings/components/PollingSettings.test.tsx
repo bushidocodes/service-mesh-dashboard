@@ -1,5 +1,4 @@
 import { fireEvent, screen } from "@testing-library/react";
-import React from "react";
 import { renderWithIntl, withIntl } from "utils/i18nTesting";
 import PollingSettings from "./PollingSettings";
 

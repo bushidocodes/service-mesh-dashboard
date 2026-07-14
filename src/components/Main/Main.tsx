@@ -1,7 +1,7 @@
 import ErrorBoundary from "components/ErrorBoundary";
 import { LazyLoader } from "components/LazyLoader";
 import { Loading } from "components/Loading";
-import React, { Component, Suspense } from "react";
+import { Component, Suspense } from "react";
 import { connect } from "react-redux";
 import { Actions } from "store/jumpstate";
 import type { Dashboard, RootState } from "types";

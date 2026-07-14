@@ -1,7 +1,7 @@
 import { LazyLoader } from "components/LazyLoader";
 import { Loading } from "components/Loading";
 import NotFound from "components/Main/scenes/InstanceView/components/NotFound";
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 
 const SummaryGrid = LazyLoader({

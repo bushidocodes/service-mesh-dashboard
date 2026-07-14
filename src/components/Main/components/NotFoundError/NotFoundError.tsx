@@ -1,7 +1,6 @@
 import Glyph from "components/Glyphs/index";
 import Icon from "components/Icon";
 import Span from "components/Main/components/Span";
-import React from "react";
 import ErrorBox from "./components/ErrorBox";
 import ErrorContent from "./components/ErrorContent";
 

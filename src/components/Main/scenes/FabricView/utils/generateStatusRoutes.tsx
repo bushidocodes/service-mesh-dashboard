@@ -1,4 +1,3 @@
-import React from "react";
 import { Route } from "react-router-dom";
 import { microserviceStatuses } from "utils/constants";
 import { computeStatus } from "utils/selectors";

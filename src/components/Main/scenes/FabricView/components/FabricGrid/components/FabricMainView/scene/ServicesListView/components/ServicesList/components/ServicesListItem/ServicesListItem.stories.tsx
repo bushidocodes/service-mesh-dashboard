@@ -1,4 +1,3 @@
-import React from "react";
 import { slugifyMicroservice } from "utils";
 import GMServiceListItem from "./index";
 

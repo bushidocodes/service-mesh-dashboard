@@ -1,7 +1,6 @@
 import Button from "components/Button";
 import Glyph from "components/Glyphs";
 import Icon from "components/Icon";
-import React from "react";
 import { COLOR_DANGER } from "style/styleVariables";
 import Actions from "./components/Actions";
 import CancelX from "./components/CancelX";

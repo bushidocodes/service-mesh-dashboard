@@ -1,5 +1,4 @@
 import Tooltip from "components/Tooltip";
-import React from "react";
 import { FormattedMessage } from "react-intl";
 import { COLOR_CONTENT_MUTED, FONT_SIZE_SM } from "style/styleVariables";
 import styled from "styled-components";

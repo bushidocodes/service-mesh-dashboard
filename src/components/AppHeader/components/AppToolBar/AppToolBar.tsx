@@ -1,7 +1,6 @@
 import decipherLogo from "components/AppHeader/assets/decipherLogo.svg";
 import ButtonGroup from "components/ButtonGroup";
 import NavButton from "components/NavButton";
-import React from "react";
 import { Link } from "react-router-dom";
 import AppToolBarHeader from "./components/AppToolBarHeader";
 import AppVersionLink from "./components/AppVersionLink";

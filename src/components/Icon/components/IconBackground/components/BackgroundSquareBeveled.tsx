@@ -1,5 +1,3 @@
-import React from "react";
-
 interface BackgroundSquareBeveledProps {
   backgroundColor?: string;
   backgroundOpacity?: string | number;

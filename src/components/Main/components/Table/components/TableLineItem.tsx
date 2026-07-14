@@ -14,7 +14,7 @@ import {
   SparklinesLine,
   SparklinesReferenceLine
 } from "components/Sparklines";
-import React, { Component } from "react";
+import { Component } from "react";
 import styled from "styled-components";
 import { blurTableRow } from "utils";
 import { injectIntl } from "utils/injectIntl";

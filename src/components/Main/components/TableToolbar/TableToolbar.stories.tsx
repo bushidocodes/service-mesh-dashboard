@@ -1,5 +1,3 @@
-import React from "react";
-
 import TableToolbar from "./index";
 
 const sortByOptions = [

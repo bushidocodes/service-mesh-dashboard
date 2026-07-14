@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { COLOR_CONTENT_MUTED, COLOR_HIGHLIGHT } from "style/styleVariables";
 import styled from "styled-components";

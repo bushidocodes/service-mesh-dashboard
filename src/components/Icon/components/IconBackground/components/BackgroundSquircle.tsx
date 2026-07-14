@@ -1,5 +1,3 @@
-import React from "react";
-
 interface BackgroundSquircleProps {
   backgroundColor?: string;
   backgroundOpacity?: string | number;
