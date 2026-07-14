@@ -1,4 +1,15 @@
+import type { Metrics } from "types";
 import { floatRound } from "./dygraphs";
+
+type MetricSeries = Record<string, number | string | undefined>;
+
+function asMetricSeries(value: unknown): MetricSeries | null {
+  if (value && typeof value === "object" && !Array.isArray(value)) {
+    return value as MetricSeries;
+  }
+  return null;
+}
+
 /**
  * Returns spark line of a metric's value
  *
@@ -6,9 +17,13 @@ import { floatRound } from "./dygraphs";
  * @param {String} key - A string representation of the path to the desired key
  * @returns {Array}
  */
-export function getSparkLineOfValue(metrics: any, key: string) {
+export function getSparkLineOfValue(
+  metrics: Metrics | null | undefined,
+  key: string
+): Array<number | string> {
   if (!metrics || !key) return [0, 0];
-  const values = Object.entries(metrics[key] ?? {}).map(([, val]) => val); //ignore value at index 0
+  const series = asMetricSeries(metrics[key]);
+  const values = Object.entries(series ?? {}).map(([, val]) => val ?? 0); //ignore value at index 0
   if (!values || values.length < 2) return [0, 0];
   return values;
 }
@@ -20,10 +35,14 @@ export function getSparkLineOfValue(metrics: any, key: string) {
  * @param {String} key - A string representation of the path to the desired key
  * @returns {Array}
  */
-export function getSparkLineOfNetChange(metrics: any, key: string) {
+export function getSparkLineOfNetChange(
+  metrics: Metrics | null | undefined,
+  key: string
+): number[] {
   if (!metrics || !key) return [0, 0];
-  const values = Object.entries(metrics[key] ?? {}).map(([, val]) => val); // Ignoring the keys
-  const timestamps = Object.entries(metrics[key] ?? {}).map(
+  const series = asMetricSeries(metrics[key]);
+  const values = Object.entries(series ?? {}).map(([, val]) => val); // Ignoring the keys
+  const timestamps = Object.entries(series ?? {}).map(
     ([timestamp]) => timestamp
   ); // Ignoring the keys
   if (!values || values.length < 3) return [0, 0];

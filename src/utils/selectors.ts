@@ -1,27 +1,39 @@
 import { createSelector } from "@reduxjs/toolkit";
+import type { Dashboard, Metrics, Service } from "types";
 import { countBy, pick } from "utils/collections";
 import { microserviceStatuses } from "utils/constants";
 
+// Structural slices use loose nested types (`object`) where mockReduxState and
+// production RootState differ in optional/extra fields (dashboard chart unions,
+// service `slug`, etc.). Selectors cast back to domain types on return.
+
 // createSelector input selectors
 
-export const getMetrics = (state: any) => state.instance.metrics;
-export const getDashboards = (state: any) => state.dashboards;
-export const getServices = (state: any) => state.fabric.services;
+export const getMetrics = (state: { instance: { metrics: Metrics } }) =>
+  state.instance.metrics;
+export const getDashboards = (state: { dashboards: object }) =>
+  state.dashboards as Record<string, Dashboard>;
+export const getServices = (state: { fabric: { services: object } }) =>
+  state.fabric.services as Record<string, Service>;
 
-export const getFabricServer = (state: any) => state.settings.fabricServer;
-export const getSelectedInstanceID = (state: any) =>
-  state.fabric.selectedInstanceID;
-export const getSelectedServiceSlug = (state: any) =>
-  state.fabric.selectedServiceSlug;
+export const getFabricServer = (state: {
+  settings: { fabricServer: string | null };
+}) => state.settings.fabricServer;
+export const getSelectedInstanceID = (state: {
+  fabric: { selectedInstanceID: string | null };
+}) => state.fabric.selectedInstanceID;
+export const getSelectedServiceSlug = (state: {
+  fabric: { selectedServiceSlug: string | null };
+}) => state.fabric.selectedServiceSlug;
 
 /**
- * Memoized selector (createSelector from RTK) that returns the current selected
- * service from the Redux store if it is found and null if not found
+ * Memoized selector (createSelector from RTK) that returns the current selected service from the Redux store
+ * if it is found and null if not found
  */
 export const getSelectedService = createSelector(
   [getSelectedServiceSlug, getServices],
   (slug, services) => {
-    if (Object.hasOwn(services, slug)) {
+    if (slug && Object.hasOwn(services, slug)) {
       return services[slug];
     } else {
       return null;
@@ -54,7 +66,7 @@ export const getBaseInstanceRoute = createSelector(
 );
 
 /**
- * A createSelector factory (from RTK).
+ * A createSelector factory (from RTK)
  * Returns a selector that returns all metrics with a key that includes
  * the string keyQuery. By default, the string is assumed to strictly match
  * the first characters of the key. However, the search can be forced to match
@@ -88,7 +100,7 @@ export const getRoutesTree = createSelector(getRoutesMetrics, (routesMetrics) =>
   _buildRoutesTree(routesMetrics)
 );
 
-function _buildRoutesTree(routeMetrics: Record<string, any>) {
+function _buildRoutesTree(routeMetrics: Metrics): Record<string, string[]> {
   const keys = Object.keys(routeMetrics);
   if (keys.length > 0) {
     return keys.reduce((acc: Record<string, string[]>, key: string) => {
@@ -125,9 +137,9 @@ function _buildRoutesTree(routeMetrics: Record<string, any>) {
  */
 export const getStatusCount = createSelector(getServices, (services) => {
   let statusCount = countBy(
-    Object.values(services).map((service: any) => {
+    Object.values(services).map((service: Service) => {
       let status = computeStatus(
-        service.instances.length,
+        service.instances?.length ?? 0,
         service.minimum,
         service.maximum
       );

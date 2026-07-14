@@ -11,6 +11,11 @@ const LOCALE_ALIASES: Record<string, string> = {
   de: "de-DE"
 };
 
+/** Nested message catalogs (locale → section → string leaf). */
+export type NestedMessages = {
+  [key: string]: string | NestedMessages;
+};
+
 /**
  * Grabs all unique languages from the user, accounting for aliases
  * Loop through the locales and return as soon as we encounter one
@@ -53,16 +58,16 @@ export function getLocale() {
  * https://github.com/yahoo/react-intl/wiki/Upgrade-Guide#flatten-messages-object
  *
  * @export
- * @param {any} nestedMessages
- * @param {any} prefix
+ * @param {NestedMessages} nestedMessages
+ * @param {string} prefix
  * @returns
  */
 export function flattenMessages(
-  nestedMessages: Record<string, any>,
+  nestedMessages: NestedMessages,
   prefix = ""
-) {
+): Record<string, string> {
   return Object.keys(nestedMessages).reduce(
-    (messages: Record<string, any>, key: string) => {
+    (messages: Record<string, string>, key: string) => {
       let value = nestedMessages[key];
       let prefixedKey = prefix ? `${prefix}.${key}` : key;
 

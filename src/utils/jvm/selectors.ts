@@ -1,13 +1,21 @@
 import { createSelector } from "@reduxjs/toolkit";
+import type { Metrics } from "types";
 import { calculateErrorPercent, formatAsDecimalString } from "utils";
 import { getDygraphOfValue, mapDygraphKeysToNetChange } from "../dygraphs";
 import { getLatestAttribute } from "../latestAttribute";
 import { getMetrics, getRoutesMetrics, getRoutesTree } from "../selectors";
 import { getSparkLineOfNetChange } from "../sparklines";
 
-// JVM - Specific Redux state
-const getCurrentThreads = (state: any) => state.threadsTable;
-const getThreadsFilter = (state: any) => state.settings.threadsFilter;
+type RouteTableRow = Record<string, unknown>;
+
+/** Minimal thread shape used by filter/count selectors (mock ids may be strings). */
+type ThreadRow = { state?: string };
+
+// JVM - Specific Redux state (structural slices for partial mock stores)
+const getCurrentThreads = (state: { threadsTable: ThreadRow[] }) =>
+  state.threadsTable;
+const getThreadsFilter = (state: { settings: { threadsFilter: string } }) =>
+  state.settings.threadsFilter;
 
 /**
  * A selector that takes metrics and returns percent error without % symbol
@@ -34,9 +42,9 @@ export const getErrorPercent = createSelector(getMetrics, (metrics) => {
  */
 export const getRoutesTable = createSelector(
   [getRoutesTree, getRoutesMetrics],
-  (routesTree: Record<string, any>, routesMetrics: any) => {
+  (routesTree: Record<string, string[]>, routesMetrics: Metrics) => {
     // Now build the table
-    const routesTable: any[] = [];
+    const routesTable: RouteTableRow[] = [];
     const routesPaths = Object.keys(routesTree);
     routesPaths.forEach((routePath: string) => {
       let baseObj = { route: routePath };
@@ -87,21 +95,21 @@ export const getRoutesTable = createSelector(
  */
 export const getVisibleThreads = createSelector(
   [getCurrentThreads, getThreadsFilter],
-  (threadsTable: any[], threadsFilter: string) => {
+  (threadsTable: ThreadRow[], threadsFilter: string) => {
     switch (threadsFilter) {
       case "active":
         return threadsTable.filter(
-          (threadItem: any) => threadItem.state === "RUNNABLE"
+          (threadItem: ThreadRow) => threadItem.state === "RUNNABLE"
         );
       case "idle":
         return threadsTable.filter(
-          (threadItem: any) =>
+          (threadItem: ThreadRow) =>
             threadItem.state === "WAITING" ||
             threadItem.state === "TIMED_WAITING"
         );
       case "stopped":
         return threadsTable.filter(
-          (threadItem: any) =>
+          (threadItem: ThreadRow) =>
             threadItem.state === "TERMINATED" ||
             threadItem.state === "BLOCKED" ||
             threadItem.state === "NEW"
@@ -119,23 +127,23 @@ export const getVisibleThreads = createSelector(
  */
 export const getThreadCounts = createSelector(
   getCurrentThreads,
-  (threadsTable: any[] = []) => {
+  (threadsTable: ThreadRow[] = []) => {
     return {
       active: threadsTable
         ? threadsTable.filter(
-            (threadItem: any) => threadItem.state === "RUNNABLE"
+            (threadItem: ThreadRow) => threadItem.state === "RUNNABLE"
           ).length
         : 0,
       idle: threadsTable
         ? threadsTable.filter(
-            (threadItem: any) =>
+            (threadItem: ThreadRow) =>
               threadItem.state === "WAITING" ||
               threadItem.state === "TIMED_WAITING"
           ).length
         : 0,
       stopped: threadsTable
         ? threadsTable.filter(
-            (threadItem: any) =>
+            (threadItem: ThreadRow) =>
               threadItem.state === "TERMINATED" ||
               threadItem.state === "BLOCKED" ||
               threadItem.state === "NEW"
