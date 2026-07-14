@@ -1,39 +1,14 @@
-import { Effect } from "store/jumpstate";
-import {
-  changeFabricMicroservicesPollingIntervalEffect,
-  fetchAndStoreFabricMicroservicesEffect,
-  fetchFabricMicroservicesFailureEffect,
-  fetchFabricMicroservicesSuccessEffect,
-  selectInstanceEffect,
-  startPollingFabricMicroservicesEffect,
-  stopPollingFabricMicroservicesEffect
+// Fabric microservice thunks (PR-17). Jumpstate Effect registrations removed —
+// callers dispatch these via store.dispatch / useAppDispatch.
+
+export type { ServiceWithSlug } from "./fabricMicroservices";
+export {
+  changeFabricMicroservicesPollingInterval,
+  fetchAndStoreFabricMicroservices,
+  fetchFabricMicroservices,
+  fetchFabricMicroservicesFailure,
+  fetchFabricMicroservicesSuccess,
+  selectInstance,
+  startPollingFabricMicroservices,
+  stopPollingFabricMicroservices
 } from "./fabricMicroservices";
-
-Effect(
-  "fetchFabricMicroservicesFailure",
-  fetchFabricMicroservicesFailureEffect
-);
-
-Effect(
-  "fetchAndStoreFabricMicroservices",
-  fetchAndStoreFabricMicroservicesEffect
-);
-
-Effect(
-  "fetchFabricMicroservicesSuccess",
-  fetchFabricMicroservicesSuccessEffect
-);
-
-Effect(
-  "changeFabricMicroservicesPollingInterval",
-  changeFabricMicroservicesPollingIntervalEffect
-);
-
-Effect(
-  "startPollingFabricMicroservices",
-  startPollingFabricMicroservicesEffect
-);
-
-Effect("stopPollingFabricMicroservices", stopPollingFabricMicroservicesEffect);
-
-Effect("selectInstance", selectInstanceEffect);

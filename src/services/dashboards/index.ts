@@ -1,23 +1,31 @@
-import { Actions, Effect } from "store/jumpstate";
+import type { AppThunk } from "store/appThunk";
+import { setDashboards } from "store/states/dashboards";
+import type { Dashboard } from "types";
 import defaultGoDashboards from "../../json/go/dashboards.json";
 import defaultJVMDashboards from "../../json/jvm/dashboards.json";
 
 /**
- * This effect is a temporary alternative to directly load the dashboard JSON without use of the
- * localStorage worker. The intended use of this Effect is to disable local forage functionality
- * during the initial release
- * @param {string}
- * @returns
+ * Temporary alternative to directly load the dashboard JSON without use of the
+ * localStorage worker. Intended to disable local forage functionality during
+ * the initial release.
+ *
+ * RTK thunk (PR-17) — replaces the jumpstate Effect of the same name.
  */
-function loadDashboardsFromJSONEffect(runtime: string) {
-  // Check runtime and pass the runtime appropriate JSON file to Actions.updateDashboardsRedux
-  switch (runtime) {
-    case "JVM":
-      return Actions.setDashboards(defaultJVMDashboards);
-    case "GO":
-      return Actions.setDashboards(defaultGoDashboards);
-    default:
-      return;
-  }
+export function loadDashboardsFromJSON(runtime: string): AppThunk {
+  return (dispatch) => {
+    switch (runtime) {
+      case "JVM":
+        dispatch(
+          setDashboards(defaultJVMDashboards as Record<string, Dashboard>)
+        );
+        break;
+      case "GO":
+        dispatch(
+          setDashboards(defaultGoDashboards as Record<string, Dashboard>)
+        );
+        break;
+      default:
+        break;
+    }
+  };
 }
-Effect("loadDashboardsFromJSON", loadDashboardsFromJSONEffect);

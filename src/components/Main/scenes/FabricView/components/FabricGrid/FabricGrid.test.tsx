@@ -1,14 +1,20 @@
 import { fireEvent, screen } from "@testing-library/react";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
-import { Actions } from "store/jumpstate";
 import { mountWithIntl } from "utils/i18nTesting";
 // Utilities
 import { computeStatus } from "utils/selectors";
 // Components
 import FabricGrid from "./FabricGrid";
 
-// Mock the jumpstate effect used in FabricGrid
-Actions.fetchAndStoreFabricMicroservices = vi.fn();
+// Mock the fabric polling thunk used in FabricGrid
+vi.mock("services/fabricMicroservices", async (importOriginal) => {
+  const actual =
+    await importOriginal<typeof import("services/fabricMicroservices")>();
+  return {
+    ...actual,
+    fetchAndStoreFabricMicroservices: vi.fn(() => () => undefined)
+  };
+});
 
 const mockServices = Object.values({
   "aac-remote-information-v1-0": {

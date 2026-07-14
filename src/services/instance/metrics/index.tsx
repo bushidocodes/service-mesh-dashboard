@@ -1,5 +1,9 @@
 import { FormattedMessage } from "react-intl";
-import { Actions, Effect, getState } from "store/jumpstate";
+import { Actions, dispatch, Effect, getState } from "store/jumpstate";
+import {
+  setSelectedInstanceID,
+  setSelectedServiceSlug
+} from "store/states/fabric";
 
 import { reportError } from "../../notification";
 import { fetchInstanceMetrics } from "./apis";
@@ -123,9 +127,9 @@ Effect("stopPollingInstanceMetrics", stopPollingInstanceMetricsEffect);
  */
 function stopPollingAndPurgeInstanceMetricsEffect() {
   console.log("Polling stopped and metrics cache cleared");
-  // Reset selected service, version, and instance
-  Actions.setSelectedServiceSlug(null);
-  Actions.setSelectedInstanceID(null);
+  // Reset selected service, version, and instance (fabric slice is RTK — PR-17)
+  dispatch(setSelectedServiceSlug(null));
+  dispatch(setSelectedInstanceID(null));
   // Stop polling
   Actions.stopPollingInstanceMetrics();
   Actions.setMetricsPollingFailures(0);

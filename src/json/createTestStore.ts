@@ -8,9 +8,10 @@ import threadsTable from "store/states/threadsTable";
 import type { RootState } from "types";
 
 /**
- * Real Redux store for unit tests. Uses the same reducers as production and the
- * Jumpstate middleware (so `Actions.*` / `getState` / Effects work) — but never
- * attaches redux-logger (noise in CI; logger removal is PR-18b / KD-18).
+ * Real Redux store for unit tests. Uses the same reducers as production,
+ * thunk middleware (fabric/dashboard AppThunks), and Jumpstate middleware
+ * (so residual `Actions.*` / `getState` / Effects work) — but never attaches
+ * redux-logger (noise in CI; logger removal is PR-18b / KD-18).
  *
  * `preloadedState` is intentionally loose: fixture JSON (`mockReduxState*`) is
  * structural test data that is not a perfect `RootState` (partial slices,
@@ -29,8 +30,14 @@ export function createTestStore(
       threadsTable
     },
     preloadedState: preloadedState as RootState | undefined,
-    // Jumpstate middleware only — do **not** attach redux-logger here.
-    middleware: () => [CreateJumpstateMiddleware()] as any
+    // Thunk + Jumpstate — do **not** attach redux-logger here.
+    // `as any` keeps the middleware chain loose (same as pre-PR-17 helper).
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware({
+        immutableCheck: false,
+        serializableCheck: false,
+        actionCreatorCheck: false
+      }).concat(CreateJumpstateMiddleware()) as any
   });
 }
 

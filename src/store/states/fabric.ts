@@ -1,37 +1,57 @@
-import { State } from "store/jumpstate";
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import type { FabricState, Service } from "types";
+
+// Side-import so fabric microservice thunks load when this slice is registered
+// (historical Effect registration used the same pattern; module cache avoids
+// double work with services/index.ts).
 import "services/fabricMicroservices";
 
-const fabric = State({
-  initial: {
-    fabricPollingInterval: 5000,
-    isPollingFabric: false,
-    selectedInstanceID: null,
-    servicesPollingFailures: 0,
-    selectedServiceSlug: null,
-    services: {} //indexed by service ID
-  } satisfies FabricState,
-  setFabricPollingInterval(state: FabricState, payload: number) {
-    return { ...state, fabricPollingInterval: payload };
-  },
-  setIsPollingFabric(state: FabricState, payload: boolean) {
-    return { ...state, isPollingFabric: payload };
-  },
-  setSelectedInstanceID(state: FabricState, payload: string | null) {
-    return { ...state, selectedInstanceID: payload };
-  },
-  setServicesPollingFailures(state: FabricState, payload: number) {
-    return { ...state, servicesPollingFailures: payload };
-  },
-  setSelectedServiceSlug(state: FabricState, payload: string | null) {
-    return { ...state, selectedServiceSlug: payload };
-  },
-  setFabricMicroservices(
-    state: FabricState,
-    services: Record<string, Service>
-  ) {
-    return { ...state, services };
+const initialState: FabricState = {
+  fabricPollingInterval: 5000,
+  isPollingFabric: false,
+  selectedInstanceID: null,
+  servicesPollingFailures: 0,
+  selectedServiceSlug: null,
+  services: {} // indexed by service slug
+};
+
+// RTK fabric slice (PR-17). Action types are namespaced by default
+// (`fabric/setFabricMicroservices`, …) — no jumpstate flat type parity (KD-15).
+const fabricSlice = createSlice({
+  name: "fabric",
+  initialState,
+  reducers: {
+    setFabricPollingInterval(state, action: PayloadAction<number>) {
+      state.fabricPollingInterval = action.payload;
+    },
+    setIsPollingFabric(state, action: PayloadAction<boolean>) {
+      state.isPollingFabric = action.payload;
+    },
+    setSelectedInstanceID(state, action: PayloadAction<string | null>) {
+      state.selectedInstanceID = action.payload;
+    },
+    setServicesPollingFailures(state, action: PayloadAction<number>) {
+      state.servicesPollingFailures = action.payload;
+    },
+    setSelectedServiceSlug(state, action: PayloadAction<string | null>) {
+      state.selectedServiceSlug = action.payload;
+    },
+    setFabricMicroservices(
+      state,
+      action: PayloadAction<Record<string, Service>>
+    ) {
+      state.services = action.payload;
+    }
   }
 });
 
-export default fabric;
+export const {
+  setFabricPollingInterval,
+  setIsPollingFabric,
+  setSelectedInstanceID,
+  setServicesPollingFailures,
+  setSelectedServiceSlug,
+  setFabricMicroservices
+} = fabricSlice.actions;
+
+export default fabricSlice.reducer;

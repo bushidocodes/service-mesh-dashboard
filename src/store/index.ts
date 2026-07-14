@@ -1,6 +1,10 @@
 // Commented out imports are used by currently disabled local storage functionality
 
-import { configureStore, Tuple } from "@reduxjs/toolkit";
+import {
+  configureStore,
+  type ThunkDispatch,
+  type UnknownAction
+} from "@reduxjs/toolkit";
 // redux-logger is a CJS/UMD module whose logger fn lives at both `.default`
 // and the named `logger` export. Vite 8's Rolldown dep-optimizer resolves the
 // *default* import to the namespace object (not a function), which makes
@@ -8,6 +12,7 @@ import { configureStore, Tuple } from "@reduxjs/toolkit";
 // boot. Use the named export, which is stable across the esbuild→Rolldown
 // interop change. (esbuild in Vite ≤7 resolved the default correctly.)
 import { logger } from "redux-logger";
+import type { RootState } from "types";
 import { CreateJumpstateMiddleware } from "./jumpstate";
 
 import dashboards from "./states/dashboards";
@@ -17,8 +22,10 @@ import settings from "./states/settings";
 import threadsTable from "./states/threadsTable";
 
 // Create the Redux store using reducers and middlewares.
-// middleware: () => new Tuple(...) replaces RTK's default middleware set so only
-// the jumpstate shim (and optional logger) run — preserving pre-v5 behaviour.
+// Thunk middleware is required for fabric/dashboard AppThunks (PR-17).
+// Immutable/serializable checks stay off until PR-18b restores full
+// getDefaultMiddleware with instance.metrics ignores. Jumpstate middleware
+// remains for residual instance/threads Effects.
 const store = configureStore({
   reducer: {
     dashboards,
@@ -27,11 +34,21 @@ const store = configureStore({
     settings,
     threadsTable
   },
-  middleware: () =>
-    process.env.NODE_ENV === `development`
-      ? new Tuple(CreateJumpstateMiddleware(), logger)
-      : new Tuple(CreateJumpstateMiddleware())
+  middleware: (getDefaultMiddleware) => {
+    const defaults = getDefaultMiddleware({
+      immutableCheck: false,
+      serializableCheck: false,
+      actionCreatorCheck: false
+    });
+    return process.env.NODE_ENV === `development`
+      ? defaults.concat(CreateJumpstateMiddleware(), logger)
+      : defaults.concat(CreateJumpstateMiddleware());
+  }
 });
 
-export type AppDispatch = typeof store.dispatch;
+// Explicit ThunkDispatch: concat(CreateJumpstateMiddleware()) widens the
+// inferred middleware tuple enough that `typeof store.dispatch` drops thunk
+// overload resolution for AppThunk call sites.
+export type AppDispatch = ThunkDispatch<RootState, unknown, UnknownAction>;
+export type { AppThunk } from "./appThunk";
 export default store;

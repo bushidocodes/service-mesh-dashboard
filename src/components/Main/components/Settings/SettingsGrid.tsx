@@ -5,7 +5,12 @@ import LayoutSection from "components/LayoutSection";
 import Readout from "components/Main/components/Readout";
 import { Fragment, useState } from "react";
 import { useIntl } from "react-intl";
-import { useAppSelector } from "store/hooks";
+import {
+  changeFabricMicroservicesPollingInterval,
+  startPollingFabricMicroservices,
+  stopPollingFabricMicroservices
+} from "services/fabricMicroservices";
+import { useAppDispatch, useAppSelector } from "store/hooks";
 import { Actions } from "store/jumpstate";
 import PollingSettings from "./components/PollingSettings";
 
@@ -14,6 +19,7 @@ import PollingSettings from "./components/PollingSettings";
  */
 function SettingsGrid() {
   const intl = useIntl();
+  const dispatch = useAppDispatch();
   const [isClearCacheModalOpen, setIsClearCacheModalOpen] = useState(false);
 
   const fabricServer = useAppSelector((state) => state.settings.fabricServer);
@@ -77,11 +83,11 @@ function SettingsGrid() {
       <ErrorBoundary>
         {fabricServer && (
           <PollingSettings
-            changePollingInterval={
-              Actions.changeFabricMicroservicesPollingInterval
+            changePollingInterval={(interval: number) =>
+              dispatch(changeFabricMicroservicesPollingInterval(interval))
             }
-            stopPolling={Actions.stopPollingFabricMicroservices}
-            startPolling={Actions.startPollingFabricMicroservices}
+            stopPolling={() => dispatch(stopPollingFabricMicroservices())}
+            startPolling={() => dispatch(startPollingFabricMicroservices())}
             interval={fabricPollingInterval}
             isPolling={isPollingFabric}
             glyph="Fabric"
