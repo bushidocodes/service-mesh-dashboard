@@ -1,51 +1,45 @@
 import mockstate from "json/mockReduxState";
+import type { RootState } from "types";
 import {
   buildDiscoveryServiceInstanceMetricsEndpoint,
   clearInstanceMetricsPollingIntervalIfNeeded
 } from "./utils";
-
-const mockGetState = vi.fn(() => mockstate);
-
-vi.mock("store/jumpstate", () => ({
-  getState: (...args: unknown[]) =>
-    (mockGetState as (...a: unknown[]) => unknown)(...args)
-}));
 
 vi.mock("utils/head", () => {
   return { getFabricServer: () => "http://localhost:1337" };
 });
 
 describe("buildDiscoveryServiceInstanceMetricsEndpoint", () => {
-  beforeEach(() => {
-    mockGetState.mockReturnValue(mockstate);
-  });
-
   test("builds a discovery service instance metrics endpoint", () => {
-    expect(buildDiscoveryServiceInstanceMetricsEndpoint()).toBe(
+    expect(
+      buildDiscoveryServiceInstanceMetricsEndpoint(
+        mockstate as unknown as RootState
+      )
+    ).toBe(
       "http://localhost:1337/metrics/Authentication Statistics File Resource Network Export ICPF Mail Domain End/4.3/2smao7xwboy0000000000"
     );
   });
 
   test("returns null when selectedServiceSlug is null", () => {
-    mockGetState.mockReturnValue({
+    const state = {
       ...mockstate,
       fabric: {
         ...mockstate.fabric,
         selectedServiceSlug: null as unknown as string
       }
-    });
-    expect(buildDiscoveryServiceInstanceMetricsEndpoint()).toBeNull();
+    } as unknown as RootState;
+    expect(buildDiscoveryServiceInstanceMetricsEndpoint(state)).toBeNull();
   });
 
   test("returns null when selectedServiceSlug is not in services", () => {
-    mockGetState.mockReturnValue({
+    const state = {
       ...mockstate,
       fabric: {
         ...mockstate.fabric,
         selectedServiceSlug: "slug-not-yet-in-services"
       }
-    });
-    expect(buildDiscoveryServiceInstanceMetricsEndpoint()).toBeNull();
+    } as unknown as RootState;
+    expect(buildDiscoveryServiceInstanceMetricsEndpoint(state)).toBeNull();
   });
 });
 

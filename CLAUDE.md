@@ -91,26 +91,24 @@ pnpm exec playwright install chromium   # one-time browser download
   `src/utils` and must stay in sync.
 - Use web-first assertions (`toHaveCount`, `expect.poll`) — never fixed waits.
 
-## State management (the `store/jumpstate` shim)
+## State management (Redux Toolkit)
 
-The Redux store is built on plain `redux@4`. The `State`/`Effect`/`Actions`/
-`getState`/`CreateJumpstateMiddleware` API the store and services use is **not**
-the npm `jumpstate` package — it's a local, dependency-free reimplementation at
-[`src/store/jumpstate.js`](src/store/jumpstate.js). `jumpstate@~2.2.2`
-(unmaintained since 2018) was removed in issue #39; the shim is a faithful
-drop-in so the ~90 `Actions.*` / `getState()` call sites stayed unchanged.
+The app store is **Redux Toolkit** `configureStore` with `createSlice` reducers
+under [`src/store/states/`](src/store/states) and async work as typed
+`AppThunk`s in `src/services/**`. Typed hooks live in
+[`src/store/hooks.ts`](src/store/hooks.ts) (`useAppDispatch` /
+`useAppSelector`).
 
-- Import it as `from "store/jumpstate"` (the `store` alias resolves it in both
-  Vite and Vitest). **Do not** re-add the `jumpstate` dependency.
-- Semantics match jumpstate@2.2.2: each `State` method is both an action-creator
-  (`Actions.method`) and that action's reducer case; `Effect(name, fn)` is fired
-  by the middleware after `next(action)` and invoked as
-  `fn(payload, getState, dispatch)`; `getState`/`dispatch` are global singletons.
-- The global-`Actions` singleton pattern is intentionally kept. Migrating to
-  idiomatic Redux Toolkit (Option C in #39) is deliberately deferred to separate,
-  larger follow-up work.
-- Tests that mock the layer must target the shim, e.g.
-  `vi.mock("store/jumpstate", ...)` — not `"jumpstate"`.
+- **Do not** re-add the npm `jumpstate` package or a local shim — the
+  `store/jumpstate` layer was removed in PR-18b (issue #39 follow-through).
+- Default RTK middleware is on. `instance.metrics` is ignored by the
+  serializable/immutable checks (high-frequency appends); see
+  [`src/store/middlewareOptions.ts`](src/store/middlewareOptions.ts).
+- There is **no** console action logger in the middleware chain. In
+  development, inspect state with the
+  **[Redux DevTools](https://github.com/reduxjs/redux-devtools) browser
+  extension** — `configureStore` enables the DevTools hook automatically;
+  no app code is required.
 
 ## Working in a git worktree (.claude/worktrees/*)
 

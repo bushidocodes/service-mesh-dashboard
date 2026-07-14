@@ -1,3 +1,4 @@
+import createTestStore from "json/createTestStore";
 import type { InstanceState, Metrics } from "types";
 import instance, {
   _sliceMetrics,
@@ -102,6 +103,33 @@ describe("METRICS_CACHE_MAX_SAMPLES / appendToMetrics ring buffer", () => {
       METRICS_CACHE_MAX_SAMPLES
     );
     expect(Object.keys(state.metrics.problems as object)).toHaveLength(
+      METRICS_CACHE_MAX_SAMPLES
+    );
+  });
+});
+
+describe("appendToMetrics + default RTK middleware (PR-18b)", () => {
+  test("dispatches a large metrics payload through default middleware without timing out", () => {
+    // Acceptance: with RTK serializable/immutable checks restored,
+    // ignoredPaths for instance.metrics must keep a fat append under the
+    // Vitest timeout. Wide payload ≈ many metric series × one sample.
+    // Keep this suite free of Date.now mocks — the middleware uses Date.now
+    // for its own warnAfter timing and a mocked clock yields false positives.
+    const store = createTestStore();
+    const fatPayload: Record<string, unknown> = {};
+    for (let i = 0; i < 200; i++) {
+      fatPayload[`metric_${i}`] = Math.random();
+    }
+    // Fill the ring buffer with fat samples so the metrics bag is large.
+    for (let i = 0; i < METRICS_CACHE_MAX_SAMPLES; i++) {
+      store.dispatch(appendToMetrics(fatPayload));
+    }
+    expect(store.getState().instance.metrics.timestamps).toHaveLength(
+      METRICS_CACHE_MAX_SAMPLES
+    );
+    // One more append exercises eviction while the bag is already large.
+    store.dispatch(appendToMetrics(fatPayload));
+    expect(store.getState().instance.metrics.timestamps).toHaveLength(
       METRICS_CACHE_MAX_SAMPLES
     );
   });

@@ -71,6 +71,14 @@ Install the following for your editor:
 * [EditorConfig](https://editorconfig.org/#download)
 * styled-components syntax highlighting
 
+### Redux DevTools
+
+The app uses Redux Toolkit `configureStore` (no console action logger). To
+inspect actions and state while developing, install the
+[Redux DevTools browser extension](https://github.com/reduxjs/redux-devtools).
+DevTools is enabled automatically in development; no extra app configuration
+is required.
+
 ### Commit Messages
 
 We follow [conventional commit](https://conventionalcommits.org/) standards as a convention. They are not enforced by a commit hook.

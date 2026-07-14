@@ -5,9 +5,9 @@ import { useEffect } from "react";
 import { useIntl } from "react-intl";
 import { useLocation, useNavigate } from "react-router-dom";
 import { fetchAndStoreFabricMicroservices } from "services/fabricMicroservices";
+import { stopPollingAndPurgeInstanceMetrics } from "services/instance/metrics";
 import { reportError } from "services/notification";
 import store, { type AppDispatch } from "store";
-import { Actions } from "store/jumpstate";
 import type { Service } from "types";
 import FabricMainView from "./components/FabricMainView";
 
@@ -31,7 +31,7 @@ function FabricGrid({ services = [], statusView = false }: FabricGridProps) {
     const locationState = location.state as { message?: string } | null;
     if (locationState && locationState.message) {
       // Disable polling and clear metrics cache
-      Actions.stopPollingAndPurgeInstanceMetrics();
+      (store.dispatch as AppDispatch)(stopPollingAndPurgeInstanceMetrics());
       // Display notification
       reportError(locationState.message);
       // Reset location state. Defer past the current commit: componentDidMount
