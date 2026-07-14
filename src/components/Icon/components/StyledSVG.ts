@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import { ICON_VIEWBOX_SIZE } from "style/styleVariables";
+import styled from "styled-components";
 
 const StyledSVG = styled.svg.attrs({
   version: "1.1",

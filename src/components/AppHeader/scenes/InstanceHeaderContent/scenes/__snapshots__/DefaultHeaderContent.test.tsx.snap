@@ -2,29 +2,7 @@
 
 exports[`DefaultHeaderContent > matches snapshot 1`] = `
 <DocumentFragment>
-  .c2 {
-  color: rgb(255, 255, 255);
-  white-space: nowrap;
-  max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin: 4px 0 0;
-}
-
-.c2 h1 {
-  font-size: 18px;
-  flex: 1 1 100%;
-  line-height: 1;
-  margin: 0;
-  font-weight: 600;
-  text-transform: capitalize;
-}
-
-.c5 {
+  .c5 {
   transform: scale(1);
 }
 
@@ -99,6 +77,28 @@ exports[`DefaultHeaderContent > matches snapshot 1`] = `
 
 .c1:focus {
   outline: rgb(10, 171, 42) auto 3px;
+}
+
+.c2 {
+  color: rgb(255, 255, 255);
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 4px 0 0;
+}
+
+.c2 h1 {
+  font-size: 18px;
+  flex: 1 1 100%;
+  line-height: 1;
+  margin: 0;
+  font-weight: 600;
+  text-transform: capitalize;
 }
 
 .c0 {

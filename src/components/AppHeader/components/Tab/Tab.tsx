@@ -1,19 +1,17 @@
-import React from "react";
-
-import TabTitle from "./components/TabTitle";
-import TabDetails from "./components/TabDetails";
-import TabKey from "./components/TabKey";
-import TabVal from "./components/TabVal";
-import TabIcon from "./components/TabIcon";
-import TabLink from "./components/TabLink";
-import TabGraph from "./components/TabGraph";
 import Glyph from "components/Glyphs/index";
-
 import {
   Sparklines,
   SparklinesLine,
   SparklinesReferenceLine
 } from "components/Sparklines";
+import React from "react";
+import TabDetails from "./components/TabDetails";
+import TabGraph from "./components/TabGraph";
+import TabIcon from "./components/TabIcon";
+import TabKey from "./components/TabKey";
+import TabLink from "./components/TabLink";
+import TabTitle from "./components/TabTitle";
+import TabVal from "./components/TabVal";
 
 interface TabProps {
   chartData?: any[];

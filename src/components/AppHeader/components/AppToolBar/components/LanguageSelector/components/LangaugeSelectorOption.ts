@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import { COLOR_BRAND_PRIMARY } from "style/styleVariables";
+import styled from "styled-components";
 
 const LanguageOption = styled.li`
   padding: 5px 0;

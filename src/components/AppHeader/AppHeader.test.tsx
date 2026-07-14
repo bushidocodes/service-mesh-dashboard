@@ -1,13 +1,12 @@
-import React from "react";
-import { MemoryRouter, Routes, Route } from "react-router-dom";
-import { Provider } from "react-redux";
-import configureMockStore from "redux-mock-store";
 import { screen } from "@testing-library/react";
-
+import mockState from "json/mockReduxState";
+import React from "react";
+import { Provider } from "react-redux";
+import { MemoryRouter, Route, Routes } from "react-router-dom";
+import configureMockStore from "redux-mock-store";
+import { mountWithIntl, renderWithIntl } from "utils/i18nTesting";
 // utils
 import { getFabricServer } from "../../utils/head";
-import mockState from "json/mockReduxState";
-import { renderWithIntl, mountWithIntl } from "utils/i18nTesting";
 
 // components
 import AppHeader from "./AppHeader";

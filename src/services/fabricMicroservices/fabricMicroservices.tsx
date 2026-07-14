@@ -1,11 +1,10 @@
 import React from "react";
-import { Actions, getState } from "store/jumpstate";
 import { FormattedMessage } from "react-intl";
-
-import { clearFabricIntervalIfNeeded, slugifyMicroservice } from "utils";
-import { getFabricServer } from "utils/head";
 import { reportError } from "services/notification";
+import { Actions, getState } from "store/jumpstate";
+import { clearFabricIntervalIfNeeded, slugifyMicroservice } from "utils";
 import { memoize } from "utils/collections";
+import { getFabricServer } from "utils/head";
 
 const memoizedSlugifyMicroservice = memoize(slugifyMicroservice);
 

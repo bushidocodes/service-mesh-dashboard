@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import { spacingScale } from "style/styleFunctions";
 
 import {
   BORDER_RADIUS_BASE,
@@ -6,7 +6,7 @@ import {
   FONT_STACK_DATA,
   FONT_WEIGHT_SEMIBOLD
 } from "style/styleVariables";
-import { spacingScale } from "style/styleFunctions";
+import styled from "styled-components";
 
 const DygraphContainer = styled.div`
   font-family: ${FONT_STACK_DATA};

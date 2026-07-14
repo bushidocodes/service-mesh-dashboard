@@ -1,7 +1,6 @@
-import styled from "styled-components";
-
 import { spacingScale } from "style/styleFunctions";
 import { COLOR_CONTENT } from "style/styleVariables";
+import styled from "styled-components";
 
 const LayoutSectionWrap = styled.section`
   align-items: stretch;

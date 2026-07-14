@@ -2,7 +2,24 @@
 
 exports[`MessageIcon > matches snapshot 1`] = `
 <DocumentFragment>
-  .c0 {
+  .c2 {
+  transform: scale(1);
+}
+
+.c1 {
+  z-index: 1;
+  height: 120px;
+  width: 120px;
+  color: currentColor;
+  word-spacing: 0;
+  vertical-align: middle;
+}
+
+.c1:not(:root) {
+  overflow: visible;
+}
+
+.c0 {
   position: absolute;
   left: 0;
   top: 0;
@@ -20,23 +37,6 @@ exports[`MessageIcon > matches snapshot 1`] = `
   height: 56px;
   width: 56px;
   opacity: 0.05;
-}
-
-.c2 {
-  transform: scale(1);
-}
-
-.c1 {
-  z-index: 1;
-  height: 120px;
-  width: 120px;
-  color: currentColor;
-  word-spacing: 0;
-  vertical-align: middle;
-}
-
-.c1:not(:root) {
-  overflow: visible;
 }
 
 <div

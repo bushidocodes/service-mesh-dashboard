@@ -1,6 +1,5 @@
+import { COLOR_DANGER, COLOR_SUCCESS } from "style/styleVariables";
 import styled from "styled-components";
-
-import { COLOR_SUCCESS, COLOR_DANGER } from "style/styleVariables";
 
 const VizFill = styled.div<{ colorDegree?: number; width?: number }>`
   background-color: currentColor;

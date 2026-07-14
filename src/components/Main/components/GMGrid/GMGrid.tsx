@@ -1,4 +1,7 @@
 // import { Actions } from "store/jumpstate";
+
+import ErrorBoundary from "components/ErrorBoundary";
+import NotFoundError from "components/Main/components/NotFoundError";
 import React, { Component } from "react";
 // react-grid-layout v2 is hooks-based. The legacy WidthProvider(Responsive) HOC
 // (from the "/legacy" compat entrypoint) is replaced by the native
@@ -9,21 +12,16 @@ import React, { Component } from "react";
 import { ResponsiveGridLayout, useContainerWidth } from "react-grid-layout";
 import { connect } from "react-redux";
 import { createGlobalStyle } from "styled-components";
-import { injectIntl } from "utils/injectIntl";
-import withRouter from "utils/withRouter";
-
-import GMBasicMetrics from "./components/GMBasicMetrics";
-import GMLineChart from "../GMLineChart";
-import GMTable from "./components/GMTable";
-
-import ErrorBoundary from "components/ErrorBoundary";
-import { getDygraphOfValue, mapDygraphKeysToNetChange } from "utils/dygraphs";
-import { getLatestAttribute, parseJSONString } from "utils/latestAttribute";
-import { getSparkLineOfValue, getSparkLineOfNetChange } from "utils/sparklines";
-import NotFoundError from "components/Main/components/NotFoundError";
-import { ReactGridLayout, ReactResizable } from "./style";
-
 import type { Dashboard, Metrics, RootState, RouterMatch } from "types";
+import { getDygraphOfValue, mapDygraphKeysToNetChange } from "utils/dygraphs";
+import { injectIntl } from "utils/injectIntl";
+import { getLatestAttribute, parseJSONString } from "utils/latestAttribute";
+import { getSparkLineOfNetChange, getSparkLineOfValue } from "utils/sparklines";
+import withRouter from "utils/withRouter";
+import GMLineChart from "../GMLineChart";
+import GMBasicMetrics from "./components/GMBasicMetrics";
+import GMTable from "./components/GMTable";
+import { ReactGridLayout, ReactResizable } from "./style";
 
 // Inject react-grid-layout.css and react-resizable.css into the global stylesheet
 const GridGlobalStyle = createGlobalStyle`
@@ -92,7 +90,7 @@ interface GMGridProps {
  */
 
 // named export for unconnected component {GMGrid} for unit tests
-// eslint-disable-next-line react/no-multi-comp -- colocated with the small ResponsiveReactGridLayout width-plumbing wrapper above
+// colocated with the small ResponsiveReactGridLayout width-plumbing wrapper above
 export class GMGrid extends Component<GMGridProps> {
   /**
    * Mapper function that renders dashboards based on JSON state

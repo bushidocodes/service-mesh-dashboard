@@ -203,7 +203,9 @@ export function isEqual(a: unknown, b: unknown): boolean {
     return false;
   }
   if (a instanceof Date || b instanceof Date) {
-    return a instanceof Date && b instanceof Date && a.getTime() === b.getTime();
+    return (
+      a instanceof Date && b instanceof Date && a.getTime() === b.getTime()
+    );
   }
   const aIsArray = Array.isArray(a);
   const bIsArray = Array.isArray(b);

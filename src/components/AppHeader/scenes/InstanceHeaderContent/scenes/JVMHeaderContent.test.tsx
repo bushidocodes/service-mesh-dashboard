@@ -1,12 +1,11 @@
-import React from "react";
-
 import state from "json/mockReduxState";
-import JVMHeaderContent from "./JVMHeaderContent";
-import { renderWithIntl } from "utils/i18nTesting";
-import { MemoryRouter } from "react-router-dom";
-import { Provider } from "react-redux";
-import configureMockStore from "redux-mock-store";
 import mockState from "json/mockReduxState";
+import React from "react";
+import { Provider } from "react-redux";
+import { MemoryRouter } from "react-router-dom";
+import configureMockStore from "redux-mock-store";
+import { renderWithIntl } from "utils/i18nTesting";
+import JVMHeaderContent from "./JVMHeaderContent";
 
 const store = configureMockStore()(mockState);
 

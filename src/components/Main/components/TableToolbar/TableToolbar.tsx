@@ -1,16 +1,18 @@
 // NPM Modules
-import React from "react";
-import { injectIntl } from "utils/injectIntl";
+
+import Button from "components/Button";
 // Internal Components
 import SearchInput from "components/Main/components/GMSearchInput";
-import Button from "components/Button";
+import GMSelect, {
+  GMSelectValueRenderer
+} from "components/Main/components/GMSelect";
+import React from "react";
+import { injectIntl } from "utils/injectIntl";
 import Form from "./components/Form";
-import GMSelect from "components/Main/components/GMSelect";
-import { GMSelectValueRenderer } from "components/Main/components/GMSelect";
 import Toolbar from "./components/Toolbar";
+import ToolbarCenter from "./components/ToolbarCenter";
 import ToolbarLeft from "./components/ToolbarLeft";
 import ToolbarRight from "./components/ToolbarRight";
-import ToolbarCenter from "./components/ToolbarCenter";
 
 interface TableToolbarProps {
   displayTypeProps?: {

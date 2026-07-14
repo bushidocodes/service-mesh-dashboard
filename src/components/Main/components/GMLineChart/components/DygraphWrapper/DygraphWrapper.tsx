@@ -52,6 +52,7 @@ function DygraphWrapper({
   });
 
   // Initialize Dygraph on mount and destroy on unmount
+  // biome-ignore lint/correctness/useExhaustiveDependencies: mount-only; updates flow through the separate effect below
   useEffect(() => {
     const { data, attributes } = dygraph;
     const options = generateOptions({
@@ -68,7 +69,7 @@ function DygraphWrapper({
         graphRef.current = null;
       }
     };
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <DygraphContainer

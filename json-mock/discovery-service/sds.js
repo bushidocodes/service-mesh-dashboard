@@ -1,8 +1,8 @@
-import { services } from "./data.js";
-import express from "express";
 import cors from "cors";
+import express from "express";
 import { createRequire } from "module";
 import { PORT } from "../constants.js";
+import { services } from "./data.js";
 
 // JSON imports use createRequire for broad Node.js compatibility
 const require = createRequire(import.meta.url);

@@ -1,7 +1,6 @@
-import { fetchFabricMicroservices } from "./fabricMicroservices";
-
 // Note: Outside of src directory, so module directory import not possible
 import { staticServices } from "../../../json-mock/discovery-service/staticData";
+import { fetchFabricMicroservices } from "./fabricMicroservices";
 
 // The function under test only reads response.ok and response.json(), so a stub
 // Response-shaped object is enough.

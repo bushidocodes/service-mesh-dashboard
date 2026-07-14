@@ -12,9 +12,9 @@ _Note: This is a historical repository of GM Fabric Dashboard releases provided 
 
 
 <p align="center">
-  <a href="https://github.com/prettier/prettier" target="_blank">
-    <img src="https://img.shields.io/badge/formatted_with-prettier-ff69b4.svg"
-         alt="styled with prettier">
+  <a href="https://biomejs.dev" target="_blank">
+    <img src="https://img.shields.io/badge/formatted_with-Biome-60a5fa?style=flat&logo=biome"
+         alt="formatted with Biome">
   </a>
   <a href="https://www.styled-components.com/" target="_blank"><img src="https://img.shields.io/badge/styled_with-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357" alt="styled with styled-components"></a>
   <a href="https://opensource.org/licenses/mit-license.php" target="_blank"><img src="https://badges.frapsoft.com/os/mit/mit.svg?v=103" alt="licensed under MIT"></a>

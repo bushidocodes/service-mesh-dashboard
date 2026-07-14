@@ -1,12 +1,11 @@
-import React from "react";
-import styled from "styled-components";
-import { spacingScale } from "style/styleFunctions";
-import { COLOR_DANGER, COLOR_WARNING } from "style/styleVariables";
-
-import Icon from "components/Icon";
 import Exclamation from "components/Glyphs/Exclamation";
 import Negation from "components/Glyphs/Negation";
 import RunningSmall from "components/Glyphs/RunningSmall";
+import Icon from "components/Icon";
+import React from "react";
+import { spacingScale } from "style/styleFunctions";
+import { COLOR_DANGER, COLOR_WARNING } from "style/styleVariables";
+import styled from "styled-components";
 
 interface BackgroundIconProps {
   status?: string;

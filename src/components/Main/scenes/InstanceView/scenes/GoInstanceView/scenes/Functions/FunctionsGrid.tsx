@@ -1,15 +1,14 @@
+import ErrorBoundary from "components/ErrorBoundary";
+import NotFoundError from "components/Main/components/NotFoundError";
+import Table from "components/Main/components/Table";
+import TableToolbar from "components/Main/components/TableToolbar";
+import withUrlState from "components/withUrlState";
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import type { RootState } from "types";
 import { orderBy } from "utils/collections";
-import { injectIntl } from "utils/injectIntl";
-
-import Table from "components/Main/components/Table";
-import TableToolbar from "components/Main/components/TableToolbar";
 import { getFunctionsTable } from "utils/go/selectors";
-import ErrorBoundary from "components/ErrorBoundary";
-import NotFoundError from "components/Main/components/NotFoundError";
-import withUrlState from "components/withUrlState";
+import { injectIntl } from "utils/injectIntl";
 
 interface FunctionsGridProps {
   funcs?: any[];

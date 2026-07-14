@@ -1,15 +1,14 @@
-import React from "react";
-
-import TableLineItem from "./components/TableLineItem";
-import GMServiceTableLineItem from "./components/GMServiceTableLineItem";
-import UpTime from "components/UpTime";
 import ArrayValue from "components/ArrayValue";
+import TableBody from "components/Main/components/TableBody";
 import TableDisplay from "components/Main/components/TableDisplay";
 import TableHeader from "components/Main/components/TableHeader";
-import TableBody from "components/Main/components/TableBody";
+import UpTime from "components/UpTime";
+import React from "react";
 import { relativeReqPercent } from "utils";
+import GMServiceTableLineItem from "./components/GMServiceTableLineItem";
+import TableLineItem from "./components/TableLineItem";
 // Table-specific utils functions
-import { getTableHeaders, getItem } from "./utils";
+import { getItem, getTableHeaders } from "./utils";
 
 interface TableProps {
   items?: any[];

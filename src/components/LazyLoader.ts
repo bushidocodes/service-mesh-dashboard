@@ -1,4 +1,4 @@
-import { lazy, type ComponentType } from "react";
+import { type ComponentType, lazy } from "react";
 
 /**
  * Thin wrapper around React.lazy() that preserves the call signature used

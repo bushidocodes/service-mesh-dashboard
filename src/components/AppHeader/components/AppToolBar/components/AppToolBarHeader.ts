@@ -1,11 +1,10 @@
-import styled from "styled-components";
-
 import { contrastColor, spacingScale } from "style/styleFunctions";
 import {
+  COLOR_ALT_BACKGROUND,
   FONT_SIZE_BASE,
-  FONT_STACK_BASE,
-  COLOR_ALT_BACKGROUND
+  FONT_STACK_BASE
 } from "style/styleVariables";
+import styled from "styled-components";
 
 const APP_TOOLBAR_HEIGHT = spacingScale(4.25);
 const APP_TOOLBAR_FONT_SIZE = FONT_SIZE_BASE;

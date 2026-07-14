@@ -1,8 +1,7 @@
+import ServiceView from "components/Main/scenes/ServiceView";
 import React from "react";
 import { Navigate, useParams } from "react-router-dom";
 import { injectIntl } from "utils/injectIntl";
-
-import ServiceView from "components/Main/scenes/ServiceView";
 import { computeStatus } from "utils/selectors";
 
 interface ServiceRouteElementInnerProps {

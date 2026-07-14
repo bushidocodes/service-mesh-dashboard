@@ -2,63 +2,7 @@
 
 exports[`Table Toolbar > matches snapshot 1`] = `
 <DocumentFragment>
-  .c2 {
-  background-image: url(magnifier.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: relative;
-  text-indent: 20px;
-  appearance: none;
-  display: flex;
-  color: black;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 1.4;
-  text-align: left;
-  text-transform: none;
-  padding: 1.4px 4px;
-  background-color: rgb(255, 255, 255);
-  border-radius: 3px;
-  border: 1px solid rgb(242, 242, 242);
-  border-bottom-color: rgb(230, 230, 230);
-  user-select: auto;
-  box-shadow: inset 0 0 0 transparent,0 0 0 transparent,0 0 0 transparent;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.3s ease;
-}
-
-.c2::-webkit-search-cancel-button {
-  cursor: pointer;
-}
-
-.c2 :hover {
-  background-color: rgb(250, 250, 250);
-  border-color: rgb(237, 237, 237);
-  transition: all 0.1s ease;
-  border-bottom-color: rgb(217, 217, 217);
-  color: black;
-}
-
-.c2 :focus {
-  outline: none;
-  box-shadow: 0 0 0 2px rgb(10, 171, 42);
-  z-index: 1;
-}
-
-.c2::placeholder {
-  color: currentColor;
-  opacity: 1;
-  text-align: center;
-}
-
-.c2::-ms-expand {
-  background-color: transparent;
-  border: 0;
-}
-
-.c6 {
+  .c6 {
   transform: scale(1);
 }
 
@@ -240,6 +184,62 @@ exports[`Table Toolbar > matches snapshot 1`] = `
   flex-basis: auto;
 }
 
+.c2 {
+  background-image: url(magnifier.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  text-indent: 20px;
+  appearance: none;
+  display: flex;
+  color: black;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: left;
+  text-transform: none;
+  padding: 1.4px 4px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 3px;
+  border: 1px solid rgb(242, 242, 242);
+  border-bottom-color: rgb(230, 230, 230);
+  user-select: auto;
+  box-shadow: inset 0 0 0 transparent,0 0 0 transparent,0 0 0 transparent;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.c2::-webkit-search-cancel-button {
+  cursor: pointer;
+}
+
+.c2 :hover {
+  background-color: rgb(250, 250, 250);
+  border-color: rgb(237, 237, 237);
+  transition: all 0.1s ease;
+  border-bottom-color: rgb(217, 217, 217);
+  color: black;
+}
+
+.c2 :focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgb(10, 171, 42);
+  z-index: 1;
+}
+
+.c2::placeholder {
+  color: currentColor;
+  opacity: 1;
+  text-align: center;
+}
+
+.c2::-ms-expand {
+  background-color: transparent;
+  border: 0;
+}
+
 .c9 {
   margin-left: 4px;
   opacity: 0.6;
@@ -259,6 +259,13 @@ exports[`Table Toolbar > matches snapshot 1`] = `
   padding: 2px 16px;
 }
 
+.c3 {
+  display: flex;
+  flex: 1 1 33%;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .c1 {
   align-items: center;
   display: flex;
@@ -270,13 +277,6 @@ exports[`Table Toolbar > matches snapshot 1`] = `
   display: flex;
   flex: 1 1 33%;
   justify-content: flex-end;
-}
-
-.c3 {
-  display: flex;
-  flex: 1 1 33%;
-  flex-direction: row;
-  justify-content: center;
 }
 
 @media all and (min-width: 1300px) {

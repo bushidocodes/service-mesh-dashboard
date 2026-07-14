@@ -38,7 +38,9 @@ export function getLatestAttribute(
   if (!fullPath) return 0;
   const latestAttribute =
     fullPath[
-      Object.keys(fullPath).sort((a, b) => Number(a) - Number(b)).at(-1) as string
+      Object.keys(fullPath)
+        .sort((a, b) => Number(a) - Number(b))
+        .at(-1) as string
     ];
   // if baseUnit, resultUnit, and precision and falsy, we pass the value back as a
   // number and leave i18n up to the component calling this function

@@ -1,6 +1,5 @@
-import styled from "styled-components";
-
 import { spacingScale } from "style/styleFunctions";
+import styled from "styled-components";
 
 const ReadoutItemData = styled.div<{ paddingLeft?: string | number }>`
   align-items: stretch;

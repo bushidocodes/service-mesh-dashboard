@@ -1,4 +1,4 @@
-import { Effect, Actions } from "store/jumpstate";
+import { Actions, Effect } from "store/jumpstate";
 import { reportError } from "../../notification";
 import { fetchInstanceThreads } from "./apis";
 

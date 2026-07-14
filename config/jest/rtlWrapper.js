@@ -11,10 +11,11 @@
 //
 // Import @testing-library/react via its /dist/ subpath so the Vitest alias
 // (exact-match /^@testing-library\/react$/) does NOT remap this back to itself.
+
+import isPropValid from "@emotion/is-prop-valid";
 import * as RTL from "@testing-library/react/dist/index.js";
 import React from "react";
 import { StyleSheetManager } from "styled-components";
-import isPropValid from "@emotion/is-prop-valid";
 
 function scShouldForwardProp(prop, target) {
   return typeof target === "string" ? isPropValid(prop) : true;

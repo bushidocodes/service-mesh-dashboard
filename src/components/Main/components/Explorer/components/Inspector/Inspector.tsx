@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import { FormattedMessage } from "react-intl";
 import { injectIntl } from "utils/injectIntl";
-
-import InspectorWrap from "./components/InspectorWrap";
-import InspectorToolbar from "./components/InspectorToolbar";
 import InspectorData from "./components/InspectorData";
+import InspectorHideStatic from "./components/InspectorHideStatic";
+import InspectorHideZero from "./components/InspectorHideZero";
 import InspectorItem from "./components/InspectorItem";
 import InspectorSearch from "./components/InspectorSearch";
-import InspectorHideZero from "./components/InspectorHideZero";
-import InspectorHideStatic from "./components/InspectorHideStatic";
+import InspectorToolbar from "./components/InspectorToolbar";
+import InspectorWrap from "./components/InspectorWrap";
 
 interface InspectorProps {
   data: string[];

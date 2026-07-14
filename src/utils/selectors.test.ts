@@ -1,18 +1,18 @@
 import state from "../json/mockReduxState";
 
 import {
+  getDashboards,
+  getFabricServer,
+  getMetrics,
   getRoutesMetrics,
   getRoutesTree,
-  metricsKeySelectorGenerator,
-  getDashboards,
-  getMetrics,
-  getServices,
-  getFabricServer,
+  getRuntime,
   getSelectedInstanceID,
   getSelectedService,
   getSelectedServiceSlug,
+  getServices,
   getStatusCount,
-  getRuntime
+  metricsKeySelectorGenerator
 } from "./selectors";
 
 const simpleState = {

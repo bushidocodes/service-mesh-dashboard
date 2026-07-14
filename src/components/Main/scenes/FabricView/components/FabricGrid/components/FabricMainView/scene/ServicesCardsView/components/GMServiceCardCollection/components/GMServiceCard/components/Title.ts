@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import { FONT_SIZE_BASE, FONT_STACK_DATA } from "style/styleVariables";
+import styled from "styled-components";
 
 const Title = styled.h1<{ cardFontWeight?: string }>`
   text-align: left;

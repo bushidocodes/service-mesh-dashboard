@@ -12,10 +12,10 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid > matches snapshot
   padding-top: 48px;
 }
 
-.c1 {
-  text-align: center;
-  margin: 0;
-  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+.c3 {
+  flex: 1 1 33%;
+  opacity: 0.65;
+  text-align: right;
 }
 
 .c2 {
@@ -49,18 +49,6 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid > matches snapshot
   position: relative;
 }
 
-.c3 {
-  flex: 1 1 33%;
-  opacity: 0.65;
-  text-align: right;
-}
-
-.c4 {
-  flex: 1 1 33%;
-  opacity: 0.65;
-  padding-left: 8px;
-}
-
 .c5 {
   opacity: 0.7;
   text-align: left;
@@ -68,6 +56,18 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid > matches snapshot
   width: 6em;
   padding-left: 8px;
   height: 24px;
+}
+
+.c1 {
+  text-align: center;
+  margin: 0;
+  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+}
+
+.c4 {
+  flex: 1 1 33%;
+  opacity: 0.65;
+  padding-left: 8px;
 }
 
 <div

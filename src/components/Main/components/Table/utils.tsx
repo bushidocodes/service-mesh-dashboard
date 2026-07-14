@@ -1,6 +1,6 @@
-import React from "react";
 import TableColHeader from "components/Main/components/TableColHeader";
 import TableColLatencyHeader from "components/Main/components/TableColLatencyHeader";
+import React from "react";
 import { FormattedMessage } from "react-intl";
 /** function getTableHeaders
  * takes Table type and returns appropriate headers with styling

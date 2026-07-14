@@ -1,8 +1,7 @@
 import React, { Fragment } from "react";
-
-import HeaderContainer from "./components/HeaderContainer";
-import Header from "./components/Header";
 import Extra from "./components/Extra";
+import Header from "./components/Header";
+import HeaderContainer from "./components/HeaderContainer";
 
 interface BannerProps {
   extras?: any[];

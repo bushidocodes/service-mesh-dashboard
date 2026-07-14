@@ -2,9 +2,8 @@ import React from "react";
 import { IntlProvider } from "react-intl";
 import { connect } from "react-redux";
 import type { RootState } from "types";
-
-import { flattenMessages } from "./utils/i18n";
 import messages from "./messages";
+import { flattenMessages } from "./utils/i18n";
 
 interface ConnectedIntlProviderProps {
   children?: React.ReactNode;

@@ -1,10 +1,9 @@
 import { createSelector } from "reselect";
-
-import { getLatestAttribute } from "../latestAttribute";
-import { getSparkLineOfNetChange } from "../sparklines";
-import { getDygraphOfValue, mapDygraphKeysToNetChange } from "../dygraphs";
-import { getMetrics, getRoutesTree, getRoutesMetrics } from "../selectors";
 import { calculateErrorPercent, formatAsDecimalString } from "utils";
+import { getDygraphOfValue, mapDygraphKeysToNetChange } from "../dygraphs";
+import { getLatestAttribute } from "../latestAttribute";
+import { getMetrics, getRoutesMetrics, getRoutesTree } from "../selectors";
+import { getSparkLineOfNetChange } from "../sparklines";
 
 // JVM - Specific Redux state
 const getCurrentThreads = (state: any) => state.threadsTable;

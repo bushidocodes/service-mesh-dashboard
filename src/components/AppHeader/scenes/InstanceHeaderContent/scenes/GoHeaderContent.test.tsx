@@ -1,9 +1,8 @@
-import React from "react";
-import { MemoryRouter, Routes, Route } from "react-router-dom";
-
 import state from "json/mockReduxState";
-import GoHeaderContent from "./GoHeaderContent";
+import React from "react";
+import { MemoryRouter, Route, Routes } from "react-router-dom";
 import { renderWithIntl } from "utils/i18nTesting";
+import GoHeaderContent from "./GoHeaderContent";
 
 // Router is necessary because of the <Tab />'s which need a router context
 const RouterWrap = (

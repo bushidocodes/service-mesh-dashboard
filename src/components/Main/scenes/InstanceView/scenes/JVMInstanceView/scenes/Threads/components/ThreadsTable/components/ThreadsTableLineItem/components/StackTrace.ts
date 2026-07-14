@@ -1,6 +1,5 @@
+import { contentTypeCode, spacingScale } from "style/styleFunctions";
 import styled from "styled-components";
-
-import { spacingScale, contentTypeCode } from "style/styleFunctions";
 
 /* Set a counter named 'section', and it`s initial value is 0. */
 const StackTrace = styled.div`

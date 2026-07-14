@@ -1,4 +1,4 @@
-import { TextEncoder, TextDecoder } from "util";
+import { TextDecoder, TextEncoder } from "util";
 
 // TextEncoder/TextDecoder are not in the jsdom global by default, but some
 // dependencies require them at module load time.

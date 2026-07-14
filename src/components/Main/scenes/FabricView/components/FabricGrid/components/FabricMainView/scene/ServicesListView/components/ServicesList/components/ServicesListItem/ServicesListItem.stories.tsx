@@ -1,7 +1,6 @@
 import React from "react";
-
-import GMServiceListItem from "./index";
 import { slugifyMicroservice } from "utils";
+import GMServiceListItem from "./index";
 
 export default {
   title: "Service List Item",

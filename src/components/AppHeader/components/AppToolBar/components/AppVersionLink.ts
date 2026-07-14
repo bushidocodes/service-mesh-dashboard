@@ -1,7 +1,6 @@
-import styled from "styled-components";
-
 import { spacingScale } from "style/styleFunctions";
 import { FONT_SIZE_XS, FONT_WEIGHT_SEMIBOLD } from "style/styleVariables";
+import styled from "styled-components";
 
 const AppVersionLink = styled.a`
   color: white;

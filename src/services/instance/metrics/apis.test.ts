@@ -1,7 +1,6 @@
-import { fetchInstanceMetrics } from "./apis";
-
 // Note: Outside of src directory, so module directory import not possible
 import metrics from "../../../../json-mock/jvm/metrics.json";
+import { fetchInstanceMetrics } from "./apis";
 
 // fetchInstanceMetrics only reads response.ok and response.json(), so a stub
 // Response-shaped object is enough.

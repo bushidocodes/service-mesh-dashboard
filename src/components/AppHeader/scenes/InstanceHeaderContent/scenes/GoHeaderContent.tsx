@@ -1,13 +1,11 @@
-import React from "react";
-import { injectIntl } from "utils/injectIntl";
-
 import Tab from "components/AppHeader/components/Tab";
 import TabNav from "components/AppHeader/components/TabNav";
 import ArrayValue from "components/ArrayValue";
 import UpTime from "components/UpTime";
-import { getLatestAttribute } from "utils/latestAttribute";
-
+import React from "react";
 import type { Metrics } from "types";
+import { injectIntl } from "utils/injectIntl";
+import { getLatestAttribute } from "utils/latestAttribute";
 
 interface GoHeaderContentProps {
   basePath?: string;

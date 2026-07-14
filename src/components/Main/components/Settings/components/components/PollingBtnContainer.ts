@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import { contrastColor } from "style/styleFunctions";
 
 import { COLOR_BRAND_PRIMARY, COLOR_WHITE } from "style/styleVariables";
-import { contrastColor } from "style/styleFunctions";
+import styled from "styled-components";
 
 const PollingBtnContainer = styled.div<{ isDisabled?: boolean }>`
   align-items: center;

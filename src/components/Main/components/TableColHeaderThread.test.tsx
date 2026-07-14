@@ -1,5 +1,5 @@
-import React from "react";
 import { render } from "@testing-library/react";
+import React from "react";
 import TableColHeaderThread from "./TableColHeaderThread";
 
 describe("TableColHeaderThread", () => {

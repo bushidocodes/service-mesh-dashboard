@@ -1,7 +1,6 @@
-import { fetchInstanceThreads } from "./apis";
-
 // Note: Outside of src directory, so module directory import not possible
 import threads from "../../../../json-mock/jvm/threads.json";
+import { fetchInstanceThreads } from "./apis";
 
 // fetchInstanceThreads only reads response.ok and response.json(), so a stub
 // Response-shaped object is enough.

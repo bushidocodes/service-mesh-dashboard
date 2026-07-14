@@ -77,6 +77,13 @@ exports[`ThreadsGrid View > matches snapshot 1`] = `
   padding: 2px 16px;
 }
 
+.c3 {
+  display: flex;
+  flex: 1 1 33%;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .c1 {
   align-items: center;
   display: flex;
@@ -88,13 +95,6 @@ exports[`ThreadsGrid View > matches snapshot 1`] = `
   display: flex;
   flex: 1 1 33%;
   justify-content: flex-end;
-}
-
-.c3 {
-  display: flex;
-  flex: 1 1 33%;
-  flex-direction: row;
-  justify-content: center;
 }
 
 @media all and (min-width: 1300px) {
@@ -316,15 +316,34 @@ exports[`ThreadsGrid View > matches snapshot 1`] = `
       </div>
     </div>
   </div>
-  .c1 {
-  align-items: center;
-  background-color: rgb(255, 255, 255);
-  box-shadow: inset 0 -1px hsl(0, 0%, 92%);
-  display: flex;
-  flex-wrap: wrap;
-  font-weight: 400;
+  .c9 {
+  transform: scale(1);
+}
+
+.c8 {
+  z-index: 1;
+  height: 24px;
+  width: 24px;
+  color: rgb(10, 171, 42);
+  word-spacing: 0;
+  vertical-align: middle;
+}
+
+.c8:not(:root) {
   overflow: visible;
-  width: 100%;
+}
+
+.c11 {
+  z-index: 1;
+  height: 24px;
+  width: 24px;
+  color: currentColor;
+  word-spacing: 0;
+  vertical-align: middle;
+}
+
+.c11:not(:root) {
+  overflow: visible;
 }
 
 .c2 {
@@ -345,8 +364,13 @@ exports[`ThreadsGrid View > matches snapshot 1`] = `
   padding-left: 16px;
 }
 
-.c4 {
-  flex: 0 1 5em;
+.c0 {
+  display: block;
+  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1300px;
+  width: 100%;
 }
 
 .c5 {
@@ -405,42 +429,18 @@ exports[`ThreadsGrid View > matches snapshot 1`] = `
   padding-left: 16px;
 }
 
-.c9 {
-  transform: scale(1);
+.c4 {
+  flex: 0 1 5em;
 }
 
-.c8 {
-  z-index: 1;
-  height: 24px;
-  width: 24px;
-  color: rgb(10, 171, 42);
-  word-spacing: 0;
-  vertical-align: middle;
-}
-
-.c8:not(:root) {
+.c1 {
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  box-shadow: inset 0 -1px hsl(0, 0%, 92%);
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: 400;
   overflow: visible;
-}
-
-.c11 {
-  z-index: 1;
-  height: 24px;
-  width: 24px;
-  color: currentColor;
-  word-spacing: 0;
-  vertical-align: middle;
-}
-
-.c11:not(:root) {
-  overflow: visible;
-}
-
-.c0 {
-  display: block;
-  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1300px;
   width: 100%;
 }
 

@@ -1,11 +1,11 @@
-import styled from "styled-components";
+import { contrastColor, spacingScale } from "style/styleFunctions";
 
 import {
   BORDER_RADIUS_BASE,
   COLOR_WHITE,
   FONT_SIZE_BASE
 } from "style/styleVariables";
-import { spacingScale, contrastColor } from "style/styleFunctions";
+import styled from "styled-components";
 
 const PollingSliderContainer = styled.div<{ isDisabled?: boolean }>`
   align-items: center;

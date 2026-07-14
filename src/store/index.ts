@@ -1,5 +1,5 @@
 // Commented out imports are used by currently disabled local storage functionality
-import { CreateJumpstateMiddleware } from "./jumpstate";
+
 import { configureStore } from "@reduxjs/toolkit";
 // redux-logger is a CJS/UMD module whose logger fn lives at both `.default`
 // and the named `logger` export. Vite 8's Rolldown dep-optimizer resolves the
@@ -8,6 +8,7 @@ import { configureStore } from "@reduxjs/toolkit";
 // boot. Use the named export, which is stable across the esbuild→Rolldown
 // interop change. (esbuild in Vite ≤7 resolved the default correctly.)
 import { logger } from "redux-logger";
+import { CreateJumpstateMiddleware } from "./jumpstate";
 
 import dashboards from "./states/dashboards";
 import fabric from "./states/fabric";

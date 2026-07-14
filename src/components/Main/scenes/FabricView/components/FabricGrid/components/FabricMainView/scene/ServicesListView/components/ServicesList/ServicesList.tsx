@@ -1,7 +1,6 @@
 import React from "react";
-
-import ServicesListItem from "./components/ServicesListItem";
 import SectionItems from "./components/SectionItems";
+import ServicesListItem from "./components/ServicesListItem";
 
 /**
  * Render section(s) with grouping header and group of lists

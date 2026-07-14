@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { COLOR_CONTENT_MUTED, COLOR_HIGHLIGHT } from "style/styleVariables";
 import styled from "styled-components";
-
-import { COLOR_HIGHLIGHT, COLOR_CONTENT_MUTED } from "style/styleVariables";
 
 // Wrap Link in a plain function component so styled-components v2 can wrap it.
 // React Router v6 exports Link as a forwardRef object (typeof === "object").

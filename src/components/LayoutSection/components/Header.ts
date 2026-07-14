@@ -1,10 +1,9 @@
-import styled from "styled-components";
-
-import { spacingScale, contrastColor } from "style/styleFunctions";
+import { contrastColor, spacingScale } from "style/styleFunctions";
 import {
   COLOR_CONTENT_BACKGROUND,
   CONTENT_MAX_WIDTH
 } from "style/styleVariables";
+import styled from "styled-components";
 
 const Header = styled.header`
   align-items: center;

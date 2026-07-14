@@ -1,13 +1,11 @@
 import React from "react";
-
-import styled from "styled-components";
-
 import { spacingScale } from "style/styleFunctions";
 import {
+  COLOR_DANGER,
   COLOR_SUCCESS,
-  COLOR_WARNING,
-  COLOR_DANGER
+  COLOR_WARNING
 } from "style/styleVariables";
+import styled from "styled-components";
 
 const COLOR_STOP_1 = COLOR_SUCCESS;
 const COLOR_STOP_2 = COLOR_WARNING.mix(COLOR_DANGER, 0.3).darken(0.1);

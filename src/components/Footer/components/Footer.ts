@@ -1,12 +1,11 @@
-import styled from "styled-components";
-
 import { contrastColor, spacingScale } from "style/styleFunctions";
 import {
+  APP_FOOTER_HEIGHT,
   COLOR_CONTENT_BACKGROUND,
   FONT_SIZE_SM,
-  APP_FOOTER_HEIGHT,
   ZINDEX_STICKY
 } from "style/styleVariables";
+import styled from "styled-components";
 
 const Footer = styled.footer`
   user-select: none;

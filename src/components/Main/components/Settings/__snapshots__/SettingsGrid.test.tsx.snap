@@ -2,66 +2,7 @@
 
 exports[`SettingsGrid component > Matches snapshot 1`] = `
 <DocumentFragment>
-  .c12 {
-  appearance: none;
-  width: 100%;
-  height: 6px;
-  margin: 12px 0;
-  border-radius: 20px;
-  background: rgb(230, 230, 230);
-  outline: none;
-  cursor: pointer;
-}
-
-.c12::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 16px;
-  height: 16px;
-  border: none;
-  border-radius: 0;
-  background: rgb(10, 171, 42);
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.c12::-moz-range-thumb {
-  width: 16px;
-  height: 16px;
-  border: none;
-  border-radius: 0;
-  background: rgb(10, 171, 42);
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.c12:disabled {
-  cursor: default;
-}
-
-.c12:hover::-webkit-slider-thumb,
-.c12:focus::-webkit-slider-thumb {
-  transform: scale(1.1);
-}
-
-.c12:hover::-moz-range-thumb,
-.c12:focus::-moz-range-thumb {
-  transform: scale(1.1);
-}
-
-.c12:disabled::-webkit-slider-thumb {
-  background: rgb(102, 102, 102);
-  cursor: default;
-  transform: none;
-}
-
-.c12:disabled::-moz-range-thumb {
-  background: rgb(102, 102, 102);
-  cursor: default;
-  transform: none;
-}
-
-.c4 {
+  .c4 {
   transform: scale(1);
 }
 
@@ -161,6 +102,17 @@ exports[`SettingsGrid component > Matches snapshot 1`] = `
   margin-top: 0.25px;
 }
 
+.c1 {
+  align-items: center;
+  border-top: 1px solid rgb(217, 217, 217);
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  max-width: 1300px;
+  padding: 16px;
+  width: 100%;
+}
+
 .c0 {
   align-items: stretch;
   color: rgb(32, 32, 32);
@@ -172,17 +124,6 @@ exports[`SettingsGrid component > Matches snapshot 1`] = `
 
 .c0:first-of-type >* {
   border-top: 0;
-}
-
-.c1 {
-  align-items: center;
-  border-top: 1px solid rgb(217, 217, 217);
-  display: flex;
-  flex-direction: row;
-  margin: 0 auto;
-  max-width: 1300px;
-  padding: 16px;
-  width: 100%;
 }
 
 .c6 {
@@ -204,6 +145,91 @@ exports[`SettingsGrid component > Matches snapshot 1`] = `
   color: inherit;
   font-size: 18px;
   margin: 0;
+}
+
+.c10 {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 6px;
+  color: rgb(255, 255, 255);
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-size: 11px;
+  opacity: 0;
+  padding: 10px;
+  position: absolute;
+  text-align: left;
+  transition: opacity 1s;
+  visibility: hidden;
+  white-space: normal;
+  width: 160px;
+  z-index: 1070;
+  right: 120%;
+  top: -5px;
+}
+
+.c7 {
+  border-bottom: 1px solid rgb(217, 217, 217);
+  cursor: default;
+  display: inline-block;
+  position: relative;
+}
+
+.c12 {
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  margin: 12px 0;
+  border-radius: 20px;
+  background: rgb(230, 230, 230);
+  outline: none;
+  cursor: pointer;
+}
+
+.c12::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: none;
+  border-radius: 0;
+  background: rgb(10, 171, 42);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.c12::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border: none;
+  border-radius: 0;
+  background: rgb(10, 171, 42);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.c12:disabled {
+  cursor: default;
+}
+
+.c12:hover::-webkit-slider-thumb,
+.c12:focus::-webkit-slider-thumb {
+  transform: scale(1.1);
+}
+
+.c12:hover::-moz-range-thumb,
+.c12:focus::-moz-range-thumb {
+  transform: scale(1.1);
+}
+
+.c12:disabled::-webkit-slider-thumb {
+  background: rgb(102, 102, 102);
+  cursor: default;
+  transform: none;
+}
+
+.c12:disabled::-moz-range-thumb {
+  background: rgb(102, 102, 102);
+  cursor: default;
+  transform: none;
 }
 
 .c8 {
@@ -265,32 +291,6 @@ exports[`SettingsGrid component > Matches snapshot 1`] = `
   font-size: 14px;
   text-align: center;
   width: 100%;
-}
-
-.c10 {
-  background-color: rgba(0, 0, 0, 0.8);
-  border-radius: 6px;
-  color: rgb(255, 255, 255);
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-size: 11px;
-  opacity: 0;
-  padding: 10px;
-  position: absolute;
-  text-align: left;
-  transition: opacity 1s;
-  visibility: hidden;
-  white-space: normal;
-  width: 160px;
-  z-index: 1070;
-  right: 120%;
-  top: -5px;
-}
-
-.c7 {
-  border-bottom: 1px solid rgb(217, 217, 217);
-  cursor: default;
-  display: inline-block;
-  position: relative;
 }
 
 <section
@@ -415,66 +415,7 @@ exports[`SettingsGrid component > Matches snapshot 1`] = `
       </div>
     </div>
   </section>
-  .c12 {
-  appearance: none;
-  width: 100%;
-  height: 6px;
-  margin: 12px 0;
-  border-radius: 20px;
-  background: rgb(230, 230, 230);
-  outline: none;
-  cursor: pointer;
-}
-
-.c12::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 16px;
-  height: 16px;
-  border: none;
-  border-radius: 0;
-  background: rgb(10, 171, 42);
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.c12::-moz-range-thumb {
-  width: 16px;
-  height: 16px;
-  border: none;
-  border-radius: 0;
-  background: rgb(10, 171, 42);
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.c12:disabled {
-  cursor: default;
-}
-
-.c12:hover::-webkit-slider-thumb,
-.c12:focus::-webkit-slider-thumb {
-  transform: scale(1.1);
-}
-
-.c12:hover::-moz-range-thumb,
-.c12:focus::-moz-range-thumb {
-  transform: scale(1.1);
-}
-
-.c12:disabled::-webkit-slider-thumb {
-  background: rgb(102, 102, 102);
-  cursor: default;
-  transform: none;
-}
-
-.c12:disabled::-moz-range-thumb {
-  background: rgb(102, 102, 102);
-  cursor: default;
-  transform: none;
-}
-
-.c4 {
+  .c4 {
   transform: scale(1);
 }
 
@@ -574,6 +515,17 @@ exports[`SettingsGrid component > Matches snapshot 1`] = `
   margin-top: 0.25px;
 }
 
+.c1 {
+  align-items: center;
+  border-top: 1px solid rgb(217, 217, 217);
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  max-width: 1300px;
+  padding: 16px;
+  width: 100%;
+}
+
 .c0 {
   align-items: stretch;
   color: rgb(32, 32, 32);
@@ -585,17 +537,6 @@ exports[`SettingsGrid component > Matches snapshot 1`] = `
 
 .c0:first-of-type >* {
   border-top: 0;
-}
-
-.c1 {
-  align-items: center;
-  border-top: 1px solid rgb(217, 217, 217);
-  display: flex;
-  flex-direction: row;
-  margin: 0 auto;
-  max-width: 1300px;
-  padding: 16px;
-  width: 100%;
 }
 
 .c6 {
@@ -617,6 +558,91 @@ exports[`SettingsGrid component > Matches snapshot 1`] = `
   color: inherit;
   font-size: 18px;
   margin: 0;
+}
+
+.c10 {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 6px;
+  color: rgb(255, 255, 255);
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-size: 11px;
+  opacity: 0;
+  padding: 10px;
+  position: absolute;
+  text-align: left;
+  transition: opacity 1s;
+  visibility: hidden;
+  white-space: normal;
+  width: 160px;
+  z-index: 1070;
+  right: 120%;
+  top: -5px;
+}
+
+.c7 {
+  border-bottom: 1px solid rgb(217, 217, 217);
+  cursor: default;
+  display: inline-block;
+  position: relative;
+}
+
+.c12 {
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  margin: 12px 0;
+  border-radius: 20px;
+  background: rgb(230, 230, 230);
+  outline: none;
+  cursor: pointer;
+}
+
+.c12::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: none;
+  border-radius: 0;
+  background: rgb(10, 171, 42);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.c12::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border: none;
+  border-radius: 0;
+  background: rgb(10, 171, 42);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.c12:disabled {
+  cursor: default;
+}
+
+.c12:hover::-webkit-slider-thumb,
+.c12:focus::-webkit-slider-thumb {
+  transform: scale(1.1);
+}
+
+.c12:hover::-moz-range-thumb,
+.c12:focus::-moz-range-thumb {
+  transform: scale(1.1);
+}
+
+.c12:disabled::-webkit-slider-thumb {
+  background: rgb(102, 102, 102);
+  cursor: default;
+  transform: none;
+}
+
+.c12:disabled::-moz-range-thumb {
+  background: rgb(102, 102, 102);
+  cursor: default;
+  transform: none;
 }
 
 .c8 {
@@ -678,32 +704,6 @@ exports[`SettingsGrid component > Matches snapshot 1`] = `
   font-size: 14px;
   text-align: center;
   width: 100%;
-}
-
-.c10 {
-  background-color: rgba(0, 0, 0, 0.8);
-  border-radius: 6px;
-  color: rgb(255, 255, 255);
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-size: 11px;
-  opacity: 0;
-  padding: 10px;
-  position: absolute;
-  text-align: left;
-  transition: opacity 1s;
-  visibility: hidden;
-  white-space: normal;
-  width: 160px;
-  z-index: 1070;
-  right: 120%;
-  top: -5px;
-}
-
-.c7 {
-  border-bottom: 1px solid rgb(217, 217, 217);
-  cursor: default;
-  display: inline-block;
-  position: relative;
 }
 
 <section
@@ -930,6 +930,17 @@ exports[`SettingsGrid component > Matches snapshot 1`] = `
   flex-basis: auto;
 }
 
+.c1 {
+  align-items: center;
+  border-top: 1px solid rgb(217, 217, 217);
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  max-width: 1300px;
+  padding: 16px;
+  width: 100%;
+}
+
 .c0 {
   align-items: stretch;
   color: rgb(32, 32, 32);
@@ -941,17 +952,6 @@ exports[`SettingsGrid component > Matches snapshot 1`] = `
 
 .c0:first-of-type >* {
   border-top: 0;
-}
-
-.c1 {
-  align-items: center;
-  border-top: 1px solid rgb(217, 217, 217);
-  display: flex;
-  flex-direction: row;
-  margin: 0 auto;
-  max-width: 1300px;
-  padding: 16px;
-  width: 100%;
 }
 
 .c6 {

@@ -1,7 +1,7 @@
-import React from "react";
+import Close from "components/Glyphs/Close";
 
 import Icon from "components/Icon";
-import Close from "components/Glyphs/Close";
+import React from "react";
 
 import DismissButtonContainer from "./components/DismissButtonContainer";
 

@@ -1,5 +1,5 @@
-import { renderWithIntl } from "utils/i18nTesting";
 import React from "react";
+import { renderWithIntl } from "utils/i18nTesting";
 import LanguageSelector from "./LanguageSelector";
 
 describe("LanguageSelector", () => {

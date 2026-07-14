@@ -1,6 +1,5 @@
-import styled from "styled-components";
-
 import { errorColor } from "style/styleFunctions";
+import styled from "styled-components";
 
 interface TableColProps {
   errorPercent?: string | number;

@@ -1,6 +1,5 @@
+import { COLOR_ALT_BACKGROUND, FONT_SIZE_HERO } from "style/styleVariables";
 import styled from "styled-components";
-
-import { FONT_SIZE_HERO, COLOR_ALT_BACKGROUND } from "style/styleVariables";
 
 const Header = styled.h1`
   font-size: ${FONT_SIZE_HERO};

@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import { edgeColor, spacingScale } from "style/styleFunctions";
 
 import { COLOR_CONTENT_BACKGROUND } from "style/styleVariables";
-import { spacingScale, edgeColor } from "style/styleFunctions";
+import styled from "styled-components";
 
 const DataPair = styled.div<{ priority?: "primary" | "secondary" | "normal" }>`
   display: flex;

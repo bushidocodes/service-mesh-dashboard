@@ -1,5 +1,5 @@
-import { State } from "store/jumpstate";
 import objectSizeOf from "object-sizeof";
+import { State } from "store/jumpstate";
 import { omit } from "utils/collections";
 
 const METRICS_CACHE_MAX_BYTES = 100000000; // ~100MB is 100000000

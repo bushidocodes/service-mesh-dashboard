@@ -1,12 +1,12 @@
 import { Effect } from "store/jumpstate";
 import {
-  fetchFabricMicroservicesFailureEffect,
-  fetchAndStoreFabricMicroservicesEffect,
-  fetchFabricMicroservicesSuccessEffect,
   changeFabricMicroservicesPollingIntervalEffect,
+  fetchAndStoreFabricMicroservicesEffect,
+  fetchFabricMicroservicesFailureEffect,
+  fetchFabricMicroservicesSuccessEffect,
+  selectInstanceEffect,
   startPollingFabricMicroservicesEffect,
-  stopPollingFabricMicroservicesEffect,
-  selectInstanceEffect
+  stopPollingFabricMicroservicesEffect
 } from "./fabricMicroservices";
 
 Effect(

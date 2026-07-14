@@ -1,7 +1,6 @@
-import styled from "styled-components";
-
 import { edgeColor, spacingScale } from "style/styleFunctions";
 import { COLOR_CONTENT_BACKGROUND } from "style/styleVariables";
+import styled from "styled-components";
 
 const MetricsList = styled.div`
   border-right: 1px solid ${edgeColor(COLOR_CONTENT_BACKGROUND).string()};

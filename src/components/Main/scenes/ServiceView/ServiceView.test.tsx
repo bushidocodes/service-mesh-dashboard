@@ -1,6 +1,6 @@
-import React from "react";
 import { screen, within } from "@testing-library/react";
-import { MemoryRouter, Routes, Route } from "react-router-dom";
+import React from "react";
+import { MemoryRouter, Route, Routes } from "react-router-dom";
 
 import { renderWithIntl } from "utils/i18nTesting";
 

@@ -1,6 +1,5 @@
-import styled from "styled-components";
-
 import { spacingScale } from "style/styleFunctions";
+import styled from "styled-components";
 
 // -webkit-flex: 1 1 0; added as a fix for flex-item not centering in safari 10.1
 // for "cacheCard", set minimum height to overrule media query for  child readoutItemContainer size.  flex-basis of 100% is overruled in the parent container.

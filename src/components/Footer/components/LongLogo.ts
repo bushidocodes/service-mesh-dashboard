@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import { spacingScale } from "style/styleFunctions";
+import styled from "styled-components";
 
 const LongLogo = styled.a`
   flex: 0 1 auto;

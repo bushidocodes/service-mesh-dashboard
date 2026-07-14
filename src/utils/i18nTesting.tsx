@@ -1,10 +1,9 @@
-import React from "react";
-import { IntlProvider, createIntl, createIntlCache } from "react-intl";
-import { Provider } from "react-redux";
 import { render } from "@testing-library/react";
-
-import { flattenMessages } from "utils/i18n";
 import messages from "messages";
+import React from "react";
+import { createIntl, createIntlCache, IntlProvider } from "react-intl";
+import { Provider } from "react-redux";
+import { flattenMessages } from "utils/i18n";
 
 /**
  * Test helpers for components that consume react-intl.

@@ -1,6 +1,6 @@
-import { test, expect } from "@playwright/test";
-import InstancePage from "../pages/instance.page";
+import { expect, test } from "@playwright/test";
 import { fetchServices, pickByRuntime, serviceSlug } from "../helpers/sds";
+import InstancePage from "../pages/instance.page";
 
 /**
  * Ported from e2e-tests/tests/base-instance-view.js — behaviors common to all
@@ -67,9 +67,9 @@ test.describe("Instance View (common)", () => {
     let dir: "asc" | "desc" = "asc";
     await expect
       .poll(async () => {
-        const vals = (
-          await instance.routeRequests.allInnerTexts()
-        ).map(parseNum);
+        const vals = (await instance.routeRequests.allInnerTexts()).map(
+          parseNum
+        );
         if (isSorted(vals, "asc")) {
           dir = "asc";
           return true;
@@ -86,7 +86,10 @@ test.describe("Instance View (common)", () => {
     const opposite = dir === "asc" ? "desc" : "asc";
     await expect
       .poll(async () =>
-        isSorted((await instance.routeRequests.allInnerTexts()).map(parseNum), opposite)
+        isSorted(
+          (await instance.routeRequests.allInnerTexts()).map(parseNum),
+          opposite
+        )
       )
       .toBe(true);
   });
@@ -100,7 +103,9 @@ test.describe("Instance View (common)", () => {
     await expect(instance.charts).toHaveCount(0);
 
     await expect(instance.inspectorItems.first()).toBeVisible();
-    const firstItem = (await instance.inspectorItems.first().innerText()).trim();
+    const firstItem = (
+      await instance.inspectorItems.first().innerText()
+    ).trim();
 
     await instance.inspectorItems.first().click();
     await expect(instance.charts).toHaveCount(1);

@@ -1,8 +1,10 @@
 /// <reference types="vitest/config" />
-import { defineConfig, transformWithEsbuild } from "vite";
+
+import babel from "@rolldown/plugin-babel";
 import react from "@vitejs/plugin-react";
 import path from "path";
 import { fileURLToPath } from "url";
+import { defineConfig } from "vite";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const src = (p) => path.resolve(__dirname, "src", p);
@@ -36,74 +38,39 @@ export default defineConfig({
   // treating the parent repo as the root. Required for git worktree support.
   root: __dirname,
   plugins: [
-    // MUST be listed first: transform JSX in every src .js file to plain JS
-    // before `vite:import-analysis` tries to parse it with acorn.  The project
-    // predates the .jsx extension convention so virtually every source file
-    // contains JSX but is named .js.  Without this pre-pass the import
-    // analyzer chokes on JSX syntax.
-    {
-      name: "treat-js-as-jsx",
-      enforce: "pre",
-      async transform(code, id) {
-        if (id.includes("node_modules")) return null;
-        if (!id.endsWith(".js")) return null;
-        return transformWithEsbuild(code, id, {
-          loader: "jsx",
-          // Classic transform → React.createElement; matches React 16.
-          jsx: "transform",
-          jsxFactory: "React.createElement",
-          jsxFragment: "React.Fragment"
-        });
-      }
-    },
+    // @vitejs/plugin-react v6: Oxc handles JSX + Fast Refresh (no Babel).
     react({
-      // React 16 ships classic JSX transform only — no jsx-runtime package.
-      jsxRuntime: "classic",
-      // Run babel-plugin-styled-components so display names and
-      // the styled-components DevTools work in development. In tests, disable
-      // CSS minification so the jest-styled-components serializer emits the same
-      // spacing the old Jest pipeline did (which had no styled-components babel
-      // plugin) — keeps snapshots byte-stable across the migration.
-      babel: {
-        plugins: [
-          [
-            "babel-plugin-styled-components",
-            isTest
-              ? // In tests: don't minify CSS (so the jest-styled-components
-                // serializer emits the same spacing the old Jest pipeline did,
-                // which had no styled-components babel plugin), and disable
-                // displayName so the generated componentId keeps its `sc-`
-                // prefix. jest-styled-components' toHaveStyleRule only treats a
-                // class as styled if it matches /(_|-)+sc-.+|^sc-/; the
-                // displayName form (`Copyright-bhDgoP`) drops `sc-` and breaks
-                // the matcher, while snapshots normalise the class to `c0`
-                // either way.
-                { minify: false, displayName: false }
-              : {}
-          ]
+      jsxRuntime: "automatic"
+    }),
+    // styled-components display names / componentIds. plugin-react v6 dropped
+    // its built-in Babel option; run the SC plugin via @rolldown/plugin-babel.
+    babel({
+      plugins: [
+        [
+          "babel-plugin-styled-components",
+          isTest
+            ? // In tests: don't minify CSS (so the jest-styled-components
+              // serializer emits the same spacing the old Jest pipeline did),
+              // and disable displayName so the generated componentId keeps its
+              // `sc-` prefix. jest-styled-components' toHaveStyleRule only
+              // treats a class as styled if it matches /(_|-)+sc-.+|^sc-/; the
+              // displayName form (`Copyright-bhDgoP`) drops `sc-` and breaks
+              // the matcher, while snapshots normalise the class to `c0`
+              // either way.
+              { minify: false, displayName: false }
+            : {}
         ]
-      }
+      ]
     }),
     // Test-only: stub CSS/asset imports to match the legacy Jest transforms.
     ...(isTest ? [testTransformStub] : [])
   ],
 
-  // Tell esbuild (used by Vite 5's dep-optimizer) to parse every .js file as
-  // JSX. The project predates the .jsx extension convention, so virtually
-  // every source file contains JSX but is named .js.
-  optimizeDeps: {
-    // NOTE: do NOT exclude react/jsx-runtime here. The app itself uses the
-    // classic transform (jsxRuntime: "classic" below), but third-party deps
-    // (react-router-dom v7, etc.) are shipped compiled with the *automatic*
-    // runtime and import { jsx, jsxs } from "react/jsx-runtime". React 19
-    // provides that module, so it must be pre-bundled like any other dep.
-    // Excluding it made Vite 8's Rolldown optimizer serve it as a CJS→ESM
-    // wrapper with only a default export, so lazily-loaded dashboard chunks
-    // threw `does not provide an export named 'jsx'` and rendered empty grids.
-    esbuildOptions: {
-      loader: { ".js": "jsx" }
-    }
-  },
+  // NOTE: do NOT exclude react/jsx-runtime from dep optimization. The app and
+  // third-party deps import { jsx, jsxs } from "react/jsx-runtime". Excluding
+  // it made Vite 8's Rolldown optimizer serve a CJS→ESM wrapper with only a
+  // default export, so lazily-loaded dashboard chunks threw
+  // `does not provide an export named 'jsx'` and rendered empty grids.
 
   // Replicate webpack's `resolve.modules: ["src", "node_modules"]` so
   // bare imports like `import x from "utils/head"` keep working.
@@ -114,7 +81,6 @@ export default defineConfig({
     // components under test use — otherwise toHaveStyleRule finds an empty sheet.
     dedupe: ["styled-components", "react", "react-dom"],
     alias: {
-      AppHistory: src("AppHistory.js"),
       components: src("components"),
       images: src("images"),
       json: src("json"),
@@ -153,10 +119,9 @@ export default defineConfig({
     sourcemap: true
   },
 
-  // Vitest configuration. Reuses every plugin/alias above (the JSX-in-.js
-  // pre-pass, styled-components babel plugin, and the `src` path aliases) so
-  // tests run through the exact same transform pipeline as the build — which is
-  // the whole point of moving off Jest + Babel (issue #197).
+  // Vitest configuration. Reuses every plugin/alias above (the styled-components
+  // babel plugin and the `src` path aliases) so tests run through the same
+  // transform pipeline as the build.
   test: {
     // Jest-style implicit globals (describe/it/expect/beforeEach/vi-as-jest)
     // so the ~238 existing suites need no per-file imports.

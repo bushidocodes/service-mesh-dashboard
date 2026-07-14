@@ -1,5 +1,5 @@
+import { fireEvent, screen, within } from "@testing-library/react";
 import React from "react";
-import { screen, fireEvent, within } from "@testing-library/react";
 import { renderWithIntl, withIntl } from "utils/i18nTesting";
 
 import TableToolbar from "./index";

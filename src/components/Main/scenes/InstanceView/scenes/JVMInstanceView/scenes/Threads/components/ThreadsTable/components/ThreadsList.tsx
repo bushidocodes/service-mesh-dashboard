@@ -1,9 +1,7 @@
-import React from "react";
-
 import TableBody from "components/Main/components/TableBody";
-import ThreadsTableLineItem from "./ThreadsTableLineItem";
-
+import React from "react";
 import type { ThreadsTableItem } from "types";
+import ThreadsTableLineItem from "./ThreadsTableLineItem";
 
 interface ThreadsListProps {
   threads: ThreadsTableItem[];

@@ -2,46 +2,9 @@
 
 exports[`GO > SummaryGrid component > Matched the snapshot 1`] = `
 <DocumentFragment>
-  .c0 {
-  align-items: stretch;
-  color: rgb(32, 32, 32);
-  display: flex;
-  flex: 0 0 auto;
-  flex-direction: column;
-  margin-bottom: 32px;
-}
-
-.c0:first-of-type >* {
-  border-top: 0;
-}
-
-.c1 {
-  align-items: center;
-  border-top: 1px solid rgb(217, 217, 217);
-  display: flex;
-  flex-direction: row;
-  margin: 0 auto;
-  max-width: 1300px;
-  padding: 16px;
-  width: 100%;
-}
-
-.c6 {
-  margin: 0 auto;
-  max-width: 1300px;
-  padding: 8px;
-  width: 100%;
-}
-
-.c2 {
-  flex: 0 0 auto;
-  padding-right: 8px!important;
-}
-
-.c5 {
-  color: inherit;
-  font-size: 18px;
-  margin: 0;
+  .c15 span+span {
+  font-size: 80%;
+  opacity: 0.8;
 }
 
 .c4 {
@@ -74,12 +37,46 @@ exports[`GO > SummaryGrid component > Matched the snapshot 1`] = `
   overflow: visible;
 }
 
-.c7 {
+.c1 {
+  align-items: center;
+  border-top: 1px solid rgb(217, 217, 217);
   display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  orphans: 2;
+  flex-direction: row;
+  margin: 0 auto;
+  max-width: 1300px;
+  padding: 16px;
   width: 100%;
+}
+
+.c0 {
+  align-items: stretch;
+  color: rgb(32, 32, 32);
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  margin-bottom: 32px;
+}
+
+.c0:first-of-type >* {
+  border-top: 0;
+}
+
+.c6 {
+  margin: 0 auto;
+  max-width: 1300px;
+  padding: 8px;
+  width: 100%;
+}
+
+.c2 {
+  flex: 0 0 auto;
+  padding-right: 8px!important;
+}
+
+.c5 {
+  color: inherit;
+  font-size: 18px;
+  margin: 0;
 }
 
 .c8 {
@@ -169,6 +166,14 @@ exports[`GO > SummaryGrid component > Matched the snapshot 1`] = `
   padding-left: 16px;
 }
 
+.c16 {
+  font-size: 11px;
+  font-weight: 600;
+  margin: 0;
+  min-height: 1em;
+  opacity: 0.85;
+}
+
 .c10 {
   flex: 0 0 80px;
   height: 48px;
@@ -194,17 +199,12 @@ exports[`GO > SummaryGrid component > Matched the snapshot 1`] = `
   min-height: 1em;
 }
 
-.c16 {
-  font-size: 11px;
-  font-weight: 600;
-  margin: 0;
-  min-height: 1em;
-  opacity: 0.85;
-}
-
-.c15 span+span {
-  font-size: 80%;
-  opacity: 0.8;
+.c7 {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  orphans: 2;
+  width: 100%;
 }
 
 @media all and (max-width: 1000px) {
@@ -577,17 +577,21 @@ exports[`GO > SummaryGrid component > Matched the snapshot 1`] = `
       </div>
     </div>
   </section>
-  .c0 {
-  align-items: stretch;
-  color: rgb(32, 32, 32);
-  display: flex;
-  flex: 0 0 auto;
-  flex-direction: column;
-  margin-bottom: 32px;
+  .c4 {
+  transform: scale(1);
 }
 
-.c0:first-of-type >* {
-  border-top: 0;
+.c3 {
+  z-index: 1;
+  height: 24px;
+  width: 24px;
+  color: currentColor;
+  word-spacing: 0;
+  vertical-align: middle;
+}
+
+.c3:not(:root) {
+  overflow: visible;
 }
 
 .c1 {
@@ -599,6 +603,19 @@ exports[`GO > SummaryGrid component > Matched the snapshot 1`] = `
   max-width: 1300px;
   padding: 16px;
   width: 100%;
+}
+
+.c0 {
+  align-items: stretch;
+  color: rgb(32, 32, 32);
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  margin-bottom: 32px;
+}
+
+.c0:first-of-type >* {
+  border-top: 0;
 }
 
 .c6 {
@@ -617,23 +634,6 @@ exports[`GO > SummaryGrid component > Matched the snapshot 1`] = `
   color: inherit;
   font-size: 18px;
   margin: 0;
-}
-
-.c4 {
-  transform: scale(1);
-}
-
-.c3 {
-  z-index: 1;
-  height: 24px;
-  width: 24px;
-  color: currentColor;
-  word-spacing: 0;
-  vertical-align: middle;
-}
-
-.c3:not(:root) {
-  overflow: visible;
 }
 
 .c10 {
@@ -682,6 +682,20 @@ exports[`GO > SummaryGrid component > Matched the snapshot 1`] = `
   opacity: 0.8;
 }
 
+.c9 {
+  flex: 1 1 100%;
+  position: relative;
+  min-height: 250px;
+}
+
+.c9 >* {
+  margin: 8px;
+}
+
+.c11 {
+  padding: 0 8px;
+}
+
 .c7 {
   align-items: stretch;
   background-color: transparent;
@@ -700,20 +714,6 @@ exports[`GO > SummaryGrid component > Matched the snapshot 1`] = `
   padding: 8px 16px;
   flex: 1 0 40px;
   flex: 0 0 auto;
-}
-
-.c9 {
-  flex: 1 1 100%;
-  position: relative;
-  min-height: 250px;
-}
-
-.c9 >* {
-  margin: 8px;
-}
-
-.c11 {
-  padding: 0 8px;
 }
 
 <section

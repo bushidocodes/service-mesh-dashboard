@@ -1,10 +1,9 @@
-import React from "react";
 import { screen } from "@testing-library/react";
+import React from "react";
 import { renderWithIntl } from "utils/i18nTesting";
-
-import Table from "./index";
-import TableLineItem from "./components/TableLineItem";
 import GMServiceTableLineItem from "./components/GMServiceTableLineItem";
+import TableLineItem from "./components/TableLineItem";
+import Table from "./index";
 
 // Enzyme reached into the rendered tree to count TableLineItem /
 // GMServiceTableLineItem instances and read the props Table passed them

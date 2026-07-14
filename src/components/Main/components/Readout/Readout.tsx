@@ -1,8 +1,8 @@
 import React from "react";
 
 import ReadoutDisplay from "./components/ReadoutDisplay";
-import ReadoutItem from "./components/ReadoutItem";
 import type { ReadoutItemData } from "./components/ReadoutItem";
+import ReadoutItem from "./components/ReadoutItem";
 
 interface ReadoutProps {
   cacheCard?: boolean;
@@ -18,7 +18,11 @@ export default function Readout({
   readoutItems = []
 }: ReadoutProps) {
   return (
-    <ReadoutDisplay primary={primary} cacheCard={cacheCard} data-testid="readout">
+    <ReadoutDisplay
+      primary={primary}
+      cacheCard={cacheCard}
+      data-testid="readout"
+    >
       {readoutItems.map((item) => (
         <ReadoutItem
           key={`${item.title}|${item.value}|${item.detail}`}

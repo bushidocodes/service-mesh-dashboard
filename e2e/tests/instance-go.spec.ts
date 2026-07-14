@@ -1,6 +1,6 @@
-import { test, expect } from "@playwright/test";
-import InstancePage from "../pages/instance.page";
+import { expect, test } from "@playwright/test";
 import { fetchServices, pickByRuntime, serviceSlug } from "../helpers/sds";
+import InstancePage from "../pages/instance.page";
 
 /** Ported from e2e-tests/tests/instance-view-go.js */
 test.describe("Instance View: Go", () => {

@@ -1,25 +1,23 @@
-import React, { Component } from "react";
+import Glyph from "components/Glyphs/index";
+import Icon from "components/Icon";
+import GMLineChart from "components/Main/components/GMLineChart";
+import SparklineCol from "components/Main/components/SparklineCol";
+import TableCol from "components/Main/components/TableCol";
+import TableColVizBar from "components/Main/components/TableColVizBar";
+import TableDrawerCollapse from "components/Main/components/TableDrawerCollapse";
+import TableRow from "components/Main/components/TableRow";
+import VizBar from "components/Main/components/VizBar";
+import VizFill from "components/Main/components/VizFill";
+import Badge from "components/Main/scenes/InstanceView/components/Badge";
 import {
   Sparklines,
   SparklinesLine,
   SparklinesReferenceLine
 } from "components/Sparklines";
+import React, { Component } from "react";
 import styled from "styled-components";
-import { injectIntl } from "utils/injectIntl";
-
-import GMLineChart from "components/Main/components/GMLineChart";
-import TableRow from "components/Main/components/TableRow";
-import TableCol from "components/Main/components/TableCol";
-import TableColVizBar from "components/Main/components/TableColVizBar";
-import SparklineCol from "components/Main/components/SparklineCol";
-import TableDrawerCollapse from "components/Main/components/TableDrawerCollapse";
-import VizBar from "components/Main/components/VizBar";
-import VizFill from "components/Main/components/VizFill";
-import Badge from "components/Main/scenes/InstanceView/components/Badge";
-import Icon from "components/Icon";
-import Glyph from "components/Glyphs/index";
-
 import { blurTableRow } from "utils";
+import { injectIntl } from "utils/injectIntl";
 
 interface TableLineItemProps {
   errorPercent: string;

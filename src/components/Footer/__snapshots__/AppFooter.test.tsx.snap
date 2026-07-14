@@ -2,7 +2,24 @@
 
 exports[`A Footer container > should render 1`] = `
 <DocumentFragment>
-  .c2 {
+  .c6 {
+  transform: scale(1);
+}
+
+.c5 {
+  z-index: 1;
+  height: 19.200000000000003px;
+  width: 19.200000000000003px;
+  color: currentColor;
+  word-spacing: 0;
+  vertical-align: middle;
+}
+
+.c5:not(:root) {
+  overflow: visible;
+}
+
+.c2 {
   font-size: 9px;
   margin: 0;
   flex: 0 0 100%;
@@ -30,6 +47,21 @@ exports[`A Footer container > should render 1`] = `
   justify-content: stretch;
 }
 
+.c4 {
+  color: rgb(153, 153, 153);
+  padding: 0 8px;
+}
+
+.c4:hover {
+  color: rgb(10, 171, 42);
+}
+
+.c3 {
+  flex: 1 0 auto;
+  text-align: right;
+  padding: 0 0 0 8px;
+}
+
 .c1 {
   flex: 0 1 auto;
   text-align: left;
@@ -47,38 +79,6 @@ exports[`A Footer container > should render 1`] = `
 
 .c1 img {
   max-width: 157px;
-}
-
-.c3 {
-  flex: 1 0 auto;
-  text-align: right;
-  padding: 0 0 0 8px;
-}
-
-.c4 {
-  color: rgb(153, 153, 153);
-  padding: 0 8px;
-}
-
-.c4:hover {
-  color: rgb(10, 171, 42);
-}
-
-.c6 {
-  transform: scale(1);
-}
-
-.c5 {
-  z-index: 1;
-  height: 19.200000000000003px;
-  width: 19.200000000000003px;
-  color: currentColor;
-  word-spacing: 0;
-  vertical-align: middle;
-}
-
-.c5:not(:root) {
-  overflow: visible;
 }
 
 @media all and (min-width: 800px) {

@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import { COLOR_BLACK, COLOR_WHITE, ZINDEX_TOOLTIP } from "style/styleVariables";
+import styled from "styled-components";
 
 const TooltipWrap = styled.div<{ disabled?: boolean }>`
   border-bottom: 1px solid ${COLOR_BLACK.mix(COLOR_WHITE, 0.85).string()};

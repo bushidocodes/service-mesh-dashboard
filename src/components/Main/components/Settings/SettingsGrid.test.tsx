@@ -1,10 +1,9 @@
-import React from "react";
 import { within } from "@testing-library/react";
 import * as state from "json/mockReduxState";
+import React from "react";
 import configureStore from "redux-mock-store";
-
-import SettingsGrid from "./index";
 import { mountWithIntl } from "utils/i18nTesting";
+import SettingsGrid from "./index";
 
 //import all necessary Action effect so the Actions object is set within this test harness
 import "services/fabricMicroservices/index";

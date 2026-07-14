@@ -1,11 +1,11 @@
+import { createIntl, createIntlCache } from "react-intl";
 import {
-  numericalTimeSeriesFunc,
+  average,
   median,
   modes,
-  average,
+  numericalTimeSeriesFunc,
   screenReaderGraphDescription
 } from "./utils";
-import { createIntl, createIntlCache } from "react-intl";
 
 describe("GMLineChart utils functions", () => {
   test("numericalTimeSeriesFunc produces an array of number", () => {

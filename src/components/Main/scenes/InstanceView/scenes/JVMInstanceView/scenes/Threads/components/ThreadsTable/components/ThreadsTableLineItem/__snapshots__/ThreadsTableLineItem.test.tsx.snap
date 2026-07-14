@@ -2,7 +2,37 @@
 
 exports[`ThreadsTableLineItem component > Matched the snapshot 1`] = `
 <DocumentFragment>
-  .c1 {
+  .c4 {
+  transform: scale(1);
+}
+
+.c3 {
+  z-index: 1;
+  height: 24px;
+  width: 24px;
+  color: hsl(46.69999999999999, 100%, 41.6%);
+  word-spacing: 0;
+  vertical-align: middle;
+}
+
+.c3:not(:root) {
+  overflow: visible;
+}
+
+.c6 {
+  z-index: 1;
+  height: 24px;
+  width: 24px;
+  color: currentColor;
+  word-spacing: 0;
+  vertical-align: middle;
+}
+
+.c6:not(:root) {
+  overflow: visible;
+}
+
+.c1 {
   flex: 1 1 12%;
   text-align: left;
 }
@@ -54,36 +84,6 @@ exports[`ThreadsTableLineItem component > Matched the snapshot 1`] = `
 
 .c0 >*:first-child {
   padding-left: 16px;
-}
-
-.c4 {
-  transform: scale(1);
-}
-
-.c3 {
-  z-index: 1;
-  height: 24px;
-  width: 24px;
-  color: hsl(46.69999999999999, 100%, 41.6%);
-  word-spacing: 0;
-  vertical-align: middle;
-}
-
-.c3:not(:root) {
-  overflow: visible;
-}
-
-.c6 {
-  z-index: 1;
-  height: 24px;
-  width: 24px;
-  color: currentColor;
-  word-spacing: 0;
-  vertical-align: middle;
-}
-
-.c6:not(:root) {
-  overflow: visible;
 }
 
 <li

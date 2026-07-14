@@ -1,12 +1,11 @@
-import styled from "styled-components";
-
-import { spacingScale, contrastColor } from "style/styleFunctions";
+import { contrastColor, spacingScale } from "style/styleFunctions";
 import {
-  FONT_SIZE_XS,
-  COLOR_CONTENT_MUTED,
   COLOR_CONTENT_BACKGROUND,
+  COLOR_CONTENT_MUTED,
+  FONT_SIZE_XS,
   FONT_WEIGHT_SEMIBOLD
 } from "style/styleVariables";
+import styled from "styled-components";
 
 const LineItemStyle = styled.div`
   margin-right: ${spacingScale(0.5)};
@@ -49,4 +48,4 @@ const ItemVersion = styled(LineItemStyle)`
   text-align: right;
 `;
 
-export { ItemName, ItemVersion, ItemIcon, ItemRuntime };
+export { ItemIcon, ItemName, ItemRuntime, ItemVersion };

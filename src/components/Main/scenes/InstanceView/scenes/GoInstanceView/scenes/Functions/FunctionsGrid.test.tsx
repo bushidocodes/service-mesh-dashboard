@@ -1,13 +1,12 @@
+import { fireEvent, render, screen, within } from "@testing-library/react";
+import * as noFuncState from "json/mockReduxState";
+import * as state from "json/mockReduxStateMetrics";
 import React from "react";
 import { MemoryRouter } from "react-router-dom";
 import configureStore from "redux-mock-store";
-import { render, screen, fireEvent, within } from "@testing-library/react";
 import { omitBy } from "utils/collections";
-
-import * as noFuncState from "json/mockReduxState";
-import * as state from "json/mockReduxStateMetrics";
-import FunctionsGrid from "./index";
 import { renderWithIntl } from "utils/i18nTesting";
+import FunctionsGrid from "./index";
 
 //import Action effects
 import "services";

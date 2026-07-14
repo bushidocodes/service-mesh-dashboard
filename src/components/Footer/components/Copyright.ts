@@ -1,11 +1,11 @@
-import styled from "styled-components";
+import { contrastColor, spacingScale } from "style/styleFunctions";
 
 import {
-  FONT_SIZE_XS,
   COLOR_CONTENT,
-  COLOR_CONTENT_BACKGROUND
+  COLOR_CONTENT_BACKGROUND,
+  FONT_SIZE_XS
 } from "style/styleVariables";
-import { spacingScale, contrastColor } from "style/styleFunctions";
+import styled from "styled-components";
 
 const Copyright = styled.p`
   font-size: ${FONT_SIZE_XS};

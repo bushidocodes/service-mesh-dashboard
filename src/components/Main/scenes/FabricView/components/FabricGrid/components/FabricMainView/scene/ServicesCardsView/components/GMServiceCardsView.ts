@@ -1,7 +1,6 @@
-import styled from "styled-components";
-
 import { edgeColor } from "style/styleFunctions";
 import { COLOR_CONTENT_BACKGROUND } from "style/styleVariables";
+import styled from "styled-components";
 
 const GMServiceCardsView = styled.div`
   display: flex;

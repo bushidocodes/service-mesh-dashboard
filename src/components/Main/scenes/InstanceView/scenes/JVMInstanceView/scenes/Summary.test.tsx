@@ -1,8 +1,8 @@
-import React from "react";
 import { screen, within } from "@testing-library/react";
 import mockState from "json/mockReduxState";
+import React from "react";
 import configureStore from "redux-mock-store";
-import { renderWithIntl, mountWithIntl } from "utils/i18nTesting";
+import { mountWithIntl, renderWithIntl } from "utils/i18nTesting";
 
 import SummaryGrid from "./Summary";
 

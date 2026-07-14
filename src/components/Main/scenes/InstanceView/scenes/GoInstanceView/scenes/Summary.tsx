@@ -1,18 +1,17 @@
+import ArrayValue from "components/ArrayValue";
+import ErrorBoundary from "components/ErrorBoundary";
+import LayoutSection from "components/LayoutSection";
+import GMLineChart from "components/Main/components/GMLineChart";
+import Readout from "components/Main/components/Readout";
+import ReadoutGroup from "components/Main/components/ReadoutGroup";
+import UpTime from "components/UpTime";
 import React from "react";
 import { connect } from "react-redux";
-import { injectIntl } from "utils/injectIntl";
-
-import LayoutSection from "components/LayoutSection";
-import ErrorBoundary from "components/ErrorBoundary";
-import UpTime from "components/UpTime";
-import GMLineChart from "components/Main/components/GMLineChart";
-import ReadoutGroup from "components/Main/components/ReadoutGroup";
-import Readout from "components/Main/components/Readout";
+import type { Metrics, RootState } from "types";
 import { calculateErrorPercent, formatAsDecimalString } from "utils";
 import { getDygraphOfValue, mapDygraphKeysToNetChange } from "utils/dygraphs";
+import { injectIntl } from "utils/injectIntl";
 import { getLatestAttribute } from "utils/latestAttribute";
-import ArrayValue from "components/ArrayValue";
-import type { Metrics, RootState } from "types";
 
 interface SummaryGridProps {
   intl: any;

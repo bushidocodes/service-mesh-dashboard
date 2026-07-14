@@ -1,20 +1,18 @@
-import { Actions } from "store/jumpstate";
-import React, { Component } from "react";
-import { injectIntl } from "utils/injectIntl";
-
-import withUrlState from "components/withUrlState";
-import { withRouter } from "utils/withRouter";
-import { reportError } from "services/notification";
 import NotFoundError from "components/Main/components/NotFoundError";
 import TableToolbar from "components/Main/components/TableToolbar";
-import FabricMainView from "./components/FabricMainView";
-
+import withUrlState from "components/withUrlState";
+import React, { Component } from "react";
+import { reportError } from "services/notification";
+import { Actions } from "store/jumpstate";
 import type {
-  Service,
   RouterHistory,
   RouterLocation,
-  RouterMatch
+  RouterMatch,
+  Service
 } from "types";
+import { injectIntl } from "utils/injectIntl";
+import { withRouter } from "utils/withRouter";
+import FabricMainView from "./components/FabricMainView";
 
 interface FabricGridProps {
   // history/location/setUrlState/urlState are always supplied by the withRouter

@@ -1,18 +1,17 @@
+import decipherLogo from "components/AppHeader/assets/decipherLogo.svg";
+import ButtonGroup from "components/ButtonGroup";
+import NavButton from "components/NavButton";
 import React from "react";
 import { Link } from "react-router-dom";
-
-import decipherLogo from "components/AppHeader/assets/decipherLogo.svg";
-import NavButton from "components/NavButton";
-import ButtonGroup from "components/ButtonGroup";
 import AppToolBarHeader from "./components/AppToolBarHeader";
+import AppVersionLink from "./components/AppVersionLink";
 import BrandContainer from "./components/BrandContainer";
 import BrandLogo from "./components/BrandLogo";
 import BrandText from "./components/BrandText";
-import AppVersionLink from "./components/AppVersionLink";
-import SkipNav from "./components/SkipNav";
-import Breadcrumbs from "./components/Breadcrumbs";
 import Breadcrumb from "./components/Breadcrumb";
+import Breadcrumbs from "./components/Breadcrumbs";
 import LanguageSelector from "./components/LanguageSelector";
+import SkipNav from "./components/SkipNav";
 
 interface AppToolBarProps {
   appVersion?: string;

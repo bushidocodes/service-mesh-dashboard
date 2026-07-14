@@ -1,6 +1,5 @@
-import styled from "styled-components";
-
 import { FONT_SIZE_HERO } from "style/styleVariables";
+import styled from "styled-components";
 
 const ReadoutItemValue = styled.span`
   font-size: ${FONT_SIZE_HERO};

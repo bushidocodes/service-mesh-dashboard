@@ -1,6 +1,6 @@
 import state from "../../json/mockReduxState";
 
-import { getVisibleThreads, getThreadCounts } from "./selectors";
+import { getThreadCounts, getVisibleThreads } from "./selectors";
 
 describe("Reselect selector getVisibleThreads", () =>
   test("returns an array of thread objects matching state.settings.threadsFilter ", () => {

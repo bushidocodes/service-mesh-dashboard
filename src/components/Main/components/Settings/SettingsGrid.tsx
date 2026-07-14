@@ -1,17 +1,16 @@
+import Button from "components/Button";
+import ConfirmationModal from "components/ConfirmationModal";
+import ErrorBoundary from "components/ErrorBoundary";
+import LayoutSection from "components/LayoutSection";
+import Readout from "components/Main/components/Readout";
 import { filesize } from "filesize";
-import { Actions } from "store/jumpstate";
 import objectSizeOf from "object-sizeof";
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
+import { Actions } from "store/jumpstate";
 import type { RootState } from "types";
 import { injectIntl } from "utils/injectIntl";
-
 import PollingSettings from "./components/PollingSettings";
-import Button from "components/Button";
-import LayoutSection from "components/LayoutSection";
-import ErrorBoundary from "components/ErrorBoundary";
-import ConfirmationModal from "components/ConfirmationModal";
-import Readout from "components/Main/components/Readout";
 
 interface SettingsGridProps {
   // The polling interval/flag props always come from the fabric and instance

@@ -1,15 +1,13 @@
-import { Actions } from "store/jumpstate";
-import React, { Component, Suspense } from "react";
-import { connect } from "react-redux";
-import { withRouter } from "utils/withRouter";
-
-import AppContent from "./components/AppContent";
 import ErrorBoundary from "components/ErrorBoundary";
 import { LazyLoader } from "components/LazyLoader";
 import { Loading } from "components/Loading";
-
-import { getFabricServer } from "utils/head";
+import React, { Component, Suspense } from "react";
+import { connect } from "react-redux";
+import { Actions } from "store/jumpstate";
 import type { Dashboard, RootState } from "types";
+import { getFabricServer } from "utils/head";
+import { withRouter } from "utils/withRouter";
+import AppContent from "./components/AppContent";
 
 interface MainProps {
   dashboards?: Record<string, Dashboard>;

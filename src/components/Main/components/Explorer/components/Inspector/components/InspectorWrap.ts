@@ -1,6 +1,5 @@
+import { BORDER_RADIUS_BASE, FONT_STACK_DATA } from "style/styleVariables";
 import styled from "styled-components";
-
-import { FONT_STACK_DATA, BORDER_RADIUS_BASE } from "style/styleVariables";
 
 const InspectorWrap = styled.div`
   border-radius: ${BORDER_RADIUS_BASE};

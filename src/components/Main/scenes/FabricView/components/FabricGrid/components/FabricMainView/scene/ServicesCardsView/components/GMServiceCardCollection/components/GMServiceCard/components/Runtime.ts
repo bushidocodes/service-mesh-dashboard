@@ -1,6 +1,6 @@
-import styled from "styled-components";
 import { spacingScale } from "style/styleFunctions";
 import { FONT_WEIGHT_SEMIBOLD } from "style/styleVariables";
+import styled from "styled-components";
 
 const Runtime = styled.span<{ cardFontColor?: string }>`
   color: ${(props) => props.cardFontColor};

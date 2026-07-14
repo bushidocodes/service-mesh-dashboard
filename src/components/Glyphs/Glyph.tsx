@@ -1,25 +1,29 @@
+import HTTPDelete from "components/Glyphs/HttpDelete";
+import HTTPGet from "components/Glyphs/HttpGet";
+import HTTPPatch from "components/Glyphs/HttpPatch";
+import HTTPPost from "components/Glyphs/HttpPost";
+import HTTPPut from "components/Glyphs/HttpPut";
 import React, { Component } from "react";
-import { upperFirst } from "utils/collections";
 import { ICON_VIEWBOX_SIZE } from "style/styleVariables";
-
+import { upperFirst } from "utils/collections";
 import Bars from "./Bars";
 import Bell from "./Bell";
-import CPU from "./CPU";
 import Card from "./Card";
 import Close from "./Close";
 import Cog from "./Cog";
 import Configuration from "./Configuration";
+import CPU from "./CPU";
 import Docs from "./Docs";
-import EKG from "./EKG";
 import EditGraph from "./EditGraph";
+import EKG from "./EKG";
 import ErrorList from "./ErrorList";
 import Exclamation from "./Exclamation";
 import Explorer from "./Explorer";
 import Fabric from "./Fabric";
 import Finagle from "./Finagle";
 import Functions from "./Functions";
-import GRPC from "./GRPC";
 import GitHub from "./GitHub";
+import GRPC from "./GRPC";
 import Http from "./Http";
 import Info from "./Info";
 import Instances from "./Instances";
@@ -50,12 +54,6 @@ import Threads from "./Threads";
 import Timer from "./Timer";
 import Twitter from "./Twitter";
 import ViewCollapse from "./ViewCollapse";
-
-import HTTPGet from "components/Glyphs/HttpGet";
-import HTTPPut from "components/Glyphs/HttpPut";
-import HTTPPost from "components/Glyphs/HttpPost";
-import HTTPPatch from "components/Glyphs/HttpPatch";
-import HTTPDelete from "components/Glyphs/HttpDelete";
 
 // import all glyph components
 
