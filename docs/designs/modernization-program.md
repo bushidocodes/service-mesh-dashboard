@@ -29,7 +29,7 @@ Verified from `package.json`, `tsconfig.json`, `vite.config.js`, `biome.json`, `
 | --- | --- |
 | Runtime | Node `>=22.13.0`, pnpm `11.5.0`, `packageManager` pinned |
 | Build | Vite `^8.1.3`; `@vitejs/plugin-react` v6 (Oxc); `@rolldown/plugin-babel` + `babel-plugin-styled-components` for SC |
-| Unit tests | Vitest `^4.1.10`, `globals: true`, setup under `config/jest/*` |
+| Unit tests | Vitest `^4.1.10`, `globals: true`, setup under `config/vitest/*` |
 | E2E | Playwright `^1.61.1`, **Chromium-only for this program** (KD-22), `pnpm start` webServer |
 | Lint/format | Biome `2.5.3`, recommended preset with large OFF list |
 | Types | TypeScript `^7.0.2`, `strict: true`, `pnpm typecheck` CI job |

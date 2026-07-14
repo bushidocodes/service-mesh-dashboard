@@ -41,8 +41,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Run tests
-        run: pnpm test
+      # KD-13: collect coverage and fail if line coverage is below 60%
+      # (thresholds.lines in vite.config.js). Local `pnpm test` stays watch-mode
+      # without coverage; use `pnpm test:coverage` for a local gate check.
+      - name: Run tests with coverage
+        run: pnpm test:coverage
         env:
           CI: true
           TZ: America/New_York
@@ -70,6 +73,11 @@ jobs:
       # time, this floor rises; it must stay green at every step.
       - name: Run tsc
         run: pnpm run typecheck
+
+      # E2E TypeScript project (playwright.config.ts + e2e/**). Chromium-only
+      # runtime is unchanged; this only type-checks the specs/helpers.
+      - name: Run e2e tsc
+        run: pnpm run typecheck:e2e
 
   lint:
     name: Lint
