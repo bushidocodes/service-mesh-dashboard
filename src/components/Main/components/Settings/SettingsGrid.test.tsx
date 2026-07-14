@@ -65,12 +65,12 @@ describe("SettingsGrid component", () => {
     expect(within(container).getAllByRole("slider")).toHaveLength(2);
   });
 
-  test("Has Cache Size readout", () => {
-    // The Readout renders its readoutItems[0].title ("Cache Size") inside a
-    // ReadoutItemTitle (an <h2>).
+  test("Has Samples readout", () => {
+    // The Readout renders its readoutItems[0].title ("Samples") inside a
+    // ReadoutItemTitle (an <h2>). Value is the metrics timestamp sample count.
     const { container } = SettingGridWrap;
     expect(
-      within(container).getByRole("heading", { name: "Cache Size" })
+      within(container).getByRole("heading", { name: "Samples" })
     ).toBeInTheDocument();
   });
 

@@ -20,15 +20,9 @@ importers:
       dygraphs:
         specifier: ~2.2.1
         version: 2.2.1
-      filesize:
-        specifier: ~11.0.19
-        version: 11.0.19
       js-quantities:
         specifier: ^1.8.0
         version: 1.8.0
-      object-sizeof:
-        specifier: ^1.2.0
-        version: 1.2.0
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -2168,10 +2162,6 @@ packages:
     resolution: {integrity: sha512-yaduQFRKLXYOGgEn6AZau90j3ggSOyiqXU0F9JZfeXYhNa+Jk4X+s45A2zg5jns87GAFa34BBm2kXw4XpNcbdg==}
     engines: {node: '>=8'}
 
-  filesize@11.0.19:
-    resolution: {integrity: sha512-9Q2itINBvCHwFw9v5X7czZm855yAiFIYlnugrh7+8tYO4ITHZMzV91m35q2FngL9hoZwwjSTQACFF/W52OzJZQ==}
-    engines: {node: '>= 10.8.0'}
-
   fill-range@7.1.1:
     resolution: {integrity: sha512-YsGpe3WHLK8ZYi4tWDg2Jy3ebRz2rXowDxnld4bkQB00cc/1Zw9AWnC0i9ztDJitivtQvaI9KaLyKrc+hBW0yg==}
     engines: {node: '>=8'}
@@ -3166,9 +3156,6 @@ packages:
   object-keys@1.1.1:
     resolution: {integrity: sha512-NuAESUOUMrlIXOfHKzD6bpPu3tYt3xvjNdRIQ+FeT0lNb4K8WR70CaDxhuNguS2XG+GjkyMwOzsN5ZktImfhLA==}
     engines: {node: '>= 0.4'}
-
-  object-sizeof@1.2.0:
-    resolution: {integrity: sha512-W5OvquMibl1sW2pvKwlZxPzEYuQmRiS13vf3vpZxSzc1LXaPgVl9omDVsYc9fKuYCV1Uyj4kgCWeAPg1pMeVPA==}
 
   object.assign@4.1.7:
     resolution: {integrity: sha512-nK28WOo+QIjBkDduTINE4JkF/UJJKyf2EJxvJKfblDpyg0Q+pkOHNTL0Qwy6NP6FhE/EnzV73BxxqcJaXY9anw==}
@@ -6271,8 +6258,6 @@ snapshots:
     dependencies:
       escape-string-regexp: 1.0.5
 
-  filesize@11.0.19: {}
-
   fill-range@7.1.1:
     dependencies:
       to-regex-range: 5.0.1
@@ -7128,10 +7113,6 @@ snapshots:
   object-inspect@1.13.4: {}
 
   object-keys@1.1.1: {}
-
-  object-sizeof@1.2.0:
-    dependencies:
-      buffer: 5.7.1
 
   object.assign@4.1.7:
     dependencies:

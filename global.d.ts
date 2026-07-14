@@ -84,15 +84,9 @@ declare module "dygraphs" {
   export default Dygraph;
 }
 
-// `object-sizeof` and `js-quantities` ship no type declarations and have no
-// @types packages. Declare minimal ambient surfaces for the single default
-// export each module provides so importers type-check without per-import
-// suppressions.
-declare module "object-sizeof" {
-  const sizeof: (object: unknown) => number;
-  export default sizeof;
-}
-
+// `js-quantities` ships no type declarations and has no @types package.
+// Declare a minimal ambient surface for the single default export so
+// importers type-check without per-import suppressions.
 declare module "js-quantities" {
   const Qty: any;
   export default Qty;
