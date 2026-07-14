@@ -6,7 +6,6 @@
 // Converted .tsx components import what they need, e.g.
 //   import type { Service } from "types";
 
-
 /**
  * A metrics object. The only predictable key is the `timestamps` array; every
  * other key is a metric name mapping to an array of string values.
