@@ -1,10 +1,11 @@
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
+import createTestStore from "json/createTestStore";
 import state from "json/mockReduxState";
+import { renderWithIntl } from "utils/i18nTesting";
 
-// Unconnected named export so we can drive the runtime switch directly via props
-// rather than through connect()+injectIntl(); the connected default export wires
-// `runtime` from state.fabric.services[selectedServiceSlug].runtime.
-import { InstanceHeaderContent } from "./InstanceHeaderContent";
+// Default export uses useAppSelector + useIntl; drive the runtime switch via
+// store state (services[selectedServiceSlug].runtime).
+import InstanceHeaderContent from "./InstanceHeaderContent";
 import DefaultHeaderContent from "./scenes/DefaultHeaderContent";
 import GoHeaderContent from "./scenes/GoHeaderContent";
 import JVMHeaderContent from "./scenes/JVMHeaderContent";
@@ -42,22 +43,26 @@ vi.mock("./scenes/DefaultHeaderContent", async () => {
   };
 });
 
-// renderTabs() calls intl.formatMessage() on message descriptors
-// ({ id, defaultMessage }) drawn from the dashboards fixture; this mock echoes
-// the default message (and tolerates plain strings).
-const intl = {
-  formatMessage: (message: any) =>
-    typeof message === "string"
-      ? message
-      : (message && (message.defaultMessage || message.id)) || ""
-};
+const selectedServiceSlug = "go-exemplar-v1-0";
+const selectedInstanceID = "2smao7xwboy0000000000";
 
-const baseProps = {
-  basePath: "/go-exemplar-v1-0/2smao7xwboy0000000000",
-  dashboards: state.dashboards,
-  metrics: state.instance.metrics,
-  intl
-};
+function storeForRuntime(runtime: string) {
+  return createTestStore({
+    ...state,
+    fabric: {
+      ...state.fabric,
+      selectedServiceSlug,
+      selectedInstanceID,
+      services: {
+        ...state.fabric.services,
+        [selectedServiceSlug]: {
+          ...state.fabric.services[selectedServiceSlug],
+          runtime
+        }
+      }
+    }
+  });
+}
 
 describe("InstanceHeaderContent", () => {
   beforeEach(() => {
@@ -66,35 +71,37 @@ describe("InstanceHeaderContent", () => {
     vi.mocked(DefaultHeaderContent).mockClear();
   });
 
-  test("returns JVMHeaderContent when runtime prop is JVM", () => {
-    render(<InstanceHeaderContent {...baseProps} runtime="JVM" />);
+  test("returns JVMHeaderContent when runtime is JVM", () => {
+    renderWithIntl(<InstanceHeaderContent />, storeForRuntime("JVM"));
     expect(screen.getByTestId("jvm-header")).toBeInTheDocument();
     expect(screen.queryByTestId("go-header")).not.toBeInTheDocument();
     expect(screen.queryByTestId("default-header")).not.toBeInTheDocument();
   });
 
-  test("returns GoHeaderContent when runtime prop is GO", () => {
-    render(<InstanceHeaderContent {...baseProps} runtime="GO" />);
+  test("returns GoHeaderContent when runtime is GO", () => {
+    renderWithIntl(<InstanceHeaderContent />, storeForRuntime("GO"));
     expect(screen.getByTestId("go-header")).toBeInTheDocument();
     expect(screen.queryByTestId("jvm-header")).not.toBeInTheDocument();
     expect(screen.queryByTestId("default-header")).not.toBeInTheDocument();
   });
 
   test("returns DefaultHeaderContent for an unrecognized runtime", () => {
-    render(<InstanceHeaderContent {...baseProps} runtime="" />);
+    renderWithIntl(<InstanceHeaderContent />, storeForRuntime(""));
     expect(screen.getByTestId("default-header")).toBeInTheDocument();
     expect(screen.queryByTestId("jvm-header")).not.toBeInTheDocument();
     expect(screen.queryByTestId("go-header")).not.toBeInTheDocument();
   });
 
   test("passes basePath, metrics, and a tab per dashboard to the active runtime view", () => {
-    render(<InstanceHeaderContent {...baseProps} runtime="GO" />);
+    renderWithIntl(<InstanceHeaderContent />, storeForRuntime("GO"));
     // The active scene receives basePath, metrics, and the renderTabs() output.
     const call = vi.mocked(GoHeaderContent).mock.calls[0];
     expect(call).toBeDefined();
     const props = call![0];
 
-    expect(props.basePath).toBe(baseProps.basePath);
+    expect(props.basePath).toBe(
+      `/${selectedServiceSlug}/${selectedInstanceID}`
+    );
     expect(props.metrics).toBe(state.instance.metrics);
     // renderTabs() emits one <Tab> per dashboard (http, jvm, finagle).
     expect(props.headerTabs).toHaveLength(Object.keys(state.dashboards).length);

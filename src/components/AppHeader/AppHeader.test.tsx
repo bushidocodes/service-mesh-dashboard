@@ -75,7 +75,7 @@ describe("AppHeader component", () => {
 
   test("passes the correct title to Banner", () => {
     // Banner renders `title` as the text of its <h1> (Header). For the "/Down"
-    // route mapStateToProps resolves the title to "Down".
+    // route getTitle resolves the title to "Down".
     expect(getBannerHeading()).toHaveTextContent("Down");
   });
 

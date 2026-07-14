@@ -4,15 +4,14 @@ import ArrayValue from "components/ArrayValue";
 import ThreadCounts from "components/ThreadCounts";
 import UpTime from "components/UpTime";
 import React from "react";
+import { useIntl } from "react-intl";
 import type { Metrics } from "types";
-import { injectIntl } from "utils/injectIntl";
 import { getLatestAttribute } from "utils/latestAttribute";
 import { getSparkLineOfValue } from "utils/sparklines";
 
 interface JVMHeaderContentProps {
   basePath?: string;
   headerTabs?: React.ReactElement[];
-  intl: any;
   metrics: Metrics;
 }
 
@@ -25,9 +24,10 @@ interface JVMHeaderContentProps {
 function JVMHeaderContent({
   basePath,
   metrics,
-  headerTabs,
-  intl
+  headerTabs
 }: JVMHeaderContentProps) {
+  const intl = useIntl();
+
   return (
     <TabNav>
       <Tab
@@ -127,4 +127,4 @@ function JVMHeaderContent({
   );
 }
 
-export default injectIntl(JVMHeaderContent);
+export default JVMHeaderContent;

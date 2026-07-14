@@ -1,59 +1,45 @@
-import React from "react";
+import { useState } from "react";
 import { FormattedMessage } from "react-intl";
 import { Actions } from "store/jumpstate";
 import LanguageSelectorOption from "./components/LangaugeSelectorOption";
 import LanguageSelectorContent from "./components/LanguageSelectorContent";
 import LanguageSelectorWrap from "./components/LanguageSelectorWrap";
 
-interface LanguageSelectorState {
-  visible: boolean;
-}
+function LanguageSelector() {
+  const [visible, setVisible] = useState(false);
 
-class LanguageSelector extends React.Component<{}, LanguageSelectorState> {
-  state = {
-    visible: false
-  };
-
-  onSelectLanguage = (newLocale: string) => {
+  const onSelectLanguage = (newLocale: string) => {
+    // Locale still via Actions until PR-16 migrates the settings slice to RTK.
     Actions.setUserLocale(newLocale);
-    this.setState({ visible: !this.state.visible });
+    setVisible((prev) => !prev);
   };
 
-  onClick = () => this.setState({ visible: !this.state.visible });
+  const onClick = () => setVisible((prev) => !prev);
 
-  render() {
-    const { visible } = this.state;
-    return (
-      <LanguageSelectorWrap
-        onClick={this.onClick}
-        visible={visible}
-        data-testid="language-selector"
-      >
-        <FormattedMessage
-          id="languageSelector.languages"
-          defaultMessage="Languages"
-          description="Title for languages widget"
-        />
-        <LanguageSelectorContent visible={visible}>
-          <LanguageSelectorOption
-            onClick={() => this.onSelectLanguage("en-US")}
-          >
-            English (en)
-          </LanguageSelectorOption>
-          <LanguageSelectorOption
-            onClick={() => this.onSelectLanguage("es-ES")}
-          >
-            Español (es)
-          </LanguageSelectorOption>
-          <LanguageSelectorOption
-            onClick={() => this.onSelectLanguage("de-DE")}
-          >
-            Deutsch (de)
-          </LanguageSelectorOption>
-        </LanguageSelectorContent>
-      </LanguageSelectorWrap>
-    );
-  }
+  return (
+    <LanguageSelectorWrap
+      onClick={onClick}
+      visible={visible}
+      data-testid="language-selector"
+    >
+      <FormattedMessage
+        id="languageSelector.languages"
+        defaultMessage="Languages"
+        description="Title for languages widget"
+      />
+      <LanguageSelectorContent visible={visible}>
+        <LanguageSelectorOption onClick={() => onSelectLanguage("en-US")}>
+          English (en)
+        </LanguageSelectorOption>
+        <LanguageSelectorOption onClick={() => onSelectLanguage("es-ES")}>
+          Español (es)
+        </LanguageSelectorOption>
+        <LanguageSelectorOption onClick={() => onSelectLanguage("de-DE")}>
+          Deutsch (de)
+        </LanguageSelectorOption>
+      </LanguageSelectorContent>
+    </LanguageSelectorWrap>
+  );
 }
 
 export default LanguageSelector;

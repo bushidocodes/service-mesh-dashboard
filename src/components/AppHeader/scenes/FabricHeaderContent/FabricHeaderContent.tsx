@@ -1,28 +1,17 @@
 import Tab from "components/AppHeader/components/Tab";
 import TabNav from "components/AppHeader/components/TabNav";
-import { connect } from "react-redux";
-import type { RootState } from "types";
-
+import { useIntl } from "react-intl";
+import { useAppSelector } from "store/hooks";
 import { microserviceStatuses } from "utils/constants";
-import { injectIntl } from "utils/injectIntl";
 import { getStatusCount } from "utils/selectors";
-import { withRouter } from "utils/withRouter";
 
-interface FabricAppHeaderContentProps {
-  intl: any;
-  // Always supplied by the getStatusCount selector via connect().
-  statusCount: {
-    Down?: number;
-    Stable?: number;
-    Warning?: number;
-    total: number;
-  };
-}
+/**
+ * Fabric-level header tabs (All Services + status filters).
+ */
+function FabricAppHeaderContent() {
+  const intl = useIntl();
+  const statusCount = useAppSelector(getStatusCount);
 
-function FabricAppHeaderContent({
-  statusCount,
-  intl
-}: FabricAppHeaderContentProps) {
   return (
     <TabNav>
       <Tab
@@ -72,12 +61,4 @@ function FabricAppHeaderContent({
   );
 }
 
-function mapStateToProps(state: RootState) {
-  return {
-    statusCount: getStatusCount(state)
-  };
-}
-
-export default withRouter(
-  connect(mapStateToProps)(injectIntl(FabricAppHeaderContent))
-);
+export default FabricAppHeaderContent;
