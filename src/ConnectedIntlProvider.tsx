@@ -1,19 +1,16 @@
 import React from "react";
 import { IntlProvider } from "react-intl";
-import { connect } from "react-redux";
-import type { RootState } from "types";
+import { useAppSelector } from "store/hooks";
 import messages from "./messages";
 import { flattenMessages } from "./utils/i18n";
 
 interface ConnectedIntlProviderProps {
   children?: React.ReactNode;
-  locale: string;
 }
 
-function ConnectedIntlProvider({
-  locale,
-  children
-}: ConnectedIntlProviderProps) {
+function ConnectedIntlProvider({ children }: ConnectedIntlProviderProps) {
+  const locale = useAppSelector((state) => state.settings.locale);
+
   return (
     <IntlProvider
       locale={locale}
@@ -25,10 +22,4 @@ function ConnectedIntlProvider({
   );
 }
 
-function mapStateToProps(state: RootState) {
-  return {
-    locale: state.settings.locale
-  };
-}
-
-export default connect(mapStateToProps)(ConnectedIntlProvider);
+export default ConnectedIntlProvider;

@@ -1,21 +1,26 @@
 import Tab from "components/AppHeader/components/Tab";
 import TabNav from "components/AppHeader/components/TabNav";
-import { connect } from "react-redux";
-import type { RootState } from "types";
-import { injectIntl } from "utils/injectIntl";
-import { withRouter } from "utils/withRouter";
+import { useIntl } from "react-intl";
+import { useLocation, useParams } from "react-router-dom";
+import { useAppSelector } from "store/hooks";
 
-interface ServiceHeaderContentProps {
-  instanceCount?: number;
-  intl: any;
-  pathname?: string;
-}
+/**
+ * Service-level header tab showing instance count for the selected service.
+ */
+function ServiceHeaderContent() {
+  const intl = useIntl();
+  const { pathname } = useLocation();
+  const { selectedServiceSlug } = useParams<{
+    selectedServiceSlug?: string;
+  }>();
+  const services = useAppSelector((state) => state.fabric.services);
+  const instanceCount =
+    services &&
+    selectedServiceSlug &&
+    services[selectedServiceSlug] &&
+    services[selectedServiceSlug].instances &&
+    services[selectedServiceSlug].instances.length;
 
-function ServiceHeaderContent({
-  instanceCount,
-  pathname,
-  intl
-}: ServiceHeaderContentProps) {
   return (
     <TabNav>
       <Tab
@@ -41,26 +46,4 @@ function ServiceHeaderContent({
   );
 }
 
-function mapStateToProps(state: RootState, ownProps: any) {
-  const {
-    fabric: { services }
-  } = state;
-  const {
-    match: {
-      params: { selectedServiceSlug }
-    },
-    location: { pathname }
-  } = ownProps;
-  return {
-    instanceCount:
-      services &&
-      services[selectedServiceSlug] &&
-      services[selectedServiceSlug].instances &&
-      services[selectedServiceSlug].instances.length,
-    pathname
-  };
-}
-
-export default withRouter(
-  connect(mapStateToProps)(injectIntl(ServiceHeaderContent))
-);
+export default ServiceHeaderContent;

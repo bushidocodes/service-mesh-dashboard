@@ -3,14 +3,13 @@ import TabNav from "components/AppHeader/components/TabNav";
 import ArrayValue from "components/ArrayValue";
 import UpTime from "components/UpTime";
 import React from "react";
+import { useIntl } from "react-intl";
 import type { Metrics } from "types";
-import { injectIntl } from "utils/injectIntl";
 import { getLatestAttribute } from "utils/latestAttribute";
 
 interface GoHeaderContentProps {
   basePath?: string;
   headerTabs?: React.ReactElement[];
-  intl: any;
   metrics: Metrics;
 }
 
@@ -23,9 +22,10 @@ interface GoHeaderContentProps {
 function GoHeaderContent({
   basePath,
   metrics,
-  headerTabs,
-  intl
+  headerTabs
 }: GoHeaderContentProps) {
+  const intl = useIntl();
+
   return (
     <TabNav>
       <Tab
@@ -119,4 +119,4 @@ function GoHeaderContent({
   );
 }
 
-export default injectIntl(GoHeaderContent);
+export default GoHeaderContent;
