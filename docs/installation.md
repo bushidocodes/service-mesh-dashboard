@@ -20,14 +20,20 @@ After starting your microservice, you should see a valid JSON file [at this endp
 
 ## Configuration
 
-If JVM microservice (gm-fabric-jvm) :
-Edit `./index.html` by replacing `__RUNTIME__` with `JVM`
+### Fabric server endpoint
 
-If GO microservice (gm-fabric-go):
-Edit `./index.html` by replacing `__RUNTIME__` with `GO`
+The only HTML-level static config is the `fabricServer` meta tag in root `index.html`:
 
-If Service Discovery Service (SDS) microservice (mock-sds):
-In development, `pnpm start` already runs the mock SDS on port 9000 and the app falls back to that endpoint when `fabricServer` is the `__FABRIC_SERVER__` placeholder. For production static deploys, set the `fabricServer` meta tag in `index.html` (or inject it at serve time) to your Fabric server base URL.
+```html
+<meta property="fabricServer" content="__FABRIC_SERVER__">
+```
+
+- **Development:** leave the `__FABRIC_SERVER__` placeholder. `pnpm start` runs the mock discovery service on port 9000; the app falls back to that endpoint when the meta value is still the placeholder.
+- **Production:** set `content` to your Fabric / SDS base URL, or inject it at serve time (the `docker-prod` Express server replaces `__FABRIC_SERVER__` from the `FABRIC_SERVER` env var).
+
+### Service runtime (JVM / GO / ENVOY)
+
+Runtime is **not** configured via an HTML meta tag. When a fabric server is configured, the dashboard reads each service’s `runtime` field from SDS metadata (`getRuntime` in `src/utils/selectors.ts`). The Docker JVM/Go examples above only provide metrics endpoints for local exploration; they do not require editing `index.html` for runtime.
 
 ## Use
 
@@ -43,7 +49,7 @@ In development, `pnpm start` already runs the mock SDS on port 9000 and the app 
 #### Requirements
 
 - [pnpm](https://pnpm.io/installation) 11+
-- Node.js 22 (pinned in `.nvmrc` / `package.json`; `pnpm install` can auto-download it)
+- Node.js 22 (pinned in `.nvmrc` and `package.json` `devEngines`; pnpm can auto-download it on install)
 
 #### `pnpm start` to develop features and crush bugs
 
@@ -83,17 +89,14 @@ pnpm test:e2e:ui       # interactive UI mode
 pnpm test:e2e:report   # open the last HTML report
 ```
 
-#### `pnpm build` to prepare the Dashboard for deployment to the core `gm-fabric-jvm` project
+#### `pnpm build` for a production bundle
 
-This builds the app for production with Vite to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+pnpm build
+```
 
-Once built, the production bundle is minified and ready for deployment. The dashboard assumes that it is monitoring a microservice at the root path with Twitter Server metrics accessible at `/admin/metrics.json` and `/admin/threads`. The dashboard itself is served from `/gmadmin/`.
+This builds the app with Vite into the `build` folder (see `vite.config.js` `outDir`). The bundle is minified and ready to serve as static assets.
 
-In order to support deployment of the dashboard to monitor a microservice that doesn't own the root path, this projects injects the string template `__BASE_URL__` in the minified index.html file and JS bundle that can be replaced to set the desired path. For your convenience, a BASH script is provided to simplify this deployment process and provide an undo option.
+**Fabric server injection:** the built `index.html` keeps the `__FABRIC_SERVER__` placeholder on the `fabricServer` meta tag. Replace it with your SDS/Fabric base URL before or at serve time. The Docker production image does this for you: `pnpm run build-docker` builds via `docker-prod/Dockerfile`, and `docker-prod/server/app.js` substitutes `__FABRIC_SERVER__` from the `FABRIC_SERVER` environment variable on each HTML response.
 
-For example, if you are going to deploy the dashboard to a microservice located at `http://www.deciphernow.com/my/awesome/microservice/`, your dashboard will be located at the path `/my/awesome/microservice/gmadmin/` and poll endpoints at `/my/awesome/microservice/admin/metrics.json` and `/my/awesome/microservice/admin/threads`. To configure the dashboard for this path,`cd` into the ./build directory and execute `sudo ./setPath.sh /my/awesome/microservice/gmadmin/`. Please note that the path should have both an opening and a trailing slash. Additionally, the path must terminate in `/gmadmin/` to allow the dashboard to properly determine the URLs of the scrape targets. If you do not have `/gmadmin/` at the end of the string you pass into `setPath.sh`, the deployment script will fail and exit. After running this script successfully, your application is ready to be deployed.
-
-In case of error or mis-configuration, your original `index.html` has been backed up to `index.html.old`. To revert to the backup, run `sudo ./setPath.sh undo` and rerun with the correct argument.
-
-In addition to `__BASE_URL__`, the HEAD of index.html also has an meta attribute with a `__BASE_RUNTIME__` template string. This signifies to the dashboard whether the dashboard intends to scrape a Finagle-style `metrics.json` or an alternate Decipher-designed metrics endpoint provided by a Go microservice. The permissable values are `JVM`, `GO`, or `ENVOY`. Currently, the `setPath.sh` script does not modify this template.
+There is no local `setPath.sh` / `__BASE_URL__` / `__BASE_RUNTIME__` rewrite tooling in this repo anymore. For product-specific deployment paths, use the externally hosted Grey Matter documentation.

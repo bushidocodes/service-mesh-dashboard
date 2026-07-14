@@ -18,7 +18,7 @@ export interface Metrics {
 
 /**
  * React Router location. Mirrors the subset the app reads (see the v6 withRouter
- * shim, utils/withRouter.js).
+ * shim, utils/withRouter.tsx).
  */
 export interface RouterLocation {
   hash: string;
