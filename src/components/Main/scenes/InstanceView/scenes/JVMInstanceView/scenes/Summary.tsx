@@ -5,33 +5,21 @@ import GMLineChart from "components/Main/components/GMLineChart";
 import Readout from "components/Main/components/Readout";
 import ReadoutGroup from "components/Main/components/ReadoutGroup";
 import UpTime from "components/UpTime";
-import { connect } from "react-redux";
-import type { Metrics, RootState } from "types";
+import { useIntl } from "react-intl";
+import { useAppSelector } from "store/hooks";
 import { getDygraphOfValue, mapDygraphKeysToNetChange } from "utils/dygraphs";
-import { injectIntl } from "utils/injectIntl";
 import { getErrorPercent } from "utils/jvm/selectors";
 import { getLatestAttribute } from "utils/latestAttribute";
-
-interface SummaryGridProps {
-  errorPercent?: string;
-  intl: any;
-  metrics?: Metrics;
-  // string | null mirrors the fabric store slice (selected* default to null).
-  selectedInstanceID?: string | null;
-  selectedServiceSlug?: string | null;
-}
 
 /**
  * Static Summary page for JVM runtime
  * @function SummaryGrid
  */
-function SummaryGrid({
-  errorPercent,
-  metrics,
-  selectedInstanceID: _selectedInstanceID,
-  selectedServiceSlug: _selectedServiceSlug,
-  intl
-}: SummaryGridProps) {
+function SummaryGrid() {
+  const intl = useIntl();
+  const metrics = useAppSelector((state) => state.instance.metrics);
+  const errorPercent = useAppSelector(getErrorPercent);
+
   return (
     <ErrorBoundary>
       <LayoutSection
@@ -160,13 +148,4 @@ function SummaryGrid({
   );
 }
 
-function mapStateToProps(state: RootState) {
-  return {
-    metrics: state.instance.metrics,
-    selectedServiceSlug: state.fabric.selectedServiceSlug,
-    selectedInstanceID: state.fabric.selectedInstanceID,
-    errorPercent: getErrorPercent(state)
-  };
-}
-
-export default connect(mapStateToProps)(injectIntl(SummaryGrid));
+export default SummaryGrid;
