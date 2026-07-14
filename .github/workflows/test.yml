@@ -130,3 +130,28 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 7
+
+  storybook:
+    name: Storybook
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6
+
+      - name: Use Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: ".nvmrc"
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # Static build discovers all *.stories.@(js|jsx|ts|tsx) files and
+      # compiles them with the same Vite pipeline as the app. Fails if the
+      # stories glob misses files or a story fails to build.
+      - name: Build Storybook
+        run: pnpm build-storybook
