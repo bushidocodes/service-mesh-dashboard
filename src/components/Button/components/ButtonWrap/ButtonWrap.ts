@@ -34,7 +34,8 @@ function generateButtonTypeColor(type?: string) {
 const camelCaseConverter = (stringInput?: string) => {
   if (stringInput) {
     return stringInput.replace(/-([a-z])/g, function (g: string) {
-      return g[1].toUpperCase();
+      // capture group 1 is always present for this pattern
+      return (g[1] ?? "").toUpperCase();
     });
   }
 };

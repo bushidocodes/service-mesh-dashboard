@@ -97,7 +97,8 @@ describe("ThreadsGrid View", () => {
     expect(rows).toHaveLength(1);
 
     const row = rows[0];
-    expect(within(row).getByText("2")).toBeInTheDocument();
-    expect(within(row).getByText("Test Runnable")).toBeInTheDocument();
+    expect(row).toBeDefined();
+    expect(within(row!).getByText("2")).toBeInTheDocument();
+    expect(within(row!).getByText("Test Runnable")).toBeInTheDocument();
   });
 });

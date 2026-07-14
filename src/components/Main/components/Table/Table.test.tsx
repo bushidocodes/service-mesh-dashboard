@@ -119,7 +119,11 @@ describe("Table component", () => {
 
   test("passes correct data to <TableLineItem />", () => {
     // mock.calls[i][0] is the exact props object Table passed the i-th line item.
-    expect(vi.mocked(TableLineItem).mock.calls[0][0]).toEqual({
+    const firstCall = vi.mocked(TableLineItem).mock.calls[0];
+    const secondCall = vi.mocked(TableLineItem).mock.calls[1];
+    expect(firstCall).toBeDefined();
+    expect(secondCall).toBeDefined();
+    expect(firstCall![0]).toEqual({
       item: "/categories",
       errorPercent: "0.000",
       latency50: 0,
@@ -137,7 +141,7 @@ describe("Table component", () => {
       requestsPerSecond_sparkline: [0, 25, 430, 1256],
       verb: "GET"
     });
-    expect(vi.mocked(TableLineItem).mock.calls[1][0]).toEqual({
+    expect(secondCall![0]).toEqual({
       item: "/topics",
       errorPercent: "0.000",
       latency50: 0,
@@ -171,7 +175,9 @@ describe("Table component with instances prop", () => {
   });
 
   test("passes correct props to <GMServiceTableLineItem />", () => {
-    expect(vi.mocked(GMServiceTableLineItem).mock.calls[0][0]).toHaveProperty(
+    const firstCall = vi.mocked(GMServiceTableLineItem).mock.calls[0];
+    expect(firstCall).toBeDefined();
+    expect(firstCall![0]).toHaveProperty(
       "path",
       "/authentication-management-transfer-odrive-gateway-statistics-up2-channel/26d7cmoduw8w000000000"
     );

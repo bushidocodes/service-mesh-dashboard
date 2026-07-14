@@ -375,19 +375,24 @@ function generateButtonStyle({
   const outlineOptionsTypes = (buttonOutlineStyles as Record<string, any>)[
     buttonOutlineStyle
   ];
-  const outlineOptionTypesKeys = Object.keys(outlineOptionsTypes);
-  // Loop through generated buttonOutlineStyles that correspond to the input outline Style (raised, raisedOutline, none, shadow, etc.)
-  for (let x = 0, len = outlineOptionTypesKeys.length; x < len; x++) {
-    // Then look into each Type (static, active, activeDown) within
-    // styleTypes object (which is the output that feeds the css styles at the bottom)
-    // and either supplement or overwrite existing properties
-    // based on the information that is within generated outline styles
-    let outlineOptionKeys = Object.keys(
-      outlineOptionsTypes[outlineOptionTypesKeys[x]]
-    );
-    for (let y = 0, len = outlineOptionKeys.length; y < len; y++) {
-      styleTypes[outlineOptionTypesKeys[x]][outlineOptionKeys[y]] =
-        outlineOptionsTypes[outlineOptionTypesKeys[x]][outlineOptionKeys[y]];
+  if (outlineOptionsTypes) {
+    const outlineOptionTypesKeys = Object.keys(outlineOptionsTypes);
+    // Loop through generated buttonOutlineStyles that correspond to the input outline Style (raised, raisedOutline, none, shadow, etc.)
+    for (let x = 0, len = outlineOptionTypesKeys.length; x < len; x++) {
+      // Then look into each Type (static, active, activeDown) within
+      // styleTypes object (which is the output that feeds the css styles at the bottom)
+      // and either supplement or overwrite existing properties
+      // based on the information that is within generated outline styles
+      const typeKey = outlineOptionTypesKeys[x];
+      if (typeKey == null) continue;
+      const typeStyles = outlineOptionsTypes[typeKey];
+      if (typeStyles == null || styleTypes[typeKey] == null) continue;
+      const outlineOptionKeys = Object.keys(typeStyles);
+      for (let y = 0, lenY = outlineOptionKeys.length; y < lenY; y++) {
+        const optionKey = outlineOptionKeys[y];
+        if (optionKey == null) continue;
+        styleTypes[typeKey][optionKey] = typeStyles[optionKey];
+      }
     }
   }
 

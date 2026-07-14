@@ -25,18 +25,21 @@ const threadsTable = State({
     if (!threads) return [];
     const threadIds = Object.keys(threads);
     if (threadIds.length === 0) return [];
-    return threadIds.map((id) => {
+    return threadIds.flatMap((id) => {
       const thread = threads[id];
-      return {
-        name: thread.thread,
-        // Object.keys yields strings; coerce so store matches ThreadsTableItem.id
-        // (number) and the UI's Number(id) usage.
-        id: Number(id),
-        priority: thread.priority,
-        state: thread.state,
-        daemon: thread.daemon,
-        stack: thread.stack
-      };
+      if (!thread) return [];
+      return [
+        {
+          name: thread.thread,
+          // Object.keys yields strings; coerce so store matches ThreadsTableItem.id
+          // (number) and the UI's Number(id) usage.
+          id: Number(id),
+          priority: thread.priority,
+          state: thread.state,
+          daemon: thread.daemon,
+          stack: thread.stack
+        }
+      ];
     });
   },
   clearThreads(

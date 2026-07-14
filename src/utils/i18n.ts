@@ -73,7 +73,7 @@ export function flattenMessages(
 
       if (typeof value === "string") {
         messages[prefixedKey] = value;
-      } else {
+      } else if (value != null && typeof value === "object") {
         Object.assign(messages, flattenMessages(value, prefixedKey));
       }
 

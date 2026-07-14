@@ -115,12 +115,10 @@ describe("ServicesCardsView functionality", () => {
     render(RouterWrap(["/"], filteredServices, "Owner"));
     // The first GMServiceHeader receives headerTitle "stable" and, since the
     // group is "Owner" (not "Status"), showStatusIcon false.
-    expect(vi.mocked(GMServiceHeader).mock.calls[0][0].headerTitle).toBe(
-      "stable"
-    );
-    expect(vi.mocked(GMServiceHeader).mock.calls[0][0].showStatusIcon).toBe(
-      false
-    );
+    const firstCall = vi.mocked(GMServiceHeader).mock.calls[0];
+    expect(firstCall).toBeDefined();
+    expect(firstCall![0].headerTitle).toBe("stable");
+    expect(firstCall![0].showStatusIcon).toBe(false);
   });
 
   test("Has only one GMServiceCardCollection when group filter is set to none", () => {

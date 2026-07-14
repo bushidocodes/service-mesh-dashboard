@@ -90,7 +90,9 @@ describe("InstanceHeaderContent", () => {
   test("passes basePath, metrics, and a tab per dashboard to the active runtime view", () => {
     render(<InstanceHeaderContent {...baseProps} runtime="GO" />);
     // The active scene receives basePath, metrics, and the renderTabs() output.
-    const props = vi.mocked(GoHeaderContent).mock.calls[0][0];
+    const call = vi.mocked(GoHeaderContent).mock.calls[0];
+    expect(call).toBeDefined();
+    const props = call![0];
 
     expect(props.basePath).toBe(baseProps.basePath);
     expect(props.metrics).toBe(state.instance.metrics);

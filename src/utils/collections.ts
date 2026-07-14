@@ -55,7 +55,9 @@ export function orderBy<T>(
   const orderList = Array.isArray(orders) ? orders : orders ? [orders] : [];
   return [...collection].sort((a, b) => {
     for (let i = 0; i < getters.length; i++) {
-      const cmp = compareAscending(getters[i](a), getters[i](b));
+      const getter = getters[i];
+      if (!getter) continue;
+      const cmp = compareAscending(getter(a), getter(b));
       if (cmp !== 0) return orderList[i] === "desc" ? -cmp : cmp;
     }
     return 0;
@@ -89,7 +91,12 @@ export function pick<T>(
   const result: Record<string, T> = {};
   for (const key of keys) {
     if (Object.prototype.hasOwnProperty.call(object, key)) {
-      result[key] = object[key];
+      const value = object[key];
+      // hasOwn guarantees the key exists; narrow away the | undefined from
+      // noUncheckedIndexedAccess.
+      if (value !== undefined || key in object) {
+        result[key] = value as T;
+      }
     }
   }
   return result;

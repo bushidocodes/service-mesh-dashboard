@@ -35,6 +35,9 @@
     "allowJs": true,
     "checkJs": false,
     "strict": true,
+    // Indexed access `T[K]` and array/tuple element access yield `T | undefined`
+    // so callers must handle missing keys (optional chaining / explicit checks).
+    "noUncheckedIndexedAccess": true,
 
     // Auto-inclusion of node_modules/@types doesn't resolve in this setup, and
     // the source uses no ambient @types globals (process/window/navigator come

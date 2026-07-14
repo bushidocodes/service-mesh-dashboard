@@ -61,9 +61,12 @@ describe("METRICS_CACHE_MAX_SAMPLES / appendToMetrics ring buffer", () => {
       }) as InstanceState;
     }
     expect(state.metrics.timestamps).toHaveLength(METRICS_CACHE_MAX_SAMPLES);
-    const oldestBefore = state.metrics.timestamps![0];
-    const newestBefore =
-      state.metrics.timestamps![state.metrics.timestamps!.length - 1];
+    const seededTimestamps = state.metrics.timestamps;
+    expect(seededTimestamps).toBeDefined();
+    const oldestBefore = seededTimestamps![0];
+    const newestBefore = seededTimestamps![seededTimestamps!.length - 1];
+    expect(oldestBefore).toBeDefined();
+    expect(newestBefore).toBeDefined();
 
     // One more append should evict the oldest and keep length at the max.
     state = instance(state, {
@@ -75,12 +78,14 @@ describe("METRICS_CACHE_MAX_SAMPLES / appendToMetrics ring buffer", () => {
     expect(state.metrics.timestamps).not.toContain(oldestBefore);
     expect(state.metrics.timestamps).toContain(newestBefore);
     // Newest sample is present under the money series.
-    const latestTs =
-      state.metrics.timestamps![state.metrics.timestamps!.length - 1];
+    const timestamps = state.metrics.timestamps;
+    expect(timestamps).toBeDefined();
+    const latestTs = timestamps![timestamps!.length - 1];
+    expect(latestTs).toBeDefined();
     const money = state.metrics.money as Record<string, unknown>;
-    expect(money[latestTs]).toBe(999);
+    expect(money[latestTs!]).toBe(999);
     // Oldest sample's money value is gone.
-    expect(money[oldestBefore]).toBeUndefined();
+    expect(money[oldestBefore!]).toBeUndefined();
   });
 
   test("never grows beyond METRICS_CACHE_MAX_SAMPLES even with many appends", () => {

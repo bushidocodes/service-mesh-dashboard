@@ -54,20 +54,24 @@ describe("JVM > SummaryGrid component", () => {
 
   test("Has an 'uptime' dashboard in first position", () => {
     const readouts = getReadoutDisplays();
-    expect(within(readouts[0]).getByText("Uptime")).toBeInTheDocument();
+    const first = readouts[0];
+    expect(first).toBeDefined();
+    expect(within(first!).getByText("Uptime")).toBeInTheDocument();
   });
 
   test("Has an 'average response time' dashboard in second position", () => {
     const readouts = getReadoutDisplays();
-    expect(
-      within(readouts[1]).getByText("Avg. Response Time")
-    ).toBeInTheDocument();
-    expect(within(readouts[1]).getByText("Error Rate")).toBeInTheDocument();
+    const second = readouts[1];
+    expect(second).toBeDefined();
+    expect(within(second!).getByText("Avg. Response Time")).toBeInTheDocument();
+    expect(within(second!).getByText("Error Rate")).toBeInTheDocument();
   });
 
   test("Has a 'host CPU utilized' dashboard in third position", () => {
     const readouts = getReadoutDisplays();
-    expect(within(readouts[2]).getByText("Host CPU Cores")).toBeInTheDocument();
+    const third = readouts[2];
+    expect(third).toBeDefined();
+    expect(within(third!).getByText("Host CPU Cores")).toBeInTheDocument();
   });
 
   test("Has a chart with correct props passed down", () => {
