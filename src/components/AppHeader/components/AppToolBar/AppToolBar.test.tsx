@@ -1,4 +1,5 @@
 import { screen } from "@testing-library/react";
+import createTestStore from "json/createTestStore";
 import { MemoryRouter } from "react-router-dom";
 
 import { renderWithIntl } from "utils/i18nTesting";
@@ -14,7 +15,8 @@ describe("AppToolBar breadcrumbs", () => {
     renderWithIntl(
       <MemoryRouter>
         <AppToolBar pathname="alpha%2Fbravo%2Fcharlie" />
-      </MemoryRouter>
+      </MemoryRouter>,
+      createTestStore()
     );
 
     // Each decoded segment becomes its own breadcrumb link.

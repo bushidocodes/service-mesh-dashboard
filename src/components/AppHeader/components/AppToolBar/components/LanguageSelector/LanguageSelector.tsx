@@ -1,20 +1,21 @@
 import { useState } from "react";
 import { FormattedMessage } from "react-intl";
-import { Actions } from "store/jumpstate";
+import { useAppDispatch } from "store/hooks";
+import { setUserLocale } from "store/states/settings";
 import LanguageSelectorOption from "./components/LangaugeSelectorOption";
 import LanguageSelectorContent from "./components/LanguageSelectorContent";
 import LanguageSelectorWrap from "./components/LanguageSelectorWrap";
 
 function LanguageSelector() {
   const [visible, setVisible] = useState(false);
+  const dispatch = useAppDispatch();
 
   const onSelectLanguage = (newLocale: string) => {
-    // Locale still via Actions until PR-16 migrates the settings slice to RTK.
-    Actions.setUserLocale(newLocale);
-    setVisible((prev) => !prev);
+    dispatch(setUserLocale(newLocale));
+    setVisible((v) => !v);
   };
 
-  const onClick = () => setVisible((prev) => !prev);
+  const onClick = () => setVisible((v) => !v);
 
   return (
     <LanguageSelectorWrap
