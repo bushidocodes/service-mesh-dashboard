@@ -1,9 +1,8 @@
 import ErrorBoundary from "components/ErrorBoundary";
-import withUrlState from "components/withUrlState";
-import { Component } from "react";
+import { useUrlState } from "components/withUrlState";
+import { useEffect, useMemo } from "react";
 import { FormattedMessage } from "react-intl";
-import { connect } from "react-redux";
-import type { Metrics, RootState } from "types";
+import { useAppSelector } from "store/hooks";
 import { uniq } from "utils/collections";
 import { getDygraphOfValue } from "utils/dygraphs";
 import GMLineChart from "../GMLineChart";
@@ -12,31 +11,30 @@ import MetricsGraphDisplay from "./components/MetricsGraphDisplay";
 import MetricsList from "./components/MetricsList";
 import ViewExplorer from "./components/ViewExplorer";
 
-interface ExplorerProps {
-  keys?: string[]; // Metrics keys
-  metrics?: Metrics;
-  setUrlState: (...args: any[]) => any;
-  urlState: Record<string, any>;
-}
-
 /**
  * General purpose component for rendering any arbitrary timeseries data stored in Redux
  * Uses Inspector to search and select keys.
- * @class Explorer
- * @extends {Component}
  */
+function Explorer() {
+  const { urlState, setUrlState } = useUrlState();
+  const metrics = useAppSelector((state) => state.instance.metrics);
+  // Memoize so the derived key list stays reference-stable when metrics is
+  // unchanged (Object.keys().sort() always allocates a new array).
+  const keys = useMemo(() => Object.keys(metrics).sort(), [metrics]);
 
-class Explorer extends Component<ExplorerProps> {
-  componentDidMount() {
-    this._checkedOnInitialLoad();
-  }
+  const {
+    selectedMetric,
+    hideZeroMetric = "false",
+    hideStaticMetric = "false",
+    filterString = ""
+  } = urlState;
 
   /**
-   * One time purpose function for initially loading checkboxes 'checked' or nothing.
+   * One-time purpose effect for initially loading checkboxes 'checked' or nothing.
    * We may be able to get rid of document.querySelector if we restyle the 'checked' tick.
-   * @class Explorer
    */
-  _checkedOnInitialLoad() {
+  // biome-ignore lint/correctness/useExhaustiveDependencies: mount-only; mirrors former componentDidMount checkbox tick setup
+  useEffect(() => {
     // HTML attribute checked means: checked by default, when the page loads.
     // The DOM property checked is actually the current state of the checkbox
     // and is either true/false (exists or doesn't exist <input type=checkbox checked> or <input type=checkbox >),
@@ -44,118 +42,108 @@ class Explorer extends Component<ExplorerProps> {
     // This can be confusing because setting visible 'checked' attribute
     // on checkbox input fields does not set the actual html checked attribute,
     // but it refers to javascript checked property on the element.
-    const { hideZeroMetric, hideStaticMetric } = this.props.urlState;
     // display initial checkbox tick after page loads
     if (hideZeroMetric === "true") {
-      const hideZeroInput: any = document.querySelector(
+      const hideZeroInput = document.querySelector(
         'input[name="hideZeroMetric"]'
       );
-      hideZeroInput.setAttribute("checked", hideZeroInput.checked);
+      if (hideZeroInput) {
+        hideZeroInput.setAttribute(
+          "checked",
+          String((hideZeroInput as HTMLInputElement).checked)
+        );
+      }
     }
 
     if (hideStaticMetric === "true") {
-      const hideStaticInput: any = document.querySelector(
+      const hideStaticInput = document.querySelector(
         'input[name="hideStaticMetric"]'
       );
-      hideStaticInput.setAttribute("checked", hideStaticInput.checked);
+      if (hideStaticInput) {
+        hideStaticInput.setAttribute(
+          "checked",
+          String((hideStaticInput as HTMLInputElement).checked)
+        );
+      }
     }
-  }
+  }, []);
+
   /**
-   * Takes key object and metrics object and filter them on hide features
-   * @param {Object}
-   * @memberof Explorer
+   * Takes key list and metrics object and filters them on hide features
    */
-  hideKeys = (rawKeys: any, metrics: any) => {
-    let { hideZeroMetric = "false", hideStaticMetric = "false" } =
-      this.props.urlState;
+  const hideKeys = (rawKeys: string[], metricsData: typeof metrics) => {
     // the following booleans are passed down from urlState as strings, so we need to parse them
-    hideZeroMetric = JSON.parse(hideZeroMetric);
-    hideStaticMetric = JSON.parse(hideStaticMetric);
+    const hideZero = JSON.parse(hideZeroMetric);
+    const hideStatic = JSON.parse(hideStaticMetric);
 
     // Filter out the timestamps key, which does not point to valid timeseries
     // data but instead provides information about the range of time expressed
-    const keys = rawKeys.filter((key: string) => key !== "timestamps");
+    const metricKeys = rawKeys.filter((key: string) => key !== "timestamps");
 
     // return original keys if hide features are turned off
-    if (!hideZeroMetric && !hideStaticMetric) {
-      return keys;
-    } else if (hideStaticMetric) {
+    if (!hideZero && !hideStatic) {
+      return metricKeys;
+    } else if (hideStatic) {
       // static filter is more inclusive than zero filter
-      return keys.filter((key: string) => {
+      return metricKeys.filter((key: string) => {
         // Get the values associated with a key and only return if
         // there is more than one unique value
-        const valuesOfKey = Object.values(metrics[key]);
+        const valuesOfKey = Object.values(metricsData[key] ?? {});
         return uniq(valuesOfKey).length > 1;
       });
-    } else if (hideZeroMetric) {
-      return keys.filter((key: string) => {
-        return !Object.values(metrics[key]).every((val) => val === 0);
+    } else if (hideZero) {
+      return metricKeys.filter((key: string) => {
+        return !Object.values(metricsData[key] ?? {}).every((val) => val === 0);
       });
-    } else return null;
+    }
+    return [];
   };
 
-  render() {
-    const {
-      metrics,
-      keys,
-      setUrlState,
-      urlState: {
-        selectedMetric,
-        hideZeroMetric = "false",
-        hideStaticMetric = "false",
-        filterString = ""
-      }
-    } = this.props;
+  // filter keys if hide filter is on
+  const filteredKeys = hideKeys(keys, metrics);
 
-    // filter keys if hide filter is on
-    const filteredKeys = this.hideKeys(keys, metrics);
-
-    return (
-      <ErrorBoundary>
-        <ViewExplorer>
-          <MetricsList>
-            <Inspector
-              data={filteredKeys}
-              hideZeroMetric={JSON.parse(hideZeroMetric)}
-              hideStaticMetric={JSON.parse(hideStaticMetric)}
-              onClick={(selectedMetric) => setUrlState({ selectedMetric })}
-              onChange={(checked, name) =>
-                setUrlState({
-                  [name]: checked
-                })
-              }
-              onSearch={(filterString) => setUrlState({ filterString })}
-              searchQuery={filterString}
-              selectedMetric={selectedMetric}
-              tabIndex={0}
+  return (
+    <ErrorBoundary>
+      <ViewExplorer>
+        <MetricsList>
+          <Inspector
+            data={filteredKeys}
+            hideZeroMetric={JSON.parse(hideZeroMetric)}
+            hideStaticMetric={JSON.parse(hideStaticMetric)}
+            onClick={(nextSelectedMetric) =>
+              setUrlState({ selectedMetric: nextSelectedMetric })
+            }
+            onChange={(checked, name) =>
+              setUrlState({
+                [name]: checked
+              })
+            }
+            onSearch={(nextFilterString) =>
+              setUrlState({ filterString: nextFilterString })
+            }
+            searchQuery={filterString}
+            selectedMetric={selectedMetric}
+            tabIndex={0}
+          />
+        </MetricsList>
+        <MetricsGraphDisplay>
+          {selectedMetric && keys.includes(selectedMetric) ? (
+            <GMLineChart
+              height={"normal"}
+              dygraph={getDygraphOfValue(metrics, [selectedMetric])}
+              title={selectedMetric}
             />
-          </MetricsList>
-          <MetricsGraphDisplay>
-            {selectedMetric && this.props.keys?.includes(selectedMetric) ? (
-              <GMLineChart
-                height={"normal"}
-                dygraph={getDygraphOfValue(metrics, [selectedMetric])}
-                title={selectedMetric}
-              />
-            ) : (
-              <FormattedMessage
-                id="explorer.selectMetric"
-                defaultMessage="Select a metric to display"
-                description="Placeholder for GMLineChart"
-              />
-            )}
-          </MetricsGraphDisplay>
-        </ViewExplorer>
-      </ErrorBoundary>
-    );
-  }
+          ) : (
+            <FormattedMessage
+              id="explorer.selectMetric"
+              defaultMessage="Select a metric to display"
+              description="Placeholder for GMLineChart"
+            />
+          )}
+        </MetricsGraphDisplay>
+      </ViewExplorer>
+    </ErrorBoundary>
+  );
 }
 
-function mapStateToProps({ instance: { metrics } }: RootState) {
-  return {
-    metrics,
-    keys: Object.keys(metrics).sort()
-  };
-}
-
-export default connect(mapStateToProps)((withUrlState as any)()(Explorer));
+export default Explorer;

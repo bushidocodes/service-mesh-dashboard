@@ -5,31 +5,20 @@ import GMLineChart from "components/Main/components/GMLineChart";
 import Readout from "components/Main/components/Readout";
 import ReadoutGroup from "components/Main/components/ReadoutGroup";
 import UpTime from "components/UpTime";
-import { connect } from "react-redux";
-import type { Metrics, RootState } from "types";
+import { useIntl } from "react-intl";
+import { useAppSelector } from "store/hooks";
 import { calculateErrorPercent, formatAsDecimalString } from "utils";
 import { getDygraphOfValue, mapDygraphKeysToNetChange } from "utils/dygraphs";
-import { injectIntl } from "utils/injectIntl";
 import { getLatestAttribute } from "utils/latestAttribute";
-
-interface SummaryGridProps {
-  intl: any;
-  metrics?: Metrics;
-  // string | null mirrors the fabric store slice (selected* default to null).
-  selectedInstanceID?: string | null;
-  selectedServiceSlug?: string | null;
-}
 
 /**
  * Static Summary page for GO runtime
  * @function SummaryGrid
  */
-function SummaryGrid({
-  metrics,
-  selectedInstanceID: _selectedInstanceID,
-  selectedServiceSlug: _selectedServiceSlug,
-  intl
-}: SummaryGridProps) {
+function SummaryGrid() {
+  const intl = useIntl();
+  const metrics = useAppSelector((state) => state.instance.metrics);
+
   const allRequests = getLatestAttribute(metrics, "all/requests");
   const allErrors = getLatestAttribute(metrics, "all/errors.count");
   const startTime = getLatestAttribute(metrics, "system/start_time");
@@ -210,12 +199,4 @@ function SummaryGrid({
   );
 }
 
-function mapStateToProps(state: RootState) {
-  return {
-    metrics: state.instance.metrics,
-    selectedServiceSlug: state.fabric.selectedServiceSlug,
-    selectedInstanceID: state.fabric.selectedInstanceID
-  };
-}
-
-export default connect(mapStateToProps)(injectIntl(SummaryGrid));
+export default SummaryGrid;
