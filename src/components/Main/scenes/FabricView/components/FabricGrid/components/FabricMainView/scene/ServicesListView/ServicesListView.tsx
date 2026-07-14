@@ -1,9 +1,8 @@
 import GMServiceHeader from "components/Main/scenes/FabricView/components/FabricGrid/components/FabricMainView/components/GMServiceHeader";
 import { Fragment } from "react";
-import type { RouterLocation, ServiceItem } from "types";
+import type { ServiceItem } from "types";
 import { isEmpty, orderBy } from "utils/collections";
 import { microserviceStatuses } from "utils/constants";
-import { withRouter } from "utils/withRouter";
 import SectionContainer from "./components/SectionContainer";
 import SectionContent from "./components/SectionContent";
 import SectionHeader from "./components/SectionHeader";
@@ -12,7 +11,6 @@ import ServicesList from "./components/ServicesList";
 interface ListViewProps {
   ascending?: boolean;
   groupByAttribute: string;
-  location?: RouterLocation;
   services: ServiceItem[];
   sortByAttribute: string;
 }
@@ -101,4 +99,4 @@ function ListView({
   }
 }
 
-export default withRouter(ListView);
+export default ListView;

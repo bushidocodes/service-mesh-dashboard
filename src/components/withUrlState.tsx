@@ -1,4 +1,3 @@
-import type { ComponentType } from "react";
 import { useSearchParams } from "react-router-dom";
 
 /**
@@ -8,8 +7,8 @@ import { useSearchParams } from "react-router-dom";
  *   urlState   – current query-string params parsed as a plain object
  *   setUrlState(patch) – shallowly merges `patch` into the current params
  *
- * Prefer this hook in new function components. The `withUrlState` HOC below
- * remains for class components that have not yet been converted.
+ * Prefer this hook in function components. The former `withUrlState` HOC was
+ * removed once all call sites used this hook.
  */
 export function useUrlState(): {
   urlState: Record<string, string>;
@@ -31,31 +30,4 @@ export function useUrlState(): {
     });
 
   return { urlState, setUrlState };
-}
-
-/**
- * HOC factory wrapping {@link useUrlState} for class components still on
- * the legacy stack. Prefer `useUrlState` in function components.
- *
- *   withUrlState()(Component)
- *
- * Intentionally loosely typed so existing class HOC stacks (connect +
- * withUrlState + injectIntl) keep compiling until each site is converted.
- */
-export default function withUrlState() {
-  return function (Component: ComponentType<any>) {
-    function WithUrlState(props: any) {
-      const { urlState, setUrlState } = useUrlState();
-
-      return (
-        <Component {...props} urlState={urlState} setUrlState={setUrlState} />
-      );
-    }
-
-    WithUrlState.displayName = `withUrlState(${
-      Component.displayName || Component.name || "Component"
-    })`;
-
-    return WithUrlState;
-  };
 }

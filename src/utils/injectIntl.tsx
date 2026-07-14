@@ -7,8 +7,7 @@ import { useIntl } from "react-intl";
  * react-intl v10 removed the injectIntl HOC in favour of the useIntl hook.
  * This shim recreates the old API (an `intl` prop) so that existing
  * components can keep working unchanged while the codebase migrates
- * incrementally to hooks. Mirrors utils/withRouter.tsx, which does the same
- * for react-router v6's removal of withRouter.
+ * incrementally to hooks.
  *
  * Generic over the wrapped component's props (rather than `any`) so callers
  * still get typed props on the wrapped export - matching react-intl's own

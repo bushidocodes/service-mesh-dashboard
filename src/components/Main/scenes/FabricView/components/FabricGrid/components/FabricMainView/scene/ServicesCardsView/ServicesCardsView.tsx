@@ -1,8 +1,7 @@
 import GMServiceHeader from "components/Main/scenes/FabricView/components/FabricGrid/components/FabricMainView/components/GMServiceHeader";
-import type { RouterLocation, ServiceItem } from "types";
+import type { ServiceItem } from "types";
 import { isEmpty, orderBy } from "utils/collections";
 import { microserviceStatuses } from "utils/constants";
-import { withRouter } from "utils/withRouter";
 import GMServiceCardCollection from "./components/GMServiceCardCollection";
 import GMServiceCardsView from "./components/GMServiceCardsView";
 import GMServiceViewContainer from "./components/GMServiceViewContainer";
@@ -12,7 +11,6 @@ import SectionHeader from "./components/SectionHeader";
 interface CardsViewProps {
   ascending?: boolean;
   groupByAttribute: string;
-  location?: RouterLocation;
   services: ServiceItem[];
   sortByAttribute: string;
 }
@@ -101,4 +99,4 @@ function CardsView({
   }
 }
 
-export default withRouter(CardsView);
+export default CardsView;

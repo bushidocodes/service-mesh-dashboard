@@ -1,4 +1,3 @@
-import { Component } from "react";
 import BackgroundCircleSmall from "./components/BackgroundCircleSmall";
 import BackgroundSquare from "./components/BackgroundSquare";
 import BackgroundSquareBeveled from "./components/BackgroundSquareBeveled";
@@ -29,28 +28,20 @@ const backgroundStyles = {
   BackgroundTriangle
 };
 
-export default class IconBackground extends Component<IconBackgroundProps> {
-  components = {
-    name: this.props.name
-  };
-
-  render() {
-    const {
-      name = "BackgroundSquare",
-      backgroundColor = "red",
-      backgroundOpacity = "1"
-    } = this.props;
-
-    // dynamically render glyph component by name
-    const IconBackgroundComponent = (backgroundStyles as Record<string, any>)[
-      name
-    ];
-    return (
-      <IconBackgroundComponent
-        name={name}
-        backgroundColor={backgroundColor}
-        backgroundOpacity={backgroundOpacity}
-      />
-    );
-  }
+export default function IconBackground({
+  name = "BackgroundSquare",
+  backgroundColor = "red",
+  backgroundOpacity = "1"
+}: IconBackgroundProps) {
+  // dynamically render glyph component by name
+  const IconBackgroundComponent = (backgroundStyles as Record<string, any>)[
+    name
+  ];
+  return (
+    <IconBackgroundComponent
+      name={name}
+      backgroundColor={backgroundColor}
+      backgroundOpacity={backgroundOpacity}
+    />
+  );
 }
