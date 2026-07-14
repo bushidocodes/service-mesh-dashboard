@@ -48,7 +48,7 @@ transform pipeline. Key points:
   files; `config/vitest/rtlWrapper.js` is the ESM StyleSheetManager render
   wrapper, aliased over `@testing-library/react`.
 - Line coverage floor is **60%** (`test.coverage.thresholds.lines` via
-  `@vitest/coverage-v8`). CI runs `pnpm test -- --coverage`. Stories and
+  `@vitest/coverage-v8`). CI runs `pnpm test:coverage`. Stories and
   test/json/image fixtures are excluded; Glyphs remain in the denominator.
 - `jest-styled-components` is still used for the **snapshot CSS serializer**
   only (style assertions use `@testing-library/jest-dom`'s `toHaveStyle`).
