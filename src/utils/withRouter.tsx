@@ -1,4 +1,12 @@
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import type { ComponentType } from "react";
+import {
+  type Location,
+  type NavigateOptions,
+  type To,
+  useLocation,
+  useNavigate,
+  useParams
+} from "react-router-dom";
 
 /**
  * withRouter compatibility shim for React Router v6.
@@ -22,13 +30,55 @@ import { useLocation, useNavigate, useParams } from "react-router-dom";
  *   path    – current pathname
  *   url     – current pathname
  */
-export function withRouter(Component: any) {
-  function Wrapped(props: any) {
+
+type LocationDescriptor = {
+  pathname?: string;
+  search?: string;
+  hash?: string;
+  state?: unknown;
+};
+
+export type WithRouterHistory = {
+  push: (path: To, options?: NavigateOptions) => void;
+  replace: (pathOrLocation: string | LocationDescriptor) => void;
+  go: (n: number) => void;
+  goBack: () => void;
+  goForward: () => void;
+  location: Location;
+};
+
+export type WithRouterMatch = {
+  params: Readonly<Record<string, string | undefined>>;
+  isExact: boolean;
+  path: string;
+  url: string;
+};
+
+export type WithRouterProps = {
+  history: WithRouterHistory;
+  location: Location;
+  match: WithRouterMatch;
+};
+
+/**
+ * Wraps a component and injects history/location/match.
+ *
+ * Return type intersects `Record<string, unknown>` so HOC composition that
+ * erases intermediate props (e.g. `withUrlState as any`) still accepts
+ * caller-supplied props like `services` at JSX sites — same ergonomics as
+ * the previous untyped shim, without reintroducing an explicit `any`.
+ */
+export function withRouter<P extends object>(
+  Component: ComponentType<P>
+): ComponentType<Omit<P, keyof WithRouterProps> & Record<string, unknown>> {
+  function Wrapped(
+    props: Omit<P, keyof WithRouterProps> & Record<string, unknown>
+  ) {
     const location = useLocation();
     const navigate = useNavigate();
     const params = useParams();
 
-    const match = {
+    const match: WithRouterMatch = {
       params,
       isExact: true,
       path: location.pathname,
@@ -38,9 +88,9 @@ export function withRouter(Component: any) {
     // Replicate the history v4 API used in class components.
     // replace() accepts either a string path or a location descriptor object
     // { pathname?, search?, hash?, state? } – the same shapes the app uses.
-    const history = {
-      push: (path: any) => navigate(path),
-      replace: (pathOrLocation: any) => {
+    const history: WithRouterHistory = {
+      push: (path: To, options?: NavigateOptions) => navigate(path, options),
+      replace: (pathOrLocation: string | LocationDescriptor) => {
         if (typeof pathOrLocation === "string") {
           navigate(pathOrLocation, { replace: true });
         } else {
@@ -51,7 +101,7 @@ export function withRouter(Component: any) {
           });
         }
       },
-      go: (n: any) => navigate(n),
+      go: (n: number) => navigate(n),
       goBack: () => navigate(-1),
       goForward: () => navigate(1),
       location
@@ -59,7 +109,7 @@ export function withRouter(Component: any) {
 
     return (
       <Component
-        {...props}
+        {...(props as P)}
         history={history}
         location={location}
         match={match}

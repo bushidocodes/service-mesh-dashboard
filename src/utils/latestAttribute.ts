@@ -1,3 +1,4 @@
+import type { IntlMessageDescriptor, Metrics } from "types";
 import { formatMetricString } from "./index";
 
 // Dashboard Utility Functions
@@ -13,6 +14,24 @@ import { formatMetricString } from "./index";
 // These utility functions are provided to transform this data into time series, spark lines, and
 // other data structures capable of being consumed by front-end components.
 
+type MetricSeries = Record<string, number | string | undefined>;
+
+/** A fragment of a dashboard summary line (string literal or latest-metric token). */
+export interface ParseJSONLineElement {
+  type?: string;
+  value?: string | IntlMessageDescriptor;
+  baseUnit?: string;
+  resultUnit?: string;
+  precision?: number;
+}
+
+function asMetricSeries(value: unknown): MetricSeries | null {
+  if (value && typeof value === "object" && !Array.isArray(value)) {
+    return value as MetricSeries;
+  }
+  return null;
+}
+
 /**
  * Returns the most recent value of a particular attribute as a number or string
  * @param {Object} metrics - An arbitrary nested object passed from Redux via component props
@@ -23,18 +42,31 @@ import { formatMetricString } from "./index";
  * @returns {Number|String}
  */
 
+// Unformatted reads return a number so arithmetic/call sites type-check.
 export function getLatestAttribute(
-  metrics: any,
-  key: any,
-  precision?: any,
-  baseUnit?: any,
-  resultUnit?: any
-) {
+  metrics: Metrics | null | undefined,
+  key: string | null | undefined
+): number;
+// With precision/units, formatMetricString produces a display string.
+export function getLatestAttribute(
+  metrics: Metrics | null | undefined,
+  key: string | null | undefined,
+  precision: number,
+  baseUnit?: string,
+  resultUnit?: string
+): string;
+export function getLatestAttribute(
+  metrics: Metrics | null | undefined,
+  key: string | null | undefined,
+  precision?: number,
+  baseUnit?: string,
+  resultUnit?: string
+): number | string {
   if (!metrics || !key) return 0;
   // A direct property lookup is used rather than a path-aware getter because
   // metrics is a flat object keyed by the full metric string (which itself
   // contains "." and "/"), not a nested structure.
-  const fullPath = metrics[key];
+  const fullPath = asMetricSeries(metrics[key]);
   if (!fullPath) return 0;
   const latestAttribute =
     fullPath[
@@ -45,9 +77,14 @@ export function getLatestAttribute(
   // if baseUnit, resultUnit, and precision and falsy, we pass the value back as a
   // number and leave i18n up to the component calling this function
   if (!baseUnit && !resultUnit && !precision && typeof precision !== "number") {
-    return latestAttribute;
+    return Number(latestAttribute ?? 0);
   } else {
-    return formatMetricString(latestAttribute, baseUnit, resultUnit, precision);
+    return formatMetricString(
+      latestAttribute ?? 0,
+      baseUnit,
+      resultUnit,
+      precision
+    );
   }
 }
 
@@ -57,14 +94,30 @@ export function getLatestAttribute(
  * @param {String[]|String} line
  * @param {Object} metrics
  */
-export function parseJSONString(line: any, metrics: any, formatMessage?: any) {
+export function parseJSONString(
+  line: string | ParseJSONLineElement[] | null | undefined,
+  metrics: Metrics | null | undefined,
+  formatMessage?: (message: IntlMessageDescriptor) => string
+): string {
   if (Array.isArray(line)) {
     return line
       .map((element) => {
         if (element.type === "string") {
-          return formatMessage
-            ? formatMessage(element.value)
-            : element.value.defaultMessage;
+          if (
+            formatMessage &&
+            element.value &&
+            typeof element.value === "object"
+          ) {
+            return formatMessage(element.value);
+          }
+          if (
+            element.value &&
+            typeof element.value === "object" &&
+            "defaultMessage" in element.value
+          ) {
+            return element.value.defaultMessage ?? "";
+          }
+          return typeof element.value === "string" ? element.value : "";
         } else if (
           element.type === "latest" &&
           element.baseUnit &&
@@ -73,17 +126,21 @@ export function parseJSONString(line: any, metrics: any, formatMessage?: any) {
         ) {
           return getLatestAttribute(
             metrics,
-            element.value,
+            typeof element.value === "string" ? element.value : undefined,
             element.precision,
             element.baseUnit,
             element.resultUnit
           );
         } else {
-          return getLatestAttribute(metrics, element.value, 3).toLocaleString();
+          return getLatestAttribute(
+            metrics,
+            typeof element.value === "string" ? element.value : undefined,
+            3
+          ).toLocaleString();
         }
       })
       .join(" ");
   } else {
-    return line;
+    return line ?? "";
   }
 }

@@ -9,7 +9,10 @@ export const INSTANCE_ID_LENGTH = 8;
  * @param {string} id
  * @param {number} desiredLength
  */
-export const trimID = (id: any, desiredLength = INSTANCE_ID_LENGTH) => {
+export const trimID = (
+  id: string | number | null | undefined,
+  desiredLength = INSTANCE_ID_LENGTH
+) => {
   if (!id) return "";
   const strID = String(id);
   if (!desiredLength || desiredLength >= strID.length) return strID;
@@ -34,31 +37,31 @@ export function clearFabricIntervalIfNeeded() {
  * @param {(number|string)} ms
  * @returns {string[]}
  */
-export const convertMS = (ms = 0) => {
+export const convertMS = (ms: number | string = 0) => {
   ms = Number(ms);
   if (Number.isNaN(ms) || typeof ms !== "number" || ms === 0) return [];
-  let s: any = Math.floor(ms / 1000);
-  let m: any = Math.floor(s / 60);
+  let s = Math.floor(ms / 1000);
+  let m = Math.floor(s / 60);
   s = s % 60;
-  let h: any = Math.floor(m / 60);
+  let h = Math.floor(m / 60);
   m = m % 60;
-  let d: any = Math.floor(h / 24);
+  let d = Math.floor(h / 24);
   h = h % 24;
 
-  [d, h, m, s] = [d, h, m, s].map((el) => {
+  const [dStr, hStr, mStr, sStr] = [d, h, m, s].map((el) => {
     if (el === 0) return "00";
     else if (el < 10) return `0${el}`;
-    else return el;
+    else return String(el);
   });
 
-  if (d !== "00") {
-    return [`${d}d`, `${h}h`, `${m}m`, `${s}s`];
-  } else if (d === "00" && h !== "00") {
-    return [`${h}h`, `${m}m`, `${s}s`];
-  } else if (d === "00" && h === "00" && m !== "00") {
-    return [`${m}m`, `${s}s`];
+  if (dStr !== "00") {
+    return [`${dStr}d`, `${hStr}h`, `${mStr}m`, `${sStr}s`];
+  } else if (dStr === "00" && hStr !== "00") {
+    return [`${hStr}h`, `${mStr}m`, `${sStr}s`];
+  } else if (dStr === "00" && hStr === "00" && mStr !== "00") {
+    return [`${mStr}m`, `${sStr}s`];
   } else {
-    return [`${s}s`];
+    return [`${sStr}s`];
   }
 };
 
@@ -78,16 +81,16 @@ export const convertMS = (ms = 0) => {
  * @returns {Object[]} - The array of objects, where each object now contains the relativeReqPercent key
  */
 export const relativeReqPercent = (
-  arrObj: Record<string, any>[] = [],
+  arrObj: Array<Record<string, unknown>> = [],
   key = ""
 ) => {
   if (isEmpty(arrObj) || key === "") return arrObj;
-  let max = Math.max(...arrObj.map((el) => el[key]));
+  let max = Math.max(...arrObj.map((el) => Number(el[key])));
   // If we can't find a max value, just return the original array of objects
   if (!max) return arrObj;
   return arrObj.map((el) => ({
     ...el,
-    relativeReqPercent: (el[key] / max) * 100
+    relativeReqPercent: (Number(el[key]) / max) * 100
   }));
 };
 
@@ -99,8 +102,13 @@ export const relativeReqPercent = (
  * @param {number} errors
  * @returns string
  */
-export function calculateErrorPercent(requests: any, errors: any) {
-  const errorPercent = requests ? (errors / requests) * 100 : 0;
+export function calculateErrorPercent(
+  requests: number | string,
+  errors: number | string
+) {
+  const requestsNum = Number(requests);
+  const errorsNum = Number(errors);
+  const errorPercent = requestsNum ? (errorsNum / requestsNum) * 100 : 0;
   return formatAsDecimalString(errorPercent);
 }
 
@@ -113,11 +121,14 @@ export function calculateErrorPercent(requests: any, errors: any) {
  * @param {number} numberOfDecimals
  * @returns string
  */
-export function formatAsDecimalString(source: any, numberOfDecimals = 3) {
-  if (source === "") return source;
+export function formatAsDecimalString(
+  source: number | string,
+  numberOfDecimals = 3
+): string {
+  if (source === "") return "";
   const sourceAsNumber = Number(source);
   if (Number.isNaN(sourceAsNumber) || typeof sourceAsNumber !== "number")
-    return source;
+    return String(source);
 
   return sourceAsNumber.toLocaleString(undefined, {
     maximumFractionDigits: numberOfDecimals,
@@ -132,7 +143,7 @@ export function formatAsDecimalString(source: any, numberOfDecimals = 3) {
  * @returns
  */
 function formatAsDecimalStringFormatter(maxDecimals = 3) {
-  return function (scalar: any, units: any) {
+  return function (scalar: number | string, units: string) {
     if (scalar === "") return;
     const scalarAsNumber = Number(scalar);
     return `${scalarAsNumber.toLocaleString(undefined, {
@@ -153,10 +164,10 @@ function formatAsDecimalStringFormatter(maxDecimals = 3) {
  * @returns string
  */
 export function formatMetricString(
-  rawValue: any,
-  baseUnit: any,
-  resultUnit: any,
-  precision: any
+  rawValue: number | string,
+  baseUnit?: string,
+  resultUnit?: string,
+  precision?: number
 ) {
   if (baseUnit && resultUnit && (precision || precision === 0)) {
     const qty = Qty(rawValue, baseUnit);
@@ -182,10 +193,11 @@ export function formatMetricString(
  * @export
  * @param {Object} e
  */
-export function blurTableRow(e: any) {
-  let node = e.target;
+export function blurTableRow(e: { target: EventTarget | null }) {
+  let node: Node | null = e.target as Node | null;
   while (node && node !== document.body) {
     if (
+      node instanceof HTMLElement &&
       typeof node.className === "string" &&
       node.className.includes("TableRow")
     ) {
@@ -199,7 +211,7 @@ export function blurTableRow(e: any) {
 /**
  * Takes a string and generates a basic slug, ignoring unicode characters and emojis
  * @export
- * @param {any} string
+ * @param {string} string
  * @returns string
  */
 export function slugify(string: string) {
@@ -216,15 +228,15 @@ export function slugify(string: string) {
  * prior to passing the result to a slugify function
  *
  * @export
- * @param {any} serviceName
- * @param {any} serviceVersion
- * @param {any} [slugifyFunc=slugify] - slugify function override intended for testing
+ * @param {string} serviceName
+ * @param {string} serviceVersion
+ * @param {function} [slugifyFunc=slugify] - slugify function override intended for testing
  * @returns
  */
 export function slugifyMicroservice(
-  serviceName: any,
+  serviceName: string,
   serviceVersion: string,
-  slugifyFunc = slugify
+  slugifyFunc: (s: string) => string = slugify
 ) {
   return slugifyFunc(`${serviceName}-v${serviceVersion.replace(/\./g, "-")}`);
 }

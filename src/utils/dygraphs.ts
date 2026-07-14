@@ -1,4 +1,24 @@
+import type { Metrics } from "types";
 import { uniq } from "./collections";
+
+/** A single timeseries series keyed by UNIX-timestamp strings. */
+type MetricSeries = Record<string, number | string | undefined>;
+
+/** One row of Dygraph array data: [Date, ...series values]. */
+type DygraphRow = Array<Date | number | string | null | undefined>;
+
+/** Dygraph-shaped payload returned by getDygraphOfValue. */
+export interface DygraphData {
+  data: DygraphRow[];
+  attributes: string[];
+}
+
+function asMetricSeries(value: unknown): MetricSeries | null {
+  if (value && typeof value === "object" && !Array.isArray(value)) {
+    return value as MetricSeries;
+  }
+  return null;
+}
 
 /**
  * Returns time series data of one or more in Dygraph format
@@ -11,8 +31,11 @@ import { uniq } from "./collections";
  * @param {String[]} keys - keys that we want to pluck from metrics
  * @returns {Array}
  */
-export function getDygraphOfValue(metrics: any, keys: string[]) {
-  const results: { data: any[]; attributes: any[] } = {
+export function getDygraphOfValue(
+  metrics: Metrics | null | undefined,
+  keys: string[]
+): DygraphData {
+  const results: DygraphData = {
     data: [],
     attributes: []
   };
@@ -26,7 +49,8 @@ export function getDygraphOfValue(metrics: any, keys: string[]) {
   // Or set as the keys of the results object
   // Accumulate all unique timestamps and sort
   const timestamps = validKeys.reduce((acc: string[], key: string) => {
-    return uniq([...acc, ...Object.keys(metrics[key])]).sort(
+    const series = asMetricSeries(metrics[key]);
+    return uniq([...acc, ...Object.keys(series ?? {})]).sort(
       (a, b) => Number(a) - Number(b)
     );
   }, [] as string[]);
@@ -34,7 +58,10 @@ export function getDygraphOfValue(metrics: any, keys: string[]) {
   results.data = timestamps.map((ts: string) => {
     return [
       new Date(Number(ts)),
-      ...validKeys.map((key: string) => metrics[key][ts])
+      ...validKeys.map((key: string) => {
+        const series = asMetricSeries(metrics[key]);
+        return series?.[ts];
+      })
     ];
   });
   results.attributes = ["Time", ...validKeys];
@@ -51,28 +78,33 @@ export function getDygraphOfValue(metrics: any, keys: string[]) {
  * @returns {Object[]}
  */
 export function mapDygraphKeysToNetChange(
-  dygraph: any,
-  attributesToMap: any[] = dygraph.attributes.filter(
-    (arr: any) => arr !== "Time" && arr !== "time"
+  dygraph: DygraphData,
+  attributesToMap: string[] = dygraph.attributes.filter(
+    (arr: string) => arr !== "Time" && arr !== "time"
   )
 ) {
   return _mapOverDygraphKeys(dygraph, attributesToMap, _netChangeMapper);
 }
 
 function _mapOverDygraphKeys(
-  outputOfDygraphByValue: any,
-  attributesToMap: any[],
-  mapperFunc: (val: any[], i: number, a: any[], pos: number) => any[]
-) {
+  outputOfDygraphByValue: DygraphData,
+  attributesToMap: string[],
+  mapperFunc: (
+    val: DygraphRow,
+    i: number,
+    a: DygraphRow[],
+    pos: number
+  ) => DygraphRow
+): DygraphData {
   if (!attributesToMap || attributesToMap.length === 0) {
     return outputOfDygraphByValue;
   } else {
     let dygraph = structuredClone(outputOfDygraphByValue);
     let { data, attributes } = dygraph;
-    attributesToMap.forEach((attributeToMap: any) => {
+    attributesToMap.forEach((attributeToMap: string) => {
       const positionOfAttributeToMap = attributes.indexOf(attributeToMap);
       if (positionOfAttributeToMap !== -1) {
-        data = data.map((val: any[], i: number, a: any[]) =>
+        data = data.map((val: DygraphRow, i: number, a: DygraphRow[]) =>
           mapperFunc(val, i, a, positionOfAttributeToMap)
         );
       }
@@ -82,23 +114,24 @@ function _mapOverDygraphKeys(
 }
 
 function _netChangeMapper(
-  val: any[],
+  val: DygraphRow,
   idx: number,
-  arr: any[],
+  arr: DygraphRow[],
   positionOfLabelToMap: number
-) {
+): DygraphRow {
   if (idx === 0) {
     const result = [...val];
     result[positionOfLabelToMap] = 0;
     return result;
   } else {
-    const lastVal = arr[idx - 1][positionOfLabelToMap];
-    const lastTime = arr[idx - 1][0];
-    const currentVal = val[positionOfLabelToMap];
-    const currentTime = val[0];
+    const lastVal = Number(arr[idx - 1][positionOfLabelToMap]);
+    const lastTime = arr[idx - 1][0] as Date;
+    const currentVal = Number(val[positionOfLabelToMap]);
+    const currentTime = val[0] as Date;
     const result = [...val];
     const netChange = floatRound(
-      (currentVal - lastVal) / ((currentTime - lastTime) / 1000),
+      (currentVal - lastVal) /
+        ((currentTime.getTime() - lastTime.getTime()) / 1000),
       3
     );
     // Our net change calculation may sometimes generate a negative value. This is

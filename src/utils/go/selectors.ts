@@ -1,4 +1,5 @@
-import { createSelector } from "@reduxjs/toolkit";
+import { createSelector } from "reselect";
+import type { Metrics } from "types";
 import { calculateErrorPercent } from "utils";
 import { metricsKeySelectorGenerator } from "utils/selectors";
 import { uniq, without } from "../collections";
@@ -7,14 +8,17 @@ import { getLatestAttribute } from "../latestAttribute";
 import { getRoutesMetrics, getRoutesTree } from "../selectors";
 import { getSparkLineOfNetChange } from "../sparklines";
 
+type RouteTableRow = Record<string, unknown>;
+type FunctionTableRow = Record<string, unknown>;
+
 /**
- * Memoized selector (createSelector from RTK) that builds the data required to render the RoutesTable component
+ * A reselect selector that builds the data required to render the RoutesTable component
  */
 export const getRoutesTable = createSelector(
   [getRoutesTree, getRoutesMetrics],
-  (routesTree: Record<string, any>, routesMetrics: any) => {
+  (routesTree: Record<string, string[]>, routesMetrics: Metrics) => {
     // Now build the table
-    const routesTable: any[] = [];
+    const routesTable: RouteTableRow[] = [];
     const routesPaths = Object.keys(routesTree);
     routesPaths.forEach((routePath: string) => {
       let baseObj = { route: routePath };
@@ -64,13 +68,13 @@ export const getRoutesTable = createSelector(
 );
 
 /**
- * Memoized selector that filters the metrics and only returns the timeseries
+ * A Reselect selector that filters the metrics and only returns the timeseries
  * that contain the string 'functions' somewhere in the key.
  */
 export const getFunctionsMetrics = metricsKeySelectorGenerator("function");
 
 /**
- * Memoized selector that generates a special hierarchical tree structure of route data
+ * A Reselect selector that generates a special hierarchical tree structure of route data
  * from the timeseries keys. It's used to render the special Route dashboards for the JVM
  */
 export const getFunctionsList = createSelector(
@@ -81,15 +85,19 @@ export const getFunctionsList = createSelector(
 /**
  * Takes an object filtered to only have keys with "function" and returns an array of strings of function names
  * Extracts functionName from the structure function/functionName/some/other/values
- * @param {any} functionsMetrics
+ * @param {Metrics} functionsMetrics
  * @returns
  */
-function _getFunctionsList(functionsMetrics: Record<string, any>) {
+function _getFunctionsList(functionsMetrics: Metrics): string[] {
   const keys = Object.keys(functionsMetrics);
   if (keys.length > 0) {
     // Grab the function name from the key, filter for uniqueness, and exclude "all" (the rollup metrics key)
     return without(
-      uniq(keys.map((key) => key.match(/function\/(.*)\/.*/)?.[1])),
+      uniq(
+        keys
+          .map((key) => key.match(/function\/(.*)\/.*/)?.[1])
+          .filter((name): name is string => Boolean(name))
+      ),
       "all"
     );
   } else {
@@ -103,7 +111,10 @@ export const getFunctionsTable = createSelector(
     _getFunctionsTable(functions, functionsMetrics)
 );
 
-function _getFunctionsTable(funcs: any[], funcMetrics: any) {
+function _getFunctionsTable(
+  funcs: string[],
+  funcMetrics: Metrics
+): FunctionTableRow[] {
   const labelKeyPairs = [
     ["errorsCount", "errors.count"],
     ["inThroughput", "in_throughput"],
@@ -122,7 +133,7 @@ function _getFunctionsTable(funcs: any[], funcMetrics: any) {
     ["latency9999", "latency_ms.p9999"]
   ];
   return funcs.map((func) => {
-    const res: any = { func: func };
+    const res: FunctionTableRow = { func: func };
     labelKeyPairs.forEach(([label, key]) => {
       res[label] = getLatestAttribute(funcMetrics, `function/${func}/${key}`);
     });
@@ -133,7 +144,10 @@ function _getFunctionsTable(funcs: any[], funcMetrics: any) {
       funcMetrics,
       `function/${func}/requests`
     );
-    res.errorPercent = calculateErrorPercent(res.requests, res.errorsCount);
+    res.errorPercent = calculateErrorPercent(
+      res.requests as number | string,
+      res.errorsCount as number | string
+    );
     return res;
   });
 }

@@ -1,27 +1,39 @@
-import { createSelector } from "@reduxjs/toolkit";
+import { createSelector } from "reselect";
+import type { Dashboard, Metrics, Service } from "types";
 import { countBy, pick } from "utils/collections";
 import { microserviceStatuses } from "utils/constants";
 
-// createSelector input selectors
+// Structural slices use loose nested types (`object`) where mockReduxState and
+// production RootState differ in optional/extra fields (dashboard chart unions,
+// service `slug`, etc.). Selectors cast back to domain types on return.
 
-export const getMetrics = (state: any) => state.instance.metrics;
-export const getDashboards = (state: any) => state.dashboards;
-export const getServices = (state: any) => state.fabric.services;
+// Reselect Input Selectors
 
-export const getFabricServer = (state: any) => state.settings.fabricServer;
-export const getSelectedInstanceID = (state: any) =>
-  state.fabric.selectedInstanceID;
-export const getSelectedServiceSlug = (state: any) =>
-  state.fabric.selectedServiceSlug;
+export const getMetrics = (state: { instance: { metrics: Metrics } }) =>
+  state.instance.metrics;
+export const getDashboards = (state: { dashboards: object }) =>
+  state.dashboards as Record<string, Dashboard>;
+export const getServices = (state: { fabric: { services: object } }) =>
+  state.fabric.services as Record<string, Service>;
+
+export const getFabricServer = (state: {
+  settings: { fabricServer: string | null };
+}) => state.settings.fabricServer;
+export const getSelectedInstanceID = (state: {
+  fabric: { selectedInstanceID: string | null };
+}) => state.fabric.selectedInstanceID;
+export const getSelectedServiceSlug = (state: {
+  fabric: { selectedServiceSlug: string | null };
+}) => state.fabric.selectedServiceSlug;
 
 /**
- * Memoized selector (createSelector from RTK) that returns the current selected
- * service from the Redux store if it is found and null if not found
+ * Reselect selector that returns the current selected service from the Redux store
+ * if it is found and null if not found
  */
 export const getSelectedService = createSelector(
   [getSelectedServiceSlug, getServices],
   (slug, services) => {
-    if (Object.hasOwn(services, slug)) {
+    if (slug && Object.hasOwn(services, slug)) {
       return services[slug];
     } else {
       return null;
@@ -30,7 +42,7 @@ export const getSelectedService = createSelector(
 );
 
 /**
- * Memoized selector (createSelector from RTK) that returns the runtime attribute of
+ * Reselect selector that returns the runtime attribute of
  * the currently selected service or null
  */
 export const getRuntime = createSelector(
@@ -54,7 +66,7 @@ export const getBaseInstanceRoute = createSelector(
 );
 
 /**
- * A createSelector factory (from RTK).
+ * A Reselect selector factory
  * Returns a selector that returns all metrics with a key that includes
  * the string keyQuery. By default, the string is assumed to strictly match
  * the first characters of the key. However, the search can be forced to match
@@ -75,20 +87,20 @@ export function metricsKeySelectorGenerator(keyQuery: string, isPrefix = true) {
 }
 
 /**
- * Memoized selector that filters the metrics and only returns the timeseries
+ * A Reselect selector that filters the metrics and only returns the timeseries
  * that starts with the string 'route'.
  */
 export const getRoutesMetrics = metricsKeySelectorGenerator("route");
 
 /**
- * Memoized selector that generates a special hierarchical tree structure of route data
+ * A Reselect selector that generates a special hierarchical tree structure of route data
  * from the timeseries keys. It's used to render the special Route dashboards for the JVM
  */
 export const getRoutesTree = createSelector(getRoutesMetrics, (routesMetrics) =>
   _buildRoutesTree(routesMetrics)
 );
 
-function _buildRoutesTree(routeMetrics: Record<string, any>) {
+function _buildRoutesTree(routeMetrics: Metrics): Record<string, string[]> {
   const keys = Object.keys(routeMetrics);
   if (keys.length > 0) {
     return keys.reduce((acc: Record<string, string[]>, key: string) => {
@@ -125,9 +137,9 @@ function _buildRoutesTree(routeMetrics: Record<string, any>) {
  */
 export const getStatusCount = createSelector(getServices, (services) => {
   let statusCount = countBy(
-    Object.values(services).map((service: any) => {
+    Object.values(services).map((service: Service) => {
       let status = computeStatus(
-        service.instances.length,
+        service.instances?.length ?? 0,
         service.minimum,
         service.maximum
       );

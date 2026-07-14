@@ -3,6 +3,7 @@ import messages from "messages";
 import React from "react";
 import { createIntl, createIntlCache, IntlProvider } from "react-intl";
 import { Provider } from "react-redux";
+import type { Store } from "redux";
 import { flattenMessages } from "utils/i18n";
 
 /**
@@ -35,7 +36,7 @@ export const intl = createIntl(intlConfig, cache);
  * @param {object} [store] optional redux store
  * @returns {React.ReactElement}
  */
-export function withIntl(node: React.ReactNode, store: any = null) {
+export function withIntl(node: React.ReactNode, store: Store | null = null) {
   const tree = <IntlProvider {...intlConfig}>{node}</IntlProvider>;
   return store ? <Provider store={store}>{tree}</Provider> : tree;
 }
@@ -48,7 +49,10 @@ export function withIntl(node: React.ReactNode, store: any = null) {
  * @param {object} [store] optional redux store
  * @returns {import("@testing-library/react").RenderResult}
  */
-export function renderWithIntl(node: React.ReactNode, store: any = null) {
+export function renderWithIntl(
+  node: React.ReactNode,
+  store: Store | null = null
+) {
   return render(withIntl(node, store));
 }
 
