@@ -112,7 +112,7 @@ describe("getRuntime", () => {
 // test suite. The disabled selector tests that targeted it have been deleted.
 
 describe("metricsKeySelectorGenerator", () => {
-  test("returns a Reselect selector", () => {
+  test("returns a createSelector memoized selector", () => {
     // keyQuery is irrelevant here — we only assert the shape of the returned
     // selector. (Previously this called with no args; that compiled only because
     // jest.requireActual typed the module as `any`. The real signature requires

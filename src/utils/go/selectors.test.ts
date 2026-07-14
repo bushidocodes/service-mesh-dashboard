@@ -2,7 +2,7 @@ import state from "../../json/mockReduxState";
 
 import { getFunctionsMetrics } from "./selectors";
 
-describe("Reselect selector getFunctionsMetrics", () =>
+describe("createSelector getFunctionsMetrics", () =>
   test("returns an array of keys starting with the substring function", () => {
     expect(getFunctionsMetrics(state)).toEqual({
       "function/CatalogStream/errors.count": {

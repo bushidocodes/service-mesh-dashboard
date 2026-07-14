@@ -34,7 +34,6 @@
     "react-toastify": "^11.1.0",
     "redux": "^5.0.1",
     "redux-logger": "~3.0.6",
-    "reselect": "~5.2.0",
     "styled-components": "^6.4.3"
   },
   "devDependencies": {
@@ -55,7 +54,7 @@
     "@types/redux-logger": "^3.0.13",
     "@vitejs/plugin-react": "^6.0.3",
     "@vitest/coverage-v8": "^4.1.10",
-    "babel-plugin-styled-components": "^1.4.0",
+    "babel-plugin-styled-components": "^2.3.0",
     "cors": "^2.8.6",
     "cross-env": "^10.1.0",
     "express": "^4.21.2",
