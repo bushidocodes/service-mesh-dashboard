@@ -1,9 +1,16 @@
 import { FormattedMessage } from "react-intl";
-import { Actions, dispatch, Effect, getState } from "store/jumpstate";
+import type { AppThunk } from "store/appThunk";
 import {
   setSelectedInstanceID,
   setSelectedServiceSlug
 } from "store/states/fabric";
+import {
+  appendToMetrics,
+  clearMetrics,
+  setInstanceMetricsPollingInterval,
+  setIsPollingInstanceMetrics,
+  setMetricsPollingFailures
+} from "store/states/instance";
 
 import { reportError } from "../../notification";
 import { fetchInstanceMetrics } from "./apis";
@@ -13,145 +20,146 @@ import {
 } from "./utils";
 
 /**
- * Async Jumpstate Effect that fetches instance metrics and calls Redux success or failure actions
- * @param {string} endpoint - a string containing the target URL of the metrics endpoint
- * @returns
+ * Fetch instance metrics and dispatch success or failure handlers.
+ * RTK thunk (PR-18a) — replaces the jumpstate Effect of the same name.
  */
-async function fetchAndStoreInstanceMetricsEffect(
+export function fetchAndStoreInstanceMetrics(
   endpoint = buildDiscoveryServiceInstanceMetricsEndpoint()
-) {
-  if (!endpoint) {
-    console.log("Fetching metrics failed because metrics endpoint was missing");
-    return;
-  }
-  try {
-    const json = await fetchInstanceMetrics(endpoint);
-    Actions.fetchMetricsSuccess(json);
-  } catch (err) {
-    Actions.fetchMetricsFailure(err);
-  }
+): AppThunk<Promise<void>> {
+  return async (dispatch) => {
+    if (!endpoint) {
+      console.log(
+        "Fetching metrics failed because metrics endpoint was missing"
+      );
+      return;
+    }
+    try {
+      const json = await fetchInstanceMetrics(endpoint);
+      dispatch(fetchMetricsSuccess(json));
+    } catch (err) {
+      dispatch(fetchMetricsFailure(err));
+    }
+  };
 }
-Effect("fetchAndStoreInstanceMetrics", fetchAndStoreInstanceMetricsEffect);
 
 /**
- * Async Jumpstate Effect that handles successful fetches of metrics from the Fabric Server
- * @param {Object} metrics
+ * Handle successful fetches of metrics: reset the failure counter and append
+ * the sample to the metrics ring buffer.
  */
-function fetchMetricsSuccessEffect(metrics: Record<string, unknown>) {
-  // Reset the failure counter
-  if (getState().instance.metricsPollingFailures > 0) {
-    Actions.setMetricsPollingFailures(0);
-  }
-  // Update Redux
-  Actions.appendToMetrics(metrics);
+export function fetchMetricsSuccess(
+  metrics: Record<string, unknown>
+): AppThunk {
+  return (dispatch, getState) => {
+    // Reset the failure counter
+    if (getState().instance.metricsPollingFailures > 0) {
+      dispatch(setMetricsPollingFailures(0));
+    }
+    // Update Redux
+    dispatch(appendToMetrics(metrics));
+  };
 }
-Effect("fetchMetricsSuccess", fetchMetricsSuccessEffect);
 
 /**
- * Action that handles fetch thread errors, notifying the user via a popup and the console
- * and incrementing a counter that disables the polling interval on repeat failures.
- * @param {Object} err
+ * Handle metrics fetch errors: notify the user and increment a counter that
+ * disables the polling interval on repeat failures.
  */
-function fetchMetricsFailureEffect(err: unknown) {
-  const metricsPollingFailures = getState().instance.metricsPollingFailures;
-  let errorMsg;
-  if (metricsPollingFailures >= 3) {
-    errorMsg = (
-      <FormattedMessage
-        id="instanceMetricsUtils.disableFetchError"
-        defaultMessage="Automatically disabling the fetching of metrics after three attempts. You can turn polling back on in Settings."
-        description="Error notification"
-      />
-    );
-    reportError(errorMsg, false);
-    Actions.setMetricsPollingFailures(0);
-    Actions.stopPollingInstanceMetrics();
-  } else {
-    errorMsg = (
-      <FormattedMessage
-        id="instanceMetricsUtils.fetchError"
-        defaultMessage="Fetching Metrics failed"
-        description="Error notification"
-      />
-    );
-    reportError(errorMsg, true, err);
-    Actions.setMetricsPollingFailures(metricsPollingFailures + 1);
-  }
+export function fetchMetricsFailure(err: unknown): AppThunk {
+  return (dispatch, getState) => {
+    const metricsPollingFailures = getState().instance.metricsPollingFailures;
+    let errorMsg;
+    if (metricsPollingFailures >= 3) {
+      errorMsg = (
+        <FormattedMessage
+          id="instanceMetricsUtils.disableFetchError"
+          defaultMessage="Automatically disabling the fetching of metrics after three attempts. You can turn polling back on in Settings."
+          description="Error notification"
+        />
+      );
+      reportError(errorMsg, false);
+      dispatch(setMetricsPollingFailures(0));
+      dispatch(stopPollingInstanceMetrics());
+    } else {
+      errorMsg = (
+        <FormattedMessage
+          id="instanceMetricsUtils.fetchError"
+          defaultMessage="Fetching Metrics failed"
+          description="Error notification"
+        />
+      );
+      reportError(errorMsg, true, err);
+      dispatch(setMetricsPollingFailures(metricsPollingFailures + 1));
+    }
+  };
 }
-Effect("fetchMetricsFailure", fetchMetricsFailureEffect);
 
 /**
- * Action that starts a polling interval for scraping metrics directly
- * @param {Object} [{
- *     endpoint = getState().settings.metricsEndpoint,
- *     interval = getState().instance.instanceMetricsPollingInterval
- *   }={}]
+ * Start a polling interval for scraping metrics directly.
+ * Module-level timer lives on `window.refreshInstanceMetricsPollingInterval`
+ * (same as before).
  */
-export function startPollingInstanceMetricsEffect(
-  {
-    endpoint = buildDiscoveryServiceInstanceMetricsEndpoint(),
-    interval = getState().instance.instanceMetricsPollingInterval
-  } = {
-    endpoint: buildDiscoveryServiceInstanceMetricsEndpoint(),
-    interval: getState().instance.instanceMetricsPollingInterval
-  }
-) {
-  // We need to make sure we clear any existing
-  clearInstanceMetricsPollingIntervalIfNeeded();
-  // Update Redux, so the UI components update
-  Actions.setIsPollingInstanceMetrics(true);
-  // Perform an initial fetch
-  Actions.fetchAndStoreInstanceMetrics(endpoint);
-  // And then start the interval
-  window.refreshInstanceMetricsPollingInterval = setInterval(
-    Actions.fetchAndStoreInstanceMetrics,
-    interval,
-    endpoint
-  );
+export function startPollingInstanceMetrics({
+  endpoint,
+  interval
+}: {
+  endpoint?: string | null;
+  interval?: number;
+} = {}): AppThunk {
+  return (dispatch, getState) => {
+    const pollEndpoint =
+      endpoint ?? buildDiscoveryServiceInstanceMetricsEndpoint();
+    const pollInterval =
+      interval ?? getState().instance.instanceMetricsPollingInterval;
+    // We need to make sure we clear any existing
+    clearInstanceMetricsPollingIntervalIfNeeded();
+    // Update Redux, so the UI components update
+    dispatch(setIsPollingInstanceMetrics(true));
+    // Perform an initial fetch
+    dispatch(fetchAndStoreInstanceMetrics(pollEndpoint ?? undefined));
+    // And then start the interval
+    window.refreshInstanceMetricsPollingInterval = setInterval(() => {
+      dispatch(fetchAndStoreInstanceMetrics(pollEndpoint ?? undefined));
+    }, pollInterval);
+  };
 }
-Effect("startPollingInstanceMetrics", startPollingInstanceMetricsEffect);
 
 /**
- * Action that clears the polling interval for metrics scraping
+ * Clear the polling interval for metrics scraping.
  */
-function stopPollingInstanceMetricsEffect() {
-  // We need to make sure we clear any existing intervals
-  clearInstanceMetricsPollingIntervalIfNeeded();
-  // Update Redux, so the UI components update
-  Actions.setIsPollingInstanceMetrics(false);
+export function stopPollingInstanceMetrics(): AppThunk {
+  return (dispatch) => {
+    // We need to make sure we clear any existing intervals
+    clearInstanceMetricsPollingIntervalIfNeeded();
+    // Update Redux, so the UI components update
+    dispatch(setIsPollingInstanceMetrics(false));
+  };
 }
-Effect("stopPollingInstanceMetrics", stopPollingInstanceMetricsEffect);
 
 /**
- * Action that stops polling and clears metrics cache
+ * Stop polling and clear the metrics cache (and fabric selection).
  */
-function stopPollingAndPurgeInstanceMetricsEffect() {
-  console.log("Polling stopped and metrics cache cleared");
-  // Reset selected service, version, and instance (fabric slice is RTK — PR-17)
-  dispatch(setSelectedServiceSlug(null));
-  dispatch(setSelectedInstanceID(null));
-  // Stop polling
-  Actions.stopPollingInstanceMetrics();
-  Actions.setMetricsPollingFailures(0);
-  // Clear metrics
-  Actions.clearMetrics();
+export function stopPollingAndPurgeInstanceMetrics(): AppThunk {
+  return (dispatch) => {
+    console.log("Polling stopped and metrics cache cleared");
+    // Reset selected service, version, and instance (fabric slice is RTK — PR-17)
+    dispatch(setSelectedServiceSlug(null));
+    dispatch(setSelectedInstanceID(null));
+    // Stop polling
+    dispatch(stopPollingInstanceMetrics());
+    dispatch(setMetricsPollingFailures(0));
+    // Clear metrics
+    dispatch(clearMetrics());
+  };
 }
-
-Effect(
-  "stopPollingAndPurgeInstanceMetrics",
-  stopPollingAndPurgeInstanceMetricsEffect
-);
 
 /**
- * Async Jumpstate effect used to change the polling interval
- * @param {number} interval
+ * Change the polling interval used to scrape instance metrics.
  */
-function changeInstanceMetricsPollingIntervalEffect(interval: number) {
-  Actions.stopPollingInstanceMetrics();
-  Actions.setInstanceMetricsPollingInterval(interval);
-  Actions.startPollingInstanceMetrics();
+export function changeInstanceMetricsPollingInterval(
+  interval: number
+): AppThunk {
+  return (dispatch) => {
+    dispatch(stopPollingInstanceMetrics());
+    dispatch(setInstanceMetricsPollingInterval(interval));
+    dispatch(startPollingInstanceMetrics());
+  };
 }
-Effect(
-  "changeInstanceMetricsPollingInterval",
-  changeInstanceMetricsPollingIntervalEffect
-);

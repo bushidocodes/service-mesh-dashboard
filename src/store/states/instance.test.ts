@@ -1,5 +1,9 @@
 import type { InstanceState, Metrics } from "types";
-import instance, { _sliceMetrics, METRICS_CACHE_MAX_SAMPLES } from "./instance";
+import instance, {
+  _sliceMetrics,
+  appendToMetrics,
+  METRICS_CACHE_MAX_SAMPLES
+} from "./instance";
 
 const staticTimeseriesData: Metrics = {
   money: {
@@ -55,10 +59,7 @@ describe("METRICS_CACHE_MAX_SAMPLES / appendToMetrics ring buffer", () => {
 
     // Seed exactly the max number of samples.
     for (let i = 0; i < METRICS_CACHE_MAX_SAMPLES; i++) {
-      state = instance(state, {
-        type: "appendToMetrics",
-        payload: { money: i }
-      }) as InstanceState;
+      state = instance(state, appendToMetrics({ money: i })) as InstanceState;
     }
     expect(state.metrics.timestamps).toHaveLength(METRICS_CACHE_MAX_SAMPLES);
     const seededTimestamps = state.metrics.timestamps;
@@ -69,10 +70,7 @@ describe("METRICS_CACHE_MAX_SAMPLES / appendToMetrics ring buffer", () => {
     expect(newestBefore).toBeDefined();
 
     // One more append should evict the oldest and keep length at the max.
-    state = instance(state, {
-      type: "appendToMetrics",
-      payload: { money: 999 }
-    }) as InstanceState;
+    state = instance(state, appendToMetrics({ money: 999 })) as InstanceState;
 
     expect(state.metrics.timestamps).toHaveLength(METRICS_CACHE_MAX_SAMPLES);
     expect(state.metrics.timestamps).not.toContain(oldestBefore);
@@ -92,10 +90,10 @@ describe("METRICS_CACHE_MAX_SAMPLES / appendToMetrics ring buffer", () => {
     let state = instance(undefined, { type: "@@INIT" }) as InstanceState;
 
     for (let i = 0; i < METRICS_CACHE_MAX_SAMPLES + 25; i++) {
-      state = instance(state, {
-        type: "appendToMetrics",
-        payload: { money: i, problems: i * 2 }
-      }) as InstanceState;
+      state = instance(
+        state,
+        appendToMetrics({ money: i, problems: i * 2 })
+      ) as InstanceState;
     }
 
     expect(state.metrics.timestamps).toHaveLength(METRICS_CACHE_MAX_SAMPLES);

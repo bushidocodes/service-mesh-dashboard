@@ -1,64 +1,79 @@
-import { State } from "store/jumpstate";
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import type { InstanceState, Metrics } from "types";
 import { omit } from "utils/collections";
 
 /** ~5 minutes of history at the default 5s poll interval (KD-16). */
 export const METRICS_CACHE_MAX_SAMPLES = 60;
 
-// State Objects
-const instance = State({
-  initial: {
-    instanceMetricsPollingInterval: 5000,
-    isPollingInstanceMetrics: false,
-    metricsPollingFailures: 0,
-    metrics: {},
-    threadsError: {}
-  } satisfies InstanceState,
-  setInstanceMetricsPollingInterval(state: InstanceState, payload: number) {
-    return { ...state, instanceMetricsPollingInterval: payload };
-  },
-  setIsPollingInstanceMetrics(state: InstanceState, payload: boolean) {
-    return { ...state, isPollingInstanceMetrics: payload };
-  },
-  setMetricsPollingFailures(state: InstanceState, payload: number) {
-    return { ...state, metricsPollingFailures: payload };
-  },
-  setThreadsError(state: InstanceState, payload: Record<string, unknown>) {
-    return { ...state, threadsError: payload };
-  },
-  appendToMetrics(state: InstanceState, payload: Record<string, unknown>) {
-    // Ring buffer by max timestamp sample count (KD-16). After appending the
-    // new sample, evict oldest timestamps until we are at or under the limit.
-    let result: Metrics = { ...state.metrics };
-    // Generate a timestamp for the new metrics poll
-    const existingTimestamps = result.timestamps ? result.timestamps : [];
-    const latestTimestamp = Date.now() + "";
-    // And add it to the ordered index of timestamps
-    result.timestamps = [...existingTimestamps, latestTimestamp];
-    // And deep merge the new results into the keys of the existing state object
-    Object.keys(payload).forEach((metric) => {
-      const existing = result[metric];
-      result[metric] = {
-        ...(typeof existing === "object" && existing !== null
-          ? (existing as Record<string, unknown>)
-          : {}),
-        [latestTimestamp]: payload[metric]
-      };
-    });
-    while (
-      result.timestamps != null &&
-      result.timestamps.length > METRICS_CACHE_MAX_SAMPLES
-    ) {
-      result = _sliceMetrics(result);
+const initialState: InstanceState = {
+  instanceMetricsPollingInterval: 5000,
+  isPollingInstanceMetrics: false,
+  metricsPollingFailures: 0,
+  metrics: {},
+  threadsError: {}
+};
+
+// RTK instance slice (PR-18a). Action types are namespaced by default
+// (`instance/appendToMetrics`, …) — no jumpstate flat type parity (KD-15).
+const instanceSlice = createSlice({
+  name: "instance",
+  initialState,
+  reducers: {
+    setInstanceMetricsPollingInterval(state, action: PayloadAction<number>) {
+      state.instanceMetricsPollingInterval = action.payload;
+    },
+    setIsPollingInstanceMetrics(state, action: PayloadAction<boolean>) {
+      state.isPollingInstanceMetrics = action.payload;
+    },
+    setMetricsPollingFailures(state, action: PayloadAction<number>) {
+      state.metricsPollingFailures = action.payload;
+    },
+    setThreadsError(state, action: PayloadAction<Record<string, unknown>>) {
+      state.threadsError = action.payload;
+    },
+    appendToMetrics(state, action: PayloadAction<Record<string, unknown>>) {
+      // Ring buffer by max timestamp sample count (KD-16). After appending the
+      // new sample, evict oldest timestamps until we are at or under the limit.
+      let result: Metrics = { ...state.metrics };
+      // Generate a timestamp for the new metrics poll
+      const existingTimestamps = result.timestamps ? result.timestamps : [];
+      const latestTimestamp = Date.now() + "";
+      // And add it to the ordered index of timestamps
+      result.timestamps = [...existingTimestamps, latestTimestamp];
+      // And deep merge the new results into the keys of the existing state object
+      Object.keys(action.payload).forEach((metric) => {
+        const existing = result[metric];
+        result[metric] = {
+          ...(typeof existing === "object" && existing !== null
+            ? (existing as Record<string, unknown>)
+            : {}),
+          [latestTimestamp]: action.payload[metric]
+        };
+      });
+      while (
+        result.timestamps != null &&
+        result.timestamps.length > METRICS_CACHE_MAX_SAMPLES
+      ) {
+        result = _sliceMetrics(result);
+      }
+      state.metrics = result;
+    },
+    clearMetrics(state) {
+      state.metrics = {};
     }
-    return { ...state, metrics: result };
-  },
-  clearMetrics(state: InstanceState, _payload?: unknown) {
-    return { ...state, metrics: {} };
   }
 });
 
-export default instance;
+export const {
+  setInstanceMetricsPollingInterval,
+  setIsPollingInstanceMetrics,
+  setMetricsPollingFailures,
+  setThreadsError,
+  appendToMetrics,
+  clearMetrics
+} = instanceSlice.actions;
+
+export default instanceSlice.reducer;
 
 /**
  * Slices off the oldest timeseries data for all the metrics in a metrics object.

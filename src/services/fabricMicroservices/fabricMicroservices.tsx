@@ -1,8 +1,11 @@
 import { FormattedMessage } from "react-intl";
 import { loadDashboardsFromJSON } from "services/dashboards";
+import {
+  startPollingInstanceMetrics,
+  stopPollingInstanceMetrics
+} from "services/instance/metrics";
 import { reportError } from "services/notification";
 import type { AppThunk } from "store/appThunk";
-import { Actions } from "store/jumpstate";
 import {
   setFabricMicroservices,
   setFabricPollingInterval,
@@ -11,6 +14,7 @@ import {
   setSelectedServiceSlug,
   setServicesPollingFailures
 } from "store/states/fabric";
+import { clearMetrics } from "store/states/instance";
 import type { Service } from "types";
 import { clearFabricIntervalIfNeeded, slugifyMicroservice } from "utils";
 import { memoize } from "utils/collections";
@@ -201,8 +205,6 @@ export function stopPollingFabricMicroservices(): AppThunk {
  * microservice instance to be selected and polled at any given time, this
  * clears and resets the polling interval and metrics cache each time a new
  * microservice instance is selected.
- *
- * Instance metrics start/stop/clear remain jumpstate Effects until PR-18a.
  */
 export function selectInstance({
   instanceID,
@@ -219,12 +221,10 @@ export function selectInstance({
         dispatch(setSelectedServiceSlug(serviceSlug));
       }
       dispatch(setSelectedInstanceID(instanceID));
-      // Stop Polling (instance metrics still jumpstate)
-      Actions.stopPollingInstanceMetrics();
-      // Clear Metrics when we change instances
-      Actions.clearMetrics();
-      // and then start polling
-      Actions.startPollingInstanceMetrics();
+      // Stop polling, clear metrics cache, then resume polling (PR-18a RTK thunks)
+      dispatch(stopPollingInstanceMetrics());
+      dispatch(clearMetrics());
+      dispatch(startPollingInstanceMetrics());
       // and then load dashboards
       const runtime = fabric?.services?.[serviceSlug]?.runtime ?? "";
       // Note: If we don't know the runtime we ran this function before getting a
