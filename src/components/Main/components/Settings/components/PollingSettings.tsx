@@ -1,7 +1,7 @@
 import Button from "components/Button";
 import LayoutSection from "components/LayoutSection";
 import Tooltip from "components/Tooltip";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useIntl } from "react-intl";
 
 import { contrastColor } from "style/styleFunctions";
@@ -46,6 +46,12 @@ function PollingSettings({
     () => debounce(changePollingInterval, 1000),
     [changePollingInterval]
   );
+
+  useEffect(() => {
+    return () => {
+      debouncedSetInterval.cancel();
+    };
+  }, [debouncedSetInterval]);
 
   const buttonGlyph = isPolling ? "Pause" : "Play";
   const buttonLabel = isPolling

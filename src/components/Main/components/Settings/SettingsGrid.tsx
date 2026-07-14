@@ -14,7 +14,7 @@ import PollingSettings from "./components/PollingSettings";
  */
 function SettingsGrid() {
   const intl = useIntl();
-  const [isClearCacheModelOpen, setIsClearCacheModelOpen] = useState(false);
+  const [isClearCacheModalOpen, setIsClearCacheModalOpen] = useState(false);
 
   const fabricServer = useAppSelector((state) => state.settings.fabricServer);
   const fabricPollingInterval = useAppSelector(
@@ -37,7 +37,7 @@ function SettingsGrid() {
   );
 
   const clearCacheClickAction = () => {
-    setIsClearCacheModelOpen(true);
+    setIsClearCacheModalOpen(true);
   };
 
   const button = (
@@ -56,11 +56,11 @@ function SettingsGrid() {
   return (
     <Fragment>
       <ConfirmationModal
-        isOpen={isClearCacheModelOpen}
-        onCancel={() => setIsClearCacheModelOpen(false)}
+        isOpen={isClearCacheModalOpen}
+        onCancel={() => setIsClearCacheModalOpen(false)}
         onConfirm={() => {
           Actions.clearMetrics();
-          setIsClearCacheModelOpen(false);
+          setIsClearCacheModalOpen(false);
         }}
         question={intl.formatMessage({
           id: "settingsGrid.modal.question",

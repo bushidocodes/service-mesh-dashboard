@@ -39,7 +39,11 @@ function ConfirmationModal({
 
   // Backdrop click: coordinates fall outside the dialog box when the user
   // clicks the native ::backdrop layer (common modal-dialog pattern).
+  // Ignore (0, 0) synthetic clicks that some harnesses emit without real coords.
   const handleClick = (event: MouseEvent<HTMLDialogElement>) => {
+    if (event.clientX === 0 && event.clientY === 0) {
+      return;
+    }
     const el = ref.current;
     if (!el) return;
     const rect = el.getBoundingClientRect();
@@ -66,7 +70,7 @@ function ConfirmationModal({
       }}
       onClick={handleClick}
     >
-      <CancelX onClick={onCancel}>
+      <CancelX onClick={onCancel} data-testid="confirmation-modal-cancel-x">
         <Icon>
           <Glyph name="Close" />
         </Icon>
