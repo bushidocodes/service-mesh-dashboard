@@ -1,4 +1,5 @@
 import { State } from "store/jumpstate";
+import type { SettingsState } from "types";
 
 import { getFabricServer } from "utils/head";
 import { getLocale } from "utils/i18n";
@@ -13,12 +14,12 @@ const settings = State({
     fabricServer: getFabricServer(),
     threadsFilter: "all",
     locale: getLocale()
-  },
+  } satisfies SettingsState,
 
-  setThreadsFilter(state: any, payload: any) {
+  setThreadsFilter(state: SettingsState, payload: string) {
     return { ...state, threadsFilter: payload };
   },
-  setUserLocale(state: any, payload: any) {
+  setUserLocale(state: SettingsState, payload: string) {
     return { ...state, locale: payload };
   }
 });

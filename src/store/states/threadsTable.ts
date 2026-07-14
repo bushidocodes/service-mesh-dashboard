@@ -1,21 +1,47 @@
 import { State } from "store/jumpstate";
+import type { ThreadsTableItem } from "types";
+
+/** Shape of the JVM threads API response stored via `fetchThreadsSuccess`. */
+interface ThreadsApiPayload {
+  threads?: Record<
+    string,
+    {
+      thread?: string;
+      priority?: number;
+      state?: string;
+      daemon?: boolean;
+      stack?: string[];
+    }
+  >;
+}
 
 const threadsTable = State({
-  initial: [],
-  fetchThreadsSuccess(_state: any, payload: any) {
+  initial: [] as ThreadsTableItem[],
+  fetchThreadsSuccess(
+    _state: ThreadsTableItem[],
+    payload: ThreadsApiPayload
+  ): ThreadsTableItem[] {
     const threads = payload.threads;
-    const threadIds = threads ? Object.keys(threads) : [];
+    if (!threads) return [];
+    const threadIds = Object.keys(threads);
     if (threadIds.length === 0) return [];
-    return threadIds.map((id) => ({
-      name: threads[id].thread,
-      id,
-      priority: threads[id].priority,
-      state: threads[id].state,
-      daemon: threads[id].daemon,
-      stack: threads[id].stack
-    }));
+    return threadIds.map((id) => {
+      const thread = threads[id];
+      return {
+        name: thread.thread,
+        // Object.keys yields strings; domain type uses number — keep runtime string.
+        id: id as unknown as number,
+        priority: thread.priority,
+        state: thread.state,
+        daemon: thread.daemon,
+        stack: thread.stack
+      };
+    });
   },
-  clearThreads(_state: any, _payload: any) {
+  clearThreads(
+    _state: ThreadsTableItem[],
+    _payload?: unknown
+  ): ThreadsTableItem[] {
     return [];
   }
 });

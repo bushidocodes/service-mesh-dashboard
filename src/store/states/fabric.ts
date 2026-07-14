@@ -1,4 +1,5 @@
 import { State } from "store/jumpstate";
+import type { FabricState, Service } from "types";
 import "services/fabricMicroservices";
 
 const fabric = State({
@@ -9,23 +10,26 @@ const fabric = State({
     servicesPollingFailures: 0,
     selectedServiceSlug: null,
     services: {} //indexed by service ID
-  },
-  setFabricPollingInterval(state: any, payload: any) {
+  } satisfies FabricState,
+  setFabricPollingInterval(state: FabricState, payload: number) {
     return { ...state, fabricPollingInterval: payload };
   },
-  setIsPollingFabric(state: any, payload: any) {
+  setIsPollingFabric(state: FabricState, payload: boolean) {
     return { ...state, isPollingFabric: payload };
   },
-  setSelectedInstanceID(state: any, payload: any) {
+  setSelectedInstanceID(state: FabricState, payload: string | null) {
     return { ...state, selectedInstanceID: payload };
   },
-  setServicesPollingFailures(state: any, payload: any) {
+  setServicesPollingFailures(state: FabricState, payload: number) {
     return { ...state, servicesPollingFailures: payload };
   },
-  setSelectedServiceSlug(state: any, payload: any) {
+  setSelectedServiceSlug(state: FabricState, payload: string | null) {
     return { ...state, selectedServiceSlug: payload };
   },
-  setFabricMicroservices(state: any, services: any) {
+  setFabricMicroservices(
+    state: FabricState,
+    services: Record<string, Service>
+  ) {
     return { ...state, services };
   }
 });
