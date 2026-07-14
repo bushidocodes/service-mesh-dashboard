@@ -3,7 +3,6 @@ import HTTPGet from "components/Glyphs/HttpGet";
 import HTTPPatch from "components/Glyphs/HttpPatch";
 import HTTPPost from "components/Glyphs/HttpPost";
 import HTTPPut from "components/Glyphs/HttpPut";
-import { Component } from "react";
 import { ICON_VIEWBOX_SIZE } from "style/styleVariables";
 import { upperFirst } from "utils/collections";
 import Bars from "./Bars";
@@ -124,48 +123,41 @@ interface GlyphProps {
 }
 
 /**
- * returns Glyph by pass glyph name or empty <g> element if not found
- *
- * @export class Glyph
- * @class Glyph
- * @extends {Component}
+ * Returns Glyph by glyph name, or empty <g> if not found.
  */
-export default class Glyph extends Component<GlyphProps> {
-  glyphs = {
-    name: this.props.name
-  };
+export default function Glyph({
+  name,
+  ratio = 1,
+  glyphColor = "currentColor"
+}: GlyphProps) {
+  // use upperFirst instead of capitalize to respect camelCase
+  const resolvedName = upperFirst(name);
 
-  render() {
-    let { name, ratio = 1, glyphColor = "currentColor" } = this.props;
-    // use upperFirst instead of capitalize to respect camelCase
-    name = upperFirst(name);
-
-    // if glyph name is not found, return empty glyph and console log an error message
-    if (!(glyphs as Record<string, any>)[name]) {
-      return <g />;
-    }
-    // dynamically render glyph component by name
-    const GlyphComponent = (glyphs as Record<string, any>)[name];
-
-    const viewBoxSize = ICON_VIEWBOX_SIZE;
-    const glyphTranslateDist = (Number(ratio) - 1) * (0.5 * viewBoxSize) * -1;
-
-    return (
-      <g
-        className="glyph"
-        fill={glyphColor}
-        transform={
-          "translate(" +
-          glyphTranslateDist +
-          " " +
-          glyphTranslateDist +
-          ") scale(" +
-          ratio +
-          ")"
-        }
-      >
-        <GlyphComponent />
-      </g>
-    );
+  // if glyph name is not found, return empty glyph
+  if (!(glyphs as Record<string, any>)[resolvedName]) {
+    return <g />;
   }
+  // dynamically render glyph component by name
+  const GlyphComponent = (glyphs as Record<string, any>)[resolvedName];
+
+  const viewBoxSize = ICON_VIEWBOX_SIZE;
+  const glyphTranslateDist = (Number(ratio) - 1) * (0.5 * viewBoxSize) * -1;
+
+  return (
+    <g
+      className="glyph"
+      fill={glyphColor}
+      transform={
+        "translate(" +
+        glyphTranslateDist +
+        " " +
+        glyphTranslateDist +
+        ") scale(" +
+        ratio +
+        ")"
+      }
+    >
+      <GlyphComponent />
+    </g>
+  );
 }

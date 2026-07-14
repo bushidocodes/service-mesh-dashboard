@@ -16,8 +16,8 @@ export interface Metrics {
 }
 
 /**
- * React Router location. Mirrors the subset the app reads (see the v6 withRouter
- * shim, utils/withRouter.tsx).
+ * React Router location. Mirrors the subset the app reads from
+ * `useLocation()` / React Router location objects.
  */
 export interface RouterLocation {
   hash: string;
@@ -31,9 +31,8 @@ export interface RouterLocation {
 }
 
 /**
- * React Router history. The v6 withRouter shim provides only the subset of
- * methods the app actually uses (the v4 fields action/block/createHref/length/
- * listen are not available).
+ * React Router history-like API. Callers should prefer `useNavigate()`;
+ * this shape documents the subset of v4 history methods the app still uses.
  */
 export interface RouterHistory {
   go: (delta: number) => void;
@@ -41,7 +40,7 @@ export interface RouterHistory {
   goForward: () => void;
   location: RouterLocation;
   // Accept a path string or a location-descriptor object ({ state }, etc.),
-  // matching how the withRouter shim forwards to React Router's navigate().
+  // matching how React Router's navigate() is called in this app.
   push: (path: string | object) => void;
   replace: (path: string | object) => void;
 }
