@@ -114,6 +114,7 @@ export default {
     },
     settingsGrid: {
       cacheSize: "Cache Size",
+      samples: "Samples",
       clearCache: "Clear Cache",
       fabricPolling: "Fabric Polling",
       instancePolling: "Instance Polling",
@@ -458,6 +459,7 @@ export default {
     },
     settingsGrid: {
       cacheSize: "Tamaño del caché",
+      samples: "Muestras",
       clearCache: "Limpiar caché",
       fabricPolling: "Sondeo de tela",
       instancePolling: "Sondeo de instancia",
@@ -802,6 +804,7 @@ export default {
     },
     settingsGrid: {
       cacheSize: "Cache-Größe",
+      samples: "Stichproben",
       clearCache: "Cache leeren",
       fabricPolling: "Stoffabfrage",
       instancePolling: "Instanzabruf",

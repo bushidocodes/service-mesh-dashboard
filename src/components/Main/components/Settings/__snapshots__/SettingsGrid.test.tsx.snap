@@ -1116,12 +1116,12 @@ exports[`SettingsGrid component > Matches snapshot 1`] = `
             <h2
               class="c10"
             >
-              Cache Size
+              Samples
             </h2>
             <span
               class="c11"
             >
-              67.48 KB
+              0
             </span>
             <button
               class="c12"

@@ -1,9 +1,9 @@
-import objectSizeOf from "object-sizeof";
 import { State } from "store/jumpstate";
 import type { InstanceState, Metrics } from "types";
 import { omit } from "utils/collections";
 
-const METRICS_CACHE_MAX_BYTES = 100000000; // ~100MB is 100000000
+/** ~5 minutes of history at the default 5s poll interval (KD-16). */
+export const METRICS_CACHE_MAX_SAMPLES = 60;
 
 // State Objects
 const instance = State({
@@ -27,13 +27,9 @@ const instance = State({
     return { ...state, threadsError: payload };
   },
   appendToMetrics(state: InstanceState, payload: Record<string, unknown>) {
-    // Check the size of the state
-    // If the size of the state exceeds the max capacity,
-    // find the earliest timestamp wipe all associated metrics from all known keys
-    const result: Metrics =
-      objectSizeOf(state.metrics) > METRICS_CACHE_MAX_BYTES
-        ? _sliceMetrics(state.metrics)
-        : { ...state.metrics };
+    // Ring buffer by max timestamp sample count (KD-16). After appending the
+    // new sample, evict oldest timestamps until we are at or under the limit.
+    let result: Metrics = { ...state.metrics };
     // Generate a timestamp for the new metrics poll
     const existingTimestamps = result.timestamps ? result.timestamps : [];
     const latestTimestamp = Date.now() + "";
@@ -49,6 +45,12 @@ const instance = State({
         [latestTimestamp]: payload[metric]
       };
     });
+    while (
+      result.timestamps != null &&
+      result.timestamps.length > METRICS_CACHE_MAX_SAMPLES
+    ) {
+      result = _sliceMetrics(result);
+    }
     return { ...state, metrics: result };
   },
   clearMetrics(state: InstanceState, _payload?: unknown) {

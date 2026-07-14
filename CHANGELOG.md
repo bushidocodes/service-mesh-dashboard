@@ -1,3 +1,14 @@
+## Unreleased
+
+### Changed
+
+* Metrics cache eviction is now based on a fixed max sample count
+  (`METRICS_CACHE_MAX_SAMPLES = 60`, ~5 minutes at the default 5s poll
+  interval) rather than a ~100MB byte-size cap via `object-sizeof`.
+  Under heavy load the cache may retain a different time window than
+  before because eviction is driven by poll count, not estimated bytes.
+  Settings shows the current sample count instead of a byte size estimate.
+
 <a name="1.0.6"></a>
 
 ## [1.0.6](https://github.com/DecipherNow/gm-fabric-dashboard/compare/v1.0.5...v1.0.6) (2018-02-22)

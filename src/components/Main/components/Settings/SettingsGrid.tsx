@@ -3,8 +3,6 @@ import ConfirmationModal from "components/ConfirmationModal";
 import ErrorBoundary from "components/ErrorBoundary";
 import LayoutSection from "components/LayoutSection";
 import Readout from "components/Main/components/Readout";
-import { filesize } from "filesize";
-import objectSizeOf from "object-sizeof";
 import { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { Actions } from "store/jumpstate";
@@ -24,7 +22,7 @@ interface SettingsGridProps {
   intl: any;
   isPollingFabric: boolean;
   isPollingInstanceMetrics: boolean;
-  metricsCacheSize?: string;
+  metricsSampleCount?: number;
   selectedInstanceID?: string | null;
 }
 
@@ -52,7 +50,7 @@ class SettingsGrid extends Component<SettingsGridProps, SettingsGridState> {
       intl,
       isPollingFabric,
       isPollingInstanceMetrics,
-      metricsCacheSize,
+      metricsSampleCount,
       instanceMetricsPollingInterval,
       selectedInstanceID
     } = this.props;
@@ -150,11 +148,11 @@ class SettingsGrid extends Component<SettingsGridProps, SettingsGridState> {
               readoutItems={[
                 {
                   title: intl.formatMessage({
-                    id: "settingsGrid.cacheSize",
-                    defaultMessage: "Cache Size",
-                    description: "Metrics cache readout text"
+                    id: "settingsGrid.samples",
+                    defaultMessage: "Samples",
+                    description: "Metrics cache sample-count readout text"
                   }),
-                  value: `${metricsCacheSize}`,
+                  value: `${metricsSampleCount ?? 0}`,
                   children: button
                 }
               ]}
@@ -168,7 +166,6 @@ class SettingsGrid extends Component<SettingsGridProps, SettingsGridState> {
 
 function mapStateToProps({
   settings: { fabricServer },
-  dashboards: _dashboards,
   fabric: { fabricPollingInterval, isPollingFabric, selectedInstanceID },
   instance: {
     metrics,
@@ -183,7 +180,7 @@ function mapStateToProps({
     isPollingFabric,
     isPollingInstanceMetrics,
     selectedInstanceID,
-    metricsCacheSize: filesize(objectSizeOf(metrics), { standard: "jedec" })
+    metricsSampleCount: metrics.timestamps?.length ?? 0
   };
 }
 
