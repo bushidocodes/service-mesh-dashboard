@@ -1,6 +1,16 @@
 import { FormattedMessage } from "react-intl";
+import { loadDashboardsFromJSON } from "services/dashboards";
 import { reportError } from "services/notification";
-import { Actions, getState } from "store/jumpstate";
+import type { AppThunk } from "store/appThunk";
+import { Actions } from "store/jumpstate";
+import {
+  setFabricMicroservices,
+  setFabricPollingInterval,
+  setIsPollingFabric,
+  setSelectedInstanceID,
+  setSelectedServiceSlug,
+  setServicesPollingFailures
+} from "store/states/fabric";
 import type { Service } from "types";
 import { clearFabricIntervalIfNeeded, slugifyMicroservice } from "utils";
 import { memoize } from "utils/collections";
@@ -61,161 +71,169 @@ export async function fetchFabricMicroservices(
 }
 
 /**
- * Async Jumpstate Effect that fetch services from the Fabric Server
- * and updates Redux based on success or error states
- * @param {string} [fabricServer=getState().settings.fabricServer]
- * @returns
+ * Fetch services from the Fabric Server and update Redux based on success or
+ * error states.
  */
-export async function fetchAndStoreFabricMicroservicesEffect(
+export function fetchAndStoreFabricMicroservices(
   fabricServer = getFabricServer()
-) {
-  if (!fabricServer) {
-    console.log(
-      "Fetching microservices failed because Discovery Service endpoint was missing"
-    );
-    return;
-  }
-  try {
-    const results = await fetchFabricMicroservices(fabricServer);
-    Actions.fetchFabricMicroservicesSuccess(results);
-  } catch (err) {
-    Actions.fetchFabricMicroservicesFailure(err);
-  }
+): AppThunk<Promise<void>> {
+  return async (dispatch) => {
+    if (!fabricServer) {
+      console.log(
+        "Fetching microservices failed because Discovery Service endpoint was missing"
+      );
+      return;
+    }
+    try {
+      const results = await fetchFabricMicroservices(fabricServer);
+      dispatch(fetchFabricMicroservicesSuccess(results));
+    } catch (err) {
+      dispatch(fetchFabricMicroservicesFailure(err));
+    }
+  };
 }
 
 /**
- * Async Jumpstate Effect that handles successful fetches of services from the Fabric Server
- * Resets the failure counter and updates redux with the current services
- * @param {Object} services - Results object containing services
- * @param {number} [servicesPollingFailures=getState().fabric.servicesPollingFailures]
+ * Handle successful fetches of services from the Fabric Server: reset the
+ * failure counter and update redux with the current services.
  */
-export function fetchFabricMicroservicesSuccessEffect(
-  services: Record<string, Service>,
-  servicesPollingFailures = getState().fabric.servicesPollingFailures
-) {
-  if (servicesPollingFailures > 0) {
-    Actions.setServicesPollingFailures(0);
-  }
-  Actions.setFabricMicroservices(services);
+export function fetchFabricMicroservicesSuccess(
+  services: Record<string, Service>
+): AppThunk {
+  return (dispatch, getState) => {
+    if (getState().fabric.servicesPollingFailures > 0) {
+      dispatch(setServicesPollingFailures(0));
+    }
+    dispatch(setFabricMicroservices(services));
+  };
 }
 
 /**
- * Action that handles errors when fetching services from a Fabric Server, notifying the user via a popup and the console
- * and incrementing a counter that disables the polling interval on repeat failures.
- * @param {Object} err - Error object
+ * Handle errors when fetching services from a Fabric Server, notifying the user
+ * via a popup and the console and incrementing a counter that disables the
+ * polling interval on repeat failures.
  */
-export function fetchFabricMicroservicesFailureEffect(err: unknown) {
-  const servicesPollingFailures = getState().fabric.servicesPollingFailures;
-  console.log("Failed: ", servicesPollingFailures);
-  // If there have already been four failures (0, 1, 2, 3, 4), this is the third failure,
-  // so notify the user and stop polling
-  let errorMsg;
-  if (servicesPollingFailures > 3) {
-    errorMsg = (
-      <FormattedMessage
-        id="fabricMicroservices.disableFetchError"
-        defaultMessage="Automatically disabling the fetching of Fabric microservices after three attempts."
-        description="Error notification"
-      />
-    );
-    reportError(errorMsg, false, err);
-    Actions.setServicesPollingFailures(0);
-    Actions.stopPollingFabricMicroservices();
-    // Otherwise just increment the counter and warn the user;
-  } else {
-    errorMsg = (
-      <FormattedMessage
-        id="fabricMicroservices.fetchError"
-        defaultMessage="Fetching Fabric Microservices failed"
-        description="Error notification"
-      />
-    );
-    reportError(errorMsg, true, err);
-    Actions.setServicesPollingFailures(servicesPollingFailures + 1);
-  }
+export function fetchFabricMicroservicesFailure(err: unknown): AppThunk {
+  return (dispatch, getState) => {
+    const servicesPollingFailures = getState().fabric.servicesPollingFailures;
+    console.log("Failed: ", servicesPollingFailures);
+    // If there have already been four failures (0, 1, 2, 3, 4), this is the
+    // fifth failure, so notify the user and stop polling
+    let errorMsg;
+    if (servicesPollingFailures > 3) {
+      errorMsg = (
+        <FormattedMessage
+          id="fabricMicroservices.disableFetchError"
+          defaultMessage="Automatically disabling the fetching of Fabric microservices after three attempts."
+          description="Error notification"
+        />
+      );
+      reportError(errorMsg, false, err);
+      dispatch(setServicesPollingFailures(0));
+      dispatch(stopPollingFabricMicroservices());
+      // Otherwise just increment the counter and warn the user;
+    } else {
+      errorMsg = (
+        <FormattedMessage
+          id="fabricMicroservices.fetchError"
+          defaultMessage="Fetching Fabric Microservices failed"
+          description="Error notification"
+        />
+      );
+      reportError(errorMsg, true, err);
+      dispatch(setServicesPollingFailures(servicesPollingFailures + 1));
+    }
+  };
 }
 
 /**
- * Async Jumpstate effect used to change the polling interval used to retrieve Fabric-wide
- * data from the Fabric Server
- * @param {number} interval - fabric polling interval
+ * Change the polling interval used to retrieve Fabric-wide data from the
+ * Fabric Server.
  */
-export function changeFabricMicroservicesPollingIntervalEffect(
+export function changeFabricMicroservicesPollingInterval(
   interval: number
-) {
-  Actions.stopPollingFabricMicroservices();
-  Actions.setFabricPollingInterval(interval);
-  Actions.startPollingFabricMicroservices();
+): AppThunk {
+  return (dispatch) => {
+    dispatch(stopPollingFabricMicroservices());
+    dispatch(setFabricPollingInterval(interval));
+    dispatch(startPollingFabricMicroservices());
+  };
 }
 
 /**
- * Action that starts a polling interval for retrieving services from the Fabric Server
- * @param {number} [interval=getState().fabric.fabricPollingInterval] - fabric polling interval
+ * Start a polling interval for retrieving services from the Fabric Server.
+ * Module-level timer lives on `window.refreshFabricIntervalID` (same as before).
  */
-export async function startPollingFabricMicroservicesEffect(
-  { interval = getState().fabric.fabricPollingInterval } = {
-    interval: getState().fabric.fabricPollingInterval
-  }
-) {
-  // We need to make sure we clear any existing
-  clearFabricIntervalIfNeeded();
-  // Update Redux, so the UI components update
-  Actions.setIsPollingFabric(true);
-  // Perform an initial fetch
-  Actions.fetchAndStoreFabricMicroservices();
-  // And then start the interval
-  window.refreshFabricIntervalID = setInterval(
-    Actions.fetchAndStoreFabricMicroservices,
-    interval
-  );
+export function startPollingFabricMicroservices({
+  interval
+}: {
+  interval?: number;
+} = {}): AppThunk {
+  return (dispatch, getState) => {
+    const pollInterval = interval ?? getState().fabric.fabricPollingInterval;
+    // We need to make sure we clear any existing
+    clearFabricIntervalIfNeeded();
+    // Update Redux, so the UI components update
+    dispatch(setIsPollingFabric(true));
+    // Perform an initial fetch
+    dispatch(fetchAndStoreFabricMicroservices());
+    // And then start the interval
+    window.refreshFabricIntervalID = setInterval(() => {
+      dispatch(fetchAndStoreFabricMicroservices());
+    }, pollInterval);
+  };
 }
 
 /**
- * Action that clears the polling interval for metrics scraping
+ * Clear the polling interval for fabric microservices.
  */
-export function stopPollingFabricMicroservicesEffect() {
-  // We need to make sure we clear any existing intervals
-  clearFabricIntervalIfNeeded();
-  // Update Redux, so the UI components update
-  Actions.setIsPollingFabric(false);
+export function stopPollingFabricMicroservices(): AppThunk {
+  return (dispatch) => {
+    // We need to make sure we clear any existing intervals
+    clearFabricIntervalIfNeeded();
+    // Update Redux, so the UI components update
+    dispatch(setIsPollingFabric(false));
+  };
 }
 
 /**
- * Asyncronous Jumpstate Effect used to select a microservice instance
- * Because the dashboard only allows a single microservice instance to be selected and polled at any given time,
- * this clears the resets the polling interval and metrics cache each time a new microservice instance is selected
- * @param {Object} jumpstateObject
- * @param {string} jumpstateObject.instanceID
- * @param {string} jumpstateObject.serviceSlug
+ * Select a microservice instance. Because the dashboard only allows a single
+ * microservice instance to be selected and polled at any given time, this
+ * clears and resets the polling interval and metrics cache each time a new
+ * microservice instance is selected.
+ *
+ * Instance metrics start/stop/clear remain jumpstate Effects until PR-18a.
  */
-
-export function selectInstanceEffect({
+export function selectInstance({
   instanceID,
   serviceSlug
 }: {
   instanceID: string;
   serviceSlug: string;
-}) {
-  const { fabric } = getState();
-  if (instanceID !== fabric.selectedInstanceID) {
-    // Check if the new instance is a different microservice and update as needed
-    if (serviceSlug && serviceSlug !== fabric.selectedServiceSlug) {
-      Actions.setSelectedServiceSlug(serviceSlug);
+}): AppThunk {
+  return (dispatch, getState) => {
+    const { fabric } = getState();
+    if (instanceID !== fabric.selectedInstanceID) {
+      // Check if the new instance is a different microservice and update as needed
+      if (serviceSlug && serviceSlug !== fabric.selectedServiceSlug) {
+        dispatch(setSelectedServiceSlug(serviceSlug));
+      }
+      dispatch(setSelectedInstanceID(instanceID));
+      // Stop Polling (instance metrics still jumpstate)
+      Actions.stopPollingInstanceMetrics();
+      // Clear Metrics when we change instances
+      Actions.clearMetrics();
+      // and then start polling
+      Actions.startPollingInstanceMetrics();
+      // and then load dashboards
+      const runtime = fabric?.services?.[serviceSlug]?.runtime ?? "";
+      // Note: If we don't know the runtime we ran this function before getting a
+      // response from the Fabric server so we don't know what type of runtime
+      // the microservice is. The current workaround is in componentDidUpdate in
+      // Main.
+      if (runtime) {
+        dispatch(loadDashboardsFromJSON(runtime));
+      }
     }
-    Actions.setSelectedInstanceID(instanceID);
-    // Stop Polling
-    Actions.stopPollingInstanceMetrics();
-    // Clear Metrics when we change instances
-    Actions.clearMetrics();
-    // and then start polling
-    Actions.startPollingInstanceMetrics();
-    // and then load dashboards
-    const runtime = fabric?.services?.[serviceSlug]?.runtime ?? "";
-    // Note: If we don't know the runtime we ran this function before getting a response from the Fabric server
-    // so we don't know what type of runtime the microservice is
-    // The current workaround for this issue is in componentWillReceiveProps in App
-    if (runtime) {
-      Actions.loadDashboardsFromJSON(runtime);
-    }
-  }
+  };
 }

@@ -2,10 +2,12 @@ import { LazyLoader } from "components/LazyLoader";
 import { Loading } from "components/Loading";
 import { Suspense, useEffect } from "react";
 import { connect } from "react-redux";
-import { Actions } from "store/jumpstate";
+import { selectInstance } from "services/fabricMicroservices";
+import type { AppDispatch } from "store";
 import type { RootState } from "types";
 
 interface InstanceViewProps {
+  dispatch: AppDispatch;
   instanceID: string;
   runtime: string;
   // string | null mirrors the fabric store slice (selected* default to null).
@@ -30,12 +32,13 @@ const JVMRouter = LazyLoader({
 
 /**
  * InstanceView is an intermediate router that is responsible for directing to the appropriate runtime-specific router
- * and optionally calling Actions.selectInstance if the instance isn't currently selected
+ * and optionally dispatching selectInstance if the instance isn't currently selected
  * @export
  * @param {Object} props - see propTypes
  * @returns JSX.Element
  */
 function InstanceView({
+  dispatch,
   instanceID,
   runtime,
   selectedInstanceID,
@@ -48,9 +51,15 @@ function InstanceView({
       instanceID &&
       (serviceSlug !== selectedServiceSlug || instanceID !== selectedInstanceID)
     ) {
-      Actions.selectInstance({ instanceID, serviceSlug });
+      dispatch(selectInstance({ instanceID, serviceSlug }));
     }
-  }, [instanceID, serviceSlug, selectedInstanceID, selectedServiceSlug]);
+  }, [
+    dispatch,
+    instanceID,
+    serviceSlug,
+    selectedInstanceID,
+    selectedServiceSlug
+  ]);
 
   let RuntimeRouter;
   switch (runtime) {

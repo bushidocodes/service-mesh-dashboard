@@ -4,7 +4,9 @@ import { useUrlState } from "components/withUrlState";
 import { useEffect } from "react";
 import { useIntl } from "react-intl";
 import { useLocation, useNavigate } from "react-router-dom";
+import { fetchAndStoreFabricMicroservices } from "services/fabricMicroservices";
 import { reportError } from "services/notification";
+import store, { type AppDispatch } from "store";
 import { Actions } from "store/jumpstate";
 import type { Service } from "types";
 import FabricMainView from "./components/FabricMainView";
@@ -23,7 +25,7 @@ function FabricGrid({ services = [], statusView = false }: FabricGridProps) {
   // biome-ignore lint/correctness/useExhaustiveDependencies: mount-only; mirrors former componentDidMount (fetch + one-shot location message)
   useEffect(() => {
     // Refresh services from the Fabric Server every time this loads
-    Actions.fetchAndStoreFabricMicroservices();
+    (store.dispatch as AppDispatch)(fetchAndStoreFabricMicroservices());
     // State added by fabric router
     // Display message if one is found on state
     const locationState = location.state as { message?: string } | null;
