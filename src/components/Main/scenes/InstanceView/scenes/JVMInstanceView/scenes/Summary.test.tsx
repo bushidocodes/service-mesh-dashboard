@@ -1,11 +1,11 @@
 import { screen, within } from "@testing-library/react";
+import createTestStore from "json/createTestStore";
 import mockState from "json/mockReduxState";
-import configureStore from "redux-mock-store";
 import { mountWithIntl, renderWithIntl } from "utils/i18nTesting";
 
 import SummaryGrid from "./Summary";
 
-const mockStore = configureStore()(mockState);
+const mockStore = createTestStore(mockState);
 
 // The three Readout components each render a ReadoutDisplay <div> as the direct
 // child of the ReadoutGroup. There is no role/text on those wrappers, so we

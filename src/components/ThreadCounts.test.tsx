@@ -1,11 +1,11 @@
 import { render, screen } from "@testing-library/react";
+import createTestStore from "json/createTestStore";
 import mockState from "json/mockReduxState";
 import { Provider } from "react-redux";
-import configureStore from "redux-mock-store";
 
 import ThreadCounts from "./ThreadCounts";
 
-const mockStore = configureStore()(mockState);
+const mockStore = createTestStore(mockState);
 
 const HelloWorld = (_props: any) => <h1>Hello World!</h1>;
 

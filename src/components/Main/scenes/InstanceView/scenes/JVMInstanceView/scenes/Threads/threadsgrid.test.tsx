@@ -1,9 +1,9 @@
 import { screen, within } from "@testing-library/react";
 // Utilities
+import createTestStore from "json/createTestStore";
 import mockState from "json/mockReduxState";
 import { MemoryRouter } from "react-router-dom";
-import configureMockStore from "redux-mock-store";
-import { Actions, CreateJumpstateMiddleware } from "store/jumpstate";
+import { Actions } from "store/jumpstate";
 import { renderWithIntl } from "utils/i18nTesting";
 
 // Components
@@ -12,10 +12,10 @@ import ThreadsGrid from "./index";
 // Mock the jumpstate effect used in ThreadsGrid
 Actions.fetchAndStoreInstanceThreads = vi.fn();
 
-// Create a mock store and initialize with mock data
-const store = configureMockStore([CreateJumpstateMiddleware()])(mockState);
+// Create a real test store (includes Jumpstate middleware) with mock data
+const store = createTestStore(mockState);
 
-// react-redux v8 requires the store to come from <Provider> (the legacy `store`
+// react-redux requires the store to come from <Provider> (the legacy `store`
 // prop is ignored), and withUrlState relies on react-router, so the connected
 // ThreadsGrid is rendered inside a <MemoryRouter> with the store supplied via
 // renderWithIntl's second argument.

@@ -1,8 +1,8 @@
 import { fireEvent, screen, within } from "@testing-library/react";
+import createTestStore from "json/createTestStore";
 import * as noFuncState from "json/mockReduxState";
 import * as state from "json/mockReduxStateMetrics";
 import { MemoryRouter } from "react-router-dom";
-import configureStore from "redux-mock-store";
 import { omitBy } from "utils/collections";
 import { renderWithIntl } from "utils/i18nTesting";
 import FunctionsGrid from "./index";
@@ -10,7 +10,6 @@ import FunctionsGrid from "./index";
 //import Action effects
 import "services";
 
-const mockStore = configureStore();
 const mockState = state.default,
   noMetricsState = noFuncState.default;
 
@@ -22,14 +21,17 @@ noMetricsState.instance.metrics = omitBy(
 
 const FunctionsGridWithMockStore = (
   <MemoryRouter>
-    <FunctionsGrid store={mockStore(mockState)} />
+    <FunctionsGrid />
   </MemoryRouter>
 );
 const FunctionsGridWithMissingMetricsStore = (
   <MemoryRouter>
-    <FunctionsGrid store={mockStore(noMetricsState)} />
+    <FunctionsGrid />
   </MemoryRouter>
 );
+
+const metricsStore = createTestStore(mockState);
+const noMetricsStore = createTestStore(noMetricsState);
 
 const sortByOptions = [
   {
@@ -56,7 +58,10 @@ const sortByOptions = [
 
 describe("Go Instance Functions View: <FunctionsGrid/>", () => {
   test("Matches snapshot", () => {
-    const { asFragment } = renderWithIntl(FunctionsGridWithMockStore);
+    const { asFragment } = renderWithIntl(
+      FunctionsGridWithMockStore,
+      metricsStore
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -64,12 +69,12 @@ describe("Go Instance Functions View: <FunctionsGrid/>", () => {
   test("returns NotFoundError if no functions are found ", () => {
     // NotFoundError renders the "No Functions Found" message; assert that
     // observable text rather than the (RTL-unqueryable) component type.
-    renderWithIntl(FunctionsGridWithMissingMetricsStore);
+    renderWithIntl(FunctionsGridWithMissingMetricsStore, noMetricsStore);
     expect(screen.getByText("No Functions Found")).toBeInTheDocument();
   });
 
   test("returns correct number of <Table> and does not render <NotFoundError> when functions are found ", () => {
-    renderWithIntl(FunctionsGridWithMockStore);
+    renderWithIntl(FunctionsGridWithMockStore, metricsStore);
     // NOTE: RTL cannot count component instances. The single <Table> renders
     // the function rows (role="link"); their presence is the observable proxy
     // for "one Table rendered", and the absence of the "No Functions Found"
@@ -81,7 +86,7 @@ describe("Go Instance Functions View: <FunctionsGrid/>", () => {
 
 describe("FunctionsGrid Child Components", () => {
   beforeEach(() => {
-    renderWithIntl(FunctionsGridWithMockStore);
+    renderWithIntl(FunctionsGridWithMockStore, metricsStore);
   });
 
   test("passes props to TableToolbar", () => {

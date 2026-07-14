@@ -2,12 +2,7 @@
 
 exports[`JVM > SummaryGrid component > Matched the snapshot 1`] = `
 <DocumentFragment>
-  .c15 span+span {
-  font-size: 80%;
-  opacity: 0.8;
-}
-
-.c4 {
+  .c4 {
   transform: scale(1);
 }
 
@@ -35,6 +30,11 @@ exports[`JVM > SummaryGrid component > Matched the snapshot 1`] = `
 
 .c11:not(:root) {
   overflow: visible;
+}
+
+.c15 span+span {
+  font-size: 80%;
+  opacity: 0.8;
 }
 
 .c1 {

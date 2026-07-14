@@ -2,7 +2,24 @@
 
 exports[`AppHeader snapshots > matches snapshot with fabric view tabs 1`] = `
 <DocumentFragment>
-  .c0 {
+  .c15 {
+  transform: scale(1);
+}
+
+.c14 {
+  z-index: 1;
+  height: 24px;
+  width: 24px;
+  color: currentColor;
+  word-spacing: 0;
+  vertical-align: middle;
+}
+
+.c14:not(:root) {
+  overflow: visible;
+}
+
+.c0 {
   display: flex;
   flex: 0 0 auto;
   flex-direction: column;
@@ -22,23 +39,6 @@ exports[`AppHeader snapshots > matches snapshot with fabric view tabs 1`] = `
 
 .c12 *+* {
   margin-left: 4px;
-}
-
-.c15 {
-  transform: scale(1);
-}
-
-.c14 {
-  z-index: 1;
-  height: 24px;
-  width: 24px;
-  color: currentColor;
-  word-spacing: 0;
-  vertical-align: middle;
-}
-
-.c14:not(:root) {
-  overflow: visible;
 }
 
 .c13 {
@@ -836,7 +836,24 @@ exports[`AppHeader snapshots > matches snapshot with fabric view tabs 1`] = `
 
 exports[`AppHeader snapshots > matches snapshot with instance view tabs 1`] = `
 <DocumentFragment>
-  .c0 {
+  .c15 {
+  transform: scale(1);
+}
+
+.c14 {
+  z-index: 1;
+  height: 24px;
+  width: 24px;
+  color: currentColor;
+  word-spacing: 0;
+  vertical-align: middle;
+}
+
+.c14:not(:root) {
+  overflow: visible;
+}
+
+.c0 {
   display: flex;
   flex: 0 0 auto;
   flex-direction: column;
@@ -856,23 +873,6 @@ exports[`AppHeader snapshots > matches snapshot with instance view tabs 1`] = `
 
 .c12 *+* {
   margin-left: 4px;
-}
-
-.c15 {
-  transform: scale(1);
-}
-
-.c14 {
-  z-index: 1;
-  height: 24px;
-  width: 24px;
-  color: currentColor;
-  word-spacing: 0;
-  vertical-align: middle;
-}
-
-.c14:not(:root) {
-  overflow: visible;
 }
 
 .c13 {

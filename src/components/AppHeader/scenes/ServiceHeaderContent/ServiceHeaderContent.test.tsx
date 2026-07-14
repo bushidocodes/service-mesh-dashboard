@@ -1,10 +1,13 @@
+import createTestStore from "json/createTestStore";
 import state from "json/mockReduxState";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
-import configureMockStore from "redux-mock-store";
 import { renderWithIntl } from "utils/i18nTesting";
 import ServiceHeaderContent from "./ServiceHeaderContent";
 
-// Router is necessary because of the <Tab />'s which need a router context
+const store = createTestStore(state);
+
+// Router is necessary because of the <Tab />'s which need a router context.
+// react-redux requires the store via <Provider> (legacy `store` prop is ignored).
 const RouterWrap = (
   <MemoryRouter
     initialEntries={[
@@ -12,17 +15,14 @@ const RouterWrap = (
     ]}
   >
     <Routes>
-      <Route
-        path="*"
-        element={<ServiceHeaderContent store={configureMockStore()(state)} />}
-      />
+      <Route path="*" element={<ServiceHeaderContent />} />
     </Routes>
   </MemoryRouter>
 );
 
 describe("ServiceHeaderContent", () => {
   test("matches snapshot", () => {
-    const { asFragment } = renderWithIntl(RouterWrap);
+    const { asFragment } = renderWithIntl(RouterWrap, store);
     expect(asFragment()).toMatchSnapshot();
   });
 });
