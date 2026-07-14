@@ -21,6 +21,7 @@ exports[`SkipNav > matches snapshot 1`] = `
 
 <button
     class="c0"
+    type="button"
   />
 </DocumentFragment>
 `;

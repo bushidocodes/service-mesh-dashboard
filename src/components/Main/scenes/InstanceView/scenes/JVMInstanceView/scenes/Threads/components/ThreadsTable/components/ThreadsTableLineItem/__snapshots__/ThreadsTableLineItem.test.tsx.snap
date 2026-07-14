@@ -96,7 +96,7 @@ exports[`ThreadsTableLineItem component > Matched the snapshot 1`] = `
       class="c1 c2"
     >
       <svg
-        aria-labelledby="ariaLabelledby"
+        aria-hidden="true"
         class="c3"
         focusable="false"
         version="1.1"
@@ -121,7 +121,6 @@ exports[`ThreadsTableLineItem component > Matched the snapshot 1`] = `
           fill="currentColor"
           title=""
         >
-          <title />
           <path
             d="M11,14 L13,14 L13,16 L11,16 L11,14 Z M11,9 L13,9 L13,11.0070282 L12.5,13 L11.5,13 L11,11.0070282 L11,9 Z"
             id="Exclamation"
@@ -153,7 +152,7 @@ exports[`ThreadsTableLineItem component > Matched the snapshot 1`] = `
       class="c1 c2"
     >
       <svg
-        aria-labelledby="ariaLabelledby"
+        aria-hidden="true"
         class="c6"
         focusable="false"
         version="1.1"
@@ -166,7 +165,6 @@ exports[`ThreadsTableLineItem component > Matched the snapshot 1`] = `
           fill="currentColor"
           title=""
         >
-          <title />
           <g
             class="glyph"
             fill="currentColor"

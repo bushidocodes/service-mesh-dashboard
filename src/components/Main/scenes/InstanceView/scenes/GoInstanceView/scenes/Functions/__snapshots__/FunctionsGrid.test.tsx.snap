@@ -513,6 +513,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> > Matches snapshot 1`] = `
           class="c2 c16"
         >
           <svg
+            aria-hidden="true"
             focusable="false"
             preserveAspectRatio="xMaxYMin"
             viewBox="0 0 240 32"
@@ -620,6 +621,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> > Matches snapshot 1`] = `
           class="c2 c16"
         >
           <svg
+            aria-hidden="true"
             focusable="false"
             preserveAspectRatio="xMaxYMin"
             viewBox="0 0 240 32"

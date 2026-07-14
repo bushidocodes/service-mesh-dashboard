@@ -1,7 +1,7 @@
 import { spacingScale } from "style/styleFunctions";
 import styled from "styled-components";
 
-const DismissButtonContainer = styled.div`
+const DismissButtonContainer = styled.button.attrs({ type: "button" })`
   position: absolute;
   cursor: pointer;
   top: ${spacingScale(1)};
@@ -10,6 +10,12 @@ const DismissButtonContainer = styled.div`
   pointer-events: auto;
   z-index: 100;
   opacity: 0.125;
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  line-height: 0;
 
   &:hover,
   &:focus {

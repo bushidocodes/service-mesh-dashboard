@@ -2,6 +2,7 @@ import { COLOR_GREEN, COLOR_WHITE, FONT_SIZE_SM } from "style/styleVariables";
 import styled from "styled-components";
 
 const SkipNav = styled.button.attrs({
+  type: "button",
   onKeyDown: (props: any) => (evt: any) => {
     if (evt.keyCode === 13 || evt.keyCode === 32) {
       document.getElementById(props.skipToId)?.focus();

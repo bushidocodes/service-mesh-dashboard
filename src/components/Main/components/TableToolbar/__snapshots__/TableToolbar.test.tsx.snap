@@ -322,7 +322,7 @@ exports[`Table Toolbar > matches snapshot 1`] = `
         title="Cards"
       >
         <svg
-          aria-labelledby="ariaLabelledby"
+          aria-hidden="true"
           class="c5"
           focusable="false"
           version="1.1"
@@ -335,7 +335,6 @@ exports[`Table Toolbar > matches snapshot 1`] = `
             fill="currentColor"
             title=""
           >
-            <title />
             <g
               class="glyph"
               fill="currentColor"
@@ -357,7 +356,7 @@ exports[`Table Toolbar > matches snapshot 1`] = `
         title="List"
       >
         <svg
-          aria-labelledby="ariaLabelledby"
+          aria-hidden="true"
           class="c5"
           focusable="false"
           version="1.1"
@@ -370,7 +369,6 @@ exports[`Table Toolbar > matches snapshot 1`] = `
             fill="currentColor"
             title=""
           >
-            <title />
             <g
               class="glyph"
               fill="currentColor"

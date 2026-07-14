@@ -19,7 +19,7 @@ export default function DefaultHeaderContent({
   return (
     <TabNav>
       {headerTabs}
-      <Tab href={`/explorer`} icon="Explorer" tabIndex={1} title="Explorer" />
+      <Tab href={`/explorer`} icon="Explorer" title="Explorer" />
     </TabNav>
   );
 }

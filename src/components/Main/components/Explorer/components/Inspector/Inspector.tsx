@@ -62,6 +62,7 @@ class Inspector extends Component<InspectorProps> {
             type="search"
             value={searchQuery}
           />
+          {/* biome-ignore lint/a11y/noLabelWithoutControl: wraps styled.input checkbox (InspectorHideZero) */}
           <label>
             <InspectorHideZero
               onChange={(evt) => onChange(evt.target.checked, evt.target.name)}
@@ -74,6 +75,7 @@ class Inspector extends Component<InspectorProps> {
               description="Label for checkbox"
             />
           </label>
+          {/* biome-ignore lint/a11y/noLabelWithoutControl: wraps styled.input checkbox (InspectorHideStatic) */}
           <label>
             <InspectorHideStatic
               onChange={(evt) => onChange(evt.target.checked, evt.target.name)}

@@ -94,6 +94,8 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid > matches snapshot
           class="c5"
         >
           <svg
+            aria-hidden="true"
+            focusable="false"
             preserveAspectRatio="xMaxYMin"
             viewBox="0 0 240 32"
           >
@@ -176,6 +178,8 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid > matches snapshot
           class="c5"
         >
           <svg
+            aria-hidden="true"
+            focusable="false"
             preserveAspectRatio="xMaxYMin"
             viewBox="0 0 240 32"
           >
@@ -258,6 +262,8 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid > matches snapshot
           class="c5"
         >
           <svg
+            aria-hidden="true"
+            focusable="false"
             preserveAspectRatio="xMaxYMin"
             viewBox="0 0 240 32"
           >
@@ -340,6 +346,8 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid > matches snapshot
           class="c5"
         >
           <svg
+            aria-hidden="true"
+            focusable="false"
             preserveAspectRatio="xMaxYMin"
             viewBox="0 0 240 32"
           >
@@ -422,6 +430,8 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid > matches snapshot
           class="c5"
         >
           <svg
+            aria-hidden="true"
+            focusable="false"
             preserveAspectRatio="xMaxYMin"
             viewBox="0 0 240 32"
           >
@@ -510,6 +520,8 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid > matches snapshot
           class="c5"
         >
           <svg
+            aria-hidden="true"
+            focusable="false"
             preserveAspectRatio="xMaxYMin"
             viewBox="0 0 240 32"
           >
@@ -592,6 +604,8 @@ exports[`<GMBasicMetrics> stateless child component of GMGrid > matches snapshot
           class="c5"
         >
           <svg
+            aria-hidden="true"
+            focusable="false"
             preserveAspectRatio="xMaxYMin"
             viewBox="0 0 240 32"
           >

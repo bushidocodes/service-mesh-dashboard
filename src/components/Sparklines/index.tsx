@@ -44,6 +44,8 @@ interface InjectedChildProps {
   margin?: number;
 }
 
+const noopMouseMove = (..._args: any[]) => {};
+
 interface SparklinesLineProps {
   color?: string;
   data?: number[];
@@ -120,8 +122,9 @@ export function Sparklines({
   if (svgWidth != null && svgWidth > 0) svgOpts.width = svgWidth;
   if (svgHeight != null && svgHeight > 0) svgOpts.height = svgHeight;
 
+  // Decorative chart mark; series values are conveyed by surrounding UI.
   return (
-    <svg {...svgOpts}>
+    <svg {...svgOpts} aria-hidden={true} focusable="false">
       {Children.map(children, (child) =>
         child
           ? // React 19's @types/react defaults ReactElement props to `unknown`, so
@@ -146,7 +149,7 @@ export function SparklinesLine({
   margin = 2,
   color,
   style = {},
-  onMouseMove = () => {}
+  onMouseMove = noopMouseMove
 }: SparklinesLineProps) {
   const linePoints = points
     .map((p) => [p.x, p.y])
@@ -180,7 +183,9 @@ export function SparklinesLine({
   };
 
   // Invisible hover targets at each data point (react-sparklines' tooltip
-  // spots). Kept for output parity; a no-op unless an onMouseMove is supplied.
+  // spots). Handlers attach only when a real onMouseMove is supplied so
+  // decorative charts do not advertise static-element interactivity.
+  const interactive = onMouseMove !== noopMouseMove;
   const spots = points.map((p, i) => (
     <circle
       key={i}
@@ -188,8 +193,12 @@ export function SparklinesLine({
       cy={p.y}
       r={2}
       style={fillStyle}
-      onMouseEnter={() => onMouseMove("enter", data[i], p)}
-      onClick={() => onMouseMove("click", data[i], p)}
+      {...(interactive
+        ? {
+            onMouseEnter: () => onMouseMove("enter", data[i], p),
+            onClick: () => onMouseMove("click", data[i], p)
+          }
+        : {})}
     />
   ));
 
