@@ -28,8 +28,8 @@ interface SummaryGridProps {
 function SummaryGrid({
   errorPercent,
   metrics,
-  selectedInstanceID,
-  selectedServiceSlug,
+  selectedInstanceID: _selectedInstanceID,
+  selectedServiceSlug: _selectedServiceSlug,
   intl
 }: SummaryGridProps) {
   return (

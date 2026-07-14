@@ -7,7 +7,7 @@ import ThreadCounts from "./ThreadCounts";
 
 const mockStore = configureStore()(mockState);
 
-const HelloWorld = (props: any) => <h1>Hello World!</h1>;
+const HelloWorld = (_props: any) => <h1>Hello World!</h1>;
 
 describe("ThreadCounts Render Props component", () => {
   test("renders via the function passed as the render prop", () => {

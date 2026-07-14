@@ -26,8 +26,8 @@ interface SummaryGridProps {
  */
 function SummaryGrid({
   metrics,
-  selectedInstanceID,
-  selectedServiceSlug,
+  selectedInstanceID: _selectedInstanceID,
+  selectedServiceSlug: _selectedServiceSlug,
   intl
 }: SummaryGridProps) {
   const allRequests = getLatestAttribute(metrics, "all/requests");

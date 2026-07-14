@@ -17,7 +17,7 @@ const mockState = state.default,
 // Filter out metrics starting with the key function
 noMetricsState.instance.metrics = omitBy(
   noFuncState.default.instance.metrics,
-  (value, key) => key.substr(0, 8) === "function"
+  (_value, key) => key.substr(0, 8) === "function"
 ) as typeof noMetricsState.instance.metrics;
 
 const FunctionsGridWithMockStore = (

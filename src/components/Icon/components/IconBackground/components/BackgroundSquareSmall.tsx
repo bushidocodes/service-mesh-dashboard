@@ -7,7 +7,7 @@ interface BackgroundSquareSmallProps {
 const title = "SquareSmall";
 
 function BackgroundSquareSmall({
-  ratio = 1,
+  ratio: _ratio = 1,
   backgroundColor = "currentColor",
   backgroundOpacity = "1"
 }: BackgroundSquareSmallProps) {

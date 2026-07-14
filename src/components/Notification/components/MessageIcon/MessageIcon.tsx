@@ -7,7 +7,7 @@ interface MessageIconProps {
 }
 
 // Choose an icon to display based on level If Error, show error icon, etc.
-function MessageIcon({ level = "info" }: MessageIconProps) {
+function MessageIcon({ level: _level = "info" }: MessageIconProps) {
   return (
     <MessageIconContainer className="notification-dismiss">
       <Icon

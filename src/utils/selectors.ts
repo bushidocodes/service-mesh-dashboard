@@ -46,7 +46,7 @@ export const getRuntime = createSelector(
 
 export const getBaseInstanceRoute = createSelector(
   [getDashboards, getMetrics, getSelectedServiceSlug, getSelectedInstanceID],
-  (dashboards, metrics, selectedServiceSlug, selectedInstanceID) => {
+  (_dashboards, _metrics, selectedServiceSlug, selectedInstanceID) => {
     return selectedServiceSlug && selectedInstanceID
       ? `/${selectedServiceSlug}/${selectedInstanceID}`
       : "";

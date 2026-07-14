@@ -158,7 +158,7 @@ export class GMGrid extends Component<GMGridProps> {
             headers={chart.data.headers.map((header: any) =>
               intl.formatMessage(header)
             )}
-            rows={chart.data.rows.map((row: any, outerIdx: number) => {
+            rows={chart.data.rows.map((row: any, _outerIdx: number) => {
               return row.map((cell: any, innerIdx: number) => {
                 // The first item in a row is a i18n label of what's in the label
                 return innerIdx > 0
@@ -210,7 +210,7 @@ export class GMGrid extends Component<GMGridProps> {
    * Note that this also seems to always be called on inital render
    * @param {Object} allLayouts
    */
-  updateDashboardLayout(allLayouts: any) {
+  updateDashboardLayout(_allLayouts: any) {
     return;
     // Disabled for initial release
     // const updatedDashboard = Object.assign({}, this.props.dashboard, {
@@ -240,7 +240,7 @@ export class GMGrid extends Component<GMGridProps> {
           dragConfig={STATIC_DRAG_CONFIG}
           resizeConfig={STATIC_RESIZE_CONFIG}
           layouts={dashboard.grid.layouts}
-          onLayoutChange={(currentLayout: any, allLayouts: any) =>
+          onLayoutChange={(_currentLayout: any, allLayouts: any) =>
             this.updateDashboardLayout(allLayouts)
           }
           rowHeight={dashboard.grid.rowHeight}

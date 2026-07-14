@@ -75,7 +75,7 @@ if (typeof HTMLCanvasElement !== "undefined") {
   }));
 }
 // Fail tests on any warning
-console.error = (message, ...args) => {
+console.error = (message, ..._args) => {
   // Normalize message to a string whether it's a string, Error, or format arg
   const msg =
     typeof message === "string"

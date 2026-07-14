@@ -59,12 +59,12 @@
       },
       "correctness": {
         "noSwitchDeclarations": "off",
-        "noUnusedFunctionParameters": "off",
+        "noUnusedFunctionParameters": "error",
         "noUnusedImports": "error",
-        "noUnusedVariables": "off",
+        "noUnusedVariables": "error",
         "useExhaustiveDependencies": "warn",
         "useHookAtTopLevel": "error",
-        "useJsxKeyInIterable": "off"
+        "useJsxKeyInIterable": "error"
       },
       "performance": {
         "noAccumulatingSpread": "off"

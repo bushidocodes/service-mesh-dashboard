@@ -20,7 +20,7 @@ import { useSearchParams } from "react-router-dom";
  * @returns {function} HOC factory – call with Component to get the wrapped version
  */
 export default function withUrlState(
-  mapOwnPropsToInitialState?: (ownProps: any) => Record<string, any>
+  _mapOwnPropsToInitialState?: (ownProps: any) => Record<string, any>
 ) {
   return function (Component: React.ComponentType<any>) {
     function WithUrlState(props: any) {

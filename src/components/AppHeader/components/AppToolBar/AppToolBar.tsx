@@ -35,7 +35,7 @@ const defaultToolbarButtons = [
  */
 function AppToolBar({
   pathname,
-  hideRoot,
+  hideRoot: _hideRoot,
   toolbarButtons = defaultToolbarButtons,
   serviceNameLookup = {}
 }: AppToolBarProps) {

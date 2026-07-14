@@ -7,7 +7,7 @@ interface BackgroundSquareRoundedProps {
 const title = "SquareRounded";
 
 function BackgroundSquareRounded({
-  ratio = 1,
+  ratio: _ratio = 1,
   backgroundColor = "currentColor",
   backgroundOpacity = "1"
 }: BackgroundSquareRoundedProps) {

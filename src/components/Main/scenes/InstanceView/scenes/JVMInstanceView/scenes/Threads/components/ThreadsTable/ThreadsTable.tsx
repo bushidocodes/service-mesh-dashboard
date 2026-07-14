@@ -75,7 +75,7 @@ export default function ThreadsTable({
   }
 }
 
-function getHeader(thread: ThreadsTableItem, groupByAttribute: string) {
+function getHeader(thread: ThreadsTableItem, _groupByAttribute: string) {
   switch (thread.state) {
     case "RUNNABLE":
       return "Active";
