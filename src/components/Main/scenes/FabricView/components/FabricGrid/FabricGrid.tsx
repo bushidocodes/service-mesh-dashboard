@@ -54,8 +54,10 @@ function FabricGrid({ services = [], statusView = false }: FabricGridProps) {
 
   const setSortByAttribute = (nextSortByAttribute: string) => {
     if (urlState.sortByAttribute === nextSortByAttribute) {
+      // Use destructured `ascending` (defaults to "true") so JSON.parse gets a
+      // definite string under noUncheckedIndexedAccess.
       setUrlState({
-        ascending: !JSON.parse(urlState.ascending)
+        ascending: !JSON.parse(ascending)
       });
     } else {
       setUrlState({ sortByAttribute: nextSortByAttribute, ascending: true });
