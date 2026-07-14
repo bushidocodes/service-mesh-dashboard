@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 export function reportError(
   errorLabel: React.ReactNode,
   shouldTimeout?: boolean,
-  errorObject: any = ""
+  errorObject: unknown = ""
 ) {
   // react-toastify injects `closeToast` when the toast content is a render
   // function, which lets our custom DismissButton dismiss the toast. The

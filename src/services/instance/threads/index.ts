@@ -22,8 +22,10 @@ Effect("fetchAndStoreInstanceThreads", fetchAndStoreInstanceThreadsEffect);
  * Action that handles fetch thread errors, notifying the user via a popup and the console and setting state
  * @param {Object} err
  */
-function fetchThreadsFailureEffect(err: any) {
+function fetchThreadsFailureEffect(err: unknown) {
   reportError("Fetching Threads Data failed.", false, err);
+  // Actions is untyped at the call site; the instance slice stores whatever is
+  // passed (strings from Promise.reject, Error from fetch, etc.).
   Actions.setThreadsError(err);
 }
 Effect("fetchThreadsFailure", fetchThreadsFailureEffect);
