@@ -10,8 +10,13 @@ import {
   startPollingFabricMicroservices,
   stopPollingFabricMicroservices
 } from "services/fabricMicroservices";
+import {
+  changeInstanceMetricsPollingInterval,
+  startPollingInstanceMetrics,
+  stopPollingInstanceMetrics
+} from "services/instance/metrics";
 import { useAppDispatch, useAppSelector } from "store/hooks";
-import { Actions } from "store/jumpstate";
+import { clearMetrics } from "store/states/instance";
 import PollingSettings from "./components/PollingSettings";
 
 /**
@@ -65,7 +70,7 @@ function SettingsGrid() {
         isOpen={isClearCacheModalOpen}
         onCancel={() => setIsClearCacheModalOpen(false)}
         onConfirm={() => {
-          Actions.clearMetrics();
+          dispatch(clearMetrics());
           setIsClearCacheModalOpen(false);
         }}
         question={intl.formatMessage({
@@ -99,9 +104,11 @@ function SettingsGrid() {
           />
         )}
         <PollingSettings
-          changePollingInterval={Actions.changeInstanceMetricsPollingInterval}
-          stopPolling={Actions.stopPollingInstanceMetrics}
-          startPolling={Actions.startPollingInstanceMetrics}
+          changePollingInterval={(interval: number) =>
+            dispatch(changeInstanceMetricsPollingInterval(interval))
+          }
+          stopPolling={() => dispatch(stopPollingInstanceMetrics())}
+          startPolling={() => dispatch(startPollingInstanceMetrics())}
           interval={instanceMetricsPollingInterval}
           isPolling={isPollingInstanceMetrics}
           isDisabled={!selectedInstanceID}

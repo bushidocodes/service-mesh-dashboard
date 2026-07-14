@@ -4,8 +4,8 @@ import TableToolbar from "components/Main/components/TableToolbar";
 import { useUrlState } from "components/withUrlState";
 import { useEffect } from "react";
 import { useIntl } from "react-intl";
-import { useAppSelector } from "store/hooks";
-import { Actions } from "store/jumpstate";
+import { fetchAndStoreInstanceThreads } from "services/instance/threads";
+import { useAppDispatch, useAppSelector } from "store/hooks";
 import type { ThreadsTableItem } from "types";
 import { isEmpty, orderBy } from "utils/collections";
 import { getVisibleThreads } from "utils/jvm/selectors";
@@ -16,6 +16,7 @@ import ThreadsTable from "./components/ThreadsTable";
  */
 function ThreadsGrid() {
   const intl = useIntl();
+  const dispatch = useAppDispatch();
   const { urlState, setUrlState } = useUrlState();
 
   const fabricServer = useAppSelector((state) => state.settings.fabricServer);
@@ -42,11 +43,13 @@ function ThreadsGrid() {
   // service name/version so we fetch once the service becomes available.
   useEffect(() => {
     if (fabricServer && serviceName && serviceVersion && selectedInstanceID) {
-      Actions.fetchAndStoreInstanceThreads(
-        `${fabricServer}/threads/${serviceName}/${serviceVersion}/${selectedInstanceID}`
+      dispatch(
+        fetchAndStoreInstanceThreads(
+          `${fabricServer}/threads/${serviceName}/${serviceVersion}/${selectedInstanceID}`
+        )
       );
     }
-  }, [fabricServer, serviceName, serviceVersion, selectedInstanceID]);
+  }, [dispatch, fabricServer, serviceName, serviceVersion, selectedInstanceID]);
 
   const {
     filterString = "",

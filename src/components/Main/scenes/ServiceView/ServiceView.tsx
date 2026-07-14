@@ -6,8 +6,9 @@ import { useUrlState } from "components/withUrlState";
 import { useEffect } from "react";
 import { useIntl } from "react-intl";
 import { useLocation, useNavigate } from "react-router-dom";
+import { stopPollingAndPurgeInstanceMetrics } from "services/instance/metrics";
 import { reportError } from "services/notification";
-import { Actions } from "store/jumpstate";
+import store, { type AppDispatch } from "store";
 import type { ServiceInstance } from "types";
 import { orderBy } from "utils/collections";
 
@@ -34,7 +35,7 @@ function ServiceView({
     const locationState = location.state as { message?: string } | null;
     if (locationState && locationState.message) {
       // Disable polling and clear metrics cache
-      Actions.stopPollingAndPurgeInstanceMetrics();
+      (store.dispatch as AppDispatch)(stopPollingAndPurgeInstanceMetrics());
       // Display notification
       reportError(locationState.message);
       // Reset location state. Defer past the current commit: componentDidMount

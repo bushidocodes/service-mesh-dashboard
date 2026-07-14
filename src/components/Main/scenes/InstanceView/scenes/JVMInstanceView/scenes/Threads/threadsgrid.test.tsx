@@ -3,14 +3,15 @@ import { screen, within } from "@testing-library/react";
 import createTestStore from "json/createTestStore";
 import mockState from "json/mockReduxState";
 import { MemoryRouter } from "react-router-dom";
-import { Actions } from "store/jumpstate";
 import { renderWithIntl } from "utils/i18nTesting";
 
 // Components
 import ThreadsGrid from "./index";
 
-// Mock the jumpstate effect used in ThreadsGrid
-Actions.fetchAndStoreInstanceThreads = vi.fn();
+// Mock the threads fetch thunk used in ThreadsGrid
+vi.mock("services/instance/threads", () => ({
+  fetchAndStoreInstanceThreads: vi.fn(() => () => Promise.resolve())
+}));
 
 // Create a real test store (includes Jumpstate middleware) with mock data
 const store = createTestStore(mockState);

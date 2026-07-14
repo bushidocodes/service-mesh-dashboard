@@ -9,9 +9,10 @@ import type { RootState } from "types";
 
 /**
  * Real Redux store for unit tests. Uses the same reducers as production,
- * thunk middleware (fabric/dashboard AppThunks), and Jumpstate middleware
- * (so residual `Actions.*` / `getState` / Effects work) — but never attaches
- * redux-logger (noise in CI; logger removal is PR-18b / KD-18).
+ * thunk middleware (fabric/dashboard/instance AppThunks), and Jumpstate
+ * middleware (wires shim `getState`/`dispatch` for metrics utils; no Effect()
+ * registrations remain after PR-18a) — but never attaches redux-logger
+ * (noise in CI; logger removal is PR-18b / KD-18).
  *
  * `preloadedState` is intentionally loose: fixture JSON (`mockReduxState*`) is
  * structural test data that is not a perfect `RootState` (partial slices,

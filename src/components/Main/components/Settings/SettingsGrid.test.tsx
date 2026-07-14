@@ -1,11 +1,11 @@
 import { fireEvent, within } from "@testing-library/react";
 import createTestStore from "json/createTestStore";
 import * as state from "json/mockReduxState";
-import { Actions } from "store/jumpstate";
+import * as instanceSlice from "store/states/instance";
 import { mountWithIntl } from "utils/i18nTesting";
 import SettingsGrid from "./index";
 
-//import all necessary Action effect so the Actions object is set within this test harness
+// Import services so AppThunks / any residual wiring load in this test harness
 import "services/fabricMicroservices/index";
 import "services/instance/metrics/index";
 
@@ -85,7 +85,7 @@ describe("SettingsGrid component", () => {
   });
 
   test("Clear Cache opens confirmation dialog; Confirm clears metrics and closes", () => {
-    const clearMetrics = vi.spyOn(Actions, "clearMetrics");
+    const clearMetrics = vi.spyOn(instanceSlice, "clearMetrics");
     const { container } = mountWithIntl(
       <SettingsGrid />,
       createTestStore(mockState)
@@ -108,7 +108,7 @@ describe("SettingsGrid component", () => {
   });
 
   test("Clear Cache dialog Cancel closes without clearing metrics", () => {
-    const clearMetrics = vi.spyOn(Actions, "clearMetrics");
+    const clearMetrics = vi.spyOn(instanceSlice, "clearMetrics");
     const { container } = mountWithIntl(
       <SettingsGrid />,
       createTestStore(mockState)

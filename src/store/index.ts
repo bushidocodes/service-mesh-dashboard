@@ -22,10 +22,11 @@ import settings from "./states/settings";
 import threadsTable from "./states/threadsTable";
 
 // Create the Redux store using reducers and middlewares.
-// Thunk middleware is required for fabric/dashboard AppThunks (PR-17).
+// Thunk middleware is required for fabric/dashboard/instance AppThunks (PR-17/18a).
 // Immutable/serializable checks stay off until PR-18b restores full
 // getDefaultMiddleware with instance.metrics ignores. Jumpstate middleware
-// remains for residual instance/threads Effects.
+// remains only to wire shim getState/dispatch for metrics utils (no Effect()
+// registrations remain after PR-18a).
 const store = configureStore({
   reducer: {
     dashboards,
