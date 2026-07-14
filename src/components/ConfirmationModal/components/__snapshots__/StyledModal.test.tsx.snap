@@ -1,3 +1,42 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`StyledModal > matches snapshot 1`] = `<DocumentFragment />`;
+exports[`StyledModal > matches snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  display: none;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.85);
+  border: none;
+  border-radius: 3px;
+  color: rgb(242, 242, 242);
+  height: 400px;
+  margin: auto;
+  max-height: calc(100vh - 2rem);
+  max-width: calc(100vw - 2rem);
+  padding: 24px;
+  width: 500px;
+}
+
+.c0[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c0:focus-visible {
+  outline: 2px solid rgb(242, 242, 242);
+  outline-offset: 2px;
+}
+
+.c0::backdrop {
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+<dialog
+    class="c0"
+  />
+</DocumentFragment>
+`;

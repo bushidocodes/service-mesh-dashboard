@@ -195,14 +195,4 @@ export const GlobalFontStyles = createGlobalStyle`
     text-decoration: none;
   }
 
-  /* fixes modal vertical alignment in firefox
-  Sets the container size of react-modal too 100vh when react-modal is open */
-  .ReactModal__Overlay--after-open {
-    display: block;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-  }
 `;

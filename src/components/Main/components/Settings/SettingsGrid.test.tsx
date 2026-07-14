@@ -1,6 +1,7 @@
-import { within } from "@testing-library/react";
+import { fireEvent, within } from "@testing-library/react";
 import createTestStore from "json/createTestStore";
 import * as state from "json/mockReduxState";
+import { Actions } from "store/jumpstate";
 import { mountWithIntl } from "utils/i18nTesting";
 import SettingsGrid from "./index";
 
@@ -81,5 +82,48 @@ describe("SettingsGrid component", () => {
     expect(
       within(container).getByRole("button", { name: "Clear Cache" })
     ).toBeInTheDocument();
+  });
+
+  test("Clear Cache opens confirmation dialog; Confirm clears metrics and closes", () => {
+    const clearMetrics = vi.spyOn(Actions, "clearMetrics");
+    const { container } = mountWithIntl(
+      <SettingsGrid />,
+      createTestStore(mockState)
+    );
+
+    const dialog = container.querySelector("dialog");
+    expect(dialog).not.toBeNull();
+    expect(dialog).not.toHaveAttribute("open");
+
+    fireEvent.click(
+      within(container).getByRole("button", { name: "Clear Cache" })
+    );
+    expect(dialog).toHaveAttribute("open");
+
+    fireEvent.click(within(container).getByRole("button", { name: "Confirm" }));
+    expect(clearMetrics).toHaveBeenCalledTimes(1);
+    expect(dialog).not.toHaveAttribute("open");
+
+    clearMetrics.mockRestore();
+  });
+
+  test("Clear Cache dialog Cancel closes without clearing metrics", () => {
+    const clearMetrics = vi.spyOn(Actions, "clearMetrics");
+    const { container } = mountWithIntl(
+      <SettingsGrid />,
+      createTestStore(mockState)
+    );
+
+    fireEvent.click(
+      within(container).getByRole("button", { name: "Clear Cache" })
+    );
+    const dialog = container.querySelector("dialog");
+    expect(dialog).toHaveAttribute("open");
+
+    fireEvent.click(within(container).getByRole("button", { name: "Cancel" }));
+    expect(clearMetrics).not.toHaveBeenCalled();
+    expect(dialog).not.toHaveAttribute("open");
+
+    clearMetrics.mockRestore();
   });
 });
