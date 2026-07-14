@@ -11,7 +11,6 @@ import {
   slugify,
   trimID
 } from "./index";
-import "jest-styled-components";
 
 describe("trimID", () => {
   test("returns an empty string if not provided an ID", () => {

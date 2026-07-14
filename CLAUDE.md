@@ -47,11 +47,12 @@ transform pipeline. Key points:
 - `config/jest/jestSetup.js` + `jestTestFrameworkSetup.js` are the setup files
   (dir name kept for now); `config/jest/rtlWrapper.js` is the ESM
   StyleSheetManager render wrapper, aliased over `@testing-library/react`.
-- `jest-styled-components` is still used (snapshot CSS serializer +
-  `toHaveStyleRule`). For its `toHaveStyleRule` matcher to work it needs the
-  `sc-` component-id class, so `babel-plugin-styled-components` runs with
-  `displayName: false` (and `minify: false`) in tests; it is inlined via
-  `server.deps.inline` so it shares the one styled-components instance.
+- `jest-styled-components` is still used for the **snapshot CSS serializer**
+  only (style assertions use `@testing-library/jest-dom`'s `toHaveStyle`).
+  `babel-plugin-styled-components` runs with `displayName: false` (and
+  `minify: false`) in tests so componentIds keep the `sc-` prefix and
+  snapshot spacing stays stable; it is inlined via `server.deps.inline` so
+  it shares the one styled-components instance.
 
 ## End-to-end tests (Playwright)
 

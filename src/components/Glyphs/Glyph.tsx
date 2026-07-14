@@ -114,6 +114,9 @@ const glyphs = {
   ViewCollapse
 };
 
+/** Registered glyph names (keys of the internal map). Used by the registry smoke test. */
+export const GLYPH_NAMES = Object.keys(glyphs);
+
 interface GlyphProps {
   glyphColor?: string;
   name?: string;

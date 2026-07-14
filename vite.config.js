@@ -50,13 +50,11 @@ export default defineConfig({
           "babel-plugin-styled-components",
           isTest
             ? // In tests: don't minify CSS (so the jest-styled-components
-              // serializer emits the same spacing the old Jest pipeline did),
-              // and disable displayName so the generated componentId keeps its
-              // `sc-` prefix. jest-styled-components' toHaveStyleRule only
-              // treats a class as styled if it matches /(_|-)+sc-.+|^sc-/; the
-              // displayName form (`Copyright-bhDgoP`) drops `sc-` and breaks
-              // the matcher, while snapshots normalise the class to `c0`
-              // either way.
+              // snapshot serializer emits the same spacing the old Jest
+              // pipeline did), and disable displayName so the generated
+              // componentId keeps its `sc-` prefix (displayName form
+              // `Copyright-bhDgoP` drops `sc-`). Snapshots normalise the
+              // class to `c0` either way.
               { minify: false, displayName: false }
             : {}
         ]
@@ -76,9 +74,9 @@ export default defineConfig({
   // bare imports like `import x from "utils/head"` keep working.
   resolve: {
     // Force a single instance of these so test helpers that reach into
-    // styled-components/React internals (jest-styled-components reads
-    // styled-components' __PRIVATE__ stylesheet) see the same module the
-    // components under test use — otherwise toHaveStyleRule finds an empty sheet.
+    // styled-components/React internals (jest-styled-components snapshot
+    // serializer reads styled-components' __PRIVATE__ stylesheet) see the
+    // same module the components under test use.
     dedupe: ["styled-components", "react", "react-dom"],
     alias: {
       components: src("components"),
@@ -157,7 +155,7 @@ export default defineConfig({
     // externalizes node_modules by default, which would hand it a second
     // styled-components instance (CJS build) with its own empty sheet. Inlining
     // it routes that require through Vite's resolver to the same instance the
-    // components use, so toHaveStyleRule reads the populated stylesheet.
+    // components use so the snapshot CSS serializer sees populated rules.
     server: {
       deps: {
         inline: ["jest-styled-components"]

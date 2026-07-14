@@ -8,6 +8,6 @@ describe("ItemDisplay", () => {
   });
   it("allows flex value to be overridden", () => {
     const { container } = render(<ItemDisplay flex="0 1 33%" />);
-    expect(container.firstChild).toHaveStyleRule("flex", "0 1 33%");
+    expect(container.firstChild).toHaveStyle({ flex: "0 1 33%" });
   });
 });
