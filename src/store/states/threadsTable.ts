@@ -29,8 +29,9 @@ const threadsTable = State({
       const thread = threads[id];
       return {
         name: thread.thread,
-        // Object.keys yields strings; domain type uses number — keep runtime string.
-        id: id as unknown as number,
+        // Object.keys yields strings; coerce so store matches ThreadsTableItem.id
+        // (number) and the UI's Number(id) usage.
+        id: Number(id),
         priority: thread.priority,
         state: thread.state,
         daemon: thread.daemon,
