@@ -2,13 +2,7 @@
 
 exports[`FabricHeaderContent > matches snapshot 1`] = `
 <DocumentFragment>
-  .c6 {
-  margin: 0 0 4px 24px;
-  font-size: 11px;
-  color: rgb(255, 255, 255);
-}
-
-.c5 {
+  .c5 {
   transform: scale(1);
 }
 
@@ -23,6 +17,12 @@ exports[`FabricHeaderContent > matches snapshot 1`] = `
 
 .c4:not(:root) {
   overflow: visible;
+}
+
+.c6 {
+  margin: 0 0 4px 24px;
+  font-size: 11px;
+  color: rgb(255, 255, 255);
 }
 
 .c3 {

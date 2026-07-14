@@ -1,16 +1,16 @@
 import { screen, within } from "@testing-library/react";
 // Utilities
+import createTestStore from "json/createTestStore";
 import mockState from "json/mockReduxState";
 import { Provider } from "react-redux";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
-import configureStore from "redux-mock-store";
 import { renderWithIntl } from "utils/i18nTesting";
 
 // Components
 import Explorer from "./index";
 
-// Create a mock store and initialize with mock data
-const store = configureStore()(mockState);
+// Create a real test store and initialize with mock data
+const store = createTestStore(mockState);
 
 // Wrap Explorer in Memory Router to mock route props (history, match, location)
 const RouterWrap = (

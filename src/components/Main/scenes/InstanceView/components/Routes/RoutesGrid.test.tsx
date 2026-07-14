@@ -1,30 +1,32 @@
 import { fireEvent, screen, within } from "@testing-library/react";
 // Utilities
+import createTestStore from "json/createTestStore";
 import mockState from "json/mockReduxState";
 import { MemoryRouter } from "react-router-dom";
-import configureMockStore from "redux-mock-store";
 import { renderWithIntl } from "utils/i18nTesting";
 
 // Components
 import RoutesGrid from "./index";
 
-// Create a mock store and initialize with mock data
-const store = configureMockStore()(mockState);
+// Create a real test store and initialize with mock data
+const store = createTestStore(mockState);
 
 describe("RoutesGrid View", () => {
   beforeEach(() => {
     renderWithIntl(
       <MemoryRouter>
-        <RoutesGrid store={store} />
-      </MemoryRouter>
+        <RoutesGrid />
+      </MemoryRouter>,
+      store
     );
   });
 
   test("matches snapshot", () => {
     const { asFragment } = renderWithIntl(
       <MemoryRouter>
-        <RoutesGrid store={store} />
-      </MemoryRouter>
+        <RoutesGrid />
+      </MemoryRouter>,
+      store
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -43,13 +45,14 @@ describe("RoutesGrid View", () => {
   });
 
   test("renders NotFoundError when there are no routes", () => {
-    // create state with no metrics and reconfigure mock store with new state
+    // create state with no metrics and reconfigure test store with new state
     const state = Object.assign({}, mockState, { instance: { metrics: {} } });
-    const store = configureMockStore()(state);
+    const emptyStore = createTestStore(state);
     renderWithIntl(
       <MemoryRouter>
-        <RoutesGrid store={store} />
-      </MemoryRouter>
+        <RoutesGrid />
+      </MemoryRouter>,
+      emptyStore
     );
     // NOTE: original asserted one <NotFoundError/> instance. NotFoundError
     // renders its errorMsg as text, so we assert the rendered message instead.

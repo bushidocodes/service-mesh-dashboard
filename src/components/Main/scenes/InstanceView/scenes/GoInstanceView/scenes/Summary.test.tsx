@@ -1,13 +1,13 @@
 import { screen, within } from "@testing-library/react";
+import createTestStore from "json/createTestStore";
 import mockState from "json/mockReduxStateGO";
-import configureStore from "redux-mock-store";
 
 import { renderWithIntl } from "utils/i18nTesting";
 import type { MockInstance } from "vitest";
 
 import SummaryGrid from "./Summary";
 
-const mockStore = configureStore()(mockState);
+const mockStore = createTestStore(mockState);
 
 // The Uptime readout derives its value from `Date.now() - startTime`, so without
 // a frozen clock the rendered output (and thus the snapshot) drifts second to

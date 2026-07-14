@@ -1,8 +1,8 @@
 import { screen } from "@testing-library/react";
+import createTestStore from "json/createTestStore";
 import mockState from "json/mockReduxState";
 import { Provider } from "react-redux";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
-import configureMockStore from "redux-mock-store";
 import { mountWithIntl, renderWithIntl } from "utils/i18nTesting";
 // utils
 import { getFabricServer } from "../../utils/head";
@@ -10,7 +10,7 @@ import { getFabricServer } from "../../utils/head";
 // components
 import AppHeader from "./AppHeader";
 
-const store = configureMockStore()(mockState);
+const store = createTestStore(mockState);
 
 const anAppHeader = (
   <Provider store={store}>
