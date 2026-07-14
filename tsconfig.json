@@ -12,9 +12,10 @@
     "lib": ["ES2025", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "moduleResolution": "bundler",
-    "jsx": "react",
-    "jsxFactory": "React.createElement",
-    "jsxFragmentFactory": "React.Fragment",
+    // Automatic JSX runtime (React 17+): compiles to jsx()/jsxs() from
+    // react/jsx-runtime instead of React.createElement, so React need not be
+    // in scope for JSX and the "outdated JSX transform" warning goes away.
+    "jsx": "react-jsx",
 
     // Mirror webpack/Vite/Jest's `resolve.modules: ["src", ...]` so bare imports
     // like `import x from "utils/head"` or `components/Icon` type-resolve. TS 6

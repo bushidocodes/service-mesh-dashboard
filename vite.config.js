@@ -50,16 +50,15 @@ export default defineConfig({
         if (!id.endsWith(".js")) return null;
         return transformWithEsbuild(code, id, {
           loader: "jsx",
-          // Classic transform → React.createElement; matches React 16.
-          jsx: "transform",
-          jsxFactory: "React.createElement",
-          jsxFragment: "React.Fragment"
+          // Automatic runtime → jsx()/jsxs() from react/jsx-runtime (React 17+).
+          jsx: "automatic"
         });
       }
     },
     react({
-      // React 16 ships classic JSX transform only — no jsx-runtime package.
-      jsxRuntime: "classic",
+      // Default for React 17+; emits the modern jsx-runtime import instead of
+      // React.createElement (avoids React 19's "outdated JSX transform" warning).
+      jsxRuntime: "automatic",
       // Run babel-plugin-styled-components so display names and
       // the styled-components DevTools work in development. In tests, disable
       // CSS minification so the jest-styled-components serializer emits the same
@@ -93,14 +92,13 @@ export default defineConfig({
   // JSX. The project predates the .jsx extension convention, so virtually
   // every source file contains JSX but is named .js.
   optimizeDeps: {
-    // NOTE: do NOT exclude react/jsx-runtime here. The app itself uses the
-    // classic transform (jsxRuntime: "classic" below), but third-party deps
-    // (react-router-dom v7, etc.) are shipped compiled with the *automatic*
-    // runtime and import { jsx, jsxs } from "react/jsx-runtime". React 19
-    // provides that module, so it must be pre-bundled like any other dep.
-    // Excluding it made Vite 8's Rolldown optimizer serve it as a CJS→ESM
-    // wrapper with only a default export, so lazily-loaded dashboard chunks
-    // threw `does not provide an export named 'jsx'` and rendered empty grids.
+    // NOTE: do NOT exclude react/jsx-runtime here. The app and third-party
+    // deps (react-router-dom v7, etc.) import { jsx, jsxs } from
+    // "react/jsx-runtime". React 19 provides that module, so it must be
+    // pre-bundled like any other dep. Excluding it made Vite 8's Rolldown
+    // optimizer serve it as a CJS→ESM wrapper with only a default export, so
+    // lazily-loaded dashboard chunks threw `does not provide an export named
+    // 'jsx'` and rendered empty grids.
     esbuildOptions: {
       loader: { ".js": "jsx" }
     }
