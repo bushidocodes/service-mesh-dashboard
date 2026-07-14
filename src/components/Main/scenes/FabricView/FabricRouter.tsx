@@ -1,9 +1,8 @@
 import { LazyLoader } from "components/LazyLoader";
 import { Loading } from "components/Loading";
 import { Suspense } from "react";
-import { connect } from "react-redux";
 import { Route, Routes } from "react-router-dom";
-import type { RootState, Service } from "types";
+import { useAppSelector } from "store/hooks";
 import FabricGrid from "./components/FabricGrid";
 import InstanceRouteElement from "./InstanceRouteElement";
 import ServiceRouteElement from "./ServiceRouteElement";
@@ -12,10 +11,6 @@ import generateStatusRoutes from "./utils/generateStatusRoutes";
 const SettingsGrid = LazyLoader({
   loader: () => import("components/Main/components/Settings")
 });
-
-interface FabricRouterProps {
-  services?: Record<string, Service>;
-}
 
 /**
  * Fabric Router is a top-level router that sits between the root container and the Instance Router
@@ -27,7 +22,9 @@ interface FabricRouterProps {
  * @export
  * @returns JSX.Element
  */
-function FabricRouter({ services }: FabricRouterProps) {
+function FabricRouter() {
+  const services = useAppSelector((state) => state.fabric.services);
+
   return (
     <Suspense fallback={<Loading />}>
       <Routes>
@@ -54,8 +51,4 @@ function FabricRouter({ services }: FabricRouterProps) {
   );
 }
 
-function mapStateToProps(state: RootState) {
-  return { services: state.fabric.services };
-}
-
-export default connect(mapStateToProps)(FabricRouter);
+export default FabricRouter;

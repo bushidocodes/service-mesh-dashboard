@@ -60,9 +60,9 @@ const mockServices = Object.values({
   }
 });
 
-// Wrap Fabric Grid in Memory Router to mock route props (history, match, location).
+// Wrap Fabric Grid in Memory Router so useLocation / useUrlState work under test.
 // FabricGrid reads its display/group/sort/search state from the URL query string
-// (via the withUrlState HOC), so the previous enzyme `setUrlState(...)` calls are
+// (via useUrlState), so the previous enzyme `setUrlState(...)` calls are
 // replaced by rendering at a route whose query string encodes the desired state.
 const RouterWrap = (route = ["/"], services = mockServices) => {
   return (
