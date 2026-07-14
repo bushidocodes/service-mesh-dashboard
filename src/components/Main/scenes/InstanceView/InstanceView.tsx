@@ -1,18 +1,12 @@
 import { LazyLoader } from "components/LazyLoader";
 import { Loading } from "components/Loading";
 import { Suspense, useEffect } from "react";
-import { connect } from "react-redux";
 import { selectInstance } from "services/fabricMicroservices";
-import type { AppDispatch } from "store";
-import type { RootState } from "types";
+import { useAppDispatch, useAppSelector } from "store/hooks";
 
 interface InstanceViewProps {
-  dispatch: AppDispatch;
   instanceID: string;
   runtime: string;
-  // string | null mirrors the fabric store slice (selected* default to null).
-  selectedInstanceID?: string | null;
-  selectedServiceSlug?: string | null;
   serviceName?: string;
   serviceVersion?: string;
   serviceSlug?: string;
@@ -37,14 +31,15 @@ const JVMRouter = LazyLoader({
  * @param {Object} props - see propTypes
  * @returns JSX.Element
  */
-function InstanceView({
-  dispatch,
-  instanceID,
-  runtime,
-  selectedInstanceID,
-  selectedServiceSlug,
-  serviceSlug
-}: InstanceViewProps) {
+function InstanceView({ instanceID, runtime, serviceSlug }: InstanceViewProps) {
+  const dispatch = useAppDispatch();
+  const selectedInstanceID = useAppSelector(
+    (state) => state.fabric.selectedInstanceID
+  );
+  const selectedServiceSlug = useAppSelector(
+    (state) => state.fabric.selectedServiceSlug
+  );
+
   useEffect(() => {
     if (
       serviceSlug &&
@@ -80,11 +75,4 @@ function InstanceView({
   );
 }
 
-function mapStateToProps(state: RootState) {
-  return {
-    selectedServiceSlug: state.fabric.selectedServiceSlug,
-    selectedInstanceID: state.fabric.selectedInstanceID
-  };
-}
-
-export default connect(mapStateToProps)(InstanceView);
+export default InstanceView;
