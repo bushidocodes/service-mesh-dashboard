@@ -142,6 +142,16 @@
           }
         }
       }
+    },
+    {
+      "includes": ["src/store/**/*.{ts,tsx}", "!src/store/**/*.test.{ts,tsx}"],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noExplicitAny": "error"
+          }
+        }
+      }
     }
   ]
 }

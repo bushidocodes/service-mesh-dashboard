@@ -12,29 +12,44 @@
 // (`dispatch` is exported too for completeness — jumpstate exported it — even
 // though no call site imports it directly.)
 
+import type { Middleware } from "redux";
 import type { RootState } from "types";
+
+/** Minimal action shape used by the jumpstate shim (flat `type`, optional token). */
+export type JumpstateAction = {
+  type?: string;
+  payload?: unknown;
+  _token?: number;
+};
+
+type ActionCreator = (payload?: unknown) => unknown;
+type EffectHandler = (action: JumpstateAction) => void;
+type DispatchFn = (...args: unknown[]) => unknown;
+type GetStateFn = () => RootState;
 
 // `Actions` is a shared singleton object. State methods and Effects both attach
 // themselves here, and the services layer references it directly. Keeping it a
 // single mutable module export preserves jumpstate's global-singleton pattern.
-export const Actions: Record<string, (payload?: any) => any> = {};
+export const Actions: Record<string, ActionCreator> = {};
 
 // Effect handlers, keyed by action type. The middleware invokes the matching
 // handler after an action of that type passes through the reducers.
-const effectRegistry: Record<string, (action: any) => void> = {};
+const effectRegistry: Record<string, EffectHandler> = {};
 
 // `dispatch`/`getState` resolve to the real redux store functions once
 // CreateJumpstateMiddleware() has been applied. Until then they warn, matching
 // jumpstate's behaviour when used without its middleware.
-const warn = () =>
+const warn = (): void => {
   console.warn(
     "jumpstate shim: getState/dispatch used before CreateJumpstateMiddleware() " +
       "was applied to the store."
   );
-let resolvedDispatch: (...args: any[]) => any = warn;
-let resolvedGetState: (...args: any[]) => any = warn;
+};
+let resolvedDispatch: DispatchFn = warn as DispatchFn;
+let resolvedGetState: GetStateFn = warn as GetStateFn;
 
-export const dispatch = (...args: any[]): any => resolvedDispatch(...args);
+export const dispatch = (...args: unknown[]): unknown =>
+  resolvedDispatch(...args);
 // getState returns the full Redux tree; typing it as RootState gives the
 // services/components that read `getState().slice.field` real type safety.
 export const getState = (): RootState => resolvedGetState();
@@ -45,15 +60,20 @@ export const getState = (): RootState => resolvedGetState();
  * that dispatches `{ type: methodName, payload }`. Each method is therefore both
  * an action-creator and that action's reducer case — jumpstate's core idea.
  *
- * @param {Object} config - `initial` plus one or more `(state, payload)` methods
- * @returns {Function} a redux reducer
+ * @param config - `initial` plus one or more `(state, payload)` methods
+ * @returns a redux reducer
  */
-export function State(config: Record<string, any>) {
+export function State(config: {
+  initial: unknown;
+  [methodName: string]: unknown;
+}) {
   const { initial, ...methods } = config;
 
-  const reducer = (state = initial, action: any = {}) => {
-    const handler = methods[action.type];
-    return handler ? handler(state, action.payload) : state;
+  const reducer = (state = initial, action: JumpstateAction = {}) => {
+    const handler = action.type != null ? methods[action.type] : undefined;
+    return typeof handler === "function"
+      ? (handler as (s: unknown, p: unknown) => unknown)(state, action.payload)
+      : state;
   };
 
   Object.keys(methods).forEach((name) => {
@@ -72,7 +92,7 @@ export function State(config: Record<string, any>) {
 // inside `dispatch` (see the middleware), so the result is available by the time
 // `dispatch` returns.
 let effectToken = 0;
-const effectResults: Record<number, any> = {};
+const effectResults: Record<number, unknown> = {};
 
 /**
  * Register an async side-effect. `Actions.<name>(payload)` dispatches an action
@@ -80,11 +100,16 @@ const effectResults: Record<number, any> = {};
  * dispatch)`. The call returns a promise that resolves with `fn`'s return value
  * (jumpstate effects are always thenable, even though no call site awaits them).
  *
- * @param {string} name
- * @param {Function} fn - `(payload, getState, dispatch) => any`
- * @returns {Function} the `Actions.<name>` dispatcher
+ * The handler type is deliberately loose (`...args: never[]`) so existing service
+ * effect signatures (which often only declare a payload param, or reuse the 2nd
+ * slot for other defaults) stay assignable without `any`. At the call site the
+ * shim always passes `(payload, getState, dispatch)`.
+ *
+ * @param name
+ * @param fn - `(payload, getState, dispatch) => unknown`
+ * @returns the `Actions.<name>` dispatcher
  */
-export function Effect(name: string, fn: (...args: any[]) => any) {
+export function Effect(name: string, fn: (...args: never[]) => unknown) {
   if (typeof name !== "string") {
     throw new Error(
       'Effect requires a string name, e.g. Effect("myEffect", fn).'
@@ -97,7 +122,11 @@ export function Effect(name: string, fn: (...args: any[]) => any) {
   }
 
   effectRegistry[name] = (action) => {
-    const result = fn(action.payload, getState, dispatch);
+    const result = fn(
+      action.payload as never,
+      getState as never,
+      dispatch as never
+    );
     if (action._token != null) {
       effectResults[action._token] = result;
     }
@@ -119,15 +148,17 @@ export function Effect(name: string, fn: (...args: any[]) => any) {
  * registered Effect for an action's type after it has passed through the
  * reducers. Mirrors jumpstate's middleware (minus the unused Hook registry).
  */
-export function CreateJumpstateMiddleware() {
-  return (store: any) => {
-    resolvedDispatch = store.dispatch;
-    resolvedGetState = store.getState;
-    return (next: (action: any) => any) => (action: any) => {
+export function CreateJumpstateMiddleware(): Middleware {
+  return (store) => {
+    resolvedDispatch = store.dispatch as DispatchFn;
+    resolvedGetState = store.getState as GetStateFn;
+    return (next) => (action) => {
       const result = next(action);
-      const effect = effectRegistry[action.type];
+      const typedAction = action as JumpstateAction;
+      const effect =
+        typedAction.type != null ? effectRegistry[typedAction.type] : undefined;
       if (effect) {
-        effect(action);
+        effect(typedAction);
       }
       return result;
     };
