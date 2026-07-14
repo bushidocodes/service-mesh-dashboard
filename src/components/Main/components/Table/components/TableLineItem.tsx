@@ -14,14 +14,13 @@ import {
   SparklinesLine,
   SparklinesReferenceLine
 } from "components/Sparklines";
-import { Component } from "react";
+import { useEffect, useState } from "react";
+import { useIntl } from "react-intl";
 import styled from "styled-components";
 import { blurTableRow } from "utils";
-import { injectIntl } from "utils/injectIntl";
 
 interface TableLineItemProps {
   errorPercent: string;
-  intl: any;
   item: string;
   latency50: number;
   latency99: number;
@@ -30,10 +29,6 @@ interface TableLineItemProps {
   requestsPerSecond_dygraph: Record<string, unknown>;
   requestsPerSecond_sparkline: number[];
   verb?: string;
-}
-
-interface TableLineItemState {
-  isOpen: boolean;
 }
 
 // this extra flex container is necessary to truncate route name in chrome browser
@@ -51,128 +46,129 @@ const FlexParent = styled.div`
 
 /**
  * A row of data in Functions and Routes table
- * @export
- * @class TableLineItem
- * @extends {Component}
  */
-class TableLineItem extends Component<TableLineItemProps, TableLineItemState> {
-  state = {
-    isOpen: false
-  };
+function TableLineItem({
+  errorPercent,
+  item,
+  latency50,
+  latency99,
+  relativeReqPercent,
+  requests,
+  requestsPerSecond_dygraph,
+  requestsPerSecond_sparkline,
+  verb
+}: TableLineItemProps) {
+  const intl = useIntl();
+  const [isOpen, setIsOpen] = useState(false);
 
   // In IE10, IE11, and Edge browser, SVG elements are added to tab order by default and tabIndex is ignored.
   // setting focusable: "false" attribute to svg will make svg unfocusable.
   // Sparkline module returns its own svg element so the attribute is set here instead of being
   // set directly on svg.
-  componentDidMount() {
-    const SparklineSVG = document.querySelectorAll("svg[preserveAspectRatio]");
-    SparklineSVG.forEach((svg) => svg.setAttribute("focusable", "false"));
-  }
+  useEffect(() => {
+    const sparklineSVG = document.querySelectorAll("svg[preserveAspectRatio]");
+    sparklineSVG.forEach((svg) => svg.setAttribute("focusable", "false"));
+  }, []);
 
-  toggleDrawer = (e?: any) => {
+  const toggleDrawer = (e?: any) => {
     if (e) {
       blurTableRow(e);
     }
-    this.setState({ isOpen: !this.state.isOpen });
+    setIsOpen((open) => !open);
   };
 
-  render() {
-    return (
-      <TableRow
-        selectable
-        data-testid="data-row"
-        isOpen={this.state.isOpen}
-        onClick={(evt) => this.toggleDrawer(evt)}
-        onKeyDown={(evt) => {
-          if (evt.keyCode === 13) {
-            evt.preventDefault();
-            this.toggleDrawer();
-          }
-        }}
-        role="link"
-      >
-        <TableColVizBar>
-          <FlexParent>
-            {this.props.verb && (
-              <Badge>
-                <Icon>
-                  <Glyph name={this.props.verb} />
-                </Icon>
-                {this.props.verb}
-              </Badge>
-            )}
-            <div>{this.props.item}</div>
-          </FlexParent>
-          <VizBar>
-            <VizFill
-              width={this.props.relativeReqPercent}
-              colorDegree={Number(this.props.errorPercent)}
-            />
-          </VizBar>
-        </TableColVizBar>
-        <SparklineCol>
-          <Sparklines
-            data={this.props.requestsPerSecond_sparkline}
-            height={32}
-            preserveAspectRatio="xMaxYMin"
-          >
-            <SparklinesLine
-              style={{
-                stroke: "currentColor",
-                strokeWidth: 1,
-                fill: "none"
-              }}
-            />
-            <SparklinesReferenceLine
-              style={{
-                stroke: "grey",
-                opacity: "0.4"
-              }}
-              type="mean"
-            />
-          </Sparklines>
-        </SparklineCol>
-        <TableCol style={{ textAlign: "right" }} data-testid="route-requests">
-          {this.props.requests && this.props.requests.toLocaleString()}
-        </TableCol>
-        <TableCol
-          style={{ textAlign: "right" }}
-          errorPercent={this.props.errorPercent}
-        >
-          {this.props.errorPercent}%
-        </TableCol>
-        <TableCol
-          style={{
-            textAlign: "right",
-            display: "flex",
-            flexDirection: "column"
-          }}
-        >
-          <div>{this.props.latency50.toLocaleString()} ms</div>
-          <div>{this.props.latency99.toLocaleString()} ms</div>
-        </TableCol>
-        <TableDrawerCollapse
-          isOpened={this.state.isOpen}
-          onClick={(evt) => {
-            evt.stopPropagation();
-            blurTableRow(evt);
-          }}
-        >
-          <GMLineChart
-            dygraph={this.props.requestsPerSecond_dygraph}
-            title={this.props.intl.formatMessage(
-              {
-                id: "tableLineItem.requests",
-                defaultMessage: "Requests over Time for {item}",
-                description: "Line chart title"
-              },
-              { item: this.props.item }
-            )}
+  return (
+    <TableRow
+      selectable
+      data-testid="data-row"
+      isOpen={isOpen}
+      onClick={(evt) => toggleDrawer(evt)}
+      onKeyDown={(evt) => {
+        if (evt.keyCode === 13) {
+          evt.preventDefault();
+          toggleDrawer();
+        }
+      }}
+      role="link"
+    >
+      <TableColVizBar>
+        <FlexParent>
+          {verb && (
+            <Badge>
+              <Icon>
+                <Glyph name={verb} />
+              </Icon>
+              {verb}
+            </Badge>
+          )}
+          <div>{item}</div>
+        </FlexParent>
+        <VizBar>
+          <VizFill
+            width={relativeReqPercent}
+            colorDegree={Number(errorPercent)}
           />
-        </TableDrawerCollapse>
-      </TableRow>
-    );
-  }
+        </VizBar>
+      </TableColVizBar>
+      <SparklineCol>
+        <Sparklines
+          data={requestsPerSecond_sparkline}
+          height={32}
+          preserveAspectRatio="xMaxYMin"
+        >
+          <SparklinesLine
+            style={{
+              stroke: "currentColor",
+              strokeWidth: 1,
+              fill: "none"
+            }}
+          />
+          <SparklinesReferenceLine
+            style={{
+              stroke: "grey",
+              opacity: "0.4"
+            }}
+            type="mean"
+          />
+        </Sparklines>
+      </SparklineCol>
+      <TableCol style={{ textAlign: "right" }} data-testid="route-requests">
+        {requests && requests.toLocaleString()}
+      </TableCol>
+      <TableCol style={{ textAlign: "right" }} errorPercent={errorPercent}>
+        {errorPercent}%
+      </TableCol>
+      <TableCol
+        style={{
+          textAlign: "right",
+          display: "flex",
+          flexDirection: "column"
+        }}
+      >
+        <div>{latency50.toLocaleString()} ms</div>
+        <div>{latency99.toLocaleString()} ms</div>
+      </TableCol>
+      <TableDrawerCollapse
+        isOpened={isOpen}
+        onClick={(evt) => {
+          evt.stopPropagation();
+          blurTableRow(evt);
+        }}
+      >
+        <GMLineChart
+          dygraph={requestsPerSecond_dygraph}
+          title={intl.formatMessage(
+            {
+              id: "tableLineItem.requests",
+              defaultMessage: "Requests over Time for {item}",
+              description: "Line chart title"
+            },
+            { item }
+          )}
+        />
+      </TableDrawerCollapse>
+    </TableRow>
+  );
 }
 
-export default injectIntl(TableLineItem);
+export default TableLineItem;

@@ -1,8 +1,9 @@
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
+import createTestStore from "json/createTestStore";
 import React from "react";
+import { MemoryRouter, Route, Routes } from "react-router-dom";
+import { renderWithIntl } from "utils/i18nTesting";
 
-// Use named export {GMGrid} for unconnected component for tests
-// Connected Components section from https://redux.js.org/docs/recipes/WritingTests.html
 import { GMGrid } from "./GMGrid";
 
 // GMGrid maps a dashboard's JSON config to chart components inside an
@@ -67,186 +68,186 @@ vi.mock("react-grid-layout", async () => {
   };
 });
 
-let props = {
-  dashboard: {
-    name: "Go",
-    runtime: "GO",
-    summaryCard: {
-      icon: "Go",
-      chart: {
-        type: "value",
-        dataAttribute: "go_metrics/runtime/alloc_bytes"
-      },
-      lines: [
-        {
-          name: "Heap Used",
-          value: [
-            {
-              type: "latest",
-              value: "go_metrics/runtime/alloc_bytes",
-              baseUnit: "B",
-              resultUnit: "MB",
-              precision: 3
-            },
-            { type: "string", value: "MB" }
-          ]
-        }
-      ]
+const dashboard = {
+  name: "Go",
+  runtime: "GO",
+  summaryCard: {
+    icon: "Go",
+    chart: {
+      type: "value",
+      dataAttribute: "go_metrics/runtime/alloc_bytes"
     },
-    grid: {
-      breakpoints: { lg: 1200, md: 996, sm: 768 },
-      cols: { lg: 12, md: 8, sm: 4 },
-      layouts: {
-        lg: [
-          { i: "Heap", x: 0, y: 0, w: 6, h: 9, minW: 4, minH: 5 },
-          { i: "Goroutines", x: 6, y: 0, w: 6, h: 9, minW: 4, minH: 5 }
-        ],
-        md: [
-          { i: "Heap", x: 0, y: 0, w: 8, h: 9, minW: 4, minH: 5 },
-          { i: "Goroutines", x: 0, y: 9, w: 8, h: 9, minW: 4, minH: 5 }
-        ],
-        sm: [
-          { i: "Heap", x: 0, y: 0, w: 6, h: 9, minW: 4, minH: 5 },
-          { i: "Goroutines", x: 6, y: 0, w: 6, h: 9, minW: 4, minH: 5 }
+    lines: [
+      {
+        name: "Heap Used",
+        value: [
+          {
+            type: "latest",
+            value: "go_metrics/runtime/alloc_bytes",
+            baseUnit: "B",
+            resultUnit: "MB",
+            precision: 3
+          },
+          { type: "string", value: "MB" }
         ]
-      },
-      rowHeight: 60
-    },
-    charts: [
-      {
-        key: "Requests",
-        title: "Requests",
-        type: "GMTable",
-        data: {
-          headers: ["Requests", "Success"],
-          rows: [
-            ["http", "http/requests", "http/success"],
-            ["https", "https/requests", "https/success"]
-          ]
-        }
-      },
-      {
-        key: "Response Status Codes",
-        title: "Response Status Codes",
-        type: "GMBasicMetrics",
-        data: {
-          detailLines: [
-            ["2XX", "status/2XX", "primary", "status/2XX", "value"],
-            ["200", "status/200", "primary", "status/200", "value"],
-            ["4XX", "status/4XX", "normal", "status/4XX", "value"],
-            ["400", "status/400", "normal", "status/400", "value"],
-            ["499", "status/499", "normal", "status/499", "value"],
-            ["5XX", "status/5XX", "normal", "status/5XX", "value"],
-            ["500", "status/500", "normal", "status/500", "value"]
-          ]
-        }
-      },
-      {
-        key: "Heap",
-        title: "Heap",
-        type: "GMLineChart",
-        data: {
-          detailLines: [
-            [
-              { type: "string", value: "Garbage Collection Runs:" },
-              {
-                type: "latest",
-                value: "go_metrics/runtime/total_gc_runs",
-                precision: 3
-              }
-            ],
-            [
-              { type: "string", value: "Total GC Pause:" },
-              {
-                type: "latest",
-                value: "go_metrics/runtime/total_gc_pause_ns",
-                precision: 3,
-                baseUnit: "ns",
-                resultUnit: "ms"
-              },
-              { type: "string", value: "ms" }
-            ]
-          ],
-          timeseries: [
-            {
-              type: "value",
-              attribute: "go_metrics/runtime/alloc_bytes",
-              label: "Go Heap Used (MB)",
-              precision: 0,
-              baseUnit: "B",
-              resultUnit: "MB"
-            }
-          ]
-        }
-      },
-      {
-        key: "Goroutines",
-        title: "Goroutines",
-        type: "GMLineChart",
-        data: {
-          timeseries: [
-            {
-              type: "value",
-              attribute: "go_metrics/runtime/num_goroutines",
-              label: "# of allocated goroutines"
-            }
-          ]
-        }
       }
     ]
   },
-  match: {
-    isExact: true,
-    params: { dashboardName: "go" },
-    path: "/",
-    url: "/"
-  },
-  metrics: {
-    timestamps: [
-      "1510699694557",
-      "1510699699598",
-      "1510699704508",
-      "1510699709508",
-      "1510699714507"
-    ],
-    "Total/requests": {
-      1510699694557: 1193438,
-      1510699699598: 1193438
+  grid: {
+    breakpoints: { lg: 1200, md: 996, sm: 768 },
+    cols: { lg: 12, md: 8, sm: 4 },
+    layouts: {
+      lg: [
+        { i: "Heap", x: 0, y: 0, w: 6, h: 9, minW: 4, minH: 5 },
+        { i: "Goroutines", x: 6, y: 0, w: 6, h: 9, minW: 4, minH: 5 }
+      ],
+      md: [
+        { i: "Heap", x: 0, y: 0, w: 8, h: 9, minW: 4, minH: 5 },
+        { i: "Goroutines", x: 0, y: 9, w: 8, h: 9, minW: 4, minH: 5 }
+      ],
+      sm: [
+        { i: "Heap", x: 0, y: 0, w: 6, h: 9, minW: 4, minH: 5 },
+        { i: "Goroutines", x: 6, y: 0, w: 6, h: 9, minW: 4, minH: 5 }
+      ]
     },
-    "HTTP/requests": {
-      1510699694557: 1193388,
-      1510699699598: 1193388,
-      1510699704508: 1193388
-    }
+    rowHeight: 60
   },
-  name: "go"
+  charts: [
+    {
+      key: "Requests",
+      title: "Requests",
+      type: "GMTable",
+      data: {
+        headers: ["Requests", "Success"],
+        rows: [
+          ["http", "http/requests", "http/success"],
+          ["https", "https/requests", "https/success"]
+        ]
+      }
+    },
+    {
+      key: "Response Status Codes",
+      title: "Response Status Codes",
+      type: "GMBasicMetrics",
+      data: {
+        detailLines: [
+          ["2XX", "status/2XX", "primary", "status/2XX", "value"],
+          ["200", "status/200", "primary", "status/200", "value"],
+          ["4XX", "status/4XX", "normal", "status/4XX", "value"],
+          ["400", "status/400", "normal", "status/400", "value"],
+          ["499", "status/499", "normal", "status/499", "value"],
+          ["5XX", "status/5XX", "normal", "status/5XX", "value"],
+          ["500", "status/500", "normal", "status/500", "value"]
+        ]
+      }
+    },
+    {
+      key: "Heap",
+      title: "Heap",
+      type: "GMLineChart",
+      data: {
+        detailLines: [
+          [
+            { type: "string", value: "Garbage Collection Runs:" },
+            {
+              type: "latest",
+              value: "go_metrics/runtime/total_gc_runs",
+              precision: 3
+            }
+          ],
+          [
+            { type: "string", value: "Total GC Pause:" },
+            {
+              type: "latest",
+              value: "go_metrics/runtime/total_gc_pause_ns",
+              precision: 3,
+              baseUnit: "ns",
+              resultUnit: "ms"
+            },
+            { type: "string", value: "ms" }
+          ]
+        ],
+        timeseries: [
+          {
+            type: "value",
+            attribute: "go_metrics/runtime/alloc_bytes",
+            label: "Go Heap Used (MB)",
+            precision: 0,
+            baseUnit: "B",
+            resultUnit: "MB"
+          }
+        ]
+      }
+    },
+    {
+      key: "Goroutines",
+      title: "Goroutines",
+      type: "GMLineChart",
+      data: {
+        timeseries: [
+          {
+            type: "value",
+            attribute: "go_metrics/runtime/num_goroutines",
+            label: "# of allocated goroutines"
+          }
+        ]
+      }
+    }
+  ]
 };
 
-// The connected default export wraps GMGrid in injectIntl(), which supplies the
-// `intl` prop consumed all over renderChart(). The unconnected named export used
-// here gets none, so we hand it a minimal mock. This fixture passes plain strings
-// (not react-intl message descriptors) as labels/titles, so formatMessage just
-// echoes strings back; descriptors are handled defensively for completeness.
-const intl = {
-  formatMessage: (message: any) =>
-    typeof message === "string"
-      ? message
-      : (message && (message.defaultMessage || message.id)) || ""
+const metrics = {
+  timestamps: [
+    "1510699694557",
+    "1510699699598",
+    "1510699704508",
+    "1510699709508",
+    "1510699714507"
+  ],
+  "Total/requests": {
+    1510699694557: 1193438,
+    1510699699598: 1193438
+  },
+  "HTTP/requests": {
+    1510699694557: 1193388,
+    1510699699598: 1193388,
+    1510699704508: 1193388
+  }
 };
+
+function renderGMGrid(
+  dashboardName = "go",
+  storeState?: Record<string, unknown>
+) {
+  const store = createTestStore({
+    dashboards: { go: dashboard },
+    instance: { metrics },
+    ...storeState
+  });
+
+  return renderWithIntl(
+    <MemoryRouter initialEntries={[`/${dashboardName}`]}>
+      <Routes>
+        <Route path="/:dashboardName" element={<GMGrid />} />
+      </Routes>
+    </MemoryRouter>,
+    store
+  );
+}
 
 describe("Service Instance View: JVM/GO/HTTP <GMGrid>", () => {
   test("matches snapshot", () => {
-    const { asFragment } = render(<GMGrid {...props} intl={intl} />);
+    const { asFragment } = renderGMGrid();
     expect(asFragment()).toMatchSnapshot();
   });
 
   test("renders correct components", () => {
-    render(<GMGrid {...props} intl={intl} />);
+    renderGMGrid();
     expect(screen.getByTestId("error-boundary")).toBeInTheDocument();
   });
 
   test("renders appropriate chart type (<GMTable>,<GMBasicMetrics> and <GMLineChart>) when provided dashboard charts", () => {
-    render(<GMGrid {...props} intl={intl} />);
+    renderGMGrid();
     expect(screen.getAllByTestId("gm-line-chart")).toHaveLength(2);
     expect(screen.getAllByTestId("gm-table")).toHaveLength(1);
     expect(screen.getAllByTestId("gm-basic-metrics")).toHaveLength(1);
@@ -254,13 +255,10 @@ describe("Service Instance View: JVM/GO/HTTP <GMGrid>", () => {
   });
 
   test("returns <NotFoundError> if dashboard does not exist", () => {
-    render(
-      <GMGrid
-        match={{ isExact: true, params: {}, path: "/", url: "/" }}
-        metrics={{}}
-        intl={intl}
-      />
-    );
+    renderGMGrid("missing", {
+      dashboards: {},
+      instance: { metrics: {} }
+    });
     expect(screen.getByTestId("not-found-error")).toBeInTheDocument();
     expect(screen.queryAllByTestId("gm-line-chart")).toHaveLength(0);
     expect(screen.queryAllByTestId("gm-table")).toHaveLength(0);
