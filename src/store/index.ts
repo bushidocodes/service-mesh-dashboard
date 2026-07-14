@@ -19,7 +19,7 @@ import threadsTable from "./states/threadsTable";
 // Create the Redux store using reducers and middlewares.
 // middleware: () => new Tuple(...) replaces RTK's default middleware set so only
 // the jumpstate shim (and optional logger) run — preserving pre-v5 behaviour.
-export default configureStore({
+const store = configureStore({
   reducer: {
     dashboards,
     fabric,
@@ -32,3 +32,6 @@ export default configureStore({
       ? new Tuple(CreateJumpstateMiddleware(), logger)
       : new Tuple(CreateJumpstateMiddleware())
 });
+
+export type AppDispatch = typeof store.dispatch;
+export default store;

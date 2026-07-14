@@ -9,6 +9,21 @@ import { vi } from "vitest";
 const FIXED_NOW = 1780000000000; // 2026-05-28T03:06:40Z
 Date.now = () => FIXED_NOW;
 
+// jsdom does not implement HTMLDialogElement.showModal/close. Polyfill enough
+// for ConfirmationModal's controlled open/close (sets the `open` attribute).
+if (
+  typeof HTMLDialogElement !== "undefined" &&
+  typeof HTMLDialogElement.prototype.showModal !== "function"
+) {
+  HTMLDialogElement.prototype.showModal = function showModal() {
+    this.setAttribute("open", "");
+  };
+  HTMLDialogElement.prototype.close = function close() {
+    this.removeAttribute("open");
+    this.dispatchEvent(new Event("close"));
+  };
+}
+
 // Stub HTMLCanvasElement.getContext for JSDOM.
 // Libraries like Dygraphs call canvas.getContext('2d') during mount; JSDOM does
 // not implement it and throws a "not implemented" error that would fail tests.
@@ -92,10 +107,9 @@ console.error = (message, ..._args) => {
   // methodology warning.
   if (msg.includes("not wrapped in act")) return;
   // Several pinned libraries still use the deprecated React 16 lifecycle
-  // methods: react-grid-layout, react-modal, react-resizable,
-  // react-draggable, react-transition-group.
-  // (react-collapse no longer does as of v5.1.1.) Suppress until those
-  // libraries are upgraded — see issue #27.
+  // methods: react-grid-layout, react-resizable, react-draggable,
+  // react-transition-group. Suppress until those libraries are upgraded —
+  // see issue #27.
   if (msg.includes("componentWillMount")) return;
   if (msg.includes("componentWillReceiveProps")) return;
   if (msg.includes("componentWillUpdate")) return;

@@ -1,6 +1,7 @@
 import Button from "components/Button";
 import Glyph from "components/Glyphs";
 import Icon from "components/Icon";
+import { type MouseEvent, useEffect, useRef } from "react";
 import { COLOR_DANGER } from "style/styleVariables";
 import Actions from "./components/Actions";
 import CancelX from "./components/CancelX";
@@ -11,8 +12,8 @@ import StyledModal from "./components/StyledModal";
 
 interface ConfirmationModalProps {
   isOpen: boolean;
-  onCancel: (...args: any[]) => any;
-  onConfirm: (...args: any[]) => any;
+  onCancel: () => void;
+  onConfirm: () => void;
   question: string;
   secondary: string;
 }
@@ -24,18 +25,46 @@ function ConfirmationModal({
   onConfirm,
   onCancel
 }: ConfirmationModalProps) {
-  // The line below is necessary to designate a app element which will be given aria-visible false when modal is up so screen readers only focus on modal content
-  const rootAppElement = document.querySelectorAll("#root")[0] as HTMLElement;
+  const ref = useRef<HTMLDialogElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (isOpen && !el.open) {
+      el.showModal();
+    } else if (!isOpen && el.open) {
+      el.close();
+    }
+  }, [isOpen]);
+
+  // Backdrop click: coordinates fall outside the dialog box when the user
+  // clicks the native ::backdrop layer (common modal-dialog pattern).
+  const handleClick = (event: MouseEvent<HTMLDialogElement>) => {
+    const el = ref.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const clickedOutside =
+      event.clientX < rect.left ||
+      event.clientX > rect.right ||
+      event.clientY < rect.top ||
+      event.clientY > rect.bottom;
+    if (clickedOutside) {
+      onCancel();
+    }
+  };
+
   return (
     <StyledModal
-      isOpen={isOpen}
-      aria={{
-        labelledby: "question",
-        describedby: "secondaryText"
+      ref={ref}
+      aria-labelledby="question"
+      aria-describedby="secondaryText"
+      onCancel={(event) => {
+        // Keep the dialog controlled via isOpen — parent sets isOpen false,
+        // then the effect above calls close().
+        event.preventDefault();
+        onCancel();
       }}
-      appElement={rootAppElement}
-      overlayClassName="modalOverlay"
-      shouldCloseOnOverlayClick={true}
+      onClick={handleClick}
     >
       <CancelX onClick={onCancel}>
         <Icon>

@@ -1,12 +1,7 @@
 import { render } from "@testing-library/react";
-import Modal from "react-modal";
 import ConfirmationModal from "./ConfirmationModal";
 
 describe("ConfirmationModal", () => {
-  beforeAll(() => {
-    Modal.setAppElement(document.body);
-  });
-
   it("matches snapshot when closed", () => {
     const { asFragment } = render(
       <ConfirmationModal
