@@ -2,12 +2,9 @@ import Exclamation from "components/Glyphs/Exclamation";
 import Icon from "components/Icon";
 import MessageIconContainer from "./components/MessageIconContainer";
 
-interface MessageIconProps {
-  level?: "info" | "error" | "warning" | "success";
-}
-
-// Choose an icon to display based on level If Error, show error icon, etc.
-function MessageIcon({ level: _level = "info" }: MessageIconProps) {
+// Static error-style glyph used in toast overlays. Level-specific icons were
+// never implemented; callers no longer pass a level prop.
+function MessageIcon() {
   return (
     <MessageIconContainer className="notification-dismiss">
       <Icon
