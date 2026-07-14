@@ -1,5 +1,3 @@
-import React from "react";
-
 interface BackgroundTriangleProps {
   backgroundColor?: string;
   backgroundOpacity?: string | number;

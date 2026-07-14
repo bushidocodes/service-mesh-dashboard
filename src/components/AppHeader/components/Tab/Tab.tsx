@@ -4,7 +4,6 @@ import {
   SparklinesLine,
   SparklinesReferenceLine
 } from "components/Sparklines";
-import React from "react";
 import TabDetails from "./components/TabDetails";
 import TabGraph from "./components/TabGraph";
 import TabIcon from "./components/TabIcon";

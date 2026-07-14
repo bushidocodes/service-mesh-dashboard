@@ -1,6 +1,5 @@
 import { render, screen } from "@testing-library/react";
 import state from "json/mockReduxState";
-import React from "react";
 
 // Unconnected named export so we can drive the runtime switch directly via props
 // rather than through connect()+injectIntl(); the connected default export wires

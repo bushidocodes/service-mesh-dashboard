@@ -1,5 +1,4 @@
 import state from "json/mockReduxState";
-import React from "react";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import { renderWithIntl } from "utils/i18nTesting";
 import GoHeaderContent from "./GoHeaderContent";

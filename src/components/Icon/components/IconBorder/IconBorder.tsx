@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import BorderCircleSmall from "./components/BorderCircleSmall";
 import BorderSquare from "./components/BorderSquare";
 import BorderSquareSmall from "./components/BorderSquareSmall";

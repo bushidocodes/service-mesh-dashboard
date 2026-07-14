@@ -1,5 +1,5 @@
 import Dygraph from "dygraphs";
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { formatMetricString } from "utils";
 import { has, isEqual, uniq } from "utils/collections";
 

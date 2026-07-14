@@ -1,4 +1,3 @@
-import React from "react";
 import AppHeaderContainer from "./components/AppHeaderContainer";
 import AppToolBar from "./components/AppToolBar";
 import Banner from "./components/Banner";

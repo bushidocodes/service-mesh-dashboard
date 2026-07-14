@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function ErrorList() {
   return (
     <g id="error-list" fill="#000">

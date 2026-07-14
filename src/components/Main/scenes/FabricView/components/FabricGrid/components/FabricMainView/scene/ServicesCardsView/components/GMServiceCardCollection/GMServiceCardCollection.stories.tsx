@@ -1,5 +1,3 @@
-import React from "react";
-
 import GMServiceCardCollection from "./index";
 
 // mock data for Section Cards View

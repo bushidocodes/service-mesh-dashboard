@@ -1,6 +1,5 @@
 import { within } from "@testing-library/react";
 import * as state from "json/mockReduxState";
-import React from "react";
 import configureStore from "redux-mock-store";
 import { mountWithIntl } from "utils/i18nTesting";
 import SettingsGrid from "./index";

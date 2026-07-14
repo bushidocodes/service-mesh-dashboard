@@ -1,5 +1,4 @@
 import { render } from "@testing-library/react";
-import React from "react";
 import GMSearchInput from "./GMSearchInput";
 
 describe("GMSearchInput", () => {

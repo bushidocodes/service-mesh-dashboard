@@ -1,7 +1,7 @@
 import Button from "components/Button";
 import LayoutSection from "components/LayoutSection";
 import Tooltip from "components/Tooltip";
-import React, { Component } from "react";
+import { Component } from "react";
 
 import { contrastColor } from "style/styleFunctions";
 import { COLOR_SUCCESS, COLOR_WHITE } from "style/styleVariables";

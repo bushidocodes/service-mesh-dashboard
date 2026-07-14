@@ -1,5 +1,4 @@
 import { screen } from "@testing-library/react";
-import React from "react";
 import { renderWithIntl } from "utils/i18nTesting";
 import GMServiceTableLineItem from "./components/GMServiceTableLineItem";
 import TableLineItem from "./components/TableLineItem";

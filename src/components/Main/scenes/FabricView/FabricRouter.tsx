@@ -1,6 +1,6 @@
 import { LazyLoader } from "components/LazyLoader";
 import { Loading } from "components/Loading";
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 import { connect } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import type { RootState, Service } from "types";

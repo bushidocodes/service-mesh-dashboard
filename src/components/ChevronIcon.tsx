@@ -1,5 +1,3 @@
-import React from "react";
-
 interface ChevronIconProps {
   ariaLabelledby?: string;
   direction?: string;

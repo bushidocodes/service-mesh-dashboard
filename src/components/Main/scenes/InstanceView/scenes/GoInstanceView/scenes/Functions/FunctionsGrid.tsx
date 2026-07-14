@@ -3,7 +3,7 @@ import NotFoundError from "components/Main/components/NotFoundError";
 import Table from "components/Main/components/Table";
 import TableToolbar from "components/Main/components/TableToolbar";
 import withUrlState from "components/withUrlState";
-import React, { Component, Fragment } from "react";
+import { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import type { RootState } from "types";
 import { orderBy } from "utils/collections";

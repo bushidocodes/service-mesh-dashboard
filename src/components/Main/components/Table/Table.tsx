@@ -3,7 +3,6 @@ import TableBody from "components/Main/components/TableBody";
 import TableDisplay from "components/Main/components/TableDisplay";
 import TableHeader from "components/Main/components/TableHeader";
 import UpTime from "components/UpTime";
-import React from "react";
 import { relativeReqPercent } from "utils";
 import GMServiceTableLineItem from "./components/GMServiceTableLineItem";
 import TableLineItem from "./components/TableLineItem";

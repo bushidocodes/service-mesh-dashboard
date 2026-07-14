@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 import ArrayValue from "components/ArrayValue";
-import React, { act } from "react";
+import { act } from "react";
 import Uptime from "./UpTime";
 
 const renderFunc = (uptime: any) => (

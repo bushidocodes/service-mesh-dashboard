@@ -1,5 +1,4 @@
 import { fireEvent, screen } from "@testing-library/react";
-import React from "react";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import { Actions } from "store/jumpstate";
 import { mountWithIntl } from "utils/i18nTesting";

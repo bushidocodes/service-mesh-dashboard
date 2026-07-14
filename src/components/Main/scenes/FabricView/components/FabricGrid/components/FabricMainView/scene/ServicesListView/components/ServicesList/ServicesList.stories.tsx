@@ -1,5 +1,3 @@
-import React from "react";
-
 import GMServiceList from "./index";
 
 // mock data for Section List View

@@ -1,6 +1,5 @@
 import { render } from "@testing-library/react";
 import state from "json/mockReduxState";
-import React from "react";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import DefaultHeaderContent from "./DefaultHeaderContent";
 

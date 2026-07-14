@@ -1,5 +1,5 @@
 import GMServiceHeader from "components/Main/scenes/FabricView/components/FabricGrid/components/FabricMainView/components/GMServiceHeader";
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 import type { RouterLocation, ServiceItem } from "types";
 import { isEmpty, orderBy } from "utils/collections";
 import { microserviceStatuses } from "utils/constants";

@@ -1,4 +1,3 @@
-import React from "react";
 import { connect } from "react-redux";
 import type { RootState, RouterLocation } from "types";
 import { trimID } from "utils";

@@ -1,5 +1,3 @@
-import React from "react";
-
 interface BackgroundCircleSmallProps {
   backgroundColor?: string;
   backgroundOpacity?: string | number;

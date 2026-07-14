@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function EditGraph() {
   return (
     <g id="edit-graph" fill="#000">

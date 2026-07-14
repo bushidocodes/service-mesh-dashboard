@@ -1,7 +1,7 @@
 import Glyph from "components/Glyphs/index";
 import Icon from "components/Icon";
 import Span from "components/Main/components/Span";
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 import { FormattedMessage } from "react-intl";
 import { injectIntl } from "utils/injectIntl";
 import DygraphWrapper from "./components/DygraphWrapper";

@@ -1,5 +1,3 @@
-import React from "react";
-
 interface BackgroundSquareRoundedProps {
   backgroundColor?: string;
   backgroundOpacity?: string | number;

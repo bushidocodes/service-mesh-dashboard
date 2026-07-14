@@ -1,5 +1,3 @@
-import React from "react";
-
 import { renderWithIntl } from "utils/i18nTesting";
 import ThreadsTable from "./index";
 

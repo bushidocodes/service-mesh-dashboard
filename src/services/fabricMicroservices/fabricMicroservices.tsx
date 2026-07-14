@@ -1,4 +1,3 @@
-import React from "react";
 import { FormattedMessage } from "react-intl";
 import { reportError } from "services/notification";
 import { Actions, getState } from "store/jumpstate";

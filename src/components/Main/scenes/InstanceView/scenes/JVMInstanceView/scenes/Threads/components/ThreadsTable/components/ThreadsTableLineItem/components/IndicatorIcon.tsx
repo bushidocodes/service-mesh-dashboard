@@ -1,5 +1,3 @@
-import React from "react";
-
 interface IndicatorIconProps {
   alt?: string;
   color?: string;

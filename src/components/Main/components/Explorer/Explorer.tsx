@@ -1,6 +1,6 @@
 import ErrorBoundary from "components/ErrorBoundary";
 import withUrlState from "components/withUrlState";
-import React, { Component } from "react";
+import { Component } from "react";
 import { FormattedMessage } from "react-intl";
 import { connect } from "react-redux";
 import type { Metrics, RootState } from "types";

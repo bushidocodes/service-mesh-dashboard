@@ -1,6 +1,5 @@
 import TableColHeader from "components/Main/components/TableColHeader";
 import TableDisplay from "components/Main/components/TableDisplay";
-import React from "react";
 import type { ThreadsTableItem } from "types";
 import { isEmpty } from "utils/collections";
 import { threadStates } from "utils/constants";

@@ -1,6 +1,5 @@
 import { screen, within } from "@testing-library/react";
 import mockState from "json/mockReduxStateGO";
-import React from "react";
 import configureStore from "redux-mock-store";
 
 import { renderWithIntl } from "utils/i18nTesting";

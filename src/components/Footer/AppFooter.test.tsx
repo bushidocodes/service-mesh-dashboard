@@ -1,4 +1,3 @@
-import React from "react";
 import { renderWithIntl } from "utils/i18nTesting";
 import FooterContainer from "./index";
 

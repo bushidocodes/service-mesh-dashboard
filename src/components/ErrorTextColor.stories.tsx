@@ -1,4 +1,3 @@
-import React from "react";
 import { spacingScale } from "style/styleFunctions";
 import {
   COLOR_DANGER,
