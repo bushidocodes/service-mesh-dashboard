@@ -127,13 +127,26 @@ test.describe("Instance View (common)", () => {
     await expect(instance.inspectorItems).toHaveCount(0);
     await instance.inspectorSearch.fill("");
 
-    // "Hide static" forces "hide zero" checked and disabled.
+    // "Hide static" forces "hide zero" checked and disabled for display only;
+    // clearing hide-static restores hide-zero to its prior URL state (false).
+    // Await each intermediate state: rapid double-clicks race setSearchParams
+    // and can leave hideZero checked (both clicks see unchecked → onChange(true)).
+    await expect(instance.hideZero).not.toBeChecked();
+    await expect(instance.hideZero).toBeEnabled();
+
     await instance.hideZero.click();
+    await expect(instance.hideZero).toBeChecked();
     await instance.hideZero.click();
+    await expect(instance.hideZero).not.toBeChecked();
+
     await instance.hideStatic.click();
+    await expect(instance.hideStatic).toBeChecked();
     await expect(instance.hideZero).toBeChecked();
     await expect(instance.hideZero).toBeDisabled();
+
     await instance.hideStatic.click();
+    await expect(instance.hideStatic).not.toBeChecked();
+    await expect(instance.hideZero).toBeEnabled();
     await expect(instance.hideZero).not.toBeChecked();
   });
 });
