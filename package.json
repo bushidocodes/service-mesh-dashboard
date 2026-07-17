@@ -24,7 +24,7 @@
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "react-grid-layout": "^2.2.3",
-    "react-intl": "^10.1.14",
+    "react-intl": "^10.1.15",
     "react-redux": "^9.3.0",
     "react-router-dom": "^7.18.1",
     "react-select": "^5.10.2",
