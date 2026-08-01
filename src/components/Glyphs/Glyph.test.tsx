@@ -12,19 +12,20 @@ describe("Glyph registry", () => {
     expect(GLYPH_NAMES.length).toBeGreaterThan(40);
   });
 
-  it.each(
-    GLYPH_NAMES
-  )("renders registered glyph %s without an empty fallback", (name) => {
-    const { container } = render(
-      <svg>
-        <Glyph name={name} />
-      </svg>
-    );
-    const glyph = container.querySelector("g.glyph");
-    expect(glyph).toBeInTheDocument();
-    // Unknown names fall back to an empty <g />; registered ones mount children.
-    expect(glyph!.children.length).toBeGreaterThan(0);
-  });
+  it.each(GLYPH_NAMES)(
+    "renders registered glyph %s without an empty fallback",
+    (name) => {
+      const { container } = render(
+        <svg>
+          <Glyph name={name} />
+        </svg>
+      );
+      const glyph = container.querySelector("g.glyph");
+      expect(glyph).toBeInTheDocument();
+      // Unknown names fall back to an empty <g />; registered ones mount children.
+      expect(glyph!.children.length).toBeGreaterThan(0);
+    }
+  );
 });
 
 describe("Glyph", () => {
