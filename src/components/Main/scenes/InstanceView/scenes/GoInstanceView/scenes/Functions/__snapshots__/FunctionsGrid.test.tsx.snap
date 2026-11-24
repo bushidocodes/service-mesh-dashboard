@@ -523,35 +523,35 @@ exports[`Go Instance Functions View: <FunctionsGrid/> > Matches snapshot 1`] = `
                 cx="2"
                 cy="16"
                 r="2"
-                style="stroke: currentcolor; stroke-width: 0; fill-opacity: 0.1; fill: none; pointer-events: auto;"
+                style="stroke: currentcolor; stroke-width: 0px; fill-opacity: 0.1; fill: none; pointer-events: auto;"
               />
               <circle
                 cx="61"
                 cy="16"
                 r="2"
-                style="stroke: currentcolor; stroke-width: 0; fill-opacity: 0.1; fill: none; pointer-events: auto;"
+                style="stroke: currentcolor; stroke-width: 0px; fill-opacity: 0.1; fill: none; pointer-events: auto;"
               />
               <circle
                 cx="120"
                 cy="16"
                 r="2"
-                style="stroke: currentcolor; stroke-width: 0; fill-opacity: 0.1; fill: none; pointer-events: auto;"
+                style="stroke: currentcolor; stroke-width: 0px; fill-opacity: 0.1; fill: none; pointer-events: auto;"
               />
               <circle
                 cx="179"
                 cy="16"
                 r="2"
-                style="stroke: currentcolor; stroke-width: 0; fill-opacity: 0.1; fill: none; pointer-events: auto;"
+                style="stroke: currentcolor; stroke-width: 0px; fill-opacity: 0.1; fill: none; pointer-events: auto;"
               />
               <circle
                 cx="238"
                 cy="16"
                 r="2"
-                style="stroke: currentcolor; stroke-width: 0; fill-opacity: 0.1; fill: none; pointer-events: auto;"
+                style="stroke: currentcolor; stroke-width: 0px; fill-opacity: 0.1; fill: none; pointer-events: auto;"
               />
               <polyline
                 points="2 16 61 16 120 16 179 16 238 16 238 30 2 30 2 16"
-                style="stroke: currentcolor; stroke-width: 0; fill-opacity: 0.1; fill: none; pointer-events: auto;"
+                style="stroke: currentcolor; stroke-width: 0px; fill-opacity: 0.1; fill: none; pointer-events: auto;"
               />
               <polyline
                 points="2 16 61 16 120 16 179 16 238 16"
@@ -631,29 +631,29 @@ exports[`Go Instance Functions View: <FunctionsGrid/> > Matches snapshot 1`] = `
                 cx="2"
                 cy="16"
                 r="2"
-                style="stroke: currentcolor; stroke-width: 0; fill-opacity: 0.1; fill: none; pointer-events: auto;"
+                style="stroke: currentcolor; stroke-width: 0px; fill-opacity: 0.1; fill: none; pointer-events: auto;"
               />
               <circle
                 cx="80.66666666666667"
                 cy="16"
                 r="2"
-                style="stroke: currentcolor; stroke-width: 0; fill-opacity: 0.1; fill: none; pointer-events: auto;"
+                style="stroke: currentcolor; stroke-width: 0px; fill-opacity: 0.1; fill: none; pointer-events: auto;"
               />
               <circle
                 cx="159.33333333333334"
                 cy="16"
                 r="2"
-                style="stroke: currentcolor; stroke-width: 0; fill-opacity: 0.1; fill: none; pointer-events: auto;"
+                style="stroke: currentcolor; stroke-width: 0px; fill-opacity: 0.1; fill: none; pointer-events: auto;"
               />
               <circle
                 cx="238"
                 cy="16"
                 r="2"
-                style="stroke: currentcolor; stroke-width: 0; fill-opacity: 0.1; fill: none; pointer-events: auto;"
+                style="stroke: currentcolor; stroke-width: 0px; fill-opacity: 0.1; fill: none; pointer-events: auto;"
               />
               <polyline
                 points="2 16 80.66666666666667 16 159.33333333333334 16 238 16 238 30 2 30 2 16"
-                style="stroke: currentcolor; stroke-width: 0; fill-opacity: 0.1; fill: none; pointer-events: auto;"
+                style="stroke: currentcolor; stroke-width: 0px; fill-opacity: 0.1; fill: none; pointer-events: auto;"
               />
               <polyline
                 points="2 16 80.66666666666667 16 159.33333333333334 16 238 16"

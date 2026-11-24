@@ -7,12 +7,11 @@ describe("Copyright", () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  // Layout switches via a min-width media query (order: 3 stacked → order: initial
-  // inline at 800px+). The snapshot above captures both rule sets; media-query
-  // application is not reliable under jsdom without a full CSSOM stack, so we
-  // assert the default (mobile-first) computed order here.
-  it("uses a stacked layout by default (mobile-first order: 3)", () => {
+  // order: 3 below 800px, order: initial at 800px and up. jsdom's CSS
+  // viewport is fixed at 1024px, so the min-width query matches and initial
+  // computes to 0. The snapshot above still records both rule sets.
+  it("uses the inline layout at jsdom's 1024px viewport", () => {
     const { container } = render(<Copyright />);
-    expect(container.firstChild).toHaveStyle({ order: "3" });
+    expect(container.firstChild).toHaveStyle({ order: "0" });
   });
 });
