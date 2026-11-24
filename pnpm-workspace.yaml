@@ -22,3 +22,17 @@ strictPeerDependencies: false
 allowBuilds:
   core-js: false
   esbuild: true
+
+# Parents cannot reach these patched releases: minimatch's fix is 11.x only,
+# glob 13 pulls the vulnerable 10.x line, and got 9 / tmp 0.0 have no backport.
+# globSync() is the only glob API this repo uses. got stays on 11.x because
+# 12+ is ESM-only and package-json still require()s it.
+overrides:
+  "minimatch@>=7 <11": "11.0.9"
+  "glob@>=13 <14.0.3": "14.0.6"
+  "got@<11.8.5": "11.8.6"
+  "tmp@<0.2.6": "0.2.7"
+
+patchedDependencies:
+  minimatch@11.0.9: patches/minimatch@11.0.9.patch
+  package-json@6.5.0: patches/package-json@6.5.0.patch

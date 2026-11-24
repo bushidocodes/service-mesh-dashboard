@@ -1,2 +1,7 @@
+# Express 4.22 still caps qs at ~6.15.1, below the 6.16.1 fix. The other
+# floors are inside the parents' ranges but were locked on vulnerable releases.
 overrides:
-  ip-address: '>=10.3.1'
+  "qs@<6.16.1": "6.16.1"
+  "body-parser@<1.20.9": "1.20.9"
+  "proxy-addr@<2.0.8": "2.0.8"
+  "ip-address@<=10.7.3": ">=10.7.4"
