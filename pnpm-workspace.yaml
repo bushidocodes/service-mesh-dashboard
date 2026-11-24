@@ -22,3 +22,9 @@ strictPeerDependencies: false
 allowBuilds:
   core-js: false
   esbuild: true
+
+# @joshwooding/vite-plugin-react-docgen-typescript depends on glob ^13, and
+# glob 13 pulls minimatch 10. That advisory is fixed only in minimatch 11,
+# which glob 14.0.3+ depends on. The plugin calls globSync() only.
+overrides:
+  "glob@>=13 <14.0.3": "14.0.6"
