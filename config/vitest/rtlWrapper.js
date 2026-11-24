@@ -26,15 +26,20 @@ export * from "@testing-library/react/dist/index.js";
 
 export function render(ui, options = {}) {
   const ExistingWrapper = options.wrapper;
+  // One wrapper per RTL render() call, including later rerender()s. It is not
+  // recreated during React's render, so the component identity stays stable
+  // for that tree. The closure is what keeps options.wrapper.
   const newWrapper = ExistingWrapper
-    ? function W({ children }) {
+    ? // biome-ignore lint/correctness/noComponentHookFactories: created once per RTL render() call, not during React render
+      function W({ children }) {
         return React.createElement(
           StyleSheetManager,
           { shouldForwardProp: scShouldForwardProp },
           React.createElement(ExistingWrapper, null, children)
         );
       }
-    : function W({ children }) {
+    : // biome-ignore lint/correctness/noComponentHookFactories: created once per RTL render() call, not during React render
+      function W({ children }) {
         return React.createElement(
           StyleSheetManager,
           { shouldForwardProp: scShouldForwardProp },
